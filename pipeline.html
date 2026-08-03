@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How a language model gets made &middot; belleofthebot_</title>
+<meta name="description" content="Five stages from raw text to a deployed assistant, and where the safety work attaches.">
+<meta name="theme-color" content="#17121C">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=Space+Grotesk:wght@400;500&display=swap">
+<link rel="stylesheet" href="belle.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav"><div class="nav-in">
+<a class="mark" href="index.html">belleof<span class="sg">thebot</span><span class="cur">_</span></a>
+<span class="nav-sp"></span>
+<a class="link" href="index.html">the map</a><a class="link" href="pipeline.html" aria-current="page">how it is made</a><a class="link" href="taxonomy.html">the two axes</a><a class="link" href="pdoom.html">the number</a><a class="link" href="words.html">the words</a>
+</div></header>
+<main id="main">
+
+<div class="wrap hero narrow">
+<span class="kicker">walkthrough &middot; 01</span>
+<h1>How a language model gets made</h1>
+<p class="lede">Five stages from a pile of text to something you can talk to, and where the safety work actually attaches. Click through the stages.</p>
+</div>
+
+<div class="wrap">
+<div class="note">
+<span class="h">the idea to hold on to</span>
+<p>Stages one to four change the model itself. Stage five wraps around it without touching it. Almost every confusing claim about what a model "knows" or "learns" comes from mixing those two up.</p>
+</div>
+
+<div class="walk" data-walk>
+<div class="wsteps" role="tablist"><button class="wstep" type="button" role="tab" aria-selected="false">0. one function</button><button class="wstep" type="button" role="tab" aria-selected="false">1. pretraining</button><button class="wstep" type="button" role="tab" aria-selected="false">2. supervised fine-tuning</button><button class="wstep" type="button" role="tab" aria-selected="false">3. preference training</button><button class="wstep" type="button" role="tab" aria-selected="false">4. evaluation and the gate</button><button class="wstep rt" type="button" role="tab" aria-selected="false">5. deployment safeguards</button></div>
+<div data-panel class="wpanel" >
+<span class="zone">training time &middot; changes the weights</span>
+<div class="wbody">
+<div>
+<h3>0. one function</h3>
+<p>A language model is a function that takes a sequence of word fragments and returns a probability distribution over what comes next.</p>
+<p class="meta" style="font-size:.92rem">There is no separate knowledge module and personality module. It is one set of numbers, called weights, all the way through. Every stage that follows changes those same numbers.</p>
+<div class="miscon"><span class="h">most common misreading</span><p>That it stores facts in a database it looks things up in.</p></div>
+</div>
+<div class="wfig"><svg viewBox="0 0 300 130" role="img" aria-label="diagram"><rect x="30" y="45" width="90" height="36" rx="6" fill="#141019" stroke="#423748"/><text x="44" y="67" font-family="IBM Plex Mono,monospace" font-size="9" fill="#B3A6BC">tokens in</text><path d="M126 63h34" stroke="#DFA192" stroke-width="2"/><path d="M154 58l8 5-8 5z" fill="#DFA192"/><rect x="166" y="45" width="104" height="36" rx="6" fill="#141019" stroke="#DFA192"/><text x="180" y="67" font-family="IBM Plex Mono,monospace" font-size="9" fill="#DFA192">next-token p</text></svg></div>
+</div>
+</div><div data-panel class="wpanel" hidden>
+<span class="zone">training time &middot; changes the weights</span>
+<div class="wbody">
+<div>
+<h3>1. pretraining</h3>
+<p>The model is fitted to an enormous pile of text by repeatedly predicting the next fragment and adjusting when it is wrong.</p>
+<p class="meta" style="font-size:.92rem">What comes out is a base model. It can continue text convincingly and has absorbed a great deal about how language and the world are described. It is not an assistant, does not follow instructions reliably, and has no notion that it should be helpful.</p>
+<div class="miscon"><span class="h">most common misreading</span><p>That the model is being taught facts. It is being fitted to a distribution.</p></div>
+</div>
+<div class="wfig"><svg viewBox="0 0 300 130" role="img" aria-label="diagram"><rect x="20" y="30" width="40" height="26" rx="6" fill="#141019" stroke="#423748"/><text x="28" y="47" font-family="IBM Plex Mono,monospace" font-size="8" fill="#8A7F93">text</text><rect x="70" y="30" width="40" height="26" rx="6" fill="#141019" stroke="#423748"/><text x="78" y="47" font-family="IBM Plex Mono,monospace" font-size="8" fill="#8A7F93">text</text><rect x="120" y="30" width="40" height="26" rx="6" fill="#141019" stroke="#423748"/><text x="128" y="47" font-family="IBM Plex Mono,monospace" font-size="8" fill="#8A7F93">text</text><rect x="170" y="30" width="40" height="26" rx="6" fill="#141019" stroke="#423748"/><text x="178" y="47" font-family="IBM Plex Mono,monospace" font-size="8" fill="#8A7F93">text</text><path d="M150 64v18" stroke="#423748" stroke-width="2"/><rect x="90" y="86" width="120" height="32" rx="6" fill="#241D28" stroke="#DFA192"/><text x="104" y="106" font-family="IBM Plex Mono,monospace" font-size="9" fill="#DFA192">base model</text></svg></div>
+</div>
+</div><div data-panel class="wpanel" hidden>
+<span class="zone">training time &middot; changes the weights</span>
+<div class="wbody">
+<div>
+<h3>2. supervised fine-tuning</h3>
+<p>The base model is shown many examples of a request followed by a good response, and its weights shift toward producing that shape.</p>
+<p class="meta" style="font-size:.92rem">This is what turns a text continuer into something that answers you. The examples are written or curated by people, and the choices in that data are choices about behaviour.</p>
+<div class="miscon"><span class="h">most common misreading</span><p>That this stage adds new knowledge. Mostly it selects for a format and a manner already latent in the base model.</p></div>
+</div>
+<div class="wfig"><svg viewBox="0 0 300 130" role="img" aria-label="diagram"><rect x="16" y="26" width="120" height="30" rx="6" fill="#141019" stroke="#423748"/><text x="26" y="45" font-family="IBM Plex Mono,monospace" font-size="9" fill="#B3A6BC">request</text><rect x="16" y="66" width="120" height="30" rx="6" fill="#141019" stroke="#423748"/><text x="26" y="85" font-family="IBM Plex Mono,monospace" font-size="8" fill="#B3A6BC">good response</text><path d="M142 61h30" stroke="#DFA192" stroke-width="2"/><path d="M166 56l8 5-8 5z" fill="#DFA192"/><rect x="178" y="42" width="104" height="38" rx="6" fill="#241D28" stroke="#DFA192"/><text x="190" y="66" font-family="IBM Plex Mono,monospace" font-size="8" fill="#DFA192">weights shift</text></svg></div>
+</div>
+</div><div data-panel class="wpanel" hidden>
+<span class="zone">training time &middot; changes the weights</span>
+<div class="wbody">
+<div>
+<h3>3. preference training</h3>
+<p>People, or a model following written principles, compare pairs of responses. Those comparisons train a second model that scores responses, and that scorer is used to update the first model.</p>
+<p class="meta" style="font-size:.92rem">Reinforcement learning from human feedback uses human comparisons. Constitutional AI has a model do much of the comparing against a written set of principles, with humans writing the principles. These are commonly conflated and are not the same thing.</p>
+<div class="miscon"><span class="h">most common misreading</span><p>That this teaches the model human values. It optimises against a learned proxy for the judgement of one particular pool of labellers under one particular set of instructions.</p></div>
+</div>
+<div class="wfig"><svg viewBox="0 0 300 130" role="img" aria-label="diagram"><rect x="14" y="20" width="86" height="28" rx="6" fill="#141019" stroke="#423748"/><text x="24" y="38" font-family="IBM Plex Mono,monospace" font-size="8" fill="#B3A6BC">response A</text><rect x="14" y="56" width="86" height="28" rx="6" fill="#141019" stroke="#423748"/><text x="24" y="74" font-family="IBM Plex Mono,monospace" font-size="8" fill="#B3A6BC">response B</text><path d="M106 52h24" stroke="#423748" stroke-width="2"/><rect x="134" y="33" width="74" height="38" rx="6" fill="#141019" stroke="#9FE0CE"/><text x="142" y="50" font-family="IBM Plex Mono,monospace" font-size="8" fill="#9FE0CE">which is</text><text x="142" y="62" font-family="IBM Plex Mono,monospace" font-size="8" fill="#9FE0CE">better</text><path d="M214 52h20" stroke="#DFA192" stroke-width="2"/><path d="M228 47l8 5-8 5z" fill="#DFA192"/><rect x="238" y="32" width="52" height="40" rx="6" fill="#241D28" stroke="#DFA192"/><text x="246" y="50" font-family="IBM Plex Mono,monospace" font-size="8" fill="#DFA192">scorer</text><text x="246" y="62" font-family="IBM Plex Mono,monospace" font-size="8" fill="#DFA192">model</text><path d="M264 76v18h-190v-14" stroke="#DFA192" stroke-width="2" stroke-dasharray="4 4" fill="none"/><text x="96" y="110" font-family="IBM Plex Mono,monospace" font-size="8" fill="#8A7F93">updates the model</text></svg></div>
+</div>
+</div><div data-panel class="wpanel" hidden>
+<span class="zone">training time &middot; changes the weights</span>
+<div class="wbody">
+<div>
+<h3>4. evaluation and the gate</h3>
+<p>Before release, the model is deliberately attacked, measured against dangerous capability thresholds, and checked against a published framework that is supposed to decide whether it ships.</p>
+<p class="meta" style="font-size:.92rem">Red teaming is people trying to break it on purpose. Evaluations are structured measurements. Several labs publish frameworks that tie specific capability levels to specific required safeguards.</p>
+<div class="miscon"><span class="h">most common misreading</span><p>That an evaluation certifies a model is safe. The UK safety institute explicitly rejects that framing.</p></div>
+</div>
+<div class="wfig"><svg viewBox="0 0 300 130" role="img" aria-label="diagram"><rect x="90" y="20" width="120" height="30" rx="6" fill="#241D28" stroke="#423748"/><text x="112" y="39" font-family="IBM Plex Mono,monospace" font-size="8" fill="#B3A6BC">finished model</text><rect x="14" y="66" width="84" height="28" rx="6" fill="#141019" stroke="#423748"/><text x="24" y="84" font-family="IBM Plex Mono,monospace" font-size="8" fill="#B3A6BC">red team</text><path d="M150 54 L56 62" stroke="#423748" stroke-width="1.5"/><rect x="110" y="66" width="84" height="28" rx="6" fill="#141019" stroke="#423748"/><text x="120" y="84" font-family="IBM Plex Mono,monospace" font-size="8" fill="#B3A6BC">evals</text><path d="M150 54 L152 62" stroke="#423748" stroke-width="1.5"/><rect x="206" y="66" width="84" height="28" rx="6" fill="#141019" stroke="#423748"/><text x="216" y="84" font-family="IBM Plex Mono,monospace" font-size="8" fill="#B3A6BC">threshold</text><path d="M150 54 L248 62" stroke="#423748" stroke-width="1.5"/><text x="112" y="116" font-family="IBM Plex Mono,monospace" font-size="9" fill="#DFA192">ship / do not ship</text></svg></div>
+</div>
+</div><div data-panel class="wpanel" hidden>
+<span class="zone">runtime &middot; sits outside the weights</span>
+<div class="wbody">
+<div>
+<h3>5. deployment safeguards</h3>
+<p>System prompts, filters, classifiers, monitoring and usage policies sit around the finished model while it runs.</p>
+<p class="meta" style="font-size:.92rem">This is the only stage that does not change the weights. It is a wrapper. That is why the same underlying model can behave differently in two products, and why safeguards can be updated without retraining.</p>
+<div class="miscon"><span class="h">most common misreading</span><p>That the model learns from your conversations as you have them. Deployed weights are static.</p></div>
+</div>
+<div class="wfig"><svg viewBox="0 0 300 130" role="img" aria-label="diagram"><rect x="96" y="44" width="108" height="42" rx="6" fill="#241D28" stroke="#423748"/><text x="112" y="70" font-family="IBM Plex Mono,monospace" font-size="9" fill="#B3A6BC">the model</text><rect x="66" y="24" width="168" height="82" rx="10" fill="none" stroke="#DFA192" stroke-dasharray="5 4"/><text x="76" y="20" font-family="IBM Plex Mono,monospace" font-size="8" fill="#DFA192">wrapper &#183; runtime</text><rect x="14" y="52" width="50" height="26" rx="6" fill="#141019" stroke="#423748"/><text x="21" y="69" font-family="IBM Plex Mono,monospace" font-size="8" fill="#8A7F93">prompt</text><rect x="238" y="52" width="50" height="26" rx="6" fill="#141019" stroke="#423748"/><text x="245" y="69" font-family="IBM Plex Mono,monospace" font-size="8" fill="#8A7F93">filter</text></svg></div>
+</div>
+</div>
+</div>
+
+<div class="well narrow" style="margin-top:44px">
+<h2 style="margin-top:0">What is honestly not public</h2>
+<p>The pipeline above is a teaching sequence and it is broadly right. But no frontier lab has published a full end to end recipe for a current production model. What exists publicly is older method papers, one genuinely detailed technical report for an open weight model, and model cards that describe evaluation far more thoroughly than they describe training.</p>
+<p>So the accurate picture is the documented pipeline <strong>plus the fog over the current instances of it</strong>. Anyone who draws this as a clean, fully known assembly line is drawing something nobody outside those labs can actually see.</p>
+<p>Two more corrections worth carrying: real pipelines <strong>loop</strong> rather than run once, and the published figures people quote for model size and training compute are almost always taken from open weight models or regulatory thresholds, not from the closed systems being discussed.</p>
+</div>
+
+<div class="xlinks"><a class="xl" href="taxonomy.html"><span class="k">next</span><span class="t">How bad, and how it happens, are separate questions &rarr;</span></a><a class="xl" href="pdoom.html"><span class="k">related</span><span class="t">Why a single probability hides the argument &rarr;</span></a><a class="xl" href="words.html"><span class="k">reference</span><span class="t">The vocabulary, defined plainly &rarr;</span></a></div>
+</div>
+</main>
+<footer><div class="wrap">
+<span>a plain language map of what people mean when they talk about AI risk</span>
+<span>built by elizabeth beier &middot; sources on every claim</span>
+</div></footer>
+<script src="belle.js"></script>
+</body></html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The words &middot; belleofthebot_</title>
+<meta name="description" content="A quiz and glossary for the vocabulary of AI risk.">
+<meta name="theme-color" content="#17121C">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=Space+Grotesk:wght@400;500&display=swap">
+<link rel="stylesheet" href="belle.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav"><div class="nav-in">
+<a class="mark" href="index.html">belleof<span class="sg">thebot</span><span class="cur">_</span></a>
+<span class="nav-sp"></span>
+<a class="link" href="index.html">the map</a><a class="link" href="pipeline.html">how it is made</a><a class="link" href="taxonomy.html">the two axes</a><a class="link" href="pdoom.html">the number</a><a class="link" href="words.html" aria-current="page">the words</a>
+</div></header>
+<main id="main">
+
+<div class="wrap hero narrow">
+<span class="kicker">reference &middot; 04</span>
+<h1>The words</h1>
+<p class="lede">Fourteen terms the argument cannot proceed without. Test yourself first if you like, then keep the glossary open while you read the other pieces.</p>
+</div>
+
+<div class="wrap">
+<div class="quiz" data-quiz>
+<div class="qq"></div>
+<div class="qopts"></div>
+<div class="qfb" aria-live="polite"></div>
+<div class="qbar">
+<span data-count></span>
+<span data-score></span>
+<button class="btn ghost" type="button" data-next>next</button>
+</div>
+</div>
+
+<div class="well">
+<h2 style="margin-top:0">Glossary</h2>
+<div class="src-item"><div class="t"><strong>token</strong> &nbsp; A word fragment. Models read and write these, not whole words.</div></div><div class="src-item"><div class="t"><strong>weights</strong> &nbsp; The numbers that make up the model. Training is the process of changing them.</div></div><div class="src-item"><div class="t"><strong>base model</strong> &nbsp; What comes out of pretraining. Continues text, does not reliably take instructions.</div></div><div class="src-item"><div class="t"><strong>fine-tuning</strong> &nbsp; Further training on curated examples, to shape behaviour rather than add knowledge.</div></div><div class="src-item"><div class="t"><strong>RLHF</strong> &nbsp; Reinforcement learning from human feedback. Human comparisons train a scorer; the scorer trains the model.</div></div><div class="src-item"><div class="t"><strong>Constitutional AI</strong> &nbsp; A method where a model does much of the comparing against written principles. Humans write the principles.</div></div><div class="src-item"><div class="t"><strong>red teaming</strong> &nbsp; People deliberately trying to make a system misbehave, before release.</div></div><div class="src-item"><div class="t"><strong>evaluation</strong> &nbsp; A structured measurement of a capability or a behaviour. Not a safety certificate.</div></div><div class="src-item"><div class="t"><strong>misuse</strong> &nbsp; A person deliberately using a capable system to cause harm.</div></div><div class="src-item"><div class="t"><strong>misalignment</strong> &nbsp; A system pursuing something other than what was intended.</div></div><div class="src-item"><div class="t"><strong>specification gaming</strong> &nbsp; Meeting the stated objective in an unintended way.</div></div><div class="src-item"><div class="t"><strong>goal misgeneralisation</strong> &nbsp; Behaviour learned in training that transfers wrongly to a new setting.</div></div><div class="src-item"><div class="t"><strong>existential risk</strong> &nbsp; The permanent destruction of humanity's long term potential. Broader than extinction.</div></div><div class="src-item"><div class="t"><strong>s-risk</strong> &nbsp; Suffering risk. A small and speculative research area about outcomes involving very large scale suffering.</div></div>
+</div>
+
+<div class="xlinks"><a class="xl" href="pipeline.html"><span class="k">start here</span><span class="t">How a language model gets made &rarr;</span></a><a class="xl" href="taxonomy.html"><span class="k">then</span><span class="t">How bad, and how it happens &rarr;</span></a><a class="xl" href="pdoom.html"><span class="k">then</span><span class="t">The number, and its limits &rarr;</span></a></div>
+</div>
+<script>window.QUIZ=[{"q": "\"Existential risk\" means:", "a": ["Everyone dies", "The permanent destruction of humanity's long term potential", "Any very large disaster", "A risk to the existence of a company"], "correct": 1, "why": "Extinction is one way it happens. A permanent unrecoverable dystopia and permanent stagnation also count. This is the single most misread term in the subject."}, {"q": "Specification gaming is when a system:", "a": ["Refuses to answer a question", "Satisfies the objective it was given in a way nobody intended", "Invents a fact", "Runs out of memory"], "correct": 1, "why": "The objective is met. The intent is not. It is a failure of the specification, not of the optimiser."}, {"q": "Reinforcement learning from human feedback trains the model against:", "a": ["Human values", "A learned scorer built from human comparisons", "A rulebook of laws", "Its own previous answers"], "correct": 1, "why": "Comparisons train a second model that scores responses, and that scorer is what the first model is optimised against. It is a proxy, twice removed."}, {"q": "A base model, straight out of pretraining, is:", "a": ["An assistant that follows instructions", "A text continuer that does not reliably follow instructions", "A search engine", "A database of facts"], "correct": 1, "why": "Instruction following arrives in later stages. The base model continues text."}, {"q": "Deployment safeguards differ from training because they:", "a": ["Cost more", "Sit outside the weights and can change without retraining", "Only work on paid accounts", "Are required by law everywhere"], "correct": 1, "why": "This is the training time versus runtime distinction, and it explains why one model can behave differently in two products."}, {"q": "An s-risk, in this literature, refers to:", "a": ["A security risk", "A risk of astronomical suffering", "A stock market risk", "A supply chain risk"], "correct": 1, "why": "Suffering risk. It is a small, genuinely speculative research area, and it should never be drawn as a forecast."}, {"q": "Constitutional AI differs from RLHF mainly because:", "a": ["It uses no humans at all", "A model does much of the comparing, against principles humans wrote", "It skips pretraining", "It is faster to run"], "correct": 1, "why": "Humans write the principles. That is the part most often dropped when the two get conflated."}, {"q": "Goal misgeneralisation means the system:", "a": ["Forgot its goal", "Learned a goal that worked in training and generalises wrongly elsewhere", "Has too many goals", "Was given no goal"], "correct": 1, "why": "Distinct from specification gaming: here the training objective was fine, and what was learned transfers badly."}];</script>
+</main>
+<footer><div class="wrap">
+<span>a plain language map of what people mean when they talk about AI risk</span>
+<span>built by elizabeth beier &middot; sources on every claim</span>
+</div></footer>
+<script src="belle.js"></script>
+</body></html>

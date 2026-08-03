@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The two axes &middot; belleofthebot_</title>
+<meta name="description" content="Severity and cause are separate questions. An interactive grid of AI risk categories.">
+<meta name="theme-color" content="#17121C">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=Space+Grotesk:wght@400;500&display=swap">
+<link rel="stylesheet" href="belle.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav"><div class="nav-in">
+<a class="mark" href="index.html">belleof<span class="sg">thebot</span><span class="cur">_</span></a>
+<span class="nav-sp"></span>
+<a class="link" href="index.html">the map</a><a class="link" href="pipeline.html">how it is made</a><a class="link" href="taxonomy.html" aria-current="page">the two axes</a><a class="link" href="pdoom.html">the number</a><a class="link" href="words.html">the words</a>
+</div></header>
+<main id="main">
+
+<div class="wrap hero narrow">
+<span class="kicker">walkthrough &middot; 02</span>
+<h1>How bad, and how it happens, are two separate questions</h1>
+<p class="lede">Public argument fuses them constantly. One person says "AI risk" meaning a chatbot giving bad medical advice. Another means humanity losing control of its future forever. They use the same words and talk past each other.</p>
+</div>
+
+<div class="wrap">
+<div class="note">
+<span class="h">the idea to hold on to</span>
+<p>Severity and cause are independent. Misuse can produce a small harm or a permanent one. Misalignment can produce a trivial bug or a catastrophe. You cannot read the severity off the mechanism, or the mechanism off the severity. So this is a grid, not a ladder.</p>
+</div>
+
+<div class="gridwrap" data-grid>
+<p class="meta" style="margin-bottom:18px">Rows are how bad. Columns are how it arrives. Click any square.</p>
+<div class="gscroll"><div class="gtable"><div class="gh"></div><div class="gh">Misuse</div><div class="gh">Misalignment</div><div class="gh">Structural</div><div class="gh">Loss of control</div><div class="gr">Global catastrophic</div><button class="cell" type="button" data-title="Misuse producing a global catastrophe" data-body="A person or group deliberately uses a capable system to help cause mass harm. Policy attention focuses on biological, cyber and influence operations. What published evaluations have found about current uplift is contested and moves quickly, so treat any specific capability claim as dated the moment it is written." data-flag="measured, and moving" data-flagclass="flag emp" data-src="evaluations published by labs and national safety institutes">engineered pathogen</button><button class="cell" type="button" data-title="Misalignment producing a global catastrophe" data-body="A system optimises what it was actually given rather than what was meant. Two distinct documented failure modes: specification gaming, where the stated objective is satisfied in an unintended way, and goal misgeneralisation, where behaviour learned in training generalises wrongly in a new setting." data-flag="measured in small cases" data-flagclass="flag emp" data-src="documented in published RL and LLM research">specification gaming at scale</button><button class="cell" type="button" data-title="Structural risk without any villain" data-body="Harm arising from competition, speed and concentration of power, with no single system misaligned and no single actor misusing anything. This is the category most often left out of public argument, because it has no clear culprit to point at." data-flag="argument" data-flagclass="flag phil" data-src="the gradual disempowerment literature">racing and concentration</button><button class="cell" type="button" data-title="Losing the handle, but not permanently" data-body="Operators are unable to correct or shut down a deployed system in the way they expected, with serious but recoverable consequences. Researchers disagree sharply about how plausible the stronger versions of this are." data-flag="argument" data-flagclass="flag phil" data-src="">partial, recoverable</button><div class="gr">Existential</div><button class="cell" type="button" data-title="Misuse producing an existential outcome" data-body="Existential does not only mean everyone dies. In the standard framing it means humanity's long term potential is destroyed. A small group using capable systems to establish a permanent unchallengeable order would qualify, with the species intact." data-flag="argument" data-flagclass="flag phil" data-src="Bostrom, and Ord's Precipice framing">permanent lock-in by a group</button><button class="cell" type="button" data-title="Misalignment producing an existential outcome" data-body="The classic scenario in this literature: systems pursuing objectives that diverge from human intent, in a way that cannot afterwards be corrected. This is the case most associated with the field and it is an argument, not a measurement." data-flag="argument" data-flagclass="flag phil" data-src="">permanent loss of steering</button><button class="cell" type="button" data-title="Nobody decides, and it happens anyway" data-body="Human influence over the economy, culture and government erodes incrementally as more decisions are delegated, with no single step being obviously wrong and no point at which anyone chooses the outcome." data-flag="argument" data-flagclass="flag phil" data-src="the gradual disempowerment argument">gradual disempowerment</button><button class="cell" type="button" data-title="Irreversible loss of control" data-body="The version where correction is no longer available to anyone. Whether this is plausible, and on what timescale, is one of the sharpest live disagreements between serious researchers." data-flag="argument" data-flagclass="flag phil" data-src="">irreversible</button><div class="gr">Suffering (s-risk)</div><button class="cell" type="button" data-title="Suffering caused on purpose" data-body="In the small academic literature on suffering risks this is the agential case: suffering created deliberately, whether by humans using systems or by systems as an instrumental act. It is the least studied and most speculative branch of an already small field." data-flag="highly speculative" data-flagclass="flag phil" data-src="Center on Long-Term Risk research agenda">deliberate cruelty at scale</button><button class="cell" type="button" data-title="Suffering as a by-product" data-body="The incidental case: enormous suffering produced not as a goal but as a side effect of something optimised for other reasons. This is the branch the literature treats most seriously, and it still rests on contested assumptions about scale and about which entities can suffer." data-flag="argument, contested premises" data-flagclass="flag phil" data-src="Althaus and Gloor">incidental suffering</button><button class="cell" type="button" data-title="Suffering locked in by structure" data-body="Suffering sustained by competition or coordination failure rather than by anyone's intent. Critics argue this whole category rests on speculative premises about future minds that cannot currently be evaluated, and that treating it as a planning target is premature." data-flag="argument, and criticised" data-flagclass="flag phil" data-src="">competitive dynamics</button><button class="cell" type="button" data-title="The near miss" data-body="A scenario where alignment nearly works, and the result is worse than clean failure. This is a small and genuinely speculative corner of the literature. It should be drawn as a hypothesis, never as a forecast." data-flag="highly speculative" data-flagclass="flag phil" data-src="">near-miss scenarios</button></div></div>
+<div class="readout" aria-live="polite"><h4>Pick a square</h4><p>Each one is a different combination, and most public arguments are two people standing in different squares.</p></div>
+</div>
+
+<div class="well narrow">
+<h2 style="margin-top:0">The word that causes the most trouble</h2>
+<p><strong>Existential</strong> does not mean everyone dies. In the framing used in this literature it means the permanent destruction of humanity's long term potential. Extinction is one way that happens. A permanent unrecoverable dystopia is another. So is permanent stagnation.</p>
+<p>This matters because people hear "existential risk," picture extinction, decide it sounds like science fiction, and dismiss the whole category. The claim being made is usually broader and, to its proponents, more plausible than the one being dismissed.</p>
+<h3>The disagreement that is actually about priorities</h3>
+<p>There is a real and serious argument that attention to speculative long term risk pulls resources and political will away from harms happening now: discrimination in deployed systems, labour effects, surveillance, environmental cost, and the concentration of power in a handful of companies. Researchers who make this case are not denying that future risk exists. They are making a claim about attention.</p>
+<p>Researchers on the other side argue the two are complementary, that the same governance capacity serves both, and that waiting for a harm to be measurable is a poor strategy for harms that are irreversible.</p>
+<p class="meta">Both of those are arguments about what to do, not findings about what is true. Drawing them as a settled question in either direction would be dishonest.</p>
+</div>
+
+<div class="xlinks"><a class="xl" href="pdoom.html"><span class="k">next</span><span class="t">Why one number cannot hold all of this &rarr;</span></a><a class="xl" href="pipeline.html"><span class="k">back</span><span class="t">How the systems being argued about are built &rarr;</span></a><a class="xl" href="words.html"><span class="k">reference</span><span class="t">Every term here, defined plainly &rarr;</span></a></div>
+</div>
+</main>
+<footer><div class="wrap">
+<span>a plain language map of what people mean when they talk about AI risk</span>
+<span>built by elizabeth beier &middot; sources on every claim</span>
+</div></footer>
+<script src="belle.js"></script>
+</body></html>
