@@ -1,4 +1,7 @@
-# A plain language map of AI risk
+# whatthebot
+
+Plain language walkthroughs of things that are hard to see clearly.
+First up: what people actually mean when they argue about AI risk.
 
 Four interconnected walkthroughs that take apart the vocabulary people use when
 they argue about AI risk, show where the real disagreements are, and separate
