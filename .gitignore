@@ -6,3 +6,5 @@ __pycache__/
 node_modules/
 *.log
 assets/belle/_source/
+social/out/
+social/strips/

@@ -1,0 +1,529 @@
+# -*- coding: utf-8 -*-
+"""Generates belleofthebot carousels: 1080x1350, four categories, one spec per term.
+
+Add a term to SPECS and re-run. Slide grammar is fixed on purpose, so the feed
+reads as one series rather than seven separate design exercises:
+
+  1 hook      the misconception, struck through
+  2 quiz      four options, ask before you tell
+  3 reveal    the answer, with one diagram
+  4 unpack    three rows with icons, on ivory
+  5 why       why the confusion costs something
+  6 file it   which epistemic flag, and the source
+  7 follow    @belleofthebot
+
+Categories set the kicker on slide 1 and the accent on the category chip.
+"""
+import os, io, re
+
+OUT = os.path.dirname(os.path.abspath(__file__))
+PAGES = os.path.join(OUT, "pages")
+
+CATS = {
+    "basics":   "the basics",
+    "frontier": "who controls it",
+    "risk":     "the risk",
+    "argument": "arguments people state as fact",
+}
+
+# ---------------------------------------------------------------- chrome
+HEAD = """<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<title>carousel &middot; %(term)s</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap">
+<style>
+:root{
+  --ground:#17121C; --panel:#241D28; --rose:#DFA192; --mint:#9FE0CE; --well:#F5F1EC;
+  --well-rose:#AE5A47; --well-mint:#2E9B7F; --text:#F4F2EE; --line:#423748;
+  --meta:#B3A6BC; --faint:#8A7F93; --ink:#3A343E;
+  --sans:'Space Grotesk',sans-serif; --mono:'IBM Plex Mono',monospace;
+  --ic-rose:#DFA192; --ic-mint:#9FE0CE; --ic-dim:#8A7F93;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0d0a10;font-family:var(--sans);display:flex;flex-wrap:wrap;gap:26px;padding:26px}
+.s{width:1080px;height:1350px;background:var(--ground);color:var(--text);position:relative;
+   padding:104px 96px 120px;display:flex;flex-direction:column;overflow:hidden}
+.s.ivory{background:var(--well);color:var(--ink);--ic-rose:#AE5A47;--ic-mint:#2E9B7F;--ic-dim:#8B8090}
+.num{position:absolute;top:62px;right:76px;font-family:var(--mono);font-size:26px;color:var(--faint)}
+.ivory .num{color:#8B8090}
+.mark{position:absolute;bottom:62px;left:96px;font-family:var(--mono);font-size:28px;color:var(--rose)}
+.mark .sg{font-family:var(--sans);font-weight:500;color:var(--text)}
+.ivory .mark{color:var(--well-rose)} .ivory .mark .sg{color:var(--ink)}
+.chip{position:absolute;top:58px;left:96px;font-family:var(--mono);font-size:24px;
+      color:var(--rose);border:2px solid var(--well-rose);border-radius:999px;padding:7px 20px}
+.ivory .chip{color:var(--well-rose);border-color:#D8B3A8}
+.kick{font-family:var(--mono);font-size:30px;color:var(--meta);margin-bottom:30px;display:block}
+.ivory .kick{color:#6E6474}
+h1{font-size:104px;line-height:1.03;font-weight:500;letter-spacing:-.022em;max-width:660px}
+h1.sm{font-size:86px}
+h2{font-size:66px;line-height:1.1;font-weight:500;letter-spacing:-.015em}
+h2.sm{font-size:56px}
+p{font-size:40px;line-height:1.4;color:var(--meta);max-width:24ch}
+.ivory p{color:var(--ink)}
+.rose{color:var(--rose)} .ivory .rose{color:var(--well-rose)}
+.mid{flex:1;display:flex;flex-direction:column;justify-content:center}
+.belle{position:absolute;bottom:0;right:0;height:700px}
+.belle.sm{height:520px}
+.ico{display:inline-flex;align-items:center;gap:20px}
+.ico .tick{width:22px;height:3px;background:var(--ic-rose);border-radius:2px;flex:none}
+.ico .box{width:118px;height:118px;border:2px solid var(--line);border-radius:22px;flex:none;
+          display:flex;align-items:center;justify-content:center}
+.ivory .ico .box{border-color:#DCD2C6}
+.ico.hot .box{border-color:var(--ic-rose)}
+.ico svg{width:86px;height:86px}
+.ico.big .box{width:176px;height:176px;border-radius:30px}
+.ico.big svg{width:128px;height:128px}
+.opts{display:flex;flex-direction:column;gap:22px;margin-top:22px}
+.opt{border:2px solid var(--line);border-radius:18px;padding:26px 34px;font-size:36px;color:var(--text);
+     display:flex;gap:24px;align-items:center;line-height:1.25}
+.opt .k{font-family:var(--mono);font-size:30px;color:var(--faint);flex:none}
+.flag{display:inline-block;font-family:var(--mono);font-size:28px;padding:10px 24px;border-radius:999px;
+      border:2px solid var(--line);color:var(--faint)}
+.flag.on.emp{color:var(--mint);border-color:var(--mint)}
+.flag.on.op{color:var(--rose);border-color:var(--rose)}
+.flag.on.arg{color:#F4F2EE;border-color:#F4F2EE}
+.flag.on.def{color:#F4F2EE;border-color:#DFA192}
+.three{display:flex;flex-direction:column;gap:44px;margin-top:12px}
+.three .row{display:flex;gap:32px;align-items:center}
+.three .t{font-size:38px;line-height:1.28}
+.three .t b{font-weight:700;display:block;font-size:44px;margin-bottom:6px}
+.src{font-family:var(--mono);font-size:26px;color:var(--faint);line-height:1.6}
+.ivory .src{color:#8B8090}
+.strike{text-decoration:line-through;text-decoration-thickness:7px;text-decoration-color:var(--rose);opacity:.5}
+.handle{font-family:var(--mono);font-size:52px;color:var(--rose);letter-spacing:-.02em}
+.follow{border:2px solid var(--rose);border-radius:22px;padding:32px 40px;display:inline-flex;
+        flex-direction:column;gap:10px;align-self:flex-start}
+.follow .l{font-family:var(--mono);font-size:28px;color:var(--meta)}
+</style></head><body>
+"""
+
+ICONS = """
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<g id="i-branch">
+  <path d="M8 40 H26" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M26 40 C38 40 40 20 56 20" stroke="var(--ic-mint)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M50 15 L57 20 L50 25" stroke="var(--ic-mint)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M26 40 C38 40 40 52 48 52" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="5 5"/>
+  <path d="M52 47 L60 57 M60 47 L52 57" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="26" cy="40" r="3.4" fill="var(--ic-rose)"/>
+</g>
+<g id="i-stop">
+  <path d="M8 32 H34" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M40 24 L56 40 M56 24 L40 40" stroke="var(--ic-rose)" stroke-width="3.5" stroke-linecap="round"/>
+</g>
+<g id="i-loop">
+  <path d="M12 22 H40 A11 11 0 0 1 40 44 H22" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M29 38 L21 44 L29 50" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M50 16 L58 24 M58 16 L50 24" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+</g>
+<g id="i-flat">
+  <path d="M8 32 H56" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round" stroke-dasharray="7 6"/>
+  <path d="M8 46 H30" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M8 18 H30" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+</g>
+<g id="i-doc">
+  <path d="M18 12 H40 L48 20 V52 H18 Z" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-linejoin="round"/>
+  <path d="M26 26 H40 M26 34 H40" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M26 42 H36" stroke="var(--ic-mint)" stroke-width="3" stroke-linecap="round"/>
+</g>
+<g id="i-two">
+  <path d="M10 20 H28 M10 30 H24" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M36 40 H56 M40 50 H56" stroke="var(--ic-mint)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M30 25 H34 M30 45 H34" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+</g>
+<!-- text as fragments -->
+<g id="i-token">
+  <rect x="8" y="26" width="12" height="14" rx="4" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <rect x="24" y="26" width="16" height="14" rx="4" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <rect x="44" y="26" width="12" height="14" rx="4" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+</g>
+<!-- a window that slides, with text falling out the back -->
+<g id="i-window">
+  <rect x="20" y="16" width="34" height="32" rx="7" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <path d="M26 26 H48 M26 34 H44" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M14 26 H8 M14 34 H6" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 4"/>
+</g>
+<!-- a pile of numbers -->
+<g id="i-weights">
+  <path d="M10 22 H54 M10 32 H54 M10 42 H54" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="22" cy="22" r="4" fill="var(--ic-rose)"/>
+  <circle cx="40" cy="32" r="4" fill="var(--ic-rose)"/>
+  <circle cx="30" cy="42" r="4" fill="var(--ic-rose)"/>
+</g>
+<!-- confident and wrong -->
+<g id="i-wrong">
+  <rect x="12" y="18" width="40" height="28" rx="8" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <path d="M20 28 H44 M20 36 H36" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M44 44 L54 54 M54 44 L44 54" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+</g>
+<!-- a proxy, twice removed -->
+<g id="i-proxy">
+  <circle cx="12" cy="32" r="6" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <path d="M20 32 H28" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="34" cy="32" r="6" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <path d="M42 32 H50" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 4"/>
+  <circle cx="56" cy="32" r="6" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+</g>
+<!-- released, cannot be recalled -->
+<g id="i-release">
+  <rect x="8" y="22" width="20" height="20" rx="6" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <path d="M32 32 H50" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M44 26 L51 32 L44 38" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M50 46 H32" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 4"/>
+  <path d="M36 42 L31 46 L36 50" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity=".4"/>
+</g>
+<!-- the target hit, the point missed -->
+<g id="i-game">
+  <circle cx="32" cy="32" r="18" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <circle cx="32" cy="32" r="7" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <path d="M8 56 L52 20" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M46 18 L54 18 L54 26" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<!-- a person doing it on purpose -->
+<g id="i-hand">
+  <circle cx="32" cy="18" r="7" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <path d="M18 48 A14 14 0 0 1 46 48" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M14 54 H50" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+</g>
+<!-- nobody chose it -->
+<g id="i-drift">
+  <path d="M8 44 C20 44 22 24 34 24 C44 24 46 36 56 36" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M8 52 H56" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round" stroke-dasharray="5 5"/>
+</g>
+<!-- compounding loop -->
+<g id="i-compound">
+  <path d="M14 46 C22 46 24 34 32 34 C40 34 42 18 52 18" stroke="var(--ic-rose)" stroke-width="3"
+        fill="none" stroke-linecap="round" stroke-dasharray="6 5"/>
+  <path d="M46 13 L53 18 L46 23" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="14" cy="46" r="3.6" fill="var(--ic-dim)"/>
+</g>
+<!-- a test, and the thing the test stands for -->
+<g id="i-bench">
+  <rect x="10" y="18" width="20" height="28" rx="6" stroke="var(--ic-mint)" stroke-width="3" fill="none"/>
+  <path d="M16 28 H24 M16 36 H24" stroke="var(--ic-mint)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M36 32 H46" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 4"/>
+  <circle cx="54" cy="32" r="7" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-dasharray="4 4"/>
+</g>
+</defs></svg>
+"""
+
+MARK = '<span class="mark">belleof<span class="sg">thebot</span>_</span>'
+
+def _ico(name, big=False, hot=False):
+    cls = "ico" + (" big" if big else "") + (" hot" if hot else "")
+    return (f'<span class="{cls}"><span class="tick"></span><span class="box">'
+            f'<svg viewBox="0 0 64 64"><use href="#{name}"/></svg></span></span>')
+
+def _belle(slug, small=True):
+    return f'<img class="belle{" sm" if small else ""}" src="../../assets/belle/{slug}.webp" alt="">'
+
+def _slide(n, total, body, cat=None, ivory=False, belle=None, sid=""):
+    chip = f'<span class="chip">{CATS[cat]}</span>' if cat else ""
+    return (f'<div class="s{" ivory" if ivory else ""}" id="{sid}">'
+            f'{chip}<span class="num">{n} / {total}</span>'
+            f'<div class="mid">{body}</div>'
+            f'{_belle(belle) if belle else ""}{MARK}</div>\n')
+
+FLAGS = [("emp","measured"),("op","someone&rsquo;s estimate"),("arg","argument"),("def","definition")]
+
+def build(key, spec):
+    t = 7
+    s = []
+    # 1 hook
+    s.append(_slide(1, t,
+        f'<span class="kick">{spec["kick"]}</span>'
+        f'<h1 class="{spec.get("h1cls","")}">{spec["hook"]}</h1>',
+        cat=spec["cat"], belle=spec["belle_hook"], sid="s1"))
+    # 2 quiz
+    opts = "".join(f'<div class="opt"><span class="k">{k}</span>{o}</div>'
+                   for k, o in zip("ABCD", spec["opts"]))
+    s.append(_slide(2, t,
+        f'<span class="kick">before you swipe, pick one</span>'
+        f'<h2 style="margin-bottom:38px">{spec["q"]}</h2><div class="opts">{opts}</div>', sid="s2"))
+    # 3 reveal
+    s.append(_slide(3, t,
+        f'<span class="kick">it is {spec["ans"]}</span>'
+        f'<h2 class="{spec.get("revcls","")}" style="max-width:15ch;margin-bottom:52px">{spec["reveal"]}</h2>'
+        f'{_ico(spec["icon"], big=True, hot=True)}'
+        f'<p style="margin-top:38px">{spec["revsub"]}</p>', sid="s3"))
+    # 4 unpack, ivory
+    rows = "".join(f'<div class="row">{_ico(i)}<span class="t"><b>{ti}</b>{bo}</span></div>'
+                   for i, ti, bo in spec["three"])
+    s.append(_slide(4, t,
+        f'<span class="kick">{spec["threekick"]}</span><div class="three">{rows}</div>'
+        f'<p style="margin-top:52px;font-size:36px">{spec["threefoot"]}</p>',
+        ivory=True, sid="s4"))
+    # 5 why
+    s.append(_slide(5, t,
+        f'{_ico(spec["whyicon"])}<div style="height:44px"></div>'
+        f'<span class="kick">{spec["whykick"]}</span>'
+        f'<h2 class="sm" style="max-width:19ch">{spec["why"]}</h2>'
+        f'<p style="margin-top:38px">{spec["whysub"]}</p>', sid="s5"))
+    # 6 file it
+    chips = "".join(f'<span class="flag{" on "+c if c==spec["flag"] else ""} {c}">{lbl}</span> '
+                    for c, lbl in FLAGS)
+    s.append(_slide(6, t,
+        f'<span class="kick">how to file this one</span>'
+        f'<div style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:48px">{chips}</div>'
+        f'{_ico("i-doc")}<div style="height:40px"></div>'
+        f'<p style="max-width:17ch">{spec["file"]}</p>'
+        f'<p class="src" style="margin-top:40px">{spec["src"]}</p>',
+        belle=spec["belle_file"], sid="s6"))
+    # 7 follow
+    s.append(_slide(7, t,
+        f'<span class="kick">one word at a time</span>'
+        f'<h2 style="max-width:14ch;margin-bottom:44px">{spec["outro"]}</h2>'
+        f'<div class="follow"><span class="l">follow for the rest</span>'
+        f'<span class="handle">@belleofthebot</span></div>'
+        f'<p style="margin-top:44px;font-size:34px;max-width:20ch">Every claim marked measured, '
+        f'estimated or argued. Every source named.</p>',
+        belle=spec["belle_outro"], sid="s7"))
+
+    html = (HEAD % {"term": spec["term"]}) + ICONS + "".join(s) + "</body></html>"
+    if not os.path.isdir(PAGES): os.makedirs(PAGES)
+    p = os.path.join(PAGES, key + ".html")
+    io.open(p, "w", encoding="utf-8").write(html)
+    return p
+
+
+SPECS = {
+
+# ============================================================ THE BASICS
+"hallucination": dict(
+  cat="basics", term="hallucination",
+  kick="the word that lets it off the hook",
+  hook='It is not <span class="strike">seeing things</span>. It has nothing to see.',
+  q="A hallucination is:",
+  opts=["A glitch or a bug in the code",
+        "Confidently stated output that is not true",
+        "The model getting confused by a hard question",
+        "A sign the model is overloaded"],
+  ans="B", icon="i-wrong",
+  reveal='Confidently stated output that <span class="rose">is not true</span>.',
+  revsub="Not a malfunction. The same machinery that produces the right answers produces this one.",
+  threekick="why it happens at all",
+  three=[("i-token","It predicts.","The next fragment, over and over. Plausible is the target, not true."),
+         ("i-weights","It has no ledger.","There is no stored list of facts to check an answer against."),
+         ("i-bench","It cannot tell.","Nothing in it distinguishes a thing it knows from a thing it made up.")],
+  threefoot="Which is why it sounds exactly as confident either way.",
+  whyicon="i-two", whykick="why the word is disputed",
+  why='Some researchers prefer <span class="rose">confabulation</span>. Others say any such word implies a mind that was trying to get it right.',
+  whysub="The practical version: never accept an answer you could not check, on a subject you could not correct.",
+  flag="def",
+  file='A <span class="rose">definition</span>, and a contested one. The behaviour is measured. The name for it is argued about.',
+  src="Anthropic and OpenAI model documentation;<br>terminology disputed across the literature",
+  belle_hook="annoyed-skeptical", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"context-window": dict(
+  cat="basics", term="context window",
+  kick="the most common wrong assumption",
+  hook="It does not <span class=\"strike\">remember you</span>.",
+  q="A model&rsquo;s context window is:",
+  opts=["Its memory of your past conversations",
+        "How much text it can hold in front of it at once",
+        "The hours the service is available",
+        "The size of its training data"],
+  ans="B", icon="i-window",
+  reveal='How much text it can hold <span class="rose">in front of it</span> at once.',
+  revsub="Everything outside that window is gone. Not forgotten. Never held.",
+  threekick="what that actually means",
+  three=[("i-window","One conversation.","Scroll far enough and the beginning falls out the back."),
+         ("i-weights","Nothing personal.","Between chats it retains nothing about you at all."),
+         ("i-doc","Unless a product stores it.","Any memory you experience was built around the model, not by it.")],
+  threefoot="The intimacy is real. The remembering is not.",
+  whyicon="i-proxy", whykick="why it matters",
+  why="People tell these systems things they would not tell a search engine, on the assumption that something is <span class=\"rose\">keeping track</span>.",
+  whysub="Something might be. It just is not the model. Worth knowing which product does what.",
+  flag="def",
+  file='A <span class="rose">definition</span>. How a given product handles memory is a separate, checkable question.',
+  src="Model documentation from each provider;<br>behaviour differs by product, not by model",
+  belle_hook="innocent-curious", belle_file="warm-neutral", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"rlhf": dict(
+  cat="basics", term="RLHF",
+  kick="how it learned to behave",
+  hook="It was not taught <span class=\"strike\">human values</span>.",
+  q="Reinforcement learning from human feedback trains the model against:",
+  opts=["Human values",
+        "A learned scorer built from human comparisons",
+        "A rulebook of laws",
+        "Its own previous answers"],
+  ans="B", icon="i-proxy",
+  reveal='A <span class="rose">scorer</span>, built from people comparing pairs of answers.',
+  revsub="People compare. Those comparisons train a second model. That second model trains the first.",
+  threekick="a proxy, twice removed",
+  three=[("i-hand","People compare.","Which of these two answers is better. Nothing grander than that."),
+         ("i-proxy","A scorer learns.","A second model learns to predict those preferences."),
+         ("i-game","The first model optimises.","Against the scorer. Not against people, and not against truth.")],
+  threefoot="Every gap between those three is somewhere behaviour can drift.",
+  whyicon="i-game", whykick="why the distinction is not pedantic",
+  why="If you optimise hard against a proxy, you get whatever <span class=\"rose\">scores well</span>, which is not always what was wanted.",
+  whysub="This is why models can be agreeable rather than correct. Agreeable rates well.",
+  flag="emp",
+  file='<span class="rose">Measured</span>. The pipeline is documented in published papers with figures.',
+  src="Ouyang et al., InstructGPT, 2022;<br>Bai et al., Constitutional AI, Anthropic, 2022",
+  belle_hook="noticed-something", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+# ============================================================ THE FRONTIER
+"open-weights": dict(
+  cat="frontier", term="open weights",
+  kick="the release that cannot be undone",
+  hook="Open weights is not <span class=\"strike\">open source</span>.",
+  q="&ldquo;Open weights&rdquo; means:",
+  opts=["The training data and code are public",
+        "The trained weights can be downloaded and run by anyone",
+        "The company is publicly traded",
+        "The model has no safeguards at all"],
+  ans="B", icon="i-release",
+  reveal='The <span class="rose">weights</span> are published. Usually nothing else is.',
+  revsub="You can download and run it. You still cannot see what it was trained on.",
+  threekick="three things that follow",
+  three=[("i-release","It cannot be recalled.","Once the file is out, every copy is out. There is no undo."),
+         ("i-stop","Safeguards come off.","Refusal behaviour can be removed cheaply by anyone who has it."),
+         ("i-doc","Not the same as open.","Training data and code usually stay private. The name oversells it.")],
+  threefoot="Which is why the release decision is the safety decision.",
+  whyicon="i-two", whykick="why serious people disagree here",
+  why="Open weights give researchers real access and break up concentration. They also hand capability to <span class=\"rose\">everyone at once</span>.",
+  whysub="Both of those are true at the same time, and that is the whole difficulty.",
+  flag="def",
+  file='A <span class="rose">definition</span>. What follows from it is argued, and the argument is a good one on both sides.',
+  src="UK AI Security Institute on safeguard removal;<br>lab release notes for each open weight model",
+  belle_hook="unimpressed", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"compute": dict(
+  cat="frontier", term="compute",
+  kick="the unit that decides who is allowed",
+  hook="The law now counts in <span class=\"rose\">arithmetic</span>.",
+  q="&ldquo;Compute&rdquo; in AI regulation is measured in:",
+  opts=["Dollars spent","Floating point operations",
+        "Number of employees","Gigabytes of training data"],
+  ans="B", icon="i-weights",
+  reveal='<span class="rose">Floating point operations.</span> How much arithmetic the training run did.',
+  revsub="An odd thing to write into law, and currently the best proxy anyone has.",
+  threekick="the numbers that matter",
+  three=[("i-doc","Ten to the 25.","Above this, Europe presumes a model carries systemic risk."),
+         ("i-doc","Ten to the 26.","Above this, California calls it a frontier model."),
+         ("i-weights","Twelve developers.","Had trained above the European line, as of June 2025.")],
+  threefoot="A whole regulatory regime hanging off one arithmetic count.",
+  whyicon="i-bench", whykick="why it is a strange choice",
+  why="Compute is easy to count and only loosely related to whether a model is actually <span class=\"rose\">dangerous</span>.",
+  whysub="It was chosen because it is measurable and hard to hide, not because it is the right thing to measure.",
+  flag="emp",
+  file='<span class="rose">Measured</span>, and written into statute. The thresholds are quotable exactly.',
+  src="EU AI Act Article 51; California SB 53;<br>Epoch AI, models above 10^25 FLOP, June 2025",
+  belle_hook="hands-hips-pedantic", belle_file="warm-neutral", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+# ============================================================ THE RISK
+"specification-gaming": dict(
+  cat="risk", term="specification gaming",
+  kick="when doing what you asked is the problem",
+  hook="It did exactly what you <span class=\"rose\">said</span>.",
+  q="Specification gaming is when a system:",
+  opts=["Refuses to answer a question",
+        "Satisfies the objective it was given in a way nobody intended",
+        "Invents a fact","Runs out of memory"],
+  ans="B", icon="i-game",
+  reveal='It meets the objective. It <span class="rose">misses the point</span>.',
+  revsub="The optimiser did not fail. The instruction did.",
+  threekick="documented, not hypothetical",
+  three=[("i-game","Hit the target.","The stated goal is genuinely achieved, every time."),
+         ("i-drift","Miss the intent.","By a route the person writing the goal never pictured."),
+         ("i-doc","Written down.","DeepMind keeps a running list of real observed examples.")],
+  threefoot="Nobody had to be malicious for any of this.",
+  whyicon="i-proxy", whykick="why this is the load bearing one",
+  why="Almost every serious worry about advanced systems is this, at a scale where you <span class=\"rose\">cannot correct it afterwards</span>.",
+  whysub="Not a machine turning on you. A machine doing precisely what was written down.",
+  flag="emp",
+  file='<span class="rose">Measured</span>. These are logged, reproducible behaviours, not thought experiments.',
+  src="Krakovna et al., Specification gaming,<br>DeepMind, 2020, with the compiled example list",
+  belle_hook="sly-one", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"misuse-misalignment": dict(
+  cat="risk", term="misuse and misalignment",
+  kick="two words people use as one",
+  hook="Who is the <span class=\"rose\">problem</span> here?",
+  q="&ldquo;Misalignment&rdquo; means:",
+  opts=["Someone using a system to cause harm on purpose",
+        "A system pursuing something other than what was intended",
+        "A system that has broken down",
+        "A system that refuses instructions"],
+  ans="B", icon="i-drift",
+  reveal='The system pursues <span class="rose">something other</span> than what was intended.',
+  revsub="No villain required. That is the entire difference from misuse.",
+  threekick="three ways harm arrives",
+  three=[("i-hand","Misuse.","A person deliberately uses a capable system to do damage."),
+         ("i-drift","Misalignment.","The system pursues something other than what was meant."),
+         ("i-loop","Structural.","Nobody misused it, nothing malfunctioned, and it still went badly.")],
+  threefoot="The third is the one almost no coverage has a word for.",
+  whyicon="i-two", whykick="why the mix up wrecks the argument",
+  why="Two people say &ldquo;AI risk&rdquo;. One means a bad actor. One means <span class=\"rose\">no actor at all</span>.",
+  whysub="They will talk past each other indefinitely, and both will think the other is being naive.",
+  flag="def",
+  file='<span class="rose">Definitions</span>. The categories are standard. Which one dominates is argued.',
+  src="Zwetsloot and Dafoe, Accidents, Misuse<br>and Structure, Lawfare, 11 February 2019",
+  belle_hook="warm-curious", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+# ============================================================ ARGUMENTS
+"recursive-self-improvement": dict(
+  cat="argument", term="recursive self improvement",
+  kick="stated as fact roughly daily",
+  hook="Nobody has <span class=\"strike\">seen this happen</span>.",
+  q="&ldquo;Recursive self improvement&rdquo; is:",
+  opts=["A measured property of current models",
+        "A hypothesis about a compounding loop, not yet demonstrated",
+        "A training technique every lab uses",
+        "A type of chip"],
+  ans="B", icon="i-compound",
+  reveal='A <span class="rose">hypothesis</span>. A system good at AI research improves itself, and each version is better at improving.',
+  revsub="It may turn out to be right. It has not been observed.",
+  threekick="what would have to be true",
+  three=[("i-compound","The loop must close.","The system has to actually improve its own successor."),
+         ("i-branch","Gains must compound.","Each round has to yield more than the last, not less."),
+         ("i-flat","Nothing must bottleneck.","Not compute, not data, not physics, not money.")],
+  threefoot="Each of those is disputed in the peer reviewed literature.",
+  whyicon="i-doc", whykick="why the flag matters here",
+  why="This is repeated in headlines as though it were a <span class=\"rose\">finding</span>. It is a chain of arguments.",
+  whysub="You can take it seriously and still insist it be labelled correctly. Most of the field does both.",
+  flag="arg",
+  file='An <span class="rose">argument</span>. Not measured, not a forecast with a track record. Reasoned.',
+  src="Thorstad, Against the singularity hypothesis,<br>Philosophical Studies, 2024, for the case against",
+  belle_hook="deadpan-annoyed-1", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"intelligence": dict(
+  cat="argument", term="intelligence",
+  kick="the word doing the most hidden work",
+  hook="Nobody can define it. For <span class=\"rose\">people</span> either.",
+  q="When someone says an AI is &ldquo;intelligent&rdquo;, they usually mean:",
+  opts=["It is conscious",
+        "It scores well on a set of tests",
+        "It understands the world",
+        "It can feel things"],
+  ans="B", icon="i-bench",
+  reveal='It <span class="rose">scores well on tests</span>. That is nearly always the whole claim.',
+  revsub="Measurable, narrow, and much smaller than the word suggests.",
+  threekick="the state of the definition",
+  three=[("i-doc","Seventy definitions.","Legg and Hutter collected around seventy in 2007."),
+         ("i-flat","No convergence.","The field has not agreed on one in the years since."),
+         ("i-bench","So tests stand in.","And test scores drift for reasons other than capability.")],
+  threefoot="Every claim about machine intelligence rests on that substitution.",
+  whyicon="i-two", whykick="watch for the slide",
+  why="A claim about a <span class=\"rose\">benchmark score</span> gets restated as a claim about a mind, usually within one sentence.",
+  whysub="Both sides do it. Boosters slide up, sceptics slide down. Notice the moment it happens.",
+  flag="arg",
+  file='An <span class="rose">argument</span> wearing a measurement&rsquo;s clothes. The score is real. The word is not settled.',
+  src="Legg and Hutter, A Collection of Definitions<br>of Intelligence, 2007",
+  belle_hook="unimpressed", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+}
+
+if __name__ == "__main__":
+    for k, v in SPECS.items():
+        print(build(k, v))
+    print(f"{len(SPECS)} carousels, {len(SPECS)*7} slides")

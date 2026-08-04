@@ -1,0 +1,183 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<title>carousel &middot; compute</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap">
+<style>
+:root{
+  --ground:#17121C; --panel:#241D28; --rose:#DFA192; --mint:#9FE0CE; --well:#F5F1EC;
+  --well-rose:#AE5A47; --well-mint:#2E9B7F; --text:#F4F2EE; --line:#423748;
+  --meta:#B3A6BC; --faint:#8A7F93; --ink:#3A343E;
+  --sans:'Space Grotesk',sans-serif; --mono:'IBM Plex Mono',monospace;
+  --ic-rose:#DFA192; --ic-mint:#9FE0CE; --ic-dim:#8A7F93;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0d0a10;font-family:var(--sans);display:flex;flex-wrap:wrap;gap:26px;padding:26px}
+.s{width:1080px;height:1350px;background:var(--ground);color:var(--text);position:relative;
+   padding:104px 96px 120px;display:flex;flex-direction:column;overflow:hidden}
+.s.ivory{background:var(--well);color:var(--ink);--ic-rose:#AE5A47;--ic-mint:#2E9B7F;--ic-dim:#8B8090}
+.num{position:absolute;top:62px;right:76px;font-family:var(--mono);font-size:26px;color:var(--faint)}
+.ivory .num{color:#8B8090}
+.mark{position:absolute;bottom:62px;left:96px;font-family:var(--mono);font-size:28px;color:var(--rose)}
+.mark .sg{font-family:var(--sans);font-weight:500;color:var(--text)}
+.ivory .mark{color:var(--well-rose)} .ivory .mark .sg{color:var(--ink)}
+.chip{position:absolute;top:58px;left:96px;font-family:var(--mono);font-size:24px;
+      color:var(--rose);border:2px solid var(--well-rose);border-radius:999px;padding:7px 20px}
+.ivory .chip{color:var(--well-rose);border-color:#D8B3A8}
+.kick{font-family:var(--mono);font-size:30px;color:var(--meta);margin-bottom:30px;display:block}
+.ivory .kick{color:#6E6474}
+h1{font-size:104px;line-height:1.03;font-weight:500;letter-spacing:-.022em;max-width:660px}
+h1.sm{font-size:86px}
+h2{font-size:66px;line-height:1.1;font-weight:500;letter-spacing:-.015em}
+h2.sm{font-size:56px}
+p{font-size:40px;line-height:1.4;color:var(--meta);max-width:24ch}
+.ivory p{color:var(--ink)}
+.rose{color:var(--rose)} .ivory .rose{color:var(--well-rose)}
+.mid{flex:1;display:flex;flex-direction:column;justify-content:center}
+.belle{position:absolute;bottom:0;right:0;height:700px}
+.belle.sm{height:520px}
+.ico{display:inline-flex;align-items:center;gap:20px}
+.ico .tick{width:22px;height:3px;background:var(--ic-rose);border-radius:2px;flex:none}
+.ico .box{width:118px;height:118px;border:2px solid var(--line);border-radius:22px;flex:none;
+          display:flex;align-items:center;justify-content:center}
+.ivory .ico .box{border-color:#DCD2C6}
+.ico.hot .box{border-color:var(--ic-rose)}
+.ico svg{width:86px;height:86px}
+.ico.big .box{width:176px;height:176px;border-radius:30px}
+.ico.big svg{width:128px;height:128px}
+.opts{display:flex;flex-direction:column;gap:22px;margin-top:22px}
+.opt{border:2px solid var(--line);border-radius:18px;padding:26px 34px;font-size:36px;color:var(--text);
+     display:flex;gap:24px;align-items:center;line-height:1.25}
+.opt .k{font-family:var(--mono);font-size:30px;color:var(--faint);flex:none}
+.flag{display:inline-block;font-family:var(--mono);font-size:28px;padding:10px 24px;border-radius:999px;
+      border:2px solid var(--line);color:var(--faint)}
+.flag.on.emp{color:var(--mint);border-color:var(--mint)}
+.flag.on.op{color:var(--rose);border-color:var(--rose)}
+.flag.on.arg{color:#F4F2EE;border-color:#F4F2EE}
+.flag.on.def{color:#F4F2EE;border-color:#DFA192}
+.three{display:flex;flex-direction:column;gap:44px;margin-top:12px}
+.three .row{display:flex;gap:32px;align-items:center}
+.three .t{font-size:38px;line-height:1.28}
+.three .t b{font-weight:700;display:block;font-size:44px;margin-bottom:6px}
+.src{font-family:var(--mono);font-size:26px;color:var(--faint);line-height:1.6}
+.ivory .src{color:#8B8090}
+.strike{text-decoration:line-through;text-decoration-thickness:7px;text-decoration-color:var(--rose);opacity:.5}
+.handle{font-family:var(--mono);font-size:52px;color:var(--rose);letter-spacing:-.02em}
+.follow{border:2px solid var(--rose);border-radius:22px;padding:32px 40px;display:inline-flex;
+        flex-direction:column;gap:10px;align-self:flex-start}
+.follow .l{font-family:var(--mono);font-size:28px;color:var(--meta)}
+</style></head><body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<g id="i-branch">
+  <path d="M8 40 H26" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M26 40 C38 40 40 20 56 20" stroke="var(--ic-mint)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M50 15 L57 20 L50 25" stroke="var(--ic-mint)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M26 40 C38 40 40 52 48 52" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="5 5"/>
+  <path d="M52 47 L60 57 M60 47 L52 57" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="26" cy="40" r="3.4" fill="var(--ic-rose)"/>
+</g>
+<g id="i-stop">
+  <path d="M8 32 H34" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M40 24 L56 40 M56 24 L40 40" stroke="var(--ic-rose)" stroke-width="3.5" stroke-linecap="round"/>
+</g>
+<g id="i-loop">
+  <path d="M12 22 H40 A11 11 0 0 1 40 44 H22" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M29 38 L21 44 L29 50" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M50 16 L58 24 M58 16 L50 24" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+</g>
+<g id="i-flat">
+  <path d="M8 32 H56" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round" stroke-dasharray="7 6"/>
+  <path d="M8 46 H30" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M8 18 H30" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+</g>
+<g id="i-doc">
+  <path d="M18 12 H40 L48 20 V52 H18 Z" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-linejoin="round"/>
+  <path d="M26 26 H40 M26 34 H40" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M26 42 H36" stroke="var(--ic-mint)" stroke-width="3" stroke-linecap="round"/>
+</g>
+<g id="i-two">
+  <path d="M10 20 H28 M10 30 H24" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M36 40 H56 M40 50 H56" stroke="var(--ic-mint)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M30 25 H34 M30 45 H34" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+</g>
+<!-- text as fragments -->
+<g id="i-token">
+  <rect x="8" y="26" width="12" height="14" rx="4" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <rect x="24" y="26" width="16" height="14" rx="4" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <rect x="44" y="26" width="12" height="14" rx="4" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+</g>
+<!-- a window that slides, with text falling out the back -->
+<g id="i-window">
+  <rect x="20" y="16" width="34" height="32" rx="7" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <path d="M26 26 H48 M26 34 H44" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M14 26 H8 M14 34 H6" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 4"/>
+</g>
+<!-- a pile of numbers -->
+<g id="i-weights">
+  <path d="M10 22 H54 M10 32 H54 M10 42 H54" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="22" cy="22" r="4" fill="var(--ic-rose)"/>
+  <circle cx="40" cy="32" r="4" fill="var(--ic-rose)"/>
+  <circle cx="30" cy="42" r="4" fill="var(--ic-rose)"/>
+</g>
+<!-- confident and wrong -->
+<g id="i-wrong">
+  <rect x="12" y="18" width="40" height="28" rx="8" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <path d="M20 28 H44 M20 36 H36" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M44 44 L54 54 M54 44 L44 54" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+</g>
+<!-- a proxy, twice removed -->
+<g id="i-proxy">
+  <circle cx="12" cy="32" r="6" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <path d="M20 32 H28" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="34" cy="32" r="6" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <path d="M42 32 H50" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 4"/>
+  <circle cx="56" cy="32" r="6" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+</g>
+<!-- released, cannot be recalled -->
+<g id="i-release">
+  <rect x="8" y="22" width="20" height="20" rx="6" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <path d="M32 32 H50" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M44 26 L51 32 L44 38" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M50 46 H32" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 4"/>
+  <path d="M36 42 L31 46 L36 50" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity=".4"/>
+</g>
+<!-- the target hit, the point missed -->
+<g id="i-game">
+  <circle cx="32" cy="32" r="18" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <circle cx="32" cy="32" r="7" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <path d="M8 56 L52 20" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M46 18 L54 18 L54 26" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<!-- a person doing it on purpose -->
+<g id="i-hand">
+  <circle cx="32" cy="18" r="7" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <path d="M18 48 A14 14 0 0 1 46 48" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M14 54 H50" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+</g>
+<!-- nobody chose it -->
+<g id="i-drift">
+  <path d="M8 44 C20 44 22 24 34 24 C44 24 46 36 56 36" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M8 52 H56" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round" stroke-dasharray="5 5"/>
+</g>
+<!-- compounding loop -->
+<g id="i-compound">
+  <path d="M14 46 C22 46 24 34 32 34 C40 34 42 18 52 18" stroke="var(--ic-rose)" stroke-width="3"
+        fill="none" stroke-linecap="round" stroke-dasharray="6 5"/>
+  <path d="M46 13 L53 18 L46 23" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="14" cy="46" r="3.6" fill="var(--ic-dim)"/>
+</g>
+<!-- a test, and the thing the test stands for -->
+<g id="i-bench">
+  <rect x="10" y="18" width="20" height="28" rx="6" stroke="var(--ic-mint)" stroke-width="3" fill="none"/>
+  <path d="M16 28 H24 M16 36 H24" stroke="var(--ic-mint)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M36 32 H46" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 4"/>
+  <circle cx="54" cy="32" r="7" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-dasharray="4 4"/>
+</g>
+</defs></svg>
+<div class="s" id="s1"><span class="chip">who controls it</span><span class="num">1 / 7</span><div class="mid"><span class="kick">the unit that decides who is allowed</span><h1 class="">The law now counts in <span class="rose">arithmetic</span>.</h1></div><img class="belle sm" src="../../assets/belle/hands-hips-pedantic.webp" alt=""><span class="mark">belleof<span class="sg">thebot</span>_</span></div>
+<div class="s" id="s2"><span class="num">2 / 7</span><div class="mid"><span class="kick">before you swipe, pick one</span><h2 style="margin-bottom:38px">&ldquo;Compute&rdquo; in AI regulation is measured in:</h2><div class="opts"><div class="opt"><span class="k">A</span>Dollars spent</div><div class="opt"><span class="k">B</span>Floating point operations</div><div class="opt"><span class="k">C</span>Number of employees</div><div class="opt"><span class="k">D</span>Gigabytes of training data</div></div></div><span class="mark">belleof<span class="sg">thebot</span>_</span></div>
+<div class="s" id="s3"><span class="num">3 / 7</span><div class="mid"><span class="kick">it is B</span><h2 class="" style="max-width:15ch;margin-bottom:52px"><span class="rose">Floating point operations.</span> How much arithmetic the training run did.</h2><span class="ico big hot"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-weights"/></svg></span></span><p style="margin-top:38px">An odd thing to write into law, and currently the best proxy anyone has.</p></div><span class="mark">belleof<span class="sg">thebot</span>_</span></div>
+<div class="s ivory" id="s4"><span class="num">4 / 7</span><div class="mid"><span class="kick">the numbers that matter</span><div class="three"><div class="row"><span class="ico"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-doc"/></svg></span></span><span class="t"><b>Ten to the 25.</b>Above this, Europe presumes a model carries systemic risk.</span></div><div class="row"><span class="ico"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-doc"/></svg></span></span><span class="t"><b>Ten to the 26.</b>Above this, California calls it a frontier model.</span></div><div class="row"><span class="ico"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-weights"/></svg></span></span><span class="t"><b>Twelve developers.</b>Had trained above the European line, as of June 2025.</span></div></div><p style="margin-top:52px;font-size:36px">A whole regulatory regime hanging off one arithmetic count.</p></div><span class="mark">belleof<span class="sg">thebot</span>_</span></div>
+<div class="s" id="s5"><span class="num">5 / 7</span><div class="mid"><span class="ico"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-bench"/></svg></span></span><div style="height:44px"></div><span class="kick">why it is a strange choice</span><h2 class="sm" style="max-width:19ch">Compute is easy to count and only loosely related to whether a model is actually <span class="rose">dangerous</span>.</h2><p style="margin-top:38px">It was chosen because it is measurable and hard to hide, not because it is the right thing to measure.</p></div><span class="mark">belleof<span class="sg">thebot</span>_</span></div>
+<div class="s" id="s6"><span class="num">6 / 7</span><div class="mid"><span class="kick">how to file this one</span><div style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:48px"><span class="flag on emp emp">measured</span> <span class="flag op">someone&rsquo;s estimate</span> <span class="flag arg">argument</span> <span class="flag def">definition</span> </div><span class="ico"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-doc"/></svg></span></span><div style="height:40px"></div><p style="max-width:17ch"><span class="rose">Measured</span>, and written into statute. The thresholds are quotable exactly.</p><p class="src" style="margin-top:40px">EU AI Act Article 51; California SB 53;<br>Epoch AI, models above 10^25 FLOP, June 2025</p></div><img class="belle sm" src="../../assets/belle/warm-neutral.webp" alt=""><span class="mark">belleof<span class="sg">thebot</span>_</span></div>
+<div class="s" id="s7"><span class="num">7 / 7</span><div class="mid"><span class="kick">one word at a time</span><h2 style="max-width:14ch;margin-bottom:44px">I take the words apart so the argument stops being noise.</h2><div class="follow"><span class="l">follow for the rest</span><span class="handle">@belleofthebot</span></div><p style="margin-top:44px;font-size:34px;max-width:20ch">Every claim marked measured, estimated or argued. Every source named.</p></div><img class="belle sm" src="../../assets/belle/hands-out-cheeky.webp" alt=""><span class="mark">belleof<span class="sg">thebot</span>_</span></div>
+</body></html>

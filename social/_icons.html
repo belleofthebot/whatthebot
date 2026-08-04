@@ -1,0 +1,54 @@
+<!-- Belle diagram icon language, extracted from the portfolio process pages.
+     Rules: rounded container, 2px strokes, round caps, rose is the subject,
+     mint is the good path, dashes are the failed or hypothetical path,
+     a short rose tick sits to the left of every icon. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+
+<!-- branching futures: mint continues, rose dashed ends in x -->
+<g id="i-branch">
+  <path d="M8 40 H26" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M26 40 C38 40 40 20 56 20" stroke="var(--ic-mint)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M50 15 L57 20 L50 25" stroke="var(--ic-mint)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M26 40 C38 40 40 52 50 52" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="5 5"/>
+  <path d="M52 47 L60 57 M60 47 L52 57" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="26" cy="40" r="3.4" fill="var(--ic-rose)"/>
+</g>
+
+<!-- extinction: a line that simply stops -->
+<g id="i-stop">
+  <path d="M8 32 H34" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M40 24 L56 40 M56 24 L40 40" stroke="var(--ic-rose)" stroke-width="3.5" stroke-linecap="round"/>
+</g>
+
+<!-- permanent dystopia: a loop with no exit -->
+<g id="i-loop">
+  <path d="M20 22 H44 A10 10 0 0 1 44 42 H20 A10 10 0 0 0 20 22 Z"
+        stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linejoin="round"/>
+  <path d="M26 48 H38" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="32" cy="32" r="3.4" fill="var(--ic-rose)"/>
+</g>
+
+<!-- permanent stagnation: flat forever -->
+<g id="i-flat">
+  <path d="M8 32 H56" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round" stroke-dasharray="7 6"/>
+  <path d="M8 46 H30" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M8 18 H30" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+</g>
+
+<!-- a definition, not a finding: document with a marked line -->
+<g id="i-doc">
+  <path d="M18 12 H40 L48 20 V52 H18 Z" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-linejoin="round"/>
+  <path d="M26 26 H40 M26 34 H40" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M26 42 H36" stroke="var(--ic-mint)" stroke-width="3" stroke-linecap="round"/>
+</g>
+
+<!-- two people, two meanings -->
+<g id="i-two">
+  <path d="M10 20 H28 M10 30 H24" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M36 40 H56 M40 50 H56" stroke="var(--ic-mint)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M30 25 H34 M30 45 H34" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+</g>
+
+</defs>
+</svg>
