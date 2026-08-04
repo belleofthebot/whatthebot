@@ -893,7 +893,7 @@ def caption(key, spec):
     L.append(strip(spec["revsub"]))
     L.append("")
     for _i, t, b in spec["three"]:
-        L.append(f"\u2014 {strip(t)} {strip(b)}")
+        L.append(f"- {strip(t)} {strip(b)}")
     L.append("")
     L.append(strip(spec["why"]))
     L.append(strip(spec["whysub"]))

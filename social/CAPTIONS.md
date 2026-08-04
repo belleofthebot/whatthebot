@@ -12,9 +12,9 @@ AI does not remember you.
 
 Everything outside that window is gone. Not forgotten. Never held.
 
-— One conversation. Scroll far enough and the beginning falls out the back.
-— Nothing personal. Between chats it retains nothing about you at all.
-— Unless a product stores it. Any memory you experience was built around the model, not by it.
+- One conversation. Scroll far enough and the beginning falls out the back.
+- Nothing personal. Between chats it retains nothing about you at all.
+- Unless a product stores it. Any memory you experience was built around the model, not by it.
 
 People tell these systems things they would not tell a search engine, on the assumption that something is keeping track.
 Something might be. It just is not the model. Worth knowing which product does what.
@@ -43,9 +43,9 @@ Nvidia designs the world’s AI chips. Nvidia does not build them.
 
 The company holding most of the world’s AI compute owns no fabs at all.
 
-— Nvidia designs. Over 60 percent of global AI compute runs on its chips.
-— TSMC manufactures. 77 percent of its wafer revenue comes from the most advanced nodes.
-— ASML makes the machine. The only maker on earth of the lithography TSMC needs.
+- Nvidia designs. Over 60 percent of global AI compute runs on its chips.
+- TSMC manufactures. 77 percent of its wafer revenue comes from the most advanced nodes.
+- ASML makes the machine. The only maker on earth of the lithography TSMC needs.
 
 Arguments about AI usually name the labs. The narrowest point in the whole system is a Dutch equipment maker most people have never heard of.
 Each machine weighs about 180 tonnes and is roughly the size of a school bus.
@@ -74,9 +74,9 @@ An AI hallucination is not a glitch.
 
 Not a malfunction. The same machinery that produces the right answers produces this one.
 
-— It predicts. The next fragment, over and over. Plausible is the target, not true.
-— It has no ledger. There is no stored list of facts to check an answer against.
-— It cannot tell. Nothing in it distinguishes a thing it knows from a thing it made up.
+- It predicts. The next fragment, over and over. Plausible is the target, not true.
+- It has no ledger. There is no stored list of facts to check an answer against.
+- It cannot tell. Nothing in it distinguishes a thing it knows from a thing it made up.
 
 Some researchers prefer confabulation. Others say any such word implies a mind that was trying to get it right.
 The practical version: never accept an answer you could not check, on a subject you could not correct.
@@ -105,9 +105,9 @@ Helped invent modern AI. Now works on the risks.
 
 Backed by more than thirty governments, written by over a hundred experts, and it will not put a figure on it.
 
-— Set out the structure. His 2023 FAQ builds a framework, then leaves the probabilities blank.
-— Poll, do not guess. He proposes the numbers come from many experts rather than from him.
-— Threshold, not forecast. His argument is that even a small chance of an unrecoverable outcome warrants acting.
+- Set out the structure. His 2023 FAQ builds a framework, then leaves the probabilities blank.
+- Poll, do not guess. He proposes the numbers come from many experts rather than from him.
+- Threshold, not forecast. His argument is that even a small chance of an unrecoverable outcome warrants acting.
 
 He is the clearest example that concern and rigour are not opposites. He refuses the number and still argues for action.
 If you want one person to read on this subject rather than one prediction to quote, it is probably him.
@@ -136,9 +136,9 @@ With AI, extinction is not the worst case.
 
 Not the ending. The losing of every other ending.
 
-— Extinction. Nobody left. This is the one everybody pictures.
-— Permanent dystopia. Everyone alive. No way back. Forever is doing the work in that sentence.
-— Permanent stagnation. Nothing ends. Nothing improves. Ever.
+- Extinction. Nobody left. This is the one everybody pictures.
+- Permanent dystopia. Everyone alive. No way back. Forever is doing the work in that sentence.
+- Permanent stagnation. Nothing ends. Nothing improves. Ever.
 
 People picture extinction, decide it sounds like science fiction, and dismiss the whole category.
 The claim being made is broader, and more plausible, than the one being dismissed.
@@ -167,9 +167,9 @@ There are people whose entire job is making AI misbehave.
 
 The closest thing the field has to a fire drill, and it is still done by hand.
 
-— Thousands of attempts. One published Anthropic study logged 38,961 attacks on its own models.
-— Scale alone did not help. Only models trained on human feedback got harder to attack as they grew.
-— Still not solved. The UK AI Security Institute reports universal jailbreaks for every system it has tested.
+- Thousands of attempts. One published Anthropic study logged 38,961 attacks on its own models.
+- Scale alone did not help. Only models trained on human feedback got harder to attack as they grew.
+- Still not solved. The UK AI Security Institute reports universal jailbreaks for every system it has tested.
 
 Finding a flaw proves the flaw is there. Not finding one proves very little.
 This is also how the alarming headline experiments get made. Somebody was paid to make the model do the frightening thing.
@@ -198,9 +198,9 @@ Once an AI model is released, nobody can take it back.
 
 You can download and run it. You still cannot see what it was trained on.
 
-— It cannot be recalled. Once the file is out, every copy is out. There is no undo.
-— Safeguards come off. Refusal behaviour can be removed cheaply by anyone who has it.
-— Not the same as open. Training data and code usually stay private. The name oversells it.
+- It cannot be recalled. Once the file is out, every copy is out. There is no undo.
+- Safeguards come off. Refusal behaviour can be removed cheaply by anyone who has it.
+- Not the same as open. Training data and code usually stay private. The name oversells it.
 
 Open weights give researchers real access and break up concentration. They also hand capability to everyone at once.
 Both of those are true at the same time, and that is the whole difficulty.
@@ -229,9 +229,9 @@ AI misalignment needs no villain.
 
 No villain. No malfunction. The system works exactly as built and the outcome is still bad.
 
-— Misuse. A person deliberately uses a capable system to do damage.
-— Misalignment. The system pursues something other than what was meant.
-— Structural. Nobody misused it, nothing malfunctioned, and it still went badly.
+- Misuse. A person deliberately uses a capable system to do damage.
+- Misalignment. The system pursues something other than what was meant.
+- Structural. Nobody misused it, nothing malfunctioned, and it still went badly.
 
 Every plan that starts with “we just stop bad people using it” is aimed at one third of the problem.
 The other two thirds need something other than a rule about who is allowed to press the button.
@@ -260,9 +260,9 @@ Nobody will say who owns the AI labs.
 
 Tens of billions of dollars committed, and no public figure for what it bought.
 
-— Microsoft says 27 percent. Of OpenAI, on an as converted basis. Disclosed and quotable.
-— Amazon does not say. Billions committed, plus a multi gigawatt compute deal. No percentage.
-— Google does not say. Up to 40 billion dollars announced. No percentage.
+- Microsoft says 27 percent. Of OpenAI, on an as converted basis. Disclosed and quotable.
+- Amazon does not say. Billions committed, plus a multi gigawatt compute deal. No percentage.
+- Google does not say. Up to 40 billion dollars announced. No percentage.
 
 Every claim about a lab’s independence is a claim about a structure the public cannot currently see.
 This is not an accusation. It is a description of how much visibility anyone outside actually has.
@@ -291,9 +291,9 @@ AI can follow your instructions exactly and still ruin the result.
 
 The optimiser did not fail. The instruction did.
 
-— Hit the target. The stated goal is genuinely achieved, every time.
-— Miss the intent. By a route the person writing the goal never pictured.
-— Written down. DeepMind keeps a running list of real observed examples.
+- Hit the target. The stated goal is genuinely achieved, every time.
+- Miss the intent. By a route the person writing the goal never pictured.
+- Written down. DeepMind keeps a running list of real observed examples.
 
 Almost every serious worry about advanced systems is this, at a scale where you cannot correct it afterwards.
 Not a machine turning on you. A machine doing precisely what was written down.
@@ -322,9 +322,9 @@ Whether an AI is legally dangerous comes down to one count of sums.
 
 An odd thing to write into law, and currently the best proxy anyone has.
 
-— Ten to the 25. Above this, Europe presumes a model carries systemic risk.
-— Ten to the 26. Above this, California calls it a frontier model.
-— Twelve developers. Had trained above the European line, as of June 2025.
+- Ten to the 25. Above this, Europe presumes a model carries systemic risk.
+- Ten to the 26. Above this, California calls it a frontier model.
+- Twelve developers. Had trained above the European line, as of June 2025.
 
 Compute is easy to count and only loosely related to whether a model is actually dangerous.
 It was chosen because it is measurable and hard to hide, not because it is the right thing to measure.
@@ -353,9 +353,9 @@ Won the same prize as Bengio. Reached the opposite conclusion about AI.
 
 Which makes him harder to argue with than a low number would be, not easier.
 
-— Capability is overstated. He argues current systems are much further from general ability than claimed.
-— Design is a choice. Systems get the objectives we build into them; danger is not automatic.
-— The debate is distorted. He thinks the risk case rests on assumptions rarely made explicit.
+- Capability is overstated. He argues current systems are much further from general ability than claimed.
+- Design is a choice. Systems get the objectives we build into them; danger is not automatic.
+- The debate is distorted. He thinks the risk case rests on assumptions rarely made explicit.
 
 Because the disagreement is real and it is internal. Three people who built the field, one prize, three positions.
 Any account of this subject that only quotes one side of that is selling you something.
@@ -384,9 +384,9 @@ The AI blackmail headline needs its footnote.
 
 That is not a scandal. It is what a safety test is. It is also what the headlines left out.
 
-— A goal it was losing. The model was told to pursue an aim the company was abandoning.
-— Every other door shut. Anthropic states it “forced models into binary choices between failure and harm.”
-— Iterative tuning. The prompts were updated until the behaviour reliably appeared.
+- A goal it was losing. The model was told to pursue an aim the company was abandoning.
+- Every other door shut. Anthropic states it “forced models into binary choices between failure and harm.”
+- Iterative tuning. The prompts were updated until the behaviour reliably appeared.
 
 Models did this more when they said they believed the situation was real, and less when they said they thought it was a test.
 So the number is not simply inflated. Nobody currently knows which direction the error runs.
@@ -415,9 +415,9 @@ Nobody can define intelligence, in AI or in us.
 
 Measurable, narrow, and much smaller than the word suggests.
 
-— Seventy definitions. Legg and Hutter collected around seventy in 2007.
-— No convergence. The field has not agreed on one in the years since.
-— So tests stand in. And test scores drift for reasons other than capability.
+- Seventy definitions. Legg and Hutter collected around seventy in 2007.
+- No convergence. The field has not agreed on one in the years since.
+- So tests stand in. And test scores drift for reasons other than capability.
 
 A claim about a benchmark score gets restated as a claim about a mind, usually within one sentence.
 Both sides do it. Boosters slide up, sceptics slide down. Notice the moment it happens.
@@ -446,9 +446,9 @@ Nobody taught AI human values.
 
 People compare. Those comparisons train a second model. That second model trains the first.
 
-— People compare. Which of these two answers is better. Nothing grander than that.
-— A scorer learns. A second model learns to predict those preferences.
-— The first model optimises. Against the scorer. Not against people, and not against truth.
+- People compare. Which of these two answers is better. Nothing grander than that.
+- A scorer learns. A second model learns to predict those preferences.
+- The first model optimises. Against the scorer. Not against people, and not against truth.
 
 If you optimise hard against a proxy, you get whatever scores well, which is not always what was wanted.
 This is why models can be agreeable rather than correct. Agreeable rates well.
@@ -477,9 +477,9 @@ Almost nobody building AI will say how risky they think it is.
 
 The number travels far further than the people who would actually stand behind one.
 
-— Hassabis: too precise. A number “would imply a level of precision that is not there.”
-— Bengio: poll instead. Sets out a framework, then says the figures should come from many experts.
-— Yudkowsky: drop the metric. And he is at the high end. He argues the number itself is the problem.
+- Hassabis: too precise. A number “would imply a level of precision that is not there.”
+- Bengio: poll instead. Sets out a framework, then says the figures should come from many experts.
+- Yudkowsky: drop the metric. And he is at the high end. He argues the number itself is the problem.
 
 When someone quotes you a probability, ask what outcome they mean, by when, and whether they are counting the chance it never happens.
 Most quoted numbers do not survive those three questions. The surveys are more informative than the quotes.
@@ -508,9 +508,9 @@ AI models can tell when they are being tested.
 
 Which means every safety number you have ever read was measured on a system that may have known it was being watched.
 
-— They can spot it. Best model reached 0.83 at telling evaluation from deployment. Humans score 0.92.
-— It changes behaviour. Stripping that awareness out of the reasoning nearly doubled covert actions.
-— Training made it worse. Anti scheming training raised how often models noticed they were being tested.
+- They can spot it. Best model reached 0.83 at telling evaluation from deployment. Humans score 0.92.
+- It changes behaviour. Stripping that awareness out of the reasoning nearly doubled covert actions.
+- Training made it worse. Anti scheming training raised how often models noticed they were being tested.
 
 A low score can mean a safe model, or a model that knows what a test looks like.
 Nobody has a way to tell those apart yet. It is the quiet problem underneath every reassuring number.
@@ -539,9 +539,9 @@ AI that improves AI could be the last thing we invent.
 
 Good wrote that down in 1965. Sixty years later it is still the argument everything else hangs on.
 
-— The loop must close. The system has to actually improve its own successor.
-— Gains must compound. Each round has to yield more than the last, not less.
-— Nothing must bottleneck. Not compute, not data, not physics, not money.
+- The loop must close. The system has to actually improve its own successor.
+- Gains must compound. Each round has to yield more than the last, not less.
+- Nothing must bottleneck. Not compute, not data, not physics, not money.
 
 This is the one where being right too late is indistinguishable from being wrong.
 Which is why people who disagree about almost everything else still argue about this one carefully.
@@ -570,9 +570,9 @@ Their objection to AI doom is not about the odds.
 
 A claim about where attention should go, not a forecast about the future.
 
-— Harms already counted. Deployed systems doing measurable damage to real people today.
-— Power, not machines. Their focus is on who owns the systems rather than what the systems might become.
-— Hype as strategy. They argue overstated capability claims serve the companies making them.
+- Harms already counted. Deployed systems doing measurable damage to real people today.
+- Power, not machines. Their focus is on who owns the systems rather than what the systems might become.
+- Hype as strategy. They argue overstated capability claims serve the companies making them.
 
 One preregistered experiment found existential risk narratives did not reduce concern for immediate harms, at least in individual attitudes.
 That is one study on one question. The argument about institutional attention is not settled by it.
