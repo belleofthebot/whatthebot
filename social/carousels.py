@@ -39,7 +39,7 @@ HEAD = """<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 body{background:#0d0a10;font-family:var(--sans);display:flex;flex-wrap:wrap;gap:26px;padding:26px}
 
 /* one ground per category. --acc is whatever reads as the accent on that ground. */
-.s{width:1080px;height:1350px;position:relative;padding:144px 92px 148px;
+.s{width:1080px;height:1350px;position:relative;padding:144px 92px 172px;
    display:flex;flex-direction:column;overflow:hidden;background:var(--bg);color:var(--fg)}
 .g-risk{--bg:#17121C;--fg:#F4F2EE;--acc:#DFA192;--soft:#B3A6BC;--faint:#8A7F93;
         --edge:#423748;--ic-rose:#DFA192;--ic-mint:#9FE0CE;--ic-dim:#8A7F93}
@@ -55,8 +55,9 @@ body{background:#0d0a10;font-family:var(--sans);display:flex;flex-wrap:wrap;gap:
 .flip.g-behavior,.flip.g-components,.flip.g-actors{--bg:#17121C;--fg:#F4F2EE;--acc:#DFA192;
         --soft:#B3A6BC;--faint:#8A7F93;--edge:#423748;--ic-rose:#DFA192;--ic-mint:#9FE0CE;--ic-dim:#8A7F93}
 
-.hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px;position:relative;z-index:2}
-.ftr{margin-top:30px;position:relative;z-index:2}
+.hdr{display:flex;align-items:center;gap:20px;margin-bottom:30px;position:relative;z-index:2}
+.hdr .sp{flex:1}
+
 .num{font-family:var(--mono);font-size:26px;color:var(--faint)}
 .mark{font-family:var(--mono);font-size:28px;color:var(--acc)}
 .mark .sg{font-family:var(--sans);font-weight:500;color:var(--fg)}
@@ -74,18 +75,16 @@ h2.sm{font-size:48px}
 p{font-size:36px;line-height:1.38;color:var(--soft);max-width:24ch}
 .rose{color:var(--acc)}
 .mid{flex:1;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2}
-.belle{position:absolute;bottom:0;right:0;height:760px;z-index:1}
-.belle.sm{height:560px}
+.belle{position:absolute;bottom:0;right:0;height:790px;z-index:5}
+.belle.sm{height:600px}
 /* where she stands. text moves out of her way. */
 .p-left .belle{right:auto;left:0}
 .p-left .mid{margin-left:40%}
 .p-left h1{max-width:560px}
-.p-left .ftr{text-align:right}
-.p-centre .ftr{text-align:left}
-.p-centre .belle{right:auto;left:50%;transform:translateX(-50%);height:600px;opacity:.95}
+.p-centre .belle{right:auto;left:50%;transform:translateX(-50%);height:660px}
 .p-centre .mid{justify-content:flex-start}
 .p-centre h1,.p-centre h2{max-width:800px}
-.p-far .belle{height:880px;right:0}
+.p-far .belle{height:920px;right:0}
 .p-far .mid{max-width:58%}
 .ico{display:inline-flex;align-items:center;gap:20px}
 .ico .tick{width:22px;height:3px;background:var(--ic-rose);border-radius:2px;flex:none}
@@ -259,13 +258,13 @@ def _belle(slug, small=True):
     return f'<img class="belle{" sm" if small else ""}" src="../../assets/belle/{slug}.webp" alt="">'
 
 def _slide(n, total, body, cat, flip=False, belle=None, sid="", chip=True, pos=""):
-    c = f'<span class="chip">{CATS[cat]}</span>' if chip else "<span></span>"
+    c = f'<span class="chip">{CATS[cat]}</span>' if chip else ""
     pcls = (" " + pos) if (pos and belle) else ""
     return (f'<div class="s g-{cat}{" flip" if flip else ""}{pcls}" id="{sid}">'
-            f'<div class="hdr">{c}<span class="num">{n} / {total}</span></div>'
+            f'<div class="hdr">{MARK}{c}<span class="sp"></span>'
+            f'<span class="num">{n} / {total}</span></div>'
             f'<div class="mid">{body}</div>'
-            f'{_belle(belle) if belle else ""}'
-            f'<div class="ftr">{MARK}</div></div>\n')
+            f'{_belle(belle) if belle else ""}</div>\n')
 
 FLAGS = [("emp","measured"),("op","someone&rsquo;s estimate"),("arg","argument"),("def","definition")]
 
