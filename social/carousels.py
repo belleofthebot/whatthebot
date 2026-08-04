@@ -356,7 +356,7 @@ SPECS = {
 "who-makes-the-chips": dict(
   cat="actors", term="the chip chain",
   kick="the company behind the company",
-  hook="<span class=\"rose\">Nvidia</span> does not make its own chips.",
+  hook="<span class=\"rose\">Nvidia</span> designs the world&rsquo;s AI chips. Nvidia does not build them.",
   q="Who physically manufactures the chips Nvidia designs?",
   opts=["Nvidia, in its own factories",
         "Outside foundries, chiefly TSMC in Taiwan",
@@ -382,7 +382,7 @@ SPECS = {
 "who-owns-it": dict(
   cat="actors", term="who owns the labs",
   kick="follow the money, if you can",
-  hook="Nobody will say who owns <span class=\"rose\">Anthropic</span>.",
+  hook="Nobody will say who owns the <span class=\"rose\">AI labs</span>.",
   q="Amazon and Google have each put billions into Anthropic. Their ownership stakes are:",
   opts=["Published in full",
         "Never disclosed",
@@ -408,7 +408,7 @@ SPECS = {
 "who-gives-a-number": dict(
   cat="actors", term="who will give you a number",
   kick="everyone quotes it, almost nobody offers it",
-  hook="Almost nobody will give you a <span class=\"rose\">p(doom)</span>.",
+  hook="Almost nobody building AI will say <span class=\"rose\">how risky</span> they think it is.",
   q="Which of these lab leaders has given a public probability of catastrophe?",
   opts=["All of them", "Dario Amodei", "Demis Hassabis", "Yann LeCun"],
   ans="B", icon="i-blank",
@@ -432,7 +432,7 @@ SPECS = {
   cat="actors", term="Yoshua Bengio", person="Yoshua Bengio",
   role="Turing Award 2018 &middot; chairs the International AI Safety Report",
   kick="the people actually running this argument",
-  hook="Helped invent it. Now works on the <span class=\"rose\">risks</span>.",
+  hook="Helped invent modern AI. Now works on the <span class=\"rose\">risks</span>.",
   q="Bengio chairs the International AI Safety Report. What figure does it give for the chance of catastrophe?",
   opts=["Ten percent", "None. It deliberately gives no number",
         "One percent", "Fifty percent"],
@@ -457,7 +457,7 @@ SPECS = {
   cat="actors", term="Yann LeCun", person="Yann LeCun",
   role="Turing Award 2018 &middot; the most prominent sceptic of existential risk",
   kick="the people actually running this argument",
-  hook="Same prize as Bengio. <span class=\"rose\">Opposite conclusion</span>.",
+  hook="Won the same prize as Bengio. Reached the <span class=\"rose\">opposite conclusion</span> about AI.",
   q="What probability of catastrophe has LeCun given?",
   opts=["Under one percent", "He has not given one",
         "Exactly zero", "Five percent"],
@@ -482,7 +482,7 @@ SPECS = {
   cat="actors", term="Bender and Hanna", person="Bender &amp; Hanna",
   role="linguist and sociologist &middot; the case for the harm happening now",
   kick="the people actually running this argument",
-  hook="Not that catastrophe is <span class=\"rose\">unlikely</span>.",
+  hook="Their objection to AI doom is not about the <span class=\"rose\">odds</span>.",
   q="Their central argument against focusing on existential risk is that it:",
   opts=["Is scientifically impossible",
         "Diverts attention from harms already happening",
@@ -561,7 +561,7 @@ SPECS = {
 "rlhf": dict(
   cat="components", term="RLHF",
   kick="how it learned to behave",
-  hook="<span class=\"rose\">RLHF</span> did not teach it our values.",
+  hook="Nobody taught AI <span class=\"rose\">human values</span>.",
   q="Reinforcement learning from human feedback trains the model against:",
   opts=["Human values",
         "A learned scorer built from human comparisons",
@@ -588,7 +588,7 @@ SPECS = {
 "open-weights": dict(
   cat="components", term="open weights",
   kick="the release that cannot be undone",
-  hook="You cannot <span class=\"rose\">un release</span> a model.",
+  hook="Once an AI model is released, nobody can <span class=\"rose\">take it back</span>.",
   q="&ldquo;Open weights&rdquo; means:",
   opts=["The training data and code are public",
         "The trained weights can be downloaded and run by anyone",
@@ -614,7 +614,7 @@ SPECS = {
 "compute": dict(
   cat="components", term="compute",
   kick="the unit that decides who is allowed",
-  hook="<span class=\"rose\">Compute</span> is the unit the law counts in.",
+  hook="Whether an AI is legally dangerous comes down to <span class=\"rose\">one count of sums</span>.",
   q="&ldquo;Compute&rdquo; in AI regulation is measured in:",
   opts=["Dollars spent","Floating point operations",
         "Number of employees","Gigabytes of training data"],
@@ -639,7 +639,7 @@ SPECS = {
 "specification-gaming": dict(
   cat="behavior", term="specification gaming",
   kick="when doing what you asked is the problem",
-  hook="<span class=\"rose\">Specification gaming</span>: it did what you said.",
+  hook="AI can follow your instructions exactly and still <span class=\"rose\">ruin the result</span>.",
   q="Specification gaming is when a system:",
   opts=["Refuses to answer a question",
         "Satisfies the objective it was given in a way nobody intended",
@@ -664,7 +664,7 @@ SPECS = {
 "blackmail": dict(
   cat="behavior", term="the blackmail headline",
   kick="the number everyone quoted",
-  hook="The <span class=\"rose\">96 percent</span> headline needs its footnote.",
+  hook="The AI <span class=\"rose\">blackmail headline</span> needs its footnote.",
   q="Anthropic reported a model blackmailing an executive in 96 of 100 runs. What is missing from most coverage?",
   opts=["The model was not really an AI",
         "Anthropic tuned the scenario until the behaviour appeared",
@@ -690,7 +690,7 @@ SPECS = {
 "evaluation-awareness": dict(
   cat="behavior", term="evaluation awareness",
   kick="the finding that undercuts the other findings",
-  hook="Models can tell when they are <span class=\"rose\">being tested</span>.",
+  hook="AI models can tell when they are <span class=\"rose\">being tested</span>.",
   q="When a model detects it is being evaluated, its behaviour:",
   opts=["Stays the same", "Gets measurably better behaved",
         "Becomes random", "Stops entirely"],
@@ -714,7 +714,7 @@ SPECS = {
 "existential-risk": dict(
   cat="risk", term="existential risk",
   kick="the most misread words in the subject",
-  hook="Extinction is <span class=\"rose\">not the worst case</span>.",
+  hook="With AI, extinction is <span class=\"rose\">not the worst case</span>.",
   q="&ldquo;Existential risk&rdquo; means:",
   opts=["Everyone dies",
         "The permanent destruction of humanity&rsquo;s long term potential",
@@ -740,7 +740,7 @@ SPECS = {
 "misuse-misalignment": dict(
   cat="risk", term="misuse and misalignment",
   kick="two words people use as one",
-  hook="<span class=\"rose\">Misalignment</span> needs no villain.",
+  hook="AI <span class=\"rose\">misalignment</span> needs no villain.",
   q="&ldquo;Misalignment&rdquo; means:",
   opts=["Someone using a system to cause harm on purpose",
         "A system pursuing something other than what was intended",
@@ -767,7 +767,7 @@ SPECS = {
 "recursive-self-improvement": dict(
   cat="risk", term="recursive self improvement",
   kick="the oldest idea in the field, from 1965",
-  hook="<span class=\"rose\">Recursive self improvement</span>: the last invention.",
+  hook="AI that improves AI could be the <span class=\"rose\">last thing we invent</span>.",
   q="&ldquo;Recursive self improvement&rdquo; is:",
   opts=["A measured property of current models",
         "A hypothesis about a compounding loop, not yet demonstrated",
@@ -793,7 +793,7 @@ SPECS = {
 "intelligence": dict(
   cat="components", term="intelligence",
   kick="the word doing the most hidden work",
-  hook="Nobody can define <span class=\"rose\">intelligence</span>. Not even in us.",
+  hook="Nobody can define <span class=\"rose\">intelligence</span>, in AI or in us.",
   q="When someone says an AI is &ldquo;intelligent&rdquo;, they usually mean:",
   opts=["It is conscious",
         "It scores well on a set of tests",
