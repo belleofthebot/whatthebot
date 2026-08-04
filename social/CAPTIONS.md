@@ -1460,3 +1460,220 @@ Alt text slide 4: Three labelled points, each with a small diagram.
 Alt text slide 5: A short explanation of why the distinction matters.
 Alt text slide 6: The epistemic flag for this claim, and the source it came from.
 Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 48. Helen Toner  (AI actors)
+Folder: `out/toner/`  ·  8 slides
+
+```
+She helped remove Sam Altman, and then said why.
+
+Toner and McCauley, in The Economist, May 2024, six months after they lost.
+
+- She was on the board. One of four directors who removed Altman on 17 November 2023. She resigned in the settlement.
+- She named the problem. She says the board learned about ChatGPT’s launch on Twitter, and was given inaccurate information about safety processes.
+- OpenAI rejected it. The new chair and Larry Summers wrote back that they do not accept the claims and have found Altman highly forthcoming.
+
+Two accounts, both from people who were there, and no independent record.
+She now runs the Georgetown centre that does a lot of the serious policy work on this.
+
+Filed as: someone’s estimate.
+Source: Toner and McCauley, AI firms mustn’t govern themselves, The Economist, 26 May 2024; Taylor and Summers reply, 30 May 2024
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIindustry #TechPolicy #AIliteracy #Nvidia #AIcompanies
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: She helped remove Sam Altman, and then said why.
+Alt text slide 2: A four option multiple choice question: Toner and McCauley’s public argument after leaving the board was that:
+Alt text slide 3: The answer, with a diagram: Self governance does not survive the profit motive.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 49. Mira Murati  (AI actors)
+Folder: `out/murati/`  ·  8 slides
+
+```
+She was made interim chief executive of OpenAI, and then helped bring him back.
+
+Named 17 November 2023, superseded within about two days, and publicly backing Altman’s return by the 20th.
+
+- At the time: not involved. She told staff she had no part in the decision to remove him.
+- Later, under oath. In a 2026 deposition she said he was not always honest with her and undermined her as chief technology officer.
+- And she left. Announced September 2024. Founded Thinking Machines Lab in February 2025, where she is chief executive.
+
+The person closest to the work took both sides of it, in public, within a week.
+Thinking Machines describes itself as a research and product company, not a safety lab. Worth reading its own words rather than the summaries.
+
+Filed as: measured.
+Source: OpenAI leadership announcements, November 2023; Murati deposition, Musk v. OpenAI, May 2026
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIindustry #TechPolicy #AIliteracy #Nvidia #AIcompanies
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: She was made interim chief executive of OpenAI, and then helped bring him back.
+Alt text slide 2: A four option multiple choice question: What did Murati do during the November 2023 crisis:
+Alt text slide 3: The answer, with a diagram: Both. Interim chief executive, then a signature on the letter.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 50. Daniela Amodei  (AI actors)
+Folder: `out/daniela-amodei/`  ·  8 slides
+
+```
+She co-founded Anthropic, and came to AI from operations, not research.
+
+She and Dario left with five colleagues to found Anthropic in 2021.
+
+- She is not a researcher. Congressional campaign work, global health, then six years at Stripe. The company is run by an operator.
+- The scale is now enormous. Anthropic raised at a 965 billion dollar valuation in May 2026.
+- Her stated reason is safety. Wanting the safety and responsibility values at the forefront, in her words.
+
+A safety argument from a company whose valuation depends on building it anyway.
+Apply whatever standard you applied to Amodei, or to Altman, or to Hinton. The point is to apply the same one.
+
+Filed as: someone’s estimate.
+Source: Anthropic company page; Stanford GSB interview, June 2026; Anthropic Series H, reported 28 May 2026
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIindustry #TechPolicy #AIliteracy #Nvidia #AIcompanies
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: She co-founded Anthropic, and came to AI from operations, not research.
+Alt text slide 2: A four option multiple choice question: Before Anthropic, Daniela Amodei worked at:
+Alt text slide 3: The answer, with a diagram: Stripe, then OpenAI, then out the door with six others.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 51. Kate Crawford  (AI actors)
+Folder: `out/crawford/`  ·  8 slides
+
+```
+AI is neither artificial nor intelligent, she argues. It is mined.
+
+Crawford, Atlas of AI, Yale University Press, 2021.
+
+- The minerals. Lithium, cobalt, rare earths, and the places they come from.
+- The labour. The people who label, moderate and correct, who rarely appear in the story.
+- The energy and water. She was making this argument before data centre power was a headline.
+
+This is the present tense critique, and it does not need a forecast to be true.
+Her critics say she underweights the benefits. Her energy figures also predate the language model era and have been superseded.
+
+Filed as: argument.
+Source: Crawford, Atlas of AI, Yale University Press, 2021, Sally Hacker Prize 2022; Crawford and Joler, Anatomy of an AI System, 2018
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIindustry #TechPolicy #AIliteracy #Nvidia #AIcompanies
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: AI is neither artificial nor intelligent, she argues. It is mined.
+Alt text slide 2: A four option multiple choice question: The central argument of Atlas of AI is that:
+Alt text slide 3: The answer, with a diagram: Not a mind in a box. A planetary supply chain.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 52. Daphne Koller  (AI actors)
+Folder: `out/koller/`  ·  8 slides
+
+```
+She left teaching the world to point machine learning at disease.
+
+Founded 2018. Around 643 million dollars raised across three rounds.
+
+- A partner paid a milestone. Bristol Myers Squibb paid 25 million dollars in 2024 for the first insitro found target, in ALS.
+- A candidate exists. A liver disease candidate with animal data presented in June 2026.
+- Nothing is in people yet. First in human is expected later in 2026. Anyone saying insitro has a drug in trials is ahead of the facts.
+
+Most of the argument is about chatbots, and most of the promise may not be.
+Her own caution is worth borrowing: a big pile of data collected haphazardly is rarely fit for machine learning.
+
+Filed as: measured.
+Source: insitro press releases, December 2024 and June 2026; Koller, McKinsey interview, November 2022
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIindustry #TechPolicy #AIliteracy #Nvidia #AIcompanies
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: She left teaching the world to point machine learning at disease.
+Alt text slide 2: A four option multiple choice question: insitro, the company she founded, uses machine learning to:
+Alt text slide 3: The answer, with a diagram: Targets, not treatments. There is a difference, and it matters.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 53. Lucy Guo  (AI actors)
+Folder: `out/lucy-guo/`  ·  8 slides
+
+```
+At twenty one she co-founded the company that labels the data.
+
+Founded 2016 with Alexandr Wang. She ran operations and product design, and was pushed out in 2018.
+
+- The work is human. Every training set that looks automatic sits on somebody’s labelling.
+- The money is enormous. Meta took a 49 percent non voting stake in June 2025, valuing Scale at about 29 billion dollars.
+- She kept a slice. Around three percent, which is most of a fortune Forbes estimated at 1.5 billion dollars in 2026.
+
+The judgement in a model came from people, and almost nobody names them.
+When a model reflects a preference, that preference was written down by somebody paid to write it down.
+
+Filed as: measured.
+Source: Forbes profiles of Lucy Guo, April 2025 and July 2026; Meta investment in Scale AI, announced 13 June 2025
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIindustry #TechPolicy #AIliteracy #Nvidia #AIcompanies
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: At twenty one she co-founded the company that labels the data.
+Alt text slide 2: A four option multiple choice question: Scale AI’s core business is:
+Alt text slide 3: The answer, with a diagram: People, marking up data, at industrial scale.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 54. gender bias  (AI behavior)
+Folder: `out/gender-bias/`  ·  8 slides
+
+```
+AI gender bias is real, measured, and smaller and stranger than the stories.
+
+An et al., PNAS Nexus, 2025: female names scored slightly higher; Black male names slightly lower.
+
+- 2016: it is in the maths. Gender bias in word embeddings is a recoverable geometric direction, and can be partly projected out.
+- 2018: it is in the training data. Amazon scrapped an experimental hiring tool that penalised r&eacute;sum&eacute;s containing the word women’s.
+- 2025: it is measurable, and modest. Effect sizes around a point on a hundred point scale, flipping sign across models and groups.
+
+Man is to programmer as woman is to homemaker is partly an artefact of the method.
+The analogy code could not return the input word, and the vocabulary was capped below where programmer sat. The bias is real. That demonstration of it is not clean.
+
+Filed as: measured.
+Source: Bolukbasi et al., NIPS 2016; Dastin, Reuters, 10 October 2018; An, Huang, Lin and Tai, PNAS Nexus 4(3), 2025
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIsafety #MachineLearning #AIliteracy #AIresearch
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: AI gender bias is real, measured, and smaller and stranger than the stories.
+Alt text slide 2: A four option multiple choice question: A 2025 study scoring 361,000 synthetic r&eacute;sum&eacute;s with five leading models found:
+Alt text slide 3: The answer, with a diagram: Small effects, and not in the direction you expect.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.

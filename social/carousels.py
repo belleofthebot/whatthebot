@@ -473,6 +473,82 @@ ICONS = """
   <circle cx="12" cy="44" r="4" fill="var(--ic-dim)"/>
   <circle cx="52" cy="20" r="4" fill="var(--ic-dim)"/>
 </g>
+
+<!-- a seat at the table, vacated -->
+<g id="i-seat">
+  <path d="M18 30 V14 H46 V30" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linejoin="round"/>
+  <path d="M12 32 H52" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M18 36 V52 M46 36 V52" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round" stroke-dasharray="5 5"/>
+</g>
+<!-- a handover, taken and given back -->
+<g id="i-relay">
+  <circle cx="14" cy="32" r="7" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <circle cx="50" cy="32" r="7" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <path d="M23 26 H41" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M35 21 L42 26 L35 31" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M41 40 H23" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M29 35 L22 40 L29 45" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<!-- something built around a thing, on purpose -->
+<g id="i-guard">
+  <path d="M32 10 L52 18 V32 C52 44 42 51 32 54 C22 51 12 44 12 32 V18 Z"
+        stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linejoin="round"/>
+  <path d="M24 32 L30 38 L42 26" stroke="var(--ic-mint)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<!-- taken out of the ground -->
+<g id="i-extract">
+  <path d="M8 44 H56 M8 52 H56" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M32 38 V12" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M25 18 L32 11 L39 18" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="18" cy="44" r="3.2" fill="var(--ic-rose)"/>
+  <circle cx="46" cy="52" r="3.2" fill="var(--ic-rose)"/>
+</g>
+<!-- a molecule -->
+<g id="i-mol">
+  <circle cx="18" cy="20" r="6" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <circle cx="44" cy="26" r="6" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <circle cx="28" cy="46" r="6" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <path d="M24 23 L38 25 M41 32 L32 40 M23 26 L26 40" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+</g>
+<!-- somebody marked this by hand -->
+<g id="i-label">
+  <rect x="8" y="16" width="30" height="24" rx="5" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <path d="M14 34 L21 26 L28 34" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M40 46 L48 54 L58 38" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M44 20 H58 M44 28 H54" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+</g>
+<!-- a balance, not level -->
+<g id="i-scale">
+  <path d="M32 12 V48 M18 48 H46" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M12 22 H52" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round" transform="rotate(-9 32 22)"/>
+  <circle cx="13" cy="27" r="5" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <circle cx="51" cy="18" r="5" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+</g>
+
+<!-- fluent, and repeating -->
+<g id="i-parrot">
+  <path d="M34 12 C46 12 52 20 52 30 C52 42 42 52 30 52 C20 52 12 46 12 38"
+        stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M52 24 L60 28 L52 32" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="42" cy="24" r="3" fill="var(--ic-rose)"/>
+  <path d="M22 40 H36" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 4"/>
+</g>
+<!-- four faces, one of them missed -->
+<g id="i-face">
+  <circle cx="20" cy="20" r="8" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <circle cx="44" cy="20" r="8" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <circle cx="20" cy="44" r="8" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <circle cx="44" cy="44" r="8" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-dasharray="5 4"/>
+  <path d="M39 39 L49 49 M49 39 L39 49" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+</g>
+<!-- a great many labelled things -->
+<g id="i-tiles">
+  <rect x="8" y="10" width="16" height="14" rx="4" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <rect x="28" y="10" width="16" height="14" rx="4" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <rect x="8" y="30" width="16" height="14" rx="4" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <rect x="28" y="30" width="16" height="14" rx="4" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <path d="M50 16 H58 M50 36 H58 M12 50 H44" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 4"/>
+</g>
 </defs></svg>
 """
 
@@ -1776,7 +1852,7 @@ SPECS = {
         "Darker skinned women, at up to 34.7 percent against 0.3 percent for lighter skinned men",
         "Children under twelve",
         "People wearing glasses"],
-  ans="B", icon="i-lens",
+  ans="B", icon="i-face",
   reveal='<span class="rose">34.7 percent</span> against <span class="rose">0.3 percent</span>. Same system, same task.',
   revsub="Buolamwini and Gebru, 2018, on three commercial gender classifiers.",
   threekick="what makes it a model piece of work",
@@ -1804,7 +1880,7 @@ SPECS = {
         "Gave the field a huge labelled dataset and a public contest to beat",
         "Was owned by Google",
         "Trained the first chatbot"],
-  ans="B", icon="i-stack",
+  ans="B", icon="i-tiles",
   reveal='Millions of labelled images, and a <span class="rose">scoreboard</span>.',
   revsub="Deng, Dong, Socher, Li, Li and Li, CVPR 2009. The contest ran on it from 2010.",
   threekick="the moment it paid off",
@@ -1832,7 +1908,7 @@ SPECS = {
         "Stitching together forms it has seen, by probability, without reference to meaning",
         "A bird trained to repeat sounds",
         "A model that only works on short inputs"],
-  ans="B", icon="i-voice",
+  ans="B", icon="i-parrot",
   reveal='Fluent, and <span class="rose">not connected to meaning</span>.',
   revsub="Bender, Gebru, McMillan-Major and Mitchell, FAccT 2021. Two of the four had left Google by then.",
   threekick="what the paper actually raised",
@@ -1848,6 +1924,194 @@ SPECS = {
   src="Bender, Gebru, McMillan-Major and Mitchell, On the Dangers of<br>Stochastic Parrots, FAccT 2021, pp. 610&ndash;623",
   photosrc="photo: Kimberly White / Getty Images for TechCrunch, CC BY 2.0, modified",
   belle_hook="saying-unpleasant-truth-1", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"toner": dict(
+  cat="actors", term="Helen Toner",
+  person="Helen Toner", role="OpenAI board 2021&ndash;2023",
+  kick="one of the four who voted him out",
+  hook="She helped remove Sam Altman, and then <span class=\"rose\">said why</span>.",
+  q="Toner and McCauley&rsquo;s public argument after leaving the board was that:",
+  opts=["Altman should never work in AI again",
+        "Self governance cannot reliably withstand the pressure of profit incentives",
+        "AI development should stop entirely",
+        "The board had been misled about revenue"],
+  ans="B", icon="i-seat",
+  reveal='<span class="rose">Self governance</span> does not survive the profit motive.',
+  revsub="Toner and McCauley, in The Economist, May 2024, six months after they lost.",
+  threekick="her specific claims, and the answer to them",
+  three=[("i-seat","She was on the board.","One of four directors who removed Altman on 17 November 2023. She resigned in the settlement."),
+         ("i-voice","She named the problem.","She says the board learned about ChatGPT&rsquo;s launch on Twitter, and was given inaccurate information about safety processes."),
+         ("i-counter","OpenAI rejected it.","The new chair and Larry Summers wrote back that they do not accept the claims and have found Altman highly forthcoming.")],
+  threefoot="An outside review by a law firm found no AI safety concern required his removal.",
+  whyicon="i-lens", whykick="why this one is hard to file",
+  why="Two accounts, both from people who were there, and <span class=\"rose\">no independent record</span>.",
+  whysub="She now runs the Georgetown centre that does a lot of the serious policy work on this.",
+  flag="op",
+  file='<span class="rose">Someone&rsquo;s position</span>, contested on the record by the other side. The disagreement is the fact here.',
+  src="Toner and McCauley, AI firms mustn&rsquo;t govern themselves,<br>The Economist, 26 May 2024; Taylor and Summers reply, 30 May 2024",
+  belle_hook="deadpan-annoyed-1", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"murati": dict(
+  cat="actors", term="Mira Murati",
+  person="Mira Murati", role="OpenAI CTO, now Thinking Machines Lab",
+  kick="chief executive for about two days",
+  hook="She was made <span class=\"rose\">interim chief executive</span>, then helped bring him back.",
+  q="What did Murati do during the November 2023 crisis:",
+  opts=["Refused the interim role",
+        "Took the interim role, then signed the letter demanding the board resign",
+        "Resigned immediately",
+        "Nothing publicly"],
+  ans="B", icon="i-relay",
+  reveal='Both. Interim chief executive, then <span class="rose">a signature on the letter</span>.',
+  revsub="Named 17 November 2023, superseded within about two days, and publicly backing Altman&rsquo;s return by the 20th.",
+  threekick="what she has said since, and under what conditions",
+  three=[("i-relay","At the time: not involved.","She told staff she had no part in the decision to remove him."),
+         ("i-voice","Later, under oath.","In a 2026 deposition she said he was not always honest with her and undermined her as chief technology officer."),
+         ("i-split","And she left.","Announced September 2024. Founded Thinking Machines Lab in February 2025, where she is chief executive.")],
+  threefoot="Sworn testimony is a better class of evidence than the anonymous reporting that preceded it.",
+  whyicon="i-two", whykick="why her position is the interesting one",
+  why="The person closest to the work took <span class=\"rose\">both sides</span> of it, in public, within a week.",
+  whysub="Thinking Machines describes itself as a research and product company, not a safety lab. Worth reading its own words rather than the summaries.",
+  flag="emp",
+  file='The dates and the deposition are <span class="rose">documented</span>. What she believed at the time is not.',
+  src="OpenAI leadership announcements, November 2023;<br>Murati deposition, Musk v. OpenAI, May 2026",
+  belle_hook="surprised-worried", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"daniela-amodei": dict(
+  cat="actors", term="Daniela Amodei",
+  person="Daniela Amodei", role="co-founder and president, Anthropic",
+  kick="the other Amodei",
+  hook="She co-founded <span class=\"rose\">Anthropic</span>, and came to AI from operations, not research.",
+  q="Before Anthropic, Daniela Amodei worked at:",
+  opts=["Google DeepMind",
+        "Stripe, and then OpenAI, on operations and safety policy",
+        "Meta&rsquo;s AI lab",
+        "A university research group"],
+  ans="B", icon="i-guard",
+  reveal='<span class="rose">Stripe</span>, then OpenAI, then out the door with six others.',
+  revsub="She and Dario left with five colleagues to found Anthropic in 2021.",
+  threekick="worth noticing about this one",
+  three=[("i-guard","She is not a researcher.","Congressional campaign work, global health, then six years at Stripe. The company is run by an operator."),
+         ("i-stake","The scale is now enormous.","Anthropic raised at a 965 billion dollar valuation in May 2026."),
+         ("i-counter","Her stated reason is safety.","Wanting the safety and responsibility values at the forefront, in her words.")],
+  threefoot="Her exact OpenAI job title is repeated everywhere and sourced almost nowhere. It is left vague here on purpose.",
+  whyicon="i-twocause", whykick="the same question as her brother&rsquo;s card",
+  why="A safety argument from a company whose valuation depends on <span class=\"rose\">building it anyway</span>.",
+  whysub="Apply whatever standard you applied to Amodei, or to Altman, or to Hinton. The point is to apply the same one.",
+  flag="op",
+  file='<span class="rose">Someone&rsquo;s position</span>, plus verifiable facts about the company. Keep the two apart.',
+  src="Anthropic company page; Stanford GSB interview, June 2026;<br>Anthropic Series H, reported 28 May 2026",
+  belle_hook="warm-neutral", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"crawford": dict(
+  cat="actors", term="Kate Crawford",
+  person="Kate Crawford", role="Atlas of AI, co-founder of AI Now",
+  kick="the argument that AI is a supply chain",
+  hook="AI is <span class=\"rose\">neither artificial nor intelligent</span>, she argues. It is mined.",
+  q="The central argument of Atlas of AI is that:",
+  opts=["AI will become conscious",
+        "AI is an extractive industry made of minerals, energy, labour and appropriated data",
+        "AI is a bubble",
+        "AI should be nationalised"],
+  ans="B", icon="i-extract",
+  reveal='Not a mind in a box. A <span class="rose">planetary supply chain</span>.',
+  revsub="Crawford, Atlas of AI, Yale University Press, 2021.",
+  threekick="the parts people skip",
+  three=[("i-extract","The minerals.","Lithium, cobalt, rare earths, and the places they come from."),
+         ("i-hand","The labour.","The people who label, moderate and correct, who rarely appear in the story."),
+         ("i-racks","The energy and water.","She was making this argument before data centre power was a headline.")],
+  threefoot="Anatomy of an AI System, her map of an Amazon Echo with Vladan Joler, is in the collections of MoMA and the V and A.",
+  whyicon="i-lens", whykick="why it belongs beside the risk cards",
+  why="This is the <span class=\"rose\">present tense</span> critique, and it does not need a forecast to be true.",
+  whysub="Her critics say she underweights the benefits. Her energy figures also predate the language model era and have been superseded.",
+  flag="arg",
+  file='A <span class="rose">theory</span> about what AI fundamentally is, argued from documented supply chains. The frame is the contested part, not the minerals.',
+  src="Crawford, Atlas of AI, Yale University Press, 2021,<br>Sally Hacker Prize 2022; Crawford and Joler, Anatomy of an AI System, 2018",
+  belle_hook="hands-hips-pedantic", belle_file="dead-pan-1", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"koller": dict(
+  cat="actors", term="Daphne Koller",
+  person="Daphne Koller", role="founder of insitro, co-founder of Coursera",
+  kick="the case for AI that is not a chatbot",
+  hook="She left teaching the world to <span class=\"rose\">point machine learning at disease</span>.",
+  q="insitro, the company she founded, uses machine learning to:",
+  opts=["Write medical advice for patients",
+        "Find drug targets from biological and genetic data",
+        "Diagnose patients in clinics",
+        "Replace clinical trials"],
+  ans="B", icon="i-mol",
+  reveal='<span class="rose">Targets</span>, not treatments. There is a difference, and it matters.',
+  revsub="Founded 2018. Around 643 million dollars raised across three rounds.",
+  threekick="what is actually on the board",
+  three=[("i-mol","A partner paid a milestone.","Bristol Myers Squibb paid 25 million dollars in 2024 for the first insitro found target, in ALS."),
+         ("i-doc","A candidate exists.","A liver disease candidate with animal data presented in June 2026."),
+         ("i-blank","Nothing is in people yet.","First in human is expected later in 2026. Anyone saying insitro has a drug in trials is ahead of the facts.")],
+  threefoot="She also co-founded Coursera with Andrew Ng in 2012, which now reports over 200 million registered learners.",
+  whyicon="i-lens", whykick="why this card is here",
+  why="Most of the argument is about chatbots, and <span class=\"rose\">most of the promise may not be</span>.",
+  whysub="Her own caution is worth borrowing: a big pile of data collected haphazardly is rarely fit for machine learning.",
+  flag="emp",
+  file='<span class="rose">Measured</span>, carefully: a milestone payment and animal data are real and are not the same as a working medicine.',
+  src="insitro press releases, December 2024 and June 2026;<br>Koller, McKinsey interview, November 2022",
+  belle_hook="happy-proud", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"lucy-guo": dict(
+  cat="actors", term="Lucy Guo",
+  person="Lucy Guo", role="co-founder, Scale AI",
+  kick="the floor underneath the models",
+  hook="At twenty one she co-founded the company that <span class=\"rose\">labels the data</span>.",
+  q="Scale AI&rsquo;s core business is:",
+  opts=["Building frontier models",
+        "Organising the human labelling and evaluation the models are trained on",
+        "Selling chips",
+        "Running data centres"],
+  ans="B", icon="i-label",
+  reveal='<span class="rose">People</span>, marking up data, at industrial scale.',
+  revsub="Founded 2016 with Alexandr Wang. She ran operations and product design, and was pushed out in 2018.",
+  threekick="three things this card is really about",
+  three=[("i-label","The work is human.","Every training set that looks automatic sits on somebody&rsquo;s labelling."),
+         ("i-stake","The money is enormous.","Meta took a 49 percent non voting stake in June 2025, valuing Scale at about 29 billion dollars."),
+         ("i-decline","She kept a slice.","Around three percent, which is most of a fortune Forbes estimated at 1.5 billion dollars in 2026.")],
+  threefoot="She now runs Passes, a creator payments company facing an unresolved civil suit. The allegations there are unproven.",
+  whyicon="i-hand", whykick="why the labelling layer is the interesting part",
+  why="The <span class=\"rose\">judgement</span> in a model came from people, and almost nobody names them.",
+  whysub="When a model reflects a preference, that preference was written down by somebody paid to write it down.",
+  flag="emp",
+  file='<span class="rose">Measured</span> where money is involved. Her exit is well reported and not documented in any filing.',
+  src="Forbes profiles of Lucy Guo, April 2025 and July 2026;<br>Meta investment in Scale AI, announced 13 June 2025",
+  belle_hook="sly-one", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"gender-bias": dict(
+  cat="behavior", term="gender bias",
+  kick="what the measurements actually say",
+  hook="AI gender bias is <span class=\"rose\">real, measured, and smaller and stranger</span> than the stories.",
+  q="A 2025 study scoring 361,000 synthetic r&eacute;sum&eacute;s with five leading models found:",
+  opts=["Women were consistently rated far lower",
+        "Small effects that favoured women and disadvantaged Black men",
+        "No measurable difference at all",
+        "Bias only in the smallest model"],
+  ans="B", icon="i-scale",
+  reveal='Small effects, and <span class="rose">not in the direction you expect</span>.',
+  revsub="An et al., PNAS Nexus, 2025: female names scored slightly higher; Black male names slightly lower.",
+  threekick="the three anchors, in order",
+  three=[("i-scale","2016: it is in the maths.","Gender bias in word embeddings is a recoverable geometric direction, and can be partly projected out."),
+         ("i-label","2018: it is in the training data.","Amazon scrapped an experimental hiring tool that penalised r&eacute;sum&eacute;s containing the word women&rsquo;s."),
+         ("i-lens","2025: it is measurable, and modest.","Effect sizes around a point on a hundred point scale, flipping sign across models and groups.")],
+  threefoot="Amazon said the tool was never used by recruiters to evaluate candidates, which is usually left out.",
+  whyicon="i-counter", whykick="the famous example that does not hold",
+  why="Man is to programmer as woman is to homemaker is <span class=\"rose\">partly an artefact</span> of the method.",
+  whysub="The analogy code could not return the input word, and the vocabulary was capped below where programmer sat. The bias is real. That demonstration of it is not clean.",
+  flag="emp",
+  file='<span class="rose">Measured</span>, repeatedly, with a headline example that turned out to be an artefact. Both halves matter.',
+  src="Bolukbasi et al., NIPS 2016; Dastin, Reuters, 10 October 2018;<br>An, Huang, Lin and Tai, PNAS Nexus 4(3), 2025",
+  belle_hook="unimpressed", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
   outro="I take the words apart so the argument stops being noise."),
 }
 
@@ -2210,6 +2474,40 @@ UNKNOWN = {
  "published, so <span class=\"rose\">resigned</span> and <span class=\"rose\">fired</span> both remain "
  "assertions. Whether the internal review she was subject to was normal practice or an unusual intervention is "
  "also unestablished.",
+"toner":
+ "What was actually said inside that boardroom. Her account and OpenAI&rsquo;s are irreconcilable, no independent "
+ "record exists, and the law firm review that followed was <span class=\"rose\">commissioned by the company</span> "
+ "it was reviewing. Nobody outside can settle it.",
+
+"murati":
+ "What she believed at the time. She said she was not involved in removing him, signed the letter bringing him back, "
+ "and later testified under oath that he was not always honest with her. All three are documented; "
+ "<span class=\"rose\">how they fit together</span> is not.",
+
+"daniela-amodei":
+ "Her exact OpenAI role, which is asserted confidently across the internet and sourced almost nowhere. More "
+ "importantly: whether a company can hold a safety mission while its valuation depends on shipping "
+ "<span class=\"rose\">is the open question</span>, and it is open for every lab, not just this one.",
+
+"crawford":
+ "How much of AI&rsquo;s footprint is genuinely attributable to AI. Her figures predate the language model era and "
+ "have been superseded, and no source cleanly separates AI from ordinary computing. Whether the extractive frame "
+ "is the <span class=\"rose\">right frame</span>, rather than one true description among several, is the argument.",
+
+"koller":
+ "Whether pointing machine learning at biology actually shortens timelines or raises the odds a drug works. With "
+ "<span class=\"rose\">nothing yet in humans</span>, there is no outcome evidence in either direction, and there "
+ "will not be for years.",
+
+"lucy-guo":
+ "Almost everything about the labelling layer. Who the workers are, what they are paid, what they are shown, and "
+ "how much of a model&rsquo;s judgement traces to their instructions is <span class=\"rose\">not disclosed</span> "
+ "by anyone in the industry. Her own departure rests on anonymous reporting.",
+
+"gender-bias":
+ "Whether any of it predicts real harm. No study has linked a score gap in a test prompt to an actual hiring "
+ "outcome, and the measured effects <span class=\"rose\">flip sign</span> across models, prompts and groups. That "
+ "makes the bias real and its consequences unmeasured, which is a harder thing to say than either headline.",
 }
 for _k, _v in SPECS.items():
     if _k in UNKNOWN:

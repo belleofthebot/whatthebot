@@ -52,7 +52,8 @@ BELLE_TERMS = {
     "exponential-growth", "existential-risk", "s-risk",
     "recursive-self-improvement", "misuse-misalignment", "intelligence",
     "altman", "hinton", "scheming", "ai-psychosis", "data-center",
-    "gender-shades", "fei-fei-li", "gebru",
+    "gender-shades", "fei-fei-li", "gebru", "toner", "murati",
+    "daniela-amodei", "crawford", "koller", "lucy-guo",
 }
 
 # The second expression, shown on hover. Idle face, then the reaction: the point
@@ -80,7 +81,10 @@ HOVER = {
  "ai-psychosis": "saying-unpleasant-truth-1",
  "data-center": "surprised-worried",        "taboo-your-words": "hands-hips-pedantic",
  "gender-shades": "noticed-something",       "fei-fei-li": "happy-proud",
- "gebru": "hands-hips-pedantic",
+ "gebru": "hands-hips-pedantic",           "toner": "annoyed-skeptical",
+ "murati": "shock-worry",                  "daniela-amodei": "warm-curious",
+ "crawford": "saying-unpleasant-truth-1",  "koller": "delighted",
+ "lucy-guo": "smirking",
 }
 
 # the four kinds of claim
@@ -191,7 +195,7 @@ def hook_size(hook):
     """No ellipsis. The hook is short by design, so when one runs long the type
     steps down rather than the sentence being cut off mid thought."""
     n = len(strip(hook))
-    for limit, cls in ((44, "h-xl"), (66, "h-l"), (92, "h-m")):
+    for limit, cls in ((40, "h-xl"), (58, "h-l"), (84, "h-m")):
         if n <= limit:
             return cls
     return "h-s"

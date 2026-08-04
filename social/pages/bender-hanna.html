@@ -441,6 +441,82 @@ p{font-size:36px;line-height:1.38;color:var(--soft);max-width:24ch}
   <circle cx="12" cy="44" r="4" fill="var(--ic-dim)"/>
   <circle cx="52" cy="20" r="4" fill="var(--ic-dim)"/>
 </g>
+
+<!-- a seat at the table, vacated -->
+<g id="i-seat">
+  <path d="M18 30 V14 H46 V30" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linejoin="round"/>
+  <path d="M12 32 H52" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M18 36 V52 M46 36 V52" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round" stroke-dasharray="5 5"/>
+</g>
+<!-- a handover, taken and given back -->
+<g id="i-relay">
+  <circle cx="14" cy="32" r="7" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <circle cx="50" cy="32" r="7" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <path d="M23 26 H41" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M35 21 L42 26 L35 31" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M41 40 H23" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M29 35 L22 40 L29 45" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<!-- something built around a thing, on purpose -->
+<g id="i-guard">
+  <path d="M32 10 L52 18 V32 C52 44 42 51 32 54 C22 51 12 44 12 32 V18 Z"
+        stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linejoin="round"/>
+  <path d="M24 32 L30 38 L42 26" stroke="var(--ic-mint)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<!-- taken out of the ground -->
+<g id="i-extract">
+  <path d="M8 44 H56 M8 52 H56" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M32 38 V12" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M25 18 L32 11 L39 18" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="18" cy="44" r="3.2" fill="var(--ic-rose)"/>
+  <circle cx="46" cy="52" r="3.2" fill="var(--ic-rose)"/>
+</g>
+<!-- a molecule -->
+<g id="i-mol">
+  <circle cx="18" cy="20" r="6" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <circle cx="44" cy="26" r="6" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <circle cx="28" cy="46" r="6" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <path d="M24 23 L38 25 M41 32 L32 40 M23 26 L26 40" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+</g>
+<!-- somebody marked this by hand -->
+<g id="i-label">
+  <rect x="8" y="16" width="30" height="24" rx="5" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <path d="M14 34 L21 26 L28 34" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M40 46 L48 54 L58 38" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M44 20 H58 M44 28 H54" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+</g>
+<!-- a balance, not level -->
+<g id="i-scale">
+  <path d="M32 12 V48 M18 48 H46" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M12 22 H52" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round" transform="rotate(-9 32 22)"/>
+  <circle cx="13" cy="27" r="5" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <circle cx="51" cy="18" r="5" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+</g>
+
+<!-- fluent, and repeating -->
+<g id="i-parrot">
+  <path d="M34 12 C46 12 52 20 52 30 C52 42 42 52 30 52 C20 52 12 46 12 38"
+        stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M52 24 L60 28 L52 32" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="42" cy="24" r="3" fill="var(--ic-rose)"/>
+  <path d="M22 40 H36" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 4"/>
+</g>
+<!-- four faces, one of them missed -->
+<g id="i-face">
+  <circle cx="20" cy="20" r="8" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <circle cx="44" cy="20" r="8" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <circle cx="20" cy="44" r="8" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <circle cx="44" cy="44" r="8" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-dasharray="5 4"/>
+  <path d="M39 39 L49 49 M49 39 L39 49" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+</g>
+<!-- a great many labelled things -->
+<g id="i-tiles">
+  <rect x="8" y="10" width="16" height="14" rx="4" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <rect x="28" y="10" width="16" height="14" rx="4" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <rect x="8" y="30" width="16" height="14" rx="4" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <rect x="28" y="30" width="16" height="14" rx="4" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <path d="M50 16 H58 M50 36 H58 M12 50 H44" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 4"/>
+</g>
 </defs></svg>
 <div class="s g-actors cover" id="s1"><div class="hdr"><span class="mark">belleof<span class="sg">thebot</span>_</span><span class="sp"></span><span class="num">1 / 8</span></div><div class="mid"><div class="who">Bender &amp; Hanna</div><div class="role">linguist and sociologist &middot; the case for the harm happening now</div><div class="swipe"><span class="ar"></span>swipe</div></div><img class="belle sm" src="../../assets/belle/hands-hips-pedantic.webp" alt=""></div>
 <div class="s g-actors" id="s2"><div class="hdr"><span class="mark">belleof<span class="sg">thebot</span>_</span><span class="chip">AI actors</span><span class="sp"></span><span class="num">2 / 8</span></div><div class="mid"><span class="kick">before you swipe, pick one</span><h2 style="margin-bottom:38px">Their central argument against focusing on existential risk is that it:</h2><div class="opts"><div class="opt"><span class="k">A</span>Is scientifically impossible</div><div class="opt"><span class="k">B</span>Will not happen this century</div><div class="opt"><span class="k">C</span>Is a religious belief</div><div class="opt"><span class="k">D</span>Diverts attention from harms already happening</div></div></div></div>
