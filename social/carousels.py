@@ -86,6 +86,20 @@ p{font-size:36px;line-height:1.38;color:var(--soft);max-width:24ch}
 .p-centre h1,.p-centre h2{max-width:800px}
 .p-far .belle{height:1030px;right:0}
 .p-far .mid{max-width:54%}
+
+/* the cover. no wordmark, no counter, no chip. one line and her. */
+.cover{padding:150px 92px 0}
+.cover .hdr{display:none}
+.cover .mid{flex:0 0 auto;justify-content:flex-start}
+.cover h1{font-size:88px;line-height:1.04;max-width:15ch;letter-spacing:-.024em}
+.cover .who{font-size:96px}
+.cover .role{font-size:30px;margin-top:18px;max-width:26ch}
+.cover .belle{right:auto;left:50%;transform:translateX(-50%);height:840px;bottom:0}
+.cover .swipe{display:flex;align-items:center;gap:14px;margin-top:40px;
+  font-family:var(--mono);font-size:27px;color:var(--faint)}
+.cover .swipe .ar{width:44px;height:2px;background:var(--acc);position:relative;opacity:.8}
+.cover .swipe .ar::after{content:"";position:absolute;right:0;top:-4px;width:10px;height:10px;
+  border-top:2px solid var(--acc);border-right:2px solid var(--acc);transform:rotate(45deg)}
 .ico{display:inline-flex;align-items:center;gap:20px}
 .ico .tick{width:22px;height:3px;background:var(--ic-rose);border-radius:2px;flex:none}
 .ico .box{width:104px;height:104px;border:2px solid var(--edge);border-radius:22px;flex:none;
@@ -257,9 +271,9 @@ def _ico(name, big=False, hot=False):
 def _belle(slug, small=True):
     return f'<img class="belle{" sm" if small else ""}" src="../../assets/belle/{slug}.webp" alt="">'
 
-def _slide(n, total, body, cat, flip=False, belle=None, sid="", chip=True, pos=""):
+def _slide(n, total, body, cat, flip=False, belle=None, sid="", chip=True, pos="", cover=False):
     c = f'<span class="chip">{CATS[cat]}</span>' if chip else ""
-    pcls = (" " + pos) if (pos and belle) else ""
+    pcls = (" cover" if cover else ((" " + pos) if (pos and belle) else ""))
     return (f'<div class="s g-{cat}{" flip" if flip else ""}{pcls}" id="{sid}">'
             f'<div class="hdr">{MARK}{c}<span class="sp"></span>'
             f'<span class="num">{n} / {total}</span></div>'
@@ -276,18 +290,14 @@ def build(key, spec):
     pos = spec.get("pos", "")
     lead_belle = bool(spec.get("belle_hook")) and spec.get("lead") != "icon"
     band = ""
+    swipe = '<div class="swipe"><span class="ar"></span>swipe</div>'
     if spec.get("person"):
-        head = (band + f'<div class="who">{spec["person"]}</div>'
-                f'<div class="role">{spec["role"]}</div>'
-                f'<h1 class="sm" style="margin-top:34px">{spec["hook"]}</h1>')
+        head = (f'<div class="who">{spec["person"]}</div>'
+                f'<div class="role">{spec["role"]}</div>' + swipe)
     else:
-        head = (band + f'<span class="kick">{spec["kick"]}</span>'
-                f'<h1 class="{spec.get("h1cls","")}">{spec["hook"]}</h1>')
-    if not lead_belle:
-        head += ('<div style="margin-top:52px">'
-                 + _ico(spec["icon"], big=True, hot=True) + '</div>')
-    s.append(_slide(1, t, head, cat, pos=pos,
-                    belle=spec["belle_hook"] if lead_belle else None, sid="s1", chip=False))
+        head = f'<h1>{spec["hook"]}</h1>' + swipe
+    s.append(_slide(1, t, head, cat, belle=spec["belle_hook"],
+                    sid="s1", chip=False, cover=True))
     # 2 quiz
     opts = "".join(f'<div class="opt"><span class="k">{k}</span>{o}</div>'
                    for k, o in zip("ABCD", spec["opts"]))
@@ -398,7 +408,7 @@ SPECS = {
 "who-gives-a-number": dict(
   cat="actors", term="who will give you a number",
   kick="everyone quotes it, almost nobody offers it",
-  hook="Almost nobody who builds AI will give you a <span class=\"rose\">p(doom)</span>.",
+  hook="Almost nobody will give you a <span class=\"rose\">p(doom)</span>.",
   q="Which of these lab leaders has given a public probability of catastrophe?",
   opts=["All of them", "Dario Amodei", "Demis Hassabis", "Yann LeCun"],
   ans="B", icon="i-blank",
@@ -422,7 +432,7 @@ SPECS = {
   cat="actors", term="Yoshua Bengio", person="Yoshua Bengio",
   role="Turing Award 2018 &middot; chairs the International AI Safety Report",
   kick="the people actually running this argument",
-  hook="Helped invent the field. Now spends his time on the <span class=\"rose\">risks</span>.",
+  hook="Helped invent it. Now works on the <span class=\"rose\">risks</span>.",
   q="Bengio chairs the International AI Safety Report. What figure does it give for the chance of catastrophe?",
   opts=["Ten percent", "None. It deliberately gives no number",
         "One percent", "Fifty percent"],
@@ -447,7 +457,7 @@ SPECS = {
   cat="actors", term="Yann LeCun", person="Yann LeCun",
   role="Turing Award 2018 &middot; the most prominent sceptic of existential risk",
   kick="the people actually running this argument",
-  hook="Same prize as Bengio, same year, <span class=\"rose\">opposite conclusion</span>.",
+  hook="Same prize as Bengio. <span class=\"rose\">Opposite conclusion</span>.",
   q="What probability of catastrophe has LeCun given?",
   opts=["Under one percent", "He has not given one",
         "Exactly zero", "Five percent"],
@@ -472,7 +482,7 @@ SPECS = {
   cat="actors", term="Bender and Hanna", person="Bender &amp; Hanna",
   role="linguist and sociologist &middot; the case for the harm happening now",
   kick="the people actually running this argument",
-  hook="Their objection is not that catastrophe is <span class=\"rose\">unlikely</span>.",
+  hook="Not that catastrophe is <span class=\"rose\">unlikely</span>.",
   q="Their central argument against focusing on existential risk is that it:",
   opts=["Is scientifically impossible",
         "Diverts attention from harms already happening",
@@ -499,7 +509,7 @@ SPECS = {
 "hallucination": dict(
   cat="behavior", term="hallucination",
   kick="a word worth being precise about",
-  hook='An AI <span class="rose">hallucination</span> is not the model seeing things.',
+  hook='An AI <span class="rose">hallucination</span> is not a glitch.',
   q="A hallucination is:",
   opts=["A glitch or a bug in the code",
         "Confidently stated output that is not true",
@@ -551,7 +561,7 @@ SPECS = {
 "rlhf": dict(
   cat="components", term="RLHF",
   kick="how it learned to behave",
-  hook="<span class=\"rose\">RLHF</span> did not teach it human values.",
+  hook="<span class=\"rose\">RLHF</span> did not teach it our values.",
   q="Reinforcement learning from human feedback trains the model against:",
   opts=["Human values",
         "A learned scorer built from human comparisons",
@@ -629,7 +639,7 @@ SPECS = {
 "specification-gaming": dict(
   cat="behavior", term="specification gaming",
   kick="when doing what you asked is the problem",
-  hook="<span class=\"rose\">Specification gaming</span> is when it does exactly what you said.",
+  hook="<span class=\"rose\">Specification gaming</span>: it did what you said.",
   q="Specification gaming is when a system:",
   opts=["Refuses to answer a question",
         "Satisfies the objective it was given in a way nobody intended",
@@ -654,7 +664,7 @@ SPECS = {
 "existential-risk": dict(
   cat="risk", term="existential risk",
   kick="the most misread words in the subject",
-  hook="With <span class=\"rose\">existential risk</span>, extinction is not the worst one.",
+  hook="Extinction is not the worst <span class=\"rose\">existential risk</span>.",
   q="&ldquo;Existential risk&rdquo; means:",
   opts=["Everyone dies",
         "The permanent destruction of humanity&rsquo;s long term potential",
@@ -680,7 +690,7 @@ SPECS = {
 "misuse-misalignment": dict(
   cat="risk", term="misuse and misalignment",
   kick="two words people use as one",
-  hook="<span class=\"rose\">Misalignment</span> means nobody has to want it to go wrong.",
+  hook="<span class=\"rose\">Misalignment</span> needs no villain.",
   q="&ldquo;Misalignment&rdquo; means:",
   opts=["Someone using a system to cause harm on purpose",
         "A system pursuing something other than what was intended",
@@ -707,7 +717,7 @@ SPECS = {
 "recursive-self-improvement": dict(
   cat="risk", term="recursive self improvement",
   kick="the oldest idea in the field, from 1965",
-  hook="<span class=\"rose\">Recursive self improvement</span> is the last invention we would need to make.",
+  hook="<span class=\"rose\">Recursive self improvement</span>: the last invention.",
   q="&ldquo;Recursive self improvement&rdquo; is:",
   opts=["A measured property of current models",
         "A hypothesis about a compounding loop, not yet demonstrated",
@@ -733,7 +743,7 @@ SPECS = {
 "intelligence": dict(
   cat="components", term="intelligence",
   kick="the word doing the most hidden work",
-  hook="Nobody can define <span class=\"rose\">intelligence</span>. Not for people either.",
+  hook="Nobody can define <span class=\"rose\">intelligence</span>.",
   q="When someone says an AI is &ldquo;intelligent&rdquo;, they usually mean:",
   opts=["It is conscious",
         "It scores well on a set of tests",

@@ -57,6 +57,20 @@ p{font-size:36px;line-height:1.38;color:var(--soft);max-width:24ch}
 .p-centre h1,.p-centre h2{max-width:800px}
 .p-far .belle{height:1030px;right:0}
 .p-far .mid{max-width:54%}
+
+/* the cover. no wordmark, no counter, no chip. one line and her. */
+.cover{padding:150px 92px 0}
+.cover .hdr{display:none}
+.cover .mid{flex:0 0 auto;justify-content:flex-start}
+.cover h1{font-size:88px;line-height:1.04;max-width:15ch;letter-spacing:-.024em}
+.cover .who{font-size:96px}
+.cover .role{font-size:30px;margin-top:18px;max-width:26ch}
+.cover .belle{right:auto;left:50%;transform:translateX(-50%);height:840px;bottom:0}
+.cover .swipe{display:flex;align-items:center;gap:14px;margin-top:40px;
+  font-family:var(--mono);font-size:27px;color:var(--faint)}
+.cover .swipe .ar{width:44px;height:2px;background:var(--acc);position:relative;opacity:.8}
+.cover .swipe .ar::after{content:"";position:absolute;right:0;top:-4px;width:10px;height:10px;
+  border-top:2px solid var(--acc);border-right:2px solid var(--acc);transform:rotate(45deg)}
 .ico{display:inline-flex;align-items:center;gap:20px}
 .ico .tick{width:22px;height:3px;background:var(--ic-rose);border-radius:2px;flex:none}
 .ico .box{width:104px;height:104px;border:2px solid var(--edge);border-radius:22px;flex:none;
@@ -214,7 +228,7 @@ p{font-size:36px;line-height:1.38;color:var(--soft);max-width:24ch}
   <path d="M26 32 H38" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
 </g>
 </defs></svg>
-<div class="s g-risk p-left" id="s1"><div class="hdr"><span class="mark">belleof<span class="sg">thebot</span>_</span><span class="sp"></span><span class="num">1 / 7</span></div><div class="mid"><span class="kick">the oldest idea in the field, from 1965</span><h1 class=""><span class="rose">Recursive self improvement</span> is the last invention we would need to make.</h1></div><img class="belle sm" src="../../assets/belle/worry-about-future.webp" alt=""></div>
+<div class="s g-risk cover" id="s1"><div class="hdr"><span class="mark">belleof<span class="sg">thebot</span>_</span><span class="sp"></span><span class="num">1 / 7</span></div><div class="mid"><h1><span class="rose">Recursive self improvement</span>: the last invention.</h1><div class="swipe"><span class="ar"></span>swipe</div></div><img class="belle sm" src="../../assets/belle/worry-about-future.webp" alt=""></div>
 <div class="s g-risk" id="s2"><div class="hdr"><span class="mark">belleof<span class="sg">thebot</span>_</span><span class="chip">AI risk</span><span class="sp"></span><span class="num">2 / 7</span></div><div class="mid"><span class="kick">before you swipe, pick one</span><h2 style="margin-bottom:38px">&ldquo;Recursive self improvement&rdquo; is:</h2><div class="opts"><div class="opt"><span class="k">A</span>A measured property of current models</div><div class="opt"><span class="k">B</span>A hypothesis about a compounding loop, not yet demonstrated</div><div class="opt"><span class="k">C</span>A training technique every lab uses</div><div class="opt"><span class="k">D</span>A type of chip</div></div></div></div>
 <div class="s g-risk" id="s3"><div class="hdr"><span class="mark">belleof<span class="sg">thebot</span>_</span><span class="chip">AI risk</span><span class="sp"></span><span class="num">3 / 7</span></div><div class="mid"><span class="kick">it is B</span><h2 class="" style="max-width:15ch;margin-bottom:52px">A <span class="rose">hypothesis</span>. A system good at AI research improves itself, and each version is better at improving.</h2><span class="ico big hot"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-compound"/></svg></span></span><p style="margin-top:38px">Good wrote that down in 1965. Sixty years later it is still the argument everything else hangs on.</p></div></div>
 <div class="s g-risk flip" id="s4"><div class="hdr"><span class="mark">belleof<span class="sg">thebot</span>_</span><span class="chip">AI risk</span><span class="sp"></span><span class="num">4 / 7</span></div><div class="mid"><span class="kick">what would have to be true</span><div class="three"><div class="row"><span class="ico"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-compound"/></svg></span></span><span class="t"><b>The loop must close.</b>The system has to actually improve its own successor.</span></div><div class="row"><span class="ico"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-branch"/></svg></span></span><span class="t"><b>Gains must compound.</b>Each round has to yield more than the last, not less.</span></div><div class="row"><span class="ico"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-flat"/></svg></span></span><span class="t"><b>Nothing must bottleneck.</b>Not compute, not data, not physics, not money.</span></div></div><p style="margin-top:52px;font-size:36px">If all three hold, the gap between us and it closes faster than anyone can respond to.</p></div></div>

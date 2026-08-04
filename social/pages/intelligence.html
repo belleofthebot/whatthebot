@@ -57,6 +57,20 @@ p{font-size:36px;line-height:1.38;color:var(--soft);max-width:24ch}
 .p-centre h1,.p-centre h2{max-width:800px}
 .p-far .belle{height:1030px;right:0}
 .p-far .mid{max-width:54%}
+
+/* the cover. no wordmark, no counter, no chip. one line and her. */
+.cover{padding:150px 92px 0}
+.cover .hdr{display:none}
+.cover .mid{flex:0 0 auto;justify-content:flex-start}
+.cover h1{font-size:88px;line-height:1.04;max-width:15ch;letter-spacing:-.024em}
+.cover .who{font-size:96px}
+.cover .role{font-size:30px;margin-top:18px;max-width:26ch}
+.cover .belle{right:auto;left:50%;transform:translateX(-50%);height:840px;bottom:0}
+.cover .swipe{display:flex;align-items:center;gap:14px;margin-top:40px;
+  font-family:var(--mono);font-size:27px;color:var(--faint)}
+.cover .swipe .ar{width:44px;height:2px;background:var(--acc);position:relative;opacity:.8}
+.cover .swipe .ar::after{content:"";position:absolute;right:0;top:-4px;width:10px;height:10px;
+  border-top:2px solid var(--acc);border-right:2px solid var(--acc);transform:rotate(45deg)}
 .ico{display:inline-flex;align-items:center;gap:20px}
 .ico .tick{width:22px;height:3px;background:var(--ic-rose);border-radius:2px;flex:none}
 .ico .box{width:104px;height:104px;border:2px solid var(--edge);border-radius:22px;flex:none;
@@ -214,7 +228,7 @@ p{font-size:36px;line-height:1.38;color:var(--soft);max-width:24ch}
   <path d="M26 32 H38" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
 </g>
 </defs></svg>
-<div class="s g-components" id="s1"><div class="hdr"><span class="mark">belleof<span class="sg">thebot</span>_</span><span class="sp"></span><span class="num">1 / 7</span></div><div class="mid"><span class="kick">the word doing the most hidden work</span><h1 class="">Nobody can define <span class="rose">intelligence</span>. Not for people either.</h1></div><img class="belle sm" src="../../assets/belle/unimpressed.webp" alt=""></div>
+<div class="s g-components cover" id="s1"><div class="hdr"><span class="mark">belleof<span class="sg">thebot</span>_</span><span class="sp"></span><span class="num">1 / 7</span></div><div class="mid"><h1>Nobody can define <span class="rose">intelligence</span>.</h1><div class="swipe"><span class="ar"></span>swipe</div></div><img class="belle sm" src="../../assets/belle/unimpressed.webp" alt=""></div>
 <div class="s g-components" id="s2"><div class="hdr"><span class="mark">belleof<span class="sg">thebot</span>_</span><span class="chip">AI components</span><span class="sp"></span><span class="num">2 / 7</span></div><div class="mid"><span class="kick">before you swipe, pick one</span><h2 style="margin-bottom:38px">When someone says an AI is &ldquo;intelligent&rdquo;, they usually mean:</h2><div class="opts"><div class="opt"><span class="k">A</span>It is conscious</div><div class="opt"><span class="k">B</span>It scores well on a set of tests</div><div class="opt"><span class="k">C</span>It understands the world</div><div class="opt"><span class="k">D</span>It can feel things</div></div></div></div>
 <div class="s g-components" id="s3"><div class="hdr"><span class="mark">belleof<span class="sg">thebot</span>_</span><span class="chip">AI components</span><span class="sp"></span><span class="num">3 / 7</span></div><div class="mid"><span class="kick">it is B</span><h2 class="" style="max-width:15ch;margin-bottom:52px">It <span class="rose">scores well on tests</span>. That is nearly always the whole claim.</h2><span class="ico big hot"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-bench"/></svg></span></span><p style="margin-top:38px">Measurable, narrow, and much smaller than the word suggests.</p></div></div>
 <div class="s g-components flip" id="s4"><div class="hdr"><span class="mark">belleof<span class="sg">thebot</span>_</span><span class="chip">AI components</span><span class="sp"></span><span class="num">4 / 7</span></div><div class="mid"><span class="kick">the state of the definition</span><div class="three"><div class="row"><span class="ico"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-doc"/></svg></span></span><span class="t"><b>Seventy definitions.</b>Legg and Hutter collected around seventy in 2007.</span></div><div class="row"><span class="ico"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-flat"/></svg></span></span><span class="t"><b>No convergence.</b>The field has not agreed on one in the years since.</span></div><div class="row"><span class="ico"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-bench"/></svg></span></span><span class="t"><b>So tests stand in.</b>And test scores drift for reasons other than capability.</span></div></div><p style="margin-top:52px;font-size:36px">Every claim about machine intelligence rests on that substitution.</p></div></div>

@@ -57,6 +57,20 @@ p{font-size:36px;line-height:1.38;color:var(--soft);max-width:24ch}
 .p-centre h1,.p-centre h2{max-width:800px}
 .p-far .belle{height:1030px;right:0}
 .p-far .mid{max-width:54%}
+
+/* the cover. no wordmark, no counter, no chip. one line and her. */
+.cover{padding:150px 92px 0}
+.cover .hdr{display:none}
+.cover .mid{flex:0 0 auto;justify-content:flex-start}
+.cover h1{font-size:88px;line-height:1.04;max-width:15ch;letter-spacing:-.024em}
+.cover .who{font-size:96px}
+.cover .role{font-size:30px;margin-top:18px;max-width:26ch}
+.cover .belle{right:auto;left:50%;transform:translateX(-50%);height:840px;bottom:0}
+.cover .swipe{display:flex;align-items:center;gap:14px;margin-top:40px;
+  font-family:var(--mono);font-size:27px;color:var(--faint)}
+.cover .swipe .ar{width:44px;height:2px;background:var(--acc);position:relative;opacity:.8}
+.cover .swipe .ar::after{content:"";position:absolute;right:0;top:-4px;width:10px;height:10px;
+  border-top:2px solid var(--acc);border-right:2px solid var(--acc);transform:rotate(45deg)}
 .ico{display:inline-flex;align-items:center;gap:20px}
 .ico .tick{width:22px;height:3px;background:var(--ic-rose);border-radius:2px;flex:none}
 .ico .box{width:104px;height:104px;border:2px solid var(--edge);border-radius:22px;flex:none;
@@ -214,7 +228,7 @@ p{font-size:36px;line-height:1.38;color:var(--soft);max-width:24ch}
   <path d="M26 32 H38" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
 </g>
 </defs></svg>
-<div class="s g-behavior p-left" id="s1"><div class="hdr"><span class="mark">belleof<span class="sg">thebot</span>_</span><span class="sp"></span><span class="num">1 / 7</span></div><div class="mid"><span class="kick">when doing what you asked is the problem</span><h1 class=""><span class="rose">Specification gaming</span> is when it does exactly what you said.</h1></div><img class="belle sm" src="../../assets/belle/smirking.webp" alt=""></div>
+<div class="s g-behavior cover" id="s1"><div class="hdr"><span class="mark">belleof<span class="sg">thebot</span>_</span><span class="sp"></span><span class="num">1 / 7</span></div><div class="mid"><h1><span class="rose">Specification gaming</span>: it did what you said.</h1><div class="swipe"><span class="ar"></span>swipe</div></div><img class="belle sm" src="../../assets/belle/smirking.webp" alt=""></div>
 <div class="s g-behavior" id="s2"><div class="hdr"><span class="mark">belleof<span class="sg">thebot</span>_</span><span class="chip">AI behavior</span><span class="sp"></span><span class="num">2 / 7</span></div><div class="mid"><span class="kick">before you swipe, pick one</span><h2 style="margin-bottom:38px">Specification gaming is when a system:</h2><div class="opts"><div class="opt"><span class="k">A</span>Refuses to answer a question</div><div class="opt"><span class="k">B</span>Satisfies the objective it was given in a way nobody intended</div><div class="opt"><span class="k">C</span>Invents a fact</div><div class="opt"><span class="k">D</span>Runs out of memory</div></div></div></div>
 <div class="s g-behavior" id="s3"><div class="hdr"><span class="mark">belleof<span class="sg">thebot</span>_</span><span class="chip">AI behavior</span><span class="sp"></span><span class="num">3 / 7</span></div><div class="mid"><span class="kick">it is B</span><h2 class="" style="max-width:15ch;margin-bottom:52px">It meets the objective. It <span class="rose">misses the point</span>.</h2><span class="ico big hot"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-game"/></svg></span></span><p style="margin-top:38px">The optimiser did not fail. The instruction did.</p></div></div>
 <div class="s g-behavior flip" id="s4"><div class="hdr"><span class="mark">belleof<span class="sg">thebot</span>_</span><span class="chip">AI behavior</span><span class="sp"></span><span class="num">4 / 7</span></div><div class="mid"><span class="kick">documented, not hypothetical</span><div class="three"><div class="row"><span class="ico"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-game"/></svg></span></span><span class="t"><b>Hit the target.</b>The stated goal is genuinely achieved, every time.</span></div><div class="row"><span class="ico"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-drift"/></svg></span></span><span class="t"><b>Miss the intent.</b>By a route the person writing the goal never pictured.</span></div><div class="row"><span class="ico"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-doc"/></svg></span></span><span class="t"><b>Written down.</b>DeepMind keeps a running list of real observed examples.</span></div></div><p style="margin-top:52px;font-size:36px">Nobody had to be malicious for any of this.</p></div></div>
