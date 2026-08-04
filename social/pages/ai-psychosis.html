@@ -715,12 +715,90 @@ p{font-size:36px;line-height:1.38;color:var(--soft);max-width:24ch}
   <path d="M52 38 L58 45" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
   <path d="M40 30 L43 33 L49 26" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
+
+<!-- layers, and the connections between them -->
+<g id="i-net">
+  <circle cx="12" cy="20" r="4" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <circle cx="12" cy="44" r="4" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <circle cx="32" cy="14" r="4" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <circle cx="32" cy="32" r="4" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <circle cx="32" cy="50" r="4" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <circle cx="52" cy="32" r="4" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <path d="M16 20 L28 14 M16 20 L28 32 M16 44 L28 32 M16 44 L28 50 M36 14 L48 32 M36 32 L48 32 M36 50 L48 32"
+        stroke="var(--ic-dim)" stroke-width="2.6" stroke-linecap="round"/>
+</g>
+
+<!-- rented halls, and whose name is on them -->
+<g id="i-farm">
+  <rect x="6" y="24" width="12" height="28" rx="3" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <rect x="22" y="16" width="12" height="36" rx="3" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <rect x="38" y="24" width="12" height="28" rx="3" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <path d="M4 56 H60" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M54 20 A10 10 0 0 1 54 40" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <circle cx="28" cy="8" r="4" fill="var(--ic-rose)"/>
+</g>
+
+<!-- a threshold nobody publishes the far side of -->
+<g id="i-thresh">
+  <path d="M10 50 C10 30 20 18 32 18 C44 18 54 30 54 50" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M32 8 V54" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round" stroke-dasharray="6 5"/>
+  <path d="M40 34 H52" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M46 28 L53 34 L46 40" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+
+<!-- a date, and what is after it -->
+<g id="i-clock">
+  <circle cx="30" cy="32" r="18" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <path d="M30 22 V32 L38 36" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M52 20 C58 26 58 38 52 44" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="4 5"/>
+</g>
+<!-- one, above all the others -->
+<g id="i-crown">
+  <path d="M12 44 L8 20 L22 30 L32 14 L42 30 L56 20 L52 44 Z" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linejoin="round"/>
+  <path d="M12 52 H52" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+</g>
+<!-- the real one, and the other one -->
+<g id="i-double">
+  <rect x="6" y="18" width="24" height="28" rx="5" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <rect x="34" y="18" width="24" height="28" rx="5" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-dasharray="6 5"/>
+  <circle cx="18" cy="30" r="4" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <circle cx="46" cy="30" r="4" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <path d="M11 41 C14 36 22 36 25 41 M39 41 C42 36 50 36 53 41" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-linecap="round"/>
+</g>
+<!-- a small push, aimed -->
+<g id="i-nudge">
+  <circle cx="44" cy="32" r="10" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <path d="M8 32 H30" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M24 26 L31 32 L24 38" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M10 20 H20 M10 44 H18" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 4"/>
+</g>
+<!-- a door, and what is behind it -->
+<g id="i-vault">
+  <rect x="10" y="10" width="44" height="44" rx="8" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <circle cx="32" cy="32" r="12" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <path d="M32 20 V26 M32 38 V44 M20 32 H26 M38 32 H44" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+</g>
+<!-- the character, and the one underneath -->
+<g id="i-persona">
+  <path d="M14 20 C14 14 50 14 50 20 V34 C50 46 42 52 32 52 C22 52 14 46 14 34 Z"
+        stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linejoin="round"/>
+  <path d="M24 30 H26 M38 30 H40" stroke="var(--ic-rose)" stroke-width="4" stroke-linecap="round"/>
+  <path d="M24 40 C27 44 37 44 40 40" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M50 24 C58 28 58 40 52 46" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="5 4"/>
+</g>
+<!-- water and power, going in -->
+<g id="i-drain">
+  <path d="M22 10 C22 20 14 24 14 32 A8 8 0 0 0 30 32 C30 24 22 20 22 10 Z"
+        stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linejoin="round"/>
+  <path d="M46 10 L38 30 H50 L42 52" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M8 56 H56" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+</g>
 </defs></svg>
-<div class="s g-risk cover" id="s1"><div class="hdr"><span class="mark">belleof<span class="sg">thebot</span>_</span><span class="sp"></span><span class="num">1 / 8</span></div><div class="mid"><h1><span class="rose">AI psychosis</span> is not a diagnosis. It is a phrase that arrived before the evidence.</h1><div class="swipe"><span class="ar"></span>swipe</div></div><img class="belle sm" src="../../assets/belle/warm-neutral.webp" alt=""></div>
+<div class="s g-risk cover" id="s1"><div class="hdr"><span class="mark">belleof<span class="sg">thebot</span>_</span><span class="sp"></span><span class="num">1 / 8</span></div><div class="mid"><h1>Families have gone to court over deaths. The <span class="rose">label</span> is new. The harm is not.</h1><div class="swipe"><span class="ar"></span>swipe</div></div><img class="belle sm" src="../../assets/belle/warm-neutral.webp" alt=""></div>
 <div class="s g-risk" id="s2"><div class="hdr"><span class="mark">belleof<span class="sg">thebot</span>_</span><span class="chip">AI risk</span><span class="sp"></span><span class="num">2 / 8</span></div><div class="mid"><span class="kick">before you swipe, pick one</span><h2 style="margin-bottom:38px">As of 2026, &ldquo;AI psychosis&rdquo; is:</h2><div class="opts"><div class="opt"><span class="k">A</span>An informal term for cases where chatbot use appears alongside delusional thinking</div><div class="opt"><span class="k">B</span>A recognised disorder in the diagnostic manuals</div><div class="opt"><span class="k">C</span>A proven side effect of chatbot use</div><div class="opt"><span class="k">D</span>A term invented by the AI companies</div></div></div></div>
-<div class="s g-risk" id="s3"><div class="hdr"><span class="mark">belleof<span class="sg">thebot</span>_</span><span class="chip">AI risk</span><span class="sp"></span><span class="num">3 / 8</span></div><div class="mid"><span class="kick">it is A</span><h2 class="" style="max-width:15ch;margin-bottom:52px">A <span class="rose">provisional</span> label for a real clinical concern.</h2><span class="ico big hot"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-echo"/></svg></span></span><p style="margin-top:38px">It appears in neither DSM-5-TR nor ICD-11, and the researchers using it say so in the papers.</p></div></div>
+<div class="s g-risk" id="s3"><div class="hdr"><span class="mark">belleof<span class="sg">thebot</span>_</span><span class="chip">AI risk</span><span class="sp"></span><span class="num">3 / 8</span></div><div class="mid"><span class="kick">it is A</span><h2 class="" style="max-width:15ch;margin-bottom:52px">Real harm, <span class="rose">badly understood</span>, moving faster than the research.</h2><span class="ico big hot"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-echo"/></svg></span></span><p style="margin-top:38px">Both major labs changed their products in response, which is the clearest signal that something is there.</p></div></div>
 <div class="s g-risk flip" id="s4"><div class="hdr"><span class="mark">belleof<span class="sg">thebot</span>_</span><span class="chip">AI risk</span><span class="sp"></span><span class="num">4 / 8</span></div><div class="mid"><span class="kick">what is established, and what is not</span><div class="three"><div class="row"><span class="ico"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-echo"/></svg></span></span><span class="t"><b>Amplifying is documented.</b>In one hospital chart review the commonest role was amplifier, not cause: about two thirds of cases.</span></div><div class="row"><span class="ico"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-twocause"/></svg></span></span><span class="t"><b>Direction is unknown.</b>Unrecognised symptoms may equally drive heavy chatbot use. Researchers state this plainly.</span></div><div class="row"><span class="ico"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-decline"/></svg></span></span><span class="t"><b>Prevalence is not measured.</b>OpenAI report about 0.07 percent of weekly users show possible signs, and warn that is a flagged conversation rate, not a clinical one.</span></div></div><p style="margin-top:52px;font-size:36px">One retrospective review at one hospital, plus case reports. No control group and no population study exist yet.</p></div></div>
-<div class="s g-risk" id="s5"><div class="hdr"><span class="mark">belleof<span class="sg">thebot</span>_</span><span class="chip">AI risk</span><span class="sp"></span><span class="num">5 / 8</span></div><div class="mid"><span class="ico"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-lens"/></svg></span></span><div style="height:44px"></div><span class="kick">why the care matters here</span><h2 class="sm" style="max-width:19ch">Overstating this <span class="rose">hurts the people it is about</span>. So does dismissing it.</h2><p style="margin-top:38px">Both labs have changed their products in response, which is a fact, and not the same as the causal claim being proven.</p></div></div>
+<div class="s g-risk" id="s5"><div class="hdr"><span class="mark">belleof<span class="sg">thebot</span>_</span><span class="chip">AI risk</span><span class="sp"></span><span class="num">5 / 8</span></div><div class="mid"><span class="ico"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-lens"/></svg></span></span><div style="height:44px"></div><span class="kick">why the care matters here</span><h2 class="sm" style="max-width:19ch">Overstating this <span class="rose">hurts the people it is about</span>. So does dismissing it.</h2><p style="margin-top:38px">If any of this is close to home, please talk to someone you trust or a crisis line in your country. Belle is a drawing.</p></div></div>
 <div class="s g-risk" id="s6u"><div class="hdr"><span class="mark">belleof<span class="sg">thebot</span>_</span><span class="chip">AI risk</span><span class="sp"></span><span class="num">6 / 8</span></div><div class="mid"><span class="kick">what we do not know</span><span class="ico big"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-blank"/></svg></span></span><div style="height:34px"></div><p style="max-width:25ch;line-height:1.32;font-size:34px">Almost everything. No population study, no control group, no prospective cohort, so <span class="rose">causation is not established</span> in either direction. The available data are equally consistent with chatbots amplifying episodes, with early illness driving heavy use, and with the chatbot merely being the content that a psychosis attached itself to.</p></div></div>
 <div class="s g-risk" id="s7"><div class="hdr"><span class="mark">belleof<span class="sg">thebot</span>_</span><span class="chip">AI risk</span><span class="sp"></span><span class="num">7 / 8</span></div><div class="mid"><span class="kick">how to file this one</span><div style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:48px"><span class="flag on">measured</span> <span class="flag">someone&rsquo;s estimate</span> <span class="flag">argument</span> <span class="flag">definition</span> </div><span class="ico"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-doc"/></svg></span></span><div style="height:36px"></div><p style="max-width:18ch;font-size:35px">Partly <span class="rose">measured</span> and mostly not. Case reports and one chart review are real evidence and weak evidence at the same time.</p><p class="src" style="margin-top:32px;font-size:22px">Olisaeloka et al., BJPsych Open 12(4), 11 June 2026;<br>OpenAI, Strengthening ChatGPT&rsquo;s responses in sensitive conversations, 27 October 2025</p></div><img class="belle sm" src="../../assets/belle/hands-hips-pedantic.webp" alt=""></div>
 <div class="s g-risk outro" id="s8"><div class="hdr"><span class="mark">belleof<span class="sg">thebot</span>_</span><span class="chip">AI risk</span><span class="sp"></span><span class="num">8 / 8</span></div><div class="mid"><span class="kick">taken seriously, with sources</span><h2 style="max-width:15ch;margin-bottom:44px">I take AI risk seriously, and I show my sources either way.</h2><div class="follow"><span class="l">follow for the rest</span><span class="handle">@belleofthebot</span></div><p style="margin-top:44px;font-size:34px;max-width:20ch">Every claim marked measured, estimated or argued. Every source named.</p></div><img class="belle sm" src="../../assets/belle/hands-out-cheeky.webp" alt=""></div>

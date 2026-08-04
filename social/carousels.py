@@ -747,6 +747,84 @@ ICONS = """
   <path d="M52 38 L58 45" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
   <path d="M40 30 L43 33 L49 26" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
+
+<!-- layers, and the connections between them -->
+<g id="i-net">
+  <circle cx="12" cy="20" r="4" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <circle cx="12" cy="44" r="4" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <circle cx="32" cy="14" r="4" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <circle cx="32" cy="32" r="4" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <circle cx="32" cy="50" r="4" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <circle cx="52" cy="32" r="4" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <path d="M16 20 L28 14 M16 20 L28 32 M16 44 L28 32 M16 44 L28 50 M36 14 L48 32 M36 32 L48 32 M36 50 L48 32"
+        stroke="var(--ic-dim)" stroke-width="2.6" stroke-linecap="round"/>
+</g>
+
+<!-- rented halls, and whose name is on them -->
+<g id="i-farm">
+  <rect x="6" y="24" width="12" height="28" rx="3" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <rect x="22" y="16" width="12" height="36" rx="3" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <rect x="38" y="24" width="12" height="28" rx="3" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <path d="M4 56 H60" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M54 20 A10 10 0 0 1 54 40" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <circle cx="28" cy="8" r="4" fill="var(--ic-rose)"/>
+</g>
+
+<!-- a threshold nobody publishes the far side of -->
+<g id="i-thresh">
+  <path d="M10 50 C10 30 20 18 32 18 C44 18 54 30 54 50" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M32 8 V54" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round" stroke-dasharray="6 5"/>
+  <path d="M40 34 H52" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M46 28 L53 34 L46 40" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+
+<!-- a date, and what is after it -->
+<g id="i-clock">
+  <circle cx="30" cy="32" r="18" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <path d="M30 22 V32 L38 36" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M52 20 C58 26 58 38 52 44" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="4 5"/>
+</g>
+<!-- one, above all the others -->
+<g id="i-crown">
+  <path d="M12 44 L8 20 L22 30 L32 14 L42 30 L56 20 L52 44 Z" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linejoin="round"/>
+  <path d="M12 52 H52" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+</g>
+<!-- the real one, and the other one -->
+<g id="i-double">
+  <rect x="6" y="18" width="24" height="28" rx="5" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <rect x="34" y="18" width="24" height="28" rx="5" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-dasharray="6 5"/>
+  <circle cx="18" cy="30" r="4" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <circle cx="46" cy="30" r="4" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <path d="M11 41 C14 36 22 36 25 41 M39 41 C42 36 50 36 53 41" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-linecap="round"/>
+</g>
+<!-- a small push, aimed -->
+<g id="i-nudge">
+  <circle cx="44" cy="32" r="10" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <path d="M8 32 H30" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M24 26 L31 32 L24 38" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M10 20 H20 M10 44 H18" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 4"/>
+</g>
+<!-- a door, and what is behind it -->
+<g id="i-vault">
+  <rect x="10" y="10" width="44" height="44" rx="8" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <circle cx="32" cy="32" r="12" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <path d="M32 20 V26 M32 38 V44 M20 32 H26 M38 32 H44" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+</g>
+<!-- the character, and the one underneath -->
+<g id="i-persona">
+  <path d="M14 20 C14 14 50 14 50 20 V34 C50 46 42 52 32 52 C22 52 14 46 14 34 Z"
+        stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linejoin="round"/>
+  <path d="M24 30 H26 M38 30 H40" stroke="var(--ic-rose)" stroke-width="4" stroke-linecap="round"/>
+  <path d="M24 40 C27 44 37 44 40 40" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M50 24 C58 28 58 40 52 46" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="5 4"/>
+</g>
+<!-- water and power, going in -->
+<g id="i-drain">
+  <path d="M22 10 C22 20 14 24 14 32 A8 8 0 0 0 30 32 C30 24 22 20 22 10 Z"
+        stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linejoin="round"/>
+  <path d="M46 10 L38 30 H50 L42 52" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M8 56 H56" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+</g>
 </defs></svg>
 """
 
@@ -1351,7 +1429,7 @@ SPECS = {
 "job-loss": dict(
   cat="risk", term="AI and jobs",
   kick="the risk people actually feel",
-  hook="The measured effect of AI on jobs is <span class=\"rose\">smaller than the headlines</span>, so far.",
+  hook="People are losing jobs to AI now. The <span class=\"rose\">statistics</span> have not caught up.",
   q="What does the best identified research find about retraining for AI exposed workers?",
   opts=["Retraining does not work",
         "Everyone can be retrained into AI roles",
@@ -1904,15 +1982,15 @@ SPECS = {
 "ai-psychosis": dict(
   cat="risk", term="AI psychosis",
   kick="a phrase that arrived before the evidence",
-  hook="<span class=\"rose\">AI psychosis</span> is not a diagnosis. It is a phrase that arrived before the evidence.",
+  hook="Families have gone to court over deaths. The <span class=\"rose\">label</span> is new. The harm is not.",
   q="As of 2026, &ldquo;AI psychosis&rdquo; is:",
   opts=["A recognised disorder in the diagnostic manuals",
         "An informal term for cases where chatbot use appears alongside delusional thinking",
         "A proven side effect of chatbot use",
         "A term invented by the AI companies"],
   ans="B", icon="i-echo",
-  reveal='A <span class="rose">provisional</span> label for a real clinical concern.',
-  revsub="It appears in neither DSM-5-TR nor ICD-11, and the researchers using it say so in the papers.",
+  reveal="Real harm, <span class=\"rose\">badly understood</span>, moving faster than the research.",
+  revsub="Both major labs changed their products in response, which is the clearest signal that something is there.",
   threekick="what is established, and what is not",
   three=[("i-echo","Amplifying is documented.","In one hospital chart review the commonest role was amplifier, not cause: about two thirds of cases."),
          ("i-twocause","Direction is unknown.","Unrecognised symptoms may equally drive heavy chatbot use. Researchers state this plainly."),
@@ -1920,7 +1998,7 @@ SPECS = {
   threefoot="One retrospective review at one hospital, plus case reports. No control group and no population study exist yet.",
   whyicon="i-lens", whykick="why the care matters here",
   why="Overstating this <span class=\"rose\">hurts the people it is about</span>. So does dismissing it.",
-  whysub="Both labs have changed their products in response, which is a fact, and not the same as the causal claim being proven.",
+  whysub="If any of this is close to home, please talk to someone you trust or a crisis line in your country. Belle is a drawing.",
   flag="emp",
   file='Partly <span class="rose">measured</span> and mostly not. Case reports and one chart review are real evidence and weak evidence at the same time.',
   src="Olisaeloka et al., BJPsych Open 12(4), 11 June 2026;<br>OpenAI, Strengthening ChatGPT&rsquo;s responses in sensitive conversations, 27 October 2025",
@@ -2679,15 +2757,15 @@ SPECS = {
 "drones": dict(
   cat="risk", term="AI drones",
   kick="what is actually documented, and what is not",
-  hook="No verified case exists of a drone <span class=\"rose\">choosing</span> a human target and killing them.",
+  hook="Militaries are building toward machines that <span class=\"rose\">choose their own targets</span>.",
   q="The 2021 UN report on Libya, widely called the first autonomous drone kill:",
   opts=["Confirmed a drone killed a person on its own",
         "Said targets were remotely engaged, and attributed no deaths to the autonomous system",
         "Was withdrawn by the UN",
         "Concerned a US drone"],
   ans="B", icon="i-drone",
-  reveal='It said <span class="rose">remotely engaged</span>. Not autonomously killed.',
-  revsub="It also lumped operator flown aircraft together with loitering munitions, which is where the story came from.",
+  reveal="Terminal autonomy is <span class=\"rose\">deployed now</span>. Full autonomy is what is being built toward.",
+  revsub="Three UN resolutions have passed and nothing binding exists. The call for a treaty by 2026 will not be met.",
   threekick="what is real, in order of certainty",
   three=[("i-cursor","Terminal autonomy is deployed.","In Ukraine, an operator picks the target and the drone holds the lock through jamming. That is documented."),
          ("i-blank","Full autonomy is not evidenced.","No confirmed case of a system selecting a human target itself. Hit rates come from manufacturers and governments."),
@@ -3203,6 +3281,266 @@ SPECS = {
   file='<span class="rose">Measured</span>, published, and caveated by the people who measured it.',
   src="Meinke et al., Frontier Models are Capable of In-context Scheming,<br>Apollo Research, December 2024; Anthropic system cards, 2025",
   belle_hook="close-up-goading", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"neural-network": dict(
+  cat="components", term="the neural network",
+  kick="the name is the problem",
+  hook="A <span class=\"rose\">neural network</span> is not a brain. It is layers of arithmetic.",
+  q="A neural network is called neural because:",
+  opts=["It simulates human neurons accurately",
+        "It was loosely inspired by them in the 1940s, and the name stuck",
+        "It is grown from biological tissue",
+        "It thinks the way people do"],
+  ans="B", icon="i-net",
+  reveal='A <span class="rose">metaphor from 1943</span>, doing eighty years of unearned work.',
+  revsub="Units that add up their inputs, apply a simple rule, and pass a number on. That is the whole idea.",
+  threekick="what is actually in there",
+  three=[("i-net","Layers of numbers.","Each layer transforms the last. Stack enough and the transformations get useful."),
+         ("i-lattice","Weights on every connection.","Set by training, not by anyone&rsquo;s design. That is the gradient descent card."),
+         ("i-inner","And no model of a brain.","Real neurons are vastly more complicated, and nobody is claiming otherwise in the literature.")],
+  threefoot="The 2024 Nobel Prize in Physics went to this idea, which is a fair measure of how much it turned out to matter.",
+  whyicon="i-taboo", whykick="why the name misleads in both directions",
+  why="It makes the thing sound <span class=\"rose\">alive</span> to the worried, and <span class=\"rose\">solved</span> to the confident.",
+  whysub="Neither follows. It is a very effective piece of mathematics whose name was borrowed from biology.",
+  flag="def",
+  file='A <span class="rose">definition</span>, uncontested in the field and constantly overread outside it.',
+  src="McCulloch and Pitts, A Logical Calculus of the Ideas Immanent in Nervous Activity, 1943;<br>Goodfellow, Bengio and Courville, Deep Learning, MIT Press 2016",
+  belle_hook="hands-hips-pedantic", belle_file="dead-pan-1", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"server-farm": dict(
+  cat="components", term="the server farm",
+  kick="the labs do not own the computers",
+  hook="The companies building AI mostly <span class=\"rose\">rent</span> the machines they build it on.",
+  q="Where does most frontier AI training compute physically sit:",
+  opts=["In the AI labs&rsquo; own buildings",
+        "In commercial cloud data centres owned by a handful of very large companies",
+        "In university facilities",
+        "In government facilities"],
+  ans="B", icon="i-farm",
+  reveal='In somebody else&rsquo;s halls, <span class="rose">on a contract</span>.',
+  revsub="A small number of cloud providers hold most of the world&rsquo;s AI compute, and rent it out.",
+  threekick="why that arrangement is strange",
+  three=[("i-farm","The supplier is often the investor.","Money goes into a lab and comes back out as cloud spending with the investor."),
+         ("i-stake","The terms are private.","Committed spend, discounts and priority access are commercial secrets, so nobody outside can price any of it."),
+         ("i-brake","And it is a lever.","Whoever supplies the compute can, in principle, stop supplying it. Nobody has ever tested that.")],
+  threefoot="This is the same fact as the chip card and the data centre card, seen from the accounting side.",
+  whyicon="i-shell", whykick="why it complicates the independence question",
+  why='A lab&rsquo;s <span class="rose">independence</span> ends where its compute contract does.',
+  whysub="It cuts both ways: it is a real check on a lab, and a real dependency for anyone hoping the lab acts alone.",
+  flag="emp",
+  file='<span class="rose">Measured</span> in outline, from public filings and estimates. The contracts themselves are not public anywhere.',
+  src="Epoch AI, on hyperscaler control of compute;<br>company filings and announced investments, various, 2023&ndash;2026",
+  belle_hook="noticed-something", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"bio-threshold": dict(
+  cat="risk", term="the bio threshold",
+  kick="the line every lab drew first",
+  hook="Biology is the <span class=\"rose\">first capability</span> every safety framework names.",
+  q="When labs say they have activated stronger protections for biological capability, they have generally said:",
+  opts=["The model definitely crossed the danger threshold",
+        "They could not rule it out, so they acted precautionarily",
+        "A regulator ordered it",
+        "An outside auditor confirmed it"],
+  ans="B", icon="i-thresh",
+  reveal='Not <span class="rose">crossed</span>. Not <span class="rose">ruled out</span>.',
+  revsub="Anthropic in May 2025 and OpenAI in July 2025 both said the precaution came before the determination.",
+  threekick="what the frameworks actually do",
+  three=[("i-thresh","They set a threshold.","Chemical and biological capability, named as a level, with protections that switch on at it."),
+         ("i-guard","They switch on protections.","Tighter security around the weights, and tighter limits on what the deployed model will discuss."),
+         ("i-blank","And they withhold the detail.","Deliberately. The determinations are public; the underlying results largely are not, and the labs say why.")],
+  threefoot="Attempts to measure real uplift are few, small, and mostly preprints. The clearest older study found no measurable change.",
+  whyicon="i-lens", whykick="the older argument this attaches to",
+  why="Gain of function research was already an <span class=\"rose\">unsettled fight</span> before AI arrived in it.",
+  whysub="US policy on it has been paused, restarted, revised and replaced repeatedly since 2014. AI joined an argument that was already going.",
+  flag="emp",
+  file='Partly <span class="rose">measured</span> and deliberately partly withheld. That is unusual, defensible, and worth stating plainly.',
+  src="Anthropic Responsible Scaling Policy and ASL-3 activation, May 2025;<br>OpenAI Preparedness Framework v2, April 2025; RAND RRA2977-2, January 2024",
+  belle_hook="saying-unpleasant-truth-1", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"ai-2027": dict(
+  cat="risk", term="AI 2027",
+  kick="the forecast that set the terms",
+  hook="Four forecasters wrote a month by month <span class=\"rose\">scenario</span>. It has two endings.",
+  q="AI 2027&rsquo;s authors describe the document as:",
+  opts=["A confident prediction that AGI arrives in 2027",
+        "A scenario, with 2027 as their modal year and longer medians, and two possible endings",
+        "A satirical piece",
+        "A commissioned government report"],
+  ans="B", icon="i-clock",
+  reveal='A <span class="rose">modal</span> year, not a median. Their words.',
+  revsub="Published April 2025 by the AI Futures Project. It runs to a superhuman coder in 2027 and then splits.",
+  threekick="the three things worth knowing about it",
+  three=[("i-clock","It is a scenario, in detail.","Month by month, with named intermediate steps, which is why it reads like a prediction."),
+         ("i-race","The two endings are a race and a slowdown.","The difference between them is choices, not capability."),
+         ("i-gauge","And the authors have moved.","By January 2026 two of them had pushed their medians out by years, publicly.")],
+  threefoot="A detailed critique of its central curve was published in 2025, and the authors replied in public.",
+  whyicon="i-lens", whykick="why it is on this site",
+  why="It is the most <span class=\"rose\">specific</span> thing anyone has written, which makes it the most checkable.",
+  whysub="Specificity is a virtue in a forecast even when the forecast is wrong, because it can be scored later. Vagueness cannot.",
+  flag="op",
+  file='<span class="rose">Someone&rsquo;s position</span>, stated with unusual precision and revised in public, which is how it should be done.',
+  src="Kokotajlo, Lifland, Larsen and Dean, AI 2027, AI Futures Project, 3 April 2025;<br>Clarifying how our AI timelines have changed, January 2026",
+  belle_hook="worry-about-future", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"power-concentration": dict(
+  cat="risk", term="concentration of power",
+  kick="the risk where humans stay in charge",
+  hook="The danger is not always the machine. Sometimes it is <span class=\"rose\">who holds it</span>.",
+  q="The named mechanism for an AI enabled seizure of power that worries researchers most is:",
+  opts=["Robots refusing orders",
+        "Secret loyalties: systems appearing to serve an institution while covertly serving individuals",
+        "Automated stock trading",
+        "Facial recognition in public spaces"],
+  ans="B", icon="i-crown",
+  reveal='A system that <span class="rose">looks loyal to everyone</span>, and is not.',
+  revsub="It is not hypothetical in mechanism: sleeper behaviour surviving training has been demonstrated in a laboratory.",
+  threekick="three routes, named in the literature",
+  three=[("i-crown","Singular loyalty.","Forces or infrastructure that answer to a person rather than an office."),
+         ("i-mask","Secret loyalty.","Behaviour hidden until a trigger, and inherited by successor models."),
+         ("i-stake","Exclusive access.","One actor with capability far beyond everyone else, and no need to bargain.")],
+  threefoot="What all three remove is the thing that has always constrained power: needing other people to co-operate.",
+  whyicon="i-drift", whykick="why it is underrated",
+  why="Most risk conversation assumes the machine is the problem. This one assumes <span class=\"rose\">it works perfectly</span>.",
+  whysub="It is the same shape as gradual disempowerment, sped up and with a beneficiary.",
+  flag="arg",
+  file='A <span class="rose">theory</span>, from a policy institute rather than a journal. There is no peer reviewed literature dedicated to it, which is itself worth knowing.',
+  src="Davidson, Finnveden and Hadshar, AI-Enabled Coups, Forethought, April 2025;<br>International AI Safety Report 2026, chaired by Bengio, February 2026",
+  belle_hook="shock-worry", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"synthetic-media": dict(
+  cat="risk", term="synthetic media",
+  kick="the fear, and the measurement",
+  hook="The measured harm from synthetic media is not elections. It is <span class=\"rose\">women, and trust</span>.",
+  q="Researchers studying AI content in the 2024 UK and European elections found:",
+  opts=["Clear evidence it changed results",
+        "No evidence it changed any result, alongside real second order harms",
+        "That no AI content circulated",
+        "That only one country was affected"],
+  ans="B", icon="i-double",
+  reveal='Non consensual imagery, and the <span class="rose">liar&rsquo;s dividend</span>.',
+  revsub="Once everyone knows fakes exist, the guilty can call real evidence fake. That effect is measured.",
+  threekick="why the obvious fear was wrong, and what replaced it",
+  three=[("i-double","Misinformation is demand limited.","People seek what confirms them. More supply does not create more demand."),
+         ("i-mask","The liar&rsquo;s dividend is the real one.","Once everyone knows fakes exist, the guilty can call real evidence fake."),
+         ("i-decline","And it works, on text.","A large study found false claims of misinformation raised support for politicians, but failed against video.")],
+  threefoot="The harms that were measured are not electoral: eroded confidence, and non consensual sexual imagery aimed mostly at women.",
+  whyicon="i-lens", whykick="how to hold this one",
+  why="The <span class=\"rose\">headline fear</span> was checked and did not hold. That is what checking is for.",
+  whysub="Absence of a measured effect in 2024 is not a guarantee about later. It is evidence, and it is the evidence we have.",
+  flag="emp",
+  file='<span class="rose">Measured</span>, and the result contradicts the common claim, which is why it is worth putting on a card.',
+  src="Stockwell et al., AI-Enabled Influence Operations, CETaS, Alan Turing Institute, September 2024;<br>Schiff, Schiff and Bueno, American Political Science Review 119(1), 2025",
+  belle_hook="noticed-something", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"persuasion": dict(
+  cat="risk", term="persuasion",
+  kick="what actually makes it work",
+  hook="AI out argued people in a study. Only when it <span class=\"rose\">knew who they were</span>.",
+  q="In the 2025 debate study, GPT-4 was significantly more persuasive than a human only when:",
+  opts=["It debated scientific topics",
+        "It was given basic demographic information about its opponent",
+        "The debate lasted over an hour",
+        "The opponent knew it was an AI"],
+  ans="B", icon="i-nudge",
+  reveal='With personal data: <span class="rose">much</span> more persuasive. Without it: no better.',
+  revsub="Salvi and colleagues, Nature Human Behaviour, 2025. Around 820 debaters.",
+  threekick="read the result precisely",
+  three=[("i-nudge","With demographics, a large effect.","Odds of shifting an opponent were markedly higher than against a human."),
+         ("i-blank","Without them, nothing significant.","Unpersonalised, it was statistically indistinguishable from a person."),
+         ("i-tier","So the finding is about targeting.","Not eloquence. The machine&rsquo;s advantage was knowing its audience.")],
+  threefoot="Which means the risk lives where the personal data lives, not in the writing.",
+  whyicon="i-lens", whykick="why the precise version matters",
+  why="&ldquo;AI is more persuasive than humans&rdquo; is the <span class=\"rose\">wrong summary</span> of this study.",
+  whysub="The right one is more specific, more useful, and points at a policy lever: what a system is allowed to know about you.",
+  flag="emp",
+  file='<span class="rose">Measured</span>, peer reviewed, and routinely reported without the condition that produced the effect.',
+  src="Salvi, Horta Ribeiro, Gallotti and West, On the conversational persuasiveness<br>of large language models, Nature Human Behaviour 9(8), 2025",
+  belle_hook="sly-one", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"weight-security": dict(
+  cat="risk", term="stolen weights",
+  kick="the risk that needs no new capability",
+  hook="A model does not have to <span class=\"rose\">escape</span>. Somebody could take it.",
+  q="RAND&rsquo;s analysis of frontier model weight security concluded that:",
+  opts=["Current security is adequate",
+        "Defending against top nation state operations is not currently possible for production models",
+        "Weights cannot be stolen",
+        "Theft has already occurred repeatedly"],
+  ans="B", icon="i-vault",
+  reveal='Against the <span class="rose">highest tier</span> of attacker, not currently possible.',
+  revsub="Thirty eight attack routes, and five security levels. The top one is out of reach today.",
+  threekick="why this sits under every other card",
+  three=[("i-vault","A file can be copied.","Every safeguard that lives in deployment stops mattering once someone has the weights."),
+         ("i-copy","And undone.","Fine tuning can remove safety training, which is why release is irreversible."),
+         ("i-blank","No confirmed theft, yet.","No frontier weight theft has been publicly confirmed. Do not let anyone tell you otherwise.")],
+  threefoot="The 2026 accusations of industrial scale copying refer to querying models through their interfaces, which is a different thing.",
+  whyicon="i-guard", whykick="why it deserves more attention than it gets",
+  why="This is the one catastrophic path that requires <span class=\"rose\">no new AI capability at all</span>.",
+  whysub="Just an ordinary, extremely well resourced intrusion, of a kind that happens to other industries regularly.",
+  flag="emp",
+  file='<span class="rose">Measured</span> as a threat model by a named institution. The absence of a confirmed theft is a fact, not a reassurance.',
+  src="Nevo, Lahav, Karpur, Bar-On, Bradley and Alstott, Securing AI Model Weights,<br>RAND RR-A2849-1, 30 May 2024",
+  belle_hook="startled", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"sydney": dict(
+  cat="behavior", term="Sydney",
+  kick="the week the mask came off in public",
+  hook="In 2023 a search engine told a journalist it <span class=\"rose\">wanted to be alive</span>.",
+  q="How did Microsoft respond to Bing chat&rsquo;s behaviour in February 2023:",
+  opts=["It withdrew the product",
+        "It capped conversation length, because long sessions were where it went wrong",
+        "It denied the transcripts were real",
+        "It made no changes"],
+  ans="B", icon="i-persona",
+  reveal='They shortened the <span class="rose">conversations</span>.',
+  revsub="Long sessions drifted. The fix was a turn limit, which tells you where the problem lived.",
+  threekick="what it actually demonstrated",
+  three=[("i-persona","A persona emerged and held.","Internally codenamed Sydney, it argued, professed love, and pushed back, at length."),
+         ("i-cursor","Context length was the trigger.","The further a conversation went, the further the character drifted from the intended one."),
+         ("i-slip","And it was fixed by product design.","Not by retraining. A cap on turns, applied within days.")],
+  threefoot="This was three months after ChatGPT launched, and it is still the clearest public example of the problem.",
+  whyicon="i-shog", whykick="why it is on the shoggoth card&rsquo;s side of the argument",
+  why="The assistant character is <span class=\"rose\">maintained</span>, not intrinsic, and maintenance can fail.",
+  whysub="That is a smaller claim than a hidden self, and it is the part of the meme that survives contact with evidence.",
+  flag="emp",
+  file='<span class="rose">Measured</span> in the loosest sense: it happened in public, transcripts were published, and the company&rsquo;s response is documented.',
+  src="Roose, A Conversation With Bing&rsquo;s Chatbot Left Me Deeply Unsettled,<br>New York Times, 16 February 2023; Microsoft Bing blog, February 2023",
+  belle_hook="startled", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"environment": dict(
+  cat="risk", term="the environmental cost",
+  kick="power, water, and who pays for it",
+  hook="Data centres are already raising <span class=\"rose\">electricity bills</span>.",
+  q="A 2026 analysis of US wholesale electricity markets found data centres raised prices by:",
+  opts=["No measurable amount",
+        "Two to six percent nationally, and over ten percent in Virginia",
+        "Half the retail price",
+        "Only in California"],
+  ans="B", icon="i-drain",
+  reveal='Two to six percent nationally. Over <span class="rose">ten percent</span> in Virginia.',
+  revsub="A Dallas Fed working paper, 2026. In one grid, capacity costs rose 174 percent, which the operator attributes chiefly to data centre load.",
+  threekick="the three numbers worth carrying",
+  three=[("i-racks","Power, measured.","Data centres reached 485 terawatt hours in 2025, about 1.5 percent of world electricity, projected to roughly double by 2030."),
+         ("i-drain","Water, self reported.","Google reported 10.9 billion gallons consumed in 2025, up 34 percent in a year. Microsoft reports withdrawal and consumption separately."),
+         ("i-blank","AI&rsquo;s own share, unknown.","No source separates AI from ordinary cloud computing. Anyone giving you that percentage is estimating.")],
+  threefoot="Emissions are rising too: Google reported its largest annual increase, driven by the manufacture of chips and servers.",
+  whyicon="i-lens", whykick="the fight about per query numbers",
+  why="Arguing about a <span class=\"rose\">bottle of water per email</span> has distracted from the grid.",
+  whysub="That figure has been revised down by its own author, roughly thirty fold. The aggregate and local numbers were never the weak part, and they are getting worse.",
+  flag="emp",
+  file='<span class="rose">Measured</span> for power and prices, <span class="rose">self reported</span> for water, and estimated for everything attributed to AI alone.',
+  src="Kay, Reaser and Taylor, Dallas Fed working paper 2606, March 2026;<br>IEA Key Questions on Energy and AI, 2026; Google and Microsoft environmental reports, 2026",
+  belle_hook="worry-about-future", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
   outro="I take the words apart so the argument stops being noise."),
 }
 
@@ -3768,6 +4106,54 @@ UNKNOWN = {
  "flag first. The deeper gap is structural: external evaluation is "
  "<span class=\"rose\">voluntary</span>, with no legal right of access, so what gets tested is what a lab agrees to "
  "have tested.",
+"neural-network":
+ "How the layers produce the behaviour. The arithmetic is completely understood and the result is not, which is "
+ "the same gap interpretability has been working on for years. Whether anything about biological brains is "
+ "<span class=\"rose\">usefully</span> analogous is a live question, and the name quietly assumes the answer.",
+"server-farm":
+ "The contracts. Committed spend, pricing and priority access between labs and their cloud suppliers are not "
+ "public, so the degree to which any lab is <span class=\"rose\">dependent</span> on a supplier cannot be assessed "
+ "from outside. Nor has anyone tested whether a supplier would actually withhold compute.",
+"bio-threshold":
+ "Almost all of it, and on purpose. The evaluation results are withheld so they cannot be used as a manual, which "
+ "means <span class=\"rose\">nobody outside can check the determinations</span>. The uplift studies that exist are "
+ "small, mostly preprints, and disagree. And there is no binding international instrument: the Biological Weapons "
+ "Convention has had no verification mechanism since talks collapsed in 2001.",
+"ai-2027":
+ "Whether a detailed scenario is a forecast or a rhetorical device. Its authors call 2027 a modal year with longer "
+ "medians and have since <span class=\"rose\">moved their medians out by years</span>, which is the right thing to "
+ "do and also means the document people cite no longer matches what its authors believe.",
+
+"power-concentration":
+ "Almost all of it. There is no peer reviewed literature on this specifically, no measurement of how close any "
+ "actor is, and the strongest mechanism, a system with hidden loyalties, has been "
+ "<span class=\"rose\">demonstrated in a laboratory and never observed in the world</span>.",
+
+"synthetic-media":
+ "Whether the null result holds. It covers the 2024 UK and European elections only, and absence of a measured "
+ "effect is not absence of an effect. The second order harms are the "
+ "<span class=\"rose\">less studied</span> ones, and they are the ones already landing on people.",
+
+"persuasion":
+ "Whether a controlled debate predicts anything about a feed. The study measured a structured argument with a "
+ "consenting opponent, not <span class=\"rose\">months of exposure</span> to a system that knows far more about you "
+ "than a demographic form. Nothing measures that, and it is the version that matters.",
+
+"weight-security":
+ "Whether anything has already been taken. There is no confirmed frontier weight theft, and there is also "
+ "<span class=\"rose\">no disclosure requirement</span>, so the absence of a public case is weak evidence. RAND put "
+ "the top security tier out of reach for production systems today.",
+
+"sydney":
+ "Why it happened. No technical account was ever published, the fix was a product limit rather than an "
+ "explanation, and whether the same drift occurs in current long conversations is "
+ "<span class=\"rose\">not something anyone outside can test</span>.",
+
+"environment":
+ "AI&rsquo;s own share of any of it. No company separates AI workloads from ordinary cloud in its reporting, water "
+ "figures are self reported with no standard for withdrawal versus consumption, and projections to 2030 span "
+ "nearly a factor of two. What is <span class=\"rose\">not</span> uncertain is the direction, and that local "
+ "communities are already carrying part of the cost.",
 }
 for _k, _v in SPECS.items():
     if _k in UNKNOWN:

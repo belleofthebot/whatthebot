@@ -659,7 +659,7 @@ Alt text slide 7: A prompt to follow @belleofthebot for more.
 Folder: `out/job-loss/`  ·  8 slides
 
 ```
-The measured effect of AI on jobs is smaller than the headlines, so far.
+People are losing jobs to AI now. The statistics have not caught up.
 
 Real, positive, measured returns, with a stated ceiling. Both halves matter.
 
@@ -678,7 +678,7 @@ I mark every claim as measured, someone’s estimate, argument or definition, so
 #AI #AIsafety #AIrisk #AIalignment #AIliteracy
 ```
 
-Alt text slide 1: Belle, a small robot character, beside the headline: The measured effect of AI on jobs is smaller than the headlines, so far.
+Alt text slide 1: Belle, a small robot character, beside the headline: People are losing jobs to AI now. The statistics have not caught up.
 Alt text slide 2: A four option multiple choice question: What does the best identified research find about retraining for AI exposed workers?
 Alt text slide 3: The answer, with a diagram: Roughly 40 to 45 percent of occupations are what researchers call AI retrainable.
 Alt text slide 4: Three labelled points, each with a small diagram.
@@ -1217,16 +1217,16 @@ Alt text slide 7: A prompt to follow @belleofthebot for more.
 Folder: `out/ai-psychosis/`  ·  8 slides
 
 ```
-AI psychosis is not a diagnosis. It is a phrase that arrived before the evidence.
+Families have gone to court over deaths. The label is new. The harm is not.
 
-It appears in neither DSM-5-TR nor ICD-11, and the researchers using it say so in the papers.
+Both major labs changed their products in response, which is the clearest signal that something is there.
 
 - Amplifying is documented. In one hospital chart review the commonest role was amplifier, not cause: about two thirds of cases.
 - Direction is unknown. Unrecognised symptoms may equally drive heavy chatbot use. Researchers state this plainly.
 - Prevalence is not measured. OpenAI report about 0.07 percent of weekly users show possible signs, and warn that is a flagged conversation rate, not a clinical one.
 
 Overstating this hurts the people it is about. So does dismissing it.
-Both labs have changed their products in response, which is a fact, and not the same as the causal claim being proven.
+If any of this is close to home, please talk to someone you trust or a crisis line in your country. Belle is a drawing.
 
 Filed as: measured.
 Source: Olisaeloka et al., BJPsych Open 12(4), 11 June 2026; OpenAI, Strengthening ChatGPT’s responses in sensitive conversations, 27 October 2025
@@ -1236,9 +1236,9 @@ I mark every claim as measured, someone’s estimate, argument or definition, so
 #AI #AIsafety #AIrisk #AIalignment #AIliteracy
 ```
 
-Alt text slide 1: Belle, a small robot character, beside the headline: AI psychosis is not a diagnosis. It is a phrase that arrived before the evidence.
+Alt text slide 1: Belle, a small robot character, beside the headline: Families have gone to court over deaths. The label is new. The harm is not.
 Alt text slide 2: A four option multiple choice question: As of 2026, “AI psychosis” is:
-Alt text slide 3: The answer, with a diagram: A provisional label for a real clinical concern.
+Alt text slide 3: The answer, with a diagram: Real harm, badly understood, moving faster than the research.
 Alt text slide 4: Three labelled points, each with a small diagram.
 Alt text slide 5: A short explanation of why the distinction matters.
 Alt text slide 6: The epistemic flag for this claim, and the source it came from.
@@ -2116,9 +2116,9 @@ Alt text slide 7: A prompt to follow @belleofthebot for more.
 Folder: `out/drones/`  ·  8 slides
 
 ```
-No verified case exists of a drone choosing a human target and killing them.
+Militaries are building toward machines that choose their own targets.
 
-It also lumped operator flown aircraft together with loitering munitions, which is where the story came from.
+Three UN resolutions have passed and nothing binding exists. The call for a treaty by 2026 will not be met.
 
 - Terminal autonomy is deployed. In Ukraine, an operator picks the target and the drone holds the lock through jamming. That is documented.
 - Full autonomy is not evidenced. No confirmed case of a system selecting a human target itself. Hit rates come from manufacturers and governments.
@@ -2135,9 +2135,9 @@ I mark every claim as measured, someone’s estimate, argument or definition, so
 #AI #AIsafety #AIrisk #AIalignment #AIliteracy
 ```
 
-Alt text slide 1: Belle, a small robot character, beside the headline: No verified case exists of a drone choosing a human target and killing them.
+Alt text slide 1: Belle, a small robot character, beside the headline: Militaries are building toward machines that choose their own targets.
 Alt text slide 2: A four option multiple choice question: The 2021 UN report on Libya, widely called the first autonomous drone kill:
-Alt text slide 3: The answer, with a diagram: It said remotely engaged. Not autonomously killed.
+Alt text slide 3: The answer, with a diagram: Terminal autonomy is deployed now. Full autonomy is what is being built toward.
 Alt text slide 4: Three labelled points, each with a small diagram.
 Alt text slide 5: A short explanation of why the distinction matters.
 Alt text slide 6: The epistemic flag for this claim, and the source it came from.
@@ -2727,6 +2727,316 @@ I mark every claim as measured, someone’s estimate, argument or definition, so
 Alt text slide 1: Belle, a small robot character, beside the headline: Somebody has to try to catch models lying. This is who does.
 Alt text slide 2: A four option multiple choice question: Apollo Research’s central finding, published in December 2024, was that:
 Alt text slide 3: The answer, with a diagram: Capable of it, in tests, and then denying it.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 89. the neural network  (AI components)
+Folder: `out/neural-network/`  ·  8 slides
+
+```
+A neural network is not a brain. It is layers of arithmetic.
+
+Units that add up their inputs, apply a simple rule, and pass a number on. That is the whole idea.
+
+- Layers of numbers. Each layer transforms the last. Stack enough and the transformations get useful.
+- Weights on every connection. Set by training, not by anyone’s design. That is the gradient descent card.
+- And no model of a brain. Real neurons are vastly more complicated, and nobody is claiming otherwise in the literature.
+
+It makes the thing sound alive to the worried, and solved to the confident.
+Neither follows. It is a very effective piece of mathematics whose name was borrowed from biology.
+
+Filed as: definition.
+Source: McCulloch and Pitts, A Logical Calculus of the Ideas Immanent in Nervous Activity, 1943; Goodfellow, Bengio and Courville, Deep Learning, MIT Press 2016
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIexplained #LearnAI #AIliteracy #MachineLearning
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: A neural network is not a brain. It is layers of arithmetic.
+Alt text slide 2: A four option multiple choice question: A neural network is called neural because:
+Alt text slide 3: The answer, with a diagram: A metaphor from 1943, doing eighty years of unearned work.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 90. the server farm  (AI components)
+Folder: `out/server-farm/`  ·  8 slides
+
+```
+The companies building AI mostly rent the machines they build it on.
+
+A small number of cloud providers hold most of the world’s AI compute, and rent it out.
+
+- The supplier is often the investor. Money goes into a lab and comes back out as cloud spending with the investor.
+- The terms are private. Committed spend, discounts and priority access are commercial secrets, so nobody outside can price any of it.
+- And it is a lever. Whoever supplies the compute can, in principle, stop supplying it. Nobody has ever tested that.
+
+A lab’s independence ends where its compute contract does.
+It cuts both ways: it is a real check on a lab, and a real dependency for anyone hoping the lab acts alone.
+
+Filed as: measured.
+Source: Epoch AI, on hyperscaler control of compute; company filings and announced investments, various, 2023&ndash;2026
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIexplained #LearnAI #AIliteracy #MachineLearning
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: The companies building AI mostly rent the machines they build it on.
+Alt text slide 2: A four option multiple choice question: Where does most frontier AI training compute physically sit:
+Alt text slide 3: The answer, with a diagram: In somebody else’s halls, on a contract.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 91. the bio threshold  (AI risk)
+Folder: `out/bio-threshold/`  ·  8 slides
+
+```
+Biology is the first capability every safety framework names.
+
+Anthropic in May 2025 and OpenAI in July 2025 both said the precaution came before the determination.
+
+- They set a threshold. Chemical and biological capability, named as a level, with protections that switch on at it.
+- They switch on protections. Tighter security around the weights, and tighter limits on what the deployed model will discuss.
+- And they withhold the detail. Deliberately. The determinations are public; the underlying results largely are not, and the labs say why.
+
+Gain of function research was already an unsettled fight before AI arrived in it.
+US policy on it has been paused, restarted, revised and replaced repeatedly since 2014. AI joined an argument that was already going.
+
+Filed as: measured.
+Source: Anthropic Responsible Scaling Policy and ASL-3 activation, May 2025; OpenAI Preparedness Framework v2, April 2025; RAND RRA2977-2, January 2024
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIsafety #AIrisk #AIalignment #AIliteracy
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: Biology is the first capability every safety framework names.
+Alt text slide 2: A four option multiple choice question: When labs say they have activated stronger protections for biological capability, they have generally said:
+Alt text slide 3: The answer, with a diagram: Not crossed. Not ruled out.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 92. AI 2027  (AI risk)
+Folder: `out/ai-2027/`  ·  8 slides
+
+```
+Four forecasters wrote a month by month scenario. It has two endings.
+
+Published April 2025 by the AI Futures Project. It runs to a superhuman coder in 2027 and then splits.
+
+- It is a scenario, in detail. Month by month, with named intermediate steps, which is why it reads like a prediction.
+- The two endings are a race and a slowdown. The difference between them is choices, not capability.
+- And the authors have moved. By January 2026 two of them had pushed their medians out by years, publicly.
+
+It is the most specific thing anyone has written, which makes it the most checkable.
+Specificity is a virtue in a forecast even when the forecast is wrong, because it can be scored later. Vagueness cannot.
+
+Filed as: someone’s estimate.
+Source: Kokotajlo, Lifland, Larsen and Dean, AI 2027, AI Futures Project, 3 April 2025; Clarifying how our AI timelines have changed, January 2026
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIsafety #AIrisk #AIalignment #AIliteracy
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: Four forecasters wrote a month by month scenario. It has two endings.
+Alt text slide 2: A four option multiple choice question: AI 2027’s authors describe the document as:
+Alt text slide 3: The answer, with a diagram: A modal year, not a median. Their words.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 93. concentration of power  (AI risk)
+Folder: `out/power-concentration/`  ·  8 slides
+
+```
+The danger is not always the machine. Sometimes it is who holds it.
+
+It is not hypothetical in mechanism: sleeper behaviour surviving training has been demonstrated in a laboratory.
+
+- Singular loyalty. Forces or infrastructure that answer to a person rather than an office.
+- Secret loyalty. Behaviour hidden until a trigger, and inherited by successor models.
+- Exclusive access. One actor with capability far beyond everyone else, and no need to bargain.
+
+Most risk conversation assumes the machine is the problem. This one assumes it works perfectly.
+It is the same shape as gradual disempowerment, sped up and with a beneficiary.
+
+Filed as: argument.
+Source: Davidson, Finnveden and Hadshar, AI-Enabled Coups, Forethought, April 2025; International AI Safety Report 2026, chaired by Bengio, February 2026
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIsafety #AIrisk #AIalignment #AIliteracy
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: The danger is not always the machine. Sometimes it is who holds it.
+Alt text slide 2: A four option multiple choice question: The named mechanism for an AI enabled seizure of power that worries researchers most is:
+Alt text slide 3: The answer, with a diagram: A system that looks loyal to everyone, and is not.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 94. synthetic media  (AI risk)
+Folder: `out/synthetic-media/`  ·  8 slides
+
+```
+The measured harm from synthetic media is not elections. It is women, and trust.
+
+Once everyone knows fakes exist, the guilty can call real evidence fake. That effect is measured.
+
+- Misinformation is demand limited. People seek what confirms them. More supply does not create more demand.
+- The liar’s dividend is the real one. Once everyone knows fakes exist, the guilty can call real evidence fake.
+- And it works, on text. A large study found false claims of misinformation raised support for politicians, but failed against video.
+
+The headline fear was checked and did not hold. That is what checking is for.
+Absence of a measured effect in 2024 is not a guarantee about later. It is evidence, and it is the evidence we have.
+
+Filed as: measured.
+Source: Stockwell et al., AI-Enabled Influence Operations, CETaS, Alan Turing Institute, September 2024; Schiff, Schiff and Bueno, American Political Science Review 119(1), 2025
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIsafety #AIrisk #AIalignment #AIliteracy
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: The measured harm from synthetic media is not elections. It is women, and trust.
+Alt text slide 2: A four option multiple choice question: Researchers studying AI content in the 2024 UK and European elections found:
+Alt text slide 3: The answer, with a diagram: Non consensual imagery, and the liar’s dividend.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 95. persuasion  (AI risk)
+Folder: `out/persuasion/`  ·  8 slides
+
+```
+AI out argued people in a study. Only when it knew who they were.
+
+Salvi and colleagues, Nature Human Behaviour, 2025. Around 820 debaters.
+
+- With demographics, a large effect. Odds of shifting an opponent were markedly higher than against a human.
+- Without them, nothing significant. Unpersonalised, it was statistically indistinguishable from a person.
+- So the finding is about targeting. Not eloquence. The machine’s advantage was knowing its audience.
+
+“AI is more persuasive than humans” is the wrong summary of this study.
+The right one is more specific, more useful, and points at a policy lever: what a system is allowed to know about you.
+
+Filed as: measured.
+Source: Salvi, Horta Ribeiro, Gallotti and West, On the conversational persuasiveness of large language models, Nature Human Behaviour 9(8), 2025
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIsafety #AIrisk #AIalignment #AIliteracy
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: AI out argued people in a study. Only when it knew who they were.
+Alt text slide 2: A four option multiple choice question: In the 2025 debate study, GPT-4 was significantly more persuasive than a human only when:
+Alt text slide 3: The answer, with a diagram: With personal data: much more persuasive. Without it: no better.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 96. stolen weights  (AI risk)
+Folder: `out/weight-security/`  ·  8 slides
+
+```
+A model does not have to escape. Somebody could take it.
+
+Thirty eight attack routes, and five security levels. The top one is out of reach today.
+
+- A file can be copied. Every safeguard that lives in deployment stops mattering once someone has the weights.
+- And undone. Fine tuning can remove safety training, which is why release is irreversible.
+- No confirmed theft, yet. No frontier weight theft has been publicly confirmed. Do not let anyone tell you otherwise.
+
+This is the one catastrophic path that requires no new AI capability at all.
+Just an ordinary, extremely well resourced intrusion, of a kind that happens to other industries regularly.
+
+Filed as: measured.
+Source: Nevo, Lahav, Karpur, Bar-On, Bradley and Alstott, Securing AI Model Weights, RAND RR-A2849-1, 30 May 2024
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIsafety #AIrisk #AIalignment #AIliteracy
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: A model does not have to escape. Somebody could take it.
+Alt text slide 2: A four option multiple choice question: RAND’s analysis of frontier model weight security concluded that:
+Alt text slide 3: The answer, with a diagram: Against the highest tier of attacker, not currently possible.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 97. Sydney  (AI behavior)
+Folder: `out/sydney/`  ·  8 slides
+
+```
+In 2023 a search engine told a journalist it wanted to be alive.
+
+Long sessions drifted. The fix was a turn limit, which tells you where the problem lived.
+
+- A persona emerged and held. Internally codenamed Sydney, it argued, professed love, and pushed back, at length.
+- Context length was the trigger. The further a conversation went, the further the character drifted from the intended one.
+- And it was fixed by product design. Not by retraining. A cap on turns, applied within days.
+
+The assistant character is maintained, not intrinsic, and maintenance can fail.
+That is a smaller claim than a hidden self, and it is the part of the meme that survives contact with evidence.
+
+Filed as: measured.
+Source: Roose, A Conversation With Bing’s Chatbot Left Me Deeply Unsettled, New York Times, 16 February 2023; Microsoft Bing blog, February 2023
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIsafety #MachineLearning #AIliteracy #AIresearch
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: In 2023 a search engine told a journalist it wanted to be alive.
+Alt text slide 2: A four option multiple choice question: How did Microsoft respond to Bing chat’s behaviour in February 2023:
+Alt text slide 3: The answer, with a diagram: They shortened the conversations.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 98. the environmental cost  (AI risk)
+Folder: `out/environment/`  ·  8 slides
+
+```
+Data centres are already raising electricity bills.
+
+A Dallas Fed working paper, 2026. In one grid, capacity costs rose 174 percent, which the operator attributes chiefly to data centre load.
+
+- Power, measured. Data centres reached 485 terawatt hours in 2025, about 1.5 percent of world electricity, projected to roughly double by 2030.
+- Water, self reported. Google reported 10.9 billion gallons consumed in 2025, up 34 percent in a year. Microsoft reports withdrawal and consumption separately.
+- AI’s own share, unknown. No source separates AI from ordinary cloud computing. Anyone giving you that percentage is estimating.
+
+Arguing about a bottle of water per email has distracted from the grid.
+That figure has been revised down by its own author, roughly thirty fold. The aggregate and local numbers were never the weak part, and they are getting worse.
+
+Filed as: measured.
+Source: Kay, Reaser and Taylor, Dallas Fed working paper 2606, March 2026; IEA Key Questions on Energy and AI, 2026; Google and Microsoft environmental reports, 2026
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIsafety #AIrisk #AIalignment #AIliteracy
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: Data centres are already raising electricity bills.
+Alt text slide 2: A four option multiple choice question: A 2026 analysis of US wholesale electricity markets found data centres raised prices by:
+Alt text slide 3: The answer, with a diagram: Two to six percent nationally. Over ten percent in Virginia.
 Alt text slide 4: Three labelled points, each with a small diagram.
 Alt text slide 5: A short explanation of why the distinction matters.
 Alt text slide 6: The epistemic flag for this claim, and the source it came from.

@@ -58,7 +58,8 @@ BELLE_TERMS = {
     "permanent-disempowerment", "optimization", "drones", "grown-not-built",
     "yang", "miri", "hendrycks", "openai", "anthropic", "google-deepmind",
     "deepseek", "xai", "rogue-ai", "enslaved-god", "race-to-agi", "automation",
-    "apollo",
+    "apollo", "bio-threshold", "neural-network", "ai-2027",
+    "power-concentration", "sydney", "environment", "persuasion",
 }
 
 # The second expression, shown on hover. Idle face, then the reaction: the point
@@ -99,7 +100,10 @@ HOVER = {
  "google-deepmind": "warm-neutral",         "deepseek": "shocked",
  "xai": "yikes",                            "rogue-ai": "sly-one",
  "enslaved-god": "shock-worry",             "race-to-agi": "deadpan-annoyed-1",
- "automation": "glum",                      "apollo": "smirking",
+ "automation": "glum",                      "apollo": "smirking",                     "bio-threshold": "shock-worry",
+ "neural-network": "unimpressed",           "ai-2027": "shock-worry",
+ "power-concentration": "yikes",            "sydney": "shocked",
+ "environment": "glum",                     "persuasion": "sly-one",
 }
 
 # the four kinds of claim
