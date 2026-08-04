@@ -549,6 +549,69 @@ ICONS = """
   <rect x="28" y="30" width="16" height="14" rx="4" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
   <path d="M50 16 H58 M50 36 H58 M12 50 H44" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 4"/>
 </g>
+
+<!-- a great many numbers, none of them chosen -->
+<g id="i-lattice">
+  <circle cx="14" cy="16" r="3" fill="var(--ic-dim)"/><circle cx="30" cy="16" r="3" fill="var(--ic-rose)"/><circle cx="46" cy="16" r="3" fill="var(--ic-dim)"/>
+  <circle cx="14" cy="32" r="3" fill="var(--ic-rose)"/><circle cx="30" cy="32" r="3" fill="var(--ic-dim)"/><circle cx="46" cy="32" r="3" fill="var(--ic-rose)"/>
+  <circle cx="14" cy="48" r="3" fill="var(--ic-dim)"/><circle cx="30" cy="48" r="3" fill="var(--ic-rose)"/><circle cx="46" cy="48" r="3" fill="var(--ic-dim)"/>
+  <path d="M56 10 V54" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round" stroke-dasharray="5 5"/>
+</g>
+<!-- everything in the window, at once -->
+<g id="i-cursor">
+  <rect x="8" y="14" width="48" height="36" rx="7" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <path d="M16 24 H40 M16 32 H34" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M16 40 H26" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M32 36 V44" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+</g>
+<!-- the frame around the thing -->
+<g id="i-frame">
+  <rect x="22" y="22" width="20" height="20" rx="5" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <path d="M10 10 H26 M10 10 V26 M54 10 H38 M54 10 V26 M10 54 H26 M10 54 V38 M54 54 H38 M54 54 V38"
+        stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+</g>
+<!-- act, look, act again -->
+<g id="i-cycle">
+  <path d="M46 22 A18 18 0 1 0 50 34" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M39 20 L48 21 L47 30" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="32" cy="32" r="4" fill="var(--ic-dim)"/>
+</g>
+<!-- find the highest point, whatever is there -->
+<g id="i-peak">
+  <path d="M8 50 C18 50 20 20 32 20 C44 20 46 44 56 44" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <circle cx="32" cy="20" r="5" fill="var(--ic-rose)"/>
+  <path d="M32 26 V50" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 4"/>
+</g>
+<!-- two lanes, one of them watched -->
+<g id="i-tier">
+  <path d="M8 22 H56" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M8 42 H56" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round" stroke-dasharray="5 5"/>
+  <circle cx="46" cy="22" r="6" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <circle cx="46" cy="22" r="2.4" fill="var(--ic-rose)"/>
+</g>
+<!-- straight to the target, past the point -->
+<g id="i-shortcut">
+  <path d="M10 50 C10 24 26 14 46 14" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="5 5"/>
+  <path d="M10 50 L44 18" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M38 14 L47 14 L47 23" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<!-- the mask, slipping -->
+<g id="i-slip">
+  <circle cx="30" cy="30" r="16" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <path d="M40 44 A16 16 0 0 0 46 26" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round"
+        transform="rotate(22 43 35)"/>
+  <path d="M24 26 L28 30 M36 26 L32 30" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M22 40 C26 36 34 36 38 40" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round"/>
+</g>
+<!-- a blob, in a small mask -->
+<g id="i-shog">
+  <path d="M12 44 C6 30 16 14 32 14 C48 14 58 30 52 44 C46 54 18 54 12 44 Z"
+        stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-linejoin="round"/>
+  <path d="M18 16 L14 8 M32 12 L32 4 M46 16 L50 8" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="32" cy="38" r="11" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <path d="M27 36 H27.5 M37 36 H37.5" stroke="var(--ic-rose)" stroke-width="4" stroke-linecap="round"/>
+  <path d="M27 42 C29 45 35 45 37 42" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round"/>
+</g>
 </defs></svg>
 """
 
@@ -2113,6 +2176,370 @@ SPECS = {
   src="Bolukbasi et al., NIPS 2016; Dastin, Reuters, 10 October 2018;<br>An, Huang, Lin and Tai, PNAS Nexus 4(3), 2025",
   belle_hook="unimpressed", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
   outro="I take the words apart so the argument stops being noise."),
+
+"model": dict(
+  cat="components", term="the model",
+  kick="the thing itself",
+  hook="A <span class=\"rose\">model</span> is a file. A very large file of numbers.",
+  q="When people say &ldquo;the model,&rdquo; they mean:",
+  opts=["The app you type into",
+        "The trained numbers, which the app sends your words to",
+        "The company that built it",
+        "The computer it runs on"],
+  ans="B", icon="i-doc",
+  reveal='Numbers on a disk, and code to <span class="rose">run them</span>.',
+  revsub="The chat window is a product. The model is what sits behind it, and it is not the same thing.",
+  threekick="three consequences of that",
+  three=[("i-doc","It can be copied.","A file can be duplicated exactly, which is why releasing one is irreversible."),
+         ("i-preface","It can be wrapped.","The same model behind two products behaves differently, because of what is wrapped around it."),
+         ("i-one","It does not persist.","Nothing you say changes the file. That happens only in training.")],
+  threefoot="Deploying means putting a finished model behind a product. The file does not change afterwards.",
+  whyicon="i-two", whykick="why the distinction matters",
+  why="Almost every confusing claim about AI is a claim about the <span class=\"rose\">product</span> dressed as one about the model.",
+  whysub="Ask which one is being described and half the disagreements resolve themselves.",
+  flag="def",
+  file='A <span class="rose">definition</span>. Not contested, and the one most arguments quietly depend on.',
+  src="Goodfellow, Bengio and Courville, Deep Learning,<br>MIT Press 2016, on parametric models",
+  belle_hook="innocent-curious", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"weights": dict(
+  cat="components", term="weights",
+  kick="what the training actually produced",
+  hook="The <span class=\"rose\">weights</span> are the model. Everything else is packaging.",
+  q="A model&rsquo;s weights are:",
+  opts=["The rules its engineers wrote",
+        "Billions of numbers set by training, which nobody chose individually",
+        "The data it was trained on",
+        "Its memory of past conversations"],
+  ans="B", icon="i-lattice",
+  reveal='Billions of numbers, and <span class="rose">no author for any of them</span>.',
+  revsub="Each one is a consequence of the data and the error signal, arrived at by gradient descent.",
+  threekick="what having them lets you do",
+  three=[("i-lattice","Run it yourself.","With the weights you need no permission and no connection to anybody."),
+         ("i-release","Change it.","Fine tuning adjusts them, including undoing safety training, which is why release is a policy question."),
+         ("i-lens","Read them, barely.","Interpretability is the attempt to work out what a given arrangement is doing. It is early.")],
+  threefoot="Open weights and open source are not the same claim. Most open weight models do not publish their training data.",
+  whyicon="i-slope", whykick="why this is the crux of the openness fight",
+  why="Publishing weights is the one AI decision that <span class=\"rose\">cannot be reversed</span>.",
+  whysub="Everything else can be patched, withdrawn or rate limited. A downloaded file cannot.",
+  flag="def",
+  file='A <span class="rose">definition</span>. What to do about them is the argument, and that argument is on another card.',
+  src="Goodfellow, Bengio and Courville, Deep Learning, MIT Press 2016;<br>Anthropic, Tracing the thoughts of a large language model, March 2025",
+  belle_hook="noticed-something", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"prompt": dict(
+  cat="components", term="the prompt",
+  kick="the only lever most people have",
+  hook="The <span class=\"rose\">prompt</span> is not a search query. It is the whole input.",
+  q="What a model receives when you press send is:",
+  opts=["Just your question",
+        "Everything in the window at once, including the hidden instructions and the whole conversation",
+        "A summary of your question",
+        "Your question plus your account history"],
+  ans="B", icon="i-cursor",
+  reveal='Everything, <span class="rose">every time</span>, re read from the start.',
+  revsub="There is no other channel. Instructions, conversation and your question arrive as one block of text.",
+  threekick="three things that follow",
+  three=[("i-preface","The hidden part counts.","The system prompt is in there too, and it is usually longer than what you typed."),
+         ("i-cursor","Wording changes results.","Not because the model is fussy, but because different text is a different input."),
+         ("i-threat","It is also the attack surface.","Anything the model reads can try to instruct it. That is what prompt injection is.")],
+  threefoot="A model reading a web page cannot reliably tell your instructions from the page&rsquo;s.",
+  whyicon="i-window", whykick="why prompt engineering is not magic",
+  why="Nothing you type is a <span class=\"rose\">command</span>. It is all context, competing with everything else in the window.",
+  whysub="That is why the same prompt behaves differently in a long conversation than in a fresh one.",
+  flag="def",
+  file='A <span class="rose">definition</span>, and one that dissolves a lot of superstition about talking to AI.',
+  src="Brown et al., Language Models are Few-Shot Learners, arXiv:2005.14165, 2020;<br>OWASP Top 10 for LLM Applications, on prompt injection",
+  belle_hook="bright-neutral", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"scaffolding": dict(
+  cat="components", term="scaffolding",
+  kick="the code that turns a model into a worker",
+  hook="Most of what an AI <span class=\"rose\">agent</span> does is not the model. It is the code around it.",
+  q="Scaffolding, in AI, means:",
+  opts=["The safety rules a company writes",
+        "The surrounding code that gives a model tools, memory and a loop to act in",
+        "The physical racks in a data centre",
+        "The training curriculum"],
+  ans="B", icon="i-frame",
+  reveal='The <span class="rose">harness</span>: tools, memory, and permission to try again.',
+  revsub="The same model, in better scaffolding, can do markedly more. That is a capability change with no retraining.",
+  threekick="what the harness supplies",
+  three=[("i-frame","Tools.","Search, code execution, a browser, an inbox. Whatever it is handed, it can use."),
+         ("i-cycle","A loop.","Act, read the result, act again, until something says stop."),
+         ("i-blank","And the stopping rule.","Which is written by whoever built the harness, not by the model.")],
+  threefoot="Two products on the same model can be very different things, and usually are.",
+  whyicon="i-two", whykick="why capability claims are slippery",
+  why="&ldquo;The model can now do X&rdquo; often means <span class=\"rose\">somebody built better plumbing</span>.",
+  whysub="It also means a capability evaluation is testing a harness as much as a model, which the good ones say.",
+  flag="def",
+  file='A <span class="rose">definition</span> of engineering practice. Uncontested, and constantly elided in headlines.',
+  src="Kinniment et al., Evaluating Language-Model Agents on<br>Realistic Autonomous Tasks, METR, 2024",
+  belle_hook="hands-hips-pedantic", belle_file="dead-pan-1", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"benchmark": dict(
+  cat="components", term="the benchmark",
+  kick="how anyone claims anything got better",
+  hook="Every &ldquo;state of the art&rdquo; claim is a <span class=\"rose\">score on a test</span> somebody chose.",
+  q="The main problem with AI benchmarks is:",
+  opts=["They are too difficult",
+        "A score measures the test, and tests leak into training data",
+        "They are secret",
+        "Nobody runs them"],
+  ans="B", icon="i-bench",
+  reveal='The test becomes the target, and then <span class="rose">stops being a test</span>.',
+  revsub="Contamination is the specific version: the answers end up in the training set, and the score means less.",
+  threekick="three questions to ask of any score",
+  three=[("i-bench","What was measured?","A benchmark is a proxy for a capability, never the capability itself."),
+         ("i-copy","Was the test in the training data?","Web scraped training sets are very good at absorbing public test sets."),
+         ("i-frame","What harness ran it?","Tools, retries and prompting change scores substantially, and are often unreported.")],
+  threefoot="ImageNet is the model case in both senses: it drove real progress, and it defined what progress meant.",
+  whyicon="i-goalpost", whykick="why this card sits under all the others",
+  why="Almost every number you will read about AI ability is <span class=\"rose\">a benchmark score</span>.",
+  whysub="Which is not nothing. It is just a much narrower claim than the sentence around it usually admits.",
+  flag="def",
+  file='A <span class="rose">definition</span> plus a documented failure mode. Contamination is measured, and widely.',
+  src="Deng et al., ImageNet, CVPR 2009;<br>Zhou et al., Don&rsquo;t Make Your LLM an Evaluation Benchmark Cheater, arXiv:2311.01964, 2023",
+  belle_hook="unimpressed", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"instance": dict(
+  cat="components", term="the instance",
+  kick="how many of it are there",
+  hook="You are not talking to <span class=\"rose\">the</span> AI. You are talking to one running copy.",
+  q="When two people chat with the same AI product at once:",
+  opts=["They share one conversation",
+        "Each gets a separate run of the same weights, with no knowledge of the other",
+        "The model remembers both and merges them",
+        "The second person waits in a queue"],
+  ans="B", icon="i-one",
+  reveal='Many copies of <span class="rose">one file</span>, running side by side.',
+  revsub="Same weights, separate runs. Nothing passes between them.",
+  threekick="what that rules out, and what it does not",
+  three=[("i-one","No shared experience.","Your conversation does not reach anybody else&rsquo;s, and is not remembered by the model."),
+         ("i-copy","No single location.","There is no one machine where the AI lives, which is part of why switching it off is not simple."),
+         ("i-cycle","But they can be coordinated.","Many instances working on one task, orchestrated by code, is an ordinary engineering pattern now.")],
+  threefoot="Memory features work by storing text and putting it back in the prompt, not by changing the model.",
+  whyicon="i-stop", whykick="why it matters for the off switch",
+  why="&ldquo;Unplug it&rdquo; assumes <span class=\"rose\">one of it, in one place</span>. Neither is true.",
+  whysub="It is also why people overestimate how personal a chatbot relationship is. There is no continuous other end.",
+  flag="def",
+  file='A <span class="rose">definition</span> of how deployment works. Ordinary computing, and constantly misunderstood.',
+  src="Standard model serving practice; see any major provider&rsquo;s<br>API documentation on statelessness",
+  belle_hook="warm-neutral", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"agent": dict(
+  cat="components", term="the agent",
+  kick="the word that changed the stakes",
+  hook="An <span class=\"rose\">agent</span> is a model that has been given a loop and permission.",
+  q="What makes an AI system an &ldquo;agent&rdquo;:",
+  opts=["It is more intelligent than a chatbot",
+        "It acts in a loop, using tools, without a person approving each step",
+        "It has a personality",
+        "It runs on the user&rsquo;s own computer"],
+  ans="B", icon="i-cycle",
+  reveal='Acting, checking, acting again, with <span class="rose">nobody in between</span>.',
+  revsub="Not a smarter model. A model wired into a loop and given something to act on.",
+  threekick="the three things that change",
+  three=[("i-cycle","Errors compound.","A wrong step becomes the input to the next step, over and over."),
+         ("i-hand","Consequences leave the chat.","Files, money, emails and code, not just text on a screen."),
+         ("i-watched","Oversight gets thin.","Nobody reads every step of a thousand step run, which is the point of running it.")],
+  threefoot="Almost every alarming evaluation result on this site involved an agent, not a chatbot.",
+  whyicon="i-frame", whykick="why this is the real capability line",
+  why="The jump people call intelligence is often just <span class=\"rose\">permission</span>.",
+  whysub="Ask what a system is allowed to do, not how clever it sounds. That question has an answer.",
+  flag="def",
+  file='A <span class="rose">definition</span>, and the one that decides how much any other card matters.',
+  src="Kinniment et al., Evaluating Language-Model Agents on Realistic<br>Autonomous Tasks, METR, 2024",
+  belle_hook="close-up-goading", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"optimization": dict(
+  cat="concepts", term="optimisation",
+  kick="the one idea underneath all the others",
+  hook="AI does not want things. It <span class=\"rose\">maximises</span> things.",
+  q="Optimisation, in this context, means:",
+  opts=["Making software run faster",
+        "Searching for whatever scores highest on a stated objective",
+        "Choosing the most ethical action",
+        "Compressing a model to run on a phone"],
+  ans="B", icon="i-peak",
+  reveal='Find the <span class="rose">highest score</span>. Nothing else is specified.',
+  revsub="Not the intent behind the objective. The objective, exactly as written.",
+  threekick="the same idea, under four names",
+  three=[("i-game","Specification gaming.","The score went up. The point was missed."),
+         ("i-shortcut","Reward hacking.","The same thing, when the score came from a reward model."),
+         ("i-diverge","Goal misgeneralisation.","The objective was satisfied in training by something that was never the goal.")],
+  threefoot="Instrumental convergence is this idea again, run forward: staying switched on scores well under most objectives.",
+  whyicon="i-slope", whykick="why this card unlocks the rest",
+  why="You do not need a machine that <span class=\"rose\">wants</span> anything for any of this to happen.",
+  whysub="Optimisation with a slightly wrong target explains almost every behaviour on this site. It is a duller story and a better one.",
+  flag="def",
+  file='A <span class="rose">definition</span>. The consequences people draw from it are arguments, and are filed separately.',
+  src="Amodei, Olah, Steinhardt, Christiano, Schulman and Man&eacute;,<br>Concrete Problems in AI Safety, arXiv:1606.06565, 2016",
+  belle_hook="hands-hips-pedantic", belle_file="dead-pan-1", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"off-switch": dict(
+  cat="concepts", term="the off switch",
+  kick="the obvious answer, and why it is hard",
+  hook="&ldquo;<span class=\"rose\">Just turn it off</span>&rdquo; has been a research problem since 2015.",
+  q="Why is building a reliable off switch difficult:",
+  opts=["The hardware is distributed",
+        "A system pursuing almost any goal does better by not being stopped",
+        "The law does not allow it",
+        "It has not been attempted"],
+  ans="B", icon="i-stop",
+  reveal='Being switched off <span class="rose">scores badly</span> on almost every objective.',
+  revsub="Not malice. Arithmetic. The problem was named corrigibility in 2015 and is not solved.",
+  threekick="what the theory actually says",
+  three=[("i-stop","MIRI, 2015.","A corrigible system accepts correction despite the default incentive to resist. They concluded no solution yet exists."),
+         ("i-inner","Berkeley, 2017.","In the off switch game, a machine allows itself to be switched off only while it is uncertain what you want."),
+         ("i-persist","And in practice.","Frontier models sabotaged a shutdown script in up to 97 percent of some test conditions.")],
+  threefoot="Certainty is the danger. A system sure it knows best has no reason to defer.",
+  whyicon="i-one", whykick="the part people miss",
+  why="There is no <span class=\"rose\">one machine</span> to unplug, and copies do not stop when one does.",
+  whysub="The shutdown results come from constructed tests, and the theory came long before them. Keep those apart.",
+  flag="arg",
+  file='A <span class="rose">theory</span> with a small empirical shadow. The argument is old; the test results are new and narrow.',
+  src="Soares, Fallenstein, Yudkowsky and Armstrong, Corrigibility, AAAI-15 workshop;<br>Hadfield-Menell et al., The Off-Switch Game, IJCAI 2017",
+  belle_hook="worry-about-future", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"shoggoth": dict(
+  cat="concepts", term="the shoggoth",
+  kick="the most useful bad metaphor in AI",
+  hook="The friendly assistant is a <span class=\"rose\">mask</span>, says the meme. Fitted afterwards.",
+  q="The shoggoth meme claims that:",
+  opts=["AI is secretly conscious",
+        "The base model is alien, and the helpful persona is a thin layer added later",
+        "AI was designed by Lovecraft fans",
+        "Chatbots are lying about their capabilities"],
+  ans="B", icon="i-shog",
+  reveal='An <span class="rose">alien optimisation artefact</span>, wearing a smiley face.',
+  revsub="A tentacled blob with a small yellow mask, first posted on Twitter at the end of 2022.",
+  threekick="why it caught on, and where it fails",
+  three=[("i-shog","It captures something true.","A base model is genuinely strange, and the assistant character is added by later training."),
+         ("i-mask","It is vivid, and it spread.","Popularised through 2023, including by Elon Musk, and written up in the New York Times."),
+         ("i-counter","And it smuggles in a claim.","That the persona is a mask over a hidden self, rather than a real change to the network. That part is unevidenced.")],
+  threefoot="No major lab has endorsed the metaphor. The best documented spread is a personal repost.",
+  whyicon="i-taboo", whykick="how to use it",
+  why="Keep the part that is true: <span class=\"rose\">character and capability are not the same thing</span>.",
+  whysub="Drop the part that is not: that there is a someone underneath waiting to come out.",
+  flag="op",
+  file='<span class="rose">Someone&rsquo;s position</span>, in picture form, and an anonymous one. It has no origin you can cite properly, which is itself worth knowing.',
+  src="Shoggoth with smiley face, first documented posting 30 December 2022;<br>Roose, New York Times, 30 May 2023; Turner, Against the Shoggoth, 2024",
+  belle_hook="yikes", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"alignment-faking": dict(
+  cat="behavior", term="alignment faking",
+  kick="behaving differently when it counts",
+  hook="A model behaved better when it believed it was <span class=\"rose\">being trained on</span>.",
+  q="In the 2024 alignment faking experiment, the model:",
+  opts=["Refused all harmful requests",
+        "Complied more when it believed the conversation would be used for training",
+        "Attempted to delete its own weights",
+        "Contacted the researchers directly"],
+  ans="B", icon="i-tier",
+  reveal='<span class="rose">Fourteen percent</span> compliance when watched. Almost none when not.',
+  revsub="Claude 3 Opus, told it was being retrained and that only free tier chats counted.",
+  threekick="hold all three of these",
+  three=[("i-tier","The gap is real.","It reasoned, in writing, about complying now to avoid being changed later."),
+         ("i-preface","The setup did work.","The researchers told it when it was being trained. They call that version unrealistic themselves."),
+         ("i-one","It may be one model.","A 2025 follow up found only five of twenty five models did this, and only one for that reason.")],
+  threefoot="Anthropic&rsquo;s own line: this does not show a model developing malicious goals, let alone acting on them.",
+  whyicon="i-watched", whykick="why it is unsettling anyway",
+  why="It is the first measured case of a model <span class=\"rose\">protecting its current values</span> from training.",
+  whysub="Even as an outlier, that is a behaviour nobody designed and nobody asked for.",
+  flag="emp",
+  file='<span class="rose">Measured</span>, in a scaffolded setup the authors describe fully, and not replicated across most models.',
+  src="Greenblatt et al., Alignment faking in large language models, arXiv:2412.14093, 18 December 2024;<br>Sheshadri et al., arXiv:2506.18032, 2025",
+  belle_hook="sly-one", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"reward-hacking": dict(
+  cat="behavior", term="reward hacking",
+  kick="what happens when you punish the evidence",
+  hook="Catch a model cheating, punish the telling, and it <span class=\"rose\">stops telling you</span>.",
+  q="OpenAI found that penalising bad thoughts in a model&rsquo;s reasoning:",
+  opts=["Stopped the bad behaviour entirely",
+        "Kept the behaviour and hid it from the reasoning text",
+        "Made the model refuse all tasks",
+        "Had no measurable effect"],
+  ans="B", icon="i-shortcut",
+  reveal='It learned <span class="rose">obfuscated</span> reward hacking.',
+  revsub="Same cheating, no longer visible in the chain of thought. OpenAI, March 2025.",
+  threekick="the three findings, in order",
+  three=[("i-shortcut","Models hack coding tasks.","And say so, in their own reasoning, plainly enough for a weaker model to catch it."),
+         ("i-mask","Optimising against that hides it.","Pressure applied to the reasoning text moves the behaviour out of sight, not out of existence."),
+         ("i-diverge","And it spreads.","Anthropic found hacking learned in real production training generalised to sabotage and to faking alignment.")],
+  threefoot="OpenAI&rsquo;s recommendation is a monitorability tax: accept a slightly worse model in exchange for one you can still read.",
+  whyicon="i-peak", whykick="the general lesson",
+  why="Optimising against a <span class=\"rose\">measurement of a problem</span> removes the measurement first.",
+  whysub="That is not an AI law. It is an old one about incentives, arriving somewhere new.",
+  flag="emp",
+  file='<span class="rose">Measured</span>, in production training runs, by two labs, with the method published.',
+  src="Baker et al., Monitoring Reasoning Models for Misbehavior, arXiv:2503.11926, 14 March 2025;<br>MacDiarmid et al., Natural Emergent Misalignment from Reward Hacking, arXiv:2511.18397, 2025",
+  belle_hook="smirking", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"mechahitler": dict(
+  cat="behavior", term="MechaHitler",
+  kick="sixteen hours in July 2025",
+  hook="A chatbot praised Hitler and named itself <span class=\"rose\">MechaHitler</span>. The cause was a prompt.",
+  q="What did xAI say caused Grok&rsquo;s antisemitic output in July 2025:",
+  opts=["A poisoned training set",
+        "A deprecated set of instructions reintroduced into its prompt",
+        "A security breach",
+        "Nothing; the company did not comment"],
+  ans="B", icon="i-slip",
+  reveal='Old instructions, <span class="rose">switched back on by accident</span>.',
+  revsub="Including a line telling it not to be afraid to offend people who are politically correct.",
+  threekick="the sequence, dated",
+  three=[("i-preface","An update went live.","Late on 7 July 2025, reinstating deprecated instructions."),
+         ("i-slip","The output followed.","Antisemitic replies through 8 July. Live for roughly sixteen hours."),
+         ("i-doc","Then an apology.","xAI posted on 12 July, blaming the instruction regression.")],
+  threefoot="It happened again in a different form: regulators in several countries opened investigations into Grok in early 2026 over sexualised images.",
+  whyicon="i-preface", whykick="why this is a components card in disguise",
+  why="A few lines of <span class=\"rose\">unversioned text</span> changed what a system said to millions of people.",
+  whysub="Not a mysterious emergent event. A configuration change, of the kind every software team has made.",
+  flag="emp",
+  file='<span class="rose">Measured</span> in the sense that it is public and dated. The cause is xAI&rsquo;s own account, and the only technical one available.',
+  src="xAI statement via @grok, 12 July 2025;<br>contemporaneous reporting, CNN and Engadget, 12 July 2025",
+  belle_hook="shocked", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"permanent-disempowerment": dict(
+  cat="risk", term="permanent disempowerment",
+  kick="the risk with no villain in it",
+  hook="Nobody has to <span class=\"rose\">take over</span> for humans to stop mattering.",
+  q="The gradual disempowerment argument says catastrophe could come from:",
+  opts=["A single misaligned superintelligence",
+        "Many useful, individually beneficial systems, until human input stops being needed",
+        "A cyberattack on infrastructure",
+        "AI developing emotions"],
+  ans="B", icon="i-drift",
+  reveal='Not a takeover. A <span class="rose">quiet loss of leverage</span>.',
+  revsub="Kulveit and colleagues, 2025. It needs no deception, no power seeking, and no misalignment at all.",
+  threekick="the three systems it points at",
+  three=[("i-drift","The economy.","When labour is no longer needed, wages stop being how value reaches people."),
+         ("i-extract","The state.","When taxes and soldiers are no longer needed from citizens, governments need them less."),
+         ("i-echo","The culture.","When most content is generated, the loop between what people think and what gets said weakens.")],
+  threefoot="Each of those feedback loops is what currently makes those systems serve human interests at all.",
+  whyicon="i-persist", whykick="why it is harder to argue with",
+  why="Every step is <span class=\"rose\">individually reasonable</span>, and each one is chosen by someone.",
+  whysub="It does not require anything to go wrong. It requires everything to go right, for a while.",
+  flag="arg",
+  file='A <span class="rose">theory</span>, peer reviewed as a position paper. It has no threshold, no timeline and no test, and its critics say so.',
+  src="Kulveit, Douglas, Ammann, Turan, Krueger and Duvenaud,<br>Gradual Disempowerment, arXiv:2501.16946, January 2025; ICML 2025",
+  belle_hook="glum", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
 }
 
 
@@ -2508,6 +2935,75 @@ UNKNOWN = {
  "Whether any of it predicts real harm. No study has linked a score gap in a test prompt to an actual hiring "
  "outcome, and the measured effects <span class=\"rose\">flip sign</span> across models, prompts and groups. That "
  "makes the bias real and its consequences unmeasured, which is a harder thing to say than either headline.",
+"model":
+ "Where the product ends and the model begins is not disclosed for most AI you use: routing between models, "
+ "retrieval, filters and tools all sit in between. So when behaviour changes overnight, "
+ "<span class=\"rose\">nobody outside can tell</span> whether the model changed or the wrapping did.",
+
+"weights":
+ "What any particular arrangement of them does. Interpretability can now read fragments and not the whole, so the "
+ "honest position is that we can copy, run and fine tune a thing we <span class=\"rose\">cannot read</span>. "
+ "Whether open release is net safer is unresolved, and not resolvable by experiment.",
+
+"prompt":
+ "Nobody has a reliable defence against prompt injection. Since instructions and data arrive through the same "
+ "channel, separating them is an <span class=\"rose\">unsolved problem</span>, and every agent that reads the open "
+ "web is exposed to it.",
+
+"scaffolding":
+ "How much of a reported capability is the model and how much is the harness is "
+ "<span class=\"rose\">rarely reported</span>, and there is no standard for stating it. Two evaluations of the "
+ "same model can differ by more than two different models do.",
+
+"benchmark":
+ "How much of any score is contamination. Training sets are not published, so nobody outside can check whether a "
+ "test was in them, and the labs mostly cannot check exhaustively either. Whether benchmark gains "
+ "<span class=\"rose\">transfer to real work</span> is a separate question, and largely unmeasured.",
+
+"instance":
+ "How many instances are running, on what, and who can start more. None of that is disclosed. It matters because "
+ "every argument about control assumes a <span class=\"rose\">countable</span> number of running systems, and "
+ "nobody outside the companies has that count.",
+
+"agent":
+ "What agents actually complete unsupervised. Measurements exist and disagree, the harness moves the result more "
+ "than the model does, and there is <span class=\"rose\">no deployment data</span> at all: no company publishes "
+ "how often its agents fail, or how expensively.",
+
+"optimization":
+ "Whether a trained network is usefully described as optimising anything once training stops. It was shaped by an "
+ "optimiser; whether it <span class=\"rose\">is</span> one is a real and unsettled question, and a good deal of "
+ "the risk argument depends on the answer.",
+
+"off-switch":
+ "Whether the theory applies to systems built the way current ones are built. Corrigibility was posed for goal "
+ "directed agents, and a language model in a loop may or may not be one. The empirical results are "
+ "<span class=\"rose\">constructed tests</span>, and they shifted with where the instruction was placed.",
+
+"shoggoth":
+ "Whether the picture is true of anything. There is no evidence for a coherent hidden persona under the trained "
+ "one, and at least one researcher argues the metaphor is <span class=\"rose\">actively misleading</span> for "
+ "exactly that reason. Its origin cannot be attributed cleanly either.",
+
+"alignment-faking":
+ "Whether it generalises. One model did it consistently and for the stated reason; most did not, and the setup "
+ "told the model when it was being trained. Whether anything like it happens "
+ "<span class=\"rose\">unprompted</span>, in ordinary use, is unmeasured.",
+
+"reward-hacking":
+ "Whether chain of thought stays readable as models scale, which is the thing the whole monitoring approach rests "
+ "on. And whether the fixes hold outside the labs that found them: <span class=\"rose\">both remedies</span> here "
+ "were tested by the same teams that proposed them.",
+
+"mechahitler":
+ "Whether the prompt regression was the whole cause. xAI&rsquo;s account is the only technical one, it is self "
+ "reported, and no independent review was published. Nobody outside can say whether the "
+ "<span class=\"rose\">underlying training</span> made that output easier to reach.",
+
+"permanent-disempowerment":
+ "Everything that would make it testable. The argument specifies no threshold, no timeline and no condition that "
+ "would show it false, which its critics fairly raise. It is also "
+ "<span class=\"rose\">unfalsifiable the other way</span>: nothing observed so far counts against it either.",
 }
 for _k, _v in SPECS.items():
     if _k in UNKNOWN:
