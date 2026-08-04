@@ -12,58 +12,70 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:#0d0a10;font-family:var(--sans);display:flex;flex-wrap:wrap;gap:26px;padding:26px}
 .s{width:1080px;height:1350px;background:var(--ground);color:var(--text);position:relative;
-   padding:104px 96px 120px;display:flex;flex-direction:column;overflow:hidden}
+   padding:144px 92px 148px;display:flex;flex-direction:column;overflow:hidden}
+/* instagram overlays the top and bottom of a 4:5 post. keep everything inside. */
+.safe{position:absolute;left:0;right:0;pointer-events:none;border-top:0}
+.hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px}
+.ftr{margin-top:30px}
 .s.ivory{background:var(--well);color:var(--ink);--ic-rose:#AE5A47;--ic-mint:#2E9B7F;--ic-dim:#8B8090}
-.num{position:absolute;top:62px;right:76px;font-family:var(--mono);font-size:26px;color:var(--faint)}
+.num{font-family:var(--mono);font-size:26px;color:var(--faint)}
 .ivory .num{color:#8B8090}
-.mark{position:absolute;bottom:62px;left:96px;font-family:var(--mono);font-size:28px;color:var(--rose)}
+.mark{font-family:var(--mono);font-size:28px;color:var(--rose)}
 .mark .sg{font-family:var(--sans);font-weight:500;color:var(--text)}
 .ivory .mark{color:var(--well-rose)} .ivory .mark .sg{color:var(--ink)}
-.chip{position:absolute;top:58px;left:96px;font-family:var(--mono);font-size:24px;
-      color:var(--rose);border:2px solid var(--well-rose);border-radius:999px;padding:7px 20px}
+.chip{font-family:var(--mono);font-size:24px;color:var(--rose);
+      border:2px solid var(--well-rose);border-radius:999px;padding:7px 20px}
+/* slide one wears the category loudly, so it reads at grid thumbnail size */
+.cat{display:flex;align-items:center;gap:22px;margin-bottom:36px}
+.cat .lbl{font-family:var(--mono);font-size:40px;letter-spacing:.06em;color:var(--rose);
+          text-transform:uppercase;white-space:nowrap}
+.cat .rule{height:4px;background:var(--rose);border-radius:2px;flex:1;opacity:.55}
+.ivory .cat .lbl{color:var(--well-rose)} .ivory .cat .rule{background:var(--well-rose)}
 .ivory .chip{color:var(--well-rose);border-color:#D8B3A8}
-.kick{font-family:var(--mono);font-size:30px;color:var(--meta);margin-bottom:30px;display:block}
+.kick{font-family:var(--mono);font-size:28px;color:var(--meta);margin-bottom:24px;display:block}
 .ivory .kick{color:#6E6474}
-h1{font-size:104px;line-height:1.03;font-weight:500;letter-spacing:-.022em;max-width:660px}
-h1.sm{font-size:86px}
-h2{font-size:66px;line-height:1.1;font-weight:500;letter-spacing:-.015em}
-h2.sm{font-size:56px}
-p{font-size:40px;line-height:1.4;color:var(--meta);max-width:24ch}
+h1{font-size:90px;line-height:1.03;font-weight:500;letter-spacing:-.022em;max-width:660px}
+h1.sm{font-size:70px}
+h2{font-size:54px;line-height:1.1;font-weight:500;letter-spacing:-.015em}
+h2.sm{font-size:48px}
+p{font-size:36px;line-height:1.38;color:var(--meta);max-width:24ch}
 .ivory p{color:var(--ink)}
 .rose{color:var(--rose)} .ivory .rose{color:var(--well-rose)}
 .mid{flex:1;display:flex;flex-direction:column;justify-content:center}
-.belle{position:absolute;bottom:0;right:0;height:700px}
-.belle.sm{height:520px}
+.belle{position:absolute;bottom:120px;right:0;height:600px}
+.belle.sm{height:430px}
 .ico{display:inline-flex;align-items:center;gap:20px}
 .ico .tick{width:22px;height:3px;background:var(--ic-rose);border-radius:2px;flex:none}
-.ico .box{width:118px;height:118px;border:2px solid var(--line);border-radius:22px;flex:none;
+.ico .box{width:104px;height:104px;border:2px solid var(--line);border-radius:22px;flex:none;
           display:flex;align-items:center;justify-content:center}
 .ivory .ico .box{border-color:#DCD2C6}
 .ico.hot .box{border-color:var(--ic-rose)}
-.ico svg{width:86px;height:86px}
+.ico svg{width:76px;height:76px}
 .ico.big .box{width:176px;height:176px;border-radius:30px}
 .ico.big svg{width:128px;height:128px}
-.opts{display:flex;flex-direction:column;gap:22px;margin-top:22px}
-.opt{border:2px solid var(--line);border-radius:18px;padding:26px 34px;font-size:36px;color:var(--text);
-     display:flex;gap:24px;align-items:center;line-height:1.25}
+.opts{display:flex;flex-direction:column;gap:18px;margin-top:22px}
+.opt{border:2px solid var(--line);border-radius:18px;padding:20px 28px;font-size:32px;color:var(--text);
+     display:flex;gap:20px;align-items:center;line-height:1.24}
 .opt .k{font-family:var(--mono);font-size:30px;color:var(--faint);flex:none}
-.flag{display:inline-block;font-family:var(--mono);font-size:28px;padding:10px 24px;border-radius:999px;
+.flag{display:inline-block;font-family:var(--mono);font-size:25px;padding:9px 20px;border-radius:999px;
       border:2px solid var(--line);color:var(--faint)}
 .flag.on.emp{color:var(--mint);border-color:var(--mint)}
 .flag.on.op{color:var(--rose);border-color:var(--rose)}
 .flag.on.arg{color:#F4F2EE;border-color:#F4F2EE}
 .flag.on.def{color:#F4F2EE;border-color:#DFA192}
-.three{display:flex;flex-direction:column;gap:44px;margin-top:12px}
+.three{display:flex;flex-direction:column;gap:28px;margin-top:12px}
 .three .row{display:flex;gap:32px;align-items:center}
-.three .t{font-size:38px;line-height:1.28}
-.three .t b{font-weight:700;display:block;font-size:44px;margin-bottom:6px}
-.src{font-family:var(--mono);font-size:26px;color:var(--faint);line-height:1.6}
+.three .t{font-size:34px;line-height:1.28}
+.three .t b{font-weight:700;display:block;font-size:38px;margin-bottom:4px}
+.src{font-family:var(--mono);font-size:24px;color:var(--faint);line-height:1.6}
 .ivory .src{color:#8B8090}
 .strike{text-decoration:line-through;text-decoration-thickness:7px;text-decoration-color:var(--rose);opacity:.5}
 .handle{font-family:var(--mono);font-size:52px;color:var(--rose);letter-spacing:-.02em}
 .follow{border:2px solid var(--rose);border-radius:22px;padding:32px 40px;display:inline-flex;
         flex-direction:column;gap:10px;align-self:flex-start}
 .follow .l{font-family:var(--mono);font-size:28px;color:var(--meta)}
+.who{font-size:66px;line-height:1.05;font-weight:500;letter-spacing:-.02em}
+.role{font-family:var(--mono);font-size:26px;color:var(--rose);margin-top:14px;line-height:1.5;max-width:34ch}
 </style></head><body>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
@@ -172,12 +184,33 @@ p{font-size:40px;line-height:1.4;color:var(--meta);max-width:24ch}
   <path d="M36 32 H46" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 4"/>
   <circle cx="54" cy="32" r="7" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-dasharray="4 4"/>
 </g>
+<!-- a chain of three, narrowing -->
+<g id="i-chain">
+  <rect x="6" y="24" width="14" height="16" rx="5" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <path d="M22 32 H26" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+  <rect x="28" y="24" width="14" height="16" rx="5" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <path d="M44 32 H48" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <rect x="50" y="24" width="10" height="16" rx="5" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+</g>
+<!-- one of many -->
+<g id="i-one">
+  <rect x="8" y="14" width="16" height="12" rx="4" stroke="var(--ic-dim)" stroke-width="3" fill="none" opacity=".45"/>
+  <rect x="30" y="14" width="16" height="12" rx="4" stroke="var(--ic-dim)" stroke-width="3" fill="none" opacity=".45"/>
+  <rect x="8" y="38" width="16" height="12" rx="4" stroke="var(--ic-dim)" stroke-width="3" fill="none" opacity=".45"/>
+  <rect x="30" y="38" width="16" height="12" rx="4" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <circle cx="55" cy="44" r="4" fill="var(--ic-rose)"/>
+</g>
+<!-- a number nobody will give you -->
+<g id="i-blank">
+  <rect x="12" y="18" width="40" height="28" rx="8" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-dasharray="6 5"/>
+  <path d="M26 32 H38" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+</g>
 </defs></svg>
-<div class="s" id="s1"><span class="chip">the basics</span><span class="num">1 / 7</span><div class="mid"><span class="kick">how it learned to behave</span><h1 class="">It was not taught <span class="strike">human values</span>.</h1></div><img class="belle sm" src="../../assets/belle/noticed-something.webp" alt=""><span class="mark">belleof<span class="sg">thebot</span>_</span></div>
-<div class="s" id="s2"><span class="num">2 / 7</span><div class="mid"><span class="kick">before you swipe, pick one</span><h2 style="margin-bottom:38px">Reinforcement learning from human feedback trains the model against:</h2><div class="opts"><div class="opt"><span class="k">A</span>Human values</div><div class="opt"><span class="k">B</span>A learned scorer built from human comparisons</div><div class="opt"><span class="k">C</span>A rulebook of laws</div><div class="opt"><span class="k">D</span>Its own previous answers</div></div></div><span class="mark">belleof<span class="sg">thebot</span>_</span></div>
-<div class="s" id="s3"><span class="num">3 / 7</span><div class="mid"><span class="kick">it is B</span><h2 class="" style="max-width:15ch;margin-bottom:52px">A <span class="rose">scorer</span>, built from people comparing pairs of answers.</h2><span class="ico big hot"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-proxy"/></svg></span></span><p style="margin-top:38px">People compare. Those comparisons train a second model. That second model trains the first.</p></div><span class="mark">belleof<span class="sg">thebot</span>_</span></div>
-<div class="s ivory" id="s4"><span class="num">4 / 7</span><div class="mid"><span class="kick">a proxy, twice removed</span><div class="three"><div class="row"><span class="ico"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-hand"/></svg></span></span><span class="t"><b>People compare.</b>Which of these two answers is better. Nothing grander than that.</span></div><div class="row"><span class="ico"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-proxy"/></svg></span></span><span class="t"><b>A scorer learns.</b>A second model learns to predict those preferences.</span></div><div class="row"><span class="ico"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-game"/></svg></span></span><span class="t"><b>The first model optimises.</b>Against the scorer. Not against people, and not against truth.</span></div></div><p style="margin-top:52px;font-size:36px">Every gap between those three is somewhere behaviour can drift.</p></div><span class="mark">belleof<span class="sg">thebot</span>_</span></div>
-<div class="s" id="s5"><span class="num">5 / 7</span><div class="mid"><span class="ico"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-game"/></svg></span></span><div style="height:44px"></div><span class="kick">why the distinction is not pedantic</span><h2 class="sm" style="max-width:19ch">If you optimise hard against a proxy, you get whatever <span class="rose">scores well</span>, which is not always what was wanted.</h2><p style="margin-top:38px">This is why models can be agreeable rather than correct. Agreeable rates well.</p></div><span class="mark">belleof<span class="sg">thebot</span>_</span></div>
-<div class="s" id="s6"><span class="num">6 / 7</span><div class="mid"><span class="kick">how to file this one</span><div style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:48px"><span class="flag on emp emp">measured</span> <span class="flag op">someone&rsquo;s estimate</span> <span class="flag arg">argument</span> <span class="flag def">definition</span> </div><span class="ico"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-doc"/></svg></span></span><div style="height:40px"></div><p style="max-width:17ch"><span class="rose">Measured</span>. The pipeline is documented in published papers with figures.</p><p class="src" style="margin-top:40px">Ouyang et al., InstructGPT, 2022;<br>Bai et al., Constitutional AI, Anthropic, 2022</p></div><img class="belle sm" src="../../assets/belle/hands-hips-pedantic.webp" alt=""><span class="mark">belleof<span class="sg">thebot</span>_</span></div>
-<div class="s" id="s7"><span class="num">7 / 7</span><div class="mid"><span class="kick">one word at a time</span><h2 style="max-width:14ch;margin-bottom:44px">I take the words apart so the argument stops being noise.</h2><div class="follow"><span class="l">follow for the rest</span><span class="handle">@belleofthebot</span></div><p style="margin-top:44px;font-size:34px;max-width:20ch">Every claim marked measured, estimated or argued. Every source named.</p></div><img class="belle sm" src="../../assets/belle/hands-out-cheeky.webp" alt=""><span class="mark">belleof<span class="sg">thebot</span>_</span></div>
+<div class="s" id="s1"><div class="hdr"><span></span><span class="num">1 / 7</span></div><div class="mid"><div class="cat"><span class="lbl">AI components</span><span class="rule"></span></div><span class="kick">how it learned to behave</span><h1 class="">It was not taught <span class="strike">human values</span>.</h1><div style="margin-top:52px"><span class="ico big hot"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-proxy"/></svg></span></span></div></div><div class="ftr"><span class="mark">belleof<span class="sg">thebot</span>_</span></div></div>
+<div class="s" id="s2"><div class="hdr"><span class="chip">AI components</span><span class="num">2 / 7</span></div><div class="mid"><span class="kick">before you swipe, pick one</span><h2 style="margin-bottom:38px">Reinforcement learning from human feedback trains the model against:</h2><div class="opts"><div class="opt"><span class="k">A</span>Human values</div><div class="opt"><span class="k">B</span>A learned scorer built from human comparisons</div><div class="opt"><span class="k">C</span>A rulebook of laws</div><div class="opt"><span class="k">D</span>Its own previous answers</div></div></div><div class="ftr"><span class="mark">belleof<span class="sg">thebot</span>_</span></div></div>
+<div class="s" id="s3"><div class="hdr"><span class="chip">AI components</span><span class="num">3 / 7</span></div><div class="mid"><span class="kick">it is B</span><h2 class="" style="max-width:15ch;margin-bottom:52px">A <span class="rose">scorer</span>, built from people comparing pairs of answers.</h2><span class="ico big hot"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-proxy"/></svg></span></span><p style="margin-top:38px">People compare. Those comparisons train a second model. That second model trains the first.</p></div><div class="ftr"><span class="mark">belleof<span class="sg">thebot</span>_</span></div></div>
+<div class="s ivory" id="s4"><div class="hdr"><span class="chip">AI components</span><span class="num">4 / 7</span></div><div class="mid"><span class="kick">a proxy, twice removed</span><div class="three"><div class="row"><span class="ico"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-hand"/></svg></span></span><span class="t"><b>People compare.</b>Which of these two answers is better. Nothing grander than that.</span></div><div class="row"><span class="ico"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-proxy"/></svg></span></span><span class="t"><b>A scorer learns.</b>A second model learns to predict those preferences.</span></div><div class="row"><span class="ico"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-game"/></svg></span></span><span class="t"><b>The first model optimises.</b>Against the scorer. Not against people, and not against truth.</span></div></div><p style="margin-top:52px;font-size:36px">Every gap between those three is somewhere behaviour can drift.</p></div><div class="ftr"><span class="mark">belleof<span class="sg">thebot</span>_</span></div></div>
+<div class="s" id="s5"><div class="hdr"><span class="chip">AI components</span><span class="num">5 / 7</span></div><div class="mid"><span class="ico"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-game"/></svg></span></span><div style="height:44px"></div><span class="kick">why the distinction is not pedantic</span><h2 class="sm" style="max-width:19ch">If you optimise hard against a proxy, you get whatever <span class="rose">scores well</span>, which is not always what was wanted.</h2><p style="margin-top:38px">This is why models can be agreeable rather than correct. Agreeable rates well.</p></div><div class="ftr"><span class="mark">belleof<span class="sg">thebot</span>_</span></div></div>
+<div class="s" id="s6"><div class="hdr"><span class="chip">AI components</span><span class="num">6 / 7</span></div><div class="mid"><span class="kick">how to file this one</span><div style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:48px"><span class="flag on emp emp">measured</span> <span class="flag op">someone&rsquo;s estimate</span> <span class="flag arg">argument</span> <span class="flag def">definition</span> </div><span class="ico"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-doc"/></svg></span></span><div style="height:40px"></div><p style="max-width:17ch"><span class="rose">Measured</span>. The pipeline is documented in published papers with figures.</p><p class="src" style="margin-top:40px">Ouyang et al., InstructGPT, 2022;<br>Bai et al., Constitutional AI, Anthropic, 2022</p></div><img class="belle sm" src="../../assets/belle/hands-hips-pedantic.webp" alt=""><div class="ftr"><span class="mark">belleof<span class="sg">thebot</span>_</span></div></div>
+<div class="s" id="s7"><div class="hdr"><span class="chip">AI components</span><span class="num">7 / 7</span></div><div class="mid"><span class="kick">one word at a time</span><h2 style="max-width:14ch;margin-bottom:44px">I take the words apart so the argument stops being noise.</h2><div class="follow"><span class="l">follow for the rest</span><span class="handle">@belleofthebot</span></div><p style="margin-top:44px;font-size:34px;max-width:20ch">Every claim marked measured, estimated or argued. Every source named.</p></div><img class="belle sm" src="../../assets/belle/hands-out-cheeky.webp" alt=""><div class="ftr"><span class="mark">belleof<span class="sg">thebot</span>_</span></div></div>
 </body></html>
