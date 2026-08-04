@@ -542,3 +542,23 @@ footer a{color:var(--rose)}
 .photocred{position:absolute;left:0;bottom:0;z-index:3;font-family:var(--mono);
   font-size:.62rem;line-height:1.4;color:var(--faint);max-width:26ch;margin:0}
 @media(max-width:640px){.et-photo{height:54%}}
+
+/* ---------- quiz gating, feedback and the prize ---------- */
+.qopt .tick,.btn .tick{margin-left:6px;color:var(--mint)}
+.btn.locked,.btn.locked:hover{opacity:.32;cursor:not-allowed;filter:none}
+.btn.won{border-color:var(--mint);color:var(--mint)}
+.btn.won.btn:not(.ghost){background:none}
+.qbonus{display:flex;align-items:center;justify-content:space-between;gap:var(--s3);
+  flex-wrap:wrap;padding:var(--s3) 0;border-top:1px dashed var(--line);margin-top:var(--s2)}
+.qfb{background:var(--screen);border:1px solid var(--line);border-radius:var(--r);
+  padding:var(--s3);font-size:.95rem;line-height:1.5;color:var(--meta);max-width:64ch}
+.fb-yes{color:var(--mint);font-weight:500}
+.fb-no{color:var(--rose);font-weight:500}
+.linkbtn{background:none;border:0;padding:0;font:inherit;color:var(--rose);
+  cursor:pointer;border-bottom:1px solid rgba(223,161,146,.4)}
+.prizehint{color:var(--mint);margin-top:var(--s1)}
+.qprize{background:var(--panel);border:1px solid var(--line);border-radius:var(--rc);
+  padding:var(--s5) var(--s4);margin-top:var(--s4)}
+.qprize .pline{font-size:1.6rem;line-height:1.22;margin-bottom:var(--s2)}
+.qprize .psub{color:var(--meta);max-width:56ch}
+.rbelle.big{max-width:260px}

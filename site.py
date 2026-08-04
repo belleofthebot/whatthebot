@@ -112,7 +112,8 @@ HOVER = {
  "goodharts-law": "unimpressed",            "interpretability": "innocent-curious",
  "differential-development": "warm-neutral","grokking": "happy-proud",
  "sycophancy": "secret-close-smile",        "emergent-abilities": "startled",
- "jailbreak": "sly-one",
+ "jailbreak": "sly-one",                    "learning": "glum",
+ "companions": "surprised-worried",         "value-lock-in": "shock-worry",
 }
 
 # the four kinds of claim
@@ -330,24 +331,96 @@ def flag_questions(cat):
             "why": strip(sp["file"])})
     return out
 
+def who_said_it():
+    """A bonus round for the actors page: verified quotations, attributed.
+
+    Every line here was checked against a primary or clearly named source during
+    research. If a quotation cannot be verified to a retrievable source it does
+    not go in, however famous it is."""
+    Q = [
+     ("&ldquo;I left so that I could talk about the dangers of AI without considering "
+      "how this impacts Google.&rdquo;", "Geoffrey Hinton",
+      ["Sam Altman", "Yann LeCun", "Elon Musk"],
+      "Posted on X on 1 May 2023, the day his departure was reported. He added that Google had acted very responsibly."),
+     ("&ldquo;If this technology goes wrong, it can go quite wrong.&rdquo;", "Sam Altman",
+      ["Demis Hassabis", "Dario Amodei", "Geoffrey Hinton"],
+      "To a US Senate subcommittee, 16 May 2023, in his first congressional testimony."),
+     ("&ldquo;I don&rsquo;t have a p(doom) number because I think it would imply a level of "
+      "precision that is not there.&rdquo;", "Demis Hassabis",
+      ["Yoshua Bengio", "Dario Amodei", "Timnit Gebru"],
+      "On the Lex Fridman podcast, July 2025. He also called the risk definitely non zero."),
+     ("&ldquo;Mitigating the risk of extinction from AI should be a global priority alongside "
+      "other societal-scale risks such as pandemics and nuclear war.&rdquo;",
+      "the Center for AI Safety",
+      ["the United Nations", "the European Commission", "the Future of Life Institute"],
+      "Twenty two words, published 30 May 2023, signed by Hinton, Bengio, Hassabis, Altman and Amodei among others."),
+     ("&ldquo;AI is neither artificial nor intelligent.&rdquo;", "Kate Crawford",
+      ["Emily Bender", "Timnit Gebru", "Joy Buolamwini"],
+      "The opening argument of Atlas of AI, 2021. Her point is that it is made of minerals, energy and labour."),
+     ("&ldquo;Self-governance cannot reliably withstand the pressure of profit incentives.&rdquo;",
+      "Helen Toner",
+      ["Timnit Gebru", "Max Tegmark", "Stuart Russell"],
+      "With Tasha McCauley in The Economist, May 2024, six months after they were removed from OpenAI&rsquo;s board."),
+     ("&ldquo;General methods that leverage computation are ultimately the most effective, "
+      "and by a large margin.&rdquo;", "Richard Sutton",
+      ["Ilya Sutskever", "Geoffrey Hinton", "Andrej Karpathy"],
+      "The Bitter Lesson, March 2019. In 2025 he argued that today&rsquo;s language models are not an example of it."),
+     ("&ldquo;Generative AI systems are grown more than they are built.&rdquo;", "Dario Amodei",
+      ["Demis Hassabis", "Sam Altman", "Fei-Fei Li"],
+      "The Urgency of Interpretability, April 2025. He compares it to growing a plant."),
+     ("A language model is &ldquo;a stochastic parrot&rdquo;, stitching together forms "
+      "without reference to meaning.", "Bender, Gebru, McMillan-Major and Mitchell",
+      ["Gary Marcus", "Yann LeCun", "Judea Pearl"],
+      "On the Dangers of Stochastic Parrots, 2021. Two of the four authors had left Google by the time it was published."),
+     ("A kill switch requirement &ldquo;will devastate the open-source community.&rdquo;",
+      "Fei-Fei Li",
+      ["Yann LeCun", "Andrew Ng", "Elon Musk"],
+      "Opposing California&rsquo;s SB 1047 in August 2024. She also said she is not anti AI governance."),
+     ("&ldquo;The substantial disparities in the accuracy of classifying darker females... "
+      "require urgent attention.&rdquo;", "Buolamwini and Gebru",
+      ["the Federal Trade Commission", "Microsoft Research", "the ACLU"],
+      "Gender Shades, 2018. Error rates ran to 34.7 percent for darker skinned women against 0.3 for lighter skinned men."),
+     ("&ldquo;We want to help make AI systems safer from day one.&rdquo;", "Daniela Amodei",
+      ["Mira Murati", "Lila Ibrahim", "Helen Toner"],
+      "In a Stripe interview, July 2023. She is Anthropic&rsquo;s co-founder and president."),
+    ]
+    out = []
+    for i, (quote, right, wrong, why) in enumerate(Q):
+        target = (i * 3 + 1) % 4
+        shown = wrong[:target] + [right] + wrong[target:]
+        out.append({"q": "Who said it? " + quote, "a": shown, "correct": target, "why": why})
+    return out
+
 def quiz_data():
     topics = []
     for cat in SUBJECTS:
         d = defn_questions(cat)
         topics.append({
             "key": cat, "name": "AI " + SUBNAME[cat], "short": SUBNAME[cat],
-            "levels": {"1": d[:4], "2": d, "3": flag_questions(cat)},
+            # Three rounds of 8 to 12, drawn from different terms so the levels
+            # are genuinely different rather than the same set twice.
+            "levels": {"1": d[:10], "2": d[10:22] or d[:10],
+                       "3": flag_questions(cat)[:12]},
         })
-    return {"topics": topics, "bands": {
+    return {"topics": topics, "bonus": {
+        "key": "whosaid", "name": "who said it", "short": "who said it",
+        "questions": who_said_it()},
+     "bands": {
         "perfect": {"belle": "delighted",
-                    "line": "Every single one. Certified {short} wiz."},
+                    "line": "Every single one. You must be superintelligent."},
         "pass":    {"belle": "happy-proud",
                     "line": "Comfortably past. That is the {short} vocabulary in hand."},
         "mid":     {"belle": "warm-curious",
                     "line": "Most of the way there. A read of the {short} cards and another go should do it."},
         "low":     {"belle": "aw-shucks",
                     "line": "Do not worry, you will get this. Almost nobody starts here knowing it."},
-    }}
+     },
+     "prize": {"belle": "tearfully-proud", "fallback": "delighted",
+               "line": "You have passed every level of every subject on this site.",
+               "sub": "There is no badge. There is me, extremely pleased, and the fact that you can now "
+                      "read almost any article about AI and tell which parts are measured, which are "
+                      "argued, and which are somebody&rsquo;s guess wearing a number. That was the "
+                      "entire point. Go and be insufferable about it."}}
 
 # ---------------------------------------------------------------- index
 def index():
@@ -436,26 +509,33 @@ def quizzes():
     qd = quiz_data()
     rows = ""
     for cat in SUBJECTS:
-        n = len(terms_in(cat))
+        lv = ""
+        for n in (1, 2, 3):
+            cls = "btn sm" if n == 1 else "btn ghost sm"
+            lv += (f'<button class="{cls}" type="button" data-start="{cat}" data-level="{n}">'
+                   f'level {n}<span class="tick" hidden>&#10003;</span></button>')
         rows += f'''<div class="qrow c-{cat}">
 <div class="qr-name"><span class="qr-sub">AI {SUBNAME[cat]}</span>
-<span class="meta">{n} terms</span></div>
-<div class="qr-lvls">
-  <button class="btn sm" type="button" data-start="{cat}" data-level="1">level 1</button>
-  <button class="btn ghost sm" type="button" data-start="{cat}" data-level="2">level 2</button>
-  <button class="btn ghost sm" type="button" data-start="{cat}" data-level="3">level 3</button>
-</div></div>'''
+<span class="meta">{len(terms_in(cat))} terms</span></div>
+<div class="qr-lvls">{lv}</div></div>'''
 
     body = f"""
 <div class="wrap hero narrow">
 <span class="kicker">quizzes</span>
 <h1>Find out what you actually know.</h1>
-<p class="lede">Five subjects, three levels each. Level one is a gentle start, level two covers the whole subject, and level three asks you to classify the claims yourself, which is the real skill. Score eighty percent and you move up.</p>
+<p class="lede">Five subjects, three levels each, between eight and twelve questions a round. Level one is a gentle start, level two covers the rest of the subject, and level three asks you to classify the claims yourself, which is the real skill.</p>
+<p class="lede">Score eighty percent and the next level unlocks. Score less and you can go straight round again. Every wrong answer tells you which one was right, and why.</p>
 </div>
 
 <div class="wrap" data-quizgame>
   <div class="qpick">{rows}
-    <p class="meta" style="margin-top:var(--s4)">Wrong answers explain themselves, so a bad round still teaches you something. Nothing is stored and nothing is scored except by you.</p>
+    <div class="qbonus">
+      <div class="qr-name"><span class="qr-sub">who said it</span>
+      <span class="meta">bonus round &middot; always open</span></div>
+      <div class="qr-lvls"><button class="btn sm" type="button" data-bonus>start</button></div>
+    </div>
+    <p class="meta" style="margin-top:var(--s4)">Progress is kept in this browser and nowhere else. <button class="linkbtn" type="button" data-reset>clear my progress</button></p>
+    <p class="meta prizehint" data-allnote hidden>Every level is passed. Finish any round to claim what Belle owes you.</p>
   </div>
 
   <div class="qplay" hidden>
@@ -463,7 +543,7 @@ def quizzes():
     <div class="qprog"><span class="qfill"></span></div>
     <h2 class="qq"></h2>
     <div class="qopts"></div>
-    <p class="qfb"></p>
+    <p class="qfb" hidden></p>
     <div class="qbar">
       <span data-count class="meta"></span>
       <span data-score class="meta"></span>
@@ -480,9 +560,23 @@ def quizzes():
         <p class="rwhat"></p>
         <div class="ractions">
           <button class="btn" type="button" data-onward></button>
-          <button class="btn ghost" type="button" data-restart>restart</button>
+          <button class="btn ghost" type="button" data-restart>take it again</button>
           <button class="btn ghost" type="button" data-share>share result</button>
           <button class="btn ghost" type="button" data-pickagain>all quizzes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qprize" hidden>
+    <div class="rgrid">
+      <div class="rbelle big"><img src="assets/belle/delighted.webp" alt=""></div>
+      <div>
+        <span class="rscore">the whole thing</span>
+        <h2 class="pline"></h2>
+        <p class="psub"></p>
+        <div class="ractions">
+          <button class="btn ghost" type="button" data-pickagain>back to the quizzes</button>
         </div>
       </div>
     </div>
@@ -492,7 +586,7 @@ def quizzes():
 <script>window.QUIZDATA={json.dumps(qd)};</script>
 """
     page("quizzes.html", "Quizzes",
-         "Five subjects, three levels each. Pass at eighty percent and move up.",
+         "Five subjects, three levels each. Pass at eighty percent and the next level unlocks.",
          body, ("quiz.js",))
 
 # ---------------------------------------------------------------- more

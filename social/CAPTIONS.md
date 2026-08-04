@@ -3754,3 +3754,96 @@ Alt text slide 4: Three labelled points, each with a small diagram.
 Alt text slide 5: A short explanation of why the distinction matters.
 Alt text slide 6: The epistemic flag for this claim, and the source it came from.
 Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 122. learning  (AI risk)
+Folder: `out/learning/`  ·  8 slides
+
+```
+Students using an AI tutor did much better. Then it was taken away.
+
+Around a thousand students, grades nine to eleven, over a school year.
+
+- The plain assistant hurt. Practice scores rose 48 percent. Later exam scores fell 17 percent against the control.
+- The safeguarded tutor did not. Same model, told to give hints and never the answer. Practice up 127 percent, and no significant exam loss.
+- So the design was the variable. Not whether AI was present. What it was instructed to do.
+
+A tool that makes the work feel easier while removing the learning is very hard to notice.
+The student feels competent. The teacher sees good practice work. The loss only shows up later, in a test nobody connects to it.
+
+Filed as: measured.
+Source: Bastani, Bastani, Sungu, Ge, Kabakc&#305; and Mariman, Generative AI Can Harm Learning, SSRN working paper, July 2024
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIsafety #AIrisk #AIalignment #AIliteracy
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: Students using an AI tutor did much better. Then it was taken away.
+Alt text slide 2: A four option multiple choice question: In a randomised study of a thousand students, those given a plain AI assistant then tested without it:
+Alt text slide 3: The answer, with a diagram: Better with it. Worse without it.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 123. AI companions  (AI risk)
+Folder: `out/companions/`  ·  8 slides
+
+```
+Seventy two percent of American teenagers have used an AI companion.
+
+Nationally representative, 1,060 teenagers aged thirteen to seventeen, 2025.
+
+- Use is near universal. Seventy two percent have tried one. Around half use one at least monthly.
+- Time is what predicts harm. In a four week trial, longer daily use tracked more loneliness and less socialising, whatever the format.
+- Direction is unresolved. Lonely people may seek companions. Nothing published separates the two.
+
+A companion that is always available and never disappointed is not practice for people.
+Character.AI removed open ended chat for under eighteens at the end of 2025. That is a company’s judgement, not a finding, and it is worth knowing it was made.
+
+Filed as: measured.
+Source: Common Sense Media, Talk, Trust and Trade-Offs, July 2025; Fang et al., MIT Media Lab and OpenAI, arXiv:2503.17473, March 2025
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIsafety #AIrisk #AIalignment #AIliteracy
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: Seventy two percent of American teenagers have used an AI companion.
+Alt text slide 2: A four option multiple choice question: In a 2025 survey of over a thousand US teenagers, how many said conversations with AI were as satisfying as, or more satisfying than, talking to real friends:
+Alt text slide 3: The answer, with a diagram: About a third. And eight percent use one romantically.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 124. value lock-in  (AI risk)
+Folder: `out/value-lock-in/`  ·  8 slides
+
+```
+Every bad regime so far has eventually ended. That is not guaranteed.
+
+MacAskill devotes a chapter to it. Ord calls the category unrecoverable dystopia.
+
+- Software does not forget. A goal specification can be copied forward indefinitely, which no human institution has managed.
+- And enforcement gets cheap. Every past attempt at permanence failed partly because watching everyone was expensive.
+- The objection is historical. Competition and drift have defeated every entrenchment attempt so far. That is a real argument, not a comfort.
+
+A catastrophe you can recover from is a different category of thing.
+This is the branch of existential risk where everyone is alive and nothing can be changed, which is the one people find hardest to take seriously.
+
+Filed as: argument.
+Source: MacAskill, What We Owe the Future, 2022, chapter 4; Ord, The Precipice, 2020; Finnveden, Riedel and Shulman, AGI and Lock-in, 2023
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIsafety #AIrisk #AIalignment #AIliteracy
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: Every bad regime so far has eventually ended. That is not guaranteed.
+Alt text slide 2: A four option multiple choice question: Value lock-in is the risk that:
+Alt text slide 3: The answer, with a diagram: Not the wrong values. The permanence.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.

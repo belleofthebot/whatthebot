@@ -1,81 +1,155 @@
 /* belleofthebot · quizzes
-   One topic, three levels. Pass at 80 percent and you move up: level 2, level 3,
-   then on to the next topic. Below 80 and you go back to the cards for that
-   topic, filtered, so the next attempt is not a guess. */
+   Five subjects, three levels each, plus a bonus round on the actors.
+
+   The rules, in one place:
+     · Pass is 80 percent.
+     · A level is locked until the level below it has been passed.
+     · A wrong answer always shows which one was right, and why.
+     · Failing offers the same level again, immediately.
+     · Passing level three offers the next subject.
+     · Passing everything gets you Belle, extremely pleased.
+
+   Progress is kept in localStorage where that works, and in memory where it
+   does not, so the file still behaves when opened straight off a disk. */
 (function () {
   'use strict';
 
   var root = document.querySelector('[data-quizgame]');
   if (!root || !window.QUIZDATA) return;
 
-  var D = window.QUIZDATA;              // { topics:[{key,name,levels:{1:[],2:[],3:[]}}] }
+  var D = window.QUIZDATA;
   var PASS = 0.8;
+  var KEY = 'botquiz.v1';
 
+  /* ---------- progress ---------- */
+  var mem = {};
+  function load() {
+    try {
+      var raw = localStorage.getItem(KEY);
+      return raw ? JSON.parse(raw) : {};
+    } catch (e) { return mem; }
+  }
+  function save(p) {
+    mem = p;
+    try { localStorage.setItem(KEY, JSON.stringify(p)); } catch (e) {}
+  }
+  var done = load();                       // { "risk:2": true, ... }
+
+  function passed(topicKey, level) { return !!done[topicKey + ':' + level]; }
+  function unlocked(topicKey, level) {
+    return level === 1 || passed(topicKey, level - 1);
+  }
+  function topicComplete(k) { return passed(k, 1) && passed(k, 2) && passed(k, 3); }
+  function allComplete() {
+    for (var i = 0; i < D.topics.length; i++)
+      if (!topicComplete(D.topics[i].key)) return false;
+    return true;
+  }
+
+  /* ---------- elements ---------- */
   var pick = root.querySelector('.qpick');
   var play = root.querySelector('.qplay');
-  var done = root.querySelector('.qdone');
+  var over = root.querySelector('.qdone');
+  var prize = root.querySelector('.qprize');
 
-  var topic = null, level = 1, qs = [], at = 0, score = 0, locked = false;
+  var topic = null, level = 1, qs = [], at = 0, score = 0, locked = false, bonus = false;
 
   function topicByKey(k) {
+    if (k === 'whosaid') return D.bonus;
     for (var i = 0; i < D.topics.length; i++) if (D.topics[i].key === k) return D.topics[i];
     return null;
   }
-  function nextTopic(k) {
-    for (var i = 0; i < D.topics.length; i++) if (D.topics[i].key === k)
-      return D.topics[(i + 1) % D.topics.length];
-    return D.topics[0];
+  function nextUnfinished(fromKey) {
+    var n = D.topics.length, start = 0;
+    for (var i = 0; i < n; i++) if (D.topics[i].key === fromKey) start = i + 1;
+    for (var j = 0; j < n; j++) {
+      var t = D.topics[(start + j) % n];
+      if (!topicComplete(t.key)) return t;
+    }
+    return null;
   }
 
-  /* ---------- start ---------- */
+  /* ---------- the pick screen ---------- */
+  function paintPick() {
+    Array.prototype.forEach.call(pick.querySelectorAll('[data-start]'), function (b) {
+      var k = b.dataset.start, lv = +b.dataset.level;
+      var ok = unlocked(k, lv), won = passed(k, lv);
+      b.disabled = !ok;
+      b.classList.toggle('locked', !ok);
+      b.classList.toggle('won', won);
+      b.title = ok ? '' : 'Pass level ' + (lv - 1) + ' first';
+      var mark = b.querySelector('.tick');
+      if (mark) mark.hidden = !won;
+    });
+    var b = pick.querySelector('[data-bonus]');
+    if (b) b.hidden = false;
+    var note = pick.querySelector('[data-allnote]');
+    if (note) note.hidden = !allComplete();
+  }
+
+  /* ---------- running a round ---------- */
   function start(tkey, lv) {
     topic = topicByKey(tkey);
     if (!topic) return;
-    level = Math.min(3, Math.max(1, lv || 1));
-    qs = (topic.levels[level] || []).slice();
-    if (!qs.length) { level = 1; qs = topic.levels[1].slice(); }
+    bonus = tkey === 'whosaid';
+    level = bonus ? 0 : Math.min(3, Math.max(1, lv || 1));
+    if (!bonus && !unlocked(tkey, level)) return;
+
+    qs = (bonus ? topic.questions : topic.levels[level] || []).slice();
+    if (!qs.length) return;
     at = 0; score = 0;
-    pick.hidden = true; done.hidden = true; play.hidden = false;
-    play.className = 'qplay c-' + topic.key;
+
+    pick.hidden = true; over.hidden = true; if (prize) prize.hidden = true;
+    play.hidden = false;
+    play.className = 'qplay c-' + (bonus ? 'actors' : topic.key);
     play.querySelector('.qtopic').textContent = topic.name;
-    play.querySelector('.qlevel').textContent = 'level ' + level;
-    history.replaceState(null, '', '?topic=' + topic.key + '&level=' + level);
+    play.querySelector('.qlevel').textContent = bonus ? 'bonus round' : 'level ' + level;
+    try {
+      history.replaceState(null, '', bonus ? '?topic=whosaid'
+                                           : '?topic=' + topic.key + '&level=' + level);
+    } catch (e) {}
     draw();
   }
 
   function draw() {
     locked = false;
     var q = qs[at];
-    play.querySelector('.qq').textContent = q.q;
+    play.querySelector('.qq').innerHTML = q.q;
     var box = play.querySelector('.qopts');
     box.innerHTML = '';
     q.a.forEach(function (txt, n) {
       var b = document.createElement('button');
-      b.className = 'qopt'; b.type = 'button'; b.textContent = txt;
+      b.className = 'qopt'; b.type = 'button'; b.innerHTML = txt;
       b.addEventListener('click', function () { answer(n, q); });
       box.appendChild(b);
     });
-    play.querySelector('.qfb').textContent = '';
-    play.querySelector('[data-next]').disabled = true;
-    play.querySelector('[data-next]').textContent =
-      at === qs.length - 1 ? 'see result' : 'next';
+    var fb = play.querySelector('.qfb');
+    fb.innerHTML = ''; fb.hidden = true;
+    var nx = play.querySelector('[data-next]');
+    nx.disabled = true;
+    nx.textContent = at === qs.length - 1 ? 'see result' : 'next';
     play.querySelector('[data-count]').textContent = (at + 1) + ' of ' + qs.length;
     play.querySelector('[data-score]').textContent = score + ' correct';
-    var pct = Math.round((at / qs.length) * 100);
-    play.querySelector('.qfill').style.width = pct + '%';
+    play.querySelector('.qfill').style.width = Math.round((at / qs.length) * 100) + '%';
   }
 
   function answer(n, q) {
     if (locked) return;
     locked = true;
-    if (n === q.correct) score++;
+    var right = n === q.correct;
+    if (right) score++;
     var opts = play.querySelectorAll('.qopt');
     Array.prototype.forEach.call(opts, function (x, m) {
       if (m === q.correct) x.classList.add('right');
       else if (m === n) x.classList.add('wrong');
       x.disabled = true;
     });
-    play.querySelector('.qfb').textContent = q.why;
+    /* a wrong answer always names the right one, not just the reasoning */
+    var fb = play.querySelector('.qfb');
+    fb.innerHTML = (right ? '<b class="fb-yes">Correct.</b> '
+                          : '<b class="fb-no">Not quite.</b> The answer is <b>' +
+                            q.a[q.correct] + '</b>. ') + q.why;
+    fb.hidden = false;
     play.querySelector('[data-score]').textContent = score + ' correct';
     play.querySelector('[data-next]').disabled = false;
   }
@@ -85,62 +159,93 @@
     finish();
   });
 
-  /* ---------- result ---------- */
+  /* ---------- the result ---------- */
   function band(ratio) {
-    if (ratio === 1)      return D.bands.perfect;
-    if (ratio >= PASS)    return D.bands.pass;
-    if (ratio >= 0.5)     return D.bands.mid;
+    if (ratio === 1)   return D.bands.perfect;
+    if (ratio >= PASS) return D.bands.pass;
+    if (ratio >= 0.5)  return D.bands.mid;
     return D.bands.low;
+  }
+
+  function belleSrc(slug) {
+    return (window.BELLEIMG && window.BELLEIMG[slug]) || ('assets/belle/' + slug + '.webp');
+  }
+
+  function showPrize() {
+    if (!prize) return;
+    play.hidden = true; over.hidden = true; prize.hidden = false;
+    var p = D.prize;
+    var img = prize.querySelector('img');
+    if (img) {
+      img.onerror = function () { this.onerror = null; this.src = belleSrc(p.fallback); };
+      img.src = belleSrc(p.belle);
+    }
+    prize.querySelector('.pline').innerHTML = p.line;
+    prize.querySelector('.psub').innerHTML = p.sub;
   }
 
   function finish() {
     var ratio = score / qs.length;
     var b = band(ratio);
-    var passed = ratio >= PASS;
-    play.hidden = true; done.hidden = false;
-    done.className = 'qdone c-' + topic.key;
+    var won = ratio >= PASS;
 
-    done.querySelector('.rscore').textContent = score + ' out of ' + qs.length;
-    done.querySelector('.rline').textContent =
-      b.line.replace('{topic}', topic.name).replace('{short}', topic.short || topic.name)
-            .replace('{n}', score).replace('{t}', qs.length);
-    var img = done.querySelector('.rbelle img');
-    if (img) {
-      img.src = (window.BELLEIMG && window.BELLEIMG[b.belle]) ||
-                ('assets/belle/' + b.belle + '.webp');
-      img.alt = '';
+    if (won && !bonus) {
+      done[topic.key + ':' + level] = true;
+      save(done);
     }
 
-    var nextBtn = done.querySelector('[data-onward]');
-    var nt;
-    if (passed && level < 3) {
-      nextBtn.textContent = 'level ' + (level + 1);
-      nextBtn.onclick = function () { start(topic.key, level + 1); };
-      done.querySelector('.rwhat').textContent =
-        'You passed. Level ' + (level + 1) + ' is waiting.';
-    } else if (passed) {
-      nt = nextTopic(topic.key);
-      nextBtn.textContent = 'start ' + nt.name;
-      nextBtn.onclick = function () { start(nt.key, 1); };
-      done.querySelector('.rwhat').textContent =
-        'That is all three levels of ' + topic.name + '. On to ' + nt.name + '.';
+    play.hidden = true; over.hidden = false;
+    over.className = 'qdone c-' + (bonus ? 'actors' : topic.key);
+    over.querySelector('.rscore').textContent = score + ' out of ' + qs.length;
+    over.querySelector('.rline').innerHTML =
+      b.line.replace('{short}', topic.short || topic.name).replace('{topic}', topic.name);
+    var img = over.querySelector('.rbelle img');
+    if (img) { img.src = belleSrc(b.belle); img.alt = ''; }
+
+    var onward = over.querySelector('[data-onward]');
+    var again = over.querySelector('[data-restart]');
+    var what = over.querySelector('.rwhat');
+    again.textContent = won ? 'take it again' : 'try this level again';
+    again.onclick = function () { start(bonus ? 'whosaid' : topic.key, level); };
+
+    if (bonus) {
+      onward.textContent = 'back to the quizzes';
+      onward.onclick = toPick;
+      what.textContent = won ? 'A bonus round, so nothing is unlocked. Purely for the pleasure of it.'
+                             : 'No harm done. These are quotations, not principles.';
+    } else if (won && level < 3) {
+      onward.textContent = 'level ' + (level + 1) + ' is unlocked';
+      onward.onclick = function () { start(topic.key, level + 1); };
+      what.textContent = 'You passed. Level ' + (level + 1) + ' is open now.';
+    } else if (won && allComplete()) {
+      onward.textContent = 'claim your prize';
+      onward.onclick = showPrize;
+      what.textContent = 'That is every level of every subject. There is something waiting.';
+    } else if (won) {
+      var nt = nextUnfinished(topic.key);
+      if (nt) {
+        onward.textContent = 'start ' + nt.name;
+        onward.onclick = function () { start(nt.key, 1); };
+        what.textContent = 'That is all three levels of ' + topic.name + '. On to ' + nt.name + '.';
+      } else {
+        onward.textContent = 'back to the quizzes';
+        onward.onclick = toPick;
+        what.textContent = 'That is all three levels of ' + topic.name + '.';
+      }
     } else {
-      nextBtn.textContent = 'read the ' + topic.name + ' cards';
-      nextBtn.onclick = function () { location.href = 'index.html?cat=' + topic.key; };
-      done.querySelector('.rwhat').textContent =
-        'Under eighty percent. Have a read, then come straight back.';
+      onward.textContent = 'read the ' + topic.name + ' cards';
+      onward.onclick = function () {
+        if (window.__go) window.__go('index.html', 'cat=' + topic.key);
+        else location.href = 'index.html?cat=' + topic.key;
+      };
+      what.textContent = 'Under eighty percent, so this level stays where it is. ' +
+                         'Have a read, or go straight round again.';
     }
-
-    done.querySelector('[data-restart]').onclick = function () { start(topic.key, level); };
-    done.querySelector('[data-pickagain]').onclick = function () {
-      done.hidden = true; pick.hidden = false;
-      history.replaceState(null, '', location.pathname);
-    };
 
     /* share */
     var txt = 'I got ' + score + '/' + qs.length + ' on the ' + topic.name +
-              ' quiz, level ' + level + ', at belleofthebot.com';
-    var sb = done.querySelector('[data-share]');
+              (bonus ? ' bonus round' : ' quiz, level ' + level) + ' at belleofthebot.com';
+    var sb = over.querySelector('[data-share]');
     sb.onclick = function () {
       if (navigator.share) {
         navigator.share({ text: txt, url: location.href }).catch(function () {});
@@ -153,12 +258,37 @@
     };
   }
 
-  /* ---------- pick screen ---------- */
+  function toPick() {
+    over.hidden = true; play.hidden = true;
+    if (prize) prize.hidden = true;
+    pick.hidden = false;
+    paintPick();
+    try { history.replaceState(null, '', location.pathname); } catch (e) {}
+  }
+
+  over.querySelector('[data-pickagain]').onclick = toPick;
+  if (prize) {
+    var pb = prize.querySelector('[data-pickagain]');
+    if (pb) pb.onclick = toPick;
+  }
+
+  /* ---------- wiring ---------- */
   Array.prototype.forEach.call(root.querySelectorAll('[data-start]'), function (b) {
     b.addEventListener('click', function () {
       start(b.dataset.start, +b.dataset.level || 1);
     });
   });
+  var bonusBtn = root.querySelector('[data-bonus]');
+  if (bonusBtn) bonusBtn.addEventListener('click', function () { start('whosaid', 0); });
+
+  var reset = root.querySelector('[data-reset]');
+  if (reset) reset.addEventListener('click', function () {
+    done = {}; save(done); paintPick();
+    reset.textContent = 'progress cleared';
+    setTimeout(function () { reset.textContent = 'clear my progress'; }, 1800);
+  });
+
+  paintPick();
 
   (function fromUrl() {
     var p = new URLSearchParams(location.search);

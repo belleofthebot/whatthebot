@@ -900,6 +900,17 @@ ICONS = """
   <path d="M32 46 L46 32" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
   <circle cx="32" cy="46" r="3.6" fill="var(--ic-rose)"/>
   <path d="M16 52 H48" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/></g>
+
+<g id="i-crutch"><path d="M26 8 H38 V26 H50 V38 H38 V56 H26 V38 H14 V26 H26 Z" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-linejoin="round" transform="rotate(45 32 32)"/>
+  <path d="M8 56 H56" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round" stroke-dasharray="5 4"/></g>
+<g id="i-companion"><circle cx="20" cy="24" r="8" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <path d="M8 48 A12 12 0 0 1 32 48" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <rect x="38" y="16" width="18" height="24" rx="5" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <path d="M43 26 H51 M43 33 H49" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M38 50 H56" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 4"/></g>
+<g id="i-lock"><rect x="14" y="28" width="36" height="26" rx="6" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <path d="M22 28 V20 A10 10 0 0 1 42 20 V28" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <circle cx="32" cy="41" r="4" fill="var(--ic-rose)"/></g>
 </defs></svg>
 """
 
@@ -4215,6 +4226,84 @@ SPECS = {
   src="Sastry, Heim, Belfield, Anderljung, Brundage et al., Computing Power<br>and the Governance of Artificial Intelligence, arXiv:2402.08797, 2024",
   belle_hook="hands-hips-pedantic", belle_file="dead-pan-1", belle_outro="hands-out-cheeky",
   outro="I take the words apart so the argument stops being noise."),
+
+"learning": dict(
+  cat="risk", term="learning",
+  kick="the crutch that works until you take it away",
+  hook="Students using an AI tutor did <span class=\"rose\">much better</span>. Then it was taken away.",
+  q="In a randomised study of a thousand students, those given a plain AI assistant then tested without it:",
+  opts=["Did better than the control group",
+        "Did 17 percent worse than students who never had it",
+        "Performed identically",
+        "Refused to take the test"],
+  ans="B", icon="i-crutch",
+  reveal='Better <span class="rose">with</span> it. Worse <span class="rose">without</span> it.',
+  revsub="Around a thousand students, grades nine to eleven, over a school year.",
+  threekick="the detail that changes the conclusion",
+  three=[("i-crutch","The plain assistant hurt.","Practice scores rose 48 percent. Later exam scores fell 17 percent against the control."),
+         ("i-guard","The safeguarded tutor did not.","Same model, told to give hints and never the answer. Practice up 127 percent, and no significant exam loss."),
+         ("i-lens","So the design was the variable.","Not whether AI was present. What it was instructed to do.")],
+  threefoot="Which is a hopeful finding, and a demanding one: the safe version has to be built on purpose.",
+  whyicon="i-brake", whykick="why this one deserves alarm",
+  why="A tool that makes the work feel easier while <span class=\"rose\">removing the learning</span> is very hard to notice.",
+  whysub="The student feels competent. The teacher sees good practice work. The loss only shows up later, in a test nobody connects to it.",
+  flag="emp",
+  file='<span class="rose">Measured</span> in a randomised trial. A working paper, not yet peer reviewed, and the effect is one school over one year.',
+  src="Bastani, Bastani, Sungu, Ge, Kabakc&#305; and Mariman,<br>Generative AI Can Harm Learning, SSRN working paper, July 2024",
+  belle_hook="worry-about-future", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"companions": dict(
+  cat="risk", term="AI companions",
+  kick="most teenagers have already tried one",
+  hook="<span class=\"rose\">Seventy two percent</span> of American teenagers have used an AI companion.",
+  q="In a 2025 survey of over a thousand US teenagers, how many said conversations with AI were as satisfying as, or more satisfying than, talking to real friends:",
+  opts=["Under 5 percent",
+        "About a third",
+        "Almost none",
+        "Over 90 percent"],
+  ans="B", icon="i-companion",
+  reveal='About <span class="rose">a third</span>. And eight percent use one romantically.',
+  revsub="Nationally representative, 1,060 teenagers aged thirteen to seventeen, 2025.",
+  threekick="what the measurements do and do not show",
+  three=[("i-companion","Use is near universal.","Seventy two percent have tried one. Around half use one at least monthly."),
+         ("i-clock","Time is what predicts harm.","In a four week trial, longer daily use tracked more loneliness and less socialising, whatever the format."),
+         ("i-twocause","Direction is unresolved.","Lonely people may seek companions. Nothing published separates the two.")],
+  threefoot="Eighty percent of those teenagers still say they spend more time with real friends. Both facts are true at once.",
+  whyicon="i-echo", whykick="why the design is the risk",
+  why="A companion that is <span class=\"rose\">always available and never disappointed</span> is not practice for people.",
+  whysub="Character.AI removed open ended chat for under eighteens at the end of 2025. That is a company&rsquo;s judgement, not a finding, and it is worth knowing it was made.",
+  flag="emp",
+  file='<span class="rose">Measured</span> usage, in a representative survey. The effects are early, small, and correlational.',
+  src="Common Sense Media, Talk, Trust and Trade-Offs, July 2025;<br>Fang et al., MIT Media Lab and OpenAI, arXiv:2503.17473, March 2025",
+  belle_hook="glum", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"value-lock-in": dict(
+  cat="risk", term="value lock-in",
+  kick="the future that cannot be argued with",
+  hook="Every bad regime so far has <span class=\"rose\">eventually ended</span>. That is not guaranteed.",
+  q="Value lock-in is the risk that:",
+  opts=["AI develops its own values",
+        "One set of values becomes permanently entrenched, with no mechanism left to change it",
+        "Countries adopt different AI rules",
+        "Companies write their own ethics policies"],
+  ans="B", icon="i-lock",
+  reveal='Not the wrong values. The <span class="rose">permanence</span>.',
+  revsub="MacAskill devotes a chapter to it. Ord calls the category unrecoverable dystopia.",
+  threekick="why AI is the mechanism people name",
+  three=[("i-lock","Software does not forget.","A goal specification can be copied forward indefinitely, which no human institution has managed."),
+         ("i-crown","And enforcement gets cheap.","Every past attempt at permanence failed partly because watching everyone was expensive."),
+         ("i-counter","The objection is historical.","Competition and drift have defeated every entrenchment attempt so far. That is a real argument, not a comfort.")],
+  threefoot="The scenario requires one actor with no rivals, which is asserted more often than it is demonstrated.",
+  whyicon="i-persist", whykick="what makes it existential",
+  why="A catastrophe you can <span class=\"rose\">recover from</span> is a different category of thing.",
+  whysub="This is the branch of existential risk where everyone is alive and nothing can be changed, which is the one people find hardest to take seriously.",
+  flag="arg",
+  file='A <span class="rose">theory</span>, philosophical, with no empirical base at all. It is on the site because the argument is serious, not because it is supported.',
+  src="MacAskill, What We Owe the Future, 2022, chapter 4;<br>Ord, The Precipice, 2020; Finnveden, Riedel and Shulman, AGI and Lock-in, 2023",
+  belle_hook="shock-worry", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
 }
 
 
@@ -4939,6 +5028,20 @@ UNKNOWN = {
  "How long it works. Algorithmic efficiency improves several fold a year, so a threshold written in operations "
  "buys less every year automatically. Nobody has proposed a <span class=\"rose\">self adjusting</span> version, and "
  "no law currently has one.",
+"learning":
+ "Whether the loss lasts. There is no long run follow up, so nobody knows if the exam gap closes once the crutch "
+ "has been gone a while. And there is <span class=\"rose\">almost no evidence at all</span> about children under ten, "
+ "where the intuition is strongest and the studies barely exist.",
+
+"companions":
+ "Which way it runs. Lonely teenagers may seek companions rather than companions making them lonely, and no "
+ "published work separates the two. What is measured is <span class=\"rose\">how many are using them</span>, which "
+ "is nearly everyone, and how new that is, which is about three years.",
+
+"value-lock-in":
+ "Everything. There is no empirical base, the scenario needs a single actor with no rivals, and whether values "
+ "would even stay stable in a system that keeps improving itself is <span class=\"rose\">an open technical "
+ "question</span>. It is on the site as a serious argument, not as a finding.",
 }
 for _k, _v in SPECS.items():
     if _k in UNKNOWN:
