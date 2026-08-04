@@ -101,9 +101,12 @@
                card.icon + '"/></svg>';
 
     var panels = [
-      /* 1 · the cover, so Belle is the first thing you see */
+      /* 1 · the cover. A person's card wears the person, everything else Belle. */
       '<span class="mkick">' + card.kick + '</span><h2 class="mhook">' + card.hook + '</h2>' +
-        belleTag(card.belle, 'mbelle'),
+        (card.photo
+          ? '<figure class="mbelle mphoto"><img src="' + card.photo + '" alt=""></figure>' +
+            (card.photosrc ? '<p class="photocred">' + card.photosrc + '</p>' : '')
+          : belleTag(card.belle, 'mbelle')),
 
       /* 2 · the question, before the answer */
       '<span class="mkick">before you read on</span><h3 class="mq">' + card.q + '</h3>' +

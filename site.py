@@ -43,14 +43,22 @@ TILES = os.environ.get("TILES", "mix")
 
 # In mix, Belle takes the biggest and most abstract ideas, where a face does
 # more work than a diagram, and the diagrams carry everything concrete.
-BELLE_TERMS = {"existential-risk", "agi", "intelligence",
-               "recursive-self-improvement", "s-risk", "p-doom",
-               "misuse-misalignment", "taboo-your-words"}
+BELLE_TERMS = {
+    # Belle takes roughly half the grid: the abstract ideas, the people, and the
+    # cards where a face carries the tone better than a drawing. Chosen for range
+    # as well as fit, so the grid is not a wall of alarm.
+    "alphago", "consciousness", "bengio", "hassabis", "red-teaming",
+    "taboo-your-words", "amodei", "p-doom", "agi", "superintelligence",
+    "exponential-growth", "existential-risk", "s-risk",
+    "recursive-self-improvement", "misuse-misalignment", "intelligence",
+    "altman", "hinton", "scheming", "ai-psychosis", "data-center",
+}
 
 # The second expression, shown on hover. Idle face, then the reaction: the point
 # is that the grid rewards looking at it. Falls back to a scale if the art is
 # missing.
 HOVER = {
+ # idle face, then the reaction. The grid should reward looking at it.
  "who-makes-the-chips": "close-up-goading", "who-owns-it": "deadpan-annoyed-1",
  "who-gives-a-number": "hands-out-cheeky",  "bengio": "saying-unpleasant-truth-1",
  "lecun": "unimpressed",                    "bender-hanna": "smirking",
@@ -60,10 +68,16 @@ HOVER = {
  "open-weights": "yikes",                   "compute": "bright-neutral",
  "red-teaming": "smirking",                 "agi": "unimpressed",
  "misuse-misalignment": "saying-unpleasant-truth-1",
- "recursive-self-improvement": "shock-worry",
+ "recursive-self-improvement": "worry-about-future",
  "intelligence": "grumpy-eyes-closed",      "p-doom": "hands-out-cheeky",
  "s-risk": "shock-worry",                   "job-loss": "glum",
- "existential-risk": "yikes",
+ "existential-risk": "yikes",               "consciousness": "noticed-something",
+ "superintelligence": "shock-worry",        "exponential-growth": "shocked",
+ "alphago": "happy-proud",                  "hinton": "glum",
+ "altman": "deadpan-annoyed-1",             "amodei": "hands-hips-pedantic",
+ "hassabis": "secret-close-smile",          "scheming": "sly-one",
+ "ai-psychosis": "saying-unpleasant-truth-1",
+ "data-center": "surprised-worried",        "taboo-your-words": "hands-hips-pedantic",
 }
 
 # the four kinds of claim
@@ -150,6 +164,18 @@ def has_belle(slug):
     return bool(slug) and os.path.exists(
         os.path.join(OUT, "assets", "belle", slug + ".webp"))
 
+def photo_for(key):
+    """A cut out portrait for the people cards, if one has been added.
+
+    Drop a background-free png or webp at assets/people/<key>.webp and the tile
+    and the card both switch to it. Until then the card wears Belle, so nothing
+    breaks while the art is being gathered. Each one needs a credit line in the
+    spec's photosrc field, because these are other people's photographs."""
+    for ext in (".webp", ".png"):
+        if os.path.exists(os.path.join(OUT, "assets", "people", key + ext)):
+            return "assets/people/" + key + ext
+    return ""
+
 def grounds():
     """Lift the category grounds straight out of the carousel stylesheet, so the
     site and the feed cannot end up different colours. Renamed tg- for the web."""
@@ -177,7 +203,12 @@ def tile(k, sp, cat):
   {flag}
 </article>'''
 
-    if not wants_belle:
+    photo = photo_for(k)
+    if photo:
+        art = (f'<figure class="et-photo"><img src="{photo}" alt="{strip(sp["term"])}"'
+               f' loading="lazy"></figure>')
+        anchor = anchor_for(k)
+    elif not wants_belle:
         art = f'''<svg class="et-icon" viewBox="0 0 64 64" aria-hidden="true"><use href="#{sp["icon"]}"/></svg>'''
         anchor = "b-icon"
     else:
@@ -213,6 +244,7 @@ def card_data():
             "icon": sp["icon"],
             "unknown": sp["unknown"],
             "belle": sp["belle_hook"] if has_belle(sp.get("belle_hook")) else "",
+            "photo": photo_for(k), "photosrc": sp.get("photosrc", ""),
             "belle2": HOVER.get(k, "") if has_belle(HOVER.get(k)) else "",
         }
         d[k].update(question(k, sp))

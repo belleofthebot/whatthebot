@@ -709,6 +709,7 @@ SPECS = {
   flag="op",
   file='<span class="rose">Someone&rsquo;s position</span>, carefully stated. The report he chairs is the closest thing to an institutional consensus.',
   src="Bengio, FAQ on Catastrophic AI Risks, 2023;<br>International AI Safety Report 2026",
+  photosrc="photo: J. Barande / &Eacute;cole polytechnique, CC BY-SA 2.0, modified",
   belle_hook="warm-curious", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
   outro="I take the words apart so the argument stops being noise."),
 
@@ -1019,7 +1020,7 @@ SPECS = {
   flag="def",
   file='A <span class="rose">definition</span> problem, and an unresolved one. That is itself the fact worth knowing.',
   src="Compare the published definitions used by<br>OpenAI, Google DeepMind and Anthropic",
-  belle_hook="grumpy-eyes-closed", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  belle_hook="hands-hips-pedantic", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
   outro="I take the words apart so the argument stops being noise."),
 
 "p-doom": dict(
@@ -1045,7 +1046,7 @@ SPECS = {
   flag="op",
   file='<span class="rose">Someone&rsquo;s estimate</span>, always. That a person said it is a fact. That it is right is a belief.',
   src="Taboo P(doom), LessWrong 2023;<br>Grace et al. survey of 2,778 researchers",
-  belle_hook="unimpressed", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  belle_hook="sly-one", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
   outro="I take the words apart so the argument stops being noise."),
 
 "s-risk": dict(
@@ -1148,7 +1149,7 @@ SPECS = {
   flag="def",
   file='<span class="rose">Definitions</span>. The categories are standard. Which one dominates is argued.',
   src="Zwetsloot and Dafoe, Accidents, Misuse<br>and Structure, Lawfare, 11 February 2019",
-  belle_hook="warm-curious", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  belle_hook="secret-close-smile", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
   outro="I take the words apart so the argument stops being noise."),
 
 # ============================================================ AI RISK
@@ -1175,7 +1176,7 @@ SPECS = {
   flag="arg",
   file='An <span class="rose">argument</span>. No such loop has been observed, which is exactly why it is worth arguing about now.',
   src="I. J. Good, Speculations Concerning the First<br>Ultraintelligent Machine, 1965; Carlsmith, 2022",
-  belle_hook="worry-about-future", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  belle_hook="shock-worry", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
   outro="I take the words apart so the argument stops being noise."),
 
 "intelligence": dict(
@@ -1228,7 +1229,7 @@ SPECS = {
   flag="def",
   file='A <span class="rose">definition</span> of a technique, not a claim about the world. It cannot be right or wrong, only useful or not.',
   src="Yudkowsky, Taboo Your Words, LessWrong,<br>15 February 2008, in A Human&rsquo;s Guide to Words",
-  belle_hook="hands-hips-pedantic", belle_file="dead-pan-1", belle_outro="hands-out-cheeky",
+  belle_hook="smirking", belle_file="dead-pan-1", belle_outro="hands-out-cheeky",
   outro="I take the words apart so the argument stops being noise."),
 
 # ============================================================ AI BEHAVIOUR (added)
@@ -1438,7 +1439,7 @@ SPECS = {
   flag="emp",
   file='<span class="rose">Measured</span> for the past, <span class="rose">projected</span> for the future. The projections carry wide bands and the sources say so.',
   src="IEA, Energy and AI, April 2025;<br>Shehabi et al., 2024 US Data Center Energy Usage Report, LBNL, 19 December 2024",
-  belle_hook="warm-curious", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  belle_hook="bright-neutral", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
   outro="I take the words apart so the argument stops being noise."),
 
 # ============================================================ AI BEHAVIOUR
@@ -1465,7 +1466,7 @@ SPECS = {
   flag="emp",
   file='<span class="rose">Measured</span> in constructed evaluations. Not observed in ordinary deployment, and the authors say so.',
   src="Meinke et al., In-context Scheming, Apollo Research, December 2024;<br>Schoen et al., Stress Testing Deliberative Alignment, September 2025",
-  belle_hook="sly-one", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  belle_hook="dead-pan-1", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
   outro="I take the words apart so the argument stops being noise."),
 
 "self-exfiltration": dict(
@@ -1517,7 +1518,7 @@ SPECS = {
   flag="emp",
   file='<span class="rose">Measured</span>. Published in Nature, played in public, and the games are still online.',
   src="Silver et al., Mastering the game of Go, Nature 529, January 2016;<br>Silver et al., Mastering the game of Go without human knowledge, Nature 550, October 2017",
-  belle_hook="surprised-worried", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  belle_hook="delighted", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
   outro="I take the words apart so the argument stops being noise."),
 
 # ============================================================ AI CONCEPTS
@@ -1570,7 +1571,7 @@ SPECS = {
   flag="def",
   file='A <span class="rose">definition</span>, from one book, that most of the field then argued from. Definitions are not predictions.',
   src="Bostrom, Superintelligence: Paths, Dangers, Strategies,<br>Oxford University Press, 2014",
-  belle_hook="worry-about-future", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  belle_hook="noticed-something", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
   outro="I take the words apart so the argument stops being noise."),
 
 "exponential-growth": dict(
@@ -1596,7 +1597,7 @@ SPECS = {
   flag="emp",
   file='<span class="rose">Measured</span>, with real error bars. Most training runs are not disclosed, so the figures are careful estimates.',
   src="Epoch AI, Training compute of frontier AI models grows by 4-5x per year,<br>28 May 2024, and the Trends dashboard, current 2026",
-  belle_hook="shocked", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  belle_hook="startled", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
   outro="I take the words apart so the argument stops being noise."),
 
 "survival-drive": dict(
@@ -1649,7 +1650,7 @@ SPECS = {
   flag="emp",
   file='Partly <span class="rose">measured</span> and mostly not. Case reports and one chart review are real evidence and weak evidence at the same time.',
   src="Olisaeloka et al., BJPsych Open 12(4), 11 June 2026;<br>OpenAI, Strengthening ChatGPT&rsquo;s responses in sensitive conversations, 27 October 2025",
-  belle_hook="saying-unpleasant-truth-1", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  belle_hook="warm-neutral", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
   outro="I take the words apart so the argument stops being noise."),
 
 # ============================================================ AI ACTORS
@@ -1677,7 +1678,8 @@ SPECS = {
   flag="op",
   file='<span class="rose">Someone&rsquo;s position</span>, held by someone with unusual standing. That he said it is a fact. That it is right is not.',
   src="Nobel Prize in Physics 2024, announced 8 October 2024;<br>Hinton on BBC Radio 4 Today, reported in The Guardian, 27 December 2024",
-  belle_hook="warm-curious", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  photosrc="photo: Piaras &Oacute; M&iacute;dheach / Collision via Sportsfile, CC BY 2.0, modified",
+  belle_hook="saying-unpleasant-truth-1", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
   outro="I take the words apart so the argument stops being noise."),
 
 "altman": dict(
@@ -1704,6 +1706,7 @@ SPECS = {
   flag="emp",
   file='<span class="rose">Measured</span> in the sense that the dates, the statement and the outcome are documented. The reasons are not.',
   src="OpenAI, leadership transition, 17 November 2023 and Sam Altman returns as CEO, 29 November 2023;<br>Altman, Senate Judiciary subcommittee testimony, 16 May 2023",
+  photosrc="photo: Steve Jennings / Getty Images for TechCrunch, CC BY 2.0, modified",
   belle_hook="annoyed-skeptical", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
   outro="I take the words apart so the argument stops being noise."),
 
@@ -1731,6 +1734,7 @@ SPECS = {
   flag="op",
   file='<span class="rose">Someone&rsquo;s position</span>, with no defined outcome behind the number. That he holds it is checkable. It is not a measurement.',
   src="Amodei at Axios AI+ DC Summit, 17 September 2025;<br>Amodei, Machines of Loving Grace, October 2024",
+  photosrc="photo: Kimberly White / Getty Images for TechCrunch, CC BY 2.0, modified",
   belle_hook="hands-out-cheeky", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
   outro="I take the words apart so the argument stops being noise."),
 
@@ -1758,13 +1762,15 @@ SPECS = {
   flag="op",
   file='<span class="rose">Someone&rsquo;s position</span>. The Nobel is a fact, the refusal is a fact, the reason for it is his own.',
   src="Nobel Prize in Chemistry 2024, announced 9 October 2024;<br>Hassabis on the Lex Fridman Podcast, 23 July 2025",
+  photosrc="photo: Duncan Hull, CC BY 2.0, modified",
   belle_hook="zen", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
   outro="I take the words apart so the argument stops being noise."),
 }
 
 
 POS = {'who-makes-the-chips': ('p-left', '', 'p-left'), 'who-owns-it': ('', 'p-left', ''), 'who-gives-a-number': ('p-far', '', 'p-centre'), 'bengio': ('', 'p-left', 'p-far'), 'lecun': ('p-left', '', ''), 'bender-hanna': ('p-far', 'p-left', 'p-centre'), 'hallucination': ('', 'p-far', ''), 'specification-gaming': ('p-left', '', 'p-left'), 'context-window': ('p-centre', 'p-left', ''), 'rlhf': ('', '', 'p-far'), 'open-weights': ('p-far', 'p-left', 'p-centre'), 'compute': ('p-left', '', ''), 'intelligence': ('', 'p-left', 'p-far'), 'misuse-misalignment': ('p-centre', '', 'p-left'), 'recursive-self-improvement': ('p-left', 'p-far', '')}
-EXPR = {'who-makes-the-chips': 'noticed-something', 'who-owns-it': 'annoyed-skeptical', 'who-gives-a-number': 'hands-out-cheeky', 'bengio': 'warm-curious', 'lecun': 'unimpressed', 'bender-hanna': 'hands-hips-pedantic', 'hallucination': 'startled', 'specification-gaming': 'smirking', 'context-window': 'innocent-curious', 'rlhf': 'dead-pan-1', 'open-weights': 'yikes', 'compute': 'bright-neutral', 'intelligence': 'grumpy-eyes-closed', 'misuse-misalignment': 'surprised-worried', 'recursive-self-improvement': 'worry-about-future', 'existential-risk': 'shock-worry', 'blackmail': 'shocked', 'evaluation-awareness': 'sly-one'}
+# Retired: belle_hook on each spec is now the single source for the cover
+# expression, so the tile and the carousel can never wear different faces.
 ICON_LEAD = {'rlhf', 'open-weights', 'compute'}
 
 # ---------------------------------------------------------------- captions
@@ -2116,7 +2122,6 @@ if __name__ == "__main__":
     for k, v in SPECS.items():
         p1, p6, p7 = POS.get(k, ("", "", ""))
         v.setdefault("pos", p1); v.setdefault("pos6", p6); v.setdefault("pos7", p7)
-        if k in EXPR: v["belle_hook"] = EXPR[k]
         if k in ICON_LEAD: v["lead"] = "icon"
         build(k, v)
     write_captions()
