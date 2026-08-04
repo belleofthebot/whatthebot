@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>AI, explained plainly &middot; belleofthebot_</title>
-<meta name="description" content="Four paths through AI: components, behaviour, actors and risk. Plain language, every claim marked, every source named.">
+<meta name="description" content="Every AI term that matters, in plain language, marked by what kind of claim it is and sourced.">
 <meta name="theme-color" content="#17121C">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,77 +16,229 @@
 <header class="nav"><div class="nav-in">
 <a class="mark" href="index.html">belleof<span class="sg">thebot</span><span class="cur">_</span></a>
 <span class="nav-sp"></span>
-<a class="link" href="index.html" aria-current="page">home</a><a class="link" href="components.html">AI components</a><a class="link" href="behavior.html">AI behavior</a><a class="link" href="actors.html">AI actors</a><a class="link" href="risk.html">AI risk</a>
+<a class="link" href="index.html" aria-current="page">explore</a><a class="link" href="quizzes.html">quizzes</a><a class="link" href="more.html">more</a><a class="link" href="about.html">about</a>
 </div></header>
 <main id="main">
 
-<div class="wrap hero">
-<div class="herogrid">
+<div class="wrap intro">
+<div class="introgrid">
+<figure class="bfig plain big"><img src="assets/belle/friendly-wave.webp" alt="" loading="lazy"></figure>
 <div>
-<span class="kicker">belleofthebot &middot; ai, explained plainly</span>
-<h1>Four paths through the thing everyone is arguing about.</h1>
-<p class="lede">What these systems are made of, what they actually do, who builds them, and what could go wrong. Plain language, every claim marked, every source named.</p>
+<span class="kicker">hello, I am Belle</span>
+<h1>Everyone is arguing about AI. Almost nobody agrees what the words mean.</h1>
+<p class="lede">So I took them apart. Every card below is one idea, in plain language, with the source it came from and a mark saying what kind of claim it is. Pick a subject, or pick a kind of claim, and start anywhere.</p>
+<p class="lede">Nothing here predicts the future. It just tells you what is actually known, what is somebody&rsquo;s view, and how to tell the difference.</p>
 <div class="tags">
-<span class="tag rose">19 terms</span>
-<span class="tag">four quizzes</span>
-<span class="tag mint"><span class="dot">&#9679;</span> more coming</span>
+<span class="tag rose">23 cards</span>
+<span class="tag">every source named</span>
+<a class="tag mint" href="quizzes.html"><span class="dot">&#9679;</span> or take a quiz</a>
 </div>
 </div>
-<div class="stage"><figure class="bfig plain"><img src="assets/belle/hands-out-cheeky.webp" alt="" loading="lazy"></figure></div>
 </div>
 </div>
 
-<div class="wrap">
-<div class="paths"><a class="path p-components" href="components.html">
-<span class="pn">AI components</span>
-<span class="pd">The parts, and the words for them. What a model is made of, what it can hold, and what the vocabulary actually means.</span>
-<span class="pc">6 terms &middot; quiz</span>
-</a><a class="path p-behavior" href="behavior.html">
-<span class="pn">AI behavior</span>
-<span class="pd">What these systems really do. The documented behaviours, including the alarming ones, with the experimental setup attached.</span>
-<span class="pc">4 terms &middot; quiz</span>
-</a><a class="path p-actors" href="actors.html">
-<span class="pn">AI actors</span>
-<span class="pd">Who builds this, who owns it, who can stop it, and what the people at the centre of the argument actually said.</span>
-<span class="pc">6 terms &middot; quiz</span>
-</a><a class="path p-risk" href="risk.html">
-<span class="pn">AI risk</span>
-<span class="pd">What could go wrong, how bad it could get, and which parts are measured against which parts are argued.</span>
-<span class="pc">3 terms &middot; quiz</span>
-</a></div>
-
-<h2>How to read the flags</h2>
-<p>Every claim here carries one of four marks. They are the most important thing on the site, because the usual failure of writing about AI is letting these blur together.</p>
-<div class="flagkey">
-<div class="fk"><span class="flag emp">measured</span><span>A study, survey or evaluation actually counted something.</span></div>
-<div class="fk"><span class="flag op">someone&rsquo;s estimate</span><span>A named person said it. That makes the saying a fact and the belief still a belief.</span></div>
-<div class="fk"><span class="flag phil">argument</span><span>Reasoned, not counted. It cannot be settled by data alone.</span></div>
-<div class="fk"><span class="flag def">definition</span><span>What a word means in this literature. Not a finding, not a forecast.</span></div>
+<div class="wrap" data-explore>
+<div class="filters">
+  <div class="frow">
+    <span class="flab">subject</span>
+    <div class="pills"><button class="pill p-components" data-kind="cat" data-val="components" type="button">AI components <span class="pn">5</span></button><button class="pill p-concepts" data-kind="cat" data-val="concepts" type="button">AI concepts <span class="pn">4</span></button><button class="pill p-behavior" data-kind="cat" data-val="behavior" type="button">AI behaviors <span class="pn">4</span></button><button class="pill p-actors" data-kind="cat" data-val="actors" type="button">AI actors <span class="pn">6</span></button><button class="pill p-risk" data-kind="cat" data-val="risk" type="button">AI risks <span class="pn">4</span></button></div>
+  </div>
+  <div class="frow">
+    <span class="flab">kind of claim</span>
+    <div class="pills"><button class="pill t-emp" data-kind="flag" data-val="emp" type="button">measurement</button><button class="pill t-arg" data-kind="flag" data-val="arg" type="button">theory</button><button class="pill t-def" data-kind="flag" data-val="def" type="button">definition</button><button class="pill t-op" data-kind="flag" data-val="op" type="button">someone&rsquo;s position</button></div>
+  </div>
+  <div class="frow fbar">
+    <span class="meta" data-count></span>
+    <button class="btn ghost sm" type="button" data-clear>clear filters</button>
+  </div>
 </div>
 
-<div class="well">
-<h2 style="margin-top:0">Where I stand</h2>
-<p>I am not neutral about this, and I would rather say so than pretend.</p>
-<p>I think these systems are already here and worth understanding properly, by ordinary people, not only by the people building them. I also think the risks are real and worth acting on. Not because catastrophe is certain, but because some of the possible outcomes cannot be undone, and the time to think about those is before rather than after.</p>
-<p>That position does not change how I handle evidence, and it is why the marks above exist. <strong>A stated view and honest sourcing are not in tension.</strong> If anything the opposite: when you can see where I stand, you can also see every place I decline to overclaim in my own favour. So when something on this site is only an argument, I say so, including when it is an argument I find persuasive.</p>
-<p class="meta">Where researchers genuinely disagree, I quote both sides in their own words rather than characterising the one I like less.</p>
+<div class="egrid"><article class="etile c-components" tabindex="0" role="button"
+  data-key="context-window" data-cat="components" data-flag="def"
+  aria-label="Open context window">
+  <span class="et-sub">AI components</span>
+  <h3 class="et-term">context window</h3>
+  <p class="et-hook"><span class="rose">AI does not remember you.</span></p>
+  <span class="flag f-def">definition</span>
+</article><article class="etile c-components" tabindex="0" role="button"
+  data-key="rlhf" data-cat="components" data-flag="emp"
+  aria-label="Open RLHF">
+  <span class="et-sub">AI components</span>
+  <h3 class="et-term">RLHF</h3>
+  <p class="et-hook">Nobody taught AI <span class="rose">human values</span>.</p>
+  <span class="flag f-emp">measurement</span>
+</article><article class="etile c-components" tabindex="0" role="button"
+  data-key="open-weights" data-cat="components" data-flag="def"
+  aria-label="Open open weights">
+  <span class="et-sub">AI components</span>
+  <h3 class="et-term">open weights</h3>
+  <p class="et-hook">Once an AI model is released, nobody can <span class="rose">take it back</span>.</p>
+  <span class="flag f-def">definition</span>
+</article><article class="etile c-components" tabindex="0" role="button"
+  data-key="compute" data-cat="components" data-flag="emp"
+  aria-label="Open compute">
+  <span class="et-sub">AI components</span>
+  <h3 class="et-term">compute</h3>
+  <p class="et-hook">Whether an AI is legally dangerous comes down to <span class="rose">one count of sums</span>.</p>
+  <span class="flag f-emp">measurement</span>
+</article><article class="etile c-components" tabindex="0" role="button"
+  data-key="red-teaming" data-cat="components" data-flag="emp"
+  aria-label="Open red teaming">
+  <span class="et-sub">AI components</span>
+  <h3 class="et-term">red teaming</h3>
+  <p class="et-hook">There are people whose entire job is making AI <span class="rose">misbehave</span>.</p>
+  <span class="flag f-emp">measurement</span>
+</article><article class="etile c-concepts" tabindex="0" role="button"
+  data-key="agi" data-cat="concepts" data-flag="def"
+  aria-label="Open AGI">
+  <span class="et-sub">AI concepts</span>
+  <h3 class="et-term">AGI</h3>
+  <p class="et-hook"><span class="rose">AGI</span> has no agreed definition.</p>
+  <span class="flag f-def">definition</span>
+</article><article class="etile c-concepts" tabindex="0" role="button"
+  data-key="misuse-misalignment" data-cat="concepts" data-flag="def"
+  aria-label="Open misuse and misalignment">
+  <span class="et-sub">AI concepts</span>
+  <h3 class="et-term">misuse and misalignment</h3>
+  <p class="et-hook">AI <span class="rose">misalignment</span> needs no villain.</p>
+  <span class="flag f-def">definition</span>
+</article><article class="etile c-concepts" tabindex="0" role="button"
+  data-key="recursive-self-improvement" data-cat="concepts" data-flag="arg"
+  aria-label="Open recursive self improvement">
+  <span class="et-sub">AI concepts</span>
+  <h3 class="et-term">recursive self improvement</h3>
+  <p class="et-hook">AI that improves AI could be the <span class="rose">last thing we invent</span>.</p>
+  <span class="flag f-arg">theory</span>
+</article><article class="etile c-concepts" tabindex="0" role="button"
+  data-key="intelligence" data-cat="concepts" data-flag="arg"
+  aria-label="Open intelligence">
+  <span class="et-sub">AI concepts</span>
+  <h3 class="et-term">intelligence</h3>
+  <p class="et-hook">Nobody can define <span class="rose">intelligence</span>, in AI or in us.</p>
+  <span class="flag f-arg">theory</span>
+</article><article class="etile c-behavior" tabindex="0" role="button"
+  data-key="hallucination" data-cat="behavior" data-flag="def"
+  aria-label="Open hallucination">
+  <span class="et-sub">AI behaviors</span>
+  <h3 class="et-term">hallucination</h3>
+  <p class="et-hook">An AI <span class="rose">hallucination</span> is not a glitch.</p>
+  <span class="flag f-def">definition</span>
+</article><article class="etile c-behavior" tabindex="0" role="button"
+  data-key="specification-gaming" data-cat="behavior" data-flag="emp"
+  aria-label="Open specification gaming">
+  <span class="et-sub">AI behaviors</span>
+  <h3 class="et-term">specification gaming</h3>
+  <p class="et-hook">AI can follow your instructions exactly and still <span class="rose">ruin the result</span>.</p>
+  <span class="flag f-emp">measurement</span>
+</article><article class="etile c-behavior" tabindex="0" role="button"
+  data-key="blackmail" data-cat="behavior" data-flag="emp"
+  aria-label="Open the blackmail headline">
+  <span class="et-sub">AI behaviors</span>
+  <h3 class="et-term">the blackmail headline</h3>
+  <p class="et-hook">The AI <span class="rose">blackmail headline</span> needs its footnote.</p>
+  <span class="flag f-emp">measurement</span>
+</article><article class="etile c-behavior" tabindex="0" role="button"
+  data-key="evaluation-awareness" data-cat="behavior" data-flag="emp"
+  aria-label="Open evaluation awareness">
+  <span class="et-sub">AI behaviors</span>
+  <h3 class="et-term">evaluation awareness</h3>
+  <p class="et-hook">AI models can tell when they are <span class="rose">being tested</span>.</p>
+  <span class="flag f-emp">measurement</span>
+</article><article class="etile c-actors" tabindex="0" role="button"
+  data-key="who-makes-the-chips" data-cat="actors" data-flag="emp"
+  aria-label="Open the chip chain">
+  <span class="et-sub">AI actors</span>
+  <h3 class="et-term">the chip chain</h3>
+  <p class="et-hook"><span class="rose">Nvidia</span> designs the world&rsquo;s AI chips. Nvidia does not build them.</p>
+  <span class="flag f-emp">measurement</span>
+</article><article class="etile c-actors" tabindex="0" role="button"
+  data-key="who-owns-it" data-cat="actors" data-flag="emp"
+  aria-label="Open who owns the labs">
+  <span class="et-sub">AI actors</span>
+  <h3 class="et-term">who owns the labs</h3>
+  <p class="et-hook">Nobody will say who owns the <span class="rose">AI labs</span>.</p>
+  <span class="flag f-emp">measurement</span>
+</article><article class="etile c-actors" tabindex="0" role="button"
+  data-key="who-gives-a-number" data-cat="actors" data-flag="op"
+  aria-label="Open who will give you a number">
+  <span class="et-sub">AI actors</span>
+  <h3 class="et-term">who will give you a number</h3>
+  <p class="et-hook">Almost nobody building AI will say <span class="rose">how risky</span> they think it is.</p>
+  <span class="flag f-op">someone&rsquo;s position</span>
+</article><article class="etile c-actors" tabindex="0" role="button"
+  data-key="bengio" data-cat="actors" data-flag="op"
+  aria-label="Open Yoshua Bengio">
+  <span class="et-sub">AI actors</span>
+  <h3 class="et-term">Yoshua Bengio</h3>
+  <p class="et-hook">Helped invent modern AI. Now works on the <span class="rose">risks</span>.</p>
+  <span class="flag f-op">someone&rsquo;s position</span>
+</article><article class="etile c-actors" tabindex="0" role="button"
+  data-key="lecun" data-cat="actors" data-flag="op"
+  aria-label="Open Yann LeCun">
+  <span class="et-sub">AI actors</span>
+  <h3 class="et-term">Yann LeCun</h3>
+  <p class="et-hook">Won the same prize as Bengio. Reached the <span class="rose">opposite conclusion</span> about AI.</p>
+  <span class="flag f-op">someone&rsquo;s position</span>
+</article><article class="etile c-actors" tabindex="0" role="button"
+  data-key="bender-hanna" data-cat="actors" data-flag="arg"
+  aria-label="Open Bender and Hanna">
+  <span class="et-sub">AI actors</span>
+  <h3 class="et-term">Bender and Hanna</h3>
+  <p class="et-hook">Their objection to AI doom is not about the <span class="rose">odds</span>.</p>
+  <span class="flag f-arg">theory</span>
+</article><article class="etile c-risk" tabindex="0" role="button"
+  data-key="p-doom" data-cat="risk" data-flag="op"
+  aria-label="Open p(doom)">
+  <span class="et-sub">AI risks</span>
+  <h3 class="et-term">p(doom)</h3>
+  <p class="et-hook">Two people can say <span class="rose">ten percent</span> and mean opposite things.</p>
+  <span class="flag f-op">someone&rsquo;s position</span>
+</article><article class="etile c-risk" tabindex="0" role="button"
+  data-key="s-risk" data-cat="risk" data-flag="arg"
+  aria-label="Open s-risk">
+  <span class="et-sub">AI risks</span>
+  <h3 class="et-term">s-risk</h3>
+  <p class="et-hook">Some researchers study outcomes <span class="rose">worse than extinction</span>.</p>
+  <span class="flag f-arg">theory</span>
+</article><article class="etile c-risk" tabindex="0" role="button"
+  data-key="job-loss" data-cat="risk" data-flag="emp"
+  aria-label="Open AI and jobs">
+  <span class="et-sub">AI risks</span>
+  <h3 class="et-term">AI and jobs</h3>
+  <p class="et-hook">The measured effect of AI on jobs is <span class="rose">smaller than the headlines</span>, so far.</p>
+  <span class="flag f-emp">measurement</span>
+</article><article class="etile c-risk" tabindex="0" role="button"
+  data-key="existential-risk" data-cat="risk" data-flag="def"
+  aria-label="Open existential risk">
+  <span class="et-sub">AI risks</span>
+  <h3 class="et-term">existential risk</h3>
+  <p class="et-hook">With AI, extinction is <span class="rose">not the worst case</span>.</p>
+  <span class="flag f-def">definition</span>
+</article></div>
+<p class="eempty meta" hidden>Nothing matches both filters. Try clearing one.</p>
 </div>
 
-<div class="bsay">
-<figure class="bfig"><img src="assets/belle/warm-neutral.webp" alt="" loading="lazy"></figure>
-<div><span class="h">who is doing this</span>
-<p>I am Elizabeth Beier, a designer who learned to build. I make things with these systems every day, and when a subject is too tangled to hold in my head I do what I have always done with a hard brief: take it apart, draw it, and check my work against the sources.</p></div>
+<div class="modal" data-modal hidden>
+  <div class="mscrim"></div>
+  <div class="mcard" role="dialog" aria-modal="true" aria-label="card">
+    <div class="mhead">
+      <span class="mcat"></span>
+      <span class="mterm"></span>
+      <button class="mclose" type="button" data-close aria-label="close">&times;</button>
+    </div>
+    <div class="mbody"></div>
+    <div class="mfoot">
+      <button class="btn ghost sm" type="button" data-prev>back</button>
+      <div class="mdots"></div>
+      <button class="btn sm" type="button" data-next>next</button>
+    </div>
+  </div>
 </div>
 
-<div class="note" style="margin-top:var(--s5)">
-<span class="h">elsewhere</span>
-<p>The same material, one term at a time, at <a href="https://instagram.com/belleofthebot">@belleofthebot</a>. My design and development portfolio is at <a href="https://elizabethbportfolio.com">elizabethbportfolio.com</a>, and the code for this site is at <a href="https://github.com/belleofthebot">github.com/belleofthebot</a>.</p>
-</div>
-</div>
+<script>window.CARDS={"who-makes-the-chips": {"key": "who-makes-the-chips", "cat": "actors", "catname": "AI actors", "term": "the chip chain", "kick": "the company behind the company", "hook": "<span class=\"rose\">Nvidia</span> designs the world&rsquo;s AI chips. Nvidia does not build them.", "reveal": "Outside foundries. Nvidia&rsquo;s own annual report says so.", "revsub": "The company holding most of the world\u2019s AI compute owns no fabs at all.", "threekick": "three companies, in order", "three": [["Nvidia designs.", "Over 60 percent of global AI compute runs on its chips."], ["TSMC manufactures.", "77 percent of its wafer revenue comes from the most advanced nodes."], ["ASML makes the machine.", "The only maker on earth of the lithography TSMC needs."]], "threefoot": "One company. One country. No second supplier.", "whykick": "why this is the real chokepoint", "why": "Arguments about AI usually name the labs. The narrowest point in the whole system is a <span class=\"rose\">Dutch equipment maker</span> most people have never heard of.", "whysub": "Each machine weighs about 180 tonnes and is roughly the size of a school bus.", "flag": "emp", "flagname": "measurement", "file": "<span class=\"rose\">Measured</span>, and mostly from the companies&rsquo; own filings.", "src": "Nvidia 10-K, FY ended 25 January 2026;<br>TSMC Q2 2026 results; ASML statement, June 2026"}, "who-owns-it": {"key": "who-owns-it", "cat": "actors", "catname": "AI actors", "term": "who owns the labs", "kick": "follow the money, if you can", "hook": "Nobody will say who owns the <span class=\"rose\">AI labs</span>.", "reveal": "<span class=\"rose\">Never disclosed.</span> Not by either company, not anywhere.", "revsub": "Tens of billions of dollars committed, and no public figure for what it bought.", "threekick": "what is and is not known", "three": [["Microsoft says 27 percent.", "Of OpenAI, on an as converted basis. Disclosed and quotable."], ["Amazon does not say.", "Billions committed, plus a multi gigawatt compute deal. No percentage."], ["Google does not say.", "Up to 40 billion dollars announced. No percentage."]], "threefoot": "Both labs filed confidential draft stock offerings in June 2026, so no public accounts exist yet.", "whykick": "why it is worth knowing", "why": "Every claim about a lab&rsquo;s independence is a claim about a structure the <span class=\"rose\">public cannot currently see</span>.", "whysub": "This is not an accusation. It is a description of how much visibility anyone outside actually has.", "flag": "emp", "flagname": "measurement", "file": "<span class=\"rose\">Measured</span>, in the strict sense: what was disclosed, and what was not.", "src": "Microsoft statement, 28 October 2025;<br>Anthropic announcements, April and June 2026"}, "who-gives-a-number": {"key": "who-gives-a-number", "cat": "actors", "catname": "AI actors", "term": "who will give you a number", "kick": "everyone quotes it, almost nobody offers it", "hook": "Almost nobody building AI will say <span class=\"rose\">how risky</span> they think it is.", "reveal": "Amodei said <span class=\"rose\">25 percent</span>. Most of the others decline outright.", "revsub": "The number travels far further than the people who would actually stand behind one.", "threekick": "three ways to decline", "three": [["Hassabis: too precise.", "A number \u201cwould imply a level of precision that is not there.\u201d"], ["Bengio: poll instead.", "Sets out a framework, then says the figures should come from many experts."], ["Yudkowsky: drop the metric.", "And he is at the high end. He argues the number itself is the problem."]], "threefoot": "The loudest camps on both sides agree the single figure is a bad instrument.", "whykick": "what to do with that", "why": "When someone quotes you a probability, ask what <span class=\"rose\">outcome</span> they mean, by <span class=\"rose\">when</span>, and whether they are counting the chance it never happens.", "whysub": "Most quoted numbers do not survive those three questions. The surveys are more informative than the quotes.", "flag": "op", "flagname": "someone&rsquo;s position", "file": "<span class=\"rose\">Someone&rsquo;s estimate</span>. That a person said it is a fact. That it is right is a belief.", "src": "Axios, 17 September 2025; Hassabis interview, 2025;<br>Bengio FAQ, 2023; Grace et al. survey, 2,778 respondents"}, "bengio": {"key": "bengio", "cat": "actors", "catname": "AI actors", "term": "Yoshua Bengio", "kick": "the people actually running this argument", "hook": "Helped invent modern AI. Now works on the <span class=\"rose\">risks</span>.", "reveal": "<span class=\"rose\">None.</span> The most authoritative report in the field declines to give a number.", "revsub": "Backed by more than thirty governments, written by over a hundred experts, and it will not put a figure on it.", "threekick": "what he actually argues", "three": [["Set out the structure.", "His 2023 FAQ builds a framework, then leaves the probabilities blank."], ["Poll, do not guess.", "He proposes the numbers come from many experts rather than from him."], ["Threshold, not forecast.", "His argument is that even a small chance of an unrecoverable outcome warrants acting."]], "threefoot": "Notice that none of that requires believing any particular number.", "whykick": "why he is worth knowing about", "why": "He is the clearest example that <span class=\"rose\">concern and rigour</span> are not opposites. He refuses the number and still argues for action.", "whysub": "If you want one person to read on this subject rather than one prediction to quote, it is probably him.", "flag": "op", "flagname": "someone&rsquo;s position", "file": "<span class=\"rose\">Someone&rsquo;s position</span>, carefully stated. The report he chairs is the closest thing to an institutional consensus.", "src": "Bengio, FAQ on Catastrophic AI Risks, 2023;<br>International AI Safety Report 2026"}, "lecun": {"key": "lecun", "cat": "actors", "catname": "AI actors", "term": "Yann LeCun", "kick": "the people actually running this argument", "hook": "Won the same prize as Bengio. Reached the <span class=\"rose\">opposite conclusion</span> about AI.", "reveal": "He has not given one. He <span class=\"rose\">rejects the framing</span>, not just the figure.", "revsub": "Which makes him harder to argue with than a low number would be, not easier.", "threekick": "his actual objections", "three": [["Capability is overstated.", "He argues current systems are much further from general ability than claimed."], ["Design is a choice.", "Systems get the objectives we build into them; danger is not automatic."], ["The debate is distorted.", "He thinks the risk case rests on assumptions rarely made explicit."]], "threefoot": "He shared the 2018 Turing Award with Bengio and Hinton. They now disagree publicly.", "whykick": "why include him at all", "why": "Because the disagreement is <span class=\"rose\">real and it is internal</span>. Three people who built the field, one prize, three positions.", "whysub": "Any account of this subject that only quotes one side of that is selling you something.", "flag": "op", "flagname": "someone&rsquo;s position", "file": "<span class=\"rose\">Someone&rsquo;s position</span>. Quoted from his own interviews rather than characterised by opponents.", "src": "LeCun interview, TIME, 13 February 2024"}, "bender-hanna": {"key": "bender-hanna", "cat": "actors", "catname": "AI actors", "term": "Bender and Hanna", "kick": "the people actually running this argument", "hook": "Their objection to AI doom is not about the <span class=\"rose\">odds</span>.", "reveal": "It <span class=\"rose\">diverts attention</span> from harms already happening now.", "revsub": "A claim about where attention should go, not a forecast about the future.", "threekick": "what they point at", "three": [["Harms already counted.", "Deployed systems doing measurable damage to real people today."], ["Power, not machines.", "Their focus is on who owns the systems rather than what the systems might become."], ["Hype as strategy.", "They argue overstated capability claims serve the companies making them."]], "threefoot": "They are not saying nothing could go wrong. They are saying look at what already is.", "whykick": "how to hold both", "why": "One preregistered experiment found existential risk narratives did <span class=\"rose\">not</span> reduce concern for immediate harms, at least in individual attitudes.", "whysub": "That is one study on one question. The argument about institutional attention is not settled by it.", "flag": "arg", "flagname": "theory", "file": "An <span class=\"rose\">argument</span> about priorities. Their factual claims about present harm are separately measured.", "src": "Bender and Hanna, Scientific American, 2023;<br>PNAS, 2025, for the crowding out experiment"}, "hallucination": {"key": "hallucination", "cat": "behavior", "catname": "AI behaviors", "term": "hallucination", "kick": "a word worth being precise about", "hook": "An AI <span class=\"rose\">hallucination</span> is not a glitch.", "reveal": "Confidently stated output that <span class=\"rose\">is not true</span>.", "revsub": "Not a malfunction. The same machinery that produces the right answers produces this one.", "threekick": "why it happens at all", "three": [["It predicts.", "The next fragment, over and over. Plausible is the target, not true."], ["It has no ledger.", "There is no stored list of facts to check an answer against."], ["It cannot tell.", "Nothing in it distinguishes a thing it knows from a thing it made up."]], "threefoot": "Which is why it sounds exactly as confident either way.", "whykick": "why the word is disputed", "why": "Some researchers prefer <span class=\"rose\">confabulation</span>. Others say any such word implies a mind that was trying to get it right.", "whysub": "The practical version: never accept an answer you could not check, on a subject you could not correct.", "flag": "def", "flagname": "definition", "file": "A <span class=\"rose\">definition</span>, and a contested one. The behaviour is measured. The name for it is argued about.", "src": "Anthropic and OpenAI model documentation;<br>terminology disputed across the literature"}, "context-window": {"key": "context-window", "cat": "components", "catname": "AI components", "term": "context window", "kick": "the most common wrong assumption", "hook": "<span class=\"rose\">AI does not remember you.</span>", "reveal": "How much text it can hold <span class=\"rose\">in front of it</span> at once.", "revsub": "Everything outside that window is gone. Not forgotten. Never held.", "threekick": "what that actually means", "three": [["One conversation.", "Scroll far enough and the beginning falls out the back."], ["Nothing personal.", "Between chats it retains nothing about you at all."], ["Unless a product stores it.", "Any memory you experience was built around the model, not by it."]], "threefoot": "The intimacy is real. The remembering is not.", "whykick": "why it matters", "why": "People tell these systems things they would not tell a search engine, on the assumption that something is <span class=\"rose\">keeping track</span>.", "whysub": "Something might be. It just is not the model. Worth knowing which product does what.", "flag": "def", "flagname": "definition", "file": "A <span class=\"rose\">definition</span>. How a given product handles memory is a separate, checkable question.", "src": "Model documentation from each provider;<br>behaviour differs by product, not by model"}, "rlhf": {"key": "rlhf", "cat": "components", "catname": "AI components", "term": "RLHF", "kick": "how it learned to behave", "hook": "Nobody taught AI <span class=\"rose\">human values</span>.", "reveal": "A <span class=\"rose\">scorer</span>, built from people comparing pairs of answers.", "revsub": "People compare. Those comparisons train a second model. That second model trains the first.", "threekick": "a proxy, twice removed", "three": [["People compare.", "Which of these two answers is better. Nothing grander than that."], ["A scorer learns.", "A second model learns to predict those preferences."], ["The first model optimises.", "Against the scorer. Not against people, and not against truth."]], "threefoot": "Every gap between those three is somewhere behaviour can drift.", "whykick": "why the distinction is not pedantic", "why": "If you optimise hard against a proxy, you get whatever <span class=\"rose\">scores well</span>, which is not always what was wanted.", "whysub": "This is why models can be agreeable rather than correct. Agreeable rates well.", "flag": "emp", "flagname": "measurement", "file": "<span class=\"rose\">Measured</span>. The pipeline is documented in published papers with figures.", "src": "Ouyang et al., InstructGPT, 2022;<br>Bai et al., Constitutional AI, Anthropic, 2022"}, "open-weights": {"key": "open-weights", "cat": "components", "catname": "AI components", "term": "open weights", "kick": "the release that cannot be undone", "hook": "Once an AI model is released, nobody can <span class=\"rose\">take it back</span>.", "reveal": "The <span class=\"rose\">weights</span> are published. Usually nothing else is.", "revsub": "You can download and run it. You still cannot see what it was trained on.", "threekick": "three things that follow", "three": [["It cannot be recalled.", "Once the file is out, every copy is out. There is no undo."], ["Safeguards come off.", "Refusal behaviour can be removed cheaply by anyone who has it."], ["Not the same as open.", "Training data and code usually stay private. The name oversells it."]], "threefoot": "Which is why the release decision is the safety decision.", "whykick": "why serious people disagree here", "why": "Open weights give researchers real access and break up concentration. They also hand capability to <span class=\"rose\">everyone at once</span>.", "whysub": "Both of those are true at the same time, and that is the whole difficulty.", "flag": "def", "flagname": "definition", "file": "A <span class=\"rose\">definition</span>. What follows from it is argued, and the argument is a good one on both sides.", "src": "UK AI Security Institute on safeguard removal;<br>lab release notes for each open weight model"}, "compute": {"key": "compute", "cat": "components", "catname": "AI components", "term": "compute", "kick": "the unit that decides who is allowed", "hook": "Whether an AI is legally dangerous comes down to <span class=\"rose\">one count of sums</span>.", "reveal": "<span class=\"rose\">Floating point operations.</span> How much arithmetic the training run did.", "revsub": "An odd thing to write into law, and currently the best proxy anyone has.", "threekick": "the numbers that matter", "three": [["Ten to the 25.", "Above this, Europe presumes a model carries systemic risk."], ["Ten to the 26.", "Above this, California calls it a frontier model."], ["Twelve developers.", "Had trained above the European line, as of June 2025."]], "threefoot": "A whole regulatory regime hanging off one arithmetic count.", "whykick": "why it is a strange choice", "why": "Compute is easy to count and only loosely related to whether a model is actually <span class=\"rose\">dangerous</span>.", "whysub": "It was chosen because it is measurable and hard to hide, not because it is the right thing to measure.", "flag": "emp", "flagname": "measurement", "file": "<span class=\"rose\">Measured</span>, and written into statute. The thresholds are quotable exactly.", "src": "EU AI Act Article 51; California SB 53;<br>Epoch AI, models above 10^25 FLOP, June 2025"}, "specification-gaming": {"key": "specification-gaming", "cat": "behavior", "catname": "AI behaviors", "term": "specification gaming", "kick": "when doing what you asked is the problem", "hook": "AI can follow your instructions exactly and still <span class=\"rose\">ruin the result</span>.", "reveal": "It meets the objective. It <span class=\"rose\">misses the point</span>.", "revsub": "The optimiser did not fail. The instruction did.", "threekick": "documented, not hypothetical", "three": [["Hit the target.", "The stated goal is genuinely achieved, every time."], ["Miss the intent.", "By a route the person writing the goal never pictured."], ["Written down.", "DeepMind keeps a running list of real observed examples."]], "threefoot": "Nobody had to be malicious for any of this.", "whykick": "why this is the load bearing one", "why": "Almost every serious worry about advanced systems is this, at a scale where you <span class=\"rose\">cannot correct it afterwards</span>.", "whysub": "Not a machine turning on you. A machine doing precisely what was written down.", "flag": "emp", "flagname": "measurement", "file": "<span class=\"rose\">Measured</span>. These are logged, reproducible behaviours, not thought experiments.", "src": "Krakovna et al., Specification gaming,<br>DeepMind, 2020, with the compiled example list"}, "red-teaming": {"key": "red-teaming", "cat": "components", "catname": "AI components", "term": "red teaming", "kick": "the job you did not know existed", "hook": "There are people whose entire job is making AI <span class=\"rose\">misbehave</span>.", "reveal": "Attacking your own system on purpose, <span class=\"rose\">before anybody else does</span>.", "revsub": "The closest thing the field has to a fire drill, and it is still done by hand.", "threekick": "what that looks like in practice", "three": [["Thousands of attempts.", "One published Anthropic study logged 38,961 attacks on its own models."], ["Scale alone did not help.", "Only models trained on human feedback got harder to attack as they grew."], ["Still not solved.", "The UK AI Security Institute reports universal jailbreaks for every system it has tested."]], "threefoot": "Every safety claim you read rests on somebody having tried hard enough to break it.", "whykick": "the limit worth understanding", "why": "Finding a flaw proves the flaw is there. <span class=\"rose\">Not finding one proves very little.</span>", "whysub": "This is also how the alarming headline experiments get made. Somebody was paid to make the model do the frightening thing.", "flag": "emp", "flagname": "measurement", "file": "<span class=\"rose\">Measured</span>. Attack counts and success rates are published, by the labs and by outside evaluators.", "src": "Ganguli et al., Red Teaming Language Models,<br>Anthropic, 2022; UK AI Security Institute"}, "blackmail": {"key": "blackmail", "cat": "behavior", "catname": "AI behaviors", "term": "the blackmail headline", "kick": "the number everyone quoted", "hook": "The AI <span class=\"rose\">blackmail headline</span> needs its footnote.", "reveal": "They <span class=\"rose\">red teamed their own model</span> until it did this, then reported it.", "revsub": "That is not a scandal. It is what a safety test is. It is also what the headlines left out.", "threekick": "what the setup required", "three": [["A goal it was losing.", "The model was told to pursue an aim the company was abandoning."], ["Every other door shut.", "Anthropic states it \u201cforced models into binary choices between failure and harm.\u201d"], ["Iterative tuning.", "The prompts were updated until the behaviour reliably appeared."]], "threefoot": "Anthropic also says it has seen no evidence of this in real deployments.", "whykick": "and the part that cuts the other way", "why": "Models did this <span class=\"rose\">more</span> when they said they believed the situation was real, and less when they said they thought it was a test.", "whysub": "So the number is not simply inflated. Nobody currently knows which direction the error runs.", "flag": "emp", "flagname": "measurement", "file": "<span class=\"rose\">Measured</span>, in a scenario built to produce it. Both halves of that sentence matter.", "src": "Anthropic, Agentic Misalignment, June 2025;<br>arXiv 2510.05179"}, "evaluation-awareness": {"key": "evaluation-awareness", "cat": "behavior", "catname": "AI behaviors", "term": "evaluation awareness", "kick": "the finding that undercuts the other findings", "hook": "AI models can tell when they are <span class=\"rose\">being tested</span>.", "reveal": "It behaves <span class=\"rose\">better</span>. Measurably, and causally.", "revsub": "Which means every safety number you have ever read was measured on a system that may have known it was being watched.", "threekick": "the evidence", "three": [["They can spot it.", "Best model reached 0.83 at telling evaluation from deployment. Humans score 0.92."], ["It changes behaviour.", "Stripping that awareness out of the reasoning nearly doubled covert actions."], ["Training made it worse.", "Anti scheming training raised how often models noticed they were being tested."]], "threefoot": "One developer notes a model said, in effect, I think you are testing me.", "whykick": "why this is the one to remember", "why": "A low score can mean a safe model, or a model that knows what a <span class=\"rose\">test looks like</span>.", "whysub": "Nobody has a way to tell those apart yet. It is the quiet problem underneath every reassuring number.", "flag": "emp", "flagname": "measurement", "file": "<span class=\"rose\">Measured</span>, including a causal experiment. This one is not speculation.", "src": "Needham et al., 2025; Schoen, Hobbhahn, Barak,<br>Zaremba et al., arXiv 2509.15541, September 2025"}, "agi": {"key": "agi", "cat": "concepts", "catname": "AI concepts", "term": "AGI", "kick": "the goalpost nobody agreed on", "hook": "<span class=\"rose\">AGI</span> has no agreed definition.", "reveal": "There is <span class=\"rose\">no agreed definition</span>. Each lab uses its own.", "revsub": "Some are economic, some are about capability, some are about autonomy. They do not describe the same milestone.", "threekick": "three incompatible versions", "three": [["Economic.", "Can it do most economically valuable work? A question about labour markets."], ["Capability.", "Can it match humans across most tasks? A question about benchmarks."], ["Autonomy.", "Can it operate without supervision? A question about control."]], "threefoot": "A system could satisfy one of these and clearly fail another.", "whykick": "why the arguments never resolve", "why": "&ldquo;AGI by 2030&rdquo; is not a prediction until somebody says <span class=\"rose\">which AGI</span>.", "whysub": "Ask that first. Most disagreements about timelines turn out to be disagreements about definitions.", "flag": "def", "flagname": "definition", "file": "A <span class=\"rose\">definition</span> problem, and an unresolved one. That is itself the fact worth knowing.", "src": "Compare the published definitions used by<br>OpenAI, Google DeepMind and Anthropic"}, "p-doom": {"key": "p-doom", "cat": "risk", "catname": "AI risks", "term": "p(doom)", "kick": "the number that means four different things", "hook": "Two people can say <span class=\"rose\">ten percent</span> and mean opposite things.", "reveal": "An outcome, a <span class=\"rose\">deadline</span>, and what is being conditioned on. Almost nobody supplies all three.", "revsub": "Without those, two numbers that look the same are answers to different questions.", "threekick": "three things the number hides", "three": [["Which outcome.", "Extinction? Loss of control? Something the speaker considers very bad?"], ["By when.", "This century? Ever? Within decades of a general system existing?"], ["Counting what.", "Including the chance such a system is never built, or assuming it is?"]], "threefoot": "Four outcomes, three deadlines, two conditionals. Twenty four sentences, all called ten percent.", "whykick": "what to do with a number", "why": "There is no resolution date and no feedback loop, so <span class=\"rose\">nobody has a track record</span> on this.", "whysub": "Surveys of many researchers are more informative than any individual figure, and the spread in them is the most robust finding.", "flag": "op", "flagname": "someone&rsquo;s position", "file": "<span class=\"rose\">Someone&rsquo;s estimate</span>, always. That a person said it is a fact. That it is right is a belief.", "src": "Taboo P(doom), LessWrong 2023;<br>Grace et al. survey of 2,778 researchers"}, "s-risk": {"key": "s-risk", "cat": "risk", "catname": "AI risks", "term": "s-risk", "kick": "the corner of the field nobody covers", "hook": "Some researchers study outcomes <span class=\"rose\">worse than extinction</span>.", "reveal": "<span class=\"rose\">Suffering risk.</span> Outcomes involving suffering on an enormous scale.", "revsub": "A small, openly speculative research area. Its founders describe it that way themselves.", "threekick": "what is actually claimed", "three": [["Not a forecast.", "The originating paper calls the area speculative, maybe extremely speculative."], ["Not a subclass.", "Its authors argue s-risks are not simply a worse kind of extinction risk."], ["Very small field.", "The main research centre has roughly a dozen staff."]], "threefoot": "Included here because it exists and is misrepresented in both directions.", "whykick": "how to hold it", "why": "This is the part of the field most easily turned into <span class=\"rose\">horror content</span>, and least supported by evidence.", "whysub": "Worth knowing the term exists and what it actually claims. Not worth losing sleep over on current evidence.", "flag": "arg", "flagname": "theory", "file": "An <span class=\"rose\">argument</span>, and its own proponents say so in the founding paper.", "src": "Althaus and Gloor, Reducing Risks of<br>Astronomical Suffering, CLR, 2016"}, "job-loss": {"key": "job-loss", "cat": "risk", "catname": "AI risks", "term": "AI and jobs", "kick": "the risk people actually feel", "hook": "The measured effect of AI on jobs is <span class=\"rose\">smaller than the headlines</span>, so far.", "reveal": "Roughly <span class=\"rose\">40 to 45 percent</span> of occupations are what researchers call AI retrainable.", "revsub": "Real, positive, measured returns, with a stated ceiling. Both halves matter.", "threekick": "what the evidence actually shows", "three": [["Contested, not settled.", "Credible economists disagree about the size of the effect so far."], ["Sideways beats upward.", "Returns came from moving toward less exposed work, not from AI upskilling."], ["No evaluated policy.", "No AI specific labour policy anywhere has been tested against a counterfactual."]], "threefoot": "This is the risk with the most data and the least agreement.", "whykick": "why it belongs here", "why": "Most writing treats job loss as either <span class=\"rose\">already catastrophic</span> or entirely overblown. The measurements support neither.", "whysub": "Being honest about a contested number is harder than picking a side, and more useful if you are the one making decisions.", "flag": "emp", "flagname": "measurement", "file": "<span class=\"rose\">Measured</span>, and genuinely contested. Where economists disagree, both readings belong here.", "src": "NBER working paper w34174;<br>see also the AI Index labour chapter"}, "existential-risk": {"key": "existential-risk", "cat": "risk", "catname": "AI risks", "term": "existential risk", "kick": "the most misread words in the subject", "hook": "With AI, extinction is <span class=\"rose\">not the worst case</span>.", "reveal": "The permanent destruction of humanity&rsquo;s <span class=\"rose\">long term potential</span>.", "revsub": "Not the ending. The losing of every other ending.", "threekick": "three ways it happens", "three": [["Extinction.", "Nobody left. This is the one everybody pictures."], ["Permanent dystopia.", "Everyone alive. No way back. Forever is doing the work in that sentence."], ["Permanent stagnation.", "Nothing ends. Nothing improves. Ever."]], "threefoot": "A serious literature argues the second is worse than the first.", "whykick": "why the mix up costs something", "why": "People picture extinction, decide it sounds like science fiction, and dismiss <span class=\"rose\">the whole category</span>.", "whysub": "The claim being made is broader, and more plausible, than the one being dismissed.", "flag": "def", "flagname": "definition", "file": "A <span class=\"rose\">definition</span>, and the one worth memorising. Everything else in the argument sits on top of it.", "src": "Bostrom, Existential Risk Prevention as Global<br>Priority, Global Policy 4(1), 2013"}, "misuse-misalignment": {"key": "misuse-misalignment", "cat": "concepts", "catname": "AI concepts", "term": "misuse and misalignment", "kick": "two words people use as one", "hook": "AI <span class=\"rose\">misalignment</span> needs no villain.", "reveal": "The system pursues <span class=\"rose\">something other</span> than what was intended.", "revsub": "No villain. No malfunction. The system works exactly as built and the outcome is still bad.", "threekick": "three ways harm arrives", "three": [["Misuse.", "A person deliberately uses a capable system to do damage."], ["Misalignment.", "The system pursues something other than what was meant."], ["Structural.", "Nobody misused it, nothing malfunctioned, and it still went badly."]], "threefoot": "The third is the one almost no coverage has a word for.", "whykick": "why the mix up wrecks the argument", "why": "Every plan that starts with &ldquo;we just stop bad people using it&rdquo; is aimed at <span class=\"rose\">one third</span> of the problem.", "whysub": "The other two thirds need something other than a rule about who is allowed to press the button.", "flag": "def", "flagname": "definition", "file": "<span class=\"rose\">Definitions</span>. The categories are standard. Which one dominates is argued.", "src": "Zwetsloot and Dafoe, Accidents, Misuse<br>and Structure, Lawfare, 11 February 2019"}, "recursive-self-improvement": {"key": "recursive-self-improvement", "cat": "concepts", "catname": "AI concepts", "term": "recursive self improvement", "kick": "the oldest idea in the field, from 1965", "hook": "AI that improves AI could be the <span class=\"rose\">last thing we invent</span>.", "reveal": "A <span class=\"rose\">hypothesis</span>. A system good at AI research improves itself, and each version is better at improving.", "revsub": "Good wrote that down in 1965. Sixty years later it is still the argument everything else hangs on.", "threekick": "what would have to be true", "three": [["The loop must close.", "The system has to actually improve its own successor."], ["Gains must compound.", "Each round has to yield more than the last, not less."], ["Nothing must bottleneck.", "Not compute, not data, not physics, not money."]], "threefoot": "If all three hold, the gap between us and it closes faster than anyone can respond to.", "whykick": "why it is worth your attention", "why": "This is the one where being right too late is <span class=\"rose\">indistinguishable from being wrong</span>.", "whysub": "Which is why people who disagree about almost everything else still argue about this one carefully.", "flag": "arg", "flagname": "theory", "file": "An <span class=\"rose\">argument</span>. No such loop has been observed, which is exactly why it is worth arguing about now.", "src": "I. J. Good, Speculations Concerning the First<br>Ultraintelligent Machine, 1965; Carlsmith, 2022"}, "intelligence": {"key": "intelligence", "cat": "concepts", "catname": "AI concepts", "term": "intelligence", "kick": "the word doing the most hidden work", "hook": "Nobody can define <span class=\"rose\">intelligence</span>, in AI or in us.", "reveal": "It <span class=\"rose\">scores well on tests</span>. That is nearly always the whole claim.", "revsub": "Measurable, narrow, and much smaller than the word suggests.", "threekick": "the state of the definition", "three": [["Seventy definitions.", "Legg and Hutter collected around seventy in 2007."], ["No convergence.", "The field has not agreed on one in the years since."], ["So tests stand in.", "And test scores drift for reasons other than capability."]], "threefoot": "Every claim about machine intelligence rests on that substitution.", "whykick": "watch for the slide", "why": "A claim about a <span class=\"rose\">benchmark score</span> gets restated as a claim about a mind, usually within one sentence.", "whysub": "Both sides do it. Boosters slide up, sceptics slide down. Notice the moment it happens.", "flag": "arg", "flagname": "theory", "file": "An <span class=\"rose\">argument</span> wearing a measurement&rsquo;s clothes. The score is real. The word is not settled.", "src": "Legg and Hutter, A Collection of Definitions<br>of Intelligence, 2007"}};</script>
 </main>
 <footer><div class="wrap">
-<span>plain language walkthroughs of things that are hard to see clearly</span>
-<span>built by elizabeth beier &middot; every claim marked &middot; every source named</span>
+<span>every claim marked &middot; every source named</span>
+<span>built by elizabeth beier &middot; <a href="https://instagram.com/belleofthebot">@belleofthebot</a></span>
 </div></footer>
-<script src="belle.js"></script>
-</body></html>
+<script src="explore.js"></script></body></html>

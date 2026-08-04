@@ -221,7 +221,7 @@ Alt text slide 5: A short explanation of why the distinction matters.
 Alt text slide 6: The epistemic flag for this claim, and the source it came from.
 Alt text slide 7: A prompt to follow @belleofthebot for more.
 
-## 8. misuse and misalignment  (AI risk)
+## 8. misuse and misalignment  (AI concepts)
 Folder: `out/misuse-misalignment/`  ·  7 slides
 
 ```
@@ -241,7 +241,7 @@ Source: Zwetsloot and Dafoe, Accidents, Misuse and Structure, Lawfare, 11 Februa
 
 I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
 
-#AI #AIsafety #AIrisk #AIalignment #AIliteracy
+#AI #AIconcepts #AIexplained #AIliteracy #AGI
 ```
 
 Alt text slide 1: Belle, a small robot character, beside the headline: AI misalignment needs no villain.
@@ -407,7 +407,7 @@ Alt text slide 5: A short explanation of why the distinction matters.
 Alt text slide 6: The epistemic flag for this claim, and the source it came from.
 Alt text slide 7: A prompt to follow @belleofthebot for more.
 
-## 14. intelligence  (AI components)
+## 14. intelligence  (AI concepts)
 Folder: `out/intelligence/`  ·  7 slides
 
 ```
@@ -427,7 +427,7 @@ Source: Legg and Hutter, A Collection of Definitions of Intelligence, 2007
 
 I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
 
-#AI #AIexplained #LearnAI #AIliteracy #MachineLearning
+#AI #AIconcepts #AIexplained #AIliteracy #AGI
 ```
 
 Alt text slide 1: Belle, a small robot character, beside the headline: Nobody can define intelligence, in AI or in us.
@@ -531,7 +531,7 @@ Alt text slide 5: A short explanation of why the distinction matters.
 Alt text slide 6: The epistemic flag for this claim, and the source it came from.
 Alt text slide 7: A prompt to follow @belleofthebot for more.
 
-## 18. recursive self improvement  (AI risk)
+## 18. recursive self improvement  (AI concepts)
 Folder: `out/recursive-self-improvement/`  ·  7 slides
 
 ```
@@ -551,7 +551,7 @@ Source: I. J. Good, Speculations Concerning the First Ultraintelligent Machine, 
 
 I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
 
-#AI #AIsafety #AIrisk #AIalignment #AIliteracy
+#AI #AIconcepts #AIexplained #AIliteracy #AGI
 ```
 
 Alt text slide 1: Belle, a small robot character, beside the headline: AI that improves AI could be the last thing we invent.

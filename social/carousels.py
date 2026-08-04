@@ -22,7 +22,8 @@ PAGES = os.path.join(OUT, "pages")
 CATS = {
     "actors":     "AI actors",      # who said it, who owns it, who can stop it
     "behavior":   "AI behavior",    # what these systems actually do
-    "components": "AI components",  # the parts and the vocabulary
+    "components": "AI components",  # the parts, and how they are built and tested
+    "concepts":   "AI concepts",    # the abstract ideas that need defining
     "risk":       "AI risk",        # what could go wrong and how bad
 }
 
@@ -41,6 +42,10 @@ body{background:#0d0a10;font-family:var(--sans);display:flex;flex-wrap:wrap;gap:
 /* one ground per category. --acc is whatever reads as the accent on that ground. */
 .s{width:1080px;height:1350px;position:relative;padding:144px 92px 172px;
    display:flex;flex-direction:column;overflow:hidden;background:var(--bg);color:var(--fg)}
+.g-concepts{--bg:#6E5570;--fg:#F6F1F6;--acc:#E8C4E4;--soft:#D6C4D6;--faint:#B49CB4;
+        --edge:#8B6E8D;--ic-rose:#E8C4E4;--ic-mint:#9FE0CE;--ic-dim:#B49CB4}
+.flip.g-concepts{--bg:#F5F1EC;--fg:#3A343E;--acc:#7A5A7C;--soft:#6E6474;--faint:#8B8090;
+        --edge:#DCD2C6;--ic-rose:#7A5A7C;--ic-mint:#2E9B7F;--ic-dim:#8B8090}
 .g-risk{--bg:#17121C;--fg:#F4F2EE;--acc:#DFA192;--soft:#B3A6BC;--faint:#8A7F93;
         --edge:#423748;--ic-rose:#DFA192;--ic-mint:#9FE0CE;--ic-dim:#8A7F93}
 .g-behavior{--bg:#DFA192;--fg:#2A1F26;--acc:#5E2F26;--soft:#5E4A4E;--faint:#8A6257;
@@ -287,6 +292,7 @@ OUTROKICK = {
  "actors":     "who is actually building this",
  "behavior":   "what these systems actually do",
  "risk":       "taken seriously, with sources",
+ "concepts":   "defined before argued",
 }
 
 OUTRO = {
@@ -294,6 +300,7 @@ OUTRO = {
  "actors":     "I follow who actually runs this, and what they actually said.",
  "behavior":   "I look at what these systems really do, and what the evidence shows.",
  "risk":       "I take AI risk seriously, and I show my sources either way.",
+ "concepts":   "I define the words before anyone argues with them.",
 }
 
 FLAGS = [("emp","measured"),("op","someone&rsquo;s estimate"),("arg","argument"),("def","definition")]
@@ -760,6 +767,109 @@ SPECS = {
   belle_hook="sly-one", belle_file="unimpressed", belle_outro="hands-out-cheeky",
   outro="I take the words apart so the argument stops being noise."),
 
+"agi": dict(
+  cat="concepts", term="AGI",
+  kick="the goalpost nobody agreed on",
+  hook="<span class=\"rose\">AGI</span> has no agreed definition.",
+  q="&ldquo;Artificial general intelligence&rdquo; is defined as:",
+  opts=["A system that passes the Turing test",
+        "Nothing agreed. Labs use incompatible definitions",
+        "A system with human level intelligence in every domain",
+        "Any system that can write code"],
+  ans="B", icon="i-bench",
+  reveal='There is <span class="rose">no agreed definition</span>. Each lab uses its own.',
+  revsub="Some are economic, some are about capability, some are about autonomy. They do not describe the same milestone.",
+  threekick="three incompatible versions",
+  three=[("i-doc","Economic.","Can it do most economically valuable work? A question about labour markets."),
+         ("i-bench","Capability.","Can it match humans across most tasks? A question about benchmarks."),
+         ("i-hand","Autonomy.","Can it operate without supervision? A question about control.")],
+  threefoot="A system could satisfy one of these and clearly fail another.",
+  whyicon="i-two", whykick="why the arguments never resolve",
+  why="&ldquo;AGI by 2030&rdquo; is not a prediction until somebody says <span class=\"rose\">which AGI</span>.",
+  whysub="Ask that first. Most disagreements about timelines turn out to be disagreements about definitions.",
+  flag="def",
+  file='A <span class="rose">definition</span> problem, and an unresolved one. That is itself the fact worth knowing.',
+  src="Compare the published definitions used by<br>OpenAI, Google DeepMind and Anthropic",
+  belle_hook="grumpy-eyes-closed", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"p-doom": dict(
+  cat="risk", term="p(doom)",
+  kick="the number that means four different things",
+  hook="Two people can say <span class=\"rose\">ten percent</span> and mean opposite things.",
+  q="What does a stated p(doom) figure require to be comparable with another?",
+  opts=["A shared definition of the outcome, a deadline, and what is being conditioned on",
+        "A published methodology",
+        "Agreement between at least two researchers",
+        "A peer reviewed source"],
+  ans="A", icon="i-blank",
+  reveal='An outcome, a <span class="rose">deadline</span>, and what is being conditioned on. Almost nobody supplies all three.',
+  revsub="Without those, two numbers that look the same are answers to different questions.",
+  threekick="three things the number hides",
+  three=[("i-stop","Which outcome.","Extinction? Loss of control? Something the speaker considers very bad?"),
+         ("i-flat","By when.","This century? Ever? Within decades of a general system existing?"),
+         ("i-branch","Counting what.","Including the chance such a system is never built, or assuming it is?")],
+  threefoot="Four outcomes, three deadlines, two conditionals. Twenty four sentences, all called ten percent.",
+  whyicon="i-bench", whykick="what to do with a number",
+  why="There is no resolution date and no feedback loop, so <span class=\"rose\">nobody has a track record</span> on this.",
+  whysub="Surveys of many researchers are more informative than any individual figure, and the spread in them is the most robust finding.",
+  flag="op",
+  file='<span class="rose">Someone&rsquo;s estimate</span>, always. That a person said it is a fact. That it is right is a belief.',
+  src="Taboo P(doom), LessWrong 2023;<br>Grace et al. survey of 2,778 researchers",
+  belle_hook="unimpressed", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"s-risk": dict(
+  cat="risk", term="s-risk",
+  kick="the corner of the field nobody covers",
+  hook="Some researchers study outcomes <span class=\"rose\">worse than extinction</span>.",
+  q="An s-risk refers to:",
+  opts=["A security risk","A supply chain risk",
+        "A risk of suffering on an astronomical scale",
+        "A stock market risk"],
+  ans="C", icon="i-loop",
+  reveal='<span class="rose">Suffering risk.</span> Outcomes involving suffering on an enormous scale.',
+  revsub="A small, openly speculative research area. Its founders describe it that way themselves.",
+  threekick="what is actually claimed",
+  three=[("i-doc","Not a forecast.","The originating paper calls the area speculative, maybe extremely speculative."),
+         ("i-two","Not a subclass.","Its authors argue s-risks are not simply a worse kind of extinction risk."),
+         ("i-one","Very small field.","The main research centre has roughly a dozen staff.")],
+  threefoot="Included here because it exists and is misrepresented in both directions.",
+  whyicon="i-doc", whykick="how to hold it",
+  why="This is the part of the field most easily turned into <span class=\"rose\">horror content</span>, and least supported by evidence.",
+  whysub="Worth knowing the term exists and what it actually claims. Not worth losing sleep over on current evidence.",
+  flag="arg",
+  file='An <span class="rose">argument</span>, and its own proponents say so in the founding paper.',
+  src="Althaus and Gloor, Reducing Risks of<br>Astronomical Suffering, CLR, 2016",
+  belle_hook="glum", belle_file="warm-neutral", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"job-loss": dict(
+  cat="risk", term="AI and jobs",
+  kick="the risk people actually feel",
+  hook="The measured effect of AI on jobs is <span class=\"rose\">smaller than the headlines</span>, so far.",
+  q="What does the best identified research find about retraining for AI exposed workers?",
+  opts=["Retraining does not work",
+        "Everyone can be retrained into AI roles",
+        "Only about 40 to 45 percent of occupations are AI retrainable",
+        "Retraining works best for workers over 50"],
+  ans="C", icon="i-drift",
+  reveal='Roughly <span class="rose">40 to 45 percent</span> of occupations are what researchers call AI retrainable.',
+  revsub="Real, positive, measured returns, with a stated ceiling. Both halves matter.",
+  threekick="what the evidence actually shows",
+  three=[("i-bench","Contested, not settled.","Credible economists disagree about the size of the effect so far."),
+         ("i-drift","Sideways beats upward.","Returns came from moving toward less exposed work, not from AI upskilling."),
+         ("i-stop","No evaluated policy.","No AI specific labour policy anywhere has been tested against a counterfactual.")],
+  threefoot="This is the risk with the most data and the least agreement.",
+  whyicon="i-two", whykick="why it belongs here",
+  why="Most writing treats job loss as either <span class=\"rose\">already catastrophic</span> or entirely overblown. The measurements support neither.",
+  whysub="Being honest about a contested number is harder than picking a side, and more useful if you are the one making decisions.",
+  flag="emp",
+  file='<span class="rose">Measured</span>, and genuinely contested. Where economists disagree, both readings belong here.',
+  src="NBER working paper w34174;<br>see also the AI Index labour chapter",
+  belle_hook="surprised-worried", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
 "existential-risk": dict(
   cat="risk", term="existential risk",
   kick="the most misread words in the subject",
@@ -787,7 +897,7 @@ SPECS = {
   outro="I take the words apart so the argument stops being noise."),
 
 "misuse-misalignment": dict(
-  cat="risk", term="misuse and misalignment",
+  cat="concepts", term="misuse and misalignment",
   kick="two words people use as one",
   hook="AI <span class=\"rose\">misalignment</span> needs no villain.",
   q="&ldquo;Misalignment&rdquo; means:",
@@ -814,7 +924,7 @@ SPECS = {
 
 # ============================================================ AI RISK
 "recursive-self-improvement": dict(
-  cat="risk", term="recursive self improvement",
+  cat="concepts", term="recursive self improvement",
   kick="the oldest idea in the field, from 1965",
   hook="AI that improves AI could be the <span class=\"rose\">last thing we invent</span>.",
   q="&ldquo;Recursive self improvement&rdquo; is:",
@@ -840,7 +950,7 @@ SPECS = {
   outro="I take the words apart so the argument stops being noise."),
 
 "intelligence": dict(
-  cat="components", term="intelligence",
+  cat="concepts", term="intelligence",
   kick="the word doing the most hidden work",
   hook="Nobody can define <span class=\"rose\">intelligence</span>, in AI or in us.",
   q="When someone says an AI is &ldquo;intelligent&rdquo;, they usually mean:",
@@ -883,6 +993,7 @@ TAGS = {
  "behavior":   "#AI #AIsafety #MachineLearning #AIliteracy #AIresearch",
  "components": "#AI #AIexplained #LearnAI #AIliteracy #MachineLearning",
  "risk":       "#AI #AIsafety #AIrisk #AIalignment #AIliteracy",
+ "concepts":   "#AI #AIconcepts #AIexplained #AIliteracy #AGI",
 }
 FLAGNAME = {"emp":"measured","op":"someone\u2019s estimate","arg":"argument","def":"definition"}
 
