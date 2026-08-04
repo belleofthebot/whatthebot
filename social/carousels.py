@@ -32,7 +32,7 @@ HEAD = """<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap">
 <style>
 :root{
-  --plum:#17121C; --rose:#DFA192; --mint:#9FE0CE; --ivory:#F5F1EC; --grey:#D5CFC9;
+  --plum:#17121C; --rose:#DFA192; --mint:#9FE0CE; --ivory:#F5F1EC; --grey:#B9B2AC;
   --sans:'Space Grotesk',sans-serif; --mono:'IBM Plex Mono',monospace;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -47,8 +47,8 @@ body{background:#0d0a10;font-family:var(--sans);display:flex;flex-wrap:wrap;gap:
         --edge:#C4826F;--ic-rose:#5E2F26;--ic-mint:#1F6B57;--ic-dim:#8A6257}
 .g-components{--bg:#F5F1EC;--fg:#3A343E;--acc:#AE5A47;--soft:#6E6474;--faint:#8B8090;
         --edge:#DCD2C6;--ic-rose:#AE5A47;--ic-mint:#2E9B7F;--ic-dim:#8B8090}
-.g-actors{--bg:#D5CFC9;--fg:#332F2E;--acc:#8E4B3C;--soft:#615C59;--faint:#7B7570;
-        --edge:#BCB5AE;--ic-rose:#8E4B3C;--ic-mint:#2E7F6A;--ic-dim:#7C7883}
+.g-actors{--bg:#B9B2AC;--fg:#2B2826;--acc:#7A3A2C;--soft:#514C48;--faint:#6A645F;
+        --edge:#9C948D;--ic-rose:#8E4B3C;--ic-mint:#2E7F6A;--ic-dim:#7C7883}
 /* slide four flips to break the rhythm */
 .flip.g-risk{--bg:#F5F1EC;--fg:#3A343E;--acc:#AE5A47;--soft:#6E6474;--faint:#8B8090;
         --edge:#DCD2C6;--ic-rose:#AE5A47;--ic-mint:#2E9B7F;--ic-dim:#8B8090}
@@ -68,24 +68,24 @@ body{background:#0d0a10;font-family:var(--sans);display:flex;flex-wrap:wrap;gap:
           text-transform:uppercase;white-space:nowrap}
 .cat .rule{height:4px;background:var(--acc);border-radius:2px;flex:1;opacity:.5}
 .kick{font-family:var(--mono);font-size:28px;color:var(--soft);margin-bottom:24px;display:block}
-h1{font-size:90px;line-height:1.03;font-weight:500;letter-spacing:-.022em;max-width:660px}
-h1.sm{font-size:70px}
+h1{font-size:74px;line-height:1.06;font-weight:500;letter-spacing:-.022em;max-width:660px}
+h1.sm{font-size:62px}
 h2{font-size:54px;line-height:1.12;font-weight:500;letter-spacing:-.015em}
 h2.sm{font-size:48px}
 p{font-size:36px;line-height:1.38;color:var(--soft);max-width:24ch}
 .rose{color:var(--acc)}
 .mid{flex:1;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2}
-.belle{position:absolute;bottom:0;right:0;height:790px;z-index:5}
-.belle.sm{height:600px}
+.belle{position:absolute;bottom:0;right:0;height:930px;z-index:5}
+.belle.sm{height:640px}
 /* where she stands. text moves out of her way. */
 .p-left .belle{right:auto;left:0}
-.p-left .mid{margin-left:40%}
+.p-left .mid{margin-left:44%}
 .p-left h1{max-width:560px}
-.p-centre .belle{right:auto;left:50%;transform:translateX(-50%);height:660px}
+.p-centre .belle{right:auto;left:50%;transform:translateX(-50%);height:820px}
 .p-centre .mid{justify-content:flex-start}
 .p-centre h1,.p-centre h2{max-width:800px}
-.p-far .belle{height:920px;right:0}
-.p-far .mid{max-width:58%}
+.p-far .belle{height:1030px;right:0}
+.p-far .mid{max-width:54%}
 .ico{display:inline-flex;align-items:center;gap:20px}
 .ico .tick{width:22px;height:3px;background:var(--ic-rose);border-radius:2px;flex:none}
 .ico .box{width:104px;height:104px;border:2px solid var(--edge);border-radius:22px;flex:none;
@@ -111,7 +111,7 @@ p{font-size:36px;line-height:1.38;color:var(--soft);max-width:24ch}
 .follow{border:2px solid var(--acc);border-radius:22px;padding:32px 40px;display:inline-flex;
         flex-direction:column;gap:10px;align-self:flex-start}
 .follow .l{font-family:var(--mono);font-size:28px;color:var(--soft)}
-.who{font-size:66px;line-height:1.05;font-weight:500;letter-spacing:-.02em}
+.who{font-size:72px;line-height:1.05;font-weight:500;letter-spacing:-.02em}
 .role{font-family:var(--mono);font-size:26px;color:var(--acc);margin-top:14px;line-height:1.5;max-width:34ch}
 </style></head><body>
 """
@@ -275,8 +275,7 @@ def build(key, spec):
     cat = spec["cat"]
     pos = spec.get("pos", "")
     lead_belle = bool(spec.get("belle_hook")) and spec.get("lead") != "icon"
-    band = (f'<div class="cat"><span class="lbl">{CATS[cat]}</span>'
-            f'<span class="rule"></span></div>')
+    band = ""
     if spec.get("person"):
         head = (band + f'<div class="who">{spec["person"]}</div>'
                 f'<div class="role">{spec["role"]}</div>'
@@ -347,7 +346,7 @@ SPECS = {
 "who-makes-the-chips": dict(
   cat="actors", term="the chip chain",
   kick="the company behind the company",
-  hook="Nvidia does not <span class=\"strike\">make its own chips</span>.",
+  hook="<span class=\"rose\">Nvidia</span> does not make its own chips.",
   q="Who physically manufactures the chips Nvidia designs?",
   opts=["Nvidia, in its own factories",
         "Outside foundries, chiefly TSMC in Taiwan",
@@ -373,7 +372,7 @@ SPECS = {
 "who-owns-it": dict(
   cat="actors", term="who owns the labs",
   kick="follow the money, if you can",
-  hook="Two of them will not <span class=\"rose\">tell you</span> what they own.",
+  hook="Nobody will say who owns <span class=\"rose\">Anthropic</span>.",
   q="Amazon and Google have each put billions into Anthropic. Their ownership stakes are:",
   opts=["Published in full",
         "Never disclosed",
@@ -399,7 +398,7 @@ SPECS = {
 "who-gives-a-number": dict(
   cat="actors", term="who will give you a number",
   kick="everyone quotes it, almost nobody offers it",
-  hook="Most people building this <span class=\"rose\">refuse to say</span>.",
+  hook="Almost nobody who builds AI will give you a <span class=\"rose\">p(doom)</span>.",
   q="Which of these lab leaders has given a public probability of catastrophe?",
   opts=["All of them", "Dario Amodei", "Demis Hassabis", "Yann LeCun"],
   ans="B", icon="i-blank",
@@ -448,7 +447,7 @@ SPECS = {
   cat="actors", term="Yann LeCun", person="Yann LeCun",
   role="Turing Award 2018 &middot; the most prominent sceptic of existential risk",
   kick="the people actually running this argument",
-  hook="Same prize, same year, <span class=\"rose\">opposite conclusion</span>.",
+  hook="Same prize as Bengio, same year, <span class=\"rose\">opposite conclusion</span>.",
   q="What probability of catastrophe has LeCun given?",
   opts=["Under one percent", "He has not given one",
         "Exactly zero", "Five percent"],
@@ -473,7 +472,7 @@ SPECS = {
   cat="actors", term="Bender and Hanna", person="Bender &amp; Hanna",
   role="linguist and sociologist &middot; the case for the harm happening now",
   kick="the people actually running this argument",
-  hook="Their objection is not <span class=\"strike\">that it is unlikely</span>.",
+  hook="Their objection is not that catastrophe is <span class=\"rose\">unlikely</span>.",
   q="Their central argument against focusing on existential risk is that it:",
   opts=["Is scientifically impossible",
         "Diverts attention from harms already happening",
@@ -500,7 +499,7 @@ SPECS = {
 "hallucination": dict(
   cat="behavior", term="hallucination",
   kick="a word worth being precise about",
-  hook='It is not <span class="strike">seeing things</span>. It has nothing to see.',
+  hook='An AI <span class="rose">hallucination</span> is not the model seeing things.',
   q="A hallucination is:",
   opts=["A glitch or a bug in the code",
         "Confidently stated output that is not true",
@@ -526,7 +525,7 @@ SPECS = {
 "context-window": dict(
   cat="components", term="context window",
   kick="the most common wrong assumption",
-  hook="It does not <span class=\"strike\">remember you</span>.",
+  hook="A <span class=\"rose\">context window</span> is not memory.",
   q="A model&rsquo;s context window is:",
   opts=["Its memory of your past conversations",
         "How much text it can hold in front of it at once",
@@ -552,7 +551,7 @@ SPECS = {
 "rlhf": dict(
   cat="components", term="RLHF",
   kick="how it learned to behave",
-  hook="It was not taught <span class=\"strike\">human values</span>.",
+  hook="<span class=\"rose\">RLHF</span> did not teach it human values.",
   q="Reinforcement learning from human feedback trains the model against:",
   opts=["Human values",
         "A learned scorer built from human comparisons",
@@ -579,7 +578,7 @@ SPECS = {
 "open-weights": dict(
   cat="components", term="open weights",
   kick="the release that cannot be undone",
-  hook="Open weights is not <span class=\"strike\">open source</span>.",
+  hook="<span class=\"rose\">Open weights</span> is not open source.",
   q="&ldquo;Open weights&rdquo; means:",
   opts=["The training data and code are public",
         "The trained weights can be downloaded and run by anyone",
@@ -605,7 +604,7 @@ SPECS = {
 "compute": dict(
   cat="components", term="compute",
   kick="the unit that decides who is allowed",
-  hook="The law now counts in <span class=\"rose\">arithmetic</span>.",
+  hook="<span class=\"rose\">Compute</span> is the unit the law counts in.",
   q="&ldquo;Compute&rdquo; in AI regulation is measured in:",
   opts=["Dollars spent","Floating point operations",
         "Number of employees","Gigabytes of training data"],
@@ -630,7 +629,7 @@ SPECS = {
 "specification-gaming": dict(
   cat="behavior", term="specification gaming",
   kick="when doing what you asked is the problem",
-  hook="It did exactly what you <span class=\"rose\">said</span>.",
+  hook="<span class=\"rose\">Specification gaming</span> is when it does exactly what you said.",
   q="Specification gaming is when a system:",
   opts=["Refuses to answer a question",
         "Satisfies the objective it was given in a way nobody intended",
@@ -652,10 +651,36 @@ SPECS = {
   belle_hook="smirking", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
   outro="I take the words apart so the argument stops being noise."),
 
+"existential-risk": dict(
+  cat="risk", term="existential risk",
+  kick="the most misread words in the subject",
+  hook="With <span class=\"rose\">existential risk</span>, extinction is not the worst one.",
+  q="&ldquo;Existential risk&rdquo; means:",
+  opts=["Everyone dies",
+        "The permanent destruction of humanity&rsquo;s long term potential",
+        "Any very large disaster",
+        "A risk to a company&rsquo;s existence"],
+  ans="B", icon="i-branch",
+  reveal='The permanent destruction of humanity&rsquo;s <span class="rose">long term potential</span>.',
+  revsub="Not the ending. The losing of every other ending.",
+  threekick="three ways it happens",
+  three=[("i-stop","Extinction.","Nobody left. This is the one everybody pictures."),
+         ("i-loop","Permanent dystopia.","Everyone alive. No way back. Forever is doing the work in that sentence."),
+         ("i-flat","Permanent stagnation.","Nothing ends. Nothing improves. Ever.")],
+  threefoot="A serious literature argues the second is worse than the first.",
+  whyicon="i-two", whykick="why the mix up costs something",
+  why="People picture extinction, decide it sounds like science fiction, and dismiss <span class=\"rose\">the whole category</span>.",
+  whysub="The claim being made is broader, and more plausible, than the one being dismissed.",
+  flag="def",
+  file='A <span class="rose">definition</span>, and the one worth memorising. Everything else in the argument sits on top of it.',
+  src="Bostrom, Existential Risk Prevention as Global<br>Priority, Global Policy 4(1), 2013",
+  belle_hook="worry-about-future", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
 "misuse-misalignment": dict(
   cat="risk", term="misuse and misalignment",
   kick="two words people use as one",
-  hook="Who is the <span class=\"rose\">problem</span> here?",
+  hook="<span class=\"rose\">Misalignment</span> means nobody has to want it to go wrong.",
   q="&ldquo;Misalignment&rdquo; means:",
   opts=["Someone using a system to cause harm on purpose",
         "A system pursuing something other than what was intended",
@@ -663,15 +688,15 @@ SPECS = {
         "A system that refuses instructions"],
   ans="B", icon="i-drift",
   reveal='The system pursues <span class="rose">something other</span> than what was intended.',
-  revsub="No villain required. That is the entire difference from misuse.",
+  revsub="No villain. No malfunction. The system works exactly as built and the outcome is still bad.",
   threekick="three ways harm arrives",
   three=[("i-hand","Misuse.","A person deliberately uses a capable system to do damage."),
          ("i-drift","Misalignment.","The system pursues something other than what was meant."),
          ("i-loop","Structural.","Nobody misused it, nothing malfunctioned, and it still went badly.")],
   threefoot="The third is the one almost no coverage has a word for.",
   whyicon="i-two", whykick="why the mix up wrecks the argument",
-  why="Two people say &ldquo;AI risk&rdquo;. One means a bad actor. One means <span class=\"rose\">no actor at all</span>.",
-  whysub="They will talk past each other indefinitely, and both will think the other is being naive.",
+  why="Every plan that starts with &ldquo;we just stop bad people using it&rdquo; is aimed at <span class=\"rose\">one third</span> of the problem.",
+  whysub="The other two thirds need something other than a rule about who is allowed to press the button.",
   flag="def",
   file='<span class="rose">Definitions</span>. The categories are standard. Which one dominates is argued.',
   src="Zwetsloot and Dafoe, Accidents, Misuse<br>and Structure, Lawfare, 11 February 2019",
@@ -681,8 +706,8 @@ SPECS = {
 # ============================================================ AI RISK
 "recursive-self-improvement": dict(
   cat="risk", term="recursive self improvement",
-  kick="the argument at the centre of the worry",
-  hook="It has not happened. That is not the same as <span class=\"rose\">it cannot</span>.",
+  kick="the oldest idea in the field, from 1965",
+  hook="<span class=\"rose\">Recursive self improvement</span> is the last invention we would need to make.",
   q="&ldquo;Recursive self improvement&rdquo; is:",
   opts=["A measured property of current models",
         "A hypothesis about a compounding loop, not yet demonstrated",
@@ -690,25 +715,25 @@ SPECS = {
         "A type of chip"],
   ans="B", icon="i-compound",
   reveal='A <span class="rose">hypothesis</span>. A system good at AI research improves itself, and each version is better at improving.',
-  revsub="Serious researchers hold it seriously. It is still a chain of reasoning, and worth understanding as one.",
+  revsub="Good wrote that down in 1965. Sixty years later it is still the argument everything else hangs on.",
   threekick="what would have to be true",
   three=[("i-compound","The loop must close.","The system has to actually improve its own successor."),
          ("i-branch","Gains must compound.","Each round has to yield more than the last, not less."),
          ("i-flat","Nothing must bottleneck.","Not compute, not data, not physics, not money.")],
-  threefoot="Each step is argued in the literature, in both directions, by people who have thought hard about it.",
-  whyicon="i-doc", whykick="why the label is not a dismissal",
-  why="Calling it an argument is not calling it <span class=\"rose\">wrong</span>. It is saying what kind of thing it is.",
-  whysub="Reasoning carefully about what has not happened yet is how anything gets prevented. It just has to be labelled honestly.",
+  threefoot="If all three hold, the gap between us and it closes faster than anyone can respond to.",
+  whyicon="i-doc", whykick="why it is worth your attention",
+  why="This is the one where being right too late is <span class=\"rose\">indistinguishable from being wrong</span>.",
+  whysub="Which is why people who disagree about almost everything else still argue about this one carefully.",
   flag="arg",
-  file='An <span class="rose">argument</span>. The right tool for something that has not happened yet.',
-  src="Carlsmith, Is Power-Seeking AI an Existential Risk?, 2022;<br>Thorstad, Against the singularity hypothesis, 2024",
-  belle_hook="warm-curious", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  file='An <span class="rose">argument</span>. No such loop has been observed, which is exactly why it is worth arguing about now.',
+  src="I. J. Good, Speculations Concerning the First<br>Ultraintelligent Machine, 1965; Carlsmith, 2022",
+  belle_hook="worry-about-future", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
   outro="I take the words apart so the argument stops being noise."),
 
 "intelligence": dict(
   cat="components", term="intelligence",
   kick="the word doing the most hidden work",
-  hook="Nobody can define it. For <span class=\"rose\">people</span> either.",
+  hook="Nobody can define <span class=\"rose\">intelligence</span>. Not for people either.",
   q="When someone says an AI is &ldquo;intelligent&rdquo;, they usually mean:",
   opts=["It is conscious",
         "It scores well on a set of tests",
