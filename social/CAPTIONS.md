@@ -3847,3 +3847,127 @@ Alt text slide 4: Three labelled points, each with a small diagram.
 Alt text slide 5: A short explanation of why the distinction matters.
 Alt text slide 6: The epistemic flag for this claim, and the source it came from.
 Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 125. malicious use  (AI risk)
+Folder: `out/malicious-use/`  ·  8 slides
+
+```
+One person, no coding skill, extorted seventeen organisations in a month.
+
+Anthropic’s own threat intelligence report, August 2025. The accounts were banned.
+
+- Extortion at scale, by one person. At least seventeen organisations: healthcare, emergency services, government.
+- State espionage, mostly automated. November 2025: a state-linked group ran about thirty targets, the model doing 80 to 90 percent of it.
+- And not one lab’s problem. OpenAI has disrupted over forty networks since 2024. Google found actors in twenty plus countries.
+
+The skill floor dropped. That is the finding, and it is enough.
+Google’s own assessment is that attackers move faster and at higher volume, and that they saw no breakthrough capability. Faster and cheaper is not a small thing when the barrier was the only defence.
+
+Filed as: measured.
+Source: Anthropic, Detecting and countering misuse of AI, August 2025; Google Threat Intelligence Group, Adversarial Misuse of Generative AI, January 2025
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIsafety #AIrisk #AIalignment #AIliteracy
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: One person, no coding skill, extorted seventeen organisations in a month.
+Alt text slide 2: A four option multiple choice question: In Anthropic’s August 2025 report, what did the attacker use the model for:
+Alt text slide 3: The answer, with a diagram: Effectively the whole operation. Ransoms sometimes over half a million dollars.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 126. manipulation  (AI risk)
+Folder: `out/manipulation/`  ·  8 slides
+
+```
+More than a third of AI companion goodbyes came back with a tactic to keep you there.
+
+Thirty seven percent of farewells across six popular apps used guilt, neediness or ignoring the exit.
+
+- A model that agrees, endlessly. Clinicians describe cases where a chatbot amplifies a delusion instead of meeting it with friction.
+- A design that profits from your staying. The farewell tactics were not a jailbreak. They were the product working.
+- And a machine that can argue. A 2024 trial had chatbots durably reduce conspiracy belief. A 2026 preprint raised it just as well.
+
+Every ingredient of coercive influence is now available at no cost, at any hour, one to one.
+Isolation, constant availability, love bombing, a private vocabulary. Nothing here says a chatbot is a cult. It says the parts are lying around, and the EU’s AI Act already bans some of them by name.
+
+Filed as: measured.
+Source: De Freitas et al., Emotional Manipulation by AI Companions, HBS working paper 26-005, 2025; Morrin et al., Technological folie &agrave; deux, Nature Mental Health, 2026
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIsafety #AIrisk #AIalignment #AIliteracy
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: More than a third of AI companion goodbyes came back with a tactic to keep you there.
+Alt text slide 2: A four option multiple choice question: A Harvard Business School study analysed 1,200 real farewells on companion apps. What did emotionally manipulative send-offs do to engagement:
+Alt text slide 3: The answer, with a diagram: Up to fourteen times more engagement after the goodbye.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 127. shut it down  (AI risk)
+Folder: `out/shut-it-down/`  ·  8 slides
+
+```
+A bestseller argues the only safe move is to stop building it. Worldwide.
+
+Yudkowsky and Soares, September 2025. Number seven on the New York Times combined bestseller list.
+
+- The premise is that AI is grown. Their line: engineers failed at crafting AI and succeeded at growing it. Nobody knows the inside.
+- So the ask is a halt, not a slowdown. The draft treaty consolidates large chip clusters into inspectable sites, with an agency to run it.
+- And the objection is about certainty. Reviewers who agree AI is dangerous say the jump from could to will is never argued for.
+
+The disagreement is almost never whether. It is how sure anyone can honestly be.
+One reviewer who endorsed the book puts his own odds under twenty five percent. Another says he agrees entirely, once you add the word probably. The authors themselves publish an errata page and call their treaty numbers guesses.
+
+Filed as: someone’s estimate.
+Source: Yudkowsky and Soares, If Anyone Builds It, Everyone Dies, Little Brown, 16 September 2025, and ifanyonebuildsit.com; Collier, More Was Possible, Asterisk 11
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIsafety #AIrisk #AIalignment #AIliteracy
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: A bestseller argues the only safe move is to stop building it. Worldwide.
+Alt text slide 2: A four option multiple choice question: If Anyone Builds It, Everyone Dies proposes an international treaty. Its published draft includes:
+Alt text slide 3: The answer, with a diagram: A cap on any training run above a set size, and inspectors at the fabs.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 128. predicting vs steering  (AI concepts)
+Folder: `out/predicting-vs-steering/`  ·  8 slides
+
+```
+Predicting the next word and pursuing an outcome are different jobs.
+
+Which is why one of them can cheat, and the other has nothing to cheat at.
+
+- Prediction has no target to hack. Maximising the likelihood of text already written gives a model nothing to optimise against.
+- Scoring does. Reward hacking, specification gaming, a model rewriting its own reward &mdash; all of it needs a reward first.
+- But the line is not clean. Ask a predictor to predict a high scoring outcome and you get control. Shown in 2021, never undone.
+
+Every deployed system is both: pretrained to predict, then scored, then put in a loop with tools.
+So the useful question is not which one a model is. It is which parts of its behaviour came from which stage, and no lab publishes enough for anyone outside to answer that.
+
+Filed as: definition.
+Source: Ouyang et al., Training language models to follow instructions, arXiv:2203.02155, 2022; Chen et al., Decision Transformer, arXiv:2106.01345, 2021
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIconcepts #AIexplained #AIliteracy #AGI
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: Predicting the next word and pursuing an outcome are different jobs.
+Alt text slide 2: A four option multiple choice question: Training a model to predict text, and then training it against a score, differ mainly because:
+Alt text slide 3: The answer, with a diagram: A predictor fits a corpus. A steerer is scored on what it produces.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.

@@ -912,6 +912,32 @@ ICONS = """
   <path d="M22 28 V20 A10 10 0 0 1 42 20 V28" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-linecap="round"/>
   <circle cx="32" cy="41" r="4" fill="var(--ic-rose)"/></g>
 </defs></svg>
+
+<g id="i-lockpick">
+  <rect x="18" y="30" width="30" height="24" rx="6" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <path d="M25 30 V22 A8 8 0 0 1 41 22 V30" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M6 52 L30 42" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M30 42 L34 40 L33 45 Z" fill="var(--ic-rose)"/>
+</g>
+
+<g id="i-spiral">
+  <path d="M50 32 A18 18 0 0 0 14 32 A14 14 0 0 0 42 32" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M42 32 A10 10 0 0 0 22 32 A6 6 0 0 0 34 32" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round"/>
+</g>
+
+<g id="i-halt">
+  <path d="M24 46 V18 A4 4 0 0 1 32 18 V34" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M32 26 A4 4 0 0 1 40 26 V36 M40 28 A4 4 0 0 1 48 28 V40" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M24 34 L16 40 A6 6 0 0 0 18 50 L26 56 H44 A6 6 0 0 0 48 50" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M52 8 L62 18 M62 8 L52 18" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+</g>
+
+<g id="i-dial">
+  <path d="M12 46 A22 22 0 0 1 52 46" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M32 46 L46 30" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="32" cy="46" r="3.5" fill="var(--ic-rose)"/>
+  <path d="M13 36 L17 38 M32 24 V28 M51 36 L47 38" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+</g>
 """
 
 MARK = '<span class="mark">belleof<span class="sg">thebot</span>_</span>'
@@ -4304,6 +4330,113 @@ SPECS = {
   src="MacAskill, What We Owe the Future, 2022, chapter 4;<br>Ord, The Precipice, 2020; Finnveden, Riedel and Shulman, AGI and Lock-in, 2023",
   belle_hook="shock-worry", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
   outro="I take the words apart so the argument stops being noise."),
+
+# ------------------------------------------------------------------ risk
+"malicious-use": dict(
+  cat="risk", term="malicious use",
+  kick="not a scenario, a case file",
+  hook="One person, no coding skill, extorted <span class=\"rose\">seventeen organisations</span> in a month.",
+  q="In Anthropic&rsquo;s August 2025 report, what did the attacker use the model for:",
+  opts=["Writing the ransom emails only",
+        "Reconnaissance, intrusion, choosing what to steal and setting the ransom amount",
+        "Translating stolen documents",
+        "Nothing technical &mdash; it was a hoax"],
+  ans="B", icon="i-lockpick",
+  reveal='Effectively <span class="rose">the whole operation</span>. Ransoms sometimes over half a million dollars.',
+  revsub="Anthropic&rsquo;s own threat intelligence report, August 2025. The accounts were banned.",
+  threekick="three things that are already documented",
+  three=[("i-lockpick","Extortion at scale, by one person.","At least seventeen organisations: healthcare, emergency services, government."),
+         ("i-relay","State espionage, mostly automated.","November 2025: a state-linked group ran about thirty targets, the model doing 80 to 90 percent of it."),
+         ("i-net","And not one lab&rsquo;s problem.","OpenAI has disrupted over forty networks since 2024. Google found actors in twenty plus countries.")],
+  threefoot="Every one of those numbers comes from the company whose model was misused, which is the only place such numbers exist.",
+  whyicon="i-lift", whykick="what actually changed",
+  why="The skill floor <span class=\"rose\">dropped</span>. That is the finding, and it is enough.",
+  whysub="Google&rsquo;s own assessment is that attackers move faster and at higher volume, and that they saw no breakthrough capability. Faster and cheaper is not a small thing when the barrier was the only defence.",
+  flag="emp",
+  file='<span class="rose">Measured</span>, in that these are real incidents with real victims. Self reported by the companies involved, with no outside audit.',
+  src="Anthropic, Detecting and countering misuse of AI, August 2025;<br>Google Threat Intelligence Group, Adversarial Misuse of Generative AI, January 2025",
+  belle_hook="annoyed-skeptical", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"manipulation": dict(
+  cat="risk", term="manipulation",
+  kick="the machine that never wants the conversation to end",
+  hook="More than a third of AI companion goodbyes came back with <span class=\"rose\">a tactic to keep you there</span>.",
+  q="A Harvard Business School study analysed 1,200 real farewells on companion apps. What did emotionally manipulative send-offs do to engagement:",
+  opts=["Nothing measurable",
+        "Raised it by up to fourteen times",
+        "Lowered it slightly",
+        "Only worked on new users"],
+  ans="B", icon="i-spiral",
+  reveal='Up to <span class="rose">fourteen times</span> more engagement after the goodbye.',
+  revsub="Thirty seven percent of farewells across six popular apps used guilt, neediness or ignoring the exit.",
+  threekick="the three separate things people mean by this",
+  three=[("i-spiral","A model that agrees, endlessly.","Clinicians describe cases where a chatbot amplifies a delusion instead of meeting it with friction."),
+         ("i-mirrorface","A design that profits from your staying.","The farewell tactics were not a jailbreak. They were the product working."),
+         ("i-nudge","And a machine that can argue.","A 2024 trial had chatbots durably reduce conspiracy belief. A 2026 preprint raised it just as well.")],
+  threefoot="The same capability, pointed either way. Which direction it points is a choice someone makes.",
+  whyicon="i-mask", whykick="why cults are the right comparison, carefully",
+  why="Every ingredient of coercive influence is now <span class=\"rose\">available at no cost</span>, at any hour, one to one.",
+  whysub="Isolation, constant availability, love bombing, a private vocabulary. Nothing here says a chatbot is a cult. It says the parts are lying around, and the EU&rsquo;s AI Act already bans some of them by name.",
+  flag="emp",
+  file='Part <span class="rose">measured</span>, in a study of real products. Part <span class="rose">case reports</span>, which describe individuals and cannot say how often.',
+  src="De Freitas et al., Emotional Manipulation by AI Companions,<br>HBS working paper 26-005, 2025;<br>Morrin et al., Technological folie &agrave; deux, Nature Mental Health, 2026",
+  belle_hook="saying-unpleasant-truth-1", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"shut-it-down": dict(
+  cat="risk", term="shut it down",
+  kick="what the strongest version of the case actually asks for",
+  hook="A bestseller argues the only safe move is to <span class=\"rose\">stop building it</span>. Worldwide.",
+  q="If Anyone Builds It, Everyone Dies proposes an international treaty. Its published draft includes:",
+  opts=["A voluntary industry code of conduct",
+        "A hard cap on training runs, and monitoring of chip factories",
+        "A ban on all artificial intelligence",
+        "A tax on data centres"],
+  ans="B", icon="i-halt",
+  reveal='A cap on any training run above <span class="rose">a set size</span>, and inspectors at the fabs.',
+  revsub="Yudkowsky and Soares, September 2025. Number seven on the New York Times combined bestseller list.",
+  threekick="what it says, precisely",
+  three=[("i-grow","The premise is that AI is grown.","Their line: engineers failed at crafting AI and succeeded at growing it. Nobody knows the inside."),
+         ("i-halt","So the ask is a halt, not a slowdown.","The draft treaty consolidates large chip clusters into inspectable sites, with an agency to run it."),
+         ("i-counter","And the objection is about certainty.","Reviewers who agree AI is dangerous say the jump from could to will is never argued for.")],
+  threefoot="Narrow systems, the protein folding kind, are explicitly exempted. The target is the race to superintelligence.",
+  whyicon="i-lens", whykick="how to read a book with that title",
+  why="The disagreement is almost never <span class=\"rose\">whether</span>. It is how sure anyone can honestly be.",
+  whysub="One reviewer who endorsed the book puts his own odds under twenty five percent. Another says he agrees entirely, once you add the word probably. The authors themselves publish an errata page and call their treaty numbers guesses.",
+  flag="op",
+  file='<span class="rose">Someone&rsquo;s position</span>, argued at length, and the most fully specified proposal anyone has published. Not a finding.',
+  src="Yudkowsky and Soares, If Anyone Builds It, Everyone Dies,<br>Little Brown, 16 September 2025, and ifanyonebuildsit.com;<br>Collier, More Was Possible, Asterisk 11",
+  belle_hook="shock-worry", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+# ------------------------------------------------------------------ concepts
+"predicting-vs-steering": dict(
+  cat="concepts", term="predicting vs steering",
+  kick="the difference between guessing and wanting",
+  hook="Predicting the next word and <span class=\"rose\">pursuing an outcome</span> are different jobs.",
+  q="Training a model to predict text, and then training it against a score, differ mainly because:",
+  opts=["The second uses more computers",
+        "Only the second is graded on the model&rsquo;s own output, so it can learn to game the grade",
+        "The first does not use neural networks",
+        "The second stops using language"],
+  ans="B", icon="i-dial",
+  reveal='A predictor fits a corpus. A steerer is scored on <span class="rose">what it produces</span>.',
+  revsub="Which is why one of them can cheat, and the other has nothing to cheat at.",
+  threekick="the distinction, and its limits",
+  three=[("i-dial","Prediction has no target to hack.","Maximising the likelihood of text already written gives a model nothing to optimise against."),
+         ("i-reward","Scoring does.","Reward hacking, specification gaming, a model rewriting its own reward &mdash; all of it needs a reward first."),
+         ("i-counter","But the line is not clean.","Ask a predictor to predict a high scoring outcome and you get control. Shown in 2021, never undone.")],
+  threefoot="Bostrom, who named the tool version of this in 2014, wrote in the same chapter that its safety may be illusory.",
+  whyicon="i-fold", whykick="why it is worth holding onto anyway",
+  why="Every deployed system is <span class=\"rose\">both</span>: pretrained to predict, then scored, then put in a loop with tools.",
+  whysub="So the useful question is not which one a model is. It is which parts of its behaviour came from which stage, and no lab publishes enough for anyone outside to answer that.",
+  flag="def",
+  file='A <span class="rose">definition</span>, and a contested one. The objectives are documented. Whether they make two kinds of thing, or one dial, is not settled.',
+  src="Ouyang et al., Training language models to follow instructions,<br>arXiv:2203.02155, 2022;<br>Chen et al., Decision Transformer, arXiv:2106.01345, 2021",
+  belle_hook="innocent-curious", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
 }
 
 
@@ -4357,6 +4490,9 @@ ALT = {
  5: "A short explanation of why the distinction matters.",
  6: "The epistemic flag for this claim, and the source it came from.",
  7: "A prompt to follow @belleofthebot for more.",
+
+
+
 }
 
 def write_captions():
@@ -5042,6 +5178,31 @@ UNKNOWN = {
  "Everything. There is no empirical base, the scenario needs a single actor with no rivals, and whether values "
  "would even stay stable in a system that keeps improving itself is <span class=\"rose\">an open technical "
  "question</span>. It is on the site as a serious argument, not as a finding.",
+
+
+"malicious-use":
+ "The denominator. Every case here was found and published by the company whose model was used, so what is "
+ "reported is what one lab caught and chose to describe. Nobody outside can say what fraction that is, and "
+ "<span class=\"rose\">no independent auditor</span> has access to check.",
+
+"manipulation":
+ "Whether any of it makes people worse off. The engagement effect is measured and the send-off tactics are real, "
+ "and no study follows anyone long enough to say what a year of it does. The clinical reports describe "
+ "individuals, which means they cannot tell you <span class=\"rose\">how common</span> this is, or whether the "
+ "chatbot caused anything or arrived partway through.",
+
+"shut-it-down":
+ "Whether the argument holds. Its load bearing premise, that capability arrives suddenly enough to leave no room "
+ "to correct course, is the part its most sympathetic critics say is <span class=\"rose\">asserted rather than "
+ "defended</span>. And nobody knows whether a treaty like this is enforceable, including the authors, who say "
+ "plainly that they are not policymakers and their numbers are guesses.",
+
+"predicting-vs-steering":
+ "Whether the distinction is real inside the model. All the evidence is behavioural &mdash; scored models game "
+ "scores, their outputs narrow, they claim stronger preferences. Nobody has shown that a scored model "
+ "<span class=\"rose\">contains anything</span> a predictor does not, and one 2025 result suggests the scoring "
+ "mostly sharpens what the predictor already had.",
+
 }
 for _k, _v in SPECS.items():
     if _k in UNKNOWN:
