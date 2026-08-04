@@ -848,6 +848,80 @@ POS = {'who-makes-the-chips': ('p-left', '', 'p-left'), 'who-owns-it': ('', 'p-l
 EXPR = {'who-makes-the-chips': 'noticed-something', 'who-owns-it': 'annoyed-skeptical', 'who-gives-a-number': 'hands-out-cheeky', 'bengio': 'warm-curious', 'lecun': 'unimpressed', 'bender-hanna': 'hands-hips-pedantic', 'hallucination': 'startled', 'specification-gaming': 'smirking', 'context-window': 'innocent-curious', 'rlhf': 'dead-pan-1', 'open-weights': 'yikes', 'compute': 'bright-neutral', 'intelligence': 'grumpy-eyes-closed', 'misuse-misalignment': 'surprised-worried', 'recursive-self-improvement': 'worry-about-future', 'existential-risk': 'shock-worry', 'blackmail': 'shocked', 'evaluation-awareness': 'sly-one'}
 ICON_LEAD = {'rlhf', 'open-weights', 'compute'}
 
+# ---------------------------------------------------------------- captions
+def strip(t):
+    t = t.replace("<br>", " ")
+    return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", t)).replace("&rsquo;", "\u2019") \
+        .replace("&ldquo;", "\u201c").replace("&rdquo;", "\u201d").replace("&middot;", "\u00b7") \
+        .replace("&amp;", "&").replace("<br>", " ").strip()
+
+TAGS = {
+ "actors":     "#AI #AIindustry #TechPolicy #AIliteracy #Nvidia #AIcompanies",
+ "behavior":   "#AI #AIsafety #MachineLearning #AIliteracy #AIresearch",
+ "components": "#AI #AIexplained #LearnAI #AIliteracy #MachineLearning",
+ "risk":       "#AI #AIsafety #AIrisk #AIalignment #AIliteracy",
+}
+FLAGNAME = {"emp":"measured","op":"someone\u2019s estimate","arg":"argument","def":"definition"}
+
+def caption(key, spec):
+    L = []
+    L.append(strip(spec["hook"]))
+    L.append("")
+    L.append(strip(spec["revsub"]))
+    L.append("")
+    for _i, t, b in spec["three"]:
+        L.append(f"\u2014 {strip(t)} {strip(b)}")
+    L.append("")
+    L.append(strip(spec["why"]))
+    L.append(strip(spec["whysub"]))
+    L.append("")
+    L.append(f"Filed as: {FLAGNAME[spec['flag']]}.")
+    L.append(f"Source: {strip(spec['src'])}")
+    L.append("")
+    L.append("I mark every claim as measured, someone\u2019s estimate, argument or definition, "
+             "so you can tell which is which. More at @belleofthebot")
+    L.append("")
+    L.append(TAGS[spec["cat"]])
+    return "\n".join(L)
+
+ALT = {
+ 1: "Belle, a small robot character, beside the headline: ",
+ 2: "A four option multiple choice question: ",
+ 3: "The answer, with a diagram: ",
+ 4: "Three labelled points, each with a small diagram.",
+ 5: "A short explanation of why the distinction matters.",
+ 6: "The epistemic flag for this claim, and the source it came from.",
+ 7: "A prompt to follow @belleofthebot for more.",
+}
+
+def write_captions():
+    out = ["# Captions and posting notes", "",
+           "Nineteen carousels. Slide files are in `out/<name>/s1.png` through `s7.png`,",
+           "which upload in order. Instagram native scheduling takes 25 posts a day,",
+           "75 days ahead, carousels included. Professional account required.", ""]
+    order = ["context-window", "who-makes-the-chips", "hallucination", "bengio",
+             "existential-risk", "red-teaming", "open-weights", "misuse-misalignment",
+             "who-owns-it", "specification-gaming", "compute", "lecun",
+             "blackmail", "intelligence", "rlhf", "who-gives-a-number",
+             "evaluation-awareness", "recursive-self-improvement", "bender-hanna"]
+    for n, k in enumerate(order, 1):
+        sp = SPECS[k]
+        out.append(f"## {n}. {sp['term']}  ({CATS[sp['cat']]})")
+        out.append(f"Folder: `out/{k}/`  \u00b7  7 slides")
+        out.append("")
+        out.append("```")
+        out.append(caption(k, sp))
+        out.append("```")
+        out.append("")
+        out.append(f"Alt text slide 1: {ALT[1]}{strip(sp['hook'])}")
+        out.append(f"Alt text slide 2: {ALT[2]}{strip(sp['q'])}")
+        out.append(f"Alt text slide 3: {ALT[3]}{strip(sp['reveal'])}")
+        for i in (4, 5, 6, 7):
+            out.append(f"Alt text slide {i}: {ALT[i]}")
+        out.append("")
+    io.open(os.path.join(OUT, "CAPTIONS.md"), "w", encoding="utf-8").write("\n".join(out))
+    print("CAPTIONS.md written")
+
 if __name__ == "__main__":
     for k, v in SPECS.items():
         p1, p6, p7 = POS.get(k, ("", "", ""))
@@ -855,4 +929,5 @@ if __name__ == "__main__":
         if k in EXPR: v["belle_hook"] = EXPR[k]
         if k in ICON_LEAD: v["lead"] = "icon"
         build(k, v)
+    write_captions()
     print(f"{len(SPECS)} carousels, {len(SPECS)*7} slides")
