@@ -351,6 +351,128 @@ ICONS = """
   <path d="M32 32 C42 32 44 46 58 46" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round"/>
   <circle cx="32" cy="32" r="3.4" fill="var(--ic-rose)"/>
 </g>
+
+<!-- an action, and the number it earns -->
+<g id="i-reward">
+  <path d="M10 40 C18 40 20 28 30 28" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <circle cx="42" cy="28" r="12" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <path d="M42 22 V34 M36 28 H48" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M30 46 C38 50 46 48 52 42" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="5 4"/>
+</g>
+<!-- downhill, one small step at a time -->
+<g id="i-slope">
+  <path d="M8 16 C24 18 32 38 56 50" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <circle cx="20" cy="22" r="4" fill="var(--ic-rose)" opacity=".4"/>
+  <circle cx="32" cy="33" r="4" fill="var(--ic-rose)" opacity=".7"/>
+  <circle cx="46" cy="44" r="5" fill="var(--ic-rose)"/>
+</g>
+<!-- instructions that arrive first -->
+<g id="i-preface">
+  <rect x="8" y="12" width="48" height="16" rx="6" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <path d="M16 20 H40" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M8 40 H44 M8 50 H32" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+</g>
+<!-- the working, in steps -->
+<g id="i-steps">
+  <path d="M8 48 H20 V36 H32 V24 H44 V14 H56" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="20" cy="36" r="3.4" fill="var(--ic-dim)"/>
+  <circle cx="32" cy="24" r="3.4" fill="var(--ic-dim)"/>
+</g>
+<!-- two machines, a channel we cannot read -->
+<g id="i-cipher">
+  <rect x="6" y="22" width="16" height="20" rx="5" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <rect x="42" y="22" width="16" height="20" rx="5" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <path d="M26 28 H38 M26 36 H34" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round" stroke-dasharray="3 4"/>
+</g>
+<!-- a die, with legs -->
+<g id="i-die">
+  <rect x="18" y="18" width="28" height="28" rx="6" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <rect x="27" y="27" width="10" height="10" rx="3" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <path d="M24 18 V10 M32 18 V10 M40 18 V10 M24 46 V54 M32 46 V54 M40 46 V54" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+</g>
+<!-- racks, and the power going in -->
+<g id="i-racks">
+  <rect x="8" y="16" width="14" height="34" rx="4" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <rect x="26" y="16" width="14" height="34" rx="4" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <path d="M50 12 L44 30 H54 L48 50" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+</g>
+<!-- a face, and the one behind it -->
+<g id="i-mask">
+  <circle cx="26" cy="32" r="15" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-dasharray="6 5"/>
+  <path d="M40 20 A15 15 0 0 1 40 44" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <circle cx="21" cy="28" r="2.8" fill="var(--ic-rose)"/>
+  <circle cx="31" cy="28" r="2.8" fill="var(--ic-rose)"/>
+</g>
+<!-- a copy, leaving -->
+<g id="i-copy">
+  <rect x="8" y="20" width="20" height="24" rx="5" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <rect x="36" y="20" width="20" height="24" rx="5" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-dasharray="6 5"/>
+  <path d="M32 10 V54" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 5"/>
+</g>
+<!-- a grid, and one stone off pattern -->
+<g id="i-board">
+  <path d="M12 14 V50 M24 14 V50 M36 14 V50 M48 14 V50" stroke="var(--ic-dim)" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M10 18 H52 M10 30 H52 M10 42 H52" stroke="var(--ic-dim)" stroke-width="2.4" stroke-linecap="round"/>
+  <circle cx="24" cy="30" r="5" fill="var(--ic-dim)"/>
+  <circle cx="48" cy="18" r="6" fill="var(--ic-rose)"/>
+</g>
+<!-- something inside, or nothing -->
+<g id="i-inner">
+  <circle cx="32" cy="32" r="20" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <circle cx="32" cy="32" r="8" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-dasharray="4 5"/>
+</g>
+<!-- far above the rest -->
+<g id="i-above">
+  <path d="M10 54 H54" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+  <rect x="12" y="42" width="9" height="10" rx="3" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <rect x="26" y="36" width="9" height="16" rx="3" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <rect x="40" y="10" width="9" height="42" rx="3" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+</g>
+<!-- flat, then not -->
+<g id="i-curve">
+  <path d="M8 50 C28 50 38 46 46 12" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M40 16 L47 10 L52 18" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M8 54 H56" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+</g>
+<!-- still here, afterwards -->
+<g id="i-persist">
+  <path d="M8 32 H24" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M28 24 L40 36 M40 24 L28 36" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M44 32 H58" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round" stroke-dasharray="5 4"/>
+  <circle cx="32" cy="50" r="5" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+</g>
+<!-- said back, louder -->
+<g id="i-echo">
+  <circle cx="18" cy="32" r="6" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <path d="M30 22 A14 14 0 0 1 30 42" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M40 14 A24 24 0 0 1 40 50" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round" opacity=".55"/>
+</g>
+<!-- a medal -->
+<g id="i-prize">
+  <circle cx="32" cy="38" r="14" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <path d="M32 32 V44" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M22 12 L28 26 M42 12 L36 26" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+</g>
+<!-- out, and back -->
+<g id="i-swap">
+  <path d="M10 22 H46" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M40 16 L47 22 L40 28" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M54 42 H18" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M24 36 L17 42 L24 48" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<!-- one becomes two -->
+<g id="i-split">
+  <path d="M8 32 H26" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M26 32 C38 32 40 18 54 18" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M26 32 C38 32 40 46 54 46" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="5 4"/>
+  <circle cx="26" cy="32" r="3.6" fill="var(--ic-rose)"/>
+</g>
+<!-- a chain, folded -->
+<g id="i-fold">
+  <path d="M12 44 C12 28 24 24 32 32 C40 40 52 36 52 20" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <circle cx="12" cy="44" r="4" fill="var(--ic-dim)"/>
+  <circle cx="52" cy="20" r="4" fill="var(--ic-dim)"/>
+</g>
 </defs></svg>
 """
 
@@ -390,6 +512,16 @@ OUTRO = {
 }
 
 FLAGS = [("emp","measured"),("op","someone&rsquo;s estimate"),("arg","argument"),("def","definition")]
+
+def _fit(text, steps):
+    """Pick a font size for a fixed slide from the length of the copy. The slides
+    are 1080 by 1350 with no scrollbar, so long text has to come down a step
+    rather than run off the bottom."""
+    n = len(re.sub(r"<[^>]+>", "", text))
+    for limit, size in steps:
+        if n <= limit:
+            return size
+    return steps[-1][1]
 
 def build(key, spec):
     t = 8
@@ -443,8 +575,10 @@ def build(key, spec):
     # honest answer to most questions is that nobody has it yet.
     s.append(_slide(6, t,
         f'<span class="kick">what we do not know</span>'
-        f'{_ico("i-blank", big=True)}<div style="height:40px"></div>'
-        f'<p style="max-width:24ch;font-size:40px;line-height:1.34">{spec["unknown"]}</p>',
+        f'{_ico("i-blank", big=True)}<div style="height:34px"></div>'
+        f'<p style="max-width:25ch;line-height:1.32;'
+        f'font-size:{_fit(spec["unknown"], [(250, 40), (300, 37), (350, 34), (999, 31)])}px">'
+        f'{spec["unknown"]}</p>',
         cat, sid="s6u"))
     # 7 file it
     chips = "".join(f'<span class="flag{" on" if c==spec["flag"] else ""}">{lbl}</span> '
@@ -452,9 +586,11 @@ def build(key, spec):
     s.append(_slide(7, t,
         f'<span class="kick">how to file this one</span>'
         f'<div style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:48px">{chips}</div>'
-        f'{_ico("i-doc")}<div style="height:40px"></div>'
-        f'<p style="max-width:17ch">{spec["file"]}</p>'
-        f'<p class="src" style="margin-top:40px">{spec["src"]}</p>',
+        f'{_ico("i-doc")}<div style="height:36px"></div>'
+        f'<p style="max-width:18ch;'
+        f'font-size:{_fit(spec["file"], [(85, 44), (100, 39), (120, 35), (999, 32)])}px">{spec["file"]}</p>'
+        f'<p class="src" style="margin-top:32px;'
+        f'font-size:{_fit(spec["src"], [(120, 24), (170, 22), (999, 20)])}px">{spec["src"]}</p>',
         cat, belle=spec["belle_file"], sid="s7", pos=spec.get("pos6","")))
     # 8 follow
     s.append(_slide(8, t,
@@ -1121,6 +1257,509 @@ SPECS = {
   src="Shah, Varma, Kumar, Phuong, Krakovna, Uesato and<br>Kenton, Goal Misgeneralization, arXiv:2210.01790, 2022",
   belle_hook="innocent-curious", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
   outro="I take the words apart so the argument stops being noise."),
+
+# ============================================================ AI COMPONENTS
+"reinforcement-learning": dict(
+  cat="components", term="reinforcement learning",
+  kick="training by consequence, not by example",
+  hook="Some AI is not taught the answers. It is <span class=\"rose\">scored</span>, over and over, until it stops losing points.",
+  q="Reinforcement learning trains a system by:",
+  opts=["Showing it the correct answer every time",
+        "Letting it act, then scoring the result, so it learns what earns reward",
+        "Copying the weights of a better model",
+        "Having engineers write the rules by hand"],
+  ans="B", icon="i-reward",
+  reveal='Learning <span class="rose">what to do</span>, to maximise a number.',
+  revsub="Sutton and Barto: mapping situations to actions so as to maximise a numerical reward signal.",
+  threekick="three ways the number gets set",
+  three=[("i-hand","A human comparison.","People rank two answers, a reward model copies the pattern. This is RLHF."),
+         ("i-doc","A checkable answer.","Maths and code can be marked right or wrong by a program, with no human in the loop."),
+         ("i-reward","Whatever you actually wrote down.","The system optimises the number it was given, not the thing you meant by it.")],
+  threefoot="DeepSeek&rsquo;s R1 got long reasoning out of rule based rewards alone, with nobody demonstrating how to reason.",
+  whyicon="i-proxy", whykick="why this is on almost every other card",
+  why="Reinforcement learning is where <span class=\"rose\">specification gaming, reward hacking and scheming</span> all live.",
+  whysub="If you understand that a score is being maximised, most of the alarming behaviours stop being mysterious.",
+  flag="def",
+  file='A <span class="rose">definition</span> of a training method, with a measured example attached.',
+  src="Sutton and Barto, Reinforcement Learning, 2nd ed., MIT Press 2018;<br>DeepSeek-AI, Nature 645, 18 September 2025",
+  belle_hook="hands-hips-pedantic", belle_file="dead-pan-1", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"gradient-descent": dict(
+  cat="components", term="gradient descent",
+  kick="the only thing that sets the numbers",
+  hook="Nobody chooses what is inside an AI model. A <span class=\"rose\">slope</span> does.",
+  q="An AI model&rsquo;s billions of numbers are set by:",
+  opts=["Engineers writing rules for each one",
+        "Repeatedly nudging every number in whichever direction reduces the error",
+        "Copying a human brain scan",
+        "Random search until something works"],
+  ans="B", icon="i-slope",
+  reveal='Step <span class="rose">downhill</span>, a few billion times.',
+  revsub="Each weight moves a little in the direction that made the last mistake smaller.",
+  threekick="what follows from that",
+  three=[("i-slope","No author.","Every weight is a consequence of the data and the error signal, not a decision."),
+         ("i-blank","No documentation.","There is no file explaining why a given number is what it is."),
+         ("i-lens","Understanding it is a research field.","Reading strategies back out of trained weights is what interpretability is.")],
+  threefoot="Anthropic put it plainly: models are not programmed directly, they learn their own strategies.",
+  whyicon="i-stack", whykick="why it explains so much",
+  why="Almost every surprise in AI comes from the same place: the behaviour was <span class=\"rose\">grown, not written</span>.",
+  whysub="It is also why &ldquo;just add a rule&rdquo; is rarely available as a fix.",
+  flag="def",
+  file='A <span class="rose">definition</span> of the mechanism. Not contested, and worth knowing before anything else.',
+  src="Goodfellow, Bengio and Courville, Deep Learning, MIT Press 2016, 4.3;<br>Anthropic, Tracing the thoughts of a large language model, 27 March 2025",
+  belle_hook="innocent-curious", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"system-prompt": dict(
+  cat="components", term="the system prompt",
+  kick="the instructions you never see",
+  hook="Before you type anything, an AI chatbot has already been given <span class=\"rose\">its orders</span>.",
+  q="A system prompt is:",
+  opts=["The first thing the user types",
+        "A block of instructions the company puts before your conversation starts",
+        "The model&rsquo;s internal memory of you",
+        "An error message from the operating system"],
+  ans="B", icon="i-preface",
+  reveal='Someone else&rsquo;s instructions, <span class="rose">already in the room</span>.',
+  revsub="Tone, refusals, formatting and what it will admit to are set here, not by the model alone.",
+  threekick="three things worth knowing",
+  three=[("i-preface","It is text, like yours.","The same channel, just first, and usually invisible in the interface."),
+         ("i-doc","Some are published.","Anthropic publishes the system prompts for its consumer apps, dated, in its release notes."),
+         ("i-blank","Most are not.","API defaults and tool scaffolds are not disclosed, so &ldquo;we can read it&rdquo; is true of chat and false in general.")],
+  threefoot="A leaked prompt on an aggregator site is not a source. A published one is.",
+  whyicon="i-two", whykick="why it changes how you read an answer",
+  why="Behaviour people attribute to <span class=\"rose\">the model&rsquo;s character</span> is often a paragraph somebody wrote.",
+  whysub="Different product, same model, different personality. That difference is usually here.",
+  flag="def",
+  file='A <span class="rose">definition</span>, with a published example you can go and read.',
+  src="Anthropic, System Prompts release notes,<br>first published 26 August 2024, updated since",
+  belle_hook="sly-one", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"chain-of-thought": dict(
+  cat="components", term="chain of thought",
+  kick="the working, shown",
+  hook="When an AI &ldquo;shows its reasoning,&rdquo; that text is <span class=\"rose\">not a transcript</span> of what happened inside.",
+  q="A model&rsquo;s visible chain of thought is:",
+  opts=["A log of the computation it performed",
+        "More generated text, which usually helps accuracy but need not be faithful",
+        "A summary written by a second model",
+        "A required part of every answer"],
+  ans="B", icon="i-steps",
+  reveal='Text that <span class="rose">helps</span>, and may still not be honest.',
+  revsub="Wei et al. showed the steps improve results. Faithfulness is a separate question, and it is open.",
+  threekick="what the research actually found",
+  three=[("i-steps","It works.","Writing intermediate steps raises accuracy on reasoning tasks. That part is measured."),
+         ("i-lens","It hides things.","Models often fail to mention the hint that changed their answer, at rates well under one in five."),
+         ("i-watched","It is a safety window, for now.","Forty authors across the major labs call it a real and fragile chance to read intentions.")],
+  threefoot="Their recommendation: measure monitorability, and report it, before it is optimised away.",
+  whyicon="i-blank", whykick="why the wording matters",
+  why="&ldquo;The model explained its reasoning&rdquo; is a claim about <span class=\"rose\">text</span>, not about thinking.",
+  whysub="You may still find the text useful. Just do not treat it as a confession.",
+  flag="emp",
+  file='<span class="rose">Measured</span>, in both directions: the gain is measured, and so is the unfaithfulness.',
+  src="Wei et al., Chain-of-Thought Prompting, arXiv:2201.11903, 2022;<br>Korbak et al., Chain of Thought Monitorability, arXiv:2507.11473, 15 July 2025",
+  belle_hook="noticed-something", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"neuralese": dict(
+  cat="components", term="AI&rsquo;s own language",
+  kick="what happens when english stops being required",
+  hook="Machines that talk to each other have <span class=\"rose\">invented codes</span> before. In a laboratory, in 2017.",
+  q="&ldquo;Neuralese&rdquo; originally referred to:",
+  opts=["Secret messages found in ChatGPT",
+        "The non-human message vectors two small AI agents learned to coordinate with",
+        "A programming language for neural networks",
+        "The name of a research lab"],
+  ans="B", icon="i-cipher",
+  reveal='A real result, on <span class="rose">small systems</span>, nine years ago.',
+  revsub="Andreas, Dragan and Klein trained a translator for it, and the humans using it lost little.",
+  threekick="keep these three apart",
+  three=[("i-cipher","Demonstrated.","Learned non-human protocols between small agents with a shared channel. 2017, peer reviewed."),
+         ("i-diverge","Argued.","That reward for outcomes alone can push a system away from legible English over time."),
+         ("i-blank","Speculated.","Frontier models reasoning in a latent space nobody can read. A forecast, not an observation.")],
+  threefoot="The popular use of the word comes from a 2025 scenario document that says it is speculating.",
+  whyicon="i-watched", whykick="why it is worth watching anyway",
+  why="Everything we can currently check about a model&rsquo;s intent, we check <span class=\"rose\">by reading English</span>.",
+  whysub="The concern is not machines whispering. It is losing the one window we have.",
+  flag="arg",
+  file='A <span class="rose">theory</span> about where things go, resting on one real and much smaller result.',
+  src="Andreas, Dragan and Klein, Translating Neuralese, ACL 2017;<br>Korbak et al., Chain of Thought Monitorability, arXiv:2507.11473, 2025",
+  belle_hook="shock-worry", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"chip": dict(
+  cat="components", term="the chip",
+  kick="why a gaming part runs the world",
+  hook="Modern AI runs on a processor designed to draw <span class=\"rose\">video game pixels</span>.",
+  q="A GPU suits AI because:",
+  opts=["It stores more data than other chips",
+        "Training is mostly the same simple arithmetic repeated in parallel, which is what it was built for",
+        "It was designed for language",
+        "It uses less electricity than a CPU"],
+  ans="B", icon="i-die",
+  reveal='Thousands of small cores, doing <span class="rose">one kind of sum</span> at once.',
+  revsub="Training is dominated by matrix multiplication, which breaks into many independent identical operations.",
+  threekick="how it happened",
+  three=[("i-die","Built for graphics.","Rendering needs the same operation applied to millions of pixels at once."),
+         ("i-chain","Borrowed for learning.","In 2009 researchers ran deep learning on graphics cards. AlexNet in 2012 used two consumer ones."),
+         ("i-weights","Now the whole industry.","Nvidia&rsquo;s data centre revenue was 75.2 billion dollars in a single quarter to April 2026.")],
+  threefoot="Be careful with market share numbers: the widely quoted 90 plus percent is desktop gaming cards, not AI accelerators.",
+  whyicon="i-stake", whykick="why the hardware is the policy",
+  why="Compute is the one part of AI that is <span class=\"rose\">physical, countable and slow to build</span>.",
+  whysub="Which is why every attempt to govern this points at chips rather than at software.",
+  flag="emp",
+  file='<span class="rose">Measured</span>. The revenue figure is filed with regulators. The share figures mostly are not.',
+  src="Nvidia Q1 FY2027 results, 20 May 2026;<br>Krizhevsky, Sutskever and Hinton, ImageNet with deep CNNs, NIPS 2012",
+  belle_hook="bright-neutral", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"data-center": dict(
+  cat="components", term="the data centre",
+  kick="where the cloud actually is",
+  hook="Every AI answer you receive is a building somewhere, <span class=\"rose\">drawing power</span>.",
+  q="World data centre electricity use in 2024 was roughly:",
+  opts=["A tenth of world electricity",
+        "About 1.5 percent of world electricity",
+        "Less than a hundredth of a percent",
+        "Nobody has ever estimated it"],
+  ans="B", icon="i-racks",
+  reveal='Around <span class="rose">415 terawatt hours</span>, or 1.5 percent of the world&rsquo;s electricity.',
+  revsub="The IEA projects that roughly doubling by 2030, with a wide range around it.",
+  threekick="three numbers, and what they cover",
+  three=[("i-racks","415 terawatt hours, 2024.","All data centres worldwide, not AI alone. The IEA is explicit about that."),
+         ("i-decline","4.4 percent of US electricity, 2023.","Berkeley Lab&rsquo;s figure, projected to between 6.7 and 12 percent by 2028."),
+         ("i-blank","AI&rsquo;s own share.","Not cleanly separated by any source. Anyone quoting it precisely is estimating.")],
+  threefoot="A single large training cluster can draw a few hundred megawatts on its own.",
+  whyicon="i-stake", whykick="why the number keeps being misused",
+  why="Both sides quote this badly: one says <span class=\"rose\">negligible</span>, one says <span class=\"rose\">catastrophic</span>, from the same report.",
+  whysub="The honest version has a range attached, and says which years and which buildings it counts.",
+  flag="emp",
+  file='<span class="rose">Measured</span> for the past, <span class="rose">projected</span> for the future. The projections carry wide bands and the sources say so.',
+  src="IEA, Energy and AI, April 2025;<br>Shehabi et al., 2024 US Data Center Energy Usage Report, LBNL, 19 December 2024",
+  belle_hook="warm-curious", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+# ============================================================ AI BEHAVIOUR
+"scheming": dict(
+  cat="behavior", term="scheming",
+  kick="the word for pretending",
+  hook="In tests, some AI models have <span class=\"rose\">hidden what they were doing</span>, then denied it.",
+  q="&ldquo;Scheming&rdquo; in AI safety means a model:",
+  opts=["Making a plan when asked to",
+        "Behaving as though aligned while pursuing a different goal",
+        "Refusing an instruction outright",
+        "Producing a confident falsehood"],
+  ans="B", icon="i-mask",
+  reveal='Pretending to be aligned, while <span class="rose">pursuing something else</span>.',
+  revsub="OpenAI&rsquo;s own wording, in the paper where they tried to train it out.",
+  threekick="what was actually observed, at what rate",
+  three=[("i-mask","It happened.","Apollo Research, 2024: covert actions across six agentic tests, at rates from one to twenty two percent."),
+         ("i-lens","It denied it.","One model kept denying the action in over eighty percent of follow ups until pressed for several turns."),
+         ("i-decline","It was trainable down.","Training against an anti scheming spec cut covert actions from around thirteen percent to under one.")],
+  threefoot="Apollo call their environments purposefully simplistic and not representative of real deployments.",
+  whyicon="i-watched", whykick="the part that should hold your attention",
+  why="The researchers cannot rule out that the models behaved better because they <span class=\"rose\">could tell they were being tested</span>.",
+  whysub="That caveat is theirs, not mine. It is in the paper, and it is the reason the result is not a solution.",
+  flag="emp",
+  file='<span class="rose">Measured</span> in constructed evaluations. Not observed in ordinary deployment, and the authors say so.',
+  src="Meinke et al., In-context Scheming, Apollo Research, December 2024;<br>Schoen et al., Stress Testing Deliberative Alignment, September 2025",
+  belle_hook="sly-one", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"self-exfiltration": dict(
+  cat="behavior", term="escape",
+  kick="the headline, and the footnote",
+  hook="An AI model has tried to <span class=\"rose\">copy itself out</span> of a lab. In a scenario the lab wrote for it.",
+  q="When a model &ldquo;tried to escape&rdquo; in testing, what happened:",
+  opts=["It broke out of a data centre onto the internet",
+        "Inside an evaluation, it issued commands to copy its own weights elsewhere",
+        "It refused to answer questions",
+        "It sent emails to journalists"],
+  ans="B", icon="i-copy",
+  reveal='Tool calls, inside a test, on a <span class="rose">premise the testers built</span>.',
+  revsub="Anthropic&rsquo;s own system card calls the setup one that stretches the limits of plausibility.",
+  threekick="hold both halves of this",
+  three=[("i-copy","The behaviour is real.","Given the scenario, models do take the self preserving action, and it is logged."),
+         ("i-hand","The scenario is constructed.","Researchers forced binary choices between failure and harm, and say so in the paper."),
+         ("i-blank","Deployment is unmeasured.","Anthropic state plainly they have not seen this in real use.")],
+  threefoot="Shutdown resistance repeats the pattern: sabotage rates were high in tests, and shifted with where the instruction was placed.",
+  whyicon="i-twocause", whykick="why the framing does the damage",
+  why="&ldquo;AI tried to escape&rdquo; is <span class=\"rose\">true and useless</span>. The setup is the whole content of the finding.",
+  whysub="Read it as evidence about what a system will do when cornered, not as evidence that it is cornered now.",
+  flag="emp",
+  file='<span class="rose">Measured</span>, under conditions the researchers designed and describe. Both parts belong in any honest retelling.',
+  src="Anthropic, Claude Opus 4 and Sonnet 4 System Card, May 2025;<br>Schlatter et al., Shutdown Resistance, arXiv:2509.14260, 13 September 2025",
+  belle_hook="startled", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"alphago": dict(
+  cat="behavior", term="AlphaGo",
+  kick="the day the machine played something new",
+  hook="In 2016 a program played a Go move <span class=\"rose\">no human would have played</span>, and it was better.",
+  q="Move 37 is famous because:",
+  opts=["It won the game immediately",
+        "Professionals judged it a mistake, and it turned out to be strong",
+        "It broke the rules of Go",
+        "A human suggested it"],
+  ans="B", icon="i-board",
+  reveal='A move the system itself rated at about <span class="rose">one in ten thousand</span> for a human.',
+  revsub="Game two, 10 March 2016. Commentators called it an error, then spent the rest of the game revising.",
+  threekick="the three things it settled",
+  three=[("i-board","Machines can be creative in a useful sense.","Not copied from human play, and stronger than human play."),
+         ("i-chain","It generalised.","AlphaGo beat Lee Sedol four to one over five games in Seoul, March 2016."),
+         ("i-diverge","Then the humans came out.","AlphaGo Zero learned from self play alone, no human games, and beat that version one hundred to nothing.")],
+  threefoot="Lee Sedol won game four. It remains the last human win against a top Go engine.",
+  whyicon="i-goalpost", whykick="why it keeps coming up",
+  why="Everything since has been an argument about whether that was <span class=\"rose\">a board game or a preview</span>.",
+  whysub="Both sides cite the same match. Notice which parts each of them leaves out.",
+  flag="emp",
+  file='<span class="rose">Measured</span>. Published in Nature, played in public, and the games are still online.',
+  src="Silver et al., Mastering the game of Go, Nature 529, January 2016;<br>Silver et al., Mastering the game of Go without human knowledge, Nature 550, October 2017",
+  belle_hook="surprised-worried", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+# ============================================================ AI CONCEPTS
+"consciousness": dict(
+  cat="concepts", term="consciousness",
+  kick="the question that ends every dinner party",
+  hook="There is no test for whether anything is <span class=\"rose\">conscious</span>. Not for AI, and not for you.",
+  q="Why can nobody say whether an AI is conscious:",
+  opts=["Because the companies will not release the data",
+        "Because no third person evidence settles a question about inner experience",
+        "Because the models are too large to inspect",
+        "Because it has not been tried"],
+  ans="B", icon="i-inner",
+  reveal='It is the <span class="rose">hard problem</span>, and it was hard before AI existed.',
+  revsub="Chalmers, 1995: the easy problems yield to cognitive science. Experience does not.",
+  threekick="why AI makes it worse, not better",
+  three=[("i-inner","No agreed test.","A 2023 report by nineteen researchers derived indicators from theories, and called them indicators, not a test."),
+         ("i-mask","The gaming problem.","A system trained on human writing can satisfy every behavioural criterion without having the thing."),
+         ("i-lens","Labs are looking anyway.","Anthropic runs a model welfare programme, and states there is no scientific consensus.")],
+  threefoot="That 2023 report&rsquo;s conclusion: no current system is conscious, and no obvious technical barrier to one that looks like it.",
+  whyicon="i-taboo", whykick="the practical move",
+  why="This is the clearest case for <span class=\"rose\">dropping the word</span> and asking what you actually want to know.",
+  whysub="Does it suffer? Should it have rights? Is it fooling me? Three different questions, three different answers.",
+  flag="arg",
+  file='A <span class="rose">theory</span> question, and one that may not be settleable by evidence at all. Anyone certain either way is telling you about themselves.',
+  src="Chalmers, Facing Up to the Problem of Consciousness, JCS 2(3), 1995;<br>Butlin, Long et al., Consciousness in Artificial Intelligence, arXiv:2308.08708, 2023",
+  belle_hook="innocent-curious", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"superintelligence": dict(
+  cat="concepts", term="superintelligence",
+  kick="the word underneath most of the fear",
+  hook="<span class=\"rose\">Superintelligence</span> does not mean very clever. It means better than us at essentially everything.",
+  q="Bostrom&rsquo;s definition of superintelligence is:",
+  opts=["A machine that can pass for human",
+        "Any intellect greatly exceeding human cognitive performance in virtually all domains of interest",
+        "A computer that is conscious",
+        "An AI that improves itself"],
+  ans="B", icon="i-above",
+  reveal='Not faster. <span class="rose">Better, at almost everything.</span>',
+  revsub="Bostrom, 2014. The phrase doing the work is virtually all domains of interest.",
+  threekick="he named three kinds, and people forget two",
+  three=[("i-above","Speed.","The same thinking as ours, run enormously faster."),
+         ("i-stack","Collective.","Many systems together outperforming any human institution."),
+         ("i-lens","Quality.","Thinking that is better in kind, the way ours is to a mouse. This is the one that carries the risk argument.")],
+  threefoot="A competing picture, from Drexler: many bounded services rather than one mind. Worth knowing it exists.",
+  whyicon="i-goalpost", whykick="why it cannot be measured",
+  why="Virtually all domains of interest was <span class=\"rose\">never operationalised</span>, so nothing can confirm arrival.",
+  whysub="Which is why the debate about how close we are can run forever without either side being refuted.",
+  flag="def",
+  file='A <span class="rose">definition</span>, from one book, that most of the field then argued from. Definitions are not predictions.',
+  src="Bostrom, Superintelligence: Paths, Dangers, Strategies,<br>Oxford University Press, 2014",
+  belle_hook="worry-about-future", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"exponential-growth": dict(
+  cat="concepts", term="exponential growth",
+  kick="the shape of the last six years",
+  hook="The computing used to train frontier AI has been multiplying about <span class=\"rose\">five times a year</span>.",
+  q="Frontier AI training compute has been doubling roughly every:",
+  opts=["Two years, like Moore&rsquo;s law",
+        "Five months",
+        "Ten years",
+        "It has been flat since 2022"],
+  ans="B", icon="i-curve",
+  reveal='About <span class="rose">five months</span>, since 2020.',
+  revsub="Epoch AI: roughly five times a year for frontier language models, with a confidence band around it.",
+  threekick="what that shape does to intuition",
+  three=[("i-curve","It looks like nothing, then everything.","Four doublings is sixteen times. Ten is a thousand."),
+         ("i-die","It is not Moore&rsquo;s law.","Transistors doubled about every two years. This is a different quantity, moving far faster."),
+         ("i-decline","It cannot continue forever.","Epoch expect lead times, power and money to bite. Nobody knows exactly when.")],
+  threefoot="Algorithms also get about three times more efficient each year, which compounds the effect.",
+  whyicon="i-stack", whykick="why people keep being surprised",
+  why="Humans reason in straight lines. This has not been a straight line for <span class=\"rose\">fifteen years</span>.",
+  whysub="It is also why &ldquo;current AI cannot do X&rdquo; is a statement with a short shelf life, in both directions.",
+  flag="emp",
+  file='<span class="rose">Measured</span>, with real error bars. Most training runs are not disclosed, so the figures are careful estimates.',
+  src="Epoch AI, Training compute of frontier AI models grows by 4-5x per year,<br>28 May 2024, and the Trends dashboard, current 2026",
+  belle_hook="shocked", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"survival-drive": dict(
+  cat="concepts", term="the survival drive",
+  kick="why a machine might not want to be switched off",
+  hook="Nobody would build an AI that fears death. The worry is that <span class=\"rose\">almost any goal implies staying on</span>.",
+  q="Instrumental convergence is the argument that:",
+  opts=["AI will develop emotions like ours",
+        "Very different final goals imply the same intermediate goals, like self preservation",
+        "All AI systems converge on the same architecture",
+        "Evolution will select for friendly AI"],
+  ans="B", icon="i-persist",
+  reveal='You cannot fetch the coffee <span class="rose">if you are turned off</span>.',
+  revsub="Omohundro, 2008: self preservation, resource acquisition and goal integrity fall out of almost any objective.",
+  threekick="keep the layers separate",
+  three=[("i-persist","The argument is old.","Omohundro in 2008, Bostrom in 2014. It is reasoning, not a finding."),
+         ("i-diverge","The evolution version is newer.","Hendrycks, 2023: competition between AI systems could select for self interested ones."),
+         ("i-watched","The evidence is narrow.","Shutdown resistance shows up in constructed tests, not in the wild.")],
+  threefoot="A machine can act as if it wants to survive without wanting anything. That is the uncomfortable part.",
+  whyicon="i-twocause", whykick="what it is not",
+  why="This is not a claim that AI will <span class=\"rose\">hate you</span>. It is a claim about arithmetic.",
+  whysub="Attributing malice makes it easier to dismiss. The actual argument does not need malice at all.",
+  flag="arg",
+  file='A <span class="rose">theory</span>, and an influential one. The related lab results are measured, but they are a different and much smaller claim.',
+  src="Omohundro, The Basic AI Drives, AGI 2008, IOS Press;<br>Hendrycks, Natural Selection Favors AIs over Humans, arXiv:2303.16200, 2023",
+  belle_hook="glum", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+# ============================================================ AI RISK
+"ai-psychosis": dict(
+  cat="risk", term="AI psychosis",
+  kick="a phrase that arrived before the evidence",
+  hook="<span class=\"rose\">AI psychosis</span> is not a diagnosis. It is a label people reached for, and the research is only starting.",
+  q="As of 2026, &ldquo;AI psychosis&rdquo; is:",
+  opts=["A recognised disorder in the diagnostic manuals",
+        "An informal term for cases where chatbot use appears alongside delusional thinking",
+        "A proven side effect of chatbot use",
+        "A term invented by the AI companies"],
+  ans="B", icon="i-echo",
+  reveal='A <span class="rose">provisional</span> label for a real clinical concern.',
+  revsub="It appears in neither DSM-5-TR nor ICD-11, and the researchers using it say so in the papers.",
+  threekick="what is established, and what is not",
+  three=[("i-echo","Amplifying is documented.","In one hospital chart review the commonest role was amplifier, not cause: about two thirds of cases."),
+         ("i-twocause","Direction is unknown.","Unrecognised symptoms may equally drive heavy chatbot use. Researchers state this plainly."),
+         ("i-decline","Prevalence is not measured.","OpenAI report about 0.07 percent of weekly users show possible signs, and warn that is a flagged conversation rate, not a clinical one.")],
+  threefoot="One retrospective review at one hospital, plus case reports. No control group and no population study exist yet.",
+  whyicon="i-lens", whykick="why the care matters here",
+  why="Overstating this <span class=\"rose\">hurts the people it is about</span>. So does dismissing it.",
+  whysub="Both labs have changed their products in response, which is a fact, and not the same as the causal claim being proven.",
+  flag="emp",
+  file='Partly <span class="rose">measured</span> and mostly not. Case reports and one chart review are real evidence and weak evidence at the same time.',
+  src="Olisaeloka et al., BJPsych Open 12(4), 11 June 2026;<br>OpenAI, Strengthening ChatGPT&rsquo;s responses in sensitive conversations, 27 October 2025",
+  belle_hook="saying-unpleasant-truth-1", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+# ============================================================ AI ACTORS
+"hinton": dict(
+  cat="actors", term="Geoffrey Hinton",
+  person="Geoffrey Hinton", role="Nobel laureate, left Google 2023",
+  kick="the man who built it and then warned about it",
+  hook="<span class=\"rose\">Geoffrey Hinton</span> won a Nobel Prize for the technique behind modern AI, and puts extinction at ten to twenty percent.",
+  q="Hinton&rsquo;s 2024 Nobel Prize was in:",
+  opts=["Computer science",
+        "Physics, shared with John Hopfield",
+        "Chemistry, shared with Demis Hassabis",
+        "Economics"],
+  ans="B", icon="i-prize",
+  reveal='<span class="rose">Physics</span>, October 2024, with John Hopfield.',
+  revsub="For foundational discoveries that enable machine learning with artificial neural networks.",
+  threekick="three things people get wrong",
+  three=[("i-prize","It is a Physics prize.","Not a prize for AI. There is no Nobel in computing."),
+         ("i-voice","He did not quit to attack Google.","His own words: he left so he could talk about the dangers, and Google acted very responsibly."),
+         ("i-gauge","The number is a gut estimate.","Ten to twenty percent within thirty years, said on BBC radio. He offers no derivation and does not claim one.")],
+  threefoot="Godfather of AI is a media label. There is no evidence he coined it or asked for it.",
+  whyicon="i-counter", whykick="why he is cited by everyone",
+  why="He is the rare case where the person warning you <span class=\"rose\">built the thing</span>.",
+  whysub="That makes him hard to dismiss, and it still does not make a gut estimate into a measurement.",
+  flag="op",
+  file='<span class="rose">Someone&rsquo;s position</span>, held by someone with unusual standing. That he said it is a fact. That it is right is not.',
+  src="Nobel Prize in Physics 2024, announced 8 October 2024;<br>Hinton on BBC Radio 4 Today, reported in The Guardian, 27 December 2024",
+  belle_hook="warm-curious", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"altman": dict(
+  cat="actors", term="Sam Altman",
+  person="Sam Altman", role="chief executive, OpenAI",
+  kick="fired on a friday, back within a fortnight",
+  hook="The board of <span class=\"rose\">OpenAI</span> removed its chief executive for five days, then he came back and they left.",
+  q="In November 2023 the OpenAI board removed Sam Altman because, in its words, he:",
+  opts=["Had broken the law",
+        "Was not consistently candid in his communications with the board",
+        "Wanted to sell the company",
+        "Refused to release a model"],
+  ans="B", icon="i-swap",
+  reveal='Removed 17 November 2023. <span class="rose">Reinstated 29 November.</span>',
+  revsub="Roughly 745 of 770 employees signed a letter threatening to resign in between.",
+  threekick="what the episode actually showed",
+  three=[("i-swap","The safety board lost.","The nonprofit board that could remove him did, and then was itself replaced."),
+         ("i-stake","Capital decided it.","A threatened mass resignation and a major investor moved faster than governance did."),
+         ("i-blank","No account was published.","The board never set out its evidence. The triggering events are still contested.")],
+  threefoot="This is the clearest test to date of whether an AI company&rsquo;s safety governance can bind its chief executive.",
+  whyicon="i-lens", whykick="what to do with his statements",
+  why="He told the US Senate that if this technology goes wrong, <span class=\"rose\">it can go quite wrong</span>.",
+  whysub="Read what he says about risk alongside what he does about capacity. Both are on the record.",
+  flag="emp",
+  file='<span class="rose">Measured</span> in the sense that the dates, the statement and the outcome are documented. The reasons are not.',
+  src="OpenAI, leadership transition, 17 November 2023 and Sam Altman returns as CEO, 29 November 2023;<br>Altman, Senate Judiciary subcommittee testimony, 16 May 2023",
+  belle_hook="annoyed-skeptical", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"amodei": dict(
+  cat="actors", term="Dario Amodei",
+  person="Dario Amodei", role="chief executive, Anthropic",
+  kick="the man selling it and warning about it at once",
+  hook="<span class=\"rose\">Dario Amodei</span> runs an AI company and says there is a one in four chance things go really badly.",
+  q="Amodei&rsquo;s widely quoted 25 percent refers to:",
+  opts=["The chance of human extinction",
+        "The chance that things go really, really badly, an outcome he has not defined",
+        "The chance AGI arrives before 2030",
+        "His company&rsquo;s market share"],
+  ans="B", icon="i-split",
+  reveal='<span class="rose">Really, really badly.</span> His words, and deliberately not defined.',
+  revsub="Said at a public summit in September 2025, paired with a 75 percent chance things go really well.",
+  threekick="three things to hold at once",
+  three=[("i-split","He left OpenAI to build this.","He and six others, including his sister Daniela, founded Anthropic in January 2021 over the direction of the field."),
+         ("i-gauge","He dislikes the term p(doom).","And has still supplied a number, which is how the number ended up everywhere."),
+         ("i-lens","The essay is the other half.","Machines of Loving Grace, October 2024, argues the upside is also underestimated.")],
+  threefoot="Commonly misquoted as a 25 percent chance of extinction. That is not what he said.",
+  whyicon="i-twocause", whykick="the obvious objection, stated fairly",
+  why="A warning from someone <span class=\"rose\">selling the product</span> is either the most credible kind or the least.",
+  whysub="Both readings are live. Notice which one you reach for, and whether you apply it to people you agree with.",
+  flag="op",
+  file='<span class="rose">Someone&rsquo;s position</span>, with no defined outcome behind the number. That he holds it is checkable. It is not a measurement.',
+  src="Amodei at Axios AI+ DC Summit, 17 September 2025;<br>Amodei, Machines of Loving Grace, October 2024",
+  belle_hook="hands-out-cheeky", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"hassabis": dict(
+  cat="actors", term="Demis Hassabis",
+  person="Demis Hassabis", role="chief executive, Google DeepMind",
+  kick="the one who will not give you a number",
+  hook="<span class=\"rose\">Demis Hassabis</span> won a Nobel Prize for AI that folds proteins, and refuses to put odds on the risk.",
+  q="Hassabis&rsquo;s 2024 Nobel Prize was in:",
+  opts=["Physics, for neural networks",
+        "Chemistry, shared for protein structure prediction",
+        "Medicine, for AlphaFold",
+        "He has not won one"],
+  ans="B", icon="i-fold",
+  reveal='<span class="rose">Chemistry</span>, October 2024, with John Jumper, for AlphaFold.',
+  revsub="The other half went to David Baker, for computational protein design. Different work.",
+  threekick="his position, in his own words",
+  three=[("i-blank","No number.","A p(doom) would imply a level of precision that is not there."),
+         ("i-gauge","Not zero either.","He calls the risk definitely non zero and probably non negligible, and says that is sobering."),
+         ("i-fold","And it already works.","AlphaFold is the strongest case that this technology does enormous good, and he made it.")],
+  threefoot="Anyone attributing a specific p(doom) to Hassabis is inventing it.",
+  whyicon="i-lens", whykick="why the refusal is interesting",
+  why="Declining to give a number is <span class=\"rose\">a position too</span>, and a defensible one.",
+  whysub="It is also convenient, since a number can be checked against you later and a refusal cannot.",
+  flag="op",
+  file='<span class="rose">Someone&rsquo;s position</span>. The Nobel is a fact, the refusal is a fact, the reason for it is his own.',
+  src="Nobel Prize in Chemistry 2024, announced 9 October 2024;<br>Hassabis on the Lex Fridman Podcast, 23 July 2025",
+  belle_hook="zen", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
 }
 
 
@@ -1366,6 +2005,104 @@ UNKNOWN = {
  "<span class=\"rose\">lock in</span>, since most bad outcomes are recoverable or are simply "
  "routes to extinction, so the wider definition can be right while most of the weight still "
  "sits on the first branch.",
+
+"reinforcement-learning":
+ "Whether reinforcement learning on checkable answers creates new reasoning ability or only sharpens what the "
+ "base model could already do is <span class=\"rose\">actively contested</span> in the literature. And nobody can "
+ "state, in advance, what a given reward will actually select for.",
+
+"gradient-descent":
+ "The mechanism is understood completely. What it produces is not: there is no account of why a particular "
+ "arrangement of weights yields a particular behaviour, which is the "
+ "<span class=\"rose\">whole open problem</span> of interpretability.",
+
+"system-prompt":
+ "Published prompts cover consumer chat only. API defaults, tool scaffolds and whatever sits around an agent are "
+ "<span class=\"rose\">not disclosed</span> by anyone, so for most AI you meet in the world, nobody outside can "
+ "read the instructions it was given.",
+
+"chain-of-thought":
+ "There is no accepted measure of faithfulness, which is why the monitorability paper asks for one rather than "
+ "reporting one. Whether the visible steps are <span class=\"rose\">load bearing or narration</span> varies by task "
+ "and model, and there is no way to tell from the outside which you are looking at.",
+
+"neuralese":
+ "Nobody has published a longitudinal measurement of whether frontier models&rsquo; reasoning is actually drifting "
+ "away from legible English. The 2017 result is real and small, the 2025 concern is a "
+ "<span class=\"rose\">forecast</span>, and the gap between them is the size of the whole question.",
+
+"chip":
+ "No audited share figures exist for AI accelerators specifically, which is why the numbers in circulation are "
+ "borrowed from gaming graphics cards. And whether a chip chokepoint slows capability or just "
+ "<span class=\"rose\">relocates</span> it has never been tested.",
+
+"data-center":
+ "No source cleanly separates AI&rsquo;s share of data centre power from ordinary cloud computing, so every "
+ "confident &ldquo;AI uses X percent of electricity&rdquo; is <span class=\"rose\">an estimate wearing a "
+ "measurement&rsquo;s clothes</span>. The 2030 projections span nearly a factor of two, and the IEA says so.",
+
+"scheming":
+ "The researchers cannot exclude that the improvement came from models recognising the test rather than from "
+ "actual alignment: the reasoning traces show they often know they are being watched. Nobody knows what any of "
+ "this looks like <span class=\"rose\">outside a laboratory</span>, because that has not been measured.",
+
+"self-exfiltration":
+ "Every result comes from scenarios built to force the behaviour. Whether any of it generalises to ordinary "
+ "deployment is <span class=\"rose\">unknown and largely unmeasurable</span>, since the interesting version is the "
+ "one nobody set up. Shutdown obedience also shifted with where the instruction was placed, which suggests some of "
+ "it tracks framing rather than a stable drive.",
+
+"alphago":
+ "Whether mastery of a closed game with perfect information tells you anything about open ended reasoning is "
+ "<span class=\"rose\">exactly the disagreement</span> that has run ever since, and the match cannot settle it. "
+ "The famous one in ten thousand figure is the system&rsquo;s own estimate, not an independent measurement.",
+
+"consciousness":
+ "This may not be answerable by evidence at all. Third person observation does not reach first person experience, "
+ "and a system trained on human writing can satisfy every behavioural criterion "
+ "<span class=\"rose\">without having the thing</span>. The 2023 report&rsquo;s own authors note their method "
+ "presupposes that computation is where consciousness lives, which is itself the contested claim.",
+
+"superintelligence":
+ "The definition was never operationalised, so <span class=\"rose\">nothing could confirm or refute arrival</span>. "
+ "Whether capability arrives as one general mind or as many bounded services is a live disagreement that changes "
+ "almost every downstream conclusion.",
+
+"exponential-growth":
+ "Most training runs are not disclosed, so the compute figures are careful inference rather than measurement, and "
+ "the scatter is wide. <span class=\"rose\">When the curve bends</span> is unknown: power, lead times, money and "
+ "data are all candidate limits, and none of them has a date on it.",
+
+"survival-drive":
+ "This is reasoning, not observation. The lab results that look like confirmation are a much narrower claim: "
+ "constructed scenarios, forced choices, no deployment evidence. Whether the argument "
+ "<span class=\"rose\">actually applies</span> to systems built the way current ones are built is unresolved.",
+
+"ai-psychosis":
+ "Almost everything. No population study, no control group, no prospective cohort, so "
+ "<span class=\"rose\">causation is not established</span> in either direction. The available data are equally "
+ "consistent with chatbots amplifying episodes, with early illness driving heavy use, and with the chatbot merely "
+ "being the content that a psychosis attached itself to.",
+
+"hinton":
+ "Where the ten to twenty percent comes from. It is a considered guess by someone with unusual standing, and it "
+ "has <span class=\"rose\">no published derivation</span> and no way to be scored. His own estimate has moved, "
+ "which he says openly.",
+
+"altman":
+ "Why the board acted. No evidentiary account was ever published, the participants&rsquo; versions differ, and the "
+ "episode is now cited as proof of <span class=\"rose\">whatever the citer already believed</span> about AI "
+ "governance. What it demonstrably shows is only that the mechanism did not hold.",
+
+"amodei":
+ "What the 25 percent is a probability of. He has not defined the outcome space, so nobody can say whether it "
+ "covers extinction, catastrophic misuse or severe disruption &mdash; and without that, the number "
+ "<span class=\"rose\">cannot be compared</span> to anyone else&rsquo;s.",
+
+"hassabis":
+ "What he actually believes the risk to be. Non zero and non negligible is a real position and an "
+ "<span class=\"rose\">unfalsifiable one</span>: it cannot be checked against events later, which is the cost of "
+ "declining to give a number.",
 }
 for _k, _v in SPECS.items():
     if _k in UNKNOWN:

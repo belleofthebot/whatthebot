@@ -319,13 +319,135 @@ p{font-size:36px;line-height:1.38;color:var(--soft);max-width:24ch}
   <path d="M32 32 C42 32 44 46 58 46" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round"/>
   <circle cx="32" cy="32" r="3.4" fill="var(--ic-rose)"/>
 </g>
+
+<!-- an action, and the number it earns -->
+<g id="i-reward">
+  <path d="M10 40 C18 40 20 28 30 28" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <circle cx="42" cy="28" r="12" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <path d="M42 22 V34 M36 28 H48" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M30 46 C38 50 46 48 52 42" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="5 4"/>
+</g>
+<!-- downhill, one small step at a time -->
+<g id="i-slope">
+  <path d="M8 16 C24 18 32 38 56 50" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <circle cx="20" cy="22" r="4" fill="var(--ic-rose)" opacity=".4"/>
+  <circle cx="32" cy="33" r="4" fill="var(--ic-rose)" opacity=".7"/>
+  <circle cx="46" cy="44" r="5" fill="var(--ic-rose)"/>
+</g>
+<!-- instructions that arrive first -->
+<g id="i-preface">
+  <rect x="8" y="12" width="48" height="16" rx="6" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <path d="M16 20 H40" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M8 40 H44 M8 50 H32" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+</g>
+<!-- the working, in steps -->
+<g id="i-steps">
+  <path d="M8 48 H20 V36 H32 V24 H44 V14 H56" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="20" cy="36" r="3.4" fill="var(--ic-dim)"/>
+  <circle cx="32" cy="24" r="3.4" fill="var(--ic-dim)"/>
+</g>
+<!-- two machines, a channel we cannot read -->
+<g id="i-cipher">
+  <rect x="6" y="22" width="16" height="20" rx="5" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <rect x="42" y="22" width="16" height="20" rx="5" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <path d="M26 28 H38 M26 36 H34" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round" stroke-dasharray="3 4"/>
+</g>
+<!-- a die, with legs -->
+<g id="i-die">
+  <rect x="18" y="18" width="28" height="28" rx="6" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <rect x="27" y="27" width="10" height="10" rx="3" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <path d="M24 18 V10 M32 18 V10 M40 18 V10 M24 46 V54 M32 46 V54 M40 46 V54" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+</g>
+<!-- racks, and the power going in -->
+<g id="i-racks">
+  <rect x="8" y="16" width="14" height="34" rx="4" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <rect x="26" y="16" width="14" height="34" rx="4" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <path d="M50 12 L44 30 H54 L48 50" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+</g>
+<!-- a face, and the one behind it -->
+<g id="i-mask">
+  <circle cx="26" cy="32" r="15" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-dasharray="6 5"/>
+  <path d="M40 20 A15 15 0 0 1 40 44" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <circle cx="21" cy="28" r="2.8" fill="var(--ic-rose)"/>
+  <circle cx="31" cy="28" r="2.8" fill="var(--ic-rose)"/>
+</g>
+<!-- a copy, leaving -->
+<g id="i-copy">
+  <rect x="8" y="20" width="20" height="24" rx="5" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <rect x="36" y="20" width="20" height="24" rx="5" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-dasharray="6 5"/>
+  <path d="M32 10 V54" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 5"/>
+</g>
+<!-- a grid, and one stone off pattern -->
+<g id="i-board">
+  <path d="M12 14 V50 M24 14 V50 M36 14 V50 M48 14 V50" stroke="var(--ic-dim)" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M10 18 H52 M10 30 H52 M10 42 H52" stroke="var(--ic-dim)" stroke-width="2.4" stroke-linecap="round"/>
+  <circle cx="24" cy="30" r="5" fill="var(--ic-dim)"/>
+  <circle cx="48" cy="18" r="6" fill="var(--ic-rose)"/>
+</g>
+<!-- something inside, or nothing -->
+<g id="i-inner">
+  <circle cx="32" cy="32" r="20" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <circle cx="32" cy="32" r="8" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-dasharray="4 5"/>
+</g>
+<!-- far above the rest -->
+<g id="i-above">
+  <path d="M10 54 H54" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+  <rect x="12" y="42" width="9" height="10" rx="3" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <rect x="26" y="36" width="9" height="16" rx="3" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <rect x="40" y="10" width="9" height="42" rx="3" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+</g>
+<!-- flat, then not -->
+<g id="i-curve">
+  <path d="M8 50 C28 50 38 46 46 12" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M40 16 L47 10 L52 18" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M8 54 H56" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+</g>
+<!-- still here, afterwards -->
+<g id="i-persist">
+  <path d="M8 32 H24" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M28 24 L40 36 M40 24 L28 36" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M44 32 H58" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round" stroke-dasharray="5 4"/>
+  <circle cx="32" cy="50" r="5" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+</g>
+<!-- said back, louder -->
+<g id="i-echo">
+  <circle cx="18" cy="32" r="6" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <path d="M30 22 A14 14 0 0 1 30 42" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M40 14 A24 24 0 0 1 40 50" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round" opacity=".55"/>
+</g>
+<!-- a medal -->
+<g id="i-prize">
+  <circle cx="32" cy="38" r="14" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <path d="M32 32 V44" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M22 12 L28 26 M42 12 L36 26" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+</g>
+<!-- out, and back -->
+<g id="i-swap">
+  <path d="M10 22 H46" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M40 16 L47 22 L40 28" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M54 42 H18" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M24 36 L17 42 L24 48" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<!-- one becomes two -->
+<g id="i-split">
+  <path d="M8 32 H26" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M26 32 C38 32 40 18 54 18" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M26 32 C38 32 40 46 54 46" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="5 4"/>
+  <circle cx="26" cy="32" r="3.6" fill="var(--ic-rose)"/>
+</g>
+<!-- a chain, folded -->
+<g id="i-fold">
+  <path d="M12 44 C12 28 24 24 32 32 C40 40 52 36 52 20" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <circle cx="12" cy="44" r="4" fill="var(--ic-dim)"/>
+  <circle cx="52" cy="20" r="4" fill="var(--ic-dim)"/>
+</g>
 </defs></svg>
 <div class="s g-concepts cover" id="s1"><div class="hdr"><span class="mark">belleof<span class="sg">thebot</span>_</span><span class="sp"></span><span class="num">1 / 8</span></div><div class="mid"><h1>When people argue about what <span class="rose">AGI</span> means, the fix is to stop saying it.</h1><div class="swipe"><span class="ar"></span>swipe</div></div><img class="belle sm" src="../../assets/belle/hands-hips-pedantic.webp" alt=""></div>
 <div class="s g-concepts" id="s2"><div class="hdr"><span class="mark">belleof<span class="sg">thebot</span>_</span><span class="chip">AI concepts</span><span class="sp"></span><span class="num">2 / 8</span></div><div class="mid"><span class="kick">before you swipe, pick one</span><h2 style="margin-bottom:38px">&ldquo;Tabooing&rdquo; a word means:</h2><div class="opts"><div class="opt"><span class="k">A</span>Banning it from polite conversation</div><div class="opt"><span class="k">B</span>Replacing it with what it actually stands for, and arguing about that instead</div><div class="opt"><span class="k">C</span>Agreeing on one official definition</div><div class="opt"><span class="k">D</span>Refusing to discuss the topic</div></div></div></div>
 <div class="s g-concepts" id="s3"><div class="hdr"><span class="mark">belleof<span class="sg">thebot</span>_</span><span class="chip">AI concepts</span><span class="sp"></span><span class="num">3 / 8</span></div><div class="mid"><span class="kick">it is B</span><h2 class="" style="max-width:15ch;margin-bottom:52px">Say the <span class="rose">substance</span>, not the handle.</h2><span class="ico big hot"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-taboo"/></svg></span></span><p style="margin-top:38px">Yudkowsky, 2008: do not define the problematic term, see whether you can think without it at all.</p></div></div>
 <div class="s g-concepts flip" id="s4"><div class="hdr"><span class="mark">belleof<span class="sg">thebot</span>_</span><span class="chip">AI concepts</span><span class="sp"></span><span class="num">4 / 8</span></div><div class="mid"><span class="kick">how it works in practice</span><div class="three"><div class="row"><span class="ico"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-taboo"/></svg></span></span><span class="t"><b>Drop the word.</b>Not &ldquo;is this AGI,&rdquo; but &ldquo;can it do this specific job unsupervised.&rdquo;</span></div><div class="row"><span class="ico"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-counter"/></svg></span></span><span class="t"><b>Check for a real disagreement.</b>Often both people predict the same events and only dispute the label.</span></div><div class="row"><span class="ico"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-lens"/></svg></span></span><span class="t"><b>Keep it if it earns its place.</b>A word is fine once everyone can say what it would take to be wrong.</span></div></div><p style="margin-top:52px;font-size:36px">Most fights about intelligence, consciousness and AGI survive only because nobody does this.</p></div></div>
 <div class="s g-concepts" id="s5"><div class="hdr"><span class="mark">belleof<span class="sg">thebot</span>_</span><span class="chip">AI concepts</span><span class="sp"></span><span class="num">5 / 8</span></div><div class="mid"><span class="ico"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-stack"/></svg></span></span><div style="height:44px"></div><span class="kick">why this one is on the site at all</span><h2 class="sm" style="max-width:19ch">Almost every card here is a term that <span class="rose">does argumentative work while pretending to describe</span>.</h2><p style="margin-top:38px">This is the tool for the rest of the deck. Use it on everything here, including on me.</p></div></div>
-<div class="s g-concepts" id="s6u"><div class="hdr"><span class="mark">belleof<span class="sg">thebot</span>_</span><span class="chip">AI concepts</span><span class="sp"></span><span class="num">6 / 8</span></div><div class="mid"><span class="kick">what we do not know</span><span class="ico big"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-blank"/></svg></span></span><div style="height:40px"></div><p style="max-width:24ch;font-size:40px;line-height:1.34">The technique tells you when a word has stopped earning its keep. It does not tell you what to use instead, and dropping a word wholesale is its own mistake: a term can be a bad general question and a <span class="rose">useful operationalisation</span> in a specific context, so long as you say which one you are doing.</p></div></div>
-<div class="s g-concepts" id="s7"><div class="hdr"><span class="mark">belleof<span class="sg">thebot</span>_</span><span class="chip">AI concepts</span><span class="sp"></span><span class="num">7 / 8</span></div><div class="mid"><span class="kick">how to file this one</span><div style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:48px"><span class="flag">measured</span> <span class="flag">someone&rsquo;s estimate</span> <span class="flag">argument</span> <span class="flag on">definition</span> </div><span class="ico"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-doc"/></svg></span></span><div style="height:40px"></div><p style="max-width:17ch">A <span class="rose">definition</span> of a technique, not a claim about the world. It cannot be right or wrong, only useful or not.</p><p class="src" style="margin-top:40px">Yudkowsky, Taboo Your Words, LessWrong,<br>15 February 2008, in A Human&rsquo;s Guide to Words</p></div><img class="belle sm" src="../../assets/belle/dead-pan-1.webp" alt=""></div>
+<div class="s g-concepts" id="s6u"><div class="hdr"><span class="mark">belleof<span class="sg">thebot</span>_</span><span class="chip">AI concepts</span><span class="sp"></span><span class="num">6 / 8</span></div><div class="mid"><span class="kick">what we do not know</span><span class="ico big"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-blank"/></svg></span></span><div style="height:34px"></div><p style="max-width:25ch;line-height:1.32;font-size:37px">The technique tells you when a word has stopped earning its keep. It does not tell you what to use instead, and dropping a word wholesale is its own mistake: a term can be a bad general question and a <span class="rose">useful operationalisation</span> in a specific context, so long as you say which one you are doing.</p></div></div>
+<div class="s g-concepts" id="s7"><div class="hdr"><span class="mark">belleof<span class="sg">thebot</span>_</span><span class="chip">AI concepts</span><span class="sp"></span><span class="num">7 / 8</span></div><div class="mid"><span class="kick">how to file this one</span><div style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:48px"><span class="flag">measured</span> <span class="flag">someone&rsquo;s estimate</span> <span class="flag">argument</span> <span class="flag on">definition</span> </div><span class="ico"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-doc"/></svg></span></span><div style="height:36px"></div><p style="max-width:18ch;font-size:35px">A <span class="rose">definition</span> of a technique, not a claim about the world. It cannot be right or wrong, only useful or not.</p><p class="src" style="margin-top:32px;font-size:24px">Yudkowsky, Taboo Your Words, LessWrong,<br>15 February 2008, in A Human&rsquo;s Guide to Words</p></div><img class="belle sm" src="../../assets/belle/dead-pan-1.webp" alt=""></div>
 <div class="s g-concepts outro" id="s8"><div class="hdr"><span class="mark">belleof<span class="sg">thebot</span>_</span><span class="chip">AI concepts</span><span class="sp"></span><span class="num">8 / 8</span></div><div class="mid"><span class="kick">defined before argued</span><h2 style="max-width:15ch;margin-bottom:44px">I define the words before anyone argues with them.</h2><div class="follow"><span class="l">follow for the rest</span><span class="handle">@belleofthebot</span></div><p style="margin-top:44px;font-size:34px;max-width:20ch">Every claim marked measured, estimated or argued. Every source named.</p></div><img class="belle sm" src="../../assets/belle/hands-out-cheeky.webp" alt=""></div>
 </body></html>
