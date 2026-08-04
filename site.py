@@ -55,7 +55,8 @@ BELLE_TERMS = {
     "gender-shades", "fei-fei-li", "gebru", "toner", "murati",
     "daniela-amodei", "crawford", "koller", "lucy-guo",
     "shoggoth", "off-switch", "alignment-faking", "mechahitler",
-    "permanent-disempowerment", "optimization",
+    "permanent-disempowerment", "optimization", "drones", "grown-not-built",
+    "yang",
 }
 
 # The second expression, shown on hover. Idle face, then the reaction: the point
@@ -89,7 +90,8 @@ HOVER = {
  "lucy-guo": "smirking",                    "shoggoth": "shocked",
  "off-switch": "shock-worry",               "alignment-faking": "secret-close-smile",
  "mechahitler": "yikes",                    "permanent-disempowerment": "worry-about-future",
- "optimization": "unimpressed",
+ "optimization": "unimpressed",             "drones": "shock-worry",
+ "grown-not-built": "noticed-something",    "yang": "hands-hips-pedantic",
 }
 
 # the four kinds of claim

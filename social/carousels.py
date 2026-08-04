@@ -612,6 +612,31 @@ ICONS = """
   <path d="M27 36 H27.5 M37 36 H37.5" stroke="var(--ic-rose)" stroke-width="4" stroke-linecap="round"/>
   <path d="M27 42 C29 45 35 45 37 42" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round"/>
 </g>
+
+<!-- four rotors, and a designated target -->
+<g id="i-drone">
+  <circle cx="16" cy="16" r="7" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <circle cx="48" cy="16" r="7" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <circle cx="16" cy="40" r="7" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <circle cx="48" cy="40" r="7" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <path d="M21 21 L43 35 M43 21 L21 35" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M26 54 H38 M32 48 V60" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="32" cy="54" r="5" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+</g>
+<!-- set the conditions, do not choose what appears -->
+<g id="i-grow">
+  <path d="M32 54 V26" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M32 34 C22 34 18 26 18 18 C28 18 32 26 32 34" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linejoin="round"/>
+  <path d="M32 42 C42 42 46 34 46 26 C36 26 32 34 32 42" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-linejoin="round"/>
+  <path d="M18 54 H46" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+</g>
+<!-- the same amount, to everybody -->
+<g id="i-dividend">
+  <circle cx="32" cy="32" r="14" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <path d="M32 24 V40 M27 28 H37 M27 36 H37" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M8 20 V44 M56 20 V44" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M14 32 H16 M48 32 H50" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+</g>
 </defs></svg>
 """
 
@@ -2540,6 +2565,85 @@ SPECS = {
   src="Kulveit, Douglas, Ammann, Turan, Krueger and Duvenaud,<br>Gradual Disempowerment, arXiv:2501.16946, January 2025; ICML 2025",
   belle_hook="glum", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
   outro="I take the words apart so the argument stops being noise."),
+
+"drones": dict(
+  cat="risk", term="AI drones",
+  kick="what is actually documented, and what is not",
+  hook="No verified case exists of a drone <span class=\"rose\">choosing</span> a human target and killing them.",
+  q="The 2021 UN report on Libya, widely called the first autonomous drone kill:",
+  opts=["Confirmed a drone killed a person on its own",
+        "Said targets were remotely engaged, and attributed no deaths to the autonomous system",
+        "Was withdrawn by the UN",
+        "Concerned a US drone"],
+  ans="B", icon="i-drone",
+  reveal='It said <span class="rose">remotely engaged</span>. Not autonomously killed.',
+  revsub="It also lumped operator flown aircraft together with loitering munitions, which is where the story came from.",
+  threekick="what is real, in order of certainty",
+  three=[("i-cursor","Terminal autonomy is deployed.","In Ukraine, an operator picks the target and the drone holds the lock through jamming. That is documented."),
+         ("i-blank","Full autonomy is not evidenced.","No confirmed case of a system selecting a human target itself. Hit rates come from manufacturers and governments."),
+         ("i-seat","And there is no treaty.","The UN General Assembly has passed resolutions three years running. Nothing binding exists.")],
+  threefoot="The Secretary General and the Red Cross called for a binding instrument by 2026. That deadline will not be met.",
+  whyicon="i-lens", whykick="why the exaggeration costs something",
+  why="The <span class=\"rose\">real</span> situation is alarming enough, and it is being argued about with a story that is not true.",
+  whysub="America&rsquo;s own policy does not ban this. It requires appropriate levels of human judgement, which is a phrase, not a threshold.",
+  flag="emp",
+  file='<span class="rose">Measured</span> where documents exist, and the famous case is a <span class="rose">misreading</span> of one. Both belong on the card.',
+  src="UN Panel of Experts on Libya, S/2021/229, March 2021;<br>US DoD Directive 3000.09, 25 January 2023; UNGA resolution 80/57, 5 December 2025",
+  belle_hook="saying-unpleasant-truth-1", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"grown-not-built": dict(
+  cat="concepts", term="grown, not built",
+  kick="why nobody can just fix it",
+  hook="AI is <span class=\"rose\">grown more than it is built</span>. That is the chief executive&rsquo;s phrase.",
+  q="Saying a model is grown rather than built means:",
+  opts=["It is trained on living organisms",
+        "Engineers set the conditions, and the internal structure emerges rather than being designed",
+        "It improves itself after release",
+        "It is made of biological components"],
+  ans="B", icon="i-grow",
+  reveal='You set the <span class="rose">conditions</span>. You do not choose what appears.',
+  revsub="Amodei, April 2025: like growing a plant, we set the high level conditions and the structure that emerges is unpredictable.",
+  threekick="what is designed, and what is not",
+  three=[("i-frame","Designed: the conditions.","The architecture, the data, the objective, the training run. All chosen by people."),
+         ("i-lattice","Not designed: the result.","No engineer picked a weight, and no document explains why any of them is what it is."),
+         ("i-lens","Which is why reading it is a science.","Interpretability exists because the thing has to be studied, not consulted.")],
+  threefoot="Karpathy put it earlier and more precisely in 2017: you specify a goal, then search a space of programs for one that works.",
+  whyicon="i-taboo", whykick="the objection, and it is a good one",
+  why="Organic language can quietly move <span class=\"rose\">responsibility</span> off the people who made the thing.",
+  whysub="Narayanan and Kapoor argue AI is normal technology and we can stay in control of it. Nobody grew it by accident. A company chose to.",
+  flag="def",
+  file='A <span class="rose">definition</span> of how these systems come to exist. The metaphor is contested; the mechanism is not.',
+  src="Amodei, The Urgency of Interpretability, April 2025;<br>Karpathy, Software 2.0, November 2017; Narayanan and Kapoor, AI as Normal Technology, April 2025",
+  belle_hook="innocent-curious", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"yang": dict(
+  cat="actors", term="Andrew Yang",
+  person="Andrew Yang", role="ran for president on automation",
+  kick="the campaign that made it a voting issue",
+  hook="He ran for president in 2020 on one idea: <span class=\"rose\">the jobs are going</span>.",
+  q="Yang&rsquo;s Freedom Dividend proposed:",
+  opts=["A job guarantee for displaced workers",
+        "A thousand dollars a month to every American adult, funded largely by a value added tax",
+        "A tax on robots",
+        "Free retraining programmes"],
+  ans="B", icon="i-dividend",
+  reveal='A thousand dollars a month, <span class="rose">to everyone</span>, no conditions.',
+  revsub="Announced November 2017, campaign suspended February 2020, and the argument outlived both.",
+  threekick="how the prediction has aged",
+  three=[("i-decline","The headline call missed.","Truck driving did not collapse. The occupation grew, and is projected to keep growing."),
+         ("i-diverge","The mechanism held.","Task level displacement from automation is documented, and the direction was right."),
+         ("i-cursor","And the target moved.","Generative AI aims at the office work he flagged second, not the driving he flagged first.")],
+  threefoot="The commonly quoted three and a half million truck drivers is a broader industry figure. The specific occupation is about 2.2 million.",
+  whyicon="i-gauge", whykick="what to take from it",
+  why="Being <span class=\"rose\">early and wrong about when</span> is not the same as being wrong.",
+  whysub="It is also not the same as being right. The honest reading is that he named a real mechanism and mistimed it, which is what most forecasting looks like.",
+  flag="op",
+  file='<span class="rose">Someone&rsquo;s position</span>, now partly checkable against outcomes, which is more than most positions on this site get.',
+  src="Yang, The War on Normal People, Hachette 2018;<br>US Bureau of Labor Statistics occupational data, 2024 and projections to 2034",
+  belle_hook="hands-out-cheeky", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
 }
 
 
@@ -3004,6 +3108,21 @@ UNKNOWN = {
  "Everything that would make it testable. The argument specifies no threshold, no timeline and no condition that "
  "would show it false, which its critics fairly raise. It is also "
  "<span class=\"rose\">unfalsifiable the other way</span>: nothing observed so far counts against it either.",
+"drones":
+ "Whether any system has already crossed the line, because nobody outside a defence ministry can check. "
+ "Manufacturer hit rates are unaudited, deployment is classified, and the reporting on AI target generation in "
+ "Gaza rests on <span class=\"rose\">anonymous sources and is denied</span>. The absence of a verified case is not "
+ "the same as the absence of a case.",
+
+"grown-not-built":
+ "Whether growing is the right word at all. It captures something true about the mechanism and imports something "
+ "unearned about <span class=\"rose\">agency and responsibility</span>, which is exactly the objection its critics "
+ "make. Meanwhile what actually emerges inside a trained model remains almost entirely unread.",
+
+"yang":
+ "Whether this time is different. Every previous wave of automation created more work than it removed, and "
+ "nobody knows whether that pattern holds when the thing being automated is <span class=\"rose\">cognition "
+ "itself</span>. The economists disagree sharply, and the honest position is that the answer arrives late.",
 }
 for _k, _v in SPECS.items():
     if _k in UNKNOWN:

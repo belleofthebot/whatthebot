@@ -2111,3 +2111,96 @@ Alt text slide 4: Three labelled points, each with a small diagram.
 Alt text slide 5: A short explanation of why the distinction matters.
 Alt text slide 6: The epistemic flag for this claim, and the source it came from.
 Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 69. AI drones  (AI risk)
+Folder: `out/drones/`  ·  8 slides
+
+```
+No verified case exists of a drone choosing a human target and killing them.
+
+It also lumped operator flown aircraft together with loitering munitions, which is where the story came from.
+
+- Terminal autonomy is deployed. In Ukraine, an operator picks the target and the drone holds the lock through jamming. That is documented.
+- Full autonomy is not evidenced. No confirmed case of a system selecting a human target itself. Hit rates come from manufacturers and governments.
+- And there is no treaty. The UN General Assembly has passed resolutions three years running. Nothing binding exists.
+
+The real situation is alarming enough, and it is being argued about with a story that is not true.
+America’s own policy does not ban this. It requires appropriate levels of human judgement, which is a phrase, not a threshold.
+
+Filed as: measured.
+Source: UN Panel of Experts on Libya, S/2021/229, March 2021; US DoD Directive 3000.09, 25 January 2023; UNGA resolution 80/57, 5 December 2025
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIsafety #AIrisk #AIalignment #AIliteracy
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: No verified case exists of a drone choosing a human target and killing them.
+Alt text slide 2: A four option multiple choice question: The 2021 UN report on Libya, widely called the first autonomous drone kill:
+Alt text slide 3: The answer, with a diagram: It said remotely engaged. Not autonomously killed.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 70. grown, not built  (AI concepts)
+Folder: `out/grown-not-built/`  ·  8 slides
+
+```
+AI is grown more than it is built. That is the chief executive’s phrase.
+
+Amodei, April 2025: like growing a plant, we set the high level conditions and the structure that emerges is unpredictable.
+
+- Designed: the conditions. The architecture, the data, the objective, the training run. All chosen by people.
+- Not designed: the result. No engineer picked a weight, and no document explains why any of them is what it is.
+- Which is why reading it is a science. Interpretability exists because the thing has to be studied, not consulted.
+
+Organic language can quietly move responsibility off the people who made the thing.
+Narayanan and Kapoor argue AI is normal technology and we can stay in control of it. Nobody grew it by accident. A company chose to.
+
+Filed as: definition.
+Source: Amodei, The Urgency of Interpretability, April 2025; Karpathy, Software 2.0, November 2017; Narayanan and Kapoor, AI as Normal Technology, April 2025
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIconcepts #AIexplained #AIliteracy #AGI
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: AI is grown more than it is built. That is the chief executive’s phrase.
+Alt text slide 2: A four option multiple choice question: Saying a model is grown rather than built means:
+Alt text slide 3: The answer, with a diagram: You set the conditions. You do not choose what appears.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 71. Andrew Yang  (AI actors)
+Folder: `out/yang/`  ·  8 slides
+
+```
+He ran for president in 2020 on one idea: the jobs are going.
+
+Announced November 2017, campaign suspended February 2020, and the argument outlived both.
+
+- The headline call missed. Truck driving did not collapse. The occupation grew, and is projected to keep growing.
+- The mechanism held. Task level displacement from automation is documented, and the direction was right.
+- And the target moved. Generative AI aims at the office work he flagged second, not the driving he flagged first.
+
+Being early and wrong about when is not the same as being wrong.
+It is also not the same as being right. The honest reading is that he named a real mechanism and mistimed it, which is what most forecasting looks like.
+
+Filed as: someone’s estimate.
+Source: Yang, The War on Normal People, Hachette 2018; US Bureau of Labor Statistics occupational data, 2024 and projections to 2034
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIindustry #TechPolicy #AIliteracy #Nvidia #AIcompanies
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: He ran for president in 2020 on one idea: the jobs are going.
+Alt text slide 2: A four option multiple choice question: Yang’s Freedom Dividend proposed:
+Alt text slide 3: The answer, with a diagram: A thousand dollars a month, to everyone, no conditions.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
