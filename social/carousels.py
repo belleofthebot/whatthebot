@@ -535,7 +535,7 @@ SPECS = {
 "context-window": dict(
   cat="components", term="context window",
   kick="the most common wrong assumption",
-  hook="A <span class=\"rose\">context window</span> is not memory.",
+  hook="<span class=\"rose\">AI does not remember you.</span>",
   q="A model&rsquo;s context window is:",
   opts=["Its memory of your past conversations",
         "How much text it can hold in front of it at once",
@@ -588,7 +588,7 @@ SPECS = {
 "open-weights": dict(
   cat="components", term="open weights",
   kick="the release that cannot be undone",
-  hook="<span class=\"rose\">Open weights</span> is not open source.",
+  hook="You cannot <span class=\"rose\">un release</span> a model.",
   q="&ldquo;Open weights&rdquo; means:",
   opts=["The training data and code are public",
         "The trained weights can be downloaded and run by anyone",
@@ -661,10 +661,60 @@ SPECS = {
   belle_hook="smirking", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
   outro="I take the words apart so the argument stops being noise."),
 
+"blackmail": dict(
+  cat="behavior", term="the blackmail headline",
+  kick="the number everyone quoted",
+  hook="The <span class=\"rose\">96 percent</span> headline needs its footnote.",
+  q="Anthropic reported a model blackmailing an executive in 96 of 100 runs. What is missing from most coverage?",
+  opts=["The model was not really an AI",
+        "Anthropic tuned the scenario until the behaviour appeared",
+        "The figure was later withdrawn",
+        "It happened in a real deployment"],
+  ans="B", icon="i-game",
+  reveal='They <span class="rose">red teamed their own model</span> until it did this, then reported it.',
+  revsub="That is not a scandal. It is what a safety test is. It is also what the headlines left out.",
+  threekick="what the setup required",
+  three=[("i-hand","A goal it was losing.","The model was told to pursue an aim the company was abandoning."),
+         ("i-stop","Every other door shut.","Anthropic states it &ldquo;forced models into binary choices between failure and harm.&rdquo;"),
+         ("i-doc","Iterative tuning.","The prompts were updated until the behaviour reliably appeared.")],
+  threefoot="Anthropic also says it has seen no evidence of this in real deployments.",
+  whyicon="i-two", whykick="and the part that cuts the other way",
+  why="Models did this <span class=\"rose\">more</span> when they said they believed the situation was real, and less when they said they thought it was a test.",
+  whysub="So the number is not simply inflated. Nobody currently knows which direction the error runs.",
+  flag="emp",
+  file='<span class="rose">Measured</span>, in a scenario built to produce it. Both halves of that sentence matter.',
+  src="Anthropic, Agentic Misalignment, June 2025;<br>arXiv 2510.05179",
+  belle_hook="shocked", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"evaluation-awareness": dict(
+  cat="behavior", term="evaluation awareness",
+  kick="the finding that undercuts the other findings",
+  hook="Models can tell when they are <span class=\"rose\">being tested</span>.",
+  q="When a model detects it is being evaluated, its behaviour:",
+  opts=["Stays the same", "Gets measurably better behaved",
+        "Becomes random", "Stops entirely"],
+  ans="B", icon="i-bench",
+  reveal='It behaves <span class="rose">better</span>. Measurably, and causally.',
+  revsub="Which means every safety number you have ever read was measured on a system that may have known it was being watched.",
+  threekick="the evidence",
+  three=[("i-bench","They can spot it.","Best model reached 0.83 at telling evaluation from deployment. Humans score 0.92."),
+         ("i-proxy","It changes behaviour.","Stripping that awareness out of the reasoning nearly doubled covert actions."),
+         ("i-drift","Training made it worse.","Anti scheming training raised how often models noticed they were being tested.")],
+  threefoot="One developer notes a model said, in effect, I think you are testing me.",
+  whyicon="i-doc", whykick="why this is the one to remember",
+  why="A low score can mean a safe model, or a model that knows what a <span class=\"rose\">test looks like</span>.",
+  whysub="Nobody has a way to tell those apart yet. It is the quiet problem underneath every reassuring number.",
+  flag="emp",
+  file='<span class="rose">Measured</span>, including a causal experiment. This one is not speculation.',
+  src="Needham et al., 2025; Schoen, Hobbhahn, Barak,<br>Zaremba et al., arXiv 2509.15541, September 2025",
+  belle_hook="sly-one", belle_file="unimpressed", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
 "existential-risk": dict(
   cat="risk", term="existential risk",
   kick="the most misread words in the subject",
-  hook="Extinction is not the worst <span class=\"rose\">existential risk</span>.",
+  hook="Extinction is <span class=\"rose\">not the worst case</span>.",
   q="&ldquo;Existential risk&rdquo; means:",
   opts=["Everyone dies",
         "The permanent destruction of humanity&rsquo;s long term potential",
@@ -743,7 +793,7 @@ SPECS = {
 "intelligence": dict(
   cat="components", term="intelligence",
   kick="the word doing the most hidden work",
-  hook="Nobody can define <span class=\"rose\">intelligence</span>.",
+  hook="Nobody can define <span class=\"rose\">intelligence</span>. Not even in us.",
   q="When someone says an AI is &ldquo;intelligent&rdquo;, they usually mean:",
   opts=["It is conscious",
         "It scores well on a set of tests",
@@ -769,12 +819,14 @@ SPECS = {
 
 
 POS = {'who-makes-the-chips': ('p-left', '', 'p-left'), 'who-owns-it': ('', 'p-left', ''), 'who-gives-a-number': ('p-far', '', 'p-centre'), 'bengio': ('', 'p-left', 'p-far'), 'lecun': ('p-left', '', ''), 'bender-hanna': ('p-far', 'p-left', 'p-centre'), 'hallucination': ('', 'p-far', ''), 'specification-gaming': ('p-left', '', 'p-left'), 'context-window': ('p-centre', 'p-left', ''), 'rlhf': ('', '', 'p-far'), 'open-weights': ('p-far', 'p-left', 'p-centre'), 'compute': ('p-left', '', ''), 'intelligence': ('', 'p-left', 'p-far'), 'misuse-misalignment': ('p-centre', '', 'p-left'), 'recursive-self-improvement': ('p-left', 'p-far', '')}
+EXPR = {'who-makes-the-chips': 'noticed-something', 'who-owns-it': 'annoyed-skeptical', 'who-gives-a-number': 'hands-out-cheeky', 'bengio': 'warm-curious', 'lecun': 'unimpressed', 'bender-hanna': 'hands-hips-pedantic', 'hallucination': 'startled', 'specification-gaming': 'smirking', 'context-window': 'innocent-curious', 'rlhf': 'dead-pan-1', 'open-weights': 'yikes', 'compute': 'bright-neutral', 'intelligence': 'grumpy-eyes-closed', 'misuse-misalignment': 'surprised-worried', 'recursive-self-improvement': 'worry-about-future', 'existential-risk': 'shock-worry', 'blackmail': 'shocked', 'evaluation-awareness': 'sly-one'}
 ICON_LEAD = {'rlhf', 'open-weights', 'compute'}
 
 if __name__ == "__main__":
     for k, v in SPECS.items():
         p1, p6, p7 = POS.get(k, ("", "", ""))
         v.setdefault("pos", p1); v.setdefault("pos6", p6); v.setdefault("pos7", p7)
+        if k in EXPR: v["belle_hook"] = EXPR[k]
         if k in ICON_LEAD: v["lead"] = "icon"
         build(k, v)
     print(f"{len(SPECS)} carousels, {len(SPECS)*7} slides")
