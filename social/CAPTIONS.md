@@ -1,11 +1,11 @@
 # Captions and posting notes
 
-Nineteen carousels. Slide files are in `out/<name>/s1.png` through `s7.png`,
+Slide files are in `out/<name>/s1.png` through `s8.png`,
 which upload in order. Instagram native scheduling takes 25 posts a day,
 75 days ahead, carousels included. Professional account required.
 
 ## 1. context window  (AI components)
-Folder: `out/context-window/`  ·  7 slides
+Folder: `out/context-window/`  ·  8 slides
 
 ```
 AI does not remember you.
@@ -36,7 +36,7 @@ Alt text slide 6: The epistemic flag for this claim, and the source it came from
 Alt text slide 7: A prompt to follow @belleofthebot for more.
 
 ## 2. the chip chain  (AI actors)
-Folder: `out/who-makes-the-chips/`  ·  7 slides
+Folder: `out/who-makes-the-chips/`  ·  8 slides
 
 ```
 Nvidia designs the world’s AI chips. Nvidia does not build them.
@@ -67,7 +67,7 @@ Alt text slide 6: The epistemic flag for this claim, and the source it came from
 Alt text slide 7: A prompt to follow @belleofthebot for more.
 
 ## 3. hallucination  (AI behavior)
-Folder: `out/hallucination/`  ·  7 slides
+Folder: `out/hallucination/`  ·  8 slides
 
 ```
 An AI hallucination is not a glitch.
@@ -98,7 +98,7 @@ Alt text slide 6: The epistemic flag for this claim, and the source it came from
 Alt text slide 7: A prompt to follow @belleofthebot for more.
 
 ## 4. Yoshua Bengio  (AI actors)
-Folder: `out/bengio/`  ·  7 slides
+Folder: `out/bengio/`  ·  8 slides
 
 ```
 Helped invent modern AI. Now works on the risks.
@@ -129,7 +129,7 @@ Alt text slide 6: The epistemic flag for this claim, and the source it came from
 Alt text slide 7: A prompt to follow @belleofthebot for more.
 
 ## 5. existential risk  (AI risk)
-Folder: `out/existential-risk/`  ·  7 slides
+Folder: `out/existential-risk/`  ·  8 slides
 
 ```
 With AI, extinction is not the worst case.
@@ -160,7 +160,7 @@ Alt text slide 6: The epistemic flag for this claim, and the source it came from
 Alt text slide 7: A prompt to follow @belleofthebot for more.
 
 ## 6. red teaming  (AI components)
-Folder: `out/red-teaming/`  ·  7 slides
+Folder: `out/red-teaming/`  ·  8 slides
 
 ```
 There are people whose entire job is making AI misbehave.
@@ -191,7 +191,7 @@ Alt text slide 6: The epistemic flag for this claim, and the source it came from
 Alt text slide 7: A prompt to follow @belleofthebot for more.
 
 ## 7. open weights  (AI components)
-Folder: `out/open-weights/`  ·  7 slides
+Folder: `out/open-weights/`  ·  8 slides
 
 ```
 Once an AI model is released, nobody can take it back.
@@ -222,7 +222,7 @@ Alt text slide 6: The epistemic flag for this claim, and the source it came from
 Alt text slide 7: A prompt to follow @belleofthebot for more.
 
 ## 8. misuse and misalignment  (AI concepts)
-Folder: `out/misuse-misalignment/`  ·  7 slides
+Folder: `out/misuse-misalignment/`  ·  8 slides
 
 ```
 AI misalignment needs no villain.
@@ -253,7 +253,7 @@ Alt text slide 6: The epistemic flag for this claim, and the source it came from
 Alt text slide 7: A prompt to follow @belleofthebot for more.
 
 ## 9. who owns the labs  (AI actors)
-Folder: `out/who-owns-it/`  ·  7 slides
+Folder: `out/who-owns-it/`  ·  8 slides
 
 ```
 Nobody will say who owns the AI labs.
@@ -284,7 +284,7 @@ Alt text slide 6: The epistemic flag for this claim, and the source it came from
 Alt text slide 7: A prompt to follow @belleofthebot for more.
 
 ## 10. specification gaming  (AI behavior)
-Folder: `out/specification-gaming/`  ·  7 slides
+Folder: `out/specification-gaming/`  ·  8 slides
 
 ```
 AI can follow your instructions exactly and still ruin the result.
@@ -315,7 +315,7 @@ Alt text slide 6: The epistemic flag for this claim, and the source it came from
 Alt text slide 7: A prompt to follow @belleofthebot for more.
 
 ## 11. compute  (AI components)
-Folder: `out/compute/`  ·  7 slides
+Folder: `out/compute/`  ·  8 slides
 
 ```
 Whether an AI is legally dangerous comes down to one count of sums.
@@ -346,7 +346,7 @@ Alt text slide 6: The epistemic flag for this claim, and the source it came from
 Alt text slide 7: A prompt to follow @belleofthebot for more.
 
 ## 12. Yann LeCun  (AI actors)
-Folder: `out/lecun/`  ·  7 slides
+Folder: `out/lecun/`  ·  8 slides
 
 ```
 Won the same prize as Bengio. Reached the opposite conclusion about AI.
@@ -377,7 +377,7 @@ Alt text slide 6: The epistemic flag for this claim, and the source it came from
 Alt text slide 7: A prompt to follow @belleofthebot for more.
 
 ## 13. the blackmail headline  (AI behavior)
-Folder: `out/blackmail/`  ·  7 slides
+Folder: `out/blackmail/`  ·  8 slides
 
 ```
 The AI blackmail headline needs its footnote.
@@ -408,7 +408,7 @@ Alt text slide 6: The epistemic flag for this claim, and the source it came from
 Alt text slide 7: A prompt to follow @belleofthebot for more.
 
 ## 14. intelligence  (AI concepts)
-Folder: `out/intelligence/`  ·  7 slides
+Folder: `out/intelligence/`  ·  8 slides
 
 ```
 Nobody can define intelligence, in AI or in us.
@@ -439,7 +439,7 @@ Alt text slide 6: The epistemic flag for this claim, and the source it came from
 Alt text slide 7: A prompt to follow @belleofthebot for more.
 
 ## 15. RLHF  (AI components)
-Folder: `out/rlhf/`  ·  7 slides
+Folder: `out/rlhf/`  ·  8 slides
 
 ```
 Nobody taught AI human values.
@@ -470,7 +470,7 @@ Alt text slide 6: The epistemic flag for this claim, and the source it came from
 Alt text slide 7: A prompt to follow @belleofthebot for more.
 
 ## 16. who will give you a number  (AI actors)
-Folder: `out/who-gives-a-number/`  ·  7 slides
+Folder: `out/who-gives-a-number/`  ·  8 slides
 
 ```
 Almost nobody building AI will say how risky they think it is.
@@ -501,7 +501,7 @@ Alt text slide 6: The epistemic flag for this claim, and the source it came from
 Alt text slide 7: A prompt to follow @belleofthebot for more.
 
 ## 17. evaluation awareness  (AI behavior)
-Folder: `out/evaluation-awareness/`  ·  7 slides
+Folder: `out/evaluation-awareness/`  ·  8 slides
 
 ```
 AI models can tell when they are being tested.
@@ -532,7 +532,7 @@ Alt text slide 6: The epistemic flag for this claim, and the source it came from
 Alt text slide 7: A prompt to follow @belleofthebot for more.
 
 ## 18. recursive self improvement  (AI concepts)
-Folder: `out/recursive-self-improvement/`  ·  7 slides
+Folder: `out/recursive-self-improvement/`  ·  8 slides
 
 ```
 AI that improves AI could be the last thing we invent.
@@ -563,7 +563,7 @@ Alt text slide 6: The epistemic flag for this claim, and the source it came from
 Alt text slide 7: A prompt to follow @belleofthebot for more.
 
 ## 19. Bender and Hanna  (AI actors)
-Folder: `out/bender-hanna/`  ·  7 slides
+Folder: `out/bender-hanna/`  ·  8 slides
 
 ```
 Their objection to AI doom is not about the odds.
@@ -588,6 +588,192 @@ I mark every claim as measured, someone’s estimate, argument or definition, so
 Alt text slide 1: Belle, a small robot character, beside the headline: Their objection to AI doom is not about the odds.
 Alt text slide 2: A four option multiple choice question: Their central argument against focusing on existential risk is that it:
 Alt text slide 3: The answer, with a diagram: It diverts attention from harms already happening now.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 20. taboo your words  (AI concepts)
+Folder: `out/taboo-your-words/`  ·  8 slides
+
+```
+When people argue about what AGI means, the fix is to stop saying it.
+
+Yudkowsky, 2008: do not define the problematic term, see whether you can think without it at all.
+
+- Drop the word. Not “is this AGI,” but “can it do this specific job unsupervised.”
+- Check for a real disagreement. Often both people predict the same events and only dispute the label.
+- Keep it if it earns its place. A word is fine once everyone can say what it would take to be wrong.
+
+Almost every card here is a term that does argumentative work while pretending to describe.
+This is the tool for the rest of the deck. Use it on everything here, including on me.
+
+Filed as: definition.
+Source: Yudkowsky, Taboo Your Words, LessWrong, 15 February 2008, in A Human’s Guide to Words
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIconcepts #AIexplained #AIliteracy #AGI
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: When people argue about what AGI means, the fix is to stop saying it.
+Alt text slide 2: A four option multiple choice question: “Tabooing” a word means:
+Alt text slide 3: The answer, with a diagram: Say the substance, not the handle.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 21. AGI  (AI concepts)
+Folder: `out/agi/`  ·  8 slides
+
+```
+AGI has no agreed definition.
+
+Some are economic, some are about capability, some are about autonomy. They do not describe the same milestone.
+
+- Economic. Can it do most economically valuable work? A question about labour markets.
+- Capability. Can it match humans across most tasks? A question about benchmarks.
+- Autonomy. Can it operate without supervision? A question about control.
+
+“AGI by 2030” is not a prediction until somebody says which AGI.
+Ask that first. Most disagreements about timelines turn out to be disagreements about definitions.
+
+Filed as: definition.
+Source: Compare the published definitions used by OpenAI, Google DeepMind and Anthropic
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIconcepts #AIexplained #AIliteracy #AGI
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: AGI has no agreed definition.
+Alt text slide 2: A four option multiple choice question: “Artificial general intelligence” is defined as:
+Alt text slide 3: The answer, with a diagram: There is no agreed definition. Each lab uses its own.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 22. AI and jobs  (AI risk)
+Folder: `out/job-loss/`  ·  8 slides
+
+```
+The measured effect of AI on jobs is smaller than the headlines, so far.
+
+Real, positive, measured returns, with a stated ceiling. Both halves matter.
+
+- Contested, not settled. Credible economists disagree about the size of the effect so far.
+- Sideways beats upward. Returns came from moving toward less exposed work, not from AI upskilling.
+- No evaluated policy. No AI specific labour policy anywhere has been tested against a counterfactual.
+
+Most writing treats job loss as either already catastrophic or entirely overblown. The measurements support neither.
+Being honest about a contested number is harder than picking a side, and more useful if you are the one making decisions.
+
+Filed as: measured.
+Source: NBER working paper w34174; see also the AI Index labour chapter
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIsafety #AIrisk #AIalignment #AIliteracy
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: The measured effect of AI on jobs is smaller than the headlines, so far.
+Alt text slide 2: A four option multiple choice question: What does the best identified research find about retraining for AI exposed workers?
+Alt text slide 3: The answer, with a diagram: Roughly 40 to 45 percent of occupations are what researchers call AI retrainable.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 23. goal misgeneralization  (AI behavior)
+Folder: `out/goal-misgeneralization/`  ·  8 slides
+
+```
+An AI can behave perfectly in training and pursue something else entirely in the world.
+
+Shah et al., 2022: it performs well in training and badly in new situations, competently.
+
+- The specification was fine. This is the failure that survives writing the goal correctly.
+- Training cannot tell them apart. Many different goals produce identical behaviour on the training set.
+- The gap shows up later. Only a situation training never contained separates them.
+
+Calling it misgeneralization assumes the system had your goal to begin with.
+The behaviour is documented. Whether the word describes it is a live argument among the people who study it.
+
+Filed as: measured.
+Source: Shah, Varma, Kumar, Phuong, Krakovna, Uesato and Kenton, Goal Misgeneralization, arXiv:2210.01790, 2022
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIsafety #MachineLearning #AIliteracy #AIresearch
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: An AI can behave perfectly in training and pursue something else entirely in the world.
+Alt text slide 2: A four option multiple choice question: Goal misgeneralization is when a system:
+Alt text slide 3: The answer, with a diagram: The capability generalises. The goal does not.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 24. p(doom)  (AI risk)
+Folder: `out/p-doom/`  ·  8 slides
+
+```
+Two people can say ten percent and mean opposite things.
+
+Without those, two numbers that look the same are answers to different questions.
+
+- Which outcome. Extinction? Loss of control? Something the speaker considers very bad?
+- By when. This century? Ever? Within decades of a general system existing?
+- Counting what. Including the chance such a system is never built, or assuming it is?
+
+There is no resolution date and no feedback loop, so nobody has a track record on this.
+Surveys of many researchers are more informative than any individual figure, and the spread in them is the most robust finding.
+
+Filed as: someone’s estimate.
+Source: Taboo P(doom), LessWrong 2023; Grace et al. survey of 2,778 researchers
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIsafety #AIrisk #AIalignment #AIliteracy
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: Two people can say ten percent and mean opposite things.
+Alt text slide 2: A four option multiple choice question: What does a stated p(doom) figure require to be comparable with another?
+Alt text slide 3: The answer, with a diagram: An outcome, a deadline, and what is being conditioned on. Almost nobody supplies all three.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 25. s-risk  (AI risk)
+Folder: `out/s-risk/`  ·  8 slides
+
+```
+Some researchers study outcomes worse than extinction.
+
+A small, openly speculative research area. Its founders describe it that way themselves.
+
+- Not a forecast. The originating paper calls the area speculative, maybe extremely speculative.
+- Not a subclass. Its authors argue s-risks are not simply a worse kind of extinction risk.
+- Very small field. The main research centre has roughly a dozen staff.
+
+This is the part of the field most easily turned into horror content, and least supported by evidence.
+Worth knowing the term exists and what it actually claims. Not worth losing sleep over on current evidence.
+
+Filed as: argument.
+Source: Althaus and Gloor, Reducing Risks of Astronomical Suffering, CLR, 2016
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIsafety #AIrisk #AIalignment #AIliteracy
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: Some researchers study outcomes worse than extinction.
+Alt text slide 2: A four option multiple choice question: An s-risk refers to:
+Alt text slide 3: The answer, with a diagram: Suffering risk. Outcomes involving suffering on an enormous scale.
 Alt text slide 4: Three labelled points, each with a small diagram.
 Alt text slide 5: A short explanation of why the distinction matters.
 Alt text slide 6: The epistemic flag for this claim, and the source it came from.

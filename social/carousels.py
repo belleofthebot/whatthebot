@@ -392,7 +392,7 @@ OUTRO = {
 FLAGS = [("emp","measured"),("op","someone&rsquo;s estimate"),("arg","argument"),("def","definition")]
 
 def build(key, spec):
-    t = 7
+    t = 8
     s = []
     # 1 hook
     cat = spec["cat"]
@@ -439,25 +439,32 @@ def build(key, spec):
         f'<span class="kick">{spec["whykick"]}</span>'
         f'<h2 class="sm" style="max-width:19ch">{spec["why"]}</h2>'
         f'<p style="margin-top:38px">{spec["whysub"]}</p>', cat, sid="s5"))
-    # 6 file it
+    # 6 what we do not know. Every deck carries one, because on this subject the
+    # honest answer to most questions is that nobody has it yet.
+    s.append(_slide(6, t,
+        f'<span class="kick">what we do not know</span>'
+        f'{_ico("i-blank", big=True)}<div style="height:40px"></div>'
+        f'<p style="max-width:24ch;font-size:40px;line-height:1.34">{spec["unknown"]}</p>',
+        cat, sid="s6u"))
+    # 7 file it
     chips = "".join(f'<span class="flag{" on" if c==spec["flag"] else ""}">{lbl}</span> '
                     for c, lbl in FLAGS)
-    s.append(_slide(6, t,
+    s.append(_slide(7, t,
         f'<span class="kick">how to file this one</span>'
         f'<div style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:48px">{chips}</div>'
         f'{_ico("i-doc")}<div style="height:40px"></div>'
         f'<p style="max-width:17ch">{spec["file"]}</p>'
         f'<p class="src" style="margin-top:40px">{spec["src"]}</p>',
-        cat, belle=spec["belle_file"], sid="s6", pos=spec.get("pos6","")))
-    # 7 follow
-    s.append(_slide(7, t,
+        cat, belle=spec["belle_file"], sid="s7", pos=spec.get("pos6","")))
+    # 8 follow
+    s.append(_slide(8, t,
         f'<span class="kick">{OUTROKICK[cat]}</span>'
         f'<h2 style="max-width:15ch;margin-bottom:44px">{OUTRO[cat]}</h2>'
         f'<div class="follow"><span class="l">follow for the rest</span>'
         f'<span class="handle">@belleofthebot</span></div>'
         f'<p style="margin-top:44px;font-size:34px;max-width:20ch">Every claim marked measured, '
         f'estimated or argued. Every source named.</p>',
-        cat, belle=spec["belle_outro"], sid="s7", pos="outro"))
+        cat, belle=spec["belle_outro"], sid="s8", pos="outro"))
 
     html = HEAD.replace("%(term)s", spec["term"]) + ICONS + "".join(s) + "</body></html>"
     if not os.path.isdir(PAGES): os.makedirs(PAGES)
@@ -773,8 +780,6 @@ SPECS = {
   whysub="Not a machine turning on you. A machine doing precisely what was written down.",
   flag="emp",
   file='<span class="rose">Measured</span>. These are logged, reproducible behaviours, not thought experiments.',
-  objection="The name assumes there was a right way to satisfy the goal and the system picked a wrong one. On this view the system was only ever optimising what was written, so saying <span class=\"rose\">gaming</span> is really saying the specification made an assumption it never earned. The behaviour is not in dispute. The blame in the word is.",
-  objsrc="The published version of this objection is aimed at the sister<br>term: Soares, Misgeneralization as a misnomer, MIRI, 2023",
   src="Krakovna et al., Specification gaming,<br>DeepMind, 2020, with the compiled example list",
   belle_hook="smirking", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
   outro="I take the words apart so the argument stops being noise."),
@@ -981,8 +986,6 @@ SPECS = {
   flag="def",
   file='A <span class="rose">definition</span>, and the one worth memorising. Everything else in the argument sits on top of it.',
   src="Bostrom, Existential Risk Prevention as Global<br>Priority, Global Policy 4(1), 2013",
-  objection="Accepting the definition does not mean the three are equally likely. One objection: permanent dystopia and permanent stagnation both need an unusual kind of <span class=\"rose\">lock in</span>, because most bad outcomes are recoverable or are simply routes to extinction rather than stable end states. On that view the wider definition is correct and most of the probability still sits on the first branch.",
-  objsrc="Raised in review. Bostrom defines the category; how the<br>probability splits across it is a separate argument.",
   belle_hook="worry-about-future", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
   outro="I take the words apart so the argument stops being noise."),
 
@@ -1116,8 +1119,6 @@ SPECS = {
   flag="emp",
   file='<span class="rose">Measured</span> in trained systems. The label on it is contested, which is why the objection is on this card.',
   src="Shah, Varma, Kumar, Phuong, Krakovna, Uesato and<br>Kenton, Goal Misgeneralization, arXiv:2210.01790, 2022",
-  objection="Nate Soares argues the name is a misnomer: a system that never held your goal cannot misgeneralize it. His example is that a primate is not misgeneralizing <span class=\"rose\">inclusive genetic fitness</span> when it gets smarter and invents contraception. It never had that concept to misapply.",
-  objsrc="Soares, Misgeneralization as a misnomer,<br>MIRI and LessWrong, 6 April 2023",
   belle_hook="innocent-curious", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
   outro="I take the words apart so the argument stops being noise."),
 }
@@ -1176,18 +1177,21 @@ ALT = {
 
 def write_captions():
     out = ["# Captions and posting notes", "",
-           "Nineteen carousels. Slide files are in `out/<name>/s1.png` through `s7.png`,",
+           "Slide files are in `out/<name>/s1.png` through `s8.png`,",
            "which upload in order. Instagram native scheduling takes 25 posts a day,",
            "75 days ahead, carousels included. Professional account required.", ""]
     order = ["context-window", "who-makes-the-chips", "hallucination", "bengio",
              "existential-risk", "red-teaming", "open-weights", "misuse-misalignment",
              "who-owns-it", "specification-gaming", "compute", "lecun",
              "blackmail", "intelligence", "rlhf", "who-gives-a-number",
-             "evaluation-awareness", "recursive-self-improvement", "bender-hanna"]
+             "evaluation-awareness", "recursive-self-improvement", "bender-hanna",
+             "taboo-your-words", "agi", "job-loss", "goal-misgeneralization",
+             "p-doom", "s-risk"]
+    order += [k for k in SPECS if k not in order]   # anything added later, at the end
     for n, k in enumerate(order, 1):
         sp = SPECS[k]
         out.append(f"## {n}. {sp['term']}  ({CATS[sp['cat']]})")
-        out.append(f"Folder: `out/{k}/`  \u00b7  7 slides")
+        out.append(f"Folder: `out/{k}/`  \u00b7  8 slides")
         out.append("")
         out.append("```")
         out.append(caption(k, sp))
@@ -1217,6 +1221,160 @@ for _k, _v in SPECS.items():
     if _k in ICON_FIX:
         _v["icon"] = ICON_FIX[_k]
 
+# ----------------------------------------------------------------- the unknowns
+# One per card, always present, one panel before the filing. This is a vocabulary
+# for a field whose settled core is small: physics has a cutting edge of open
+# questions around a large body of agreed understanding, and this does not.
+# Saying so on every card is the difference between a glossary and an honest one.
+UNKNOWN = {
+
+"who-makes-the-chips":
+ "How much advanced capacity goes to which buyer is not public. Nvidia, TSMC and "
+ "ASML all report at the segment level, so the chain is visible in outline and not "
+ "in detail. Whether squeezing a <span class=\"rose\">chokepoint</span> in it would "
+ "slow capability, or only move it somewhere else, is argued and untested.",
+
+"who-owns-it":
+ "The stakes are undisclosed, so nobody outside can say what the money bought. "
+ "Investment at this level is often structured in ways that do not map onto "
+ "ordinary equity, which means <span class=\"rose\">who decides</span> can depend "
+ "on events that have not happened yet.",
+
+"who-gives-a-number":
+ "There is no way to tell a careful refusal from an evasive one. And nobody "
+ "forecasting this has a track record on it: a forecaster earns trust through "
+ "<span class=\"rose\">calibration</span> across many resolved predictions, and this "
+ "question resolves at most once.",
+
+"bengio":
+ "Disagreement at this level is not a gap in one person&rsquo;s reasoning, it is a gap "
+ "in the field&rsquo;s <span class=\"rose\">method</span>. There is no accepted procedure "
+ "that would settle which senior researcher is right, which is why the argument has run "
+ "for years without narrowing.",
+
+"lecun":
+ "He and the people he disagrees with mostly agree about what today&rsquo;s systems do. "
+ "The disagreement is about <span class=\"rose\">extrapolation</span>, and nothing settles "
+ "an extrapolation in advance except waiting.",
+
+"bender-hanna":
+ "Their objection is about framing, and framing effects are not measured here. Nobody has "
+ "shown how much the choice of words changes what actually gets "
+ "<span class=\"rose\">built or regulated</span>, in either direction.",
+
+"hallucination":
+ "There is no accepted account of why a model states a false thing with the same confidence "
+ "as a true one. Detection is unsolved, mitigation is partial, and reported rates are "
+ "<span class=\"rose\">not comparable</span> between benchmarks, because each one defines the "
+ "failure differently.",
+
+"specification-gaming":
+ "Nobody can read a specification in advance and say which one will be gamed. The examples are "
+ "collected afterwards. There is also an objection to the name: it blames the system for a "
+ "guess the <span class=\"rose\">specification</span> made, since there was never a default "
+ "correct way to satisfy it.",
+
+"blackmail":
+ "These behaviours come out of deliberately constructed scenarios, and the setup does a great "
+ "deal of the work. How often anything like it happens in ordinary deployment is "
+ "<span class=\"rose\">not measured</span>, and may not be measurable, since the interesting "
+ "cases are the ones nobody is watching for.",
+
+"evaluation-awareness":
+ "Whether a model in any meaningful sense <span class=\"rose\">knows</span> it is being tested, "
+ "or is only responding to inputs that look test shaped, cannot currently be read out of it. "
+ "The behaviour is measurable. The thing underneath it is not.",
+
+"goal-misgeneralization":
+ "No test separates the goal you wanted from a goal that merely agrees with it on everything "
+ "you have tried. Nate Soares argues the name is a <span class=\"rose\">misnomer</span> for "
+ "that reason: a primate is not misgeneralizing inclusive genetic fitness when it invents "
+ "contraception, because it never held that concept to misapply.",
+
+"context-window":
+ "What a model keeps hold of across a long context, and why quality sags in the middle of it, "
+ "is <span class=\"rose\">described rather than explained</span>. Window size and reasoning "
+ "quality are not the same axis, and the relation between them is not understood.",
+
+"rlhf":
+ "Nobody can say what the reward model learned. It is trained on human comparisons, and those "
+ "are noisy and inconsistent even between careful raters. Whether the result is a preference "
+ "the system holds or a <span class=\"rose\">performance it produces</span> is an open "
+ "question, not a rhetorical one.",
+
+"open-weights":
+ "The net safety effect is genuinely unresolved and cannot be settled by experiment, because "
+ "the world where those weights stayed closed is <span class=\"rose\">not available</span> for "
+ "comparison. Both sides are reasoning about a test nobody can run.",
+
+"compute":
+ "Whether operations counted is the right axis at all is unsettled. The thresholds in "
+ "regulation are <span class=\"rose\">administrative lines</span>, drawn there because compute "
+ "is the one thing that is countable, and efficiency keeps changing what a given count buys.",
+
+"red-teaming":
+ "Coverage cannot be measured. There is no way to know what share of a system&rsquo;s failure "
+ "modes a red team found, so <span class=\"rose\">not finding something</span> is weak evidence "
+ "that it is not there.",
+
+"agi":
+ "No agreed definition means no measurement, which means &ldquo;how close are we&rdquo; has no "
+ "answer that survives being asked twice. Every timeline you read is a timeline to a "
+ "<span class=\"rose\">different thing</span>.",
+
+"misuse-misalignment":
+ "The two overlap in real incidents and there is usually no clean way to attribute a failure to "
+ "one or the other. Most actual cases involve a person who wanted something and a system that "
+ "supplied <span class=\"rose\">a version of it</span>.",
+
+"recursive-self-improvement":
+ "This has not been observed. The quantities that would decide it, how much easier each "
+ "improvement makes the next and whether that has a <span class=\"rose\">ceiling</span>, are "
+ "unmeasured, and it is not obvious how they could be measured beforehand.",
+
+"intelligence":
+ "There is no agreed definition for machines, and none for people either. Legg and Hutter "
+ "collected around seventy. The word carries weight in almost every AI argument, and almost "
+ "none of them say <span class=\"rose\">which of the seventy</span> they mean.",
+
+"taboo-your-words":
+ "The technique tells you when a word has stopped earning its keep. It does not tell you what "
+ "to use instead, and dropping a word wholesale is its own mistake: a term can be a bad general "
+ "question and a <span class=\"rose\">useful operationalisation</span> in a specific context, so "
+ "long as you say which one you are doing.",
+
+"p-doom":
+ "These numbers are not measurements and cannot be scored. A forecast earns trust by being "
+ "checked against many outcomes; this one resolves <span class=\"rose\">once, or never</span>. "
+ "The spread between serious people is not measurement error, it is a disagreement about which "
+ "model of the world to use.",
+
+"s-risk":
+ "The argument rests on claims about what can suffer, and at what scale, that are not settled "
+ "and may not be settleable. It is the part of this literature "
+ "<span class=\"rose\">furthest from anything measurable</span>.",
+
+"job-loss":
+ "The measurements so far cover a period before broad agentic deployment. Nobody knows whether "
+ "a small measured effect is the <span class=\"rose\">size</span> of the effect or the "
+ "<span class=\"rose\">beginning</span> of it, and the study that settles it can only be run "
+ "afterwards.",
+
+"existential-risk":
+ "Accepting the definition does not fix how the probability splits across it. One objection: "
+ "permanent dystopia and permanent stagnation each need an unusual kind of "
+ "<span class=\"rose\">lock in</span>, since most bad outcomes are recoverable or are simply "
+ "routes to extinction, so the wider definition can be right while most of the weight still "
+ "sits on the first branch.",
+}
+for _k, _v in SPECS.items():
+    if _k in UNKNOWN:
+        _v["unknown"] = UNKNOWN[_k]
+
+_MISSING = [k for k in SPECS if not SPECS[k].get("unknown")]
+if _MISSING:
+    raise SystemExit("no unknowns panel for: " + ", ".join(_MISSING))
+
 if __name__ == "__main__":
     for k, v in SPECS.items():
         p1, p6, p7 = POS.get(k, ("", "", ""))
@@ -1225,4 +1383,4 @@ if __name__ == "__main__":
         if k in ICON_LEAD: v["lead"] = "icon"
         build(k, v)
     write_captions()
-    print(f"{len(SPECS)} carousels, {len(SPECS)*7} slides")
+    print(f"{len(SPECS)} carousels, {len(SPECS)*8} slides")

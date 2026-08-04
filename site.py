@@ -211,7 +211,7 @@ def card_data():
             "flag": sp["flag"], "flagname": TYPENAME[sp["flag"]],
             "file": sp["file"], "src": sp["src"],
             "icon": sp["icon"],
-            "objection": sp.get("objection", ""), "objsrc": sp.get("objsrc", ""),
+            "unknown": sp["unknown"],
             "belle": sp["belle_hook"] if has_belle(sp.get("belle_hook")) else "",
             "belle2": HOVER.get(k, "") if has_belle(HOVER.get(k)) else "",
         }
@@ -451,10 +451,7 @@ def sources():
         items = "".join(
             f'<div class="src-item"><div class="t"><strong>{strip(sp["term"])}</strong> '
             f'<span class="flag f-{sp["flag"]}">{TYPENAME[sp["flag"]]}</span></div>'
-            f'<div class="n">{sp["src"]}</div>'
-            + (f'<div class="n obj"><span class="ok">the objection</span>{sp["objsrc"]}</div>'
-               if sp.get("objsrc") else "")
-            + '</div>' for k, sp in terms_in(cat))
+            f'<div class="n">{sp["src"]}</div></div>' for k, sp in terms_in(cat))
         blocks += f'<h2 class="c-{cat}"><span class="subdot"></span>AI {SUBNAME[cat]}</h2><div class="srcs">{items}</div>'
     longs = "".join(f'<a class="xl" href="{h}"><span class="k">full bibliography</span>'
                     f'<span class="t">{t} &rarr;</span></a>' for h, t, c, d in MORE)
@@ -509,6 +506,12 @@ def about():
 <div class="flagkey">
 {"".join(f'<div class="fk"><span class="flag f-{t}">{n}</span><span>{TYPEDESC[t]}</span></div>' for t, n in TYPES)}
 </div>
+
+<h2>How much of this is settled</h2>
+<p>Not much of it. That is not modesty, it is the actual state of the subject, and it is why every card here carries a panel headed <strong>what we do not know</strong> one step before the end.</p>
+<p>An analogy I was given by a reader who works in the field, and have not been able to improve on: physics has a cutting edge of unresolved questions wrapped around a very large body of settled understanding. This does not. It has a small area of understanding surrounded by questions we do not yet have the language to formulate. If scholars in the sixteen hundreds had set out to build a card deck explaining physics, that is roughly where this is &mdash; and saying sixteen hundreds physics may be generous.</p>
+<p>So the cards are not a summary of what is known. They are a vocabulary for a conversation that is going to happen whether or not the vocabulary is ready, assembled so that you can at least tell which parts are measured, which are argued, and which are nobody&rsquo;s to claim yet.</p>
+<p class="meta">If a card&rsquo;s unknowns panel understates the confusion, that is a bug, and I would like to hear about it.</p>
 
 <h2>How to share this</h2>
 <p>Please do, and no permission needed. The most useful thing you can do is send one card to somebody who is arguing about a word they have not defined.</p>

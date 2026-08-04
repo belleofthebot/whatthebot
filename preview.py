@@ -61,14 +61,10 @@ for name, label in PAGES:
     sections.append('<div class="pv-page" data-page="%s"%s>%s</div>'
                     % (name, "" if name == "index.html" else " hidden", body))
 
-# the modal lives outside main on the explore page
-ix = read("index.html")
+# the modal travels inside the explore section already, so nothing extra here
 modal = ""
-m = re.search(r'(<div class="modal"[^>]*data-modal.*?</div>\s*)(?=<footer)', ix, re.S)
-if m:
-    modal = m.group(1)
 
-nav = "".join('<button class="link" type="button" data-go="%s"%s>%s</button>'
+nav = "".join('<button class="link" type="button" data-pv="%s"%s>%s</button>'
               % (n, ' aria-current="page"' if n == "index.html" else "", l)
               for n, l in PAGES)
 
@@ -110,7 +106,7 @@ doc = """<!DOCTYPE html>
 <body>
 <div class="pv-note">preview build &middot; one file, no server &middot; the real site is five pages</div>
 <header class="nav"><div class="nav-in">
-<a class="mark" href="#" data-go="index.html">belleof<span class="sg">thebot</span><span class="cur">_</span></a>
+<a class="mark" href="#" data-pv="index.html">belleof<span class="sg">thebot</span><span class="cur">_</span></a>
 <span class="nav-sp"></span>
 %(nav)s
 </div></header>
@@ -135,16 +131,16 @@ window.__go = function (page, q) {
   Array.prototype.forEach.call(document.querySelectorAll('.pv-page'), function (s) {
     s.hidden = s.dataset.page !== page;
   });
-  Array.prototype.forEach.call(document.querySelectorAll('[data-go]'), function (b) {
-    if (b.dataset.go === page) b.setAttribute('aria-current', 'page');
+  Array.prototype.forEach.call(document.querySelectorAll('[data-pv]'), function (b) {
+    if (b.dataset.pv === page) b.setAttribute('aria-current', 'page');
     else b.removeAttribute('aria-current');
   });
   window.scrollTo(0, 0);
   if (q && window.__filter) window.__filter(q);
 };
 document.addEventListener('click', function (e) {
-  var b = e.target.closest('[data-go]');
-  if (b) { e.preventDefault(); window.__go(b.dataset.go); }
+  var b = e.target.closest('[data-pv]');
+  if (b) { e.preventDefault(); window.__go(b.dataset.pv); }
   var a = e.target.closest('a[href]');
   if (!a || b) return;
   var h = a.getAttribute('href');

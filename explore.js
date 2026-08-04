@@ -122,7 +122,12 @@
       '<span class="mkick">' + card.whykick + '</span><p class="mwhy">' + card.why + '</p>' +
         '<p>' + card.whysub + '</p>',
 
-      /* 6 · how it is filed, the source, and Belle again on the way out */
+      /* 6 · what nobody knows, which on this subject is most of it */
+      '<span class="mkick">what we do not know</span>' +
+        '<p class="mobj">' + card.unknown + '</p>' +
+        '<svg class="mfig" viewBox="0 0 64 64" aria-hidden="true"><use href="#i-blank"/></svg>',
+
+      /* 7 · how it is filed, the source, and Belle again on the way out */
       '<span class="mkick">how this claim is filed</span>' +
         '<p class="mfile">' + card.file + '</p>' +
         '<div class="mflag"><span class="flag f-' + card.flag + '">' + card.flagname + '</span></div>' +
@@ -130,14 +135,6 @@
         belleTag(card.belle2 || card.belle, 'mbelle small')
     ];
 
-    /* where somebody competent disagrees, the disagreement goes in the card,
-       one panel before the filing. Not every card has one. */
-    if (card.objection) {
-      panels.splice(5, 0,
-        '<span class="mkick">the objection</span>' +
-        '<p class="mobj">' + card.objection + '</p>' +
-        '<p class="src">' + card.objsrc + '</p>');
-    }
     return panels;
   }
 
