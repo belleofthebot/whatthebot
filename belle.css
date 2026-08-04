@@ -198,6 +198,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--s3);flex-wrap:
 .note{background:var(--screen);border:1px solid var(--line);border-left:2px solid var(--rose);
   border-radius:var(--r);padding:var(--s3);margin:var(--s4) 0}
 .note p{font-size:.92rem;color:var(--meta);margin-bottom:0}
+.note p+p{margin-top:var(--s2)}
 .note .h{font-family:var(--mono);font-size:.72rem;color:var(--rose);display:block;margin-bottom:6px}
 
 .skip{position:absolute;left:-9999px}

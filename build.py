@@ -157,6 +157,13 @@ index_body = f"""
 <span class="flag phil">argument</span>
 </div>
 <p class="meta">Measured means a study, survey or evaluation actually counted something. An estimate means a named person said it, which makes the saying a fact and the belief still a belief. An argument is philosophical and cannot be settled by data.</p>
+
+<h2>On sources</h2>
+<p>Every page here ends with its sources, linked to the primary document rather than to coverage of it. Where a person is quoted, the link goes to the place they actually said it. Where the evidence points both ways, as it does on biological risk uplift, both sides are listed rather than one being picked.</p>
+<div class="note">
+<span class="h">borrowed, not invented</span>
+<p>None of the frameworks used here are mine. The two axis grid comes from Bostrom and Cirkovic, the causal categories from Zwetsloot and Dafoe and from the International AI Safety Report, the training pipeline from the published method papers. What I have done is arrange them and draw them. Each page says which parts it borrowed and from whom.</p>
+</div>
 </div>
 """
 
@@ -279,6 +286,22 @@ pipeline_body = f"""
 <p>Two more corrections worth carrying: real pipelines <strong>loop</strong> rather than run once, and the published figures people quote for model size and training compute are almost always taken from open weight models or regulatory thresholds, not from the closed systems being discussed.</p>
 </div>
 
+<h2>Sources</h2>
+<p>Everything above was checked against these during the research pass. Where a claim is contested, the sources that disagree are both listed.</p>
+{srcs([
+("https://arxiv.org/abs/2203.02155","Ouyang et al., Training language models to follow instructions with human feedback (InstructGPT), 2022","The canonical three step pipeline: supervised fine tuning, reward model, reinforcement learning. Source of the finding that a 1.3B tuned model was preferred to a 175B base model."),
+("https://arxiv.org/abs/2212.08073","Bai et al., Constitutional AI: Harmlessness from AI Feedback, Anthropic, 2022","Where the RLHF and Constitutional AI distinction is settled precisely, rather than by the popular conflation of the two."),
+("https://arxiv.org/abs/2204.05862","Bai et al., Training a Helpful and Harmless Assistant with RLHF, Anthropic, 2022","Preference modelling and iterated online RLHF."),
+("https://arxiv.org/abs/2305.18290","Rafailov et al., Direct Preference Optimization, 2023","Why many current pipelines dropped the separate reinforcement learning loop."),
+("https://arxiv.org/abs/2407.21783","Grattafiori et al., The Llama 3 Herd of Models, 2024","The most detailed public end to end account of a frontier scale training run."),
+("https://arxiv.org/abs/2406.17557","Penedo et al., FineWeb, 2024","A fully documented web scale pretraining corpus: 15 trillion tokens from 96 Common Crawl snapshots."),
+("https://arxiv.org/abs/2203.15556","Hoffmann et al., Training Compute-Optimal Large Language Models (Chinchilla), 2022","The parameters versus tokens correction."),
+("https://arxiv.org/abs/2005.14165","Brown et al., Language Models are Few-Shot Learners (GPT-3), 2020","The origin of in context learning, and useful for what a base model can already do."),
+("https://www.aisi.gov.uk/blog/early-lessons-from-evaluating-frontier-ai-systems","UK AI Security Institute, Early lessons from evaluating frontier AI systems","The best single source on what evaluations cannot establish, written by an evaluator rather than a developer."),
+("https://metr.org/common-elements","METR, Common Elements of Frontier AI Safety Policies","Twelve companies' policies compared. Better than generalising the gate from any one lab."),
+("https://platform.claude.com/docs/en/release-notes/system-prompts","Anthropic, published system prompts","Concrete evidence that runtime behaviour is separable from training, including the note that these do not apply to the API."),
+])}
+
 {xlinks([("taxonomy.html","next","How bad, and how it happens, are separate questions"),
          ("pdoom.html","related","Why a single probability hides the argument"),
          ("words.html","reference","The vocabulary, defined plainly")])}
@@ -386,6 +409,32 @@ taxonomy_body = f"""
 <p class="meta">Both of those are arguments about what to do, not findings about what is true. Drawing them as a settled question in either direction would be dishonest.</p>
 </div>
 
+<div class="note">
+<span class="h">where this framework comes from</span>
+<p>The grid is not mine. Drawing catastrophic risk on two axes rather than one ladder is Bostrom and Cirkovic's move, from the introduction to <em>Global Catastrophic Risks</em> in 2008, where risks are plotted on scope against intensity. The severity axis here, including the insistence that existential is broader than extinction, follows Bostrom's 2013 four class typology. The causal axis is assembled from others: misuse and misalignment are common currency in the field, and the structural category is specifically Zwetsloot and Dafoe, 2019.</p>
+<p>What is new here is only the pairing of these two particular taxonomies, the twelve cells, and the wording inside them. It is a recombination of existing work, and the MIT AI Risk Repository, which catalogues over 1,700 risks drawn from 65 identified frameworks, is a good reminder that no taxonomy in this area is canonical, including this one.</p>
+</div>
+
+<h2>Sources</h2>
+{srcs([
+("https://global-catastrophic-risks.com/docs/Chap01.pdf","Bostrom and Cirkovic, Global Catastrophic Risks, introduction, OUP 2008","Origin of the global catastrophic risk definition and of the scope against intensity grid this page borrows its form from."),
+("https://existential-risk.com/concept","Bostrom, Existential Risk Prevention as Global Priority, Global Policy 4(1), 2013","The canonical definition, plus the four class typology: extinction, permanent stagnation, flawed realisation, subsequent ruination."),
+("https://www.lawfaremedia.org/article/thinking-about-risks-ai-accidents-misuse-and-structure","Zwetsloot and Dafoe, Thinking About Risks From AI: Accidents, Misuse and Structure, Lawfare, 11 February 2019","Origin of the structural risk category. Their point: technology can cause harm even when no single actor misuses it and it behaves as intended."),
+("https://internationalaisafetyreport.org/publication/international-ai-safety-report-2026","International AI Safety Report 2026, chaired by Yoshua Bengio","The most authoritative institutional source used here, backed by more than thirty governments. Source of the three way causal taxonomy and of the statement that the evidence base is uneven."),
+("https://airisk.mit.edu/","MIT AI Risk Repository (Slattery, Saeri, Noetel, Graham, Thompson et al.)","A living database of over 1,700 risks, drawn from 65 identified classifications and frameworks. Figures change as it is updated; checked August 2026. Evidence that no single taxonomy is canonical."),
+("https://arxiv.org/abs/2306.12001","Hendrycks, Mazeika and Woodside, An Overview of Catastrophic AI Risks, 2023","A four category academic alternative: malicious use, AI race, organisational risks, rogue AIs."),
+("https://theprecipice.com/faq","Ord, The Precipice, 2020","The 1 in 6 figure, the distinction between existential risk and existential catastrophe, and Ord's own caveats about his numbers."),
+("https://www.globalprioritiesinstitute.org/wp-content/uploads/Concepts-of-existential-catastrophe-Hilary-Greaves.pdf","Greaves, Concepts of Existential Catastrophe, Global Priorities Institute working paper 8-2023","Philosophical critique of every current definition, including the ones this page uses. A working paper, so not itself peer reviewed."),
+("https://deepmind.google/discover/blog/specification-gaming-the-flip-side-of-ai-ingenuity/","Krakovna et al., Specification gaming: the flip side of AI ingenuity, DeepMind 2020","Definition plus the canonical documented examples."),
+("https://arxiv.org/abs/2210.01790","Shah et al., Goal Misgeneralization, 2022","The distinction from specification gaming, stated by the authors rather than inferred."),
+("https://arxiv.org/abs/2501.16946","Kulveit, Douglas, Ammann, Turan, Krueger and Duvenaud, Gradual Disempowerment, 2025","The clearest statement of the systemic route to an existential outcome with no single misaligned system. A preprint, not a peer reviewed journal article."),
+("https://arxiv.org/abs/2206.13353","Carlsmith, Is Power-Seeking AI an Existential Risk?, 2022","A six premise decomposition with a probability attached to each premise, which is the opposite of a single headline number."),
+("https://longtermrisk.org/reducing-risks-of-astronomical-suffering-a-neglected-priority/","Althaus and Gloor, Reducing Risks of Astronomical Suffering, CLR 2016","The originating definition of s-risk, including the authors' own description of it as speculative."),
+("https://arxiv.org/abs/2501.04064","Swoboda, Uuk, Lauwaert, Rebera, Oimann, Chomanski and Prunkl, Examining popular arguments against AI existential risk, 2025","Even handed reconstruction of the arguments against, used here so the sceptical side is quoted rather than characterised."),
+("https://www.scientificamerican.com/article/we-need-to-focus-on-ais-real-harms-not-imaginary-existential-risks/","Bender and Hanna, AI Causes Real Harm. Let's Focus on That, Scientific American 2023","The distraction argument, in its authors' own words."),
+("https://www.pnas.org/doi/10.1073/pnas.2419055122","Existential risk narratives about AI do not distract from its immediate harms, PNAS 2025","A preregistered experiment, and the only direct empirical test of the crowding out claim. Limited to individual attitudes."),
+])}
+
 {xlinks([("pdoom.html","next","Why one number cannot hold all of this"),
          ("pipeline.html","back","How the systems being argued about are built"),
          ("words.html","reference","Every term here, defined plainly")])}
@@ -454,6 +503,27 @@ pdoom_body = f"""
 <span class="h">three ways it gets misused</span>
 <p>Quoting a figure without the definition it came with. Treating a person's estimate as though it were a measurement. And using someone's number as a badge of which side they are on, which turns a question about the world into a question about tribe.</p>
 </div>
+
+<h2>Sources</h2>
+<p>Named estimates are linked to the place the person actually said it, not to coverage of it. Where someone declined to give a number, that is sourced too.</p>
+{srcs([
+("https://www.lesswrong.com/posts/xWMqsvHapP3nwdSW8/my-views-on-doom","Christiano, My views on doom, 2023","The clearest worked example of one person giving several different numbers for several precisely defined outcomes, with his own half a significant figure caveat."),
+("https://www.lesswrong.com/posts/omDu7vNy3YyKXsvCd/taboo-p-doom","Taboo P(doom), LessWrong 2023","An early argument for taking the term apart rather than quoting it, and the ancestor of the axes this page's builder is made from."),
+("https://www.lesswrong.com/posts/4mBaixwf4k8jk7fG4/yudkowsky-on-don-t-use-p-doom","Yudkowsky on Don't use p(doom)","The high estimate camp rejecting the metric itself, which is worth knowing before treating the number as a scoreboard."),
+("https://time.com/6266923/ai-eliezer-yudkowsky-open-letter-not-enough/","Yudkowsky, TIME, March 2023","The strongest public statement of the extinction case, including the conditional clause usually stripped out when it is quoted."),
+("https://www.axios.com/2025/09/17/anthropic-dario-amodei-p-doom-25-percent","Amodei's 25 percent, Axios, September 2025","The best documented CEO figure. Amodei's own wording was that things go really, really badly; the definition attached to it in print is the reporter's, not his."),
+("https://www.machine.news/google-deepmind-demis-hassabis-p-doom/","Hassabis declining to give a number, 2025","His reason: a number would imply a level of precision that is not there."),
+("https://time.com/6694432/yann-lecun-meta-ai-interview/","LeCun, TIME, February 2024","The sceptical argument in his own words, and confirmation that he gave no number."),
+("https://yoshuabengio.org/2023/06/24/faq-on-catastrophic-ai-risks/","Bengio, FAQ on Catastrophic AI Risks, 2023","A concerned researcher setting out a framework, and proposing the probabilities be obtained by polling experts rather than supplying his own."),
+("https://aiimpacts.org/wp-content/uploads/2023/04/Thousands_of_AI_authors_on_the_future_of_AI.pdf","Grace et al., Thousands of AI Authors on the Future of AI, 2,778 respondents","The survey data behind the spread and the framing effect. Three question wordings produced different medians from the same population."),
+("https://forecastingresearch.org/pdf/existential-risk-persuasion-tournament.pdf","Karger, Rosenberg, Tetlock et al., Forecasting Existential Risks: Evidence from a Long-Run Forecasting Tournament, FRI 2023","Exact definitions of catastrophe and extinction, the persistent superforecaster and domain expert gap, and the failure to converge after extended debate."),
+("https://www.normaltech.ai/p/ai-existential-risk-probabilities","Narayanan and Kapoor, AI existential risk probabilities are too unreliable to inform policy, 2024","The reference class argument, and the observation that these numbers function partly as identity signals."),
+("https://lironshapira.substack.com/p/pdoom-estimates-shouldnt-inform-policy","Shapira, the Bayesian rebuttal to Narayanan and Kapoor","Included so the case for quoting a number is made by someone who believes it, not paraphrased by someone who does not."),
+("https://cset.georgetown.edu/publication/beyond-pdoom-for-ai-risk-quantifying-uncertainty-without-probability/","Lohn, Beyond P(doom) for AI Risk, CSET Georgetown, 2026","The most constructive alternative: belief and plausibility as a pair, with the gap between them representing ignorance."),
+("https://www.aei.org/articles/dont-just-tell-me-your-pdoom-tell-me-your-conditionals/","Rinehart, Don't Just Tell Me Your p(doom), Tell Me Your Conditionals, AEI 2025","The conditionals critique, with worked examples of what a useful statement would look like."),
+("https://aistatement.com/","Statement on AI Risk, Center for AI Safety","The exact twenty two words and the signatory list, which is worth reading before anyone tells you what it said."),
+("https://internationalaisafetyreport.org/publication/international-ai-safety-report-2026","International AI Safety Report 2026","Withholds a number rather than adjudicating between the published estimates, which is itself a position worth noting."),
+])}
 
 {xlinks([("taxonomy.html","back","What the number is trying to compress"),
          ("words.html","next","The vocabulary, defined plainly"),
@@ -536,6 +606,20 @@ words_body = f"""
 <h2 style="margin-top:0">Glossary</h2>
 {glosshtml}
 </div>
+
+<h2>Where these definitions come from</h2>
+<p>Each term is defined the way its originating source defines it, not the way it is commonly used.</p>
+{srcs([
+("https://existential-risk.com/concept","Bostrom, Existential Risk Prevention as Global Priority, 2013","existential risk. The definition is broader than extinction, and this is where that breadth is set out."),
+("https://deepmind.google/discover/blog/specification-gaming-the-flip-side-of-ai-ingenuity/","Krakovna et al., Specification gaming, DeepMind 2020","specification gaming, with the compiled list of documented real examples."),
+("https://arxiv.org/abs/2210.01790","Shah et al., Goal Misgeneralization, 2022","goal misgeneralisation, and the authors' own statement of how it differs from specification gaming."),
+("https://arxiv.org/abs/2203.02155","Ouyang et al., InstructGPT, 2022","base model, fine-tuning, and RLHF, in the paper that established the pipeline."),
+("https://arxiv.org/abs/2212.08073","Bai et al., Constitutional AI, Anthropic 2022","Constitutional AI, and the precise boundary between it and RLHF."),
+("https://www.lawfaremedia.org/article/thinking-about-risks-ai-accidents-misuse-and-structure","Zwetsloot and Dafoe, Accidents, Misuse and Structure, Lawfare 2019","structural risk, as originally proposed."),
+("https://longtermrisk.org/reducing-risks-of-astronomical-suffering-a-neglected-priority/","Althaus and Gloor, Reducing Risks of Astronomical Suffering, CLR 2016","s-risk, including the authors' own description of the area as speculative."),
+("https://www.aisi.gov.uk/blog/early-lessons-from-evaluating-frontier-ai-systems","UK AI Security Institute, Early lessons from evaluating frontier AI systems","evaluation, and specifically what an evaluation does not establish."),
+("https://arxiv.org/abs/2209.07858","Ganguli et al., Red Teaming Language Models, Anthropic 2022","red teaming, with 38,961 attacks and what scale did and did not change."),
+])}
 
 {xlinks([("pipeline.html","start here","How a language model gets made"),
          ("taxonomy.html","then","How bad, and how it happens"),
