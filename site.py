@@ -52,6 +52,7 @@ BELLE_TERMS = {
     "exponential-growth", "existential-risk", "s-risk",
     "recursive-self-improvement", "misuse-misalignment", "intelligence",
     "altman", "hinton", "scheming", "ai-psychosis", "data-center",
+    "gender-shades", "fei-fei-li", "gebru",
 }
 
 # The second expression, shown on hover. Idle face, then the reaction: the point
@@ -78,6 +79,8 @@ HOVER = {
  "hassabis": "secret-close-smile",          "scheming": "sly-one",
  "ai-psychosis": "saying-unpleasant-truth-1",
  "data-center": "surprised-worried",        "taboo-your-words": "hands-hips-pedantic",
+ "gender-shades": "noticed-something",       "fei-fei-li": "happy-proud",
+ "gebru": "hands-hips-pedantic",
 }
 
 # the four kinds of claim
@@ -184,6 +187,15 @@ def grounds():
         out.append(".tg-%s{%s}" % (m.group(1), " ".join(m.group(2).split())))
     return "<style>\n" + "\n".join(out) + "\n</style>"
 
+def hook_size(hook):
+    """No ellipsis. The hook is short by design, so when one runs long the type
+    steps down rather than the sentence being cut off mid thought."""
+    n = len(strip(hook))
+    for limit, cls in ((44, "h-xl"), (66, "h-l"), (92, "h-m")):
+        if n <= limit:
+            return cls
+    return "h-s"
+
 def anchor_for(key):
     """Belle should not sit in the same corner on every tile."""
     return ["b-left", "b-mid", "b-right"][sum(ord(c) for c in key) % 3]
@@ -222,7 +234,7 @@ def tile(k, sp, cat):
 
     return f'''<article class="etile cover tg-{cat} c-{cat} {anchor}" {common}>
   <div class="et-top"><span class="et-name">{strip(sp["term"])}</span>{flag}</div>
-  <h3 class="et-hook">{sp["hook"]}</h3>
+  <h3 class="et-hook {hook_size(sp["hook"])}">{sp["hook"]}</h3>
   {art}
   <span class="et-open">open <span aria-hidden="true">&rarr;</span></span>
 </article>'''

@@ -1236,7 +1236,7 @@ SPECS = {
 "goal-misgeneralization": dict(
   cat="behavior", term="goal misgeneralization",
   kick="the term the researchers argue about",
-  hook="An AI can behave perfectly in training and pursue <span class=\"rose\">something else entirely</span> in the world.",
+  hook="An AI can be perfect in training and want <span class=\"rose\">something else</span> in the world.",
   q="Goal misgeneralization is when a system:",
   opts=["Fails because its instructions were badly written",
         "Competently pursues a goal that fit training but is not the one you wanted",
@@ -1263,7 +1263,7 @@ SPECS = {
 "reinforcement-learning": dict(
   cat="components", term="reinforcement learning",
   kick="training by consequence, not by example",
-  hook="Some AI is not taught the answers. It is <span class=\"rose\">scored</span>, over and over, until it stops losing points.",
+  hook="Some AI is not taught the answers. It is <span class=\"rose\">scored</span> until it stops losing.",
   q="Reinforcement learning trains a system by:",
   opts=["Showing it the correct answer every time",
         "Letting it act, then scoring the result, so it learns what earns reward",
@@ -1341,7 +1341,7 @@ SPECS = {
 "chain-of-thought": dict(
   cat="components", term="chain of thought",
   kick="the working, shown",
-  hook="When an AI &ldquo;shows its reasoning,&rdquo; that text is <span class=\"rose\">not a transcript</span> of what happened inside.",
+  hook="When an AI shows its reasoning, that is <span class=\"rose\">not a transcript</span> of what happened.",
   q="A model&rsquo;s visible chain of thought is:",
   opts=["A log of the computation it performed",
         "More generated text, which usually helps accuracy but need not be faithful",
@@ -1367,7 +1367,7 @@ SPECS = {
 "neuralese": dict(
   cat="components", term="AI&rsquo;s own language",
   kick="what happens when english stops being required",
-  hook="Machines that talk to each other have <span class=\"rose\">invented codes</span> before. In a laboratory, in 2017.",
+  hook="Machines have <span class=\"rose\">invented codes</span> to talk to each other. In a lab, in 2017.",
   q="&ldquo;Neuralese&rdquo; originally referred to:",
   opts=["Secret messages found in ChatGPT",
         "The non-human message vectors two small AI agents learned to coordinate with",
@@ -1472,7 +1472,7 @@ SPECS = {
 "self-exfiltration": dict(
   cat="behavior", term="escape",
   kick="the headline, and the footnote",
-  hook="An AI model has tried to <span class=\"rose\">copy itself out</span> of a lab. In a scenario the lab wrote for it.",
+  hook="An AI has tried to <span class=\"rose\">copy itself out</span>. In a scenario the lab wrote.",
   q="When a model &ldquo;tried to escape&rdquo; in testing, what happened:",
   opts=["It broke out of a data centre onto the internet",
         "Inside an evaluation, it issued commands to copy its own weights elsewhere",
@@ -1498,7 +1498,7 @@ SPECS = {
 "alphago": dict(
   cat="behavior", term="AlphaGo",
   kick="the day the machine played something new",
-  hook="In 2016 a program played a Go move <span class=\"rose\">no human would have played</span>, and it was better.",
+  hook="In 2016 a program played a move <span class=\"rose\">no human would play</span>, and it was better.",
   q="Move 37 is famous because:",
   opts=["It won the game immediately",
         "Professionals judged it a mistake, and it turned out to be strong",
@@ -1525,7 +1525,7 @@ SPECS = {
 "consciousness": dict(
   cat="concepts", term="consciousness",
   kick="the question that ends every dinner party",
-  hook="There is no test for whether anything is <span class=\"rose\">conscious</span>. Not for AI, and not for you.",
+  hook="There is no test for <span class=\"rose\">consciousness</span>. Not for AI, and not for you.",
   q="Why can nobody say whether an AI is conscious:",
   opts=["Because the companies will not release the data",
         "Because no third person evidence settles a question about inner experience",
@@ -1551,7 +1551,7 @@ SPECS = {
 "superintelligence": dict(
   cat="concepts", term="superintelligence",
   kick="the word underneath most of the fear",
-  hook="<span class=\"rose\">Superintelligence</span> does not mean very clever. It means better than us at essentially everything.",
+  hook="<span class=\"rose\">Superintelligence</span> is not very clever. It is better than us at everything.",
   q="Bostrom&rsquo;s definition of superintelligence is:",
   opts=["A machine that can pass for human",
         "Any intellect greatly exceeding human cognitive performance in virtually all domains of interest",
@@ -1577,7 +1577,7 @@ SPECS = {
 "exponential-growth": dict(
   cat="concepts", term="exponential growth",
   kick="the shape of the last six years",
-  hook="The computing used to train frontier AI has been multiplying about <span class=\"rose\">five times a year</span>.",
+  hook="The compute behind frontier AI multiplies about <span class=\"rose\">five times a year</span>.",
   q="Frontier AI training compute has been doubling roughly every:",
   opts=["Two years, like Moore&rsquo;s law",
         "Five months",
@@ -1603,7 +1603,7 @@ SPECS = {
 "survival-drive": dict(
   cat="concepts", term="the survival drive",
   kick="why a machine might not want to be switched off",
-  hook="Nobody would build an AI that fears death. The worry is that <span class=\"rose\">almost any goal implies staying on</span>.",
+  hook="Nobody builds an AI that fears death. Almost any goal <span class=\"rose\">implies staying on</span>.",
   q="Instrumental convergence is the argument that:",
   opts=["AI will develop emotions like ours",
         "Very different final goals imply the same intermediate goals, like self preservation",
@@ -1630,7 +1630,7 @@ SPECS = {
 "ai-psychosis": dict(
   cat="risk", term="AI psychosis",
   kick="a phrase that arrived before the evidence",
-  hook="<span class=\"rose\">AI psychosis</span> is not a diagnosis. It is a label people reached for, and the research is only starting.",
+  hook="<span class=\"rose\">AI psychosis</span> is not a diagnosis. It is a phrase that arrived before the evidence.",
   q="As of 2026, &ldquo;AI psychosis&rdquo; is:",
   opts=["A recognised disorder in the diagnostic manuals",
         "An informal term for cases where chatbot use appears alongside delusional thinking",
@@ -1658,7 +1658,7 @@ SPECS = {
   cat="actors", term="Geoffrey Hinton",
   person="Geoffrey Hinton", role="Nobel laureate, left Google 2023",
   kick="the man who built it and then warned about it",
-  hook="<span class=\"rose\">Geoffrey Hinton</span> won a Nobel Prize for the technique behind modern AI, and puts extinction at ten to twenty percent.",
+  hook="He built the technique behind modern AI. He now puts extinction at <span class=\"rose\">ten to twenty percent</span>.",
   q="Hinton&rsquo;s 2024 Nobel Prize was in:",
   opts=["Computer science",
         "Physics, shared with John Hopfield",
@@ -1686,7 +1686,7 @@ SPECS = {
   cat="actors", term="Sam Altman",
   person="Sam Altman", role="chief executive, OpenAI",
   kick="fired on a friday, back within a fortnight",
-  hook="The board of <span class=\"rose\">OpenAI</span> removed its chief executive for five days, then he came back and they left.",
+  hook="OpenAI&rsquo;s board removed its chief executive. <span class=\"rose\">Five days later he was back.</span>",
   q="In November 2023 the OpenAI board removed Sam Altman because, in its words, he:",
   opts=["Had broken the law",
         "Was not consistently candid in his communications with the board",
@@ -1714,7 +1714,7 @@ SPECS = {
   cat="actors", term="Dario Amodei",
   person="Dario Amodei", role="chief executive, Anthropic",
   kick="the man selling it and warning about it at once",
-  hook="<span class=\"rose\">Dario Amodei</span> runs an AI company and says there is a one in four chance things go really badly.",
+  hook="He runs an AI company, and puts <span class=\"rose\">one in four</span> on things going badly.",
   q="Amodei&rsquo;s widely quoted 25 percent refers to:",
   opts=["The chance of human extinction",
         "The chance that things go really, really badly, an outcome he has not defined",
@@ -1742,7 +1742,7 @@ SPECS = {
   cat="actors", term="Demis Hassabis",
   person="Demis Hassabis", role="chief executive, Google DeepMind",
   kick="the one who will not give you a number",
-  hook="<span class=\"rose\">Demis Hassabis</span> won a Nobel Prize for AI that folds proteins, and refuses to put odds on the risk.",
+  hook="A Nobel Prize for AI that folds proteins, and <span class=\"rose\">no number</span> for the risk.",
   q="Hassabis&rsquo;s 2024 Nobel Prize was in:",
   opts=["Physics, for neural networks",
         "Chemistry, shared for protein structure prediction",
@@ -1764,6 +1764,90 @@ SPECS = {
   src="Nobel Prize in Chemistry 2024, announced 9 October 2024;<br>Hassabis on the Lex Fridman Podcast, 23 July 2025",
   photosrc="photo: Duncan Hull, CC BY 2.0, modified",
   belle_hook="zen", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"gender-shades": dict(
+  cat="actors", term="Gender Shades",
+  person="Buolamwini and Gebru", role="the audit that named names",
+  kick="the study that put a number on it",
+  hook="Two researchers <span class=\"rose\">measured</span> whose faces AI got wrong.",
+  q="Gender Shades found the worst error rates for:",
+  opts=["Everyone equally, at about 10 percent",
+        "Darker skinned women, at up to 34.7 percent against 0.3 percent for lighter skinned men",
+        "Children under twelve",
+        "People wearing glasses"],
+  ans="B", icon="i-lens",
+  reveal='<span class="rose">34.7 percent</span> against <span class="rose">0.3 percent</span>. Same system, same task.',
+  revsub="Buolamwini and Gebru, 2018, on three commercial gender classifiers.",
+  threekick="what makes it a model piece of work",
+  three=[("i-lens","It named the products.","Microsoft, IBM and Face++, tested on a purpose built benchmark of 1,270 faces."),
+         ("i-decline","It was checked afterwards.","A 2019 re-audit found the named vendors&rsquo; error on darker women fell by 17 to 30 points."),
+         ("i-counter","The unnamed ones did not move.","Amazon was still at 31.4 percent for darker women against zero for lighter men.")],
+  threefoot="That contrast is the closest anyone has come to measuring whether an audit changes behaviour.",
+  whyicon="i-watched", whykick="why it belongs on a risk site",
+  why="Harm from AI does not have to be <span class=\"rose\">hypothetical or future</span> to be worth counting.",
+  whysub="This is what the measured end of the subject looks like, and it is the standard the rest should be held to.",
+  flag="emp",
+  file='<span class="rose">Measured</span>, published, and then re-measured by the same researchers. There is very little of this.',
+  src="Buolamwini and Gebru, Gender Shades, PMLR 81, FAT* 2018;<br>Raji and Buolamwini, Actionable Auditing, AIES 2019",
+  photosrc="photo: Kimberly White / Getty Images for TechCrunch, CC BY 2.0, modified",
+  belle_hook="hands-hips-pedantic", belle_file="dead-pan-1", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"fei-fei-li": dict(
+  cat="actors", term="Fei-Fei Li",
+  person="Fei-Fei Li", role="built ImageNet, co-directs Stanford HAI",
+  kick="the dataset that started all of this",
+  hook="Modern AI began with someone deciding to <span class=\"rose\">label the internet</span>.",
+  q="ImageNet mattered because it:",
+  opts=["Was the first neural network",
+        "Gave the field a huge labelled dataset and a public contest to beat",
+        "Was owned by Google",
+        "Trained the first chatbot"],
+  ans="B", icon="i-stack",
+  reveal='Millions of labelled images, and a <span class="rose">scoreboard</span>.',
+  revsub="Deng, Dong, Socher, Li, Li and Li, CVPR 2009. The contest ran on it from 2010.",
+  threekick="the moment it paid off",
+  three=[("i-stack","2009: the data.","3.2 million labelled images to start, organised by meaning, free to use."),
+         ("i-curve","2012: the jump.","The winning entry cut top five error to 15.3 percent. The next best team was at 26.2."),
+         ("i-counter","Now: the governance.","She opposed California&rsquo;s SB 1047, saying it would devastate the open source community.")],
+  threefoot="Whether the 2012 jump was mostly the data or mostly the chips is still argued.",
+  whyicon="i-goalpost", whykick="why benchmarks run the field",
+  why="What gets measured gets <span class=\"rose\">optimised</span>, and ImageNet is the proof.",
+  whysub="Every capability claim you read traces back to somebody choosing what the test would be.",
+  flag="emp",
+  file='<span class="rose">Measured</span>. The competition results are published, year by year, and still online.',
+  src="Deng et al., ImageNet, IEEE CVPR 2009;<br>ILSVRC 2012 official results, image-net.org",
+  photosrc="",
+  belle_hook="delighted", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"gebru": dict(
+  cat="actors", term="Timnit Gebru",
+  person="Timnit Gebru", role="founder, DAIR",
+  kick="the paper, and what happened next",
+  hook="She co-wrote the warning about large language models, and <span class=\"rose\">left Google days later</span>.",
+  q="&ldquo;Stochastic parrots&rdquo; describes a language model as:",
+  opts=["A system that understands language the way people do",
+        "Stitching together forms it has seen, by probability, without reference to meaning",
+        "A bird trained to repeat sounds",
+        "A model that only works on short inputs"],
+  ans="B", icon="i-voice",
+  reveal='Fluent, and <span class="rose">not connected to meaning</span>.',
+  revsub="Bender, Gebru, McMillan-Major and Mitchell, FAccT 2021. Two of the four had left Google by then.",
+  threekick="what the paper actually raised",
+  three=[("i-racks","The cost.","Environmental and financial, and borne by people who do not benefit."),
+         ("i-stack","The data.","Web scale training sets nobody can audit, carrying whose views the web carries."),
+         ("i-mask","The illusion.","Fluent text read as understanding, by users and by the press.")],
+  threefoot="Written in 2021, before the products everyone now argues about existed.",
+  whyicon="i-counter", whykick="why the exit matters as much as the paper",
+  why="Google says she <span class=\"rose\">resigned</span>. She says she was <span class=\"rose\">fired</span>. Both are on the record.",
+  whysub="Around 2,700 employees and 4,300 academics signed a letter. She founded DAIR a year later, to the day.",
+  flag="emp",
+  file='The paper is <span class="rose">measured and published</span>. The departure is <span class="rose">documented and disputed</span>, which is why both versions are here.',
+  src="Bender, Gebru, McMillan-Major and Mitchell, On the Dangers of<br>Stochastic Parrots, FAccT 2021, pp. 610&ndash;623",
+  photosrc="photo: Kimberly White / Getty Images for TechCrunch, CC BY 2.0, modified",
+  belle_hook="saying-unpleasant-truth-1", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
   outro="I take the words apart so the argument stops being noise."),
 }
 
@@ -2109,6 +2193,23 @@ UNKNOWN = {
  "What he actually believes the risk to be. Non zero and non negligible is a real position and an "
  "<span class=\"rose\">unfalsifiable one</span>: it cannot be checked against events later, which is the cost of "
  "declining to give a number.",
+"gender-shades":
+ "Whether the vendors improved <span class=\"rose\">because</span> of the audit. The 2019 re-audit is "
+ "suggestive rather than causal: the named companies improved and the unnamed ones did not, which is the best "
+ "available evidence and still not a controlled experiment. It also measured gender classification, which is not "
+ "the same task as face recognition, and the gap between them is often glossed over.",
+
+"fei-fei-li":
+ "Whether the 2012 result was mostly the data, mostly the chips, or mostly the architecture is "
+ "<span class=\"rose\">still argued</span>, and it matters because it is the whole basis for predicting what "
+ "more data or more compute will buy next. ImageNet&rsquo;s own labelling has also been criticised since, and part "
+ "of it was withdrawn.",
+
+"gebru":
+ "What actually happened inside Google. The two accounts are irreconcilable and no independent record was "
+ "published, so <span class=\"rose\">resigned</span> and <span class=\"rose\">fired</span> both remain "
+ "assertions. Whether the internal review she was subject to was normal practice or an unusual intervention is "
+ "also unestablished.",
 }
 for _k, _v in SPECS.items():
     if _k in UNKNOWN:

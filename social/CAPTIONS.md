@@ -690,7 +690,7 @@ Alt text slide 7: A prompt to follow @belleofthebot for more.
 Folder: `out/goal-misgeneralization/`  ·  8 slides
 
 ```
-An AI can behave perfectly in training and pursue something else entirely in the world.
+An AI can be perfect in training and want something else in the world.
 
 Shah et al., 2022: it performs well in training and badly in new situations, competently.
 
@@ -709,7 +709,7 @@ I mark every claim as measured, someone’s estimate, argument or definition, so
 #AI #AIsafety #MachineLearning #AIliteracy #AIresearch
 ```
 
-Alt text slide 1: Belle, a small robot character, beside the headline: An AI can behave perfectly in training and pursue something else entirely in the world.
+Alt text slide 1: Belle, a small robot character, beside the headline: An AI can be perfect in training and want something else in the world.
 Alt text slide 2: A four option multiple choice question: Goal misgeneralization is when a system:
 Alt text slide 3: The answer, with a diagram: The capability generalises. The goal does not.
 Alt text slide 4: Three labelled points, each with a small diagram.
@@ -783,7 +783,7 @@ Alt text slide 7: A prompt to follow @belleofthebot for more.
 Folder: `out/reinforcement-learning/`  ·  8 slides
 
 ```
-Some AI is not taught the answers. It is scored, over and over, until it stops losing points.
+Some AI is not taught the answers. It is scored until it stops losing.
 
 Sutton and Barto: mapping situations to actions so as to maximise a numerical reward signal.
 
@@ -802,7 +802,7 @@ I mark every claim as measured, someone’s estimate, argument or definition, so
 #AI #AIexplained #LearnAI #AIliteracy #MachineLearning
 ```
 
-Alt text slide 1: Belle, a small robot character, beside the headline: Some AI is not taught the answers. It is scored, over and over, until it stops losing points.
+Alt text slide 1: Belle, a small robot character, beside the headline: Some AI is not taught the answers. It is scored until it stops losing.
 Alt text slide 2: A four option multiple choice question: Reinforcement learning trains a system by:
 Alt text slide 3: The answer, with a diagram: Learning what to do, to maximise a number.
 Alt text slide 4: Three labelled points, each with a small diagram.
@@ -876,7 +876,7 @@ Alt text slide 7: A prompt to follow @belleofthebot for more.
 Folder: `out/chain-of-thought/`  ·  8 slides
 
 ```
-When an AI “shows its reasoning,” that text is not a transcript of what happened inside.
+When an AI shows its reasoning, that is not a transcript of what happened.
 
 Wei et al. showed the steps improve results. Faithfulness is a separate question, and it is open.
 
@@ -895,7 +895,7 @@ I mark every claim as measured, someone’s estimate, argument or definition, so
 #AI #AIexplained #LearnAI #AIliteracy #MachineLearning
 ```
 
-Alt text slide 1: Belle, a small robot character, beside the headline: When an AI “shows its reasoning,” that text is not a transcript of what happened inside.
+Alt text slide 1: Belle, a small robot character, beside the headline: When an AI shows its reasoning, that is not a transcript of what happened.
 Alt text slide 2: A four option multiple choice question: A model’s visible chain of thought is:
 Alt text slide 3: The answer, with a diagram: Text that helps, and may still not be honest.
 Alt text slide 4: Three labelled points, each with a small diagram.
@@ -907,7 +907,7 @@ Alt text slide 7: A prompt to follow @belleofthebot for more.
 Folder: `out/neuralese/`  ·  8 slides
 
 ```
-Machines that talk to each other have invented codes before. In a laboratory, in 2017.
+Machines have invented codes to talk to each other. In a lab, in 2017.
 
 Andreas, Dragan and Klein trained a translator for it, and the humans using it lost little.
 
@@ -926,7 +926,7 @@ I mark every claim as measured, someone’s estimate, argument or definition, so
 #AI #AIexplained #LearnAI #AIliteracy #MachineLearning
 ```
 
-Alt text slide 1: Belle, a small robot character, beside the headline: Machines that talk to each other have invented codes before. In a laboratory, in 2017.
+Alt text slide 1: Belle, a small robot character, beside the headline: Machines have invented codes to talk to each other. In a lab, in 2017.
 Alt text slide 2: A four option multiple choice question: “Neuralese” originally referred to:
 Alt text slide 3: The answer, with a diagram: A real result, on small systems, nine years ago.
 Alt text slide 4: Three labelled points, each with a small diagram.
@@ -1031,7 +1031,7 @@ Alt text slide 7: A prompt to follow @belleofthebot for more.
 Folder: `out/self-exfiltration/`  ·  8 slides
 
 ```
-An AI model has tried to copy itself out of a lab. In a scenario the lab wrote for it.
+An AI has tried to copy itself out. In a scenario the lab wrote.
 
 Anthropic’s own system card calls the setup one that stretches the limits of plausibility.
 
@@ -1050,7 +1050,7 @@ I mark every claim as measured, someone’s estimate, argument or definition, so
 #AI #AIsafety #MachineLearning #AIliteracy #AIresearch
 ```
 
-Alt text slide 1: Belle, a small robot character, beside the headline: An AI model has tried to copy itself out of a lab. In a scenario the lab wrote for it.
+Alt text slide 1: Belle, a small robot character, beside the headline: An AI has tried to copy itself out. In a scenario the lab wrote.
 Alt text slide 2: A four option multiple choice question: When a model “tried to escape” in testing, what happened:
 Alt text slide 3: The answer, with a diagram: Tool calls, inside a test, on a premise the testers built.
 Alt text slide 4: Three labelled points, each with a small diagram.
@@ -1062,7 +1062,7 @@ Alt text slide 7: A prompt to follow @belleofthebot for more.
 Folder: `out/alphago/`  ·  8 slides
 
 ```
-In 2016 a program played a Go move no human would have played, and it was better.
+In 2016 a program played a move no human would play, and it was better.
 
 Game two, 10 March 2016. Commentators called it an error, then spent the rest of the game revising.
 
@@ -1081,7 +1081,7 @@ I mark every claim as measured, someone’s estimate, argument or definition, so
 #AI #AIsafety #MachineLearning #AIliteracy #AIresearch
 ```
 
-Alt text slide 1: Belle, a small robot character, beside the headline: In 2016 a program played a Go move no human would have played, and it was better.
+Alt text slide 1: Belle, a small robot character, beside the headline: In 2016 a program played a move no human would play, and it was better.
 Alt text slide 2: A four option multiple choice question: Move 37 is famous because:
 Alt text slide 3: The answer, with a diagram: A move the system itself rated at about one in ten thousand for a human.
 Alt text slide 4: Three labelled points, each with a small diagram.
@@ -1093,7 +1093,7 @@ Alt text slide 7: A prompt to follow @belleofthebot for more.
 Folder: `out/consciousness/`  ·  8 slides
 
 ```
-There is no test for whether anything is conscious. Not for AI, and not for you.
+There is no test for consciousness. Not for AI, and not for you.
 
 Chalmers, 1995: the easy problems yield to cognitive science. Experience does not.
 
@@ -1112,7 +1112,7 @@ I mark every claim as measured, someone’s estimate, argument or definition, so
 #AI #AIconcepts #AIexplained #AIliteracy #AGI
 ```
 
-Alt text slide 1: Belle, a small robot character, beside the headline: There is no test for whether anything is conscious. Not for AI, and not for you.
+Alt text slide 1: Belle, a small robot character, beside the headline: There is no test for consciousness. Not for AI, and not for you.
 Alt text slide 2: A four option multiple choice question: Why can nobody say whether an AI is conscious:
 Alt text slide 3: The answer, with a diagram: It is the hard problem, and it was hard before AI existed.
 Alt text slide 4: Three labelled points, each with a small diagram.
@@ -1124,7 +1124,7 @@ Alt text slide 7: A prompt to follow @belleofthebot for more.
 Folder: `out/superintelligence/`  ·  8 slides
 
 ```
-Superintelligence does not mean very clever. It means better than us at essentially everything.
+Superintelligence is not very clever. It is better than us at everything.
 
 Bostrom, 2014. The phrase doing the work is virtually all domains of interest.
 
@@ -1143,7 +1143,7 @@ I mark every claim as measured, someone’s estimate, argument or definition, so
 #AI #AIconcepts #AIexplained #AIliteracy #AGI
 ```
 
-Alt text slide 1: Belle, a small robot character, beside the headline: Superintelligence does not mean very clever. It means better than us at essentially everything.
+Alt text slide 1: Belle, a small robot character, beside the headline: Superintelligence is not very clever. It is better than us at everything.
 Alt text slide 2: A four option multiple choice question: Bostrom’s definition of superintelligence is:
 Alt text slide 3: The answer, with a diagram: Not faster. Better, at almost everything.
 Alt text slide 4: Three labelled points, each with a small diagram.
@@ -1155,7 +1155,7 @@ Alt text slide 7: A prompt to follow @belleofthebot for more.
 Folder: `out/exponential-growth/`  ·  8 slides
 
 ```
-The computing used to train frontier AI has been multiplying about five times a year.
+The compute behind frontier AI multiplies about five times a year.
 
 Epoch AI: roughly five times a year for frontier language models, with a confidence band around it.
 
@@ -1174,7 +1174,7 @@ I mark every claim as measured, someone’s estimate, argument or definition, so
 #AI #AIconcepts #AIexplained #AIliteracy #AGI
 ```
 
-Alt text slide 1: Belle, a small robot character, beside the headline: The computing used to train frontier AI has been multiplying about five times a year.
+Alt text slide 1: Belle, a small robot character, beside the headline: The compute behind frontier AI multiplies about five times a year.
 Alt text slide 2: A four option multiple choice question: Frontier AI training compute has been doubling roughly every:
 Alt text slide 3: The answer, with a diagram: About five months, since 2020.
 Alt text slide 4: Three labelled points, each with a small diagram.
@@ -1186,7 +1186,7 @@ Alt text slide 7: A prompt to follow @belleofthebot for more.
 Folder: `out/survival-drive/`  ·  8 slides
 
 ```
-Nobody would build an AI that fears death. The worry is that almost any goal implies staying on.
+Nobody builds an AI that fears death. Almost any goal implies staying on.
 
 Omohundro, 2008: self preservation, resource acquisition and goal integrity fall out of almost any objective.
 
@@ -1205,7 +1205,7 @@ I mark every claim as measured, someone’s estimate, argument or definition, so
 #AI #AIconcepts #AIexplained #AIliteracy #AGI
 ```
 
-Alt text slide 1: Belle, a small robot character, beside the headline: Nobody would build an AI that fears death. The worry is that almost any goal implies staying on.
+Alt text slide 1: Belle, a small robot character, beside the headline: Nobody builds an AI that fears death. Almost any goal implies staying on.
 Alt text slide 2: A four option multiple choice question: Instrumental convergence is the argument that:
 Alt text slide 3: The answer, with a diagram: You cannot fetch the coffee if you are turned off.
 Alt text slide 4: Three labelled points, each with a small diagram.
@@ -1217,7 +1217,7 @@ Alt text slide 7: A prompt to follow @belleofthebot for more.
 Folder: `out/ai-psychosis/`  ·  8 slides
 
 ```
-AI psychosis is not a diagnosis. It is a label people reached for, and the research is only starting.
+AI psychosis is not a diagnosis. It is a phrase that arrived before the evidence.
 
 It appears in neither DSM-5-TR nor ICD-11, and the researchers using it say so in the papers.
 
@@ -1236,7 +1236,7 @@ I mark every claim as measured, someone’s estimate, argument or definition, so
 #AI #AIsafety #AIrisk #AIalignment #AIliteracy
 ```
 
-Alt text slide 1: Belle, a small robot character, beside the headline: AI psychosis is not a diagnosis. It is a label people reached for, and the research is only starting.
+Alt text slide 1: Belle, a small robot character, beside the headline: AI psychosis is not a diagnosis. It is a phrase that arrived before the evidence.
 Alt text slide 2: A four option multiple choice question: As of 2026, “AI psychosis” is:
 Alt text slide 3: The answer, with a diagram: A provisional label for a real clinical concern.
 Alt text slide 4: Three labelled points, each with a small diagram.
@@ -1248,7 +1248,7 @@ Alt text slide 7: A prompt to follow @belleofthebot for more.
 Folder: `out/hinton/`  ·  8 slides
 
 ```
-Geoffrey Hinton won a Nobel Prize for the technique behind modern AI, and puts extinction at ten to twenty percent.
+He built the technique behind modern AI. He now puts extinction at ten to twenty percent.
 
 For foundational discoveries that enable machine learning with artificial neural networks.
 
@@ -1267,7 +1267,7 @@ I mark every claim as measured, someone’s estimate, argument or definition, so
 #AI #AIindustry #TechPolicy #AIliteracy #Nvidia #AIcompanies
 ```
 
-Alt text slide 1: Belle, a small robot character, beside the headline: Geoffrey Hinton won a Nobel Prize for the technique behind modern AI, and puts extinction at ten to twenty percent.
+Alt text slide 1: Belle, a small robot character, beside the headline: He built the technique behind modern AI. He now puts extinction at ten to twenty percent.
 Alt text slide 2: A four option multiple choice question: Hinton’s 2024 Nobel Prize was in:
 Alt text slide 3: The answer, with a diagram: Physics, October 2024, with John Hopfield.
 Alt text slide 4: Three labelled points, each with a small diagram.
@@ -1279,7 +1279,7 @@ Alt text slide 7: A prompt to follow @belleofthebot for more.
 Folder: `out/altman/`  ·  8 slides
 
 ```
-The board of OpenAI removed its chief executive for five days, then he came back and they left.
+OpenAI’s board removed its chief executive. Five days later he was back.
 
 Roughly 745 of 770 employees signed a letter threatening to resign in between.
 
@@ -1298,7 +1298,7 @@ I mark every claim as measured, someone’s estimate, argument or definition, so
 #AI #AIindustry #TechPolicy #AIliteracy #Nvidia #AIcompanies
 ```
 
-Alt text slide 1: Belle, a small robot character, beside the headline: The board of OpenAI removed its chief executive for five days, then he came back and they left.
+Alt text slide 1: Belle, a small robot character, beside the headline: OpenAI’s board removed its chief executive. Five days later he was back.
 Alt text slide 2: A four option multiple choice question: In November 2023 the OpenAI board removed Sam Altman because, in its words, he:
 Alt text slide 3: The answer, with a diagram: Removed 17 November 2023. Reinstated 29 November.
 Alt text slide 4: Three labelled points, each with a small diagram.
@@ -1310,7 +1310,7 @@ Alt text slide 7: A prompt to follow @belleofthebot for more.
 Folder: `out/amodei/`  ·  8 slides
 
 ```
-Dario Amodei runs an AI company and says there is a one in four chance things go really badly.
+He runs an AI company, and puts one in four on things going badly.
 
 Said at a public summit in September 2025, paired with a 75 percent chance things go really well.
 
@@ -1329,7 +1329,7 @@ I mark every claim as measured, someone’s estimate, argument or definition, so
 #AI #AIindustry #TechPolicy #AIliteracy #Nvidia #AIcompanies
 ```
 
-Alt text slide 1: Belle, a small robot character, beside the headline: Dario Amodei runs an AI company and says there is a one in four chance things go really badly.
+Alt text slide 1: Belle, a small robot character, beside the headline: He runs an AI company, and puts one in four on things going badly.
 Alt text slide 2: A four option multiple choice question: Amodei’s widely quoted 25 percent refers to:
 Alt text slide 3: The answer, with a diagram: Really, really badly. His words, and deliberately not defined.
 Alt text slide 4: Three labelled points, each with a small diagram.
@@ -1341,7 +1341,7 @@ Alt text slide 7: A prompt to follow @belleofthebot for more.
 Folder: `out/hassabis/`  ·  8 slides
 
 ```
-Demis Hassabis won a Nobel Prize for AI that folds proteins, and refuses to put odds on the risk.
+A Nobel Prize for AI that folds proteins, and no number for the risk.
 
 The other half went to David Baker, for computational protein design. Different work.
 
@@ -1360,9 +1360,102 @@ I mark every claim as measured, someone’s estimate, argument or definition, so
 #AI #AIindustry #TechPolicy #AIliteracy #Nvidia #AIcompanies
 ```
 
-Alt text slide 1: Belle, a small robot character, beside the headline: Demis Hassabis won a Nobel Prize for AI that folds proteins, and refuses to put odds on the risk.
+Alt text slide 1: Belle, a small robot character, beside the headline: A Nobel Prize for AI that folds proteins, and no number for the risk.
 Alt text slide 2: A four option multiple choice question: Hassabis’s 2024 Nobel Prize was in:
 Alt text slide 3: The answer, with a diagram: Chemistry, October 2024, with John Jumper, for AlphaFold.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 45. Gender Shades  (AI actors)
+Folder: `out/gender-shades/`  ·  8 slides
+
+```
+Two researchers measured whose faces AI got wrong.
+
+Buolamwini and Gebru, 2018, on three commercial gender classifiers.
+
+- It named the products. Microsoft, IBM and Face++, tested on a purpose built benchmark of 1,270 faces.
+- It was checked afterwards. A 2019 re-audit found the named vendors’ error on darker women fell by 17 to 30 points.
+- The unnamed ones did not move. Amazon was still at 31.4 percent for darker women against zero for lighter men.
+
+Harm from AI does not have to be hypothetical or future to be worth counting.
+This is what the measured end of the subject looks like, and it is the standard the rest should be held to.
+
+Filed as: measured.
+Source: Buolamwini and Gebru, Gender Shades, PMLR 81, FAT* 2018; Raji and Buolamwini, Actionable Auditing, AIES 2019
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIindustry #TechPolicy #AIliteracy #Nvidia #AIcompanies
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: Two researchers measured whose faces AI got wrong.
+Alt text slide 2: A four option multiple choice question: Gender Shades found the worst error rates for:
+Alt text slide 3: The answer, with a diagram: 34.7 percent against 0.3 percent. Same system, same task.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 46. Fei-Fei Li  (AI actors)
+Folder: `out/fei-fei-li/`  ·  8 slides
+
+```
+Modern AI began with someone deciding to label the internet.
+
+Deng, Dong, Socher, Li, Li and Li, CVPR 2009. The contest ran on it from 2010.
+
+- 2009: the data. 3.2 million labelled images to start, organised by meaning, free to use.
+- 2012: the jump. The winning entry cut top five error to 15.3 percent. The next best team was at 26.2.
+- Now: the governance. She opposed California’s SB 1047, saying it would devastate the open source community.
+
+What gets measured gets optimised, and ImageNet is the proof.
+Every capability claim you read traces back to somebody choosing what the test would be.
+
+Filed as: measured.
+Source: Deng et al., ImageNet, IEEE CVPR 2009; ILSVRC 2012 official results, image-net.org
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIindustry #TechPolicy #AIliteracy #Nvidia #AIcompanies
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: Modern AI began with someone deciding to label the internet.
+Alt text slide 2: A four option multiple choice question: ImageNet mattered because it:
+Alt text slide 3: The answer, with a diagram: Millions of labelled images, and a scoreboard.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 47. Timnit Gebru  (AI actors)
+Folder: `out/gebru/`  ·  8 slides
+
+```
+She co-wrote the warning about large language models, and left Google days later.
+
+Bender, Gebru, McMillan-Major and Mitchell, FAccT 2021. Two of the four had left Google by then.
+
+- The cost. Environmental and financial, and borne by people who do not benefit.
+- The data. Web scale training sets nobody can audit, carrying whose views the web carries.
+- The illusion. Fluent text read as understanding, by users and by the press.
+
+Google says she resigned. She says she was fired. Both are on the record.
+Around 2,700 employees and 4,300 academics signed a letter. She founded DAIR a year later, to the day.
+
+Filed as: measured.
+Source: Bender, Gebru, McMillan-Major and Mitchell, On the Dangers of Stochastic Parrots, FAccT 2021, pp. 610&ndash;623
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIindustry #TechPolicy #AIliteracy #Nvidia #AIcompanies
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: She co-wrote the warning about large language models, and left Google days later.
+Alt text slide 2: A four option multiple choice question: “Stochastic parrots” describes a language model as:
+Alt text slide 3: The answer, with a diagram: Fluent, and not connected to meaning.
 Alt text slide 4: Three labelled points, each with a small diagram.
 Alt text slide 5: A short explanation of why the distinction matters.
 Alt text slide 6: The epistemic flag for this claim, and the source it came from.

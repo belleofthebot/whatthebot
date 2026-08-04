@@ -316,9 +316,13 @@ a.tag{border-bottom:0}
   gap:.45rem;position:relative;z-index:4;margin-bottom:.55rem}
 .cover .et-name{font-family:var(--mono);font-size:.68rem;color:var(--acc);
   line-height:1.35;min-width:0}
-.cover .et-hook{font-size:1rem;line-height:1.16;font-weight:500;color:var(--fg);
-  margin:0;position:relative;z-index:3;max-width:15ch;letter-spacing:-.01em;
-  display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
+.cover .et-hook{line-height:1.16;font-weight:500;color:var(--fg);margin:0;
+  position:relative;z-index:3;max-width:15ch;letter-spacing:-.01em}
+/* the type steps down with the length of the hook rather than truncating */
+.cover .et-hook.h-xl{font-size:1.16rem}
+.cover .et-hook.h-l{font-size:1.04rem}
+.cover .et-hook.h-m{font-size:.9rem}
+.cover .et-hook.h-s{font-size:.8rem;line-height:1.22}
 .cover .et-hook .rose{color:var(--acc)}
 .cover .flag{flex:0 0 auto;color:var(--faint);border-color:var(--edge);
   background:transparent;font-size:.58rem;padding:2px 8px}
@@ -330,20 +334,25 @@ a.tag{border-bottom:0}
 /* Belle, sitting in the tile the way she sits on the cover. She is anchored
    left, centre or right by term so the grid does not read as one repeated
    composition, and she swaps expression on hover. */
-.et-belle{position:absolute;bottom:0;height:56%;margin:0;z-index:2;
-  transition:transform .3s cubic-bezier(.2,.8,.3,1)}
-.et-belle img{height:100%;width:auto;display:block}
-.et-belle .et-react{position:absolute;left:0;bottom:0;opacity:0;
-  transition:opacity .18s ease}
+/* Belle lives in a band across the bottom of the tile and is clipped by it, so
+   however she moves she cannot reach the words. The hover grows her downward,
+   out of the frame, rather than up into the hook. */
+.et-belle{position:absolute;left:0;right:0;bottom:0;height:50%;margin:0;z-index:2;
+  overflow:hidden;pointer-events:none}
+.et-belle img{position:absolute;bottom:0;height:100%;width:auto;display:block;
+  transform-origin:center bottom;
+  transition:transform .3s cubic-bezier(.2,.8,.3,1),opacity .18s ease}
+.et-belle .et-react{opacity:0}
 .etile.cover:hover .et-react,.etile.cover:focus-visible .et-react{opacity:1}
 .etile.cover:hover .et-idle,.etile.cover:focus-visible .et-idle{opacity:0;
   transition:opacity .18s ease}
-.b-left  .et-belle{left:2%}
-.b-right .et-belle{right:1%}
-.b-mid   .et-belle{left:50%;transform:translateX(-50%)}
-.etile.cover:hover .et-belle,.etile.cover:focus-visible .et-belle{transform:translateY(-7px) scale(1.06)}
-.etile.cover.b-mid:hover .et-belle,.etile.cover.b-mid:focus-visible .et-belle{
-  transform:translateX(-50%) translateY(-7px) scale(1.06)}
+.b-left  .et-belle img{left:3%}
+.b-right .et-belle img{right:2%}
+.b-mid   .et-belle img{left:50%;transform:translateX(-50%)}
+.etile.cover:hover .et-belle img,.etile.cover:focus-visible .et-belle img{
+  transform:translateY(11px) scale(1.08)}
+.etile.cover.b-mid:hover .et-belle img,.etile.cover.b-mid:focus-visible .et-belle img{
+  transform:translateX(-50%) translateY(11px) scale(1.08)}
 
 /* The diagram alternative: the same grounds, the icon language instead of the
    character. On hover the dim strokes come up to the accent, so the drawing
@@ -360,11 +369,15 @@ a.tag{border-bottom:0}
 @media(max-width:640px){
   .egrid.covers{grid-template-columns:repeat(auto-fill,minmax(min(150px,100%),1fr));gap:var(--s1)}
   .cover{padding:var(--s2)}
-  .cover .et-hook{font-size:.84rem;-webkit-line-clamp:4;max-width:100%}
+  .cover .et-hook{max-width:100%}
+  .cover .et-hook.h-xl{font-size:.95rem}
+  .cover .et-hook.h-l{font-size:.87rem}
+  .cover .et-hook.h-m{font-size:.79rem}
+  .cover .et-hook.h-s{font-size:.72rem}
   .cover .et-name{font-size:.56rem}
   .cover .flag{font-size:.5rem;padding:2px 6px}
   .cover .et-top{gap:.3rem;margin-bottom:.4rem}
-  .et-belle{height:46%}
+  .et-belle{height:42%}
   .cover .et-icon{width:min(58%,92px)}
 }
 @media(prefers-reduced-motion:reduce){
@@ -514,7 +527,7 @@ footer a{color:var(--rose)}
 /* ---------- cut out portraits, for the people cards ----------
    Black and white so a photograph sits beside a drawing without fighting it,
    and so the five category grounds stay the only colour in the grid. */
-.et-photo{position:absolute;bottom:0;height:66%;margin:0;z-index:2;
+.et-photo{position:absolute;bottom:0;height:56%;margin:0;z-index:2;
   filter:grayscale(1) contrast(1.12) brightness(1.02);
   transition:transform .3s cubic-bezier(.2,.8,.3,1),filter .3s ease}
 .et-photo img{height:100%;width:auto;display:block}
