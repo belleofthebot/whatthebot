@@ -15,13 +15,28 @@ def read(p):
     with io.open(os.path.join(HERE, p), encoding="utf-8") as f:
         return f.read()
 
+PREVIEW_H = 420      # the art is 700px on the real site; a preview does not need it
+
 def datauri(rel):
+    """Inline an image, downscaled. Every byte here is base64 in one html file,
+    and the whole point is a file small enough to send."""
     path = os.path.join(HERE, rel)
     if not os.path.exists(path):
         return None
-    with open(path, "rb") as f:
-        b = base64.b64encode(f.read()).decode("ascii")
-    return "data:image/webp;base64," + b
+    raw = open(path, "rb").read()
+    try:
+        from PIL import Image
+        im = Image.open(io.BytesIO(raw))
+        if im.height > PREVIEW_H:
+            w = round(im.width * PREVIEW_H / im.height)
+            im = im.resize((w, PREVIEW_H), Image.LANCZOS)
+            buf = io.BytesIO()
+            im.save(buf, "WEBP", quality=72, method=6)
+            if buf.tell() < len(raw):
+                raw = buf.getvalue()
+    except Exception:
+        pass
+    return "data:image/webp;base64," + base64.b64encode(raw).decode("ascii")
 
 # every image the pages and the quiz bands can ask for
 imgs = set(re.findall(r'assets/belle/[A-Za-z0-9_\-]+\.webp', "".join(read(p) for p, _ in PAGES)))
@@ -36,10 +51,13 @@ for rel in sorted(imgs):
 # the modal and the quiz build their image paths in javascript, so hand the
 # whole expression set over as a map rather than trying to rewrite strings
 BELLEDIR = os.path.join(HERE, "assets", "belle")
+wanted = set(re.findall(r'"belle2?":\s*"([a-z0-9\-]+)"', "".join(read(p) for p, _ in PAGES)))
+wanted |= set(re.findall(r'"belle":\s*"([a-z0-9\-]+)"', read("quizzes.html")))
+wanted |= {"delighted", "happy-proud", "warm-curious", "aw-shucks"}   # quiz result bands
 BYSLUG = {}
 if os.path.isdir(BELLEDIR):
     for f in sorted(os.listdir(BELLEDIR)):
-        if f.endswith(".webp"):
+        if f.endswith(".webp") and f[:-5] in wanted:
             BYSLUG[f[:-5]] = datauri(os.path.join("assets", "belle", f))
 print("inlined %d images, %d expressions" % (len(URIS), len(BYSLUG)))
 
