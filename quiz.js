@@ -105,7 +105,11 @@
       b.line.replace('{topic}', topic.name).replace('{short}', topic.short || topic.name)
             .replace('{n}', score).replace('{t}', qs.length);
     var img = done.querySelector('.rbelle img');
-    if (img) { img.src = 'assets/belle/' + b.belle + '.webp'; img.alt = ''; }
+    if (img) {
+      img.src = (window.BELLEIMG && window.BELLEIMG[b.belle]) ||
+                ('assets/belle/' + b.belle + '.webp');
+      img.alt = '';
+    }
 
     var nextBtn = done.querySelector('[data-onward]');
     var nt;

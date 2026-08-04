@@ -383,7 +383,8 @@ a.tag{border-bottom:0}
 .mterm{font-family:var(--mono);font-size:.78rem;color:var(--faint);flex:1}
 .mclose{background:none;border:0;color:var(--meta);font-size:1.5rem;line-height:1;cursor:pointer;padding:0 4px}
 .mclose:hover{color:var(--rose)}
-.mbody{padding:var(--s5) var(--s4);overflow-y:auto;min-height:280px}
+.mbody{padding:var(--s5) var(--s4);overflow-y:auto;position:relative;
+  height:clamp(330px,52vh,450px)}
 .mkick{font-family:var(--mono);font-size:.72rem;color:var(--faint);display:block;margin-bottom:var(--s2)}
 .mhook{font-size:1.72rem;line-height:1.18;font-weight:500;max-width:22ch}
 .mhook .rose,.mans .rose,.mwhy .rose,.mfile .rose{color:var(--sub)}
@@ -391,8 +392,8 @@ a.tag{border-bottom:0}
 .mwhy{font-size:1.18rem;line-height:1.34;color:var(--text);max-width:30ch;margin-bottom:var(--s2)}
 .mfile{font-size:1.05rem;color:var(--text);max-width:32ch}
 .mpts{list-style:none;display:flex;flex-direction:column;gap:var(--s2);margin-bottom:var(--s3)}
-.mpts li{color:var(--meta);font-size:.95rem;padding-left:var(--s3);border-left:2px solid var(--line);line-height:1.45}
 .mpts b{color:var(--text);font-weight:500;display:block}
+.mpts div b{display:block}
 .mflag{margin:var(--s3) 0}
 .mfoot{display:flex;align-items:center;gap:var(--s3);padding:var(--s3) var(--s4);border-top:1px solid var(--line)}
 .mdots{display:flex;gap:7px;flex:1;justify-content:center}
@@ -443,3 +444,61 @@ a.tag{border-bottom:0}
 h2 .subdot{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--sub);margin-right:10px}
 .srcs .src-item .t .flag{margin-left:8px}
 footer a{color:var(--rose)}
+
+/* ---------- the modal wears the subject's ground ----------
+   Same colours as the carousel and the tile, so opening a card feels like
+   picking up the post rather than opening a document. */
+.mcard[class*="tg-"]{background:var(--bg);border-color:var(--edge)}
+.mcard[class*="tg-"] .mhead,.mcard[class*="tg-"] .mfoot{border-color:var(--edge)}
+.mcard[class*="tg-"] .mcat{color:var(--acc)}
+.mcard[class*="tg-"] .mterm,.mcard[class*="tg-"] .mkick,
+.mcard[class*="tg-"] .meta,.mcard[class*="tg-"] .src{color:var(--faint)}
+.mcard[class*="tg-"] .mclose{color:var(--faint)}
+.mcard[class*="tg-"] .mclose:hover{color:var(--acc)}
+.mcard[class*="tg-"] .mhook,.mcard[class*="tg-"] .mans,.mcard[class*="tg-"] .mwhy,
+.mcard[class*="tg-"] .mfile,.mcard[class*="tg-"] .mq,.mcard[class*="tg-"] p,
+.mcard[class*="tg-"] .mpts b{color:var(--fg)}
+.mcard[class*="tg-"] .rose{color:var(--acc)}
+.mcard[class*="tg-"] .btn{background:var(--acc);color:var(--bg);border-color:var(--acc)}
+.mcard[class*="tg-"] .btn.ghost{background:none;color:var(--acc)}
+.mcard[class*="tg-"] .btn[disabled]{opacity:.35}
+.mcard[class*="tg-"] .mdot{background:var(--edge)}
+.mcard[class*="tg-"] .mdot.on{background:var(--acc)}
+.mcard[class*="tg-"] .flag{color:var(--faint);border-color:var(--edge)}
+.mcard[class*="tg-"] a{color:var(--acc);border-bottom-color:var(--edge)}
+
+/* Belle opens the card and sees you out of it */
+.mbelle{position:absolute;right:0;bottom:0;height:74%;margin:0;pointer-events:none;
+  animation:mbelle-in .38s cubic-bezier(.2,.8,.3,1) both}
+.mbelle img{height:100%;width:auto;display:block}
+.mbelle.small{height:52%;opacity:.92}
+@keyframes mbelle-in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.mcard[class*="tg-"] .mhook{max-width:13ch;position:relative;z-index:2}
+.mcard[class*="tg-"] .mfile,.mcard[class*="tg-"] .src,.mcard[class*="tg-"] .mflag{
+  position:relative;z-index:2;max-width:34ch}
+
+/* the question panel */
+.mq{font-size:1.24rem;line-height:1.26;font-weight:500;margin-bottom:var(--s3);max-width:30ch}
+.mopts{display:grid;gap:var(--s1);margin-bottom:var(--s2)}
+.mopt{text-align:left;font-family:var(--sans);font-size:.94rem;line-height:1.35;
+  padding:11px 14px;border-radius:var(--r);background:transparent;color:var(--fg);
+  border:1px solid var(--edge);cursor:pointer;transition:border-color .15s,background .15s}
+.mopt:hover:not([disabled]){border-color:var(--acc)}
+.mopt.right{border-color:var(--ic-mint);color:var(--ic-mint)}
+.mopt.wrong{border-color:var(--acc);opacity:.6;text-decoration:line-through}
+.mopt[disabled]{cursor:default}
+.mfb{font-size:.94rem;color:var(--soft);max-width:44ch;margin:0}
+
+/* the drawings, inside the card */
+.mfig{position:absolute;right:var(--s4);bottom:var(--s4);width:110px;height:110px;opacity:.9}
+.mpts{list-style:none;display:grid;gap:var(--s2);margin-bottom:var(--s3)}
+.mpts li{display:flex;gap:var(--s3);align-items:flex-start;color:var(--soft)}
+.mpi{width:52px;height:52px;flex:0 0 52px;margin-top:-4px}
+.mpts b{font-weight:500}
+.mpts div{font-size:.95rem;line-height:1.45;color:var(--soft)}
+
+@media(max-width:640px){
+  .mbelle{height:56%;opacity:.9}
+  .mfig{width:76px;height:76px}
+  .mcard[class*="tg-"] .mhook{max-width:11ch}
+}

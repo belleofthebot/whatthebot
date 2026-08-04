@@ -75,27 +75,89 @@
       .map(function (el) { return el.dataset.key; });
   }
 
-  function build(card) {
+  var answered = {};                    // key -> chosen option, so a flip back remembers
+
+  /* image source, indirected so the single file preview can inline the art */
+  function belleSrc(s) {
+    return (window.BELLEIMG && window.BELLEIMG[s]) || ('assets/belle/' + s + '.webp');
+  }
+
+  function belleTag(slug, cls) {
+    return slug ? '<figure class="' + cls + '"><img src="' + belleSrc(slug) +
+                  '" alt="" loading="lazy"></figure>' : '';
+  }
+
+  function build(card, key) {
     var pts = card.three.map(function (t) {
-      return '<li><b>' + t[0] + '</b> ' + t[1] + '</li>';
+      return '<li><svg class="mpi" viewBox="0 0 64 64" aria-hidden="true"><use href="#' +
+             t[0] + '"/></svg><div><b>' + t[1] + '</b> ' + t[2] + '</div></li>';
     }).join('');
+
+    var opts = card.opts.map(function (o, i) {
+      return '<button class="mopt" type="button" data-opt="' + i + '">' + o + '</button>';
+    }).join('');
+
+    var icon = '<svg class="mfig" viewBox="0 0 64 64" aria-hidden="true"><use href="#' +
+               card.icon + '"/></svg>';
+
     return [
-      '<span class="mkick">' + card.kick + '</span><h2 class="mhook">' + card.hook + '</h2>',
+      /* 1 · the cover, so Belle is the first thing you see */
+      '<span class="mkick">' + card.kick + '</span><h2 class="mhook">' + card.hook + '</h2>' +
+        belleTag(card.belle, 'mbelle'),
+
+      /* 2 · the question, before the answer */
+      '<span class="mkick">before you read on</span><h3 class="mq">' + card.q + '</h3>' +
+        '<div class="mopts" data-quiz="' + key + '">' + opts + '</div>' +
+        '<p class="mfb" hidden></p>',
+
+      /* 3 · the plain answer */
       '<span class="mkick">the plain answer</span><h3 class="mans">' + card.reveal + '</h3>' +
-        '<p>' + card.revsub + '</p>',
+        '<p>' + card.revsub + '</p>' + icon,
+
+      /* 4 · three points, each with its own drawing */
       '<span class="mkick">' + card.threekick + '</span><ul class="mpts">' + pts + '</ul>' +
         '<p class="meta">' + card.threefoot + '</p>',
+
+      /* 5 · why it matters */
       '<span class="mkick">' + card.whykick + '</span><p class="mwhy">' + card.why + '</p>' +
         '<p>' + card.whysub + '</p>',
+
+      /* 6 · how it is filed, the source, and Belle again on the way out */
       '<span class="mkick">how this claim is filed</span>' +
         '<p class="mfile">' + card.file + '</p>' +
         '<div class="mflag"><span class="flag f-' + card.flag + '">' + card.flagname + '</span></div>' +
-        '<p class="src">' + card.src + '</p>'
+        '<p class="src">' + card.src + '</p>' +
+        belleTag(card.belle2 || card.belle, 'mbelle small')
     ];
+  }
+
+  /* the question panel is the only live one: bind it after every paint */
+  function wireQuiz(card) {
+    var box = mBody.querySelector('[data-quiz]');
+    if (!box) return;
+    var key = box.dataset.quiz;
+    var fb = mBody.querySelector('.mfb');
+    var btns = box.querySelectorAll('.mopt');
+
+    function settle(n) {
+      Array.prototype.forEach.call(btns, function (b, i) {
+        b.classList.toggle('right', i === card.ans);
+        b.classList.toggle('wrong', i === n && n !== card.ans);
+        b.disabled = true;
+      });
+      fb.textContent = card.ansy;
+      fb.hidden = false;
+    }
+    if (answered[key] !== undefined) { settle(answered[key]); return; }
+    Array.prototype.forEach.call(btns, function (b, i) {
+      b.addEventListener('click', function () { answered[key] = i; settle(i); });
+    });
   }
 
   function paint() {
     mBody.innerHTML = panels[panel];
+    mBody.scrollTop = 0;
+    if (panel === 1) wireQuiz(current);
     mDots.innerHTML = panels.map(function (_, i) {
       return '<button class="mdot' + (i === panel ? ' on' : '') + '" data-go="' + i +
              '" aria-label="panel ' + (i + 1) + '"></button>';
@@ -117,12 +179,17 @@
     modal.querySelector('[data-close]').focus();
   }
 
+  var current = null;
+
   function load(key) {
     var card = window.CARDS[key];
-    panels = build(card);
+    current = card;
+    panels = build(card, key);
     panel = 0;
     mCat.textContent = card.catname;
-    mCat.className = 'mcat c-' + card.cat;
+    mCat.className = 'mcat';
+    /* the card wears its subject's ground, the way the carousel does */
+    modal.querySelector('.mcard').className = 'mcard tg-' + card.cat;
     modal.querySelector('.mterm').textContent = card.term;
     paint();
   }

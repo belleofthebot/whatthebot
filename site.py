@@ -39,7 +39,13 @@ SUBBLURB = {
 # How the cards look in the grid. "belle" gives every tile the carousel cover,
 # character and all. "diagram" swaps the character for the icon language. "plain"
 # is the text-only tile. Set TILES in the environment to switch.
-TILES = os.environ.get("TILES", "belle")
+TILES = os.environ.get("TILES", "mix")
+
+# In mix, Belle takes the biggest and most abstract ideas, where a face does
+# more work than a diagram, and the diagrams carry everything concrete.
+BELLE_TERMS = {"existential-risk", "agi", "intelligence",
+               "recursive-self-improvement", "s-risk", "p-doom",
+               "misuse-misalignment"}
 
 # The second expression, shown on hover. Idle face, then the reaction: the point
 # is that the grid rewards looking at it. Falls back to a scale if the art is
@@ -162,7 +168,8 @@ def tile(k, sp, cat):
               f'data-flag="{sp["flag"]}" aria-label="Open {strip(sp["term"])}"')
     flag = f'<span class="flag f-{sp["flag"]}">{TYPENAME[sp["flag"]]}</span>'
 
-    if TILES == "plain" or (TILES == "belle" and not has_belle(sp.get("belle_hook"))):
+    wants_belle = TILES == "belle" or (TILES == "mix" and k in BELLE_TERMS)
+    if TILES == "plain" or (wants_belle and not has_belle(sp.get("belle_hook"))):
         return f'''<article class="etile c-{cat}" {common}>
   <span class="et-sub">AI {SUBNAME[cat]}</span>
   <h3 class="et-term">{strip(sp["term"])}</h3>
@@ -170,7 +177,7 @@ def tile(k, sp, cat):
   {flag}
 </article>'''
 
-    if TILES == "diagram":
+    if not wants_belle:
         art = f'''<svg class="et-icon" viewBox="0 0 64 64" aria-hidden="true"><use href="#{sp["icon"]}"/></svg>'''
         anchor = "b-icon"
     else:
@@ -198,13 +205,26 @@ def card_data():
             "term": strip(sp["term"]), "kick": strip(sp["kick"]), "hook": sp["hook"],
             "reveal": sp["reveal"], "revsub": strip(sp["revsub"]),
             "threekick": strip(sp["threekick"]),
-            "three": [[strip(t), strip(b)] for _i, t, b in sp["three"]],
+            "three": [[i, strip(t), strip(b)] for i, t, b in sp["three"]],
             "threefoot": strip(sp["threefoot"]),
             "whykick": strip(sp["whykick"]), "why": sp["why"], "whysub": strip(sp["whysub"]),
             "flag": sp["flag"], "flagname": TYPENAME[sp["flag"]],
             "file": sp["file"], "src": sp["src"],
+            "icon": sp["icon"],
+            "belle": sp["belle_hook"] if has_belle(sp.get("belle_hook")) else "",
+            "belle2": HOVER.get(k, "") if has_belle(HOVER.get(k)) else "",
         }
+        d[k].update(question(k, sp))
     return d
+
+def question(k, sp):
+    """The carousel's own multiple choice, with the answer moved off B."""
+    raw = list(sp["opts"]); correct = raw[1]
+    target = sum(ord(c) for c in k) % 4
+    rest = [o for i, o in enumerate(raw) if i != 1]
+    shown = rest[:target] + [correct] + rest[target:]
+    return {"q": strip(sp["q"]), "opts": [strip(o) for o in shown],
+            "ans": target, "ansy": strip(sp["revsub"])}
 
 # ---------------------------------------------------------------- quizzes
 def defn_questions(cat):
@@ -271,11 +291,7 @@ def index():
         f'<button class="pill t-{t}" data-kind="flag" data-val="{t}" type="button">{n}</button>'
         for t, n in TYPES)
 
-    extra = ""
-    if TILES in ("belle", "diagram"):
-        extra += grounds()
-    if TILES == "diagram":
-        extra += C.ICONS
+    extra = grounds() + C.ICONS
 
     body = f"""{extra}
 <div class="wrap intro">
@@ -311,7 +327,7 @@ def index():
   </div>
 </div>
 
-<div class="egrid{" covers" if TILES in ("belle", "diagram") else ""}">{"".join(tiles)}</div>
+<div class="egrid{"" if TILES == "plain" else " covers"}">{"".join(tiles)}</div>
 <p class="eempty meta" hidden>Nothing matches both filters. Try clearing one.</p>
 </div>
 

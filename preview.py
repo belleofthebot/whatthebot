@@ -5,7 +5,7 @@ For previewing away from a checkout: every page becomes a section, the nav
 switches between them instead of navigating, and css, js and images are
 inlined so the file works with no server and no network except webfonts.
 """
-import base64, io, os, re
+import base64, io, json, os, re
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 PAGES = [("index.html", "explore"), ("quizzes.html", "quizzes"),
@@ -32,7 +32,16 @@ for rel in sorted(imgs):
     u = datauri(rel)
     if u:
         URIS[rel] = u
-print("inlined %d images" % len(URIS))
+
+# the modal and the quiz build their image paths in javascript, so hand the
+# whole expression set over as a map rather than trying to rewrite strings
+BELLEDIR = os.path.join(HERE, "assets", "belle")
+BYSLUG = {}
+if os.path.isdir(BELLEDIR):
+    for f in sorted(os.listdir(BELLEDIR)):
+        if f.endswith(".webp"):
+            BYSLUG[f[:-5]] = datauri(os.path.join("assets", "belle", f))
+print("inlined %d images, %d expressions" % (len(URIS), len(BYSLUG)))
 
 def inline_imgs(s):
     for rel, uri in URIS.items():
@@ -119,6 +128,7 @@ doc = """<!DOCTYPE html>
   history.replaceState = function () { try { rs.apply(history, arguments); } catch (e) {} };
 })();
 </script>
+<script>window.BELLEIMG=%(belle)s;</script>
 <script>%(data)s</script>
 <script>
 window.__go = function (page, q) {
@@ -149,7 +159,8 @@ document.addEventListener('click', function (e) {
 <script>%(js)s</script>
 </body></html>
 """ % {"css": css, "nav": nav, "sections": "\n".join(sections),
-       "modal": modal, "data": "\n".join(scripts), "js": js}
+       "modal": modal, "data": "\n".join(scripts), "js": js,
+       "belle": json.dumps(BYSLUG)}
 
 doc = inline_imgs(doc)
 name = os.environ.get("PREVIEW", "preview.html")
