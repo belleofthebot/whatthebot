@@ -5,13 +5,16 @@ import os, io, json
 OUT = os.path.dirname(os.path.abspath(__file__))
 RISK = os.path.join(OUT, "risk")
 
-NAV = [("index.html","the map"),("pipeline.html","how it is made"),
-       ("taxonomy.html","where the worry comes in"),
-       ("words.html","the words")]
+# The long pages sit under "more" in the site nav, so they carry the site nav
+# rather than one of their own. base is prefixed at render time.
+NAV = [("index.html","explore"),("quizzes.html","quizzes"),
+       ("more.html","more"),("about.html","about")]
+NAVCUR = "more.html"
 
 def head(title, desc, current, base="../", nav=NAV):
     links = "".join(
-        '<a class="link" href="%s"%s>%s</a>' % (h, ' aria-current="page"' if h==current else '', t)
+        '<a class="link" href="%s%s"%s>%s</a>'
+        % (base, h, ' aria-current="page"' if h == NAVCUR else '', t)
         for h,t in nav)
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -677,7 +680,9 @@ words_body = f"""
 """
 
 # ================================================================= FRONTIER
-ROOTNAV = [("index.html","home"),("frontier.html","who controls it"),("risk/index.html","the risk map")]
+# Root pages share the site nav. site.py owns index / quizzes / more /
+# sources / about; build.py only makes the long pages.
+ROOTNAV = NAV
 
 STACK = [
  ("Companies selling you something with AI in it","thousands","100%",
@@ -885,8 +890,6 @@ home_body = f"""
 </div>
 """
 
-rootpage("index.html","Home","Interactive plain language walkthroughs of subjects that are hard to see clearly, by Elizabeth Beier.", home_body, ROOTNAV,
-         "plain language walkthroughs of things that are hard to see clearly")
 rootpage("frontier.html","Who controls the frontier","How few organisations can actually build a frontier AI model, counted, with sources.", frontier_body, ROOTNAV,
          "who can actually build one of these, counted")
 
