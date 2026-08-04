@@ -300,6 +300,77 @@ a.tag{border-bottom:0}
 .etile .flag{align-self:flex-start;margin-top:var(--s1)}
 .eempty{padding:var(--s5) 0;text-align:center}
 
+/* ---------- cover tiles: the carousel card, at web scale ----------
+   The ground colours are injected per page from the carousel stylesheet, so a
+   colour can only ever be changed in one place. Every tile carries --bg, --fg,
+   --acc, --edge, --faint and the three --ic- colours for the diagrams. */
+.egrid.covers{grid-template-columns:repeat(auto-fill,minmax(min(208px,100%),1fr));
+  gap:var(--s2)}
+.etile.cover{background:var(--bg);color:var(--fg);border:1px solid var(--edge);
+  border-left-width:1px;border-radius:var(--rc);aspect-ratio:4/5;min-height:0;
+  padding:var(--s3);position:relative;overflow:hidden;display:block;
+  transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+.etile.cover:hover,.etile.cover:focus-visible{transform:translateY(-4px);
+  border-color:var(--acc);box-shadow:0 16px 34px rgba(8,5,11,.42)}
+.cover .et-top{display:flex;align-items:flex-start;justify-content:space-between;
+  gap:.45rem;position:relative;z-index:4;margin-bottom:.55rem}
+.cover .et-name{font-family:var(--mono);font-size:.68rem;color:var(--acc);
+  line-height:1.35;min-width:0}
+.cover .et-hook{font-size:1rem;line-height:1.16;font-weight:500;color:var(--fg);
+  margin:0;position:relative;z-index:3;max-width:15ch;letter-spacing:-.01em;
+  display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
+.cover .et-hook .rose{color:var(--acc)}
+.cover .flag{flex:0 0 auto;color:var(--faint);border-color:var(--edge);
+  background:transparent;font-size:.58rem;padding:2px 8px}
+.cover .et-open{position:absolute;left:var(--s3);bottom:var(--s3);z-index:4;
+  font-family:var(--mono);font-size:.66rem;color:var(--acc);opacity:0;
+  transform:translateY(4px);transition:opacity .2s ease,transform .2s ease}
+.etile.cover:hover .et-open,.etile.cover:focus-visible .et-open{opacity:1;transform:none}
+
+/* Belle, sitting in the tile the way she sits on the cover. She is anchored
+   left, centre or right by term so the grid does not read as one repeated
+   composition, and she swaps expression on hover. */
+.et-belle{position:absolute;bottom:0;height:56%;margin:0;z-index:2;
+  transition:transform .3s cubic-bezier(.2,.8,.3,1)}
+.et-belle img{height:100%;width:auto;display:block}
+.et-belle .et-react{position:absolute;left:0;bottom:0;opacity:0;
+  transition:opacity .18s ease}
+.etile.cover:hover .et-react,.etile.cover:focus-visible .et-react{opacity:1}
+.etile.cover:hover .et-idle,.etile.cover:focus-visible .et-idle{opacity:0;
+  transition:opacity .18s ease}
+.b-left  .et-belle{left:2%}
+.b-right .et-belle{right:1%}
+.b-mid   .et-belle{left:50%;transform:translateX(-50%)}
+.etile.cover:hover .et-belle,.etile.cover:focus-visible .et-belle{transform:translateY(-7px) scale(1.06)}
+.etile.cover.b-mid:hover .et-belle,.etile.cover.b-mid:focus-visible .et-belle{
+  transform:translateX(-50%) translateY(-7px) scale(1.06)}
+
+/* The diagram alternative: the same grounds, the icon language instead of the
+   character. On hover the dim strokes come up to the accent, so the drawing
+   completes itself rather than just moving. */
+.cover .et-icon{position:absolute;left:var(--s3);bottom:var(--s3);z-index:2;
+  width:min(66%,150px);height:auto;aspect-ratio:1;overflow:visible;
+  transition:transform .3s cubic-bezier(.2,.8,.3,1)}
+.etile.cover:hover .et-icon,.etile.cover:focus-visible .et-icon{
+  transform:translateY(-5px) scale(1.09);--ic-dim:var(--acc)}
+.etile.cover.b-icon .et-open{left:auto;right:var(--s3)}
+
+@media(max-width:640px){
+  .egrid.covers{grid-template-columns:repeat(auto-fill,minmax(min(150px,100%),1fr));gap:var(--s1)}
+  .cover{padding:var(--s2)}
+  .cover .et-hook{font-size:.84rem;-webkit-line-clamp:4;max-width:100%}
+  .cover .et-name{font-size:.56rem}
+  .cover .flag{font-size:.5rem;padding:2px 6px}
+  .cover .et-top{gap:.3rem;margin-bottom:.4rem}
+  .et-belle{height:46%}
+  .cover .et-icon{width:min(58%,92px)}
+}
+@media(prefers-reduced-motion:reduce){
+  .etile.cover,.et-belle,.cover .et-icon,.cover .et-open{transition:none}
+  .etile.cover:hover{transform:none}
+}
+
+
 /* ===================== modal ===================== */
 .modal{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;padding:var(--s3)}
 .modal[hidden]{display:none}

@@ -19,7 +19,13 @@
 <a class="link" href="index.html" aria-current="page">explore</a><a class="link" href="quizzes.html">quizzes</a><a class="link" href="more.html">more</a><a class="link" href="about.html">about</a>
 </div></header>
 <main id="main">
-
+<style>
+.tg-concepts{--bg:#6E5570;--fg:#F6F1F6;--acc:#E8C4E4;--soft:#D6C4D6;--faint:#B49CB4; --edge:#8B6E8D;--ic-rose:#E8C4E4;--ic-mint:#9FE0CE;--ic-dim:#B49CB4}
+.tg-risk{--bg:#17121C;--fg:#F4F2EE;--acc:#DFA192;--soft:#B3A6BC;--faint:#8A7F93; --edge:#423748;--ic-rose:#DFA192;--ic-mint:#9FE0CE;--ic-dim:#8A7F93}
+.tg-behavior{--bg:#DFA192;--fg:#2A1F26;--acc:#5E2F26;--soft:#5E4A4E;--faint:#8A6257; --edge:#C4826F;--ic-rose:#5E2F26;--ic-mint:#1F6B57;--ic-dim:#8A6257}
+.tg-components{--bg:#F5F1EC;--fg:#3A343E;--acc:#AE5A47;--soft:#6E6474;--faint:#8B8090; --edge:#DCD2C6;--ic-rose:#AE5A47;--ic-mint:#2E9B7F;--ic-dim:#8B8090}
+.tg-actors{--bg:#B9B2AC;--fg:#2B2826;--acc:#7A3A2C;--soft:#514C48;--faint:#6A645F; --edge:#9C948D;--ic-rose:#8E4B3C;--ic-mint:#2E7F6A;--ic-dim:#7C7883}
+</style>
 <div class="wrap intro">
 <div class="introgrid">
 <figure class="bfig plain big"><img src="assets/belle/friendly-wave.webp" alt="" loading="lazy"></figure>
@@ -53,167 +59,121 @@
   </div>
 </div>
 
-<div class="egrid"><article class="etile c-components" tabindex="0" role="button"
-  data-key="context-window" data-cat="components" data-flag="def"
-  aria-label="Open context window">
-  <span class="et-sub">AI components</span>
-  <h3 class="et-term">context window</h3>
-  <p class="et-hook"><span class="rose">AI does not remember you.</span></p>
-  <span class="flag f-def">definition</span>
-</article><article class="etile c-components" tabindex="0" role="button"
-  data-key="rlhf" data-cat="components" data-flag="emp"
-  aria-label="Open RLHF">
-  <span class="et-sub">AI components</span>
-  <h3 class="et-term">RLHF</h3>
-  <p class="et-hook">Nobody taught AI <span class="rose">human values</span>.</p>
-  <span class="flag f-emp">measurement</span>
-</article><article class="etile c-components" tabindex="0" role="button"
-  data-key="open-weights" data-cat="components" data-flag="def"
-  aria-label="Open open weights">
-  <span class="et-sub">AI components</span>
-  <h3 class="et-term">open weights</h3>
-  <p class="et-hook">Once an AI model is released, nobody can <span class="rose">take it back</span>.</p>
-  <span class="flag f-def">definition</span>
-</article><article class="etile c-components" tabindex="0" role="button"
-  data-key="compute" data-cat="components" data-flag="emp"
-  aria-label="Open compute">
-  <span class="et-sub">AI components</span>
-  <h3 class="et-term">compute</h3>
-  <p class="et-hook">Whether an AI is legally dangerous comes down to <span class="rose">one count of sums</span>.</p>
-  <span class="flag f-emp">measurement</span>
-</article><article class="etile c-components" tabindex="0" role="button"
-  data-key="red-teaming" data-cat="components" data-flag="emp"
-  aria-label="Open red teaming">
-  <span class="et-sub">AI components</span>
-  <h3 class="et-term">red teaming</h3>
-  <p class="et-hook">There are people whose entire job is making AI <span class="rose">misbehave</span>.</p>
-  <span class="flag f-emp">measurement</span>
-</article><article class="etile c-concepts" tabindex="0" role="button"
-  data-key="agi" data-cat="concepts" data-flag="def"
-  aria-label="Open AGI">
-  <span class="et-sub">AI concepts</span>
-  <h3 class="et-term">AGI</h3>
-  <p class="et-hook"><span class="rose">AGI</span> has no agreed definition.</p>
-  <span class="flag f-def">definition</span>
-</article><article class="etile c-concepts" tabindex="0" role="button"
-  data-key="misuse-misalignment" data-cat="concepts" data-flag="def"
-  aria-label="Open misuse and misalignment">
-  <span class="et-sub">AI concepts</span>
-  <h3 class="et-term">misuse and misalignment</h3>
-  <p class="et-hook">AI <span class="rose">misalignment</span> needs no villain.</p>
-  <span class="flag f-def">definition</span>
-</article><article class="etile c-concepts" tabindex="0" role="button"
-  data-key="recursive-self-improvement" data-cat="concepts" data-flag="arg"
-  aria-label="Open recursive self improvement">
-  <span class="et-sub">AI concepts</span>
-  <h3 class="et-term">recursive self improvement</h3>
-  <p class="et-hook">AI that improves AI could be the <span class="rose">last thing we invent</span>.</p>
-  <span class="flag f-arg">theory</span>
-</article><article class="etile c-concepts" tabindex="0" role="button"
-  data-key="intelligence" data-cat="concepts" data-flag="arg"
-  aria-label="Open intelligence">
-  <span class="et-sub">AI concepts</span>
-  <h3 class="et-term">intelligence</h3>
-  <p class="et-hook">Nobody can define <span class="rose">intelligence</span>, in AI or in us.</p>
-  <span class="flag f-arg">theory</span>
-</article><article class="etile c-behavior" tabindex="0" role="button"
-  data-key="hallucination" data-cat="behavior" data-flag="def"
-  aria-label="Open hallucination">
-  <span class="et-sub">AI behaviors</span>
-  <h3 class="et-term">hallucination</h3>
-  <p class="et-hook">An AI <span class="rose">hallucination</span> is not a glitch.</p>
-  <span class="flag f-def">definition</span>
-</article><article class="etile c-behavior" tabindex="0" role="button"
-  data-key="specification-gaming" data-cat="behavior" data-flag="emp"
-  aria-label="Open specification gaming">
-  <span class="et-sub">AI behaviors</span>
-  <h3 class="et-term">specification gaming</h3>
-  <p class="et-hook">AI can follow your instructions exactly and still <span class="rose">ruin the result</span>.</p>
-  <span class="flag f-emp">measurement</span>
-</article><article class="etile c-behavior" tabindex="0" role="button"
-  data-key="blackmail" data-cat="behavior" data-flag="emp"
-  aria-label="Open the blackmail headline">
-  <span class="et-sub">AI behaviors</span>
-  <h3 class="et-term">the blackmail headline</h3>
-  <p class="et-hook">The AI <span class="rose">blackmail headline</span> needs its footnote.</p>
-  <span class="flag f-emp">measurement</span>
-</article><article class="etile c-behavior" tabindex="0" role="button"
-  data-key="evaluation-awareness" data-cat="behavior" data-flag="emp"
-  aria-label="Open evaluation awareness">
-  <span class="et-sub">AI behaviors</span>
-  <h3 class="et-term">evaluation awareness</h3>
-  <p class="et-hook">AI models can tell when they are <span class="rose">being tested</span>.</p>
-  <span class="flag f-emp">measurement</span>
-</article><article class="etile c-actors" tabindex="0" role="button"
-  data-key="who-makes-the-chips" data-cat="actors" data-flag="emp"
-  aria-label="Open the chip chain">
-  <span class="et-sub">AI actors</span>
-  <h3 class="et-term">the chip chain</h3>
-  <p class="et-hook"><span class="rose">Nvidia</span> designs the world&rsquo;s AI chips. Nvidia does not build them.</p>
-  <span class="flag f-emp">measurement</span>
-</article><article class="etile c-actors" tabindex="0" role="button"
-  data-key="who-owns-it" data-cat="actors" data-flag="emp"
-  aria-label="Open who owns the labs">
-  <span class="et-sub">AI actors</span>
-  <h3 class="et-term">who owns the labs</h3>
-  <p class="et-hook">Nobody will say who owns the <span class="rose">AI labs</span>.</p>
-  <span class="flag f-emp">measurement</span>
-</article><article class="etile c-actors" tabindex="0" role="button"
-  data-key="who-gives-a-number" data-cat="actors" data-flag="op"
-  aria-label="Open who will give you a number">
-  <span class="et-sub">AI actors</span>
-  <h3 class="et-term">who will give you a number</h3>
-  <p class="et-hook">Almost nobody building AI will say <span class="rose">how risky</span> they think it is.</p>
-  <span class="flag f-op">someone&rsquo;s position</span>
-</article><article class="etile c-actors" tabindex="0" role="button"
-  data-key="bengio" data-cat="actors" data-flag="op"
-  aria-label="Open Yoshua Bengio">
-  <span class="et-sub">AI actors</span>
-  <h3 class="et-term">Yoshua Bengio</h3>
-  <p class="et-hook">Helped invent modern AI. Now works on the <span class="rose">risks</span>.</p>
-  <span class="flag f-op">someone&rsquo;s position</span>
-</article><article class="etile c-actors" tabindex="0" role="button"
-  data-key="lecun" data-cat="actors" data-flag="op"
-  aria-label="Open Yann LeCun">
-  <span class="et-sub">AI actors</span>
-  <h3 class="et-term">Yann LeCun</h3>
-  <p class="et-hook">Won the same prize as Bengio. Reached the <span class="rose">opposite conclusion</span> about AI.</p>
-  <span class="flag f-op">someone&rsquo;s position</span>
-</article><article class="etile c-actors" tabindex="0" role="button"
-  data-key="bender-hanna" data-cat="actors" data-flag="arg"
-  aria-label="Open Bender and Hanna">
-  <span class="et-sub">AI actors</span>
-  <h3 class="et-term">Bender and Hanna</h3>
-  <p class="et-hook">Their objection to AI doom is not about the <span class="rose">odds</span>.</p>
-  <span class="flag f-arg">theory</span>
-</article><article class="etile c-risk" tabindex="0" role="button"
-  data-key="p-doom" data-cat="risk" data-flag="op"
-  aria-label="Open p(doom)">
-  <span class="et-sub">AI risks</span>
-  <h3 class="et-term">p(doom)</h3>
-  <p class="et-hook">Two people can say <span class="rose">ten percent</span> and mean opposite things.</p>
-  <span class="flag f-op">someone&rsquo;s position</span>
-</article><article class="etile c-risk" tabindex="0" role="button"
-  data-key="s-risk" data-cat="risk" data-flag="arg"
-  aria-label="Open s-risk">
-  <span class="et-sub">AI risks</span>
-  <h3 class="et-term">s-risk</h3>
-  <p class="et-hook">Some researchers study outcomes <span class="rose">worse than extinction</span>.</p>
-  <span class="flag f-arg">theory</span>
-</article><article class="etile c-risk" tabindex="0" role="button"
-  data-key="job-loss" data-cat="risk" data-flag="emp"
-  aria-label="Open AI and jobs">
-  <span class="et-sub">AI risks</span>
-  <h3 class="et-term">AI and jobs</h3>
-  <p class="et-hook">The measured effect of AI on jobs is <span class="rose">smaller than the headlines</span>, so far.</p>
-  <span class="flag f-emp">measurement</span>
-</article><article class="etile c-risk" tabindex="0" role="button"
-  data-key="existential-risk" data-cat="risk" data-flag="def"
-  aria-label="Open existential risk">
-  <span class="et-sub">AI risks</span>
-  <h3 class="et-term">existential risk</h3>
-  <p class="et-hook">With AI, extinction is <span class="rose">not the worst case</span>.</p>
-  <span class="flag f-def">definition</span>
+<div class="egrid covers"><article class="etile cover tg-components c-components b-left" tabindex="0" role="button" data-key="context-window" data-cat="components" data-flag="def" aria-label="Open context window">
+  <div class="et-top"><span class="et-name">context window</span><span class="flag f-def">definition</span></div>
+  <h3 class="et-hook"><span class="rose">AI does not remember you.</span></h3>
+  <figure class="et-belle"><img class="et-idle" src="assets/belle/innocent-curious.webp" alt="" loading="lazy"><img class="et-react" src="assets/belle/surprised-worried.webp" alt="" loading="lazy"></figure>
+  <span class="et-open">open <span aria-hidden="true">&rarr;</span></span>
+</article><article class="etile cover tg-concepts c-concepts b-right" tabindex="0" role="button" data-key="agi" data-cat="concepts" data-flag="def" aria-label="Open AGI">
+  <div class="et-top"><span class="et-name">AGI</span><span class="flag f-def">definition</span></div>
+  <h3 class="et-hook"><span class="rose">AGI</span> has no agreed definition.</h3>
+  <figure class="et-belle"><img class="et-idle" src="assets/belle/grumpy-eyes-closed.webp" alt="" loading="lazy"><img class="et-react" src="assets/belle/unimpressed.webp" alt="" loading="lazy"></figure>
+  <span class="et-open">open <span aria-hidden="true">&rarr;</span></span>
+</article><article class="etile cover tg-behavior c-behavior b-mid" tabindex="0" role="button" data-key="hallucination" data-cat="behavior" data-flag="def" aria-label="Open hallucination">
+  <div class="et-top"><span class="et-name">hallucination</span><span class="flag f-def">definition</span></div>
+  <h3 class="et-hook">An AI <span class="rose">hallucination</span> is not a glitch.</h3>
+  <figure class="et-belle"><img class="et-idle" src="assets/belle/annoyed-skeptical.webp" alt="" loading="lazy"><img class="et-react" src="assets/belle/startled.webp" alt="" loading="lazy"></figure>
+  <span class="et-open">open <span aria-hidden="true">&rarr;</span></span>
+</article><article class="etile cover tg-actors c-actors b-left" tabindex="0" role="button" data-key="who-makes-the-chips" data-cat="actors" data-flag="emp" aria-label="Open the chip chain">
+  <div class="et-top"><span class="et-name">the chip chain</span><span class="flag f-emp">measurement</span></div>
+  <h3 class="et-hook"><span class="rose">Nvidia</span> designs the world&rsquo;s AI chips. Nvidia does not build them.</h3>
+  <figure class="et-belle"><img class="et-idle" src="assets/belle/noticed-something.webp" alt="" loading="lazy"><img class="et-react" src="assets/belle/close-up-goading.webp" alt="" loading="lazy"></figure>
+  <span class="et-open">open <span aria-hidden="true">&rarr;</span></span>
+</article><article class="etile cover tg-risk c-risk b-left" tabindex="0" role="button" data-key="p-doom" data-cat="risk" data-flag="op" aria-label="Open p(doom)">
+  <div class="et-top"><span class="et-name">p(doom)</span><span class="flag f-op">someone&rsquo;s position</span></div>
+  <h3 class="et-hook">Two people can say <span class="rose">ten percent</span> and mean opposite things.</h3>
+  <figure class="et-belle"><img class="et-idle" src="assets/belle/unimpressed.webp" alt="" loading="lazy"><img class="et-react" src="assets/belle/hands-out-cheeky.webp" alt="" loading="lazy"></figure>
+  <span class="et-open">open <span aria-hidden="true">&rarr;</span></span>
+</article><article class="etile cover tg-components c-components b-right" tabindex="0" role="button" data-key="rlhf" data-cat="components" data-flag="emp" aria-label="Open RLHF">
+  <div class="et-top"><span class="et-name">RLHF</span><span class="flag f-emp">measurement</span></div>
+  <h3 class="et-hook">Nobody taught AI <span class="rose">human values</span>.</h3>
+  <figure class="et-belle"><img class="et-idle" src="assets/belle/noticed-something.webp" alt="" loading="lazy"><img class="et-react" src="assets/belle/dead-pan-1.webp" alt="" loading="lazy"></figure>
+  <span class="et-open">open <span aria-hidden="true">&rarr;</span></span>
+</article><article class="etile cover tg-concepts c-concepts b-left" tabindex="0" role="button" data-key="misuse-misalignment" data-cat="concepts" data-flag="def" aria-label="Open misuse and misalignment">
+  <div class="et-top"><span class="et-name">misuse and misalignment</span><span class="flag f-def">definition</span></div>
+  <h3 class="et-hook">AI <span class="rose">misalignment</span> needs no villain.</h3>
+  <figure class="et-belle"><img class="et-idle" src="assets/belle/warm-curious.webp" alt="" loading="lazy"><img class="et-react" src="assets/belle/saying-unpleasant-truth-1.webp" alt="" loading="lazy"></figure>
+  <span class="et-open">open <span aria-hidden="true">&rarr;</span></span>
+</article><article class="etile cover tg-behavior c-behavior b-left" tabindex="0" role="button" data-key="specification-gaming" data-cat="behavior" data-flag="emp" aria-label="Open specification gaming">
+  <div class="et-top"><span class="et-name">specification gaming</span><span class="flag f-emp">measurement</span></div>
+  <h3 class="et-hook">AI can follow your instructions exactly and still <span class="rose">ruin the result</span>.</h3>
+  <figure class="et-belle"><img class="et-idle" src="assets/belle/smirking.webp" alt="" loading="lazy"><img class="et-react" src="assets/belle/sly-one.webp" alt="" loading="lazy"></figure>
+  <span class="et-open">open <span aria-hidden="true">&rarr;</span></span>
+</article><article class="etile cover tg-actors c-actors b-right" tabindex="0" role="button" data-key="who-owns-it" data-cat="actors" data-flag="emp" aria-label="Open who owns the labs">
+  <div class="et-top"><span class="et-name">who owns the labs</span><span class="flag f-emp">measurement</span></div>
+  <h3 class="et-hook">Nobody will say who owns the <span class="rose">AI labs</span>.</h3>
+  <figure class="et-belle"><img class="et-idle" src="assets/belle/annoyed-skeptical.webp" alt="" loading="lazy"><img class="et-react" src="assets/belle/deadpan-annoyed-1.webp" alt="" loading="lazy"></figure>
+  <span class="et-open">open <span aria-hidden="true">&rarr;</span></span>
+</article><article class="etile cover tg-risk c-risk b-mid" tabindex="0" role="button" data-key="s-risk" data-cat="risk" data-flag="arg" aria-label="Open s-risk">
+  <div class="et-top"><span class="et-name">s-risk</span><span class="flag f-arg">theory</span></div>
+  <h3 class="et-hook">Some researchers study outcomes <span class="rose">worse than extinction</span>.</h3>
+  <figure class="et-belle"><img class="et-idle" src="assets/belle/glum.webp" alt="" loading="lazy"><img class="et-react" src="assets/belle/shock-worry.webp" alt="" loading="lazy"></figure>
+  <span class="et-open">open <span aria-hidden="true">&rarr;</span></span>
+</article><article class="etile cover tg-components c-components b-left" tabindex="0" role="button" data-key="open-weights" data-cat="components" data-flag="def" aria-label="Open open weights">
+  <div class="et-top"><span class="et-name">open weights</span><span class="flag f-def">definition</span></div>
+  <h3 class="et-hook">Once an AI model is released, nobody can <span class="rose">take it back</span>.</h3>
+  <figure class="et-belle"><img class="et-idle" src="assets/belle/unimpressed.webp" alt="" loading="lazy"><img class="et-react" src="assets/belle/yikes.webp" alt="" loading="lazy"></figure>
+  <span class="et-open">open <span aria-hidden="true">&rarr;</span></span>
+</article><article class="etile cover tg-concepts c-concepts b-left" tabindex="0" role="button" data-key="recursive-self-improvement" data-cat="concepts" data-flag="arg" aria-label="Open recursive self improvement">
+  <div class="et-top"><span class="et-name">recursive self improvement</span><span class="flag f-arg">theory</span></div>
+  <h3 class="et-hook">AI that improves AI could be the <span class="rose">last thing we invent</span>.</h3>
+  <figure class="et-belle"><img class="et-idle" src="assets/belle/worry-about-future.webp" alt="" loading="lazy"><img class="et-react" src="assets/belle/shock-worry.webp" alt="" loading="lazy"></figure>
+  <span class="et-open">open <span aria-hidden="true">&rarr;</span></span>
+</article><article class="etile cover tg-behavior c-behavior b-mid" tabindex="0" role="button" data-key="blackmail" data-cat="behavior" data-flag="emp" aria-label="Open the blackmail headline">
+  <div class="et-top"><span class="et-name">the blackmail headline</span><span class="flag f-emp">measurement</span></div>
+  <h3 class="et-hook">The AI <span class="rose">blackmail headline</span> needs its footnote.</h3>
+  <figure class="et-belle"><img class="et-idle" src="assets/belle/shocked.webp" alt="" loading="lazy"><img class="et-react" src="assets/belle/yikes.webp" alt="" loading="lazy"></figure>
+  <span class="et-open">open <span aria-hidden="true">&rarr;</span></span>
+</article><article class="etile cover tg-actors c-actors b-right" tabindex="0" role="button" data-key="who-gives-a-number" data-cat="actors" data-flag="op" aria-label="Open who will give you a number">
+  <div class="et-top"><span class="et-name">who will give you a number</span><span class="flag f-op">someone&rsquo;s position</span></div>
+  <h3 class="et-hook">Almost nobody building AI will say <span class="rose">how risky</span> they think it is.</h3>
+  <figure class="et-belle"><img class="et-idle" src="assets/belle/hands-hips-pedantic.webp" alt="" loading="lazy"><img class="et-react" src="assets/belle/hands-out-cheeky.webp" alt="" loading="lazy"></figure>
+  <span class="et-open">open <span aria-hidden="true">&rarr;</span></span>
+</article><article class="etile cover tg-risk c-risk b-right" tabindex="0" role="button" data-key="job-loss" data-cat="risk" data-flag="emp" aria-label="Open AI and jobs">
+  <div class="et-top"><span class="et-name">AI and jobs</span><span class="flag f-emp">measurement</span></div>
+  <h3 class="et-hook">The measured effect of AI on jobs is <span class="rose">smaller than the headlines</span>, so far.</h3>
+  <figure class="et-belle"><img class="et-idle" src="assets/belle/surprised-worried.webp" alt="" loading="lazy"><img class="et-react" src="assets/belle/glum.webp" alt="" loading="lazy"></figure>
+  <span class="et-open">open <span aria-hidden="true">&rarr;</span></span>
+</article><article class="etile cover tg-components c-components b-left" tabindex="0" role="button" data-key="compute" data-cat="components" data-flag="emp" aria-label="Open compute">
+  <div class="et-top"><span class="et-name">compute</span><span class="flag f-emp">measurement</span></div>
+  <h3 class="et-hook">Whether an AI is legally dangerous comes down to <span class="rose">one count of sums</span>.</h3>
+  <figure class="et-belle"><img class="et-idle" src="assets/belle/hands-hips-pedantic.webp" alt="" loading="lazy"><img class="et-react" src="assets/belle/bright-neutral.webp" alt="" loading="lazy"></figure>
+  <span class="et-open">open <span aria-hidden="true">&rarr;</span></span>
+</article><article class="etile cover tg-concepts c-concepts b-mid" tabindex="0" role="button" data-key="intelligence" data-cat="concepts" data-flag="arg" aria-label="Open intelligence">
+  <div class="et-top"><span class="et-name">intelligence</span><span class="flag f-arg">theory</span></div>
+  <h3 class="et-hook">Nobody can define <span class="rose">intelligence</span>, in AI or in us.</h3>
+  <figure class="et-belle"><img class="et-idle" src="assets/belle/unimpressed.webp" alt="" loading="lazy"><img class="et-react" src="assets/belle/grumpy-eyes-closed.webp" alt="" loading="lazy"></figure>
+  <span class="et-open">open <span aria-hidden="true">&rarr;</span></span>
+</article><article class="etile cover tg-behavior c-behavior b-left" tabindex="0" role="button" data-key="evaluation-awareness" data-cat="behavior" data-flag="emp" aria-label="Open evaluation awareness">
+  <div class="et-top"><span class="et-name">evaluation awareness</span><span class="flag f-emp">measurement</span></div>
+  <h3 class="et-hook">AI models can tell when they are <span class="rose">being tested</span>.</h3>
+  <figure class="et-belle"><img class="et-idle" src="assets/belle/sly-one.webp" alt="" loading="lazy"><img class="et-react" src="assets/belle/secret-close-smile.webp" alt="" loading="lazy"></figure>
+  <span class="et-open">open <span aria-hidden="true">&rarr;</span></span>
+</article><article class="etile cover tg-actors c-actors b-mid" tabindex="0" role="button" data-key="bengio" data-cat="actors" data-flag="op" aria-label="Open Yoshua Bengio">
+  <div class="et-top"><span class="et-name">Yoshua Bengio</span><span class="flag f-op">someone&rsquo;s position</span></div>
+  <h3 class="et-hook">Helped invent modern AI. Now works on the <span class="rose">risks</span>.</h3>
+  <figure class="et-belle"><img class="et-idle" src="assets/belle/warm-curious.webp" alt="" loading="lazy"><img class="et-react" src="assets/belle/saying-unpleasant-truth-1.webp" alt="" loading="lazy"></figure>
+  <span class="et-open">open <span aria-hidden="true">&rarr;</span></span>
+</article><article class="etile cover tg-risk c-risk b-left" tabindex="0" role="button" data-key="existential-risk" data-cat="risk" data-flag="def" aria-label="Open existential risk">
+  <div class="et-top"><span class="et-name">existential risk</span><span class="flag f-def">definition</span></div>
+  <h3 class="et-hook">With AI, extinction is <span class="rose">not the worst case</span>.</h3>
+  <figure class="et-belle"><img class="et-idle" src="assets/belle/worry-about-future.webp" alt="" loading="lazy"><img class="et-react" src="assets/belle/yikes.webp" alt="" loading="lazy"></figure>
+  <span class="et-open">open <span aria-hidden="true">&rarr;</span></span>
+</article><article class="etile cover tg-components c-components b-left" tabindex="0" role="button" data-key="red-teaming" data-cat="components" data-flag="emp" aria-label="Open red teaming">
+  <div class="et-top"><span class="et-name">red teaming</span><span class="flag f-emp">measurement</span></div>
+  <h3 class="et-hook">There are people whose entire job is making AI <span class="rose">misbehave</span>.</h3>
+  <figure class="et-belle"><img class="et-idle" src="assets/belle/close-up-goading.webp" alt="" loading="lazy"><img class="et-react" src="assets/belle/smirking.webp" alt="" loading="lazy"></figure>
+  <span class="et-open">open <span aria-hidden="true">&rarr;</span></span>
+</article><article class="etile cover tg-actors c-actors b-mid" tabindex="0" role="button" data-key="lecun" data-cat="actors" data-flag="op" aria-label="Open Yann LeCun">
+  <div class="et-top"><span class="et-name">Yann LeCun</span><span class="flag f-op">someone&rsquo;s position</span></div>
+  <h3 class="et-hook">Won the same prize as Bengio. Reached the <span class="rose">opposite conclusion</span> about AI.</h3>
+  <figure class="et-belle"><img class="et-idle" src="assets/belle/annoyed-skeptical.webp" alt="" loading="lazy"><img class="et-react" src="assets/belle/unimpressed.webp" alt="" loading="lazy"></figure>
+  <span class="et-open">open <span aria-hidden="true">&rarr;</span></span>
+</article><article class="etile cover tg-actors c-actors b-right" tabindex="0" role="button" data-key="bender-hanna" data-cat="actors" data-flag="arg" aria-label="Open Bender and Hanna">
+  <div class="et-top"><span class="et-name">Bender and Hanna</span><span class="flag f-arg">theory</span></div>
+  <h3 class="et-hook">Their objection to AI doom is not about the <span class="rose">odds</span>.</h3>
+  <figure class="et-belle"><img class="et-idle" src="assets/belle/hands-hips-pedantic.webp" alt="" loading="lazy"><img class="et-react" src="assets/belle/smirking.webp" alt="" loading="lazy"></figure>
+  <span class="et-open">open <span aria-hidden="true">&rarr;</span></span>
 </article></div>
 <p class="eempty meta" hidden>Nothing matches both filters. Try clearing one.</p>
 </div>

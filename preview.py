@@ -152,6 +152,7 @@ document.addEventListener('click', function (e) {
        "modal": modal, "data": "\n".join(scripts), "js": js}
 
 doc = inline_imgs(doc)
-with io.open(os.path.join(HERE, "preview.html"), "w", encoding="utf-8") as f:
+name = os.environ.get("PREVIEW", "preview.html")
+with io.open(os.path.join(HERE, name), "w", encoding="utf-8") as f:
     f.write(doc)
-print("preview.html", len(doc))
+print(name, len(doc))

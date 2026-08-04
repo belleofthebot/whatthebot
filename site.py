@@ -36,6 +36,30 @@ SUBBLURB = {
  "risk":       "What could go wrong, how bad it could get, and how much of it is measured.",
 }
 
+# How the cards look in the grid. "belle" gives every tile the carousel cover,
+# character and all. "diagram" swaps the character for the icon language. "plain"
+# is the text-only tile. Set TILES in the environment to switch.
+TILES = os.environ.get("TILES", "belle")
+
+# The second expression, shown on hover. Idle face, then the reaction: the point
+# is that the grid rewards looking at it. Falls back to a scale if the art is
+# missing.
+HOVER = {
+ "who-makes-the-chips": "close-up-goading", "who-owns-it": "deadpan-annoyed-1",
+ "who-gives-a-number": "hands-out-cheeky",  "bengio": "saying-unpleasant-truth-1",
+ "lecun": "unimpressed",                    "bender-hanna": "smirking",
+ "hallucination": "startled",               "specification-gaming": "sly-one",
+ "blackmail": "yikes",                      "evaluation-awareness": "secret-close-smile",
+ "context-window": "surprised-worried",     "rlhf": "dead-pan-1",
+ "open-weights": "yikes",                   "compute": "bright-neutral",
+ "red-teaming": "smirking",                 "agi": "unimpressed",
+ "misuse-misalignment": "saying-unpleasant-truth-1",
+ "recursive-self-improvement": "shock-worry",
+ "intelligence": "grumpy-eyes-closed",      "p-doom": "hands-out-cheeky",
+ "s-risk": "shock-worry",                   "job-loss": "glum",
+ "existential-risk": "yikes",
+}
+
 # the four kinds of claim
 TYPES = [("emp", "measurement"), ("arg", "theory"),
          ("def", "definition"), ("op", "someone&rsquo;s position")]
@@ -116,6 +140,55 @@ def belle_img(slug, cls="bfig"):
 def terms_in(cat):
     return [(k, v) for k, v in C.SPECS.items() if v["cat"] == cat]
 
+def has_belle(slug):
+    return bool(slug) and os.path.exists(
+        os.path.join(OUT, "assets", "belle", slug + ".webp"))
+
+def grounds():
+    """Lift the category grounds straight out of the carousel stylesheet, so the
+    site and the feed cannot end up different colours. Renamed tg- for the web."""
+    out = []
+    for m in re.finditer(r"^\.g-(\w+)\{([^}]+)\}", C.HEAD, re.M):
+        out.append(".tg-%s{%s}" % (m.group(1), " ".join(m.group(2).split())))
+    return "<style>\n" + "\n".join(out) + "\n</style>"
+
+def anchor_for(key):
+    """Belle should not sit in the same corner on every tile."""
+    return ["b-left", "b-mid", "b-right"][sum(ord(c) for c in key) % 3]
+
+def tile(k, sp, cat):
+    """One card in the grid. Three looks, same data."""
+    common = (f'tabindex="0" role="button" data-key="{k}" data-cat="{cat}" '
+              f'data-flag="{sp["flag"]}" aria-label="Open {strip(sp["term"])}"')
+    flag = f'<span class="flag f-{sp["flag"]}">{TYPENAME[sp["flag"]]}</span>'
+
+    if TILES == "plain" or (TILES == "belle" and not has_belle(sp.get("belle_hook"))):
+        return f'''<article class="etile c-{cat}" {common}>
+  <span class="et-sub">AI {SUBNAME[cat]}</span>
+  <h3 class="et-term">{strip(sp["term"])}</h3>
+  <p class="et-hook">{sp["hook"]}</p>
+  {flag}
+</article>'''
+
+    if TILES == "diagram":
+        art = f'''<svg class="et-icon" viewBox="0 0 64 64" aria-hidden="true"><use href="#{sp["icon"]}"/></svg>'''
+        anchor = "b-icon"
+    else:
+        idle = sp["belle_hook"]
+        react = HOVER.get(k)
+        second = (f'<img class="et-react" src="assets/belle/{react}.webp" alt="" loading="lazy">'
+                  if has_belle(react) else "")
+        art = (f'<figure class="et-belle"><img class="et-idle" src="assets/belle/{idle}.webp"'
+               f' alt="" loading="lazy">{second}</figure>')
+        anchor = anchor_for(k)
+
+    return f'''<article class="etile cover tg-{cat} c-{cat} {anchor}" {common}>
+  <div class="et-top"><span class="et-name">{strip(sp["term"])}</span>{flag}</div>
+  <h3 class="et-hook">{sp["hook"]}</h3>
+  {art}
+  <span class="et-open">open <span aria-hidden="true">&rarr;</span></span>
+</article>'''
+
 # ---------------------------------------------------------------- card data
 def card_data():
     d = {}
@@ -182,17 +255,14 @@ def quiz_data():
 # ---------------------------------------------------------------- index
 def index():
     cards = card_data()
+    # round robin across subjects, so the unfiltered grid reads as five colours
+    # rather than five blocks. Filtering still hands you one clean subject.
+    queues = [[(k, sp, cat) for k, sp in terms_in(cat)] for cat in SUBJECTS]
     tiles = []
-    for cat in SUBJECTS:
-        for k, sp in terms_in(cat):
-            tiles.append(f'''<article class="etile c-{cat}" tabindex="0" role="button"
-  data-key="{k}" data-cat="{cat}" data-flag="{sp['flag']}"
-  aria-label="Open {strip(sp['term'])}">
-  <span class="et-sub">AI {SUBNAME[cat]}</span>
-  <h3 class="et-term">{strip(sp['term'])}</h3>
-  <p class="et-hook">{sp['hook']}</p>
-  <span class="flag f-{sp['flag']}">{TYPENAME[sp['flag']]}</span>
-</article>''')
+    while any(queues):
+        for q in queues:
+            if q:
+                tiles.append(tile(*q.pop(0)))
 
     subpills = "".join(
         f'<button class="pill p-{c}" data-kind="cat" data-val="{c}" type="button">'
@@ -201,7 +271,13 @@ def index():
         f'<button class="pill t-{t}" data-kind="flag" data-val="{t}" type="button">{n}</button>'
         for t, n in TYPES)
 
-    body = f"""
+    extra = ""
+    if TILES in ("belle", "diagram"):
+        extra += grounds()
+    if TILES == "diagram":
+        extra += C.ICONS
+
+    body = f"""{extra}
 <div class="wrap intro">
 <div class="introgrid">
 {belle_img("friendly-wave" if os.path.exists(os.path.join(OUT,"assets","belle","friendly-wave.webp")) else "warm-neutral", "bfig plain big")}
@@ -235,7 +311,7 @@ def index():
   </div>
 </div>
 
-<div class="egrid">{"".join(tiles)}</div>
+<div class="egrid{" covers" if TILES in ("belle", "diagram") else ""}">{"".join(tiles)}</div>
 <p class="eempty meta" hidden>Nothing matches both filters. Try clearing one.</p>
 </div>
 
