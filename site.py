@@ -45,7 +45,7 @@ TILES = os.environ.get("TILES", "mix")
 # more work than a diagram, and the diagrams carry everything concrete.
 BELLE_TERMS = {"existential-risk", "agi", "intelligence",
                "recursive-self-improvement", "s-risk", "p-doom",
-               "misuse-misalignment"}
+               "misuse-misalignment", "taboo-your-words"}
 
 # The second expression, shown on hover. Idle face, then the reaction: the point
 # is that the grid rewards looking at it. Falls back to a scale if the art is
@@ -211,6 +211,7 @@ def card_data():
             "flag": sp["flag"], "flagname": TYPENAME[sp["flag"]],
             "file": sp["file"], "src": sp["src"],
             "icon": sp["icon"],
+            "objection": sp.get("objection", ""), "objsrc": sp.get("objsrc", ""),
             "belle": sp["belle_hook"] if has_belle(sp.get("belle_hook")) else "",
             "belle2": HOVER.get(k, "") if has_belle(HOVER.get(k)) else "",
         }
@@ -450,7 +451,10 @@ def sources():
         items = "".join(
             f'<div class="src-item"><div class="t"><strong>{strip(sp["term"])}</strong> '
             f'<span class="flag f-{sp["flag"]}">{TYPENAME[sp["flag"]]}</span></div>'
-            f'<div class="n">{sp["src"]}</div></div>' for k, sp in terms_in(cat))
+            f'<div class="n">{sp["src"]}</div>'
+            + (f'<div class="n obj"><span class="ok">the objection</span>{sp["objsrc"]}</div>'
+               if sp.get("objsrc") else "")
+            + '</div>' for k, sp in terms_in(cat))
         blocks += f'<h2 class="c-{cat}"><span class="subdot"></span>AI {SUBNAME[cat]}</h2><div class="srcs">{items}</div>'
     longs = "".join(f'<a class="xl" href="{h}"><span class="k">full bibliography</span>'
                     f'<span class="t">{t} &rarr;</span></a>' for h, t, c, d in MORE)

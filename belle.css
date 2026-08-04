@@ -502,3 +502,9 @@ footer a{color:var(--rose)}
   .mfig{width:76px;height:76px}
   .mcard[class*="tg-"] .mhook{max-width:11ch}
 }
+
+/* the objection panel: somebody competent, disagreeing, in the card itself */
+.mobj{font-size:1.06rem;line-height:1.42;max-width:42ch;margin-bottom:var(--s3)}
+.mcard[class*="tg-"] .mobj{color:var(--fg)}
+.src-item .n.obj{margin-top:6px;padding-left:var(--s2);border-left:2px solid var(--line)}
+.src-item .n .ok{display:block;color:var(--rose);font-size:.68rem;margin-bottom:2px}

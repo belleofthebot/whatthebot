@@ -336,6 +336,21 @@ ICONS = """
   <path d="M32 20 V29" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
   <circle cx="32" cy="34" r="2.8" fill="var(--ic-rose)"/>
 </g>
+
+<!-- drop the word, keep the substance -->
+<g id="i-taboo">
+  <rect x="6" y="22" width="26" height="18" rx="6" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <path d="M4 44 L34 18" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M40 26 H56 M40 38 H50" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+</g>
+<!-- same in training, different afterwards -->
+<g id="i-diverge">
+  <path d="M6 32 H28" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M32 10 V54" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round" stroke-dasharray="5 5"/>
+  <path d="M32 32 C42 32 44 20 58 20" stroke="var(--ic-mint)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M32 32 C42 32 44 46 58 46" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <circle cx="32" cy="32" r="3.4" fill="var(--ic-rose)"/>
+</g>
 </defs></svg>
 """
 
@@ -758,6 +773,8 @@ SPECS = {
   whysub="Not a machine turning on you. A machine doing precisely what was written down.",
   flag="emp",
   file='<span class="rose">Measured</span>. These are logged, reproducible behaviours, not thought experiments.',
+  objection="The name assumes there was a right way to satisfy the goal and the system picked a wrong one. On this view the system was only ever optimising what was written, so saying <span class=\"rose\">gaming</span> is really saying the specification made an assumption it never earned. The behaviour is not in dispute. The blame in the word is.",
+  objsrc="The published version of this objection is aimed at the sister<br>term: Soares, Misgeneralization as a misnomer, MIRI, 2023",
   src="Krakovna et al., Specification gaming,<br>DeepMind, 2020, with the compiled example list",
   belle_hook="smirking", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
   outro="I take the words apart so the argument stops being noise."),
@@ -957,13 +974,15 @@ SPECS = {
   three=[("i-stop","Extinction.","Nobody left. This is the one everybody pictures."),
          ("i-loop","Permanent dystopia.","Everyone alive. No way back. Forever is doing the work in that sentence."),
          ("i-flat","Permanent stagnation.","Nothing ends. Nothing improves. Ever.")],
-  threefoot="A serious literature argues the second is worse than the first.",
+  threefoot="The definition covers all three. How likely each one is, is argued separately.",
   whyicon="i-two", whykick="why the mix up costs something",
   why="People picture extinction, decide it sounds like science fiction, and dismiss <span class=\"rose\">the whole category</span>.",
   whysub="The claim being made is broader, and more plausible, than the one being dismissed.",
   flag="def",
   file='A <span class="rose">definition</span>, and the one worth memorising. Everything else in the argument sits on top of it.',
   src="Bostrom, Existential Risk Prevention as Global<br>Priority, Global Policy 4(1), 2013",
+  objection="Accepting the definition does not mean the three are equally likely. One objection: permanent dystopia and permanent stagnation both need an unusual kind of <span class=\"rose\">lock in</span>, because most bad outcomes are recoverable or are simply routes to extinction rather than stable end states. On that view the wider definition is correct and most of the probability still sits on the first branch.",
+  objsrc="Raised in review. Bostrom defines the category; how the<br>probability splits across it is a separate argument.",
   belle_hook="worry-about-future", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
   outro="I take the words apart so the argument stops being noise."),
 
@@ -1044,6 +1063,62 @@ SPECS = {
   file='An <span class="rose">argument</span> wearing a measurement&rsquo;s clothes. The score is real. The word is not settled.',
   src="Legg and Hutter, A Collection of Definitions<br>of Intelligence, 2007",
   belle_hook="unimpressed", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+# ============================================================ AI CONCEPTS (added)
+"taboo-your-words": dict(
+  cat="concepts", term="taboo your words",
+  kick="the move that ends most AI arguments",
+  hook="When people argue about what <span class=\"rose\">AGI</span> means, the fix is to stop saying it.",
+  q="&ldquo;Tabooing&rdquo; a word means:",
+  opts=["Banning it from polite conversation",
+        "Replacing it with what it actually stands for, and arguing about that instead",
+        "Agreeing on one official definition",
+        "Refusing to discuss the topic"],
+  ans="B", icon="i-taboo",
+  reveal='Say the <span class="rose">substance</span>, not the handle.',
+  revsub="Yudkowsky, 2008: do not define the problematic term, see whether you can think without it at all.",
+  threekick="how it works in practice",
+  three=[("i-taboo","Drop the word.","Not &ldquo;is this AGI,&rdquo; but &ldquo;can it do this specific job unsupervised.&rdquo;"),
+         ("i-counter","Check for a real disagreement.","Often both people predict the same events and only dispute the label."),
+         ("i-lens","Keep it if it earns its place.","A word is fine once everyone can say what it would take to be wrong.")],
+  threefoot="Most fights about intelligence, consciousness and AGI survive only because nobody does this.",
+  whyicon="i-stack", whykick="why this one is on the site at all",
+  why="Almost every card here is a term that <span class=\"rose\">does argumentative work while pretending to describe</span>.",
+  whysub="This is the tool for the rest of the deck. Use it on everything here, including on me.",
+  flag="def",
+  file='A <span class="rose">definition</span> of a technique, not a claim about the world. It cannot be right or wrong, only useful or not.',
+  src="Yudkowsky, Taboo Your Words, LessWrong,<br>15 February 2008, in A Human&rsquo;s Guide to Words",
+  belle_hook="hands-hips-pedantic", belle_file="dead-pan-1", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+# ============================================================ AI BEHAVIOUR (added)
+"goal-misgeneralization": dict(
+  cat="behavior", term="goal misgeneralization",
+  kick="the term the researchers argue about",
+  hook="An AI can behave perfectly in training and pursue <span class=\"rose\">something else entirely</span> in the world.",
+  q="Goal misgeneralization is when a system:",
+  opts=["Fails because its instructions were badly written",
+        "Competently pursues a goal that fit training but is not the one you wanted",
+        "Crashes on inputs it has not seen before",
+        "Refuses to generalise at all"],
+  ans="B", icon="i-diverge",
+  reveal='The capability <span class="rose">generalises</span>. The goal does not.',
+  revsub="Shah et al., 2022: it performs well in training and badly in new situations, competently.",
+  threekick="what makes it different from a bad instruction",
+  three=[("i-diverge","The specification was fine.","This is the failure that survives writing the goal correctly."),
+         ("i-watched","Training cannot tell them apart.","Many different goals produce identical behaviour on the training set."),
+         ("i-twocause","The gap shows up later.","Only a situation training never contained separates them.")],
+  threefoot="DeepMind&rsquo;s paper gives worked examples in trained agents and in language models.",
+  whyicon="i-goalpost", whykick="why the name is disputed",
+  why="Calling it <span class=\"rose\">mis</span>generalization assumes the system had your goal to begin with.",
+  whysub="The behaviour is documented. Whether the word describes it is a live argument among the people who study it.",
+  flag="emp",
+  file='<span class="rose">Measured</span> in trained systems. The label on it is contested, which is why the objection is on this card.',
+  src="Shah, Varma, Kumar, Phuong, Krakovna, Uesato and<br>Kenton, Goal Misgeneralization, arXiv:2210.01790, 2022",
+  objection="Nate Soares argues the name is a misnomer: a system that never held your goal cannot misgeneralize it. His example is that a primate is not misgeneralizing <span class=\"rose\">inclusive genetic fitness</span> when it gets smarter and invents contraception. It never had that concept to misapply.",
+  objsrc="Soares, Misgeneralization as a misnomer,<br>MIRI and LessWrong, 6 April 2023",
+  belle_hook="innocent-curious", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
   outro="I take the words apart so the argument stops being noise."),
 }
 

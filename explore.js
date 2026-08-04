@@ -100,7 +100,7 @@
     var icon = '<svg class="mfig" viewBox="0 0 64 64" aria-hidden="true"><use href="#' +
                card.icon + '"/></svg>';
 
-    return [
+    var panels = [
       /* 1 · the cover, so Belle is the first thing you see */
       '<span class="mkick">' + card.kick + '</span><h2 class="mhook">' + card.hook + '</h2>' +
         belleTag(card.belle, 'mbelle'),
@@ -129,6 +129,16 @@
         '<p class="src">' + card.src + '</p>' +
         belleTag(card.belle2 || card.belle, 'mbelle small')
     ];
+
+    /* where somebody competent disagrees, the disagreement goes in the card,
+       one panel before the filing. Not every card has one. */
+    if (card.objection) {
+      panels.splice(5, 0,
+        '<span class="mkick">the objection</span>' +
+        '<p class="mobj">' + card.objection + '</p>' +
+        '<p class="src">' + card.objsrc + '</p>');
+    }
+    return panels;
   }
 
   /* the question panel is the only live one: bind it after every paint */
