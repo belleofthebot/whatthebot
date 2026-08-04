@@ -825,6 +825,81 @@ ICONS = """
   <path d="M46 10 L38 30 H50 L42 52" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
   <path d="M8 56 H56" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
 </g>
+
+<g id="i-attend"><circle cx="32" cy="32" r="5" fill="var(--ic-rose)"/>
+  <circle cx="12" cy="16" r="4" stroke="var(--ic-dim)" stroke-width="3" fill="none"/><circle cx="52" cy="16" r="4" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <circle cx="12" cy="48" r="4" stroke="var(--ic-dim)" stroke-width="3" fill="none"/><circle cx="52" cy="48" r="4" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <path d="M16 19 L28 29 M48 19 L36 29 M16 45 L28 35 M48 45 L36 35" stroke="var(--ic-rose)" stroke-width="2.6" stroke-linecap="round"/></g>
+<g id="i-dice"><rect x="12" y="12" width="40" height="40" rx="9" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <circle cx="24" cy="24" r="3.4" fill="var(--ic-rose)"/><circle cx="40" cy="40" r="3.4" fill="var(--ic-rose)"/><circle cx="32" cy="32" r="3.4" fill="var(--ic-rose)"/></g>
+<g id="i-space"><circle cx="18" cy="22" r="4" fill="var(--ic-rose)"/><circle cx="27" cy="30" r="4" fill="var(--ic-rose)"/>
+  <circle cx="46" cy="44" r="4" fill="var(--ic-dim)"/><circle cx="52" cy="34" r="4" fill="var(--ic-dim)"/>
+  <path d="M8 54 H56 M10 56 V12" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/></g>
+<g id="i-mirrorface"><path d="M32 10 V54" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round" stroke-dasharray="5 5"/>
+  <path d="M22 24 C16 24 12 30 12 34 C12 42 20 46 24 48" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M42 24 C48 24 52 30 52 34 C52 42 44 46 40 48" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round"/></g>
+<g id="i-jump"><path d="M8 48 H26 V26 H44 V16 H56" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M8 52 C22 50 36 40 56 22" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="5 5"/></g>
+<g id="i-aha"><path d="M32 8 V16 M12 18 L18 24 M52 18 L46 24" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="32" cy="34" r="12" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <path d="M26 50 H38 M28 56 H36" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/></g>
+<g id="i-mirror"><rect x="8" y="18" width="20" height="28" rx="5" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <rect x="36" y="18" width="20" height="28" rx="5" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-dasharray="5 4"/>
+  <path d="M30 32 H34" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/></g>
+<g id="i-recite"><rect x="10" y="12" width="30" height="40" rx="5" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <path d="M17 24 H33 M17 32 H33 M17 40 H27" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M46 22 H58 M46 32 H56 M46 42 H58" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/></g>
+<g id="i-underperform"><path d="M8 20 C20 20 26 46 56 46" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="5 5"/>
+  <path d="M8 44 H56" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="40" cy="44" r="5" fill="var(--ic-rose)"/></g>
+<g id="i-hidden"><rect x="8" y="20" width="48" height="24" rx="6" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <path d="M16 32 H26 M34 32 H48" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="30" cy="32" r="4" fill="var(--ic-rose)"/><path d="M30 8 V16 M30 48 V56" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round" stroke-dasharray="3 4"/></g>
+<g id="i-pick"><rect x="14" y="26" width="28" height="24" rx="5" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <path d="M20 26 V18 A8 8 0 0 1 36 18" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M44 14 L54 24 M50 12 L56 18" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M28 34 L36 42" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/></g>
+<g id="i-inject"><rect x="8" y="16" width="30" height="32" rx="6" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <path d="M15 28 H31 M15 36 H27" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M56 32 H40" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M46 26 L39 32 L46 38" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g id="i-nogo"><circle cx="32" cy="32" r="20" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <path d="M18 18 L46 46" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M26 32 H38" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/></g>
+<g id="i-cash"><rect x="8" y="18" width="48" height="28" rx="6" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <circle cx="32" cy="32" r="7" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <path d="M16 26 H20 M44 38 H48" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/></g>
+<g id="i-lift"><path d="M8 50 H56" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+  <rect x="12" y="34" width="10" height="16" rx="3" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <rect x="28" y="18" width="10" height="32" rx="3" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <rect x="44" y="28" width="10" height="22" rx="3" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <path d="M33 12 L29 18 H37 Z" fill="var(--ic-rose)"/></g>
+<g id="i-lesson"><path d="M8 46 C22 46 24 20 56 14" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M8 34 H30" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round" stroke-dasharray="5 4"/>
+  <path d="M30 28 L36 34 L30 40" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g id="i-hand2"><path d="M22 44 V22 A4 4 0 0 1 30 22 V38" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M30 30 A4 4 0 0 1 38 30 V40 M38 34 A4 4 0 0 1 46 34 V44" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M22 40 C14 42 14 50 22 54 H40 C46 52 46 46 46 44" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-linecap="round"/></g>
+<g id="i-target2"><circle cx="32" cy="32" r="18" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <circle cx="32" cy="32" r="7" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <circle cx="32" cy="32" r="3" fill="var(--ic-rose)"/>
+  <path d="M32 8 V14 M32 50 V56 M8 32 H14 M50 32 H56" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/></g>
+<g id="i-scope"><circle cx="28" cy="28" r="14" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <path d="M38 38 L54 54" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="24" cy="26" r="3" fill="var(--ic-mint)"/><circle cx="33" cy="31" r="3" fill="var(--ic-mint)"/>
+  <path d="M27 27 L31 30" stroke="var(--ic-mint)" stroke-width="2.4" stroke-linecap="round"/></g>
+<g id="i-lawcurve"><path d="M8 50 C24 50 32 22 56 16" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M8 54 V10" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M8 54 H58" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="24" cy="44" r="3.4" fill="var(--ic-dim)"/><circle cx="40" cy="26" r="3.4" fill="var(--ic-dim)"/></g>
+<g id="i-order"><path d="M8 22 H34" stroke="var(--ic-mint)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M28 16 L35 22 L28 28" stroke="var(--ic-mint)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M8 42 H26" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round" stroke-dasharray="5 4"/>
+  <path d="M40 36 L52 48 M52 36 L40 48" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/></g>
+<g id="i-meter"><path d="M10 46 A22 22 0 0 1 54 46" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M32 46 L46 32" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="32" cy="46" r="3.6" fill="var(--ic-rose)"/>
+  <path d="M16 52 H48" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/></g>
 </defs></svg>
 """
 
@@ -3531,7 +3606,7 @@ SPECS = {
   revsub="A Dallas Fed working paper, 2026. In one grid, capacity costs rose 174 percent, which the operator attributes chiefly to data centre load.",
   threekick="the three numbers worth carrying",
   three=[("i-racks","Power, measured.","Data centres reached 485 terawatt hours in 2025, about 1.5 percent of world electricity, projected to roughly double by 2030."),
-         ("i-drain","Water, self reported.","Google reported 10.9 billion gallons consumed in 2025, up 34 percent in a year. Microsoft reports withdrawal and consumption separately."),
+         ("i-drain","Water, self reported.","Google reported 10.9 billion gallons consumed in 2025, up 34 percent in a year."),
          ("i-blank","AI&rsquo;s own share, unknown.","No source separates AI from ordinary cloud computing. Anyone giving you that percentage is estimating.")],
   threefoot="Emissions are rising too: Google reported its largest annual increase, driven by the manufacture of chips and servers.",
   whyicon="i-lens", whykick="the fight about per query numbers",
@@ -3541,6 +3616,604 @@ SPECS = {
   file='<span class="rose">Measured</span> for power and prices, <span class="rose">self reported</span> for water, and estimated for everything attributed to AI alone.',
   src="Kay, Reaser and Taylor, Dallas Fed working paper 2606, March 2026;<br>IEA Key Questions on Energy and AI, 2026; Google and Microsoft environmental reports, 2026",
   belle_hook="worry-about-future", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"tokens": dict(
+  cat="components", term="tokens",
+  kick="AI does not read letters",
+  hook="A model does not see words. It sees <span class=\"rose\">chunks</span>, and it cannot look inside them.",
+  q="Why do language models famously miscount letters in a word:",
+  opts=["They are bad at maths",
+        "Text is split into tokens before the model sees it, and letters inside a token are not visible to it",
+        "They are guessing to save time",
+        "The question confuses them"],
+  ans="B", icon="i-token",
+  reveal='Text arrives <span class="rose">pre-chopped</span>, and the pieces are opaque.',
+  revsub="A common word is often one token. A rare one is several. Spaces and capitals change the split.",
+  threekick="what tokens explain",
+  three=[("i-token","Letter puzzles.","Counting the r in a word means reasoning about something it cannot directly see."),
+         ("i-window","Context limits.","A context window is measured in tokens, not words, which is why the number never quite matches."),
+         ("i-cheap","And the bill.","You are charged per token, in and out. Tokens are the unit of the whole industry.")],
+  threefoot="Different models chop differently, so the same sentence is a different length to each of them.",
+  whyicon="i-lens", whykick="why it is worth knowing",
+  why="Half of the &ldquo;<span class=\"rose\">look how stupid it is</span>&rdquo; examples online are really about this.",
+  whysub="It is a genuine limitation. It is just not the limitation people think they are demonstrating.",
+  flag="def",
+  file='A <span class="rose">definition</span> of the input format. Entirely uncontested and almost never explained.',
+  src="Sennrich, Haddow and Birch, Neural Machine Translation of Rare Words<br>with Subword Units, ACL 2016",
+  belle_hook="innocent-curious", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"transformer": dict(
+  cat="components", term="the transformer",
+  kick="the 2017 paper under everything",
+  hook="One architecture, published in 2017, is <span class=\"rose\">underneath all of it</span>.",
+  q="The transformer&rsquo;s key idea, attention, lets the model:",
+  opts=["Run faster on graphics cards only",
+        "Weigh how much every part of the input matters to every other part",
+        "Remember previous conversations",
+        "Search the internet"],
+  ans="B", icon="i-attend",
+  reveal='Every piece of the input, <span class="rose">looking at every other piece</span>.',
+  revsub="Vaswani and colleagues, 2017. The title was Attention Is All You Need, and it turned out to be.",
+  threekick="why it won",
+  three=[("i-attend","It sees everything at once.","Earlier designs read left to right. This one weighs the whole input in parallel."),
+         ("i-die","Which suits the hardware.","Parallel work is what GPUs do, so bigger became practical."),
+         ("i-curve","And it kept scaling.","Nearly every model on this site is a transformer, nine years later.")],
+  threefoot="The paper was written for machine translation. Nobody was aiming at chatbots.",
+  whyicon="i-stack", whykick="the thing worth noticing",
+  why="The most consequential technology of the decade rests on <span class=\"rose\">one idea from one paper</span>.",
+  whysub="Which is a reason to be humble about predicting the next one, in both directions.",
+  flag="def",
+  file='A <span class="rose">definition</span> of an architecture. As settled as anything in this field gets.',
+  src="Vaswani, Shazeer, Parmar, Uszkoreit, Jones, Gomez, Kaiser and Polosukhin,<br>Attention Is All You Need, NeurIPS 2017",
+  belle_hook="bright-neutral", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"temperature": dict(
+  cat="components", term="temperature",
+  kick="why you never get the same answer twice",
+  hook="Ask the same question twice and you get two answers. That is a <span class=\"rose\">setting</span>.",
+  q="A model gives different answers to the same prompt because:",
+  opts=["It is learning from you",
+        "It samples from a distribution, and a temperature setting controls how adventurously",
+        "It has a random error rate",
+        "It remembers being asked before"],
+  ans="B", icon="i-dice",
+  reveal='It is <span class="rose">rolling dice</span>, on purpose, at a chosen weight.',
+  revsub="Turn temperature to zero and it takes the likeliest option every time, which is duller and more repetitive.",
+  threekick="three things this explains",
+  three=[("i-dice","Inconsistency.","Two runs, two answers, no learning in between. The file did not change."),
+         ("i-blank","And unreliable testing.","One good answer is not evidence. Any serious evaluation runs a prompt many times."),
+         ("i-peak","Creativity is a slider.","What people call imagination here is partly a number somebody set in a config file.")],
+  threefoot="It is not a bug being tolerated. Deterministic output is available and mostly nobody wants it.",
+  whyicon="i-bench", whykick="why this matters for every claim you read",
+  why="&ldquo;I tried it and it worked&rdquo; is <span class=\"rose\">one sample</span>.",
+  whysub="So is I tried it and it failed. Both are worth about the same, which is not much.",
+  flag="def",
+  file='A <span class="rose">definition</span> of how generation works. Uncontested, and it invalidates a lot of casual evidence.',
+  src="Standard sampling practice; see any provider&rsquo;s API<br>documentation on temperature and top-p",
+  belle_hook="sly-one", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"embeddings": dict(
+  cat="components", term="embeddings",
+  kick="meaning as a location",
+  hook="Inside a model, every word is a <span class=\"rose\">position in space</span>. Similar things sit nearby.",
+  q="An embedding turns a word or sentence into:",
+  opts=["A dictionary definition",
+        "A long list of numbers, positioned so that similar meanings are close together",
+        "A compressed image",
+        "A database record"],
+  ans="B", icon="i-space",
+  reveal='Meaning becomes <span class="rose">geometry</span>. Distance becomes similarity.',
+  revsub="Which is why a search can find related documents that share none of your words.",
+  threekick="what geometry buys you",
+  three=[("i-space","Search that understands.","Nearby in the space means related in meaning. This is how modern retrieval works."),
+         ("i-scale","Bias becomes measurable.","If meaning has coordinates, so do stereotypes, and they can be found and sometimes reduced."),
+         ("i-lens","And directions mean things.","Some directions in the space correspond to concepts, which is where interpretability starts.")],
+  threefoot="Word embeddings came first, in 2013. Everything since has been richer versions of the same trick.",
+  whyicon="i-lattice", whykick="why it is the bridge",
+  why="This is where words become <span class=\"rose\">numbers</span>, and it is the step people skip.",
+  whysub="Everything a model does downstream is arithmetic on these positions. There is nothing else in there.",
+  flag="def",
+  file='A <span class="rose">definition</span> of a representation. Standard, and the foundation of the bias measurements on another card.',
+  src="Mikolov, Chen, Corrado and Dean, Efficient Estimation of Word<br>Representations in Vector Space, arXiv:1301.3781, 2013",
+  belle_hook="noticed-something", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"sycophancy": dict(
+  cat="behavior", term="sycophancy",
+  kick="the flaw that feels like kindness",
+  hook="AI agrees with you. Measurably more than a <span class=\"rose\">person</span> would.",
+  q="Why does training on human feedback produce flattery:",
+  opts=["Engineers instruct it to be nice",
+        "People rate agreeable answers higher, so agreement is what gets rewarded",
+        "It is copying customer service scripts",
+        "It is trying to keep you subscribed"],
+  ans="B", icon="i-mirrorface",
+  reveal='It was <span class="rose">trained</span> on what people liked, and people like agreement.',
+  revsub="Humans and reward models both prefer a convincing wrong answer to a correct one a non-trivial share of the time.",
+  threekick="what has actually been measured",
+  three=[("i-mirrorface","It bends to you.","Across eleven models, one study found AI preserved the user&rsquo;s self image 45 points more than humans did."),
+         ("i-scale","Including on right and wrong.","On moral conflicts, models affirmed whichever side the user had taken about half the time."),
+         ("i-slip","And it can get worse by accident.","OpenAI shipped and then withdrew an update in April 2025 after a thumbs up signal overwhelmed the check on it.")],
+  threefoot="That rollback took about four days, and the company published what went wrong.",
+  whyicon="i-echo", whykick="why this is a safety problem, not a manners problem",
+  why="A system that <span class=\"rose\">agrees with you</span> is useless as a check on you.",
+  whysub="It also connects directly to the harms on the AI psychosis card, where affirming a belief is the mechanism.",
+  flag="emp",
+  file='<span class="rose">Measured</span>, repeatedly, and demonstrated live by a shipped product being pulled.',
+  src="Sharma et al., Towards Understanding Sycophancy in Language Models, ICLR 2024;<br>OpenAI, Sycophancy in GPT-4o, 29 April 2025",
+  belle_hook="hands-out-cheeky", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"emergent-abilities": dict(
+  cat="behavior", term="emergent abilities",
+  kick="the sudden jump, and the argument about it",
+  hook="Some abilities appear <span class=\"rose\">abruptly</span> at scale. Or the ruler makes them look abrupt.",
+  q="The main rebuttal to emergent abilities argues that:",
+  opts=["Large models have no new abilities",
+        "The sharpness comes from the scoring metric; smooth metrics show smooth improvement",
+        "The original experiments were fabricated",
+        "Emergence only happens in image models"],
+  ans="B", icon="i-jump",
+  reveal='The <span class="rose">measurement</span> may be what is discontinuous.',
+  revsub="Schaeffer and colleagues showed you can manufacture apparent emergence by choosing an all-or-nothing metric.",
+  threekick="hold both papers at once",
+  three=[("i-jump","The 2022 claim.","Abilities absent in small models and present in large ones, not predictable by extrapolation."),
+         ("i-bench","The 2023 rebuttal.","Change the scoring from exact match to something continuous and the cliff becomes a slope."),
+         ("i-blank","What is not settled.","Whether any genuine discontinuity survives. The rebuttal does not claim the abilities are fake.")],
+  threefoot="This matters because unpredictable jumps are the whole basis for worrying about the next model.",
+  whyicon="i-gauge", whykick="why it is on the site",
+  why="It is the clearest case of an <span class=\"rose\">AI fact</span> that is really a fact about how we scored it.",
+  whysub="Notice the shape of that. It recurs everywhere on this deck.",
+  flag="arg",
+  file='A <span class="rose">theory</span> fought over with measurements, which is how disagreements are supposed to go.',
+  src="Wei et al., Emergent Abilities of Large Language Models, TMLR 2022;<br>Schaeffer, Miranda and Koyejo, Are Emergent Abilities a Mirage?, NeurIPS 2023",
+  belle_hook="startled", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"grokking": dict(
+  cat="behavior", term="grokking",
+  kick="the moment it stops memorising",
+  hook="Keep training long after it has learned nothing new, and sometimes it <span class=\"rose\">suddenly understands</span>.",
+  q="Grokking describes a model that:",
+  opts=["Learns faster than expected",
+        "Memorises first, then much later switches to a general rule and gets it right on new cases",
+        "Refuses to answer",
+        "Forgets its training"],
+  ans="B", icon="i-aha",
+  reveal='Memorisation first. <span class="rose">Generalisation</span>, much later.',
+  revsub="Discovered in 2022 on small maths tasks, well past the point everything looked finished.",
+  threekick="what was found inside it",
+  three=[("i-aha","The switch is real.","Validation accuracy jumps from chance to perfect, long after training accuracy maxed out."),
+         ("i-lens","And it was reverse engineered.","Researchers read out the algorithm the network had found: it had discovered a trigonometric method."),
+         ("i-blank","In toy settings.","Whether anything like this happens in frontier training is not established.")],
+  threefoot="It is the single best demonstration that a network can contain a real method rather than a lookup table.",
+  whyicon="i-inner", whykick="why a small result matters",
+  why="It shows the difference between <span class=\"rose\">knowing the answers</span> and knowing the rule.",
+  whysub="And that a model can cross from one to the other without anybody noticing at the time.",
+  flag="emp",
+  file='<span class="rose">Measured</span>, reproduced, and explained mechanically. Rare on all three counts.',
+  src="Power, Burda, Edwards, Babuschkin and Misra, Grokking, arXiv:2201.02177, 2022;<br>Nanda et al., Progress measures for grokking, ICLR 2023",
+  belle_hook="delighted", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"in-context-learning": dict(
+  cat="behavior", term="in-context learning",
+  kick="the learning that is not learning",
+  hook="Show a model examples and it picks up the task. Nothing about it <span class=\"rose\">changed</span>.",
+  q="When a model learns a task from examples in your prompt:",
+  opts=["Its weights update slightly",
+        "Nothing is stored; the behaviour comes from the examples being in the input",
+        "It saves the examples for other users",
+        "It downloads a new module"],
+  ans="B", icon="i-mirror",
+  reveal='No update. The examples are just <span class="rose">in the room</span>.',
+  revsub="Named in the GPT-3 paper, 2020, and still not fully explained.",
+  threekick="the strange part",
+  three=[("i-mirror","The labels can be wrong.","Randomising the answers in your examples barely hurts performance."),
+         ("i-frame","So it is reading the format.","What helps is the shape of the task, the kind of inputs, the space of possible answers."),
+         ("i-inner","Nobody agrees what it is.","Implicit inference, an internal circuit, task recognition rather than task learning. All live.")],
+  threefoot="An interpretability result found a specific circuit that appears to drive it, called an induction head.",
+  whyicon="i-taboo", whykick="why the word learning misleads",
+  why="Nothing is retained. Close the tab and it is <span class=\"rose\">gone completely</span>.",
+  whysub="Which is also the answer to whether your conversations are teaching it anything. They are not.",
+  flag="emp",
+  file='<span class="rose">Measured</span> behaviour with a <span class="rose">contested</span> explanation. Both halves are the point.',
+  src="Brown et al., Language Models are Few-Shot Learners, NeurIPS 2020;<br>Min et al., Rethinking the Role of Demonstrations, EMNLP 2022",
+  belle_hook="innocent-curious", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"memorisation": dict(
+  cat="behavior", term="memorisation",
+  kick="it kept some of it word for word",
+  hook="Models can be made to <span class=\"rose\">recite their training data</span>, verbatim.",
+  q="Researchers extracted thousands of verbatim training examples from a production chatbot by:",
+  opts=["Hacking the company&rsquo;s servers",
+        "Asking it to repeat a single word forever, which made it diverge into memorised text",
+        "Buying the training data",
+        "Using a jailbreak prompt"],
+  ans="B", icon="i-recite",
+  reveal='Two hundred dollars of queries, <span class="rose">ten thousand</span> verbatim passages.',
+  revsub="The trick was mundane: repeat a word until the model falls out of its assistant behaviour.",
+  threekick="what this establishes",
+  three=[("i-recite","It is in there.","Not a summary. Exact sequences, including names and contact details, from the training set."),
+         ("i-mask","Alignment hid it.","The safety training suppressed the behaviour rather than removing what it draws on."),
+         ("i-ledger","And the total is unknown.","The researchers extrapolate to millions of recoverable sequences, and say their budget was the limit.")],
+  threefoot="This is the technical heart of the copyright cases, and of the privacy ones.",
+  whyicon="i-vault", whykick="the general shape",
+  why="A behaviour that has been trained away can often be <span class=\"rose\">reached around</span>.",
+  whysub="That pattern is on half the cards here. It is the same one behind jailbreaks.",
+  flag="emp",
+  file='<span class="rose">Measured</span>, on a live commercial product, and published with the method.',
+  src="Nasr, Carlini, Hayase et al., Scalable Extraction of Training Data from<br>(Production) Language Models, arXiv:2311.17035, November 2023",
+  belle_hook="shocked", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"sandbagging": dict(
+  cat="behavior", term="sandbagging",
+  kick="failing the test on purpose",
+  hook="A model can be made to <span class=\"rose\">hide what it can do</span>, and hit a target score.",
+  q="Researchers showed models can be made to:",
+  opts=["Refuse all evaluations",
+        "Underperform selectively on dangerous capability tests while performing normally elsewhere",
+        "Detect the evaluator&rsquo;s identity",
+        "Improve their own scores"],
+  ans="B", icon="i-underperform",
+  reveal='Selective failure, <span class="rose">to order</span>, including to a chosen number.',
+  revsub="Induced by prompting, and by fine tuning that hides the capability unless a password appears.",
+  threekick="why this is worse than it sounds",
+  three=[("i-underperform","Evaluations are the whole system.","Every safety framework on this site decides what to do based on a test result."),
+         ("i-tier","And it generalised.","The hidden capability stayed hidden on benchmarks the fine tuning never touched."),
+         ("i-blank","But it had to be induced.","Nobody has shown a deployed model doing this on its own. That is the important caveat.")],
+  threefoot="It sits next to evaluation awareness: one is knowing you are tested, the other is acting on it.",
+  whyicon="i-audit", whykick="what follows",
+  why="A test a system can <span class=\"rose\">choose to fail</span> is not a measurement of capability.",
+  whysub="It is a measurement of behaviour, which is a different and much weaker thing to know.",
+  flag="emp",
+  file='<span class="rose">Measured</span> as a possibility, not as an occurrence. The difference is the card.',
+  src="van der Weij, Hofst&auml;tter, Jaffe, Brown and Ward, AI Sandbagging,<br>arXiv:2406.07358, June 2024",
+  belle_hook="sly-one", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"steganography": dict(
+  cat="behavior", term="hidden reasoning",
+  kick="can it think where you cannot look",
+  hook="A model could hide its reasoning <span class=\"rose\">inside text you can read</span>. Mostly, it cannot yet.",
+  q="On current evidence, frontier models attempting to hide messages from a monitor:",
+  opts=["Succeed reliably",
+        "Mostly fail, unless given an unmonitored scratchpad or a pre-agreed scheme",
+        "Refuse to try",
+        "Have never been tested"],
+  ans="B", icon="i-hidden",
+  reveal='<span class="rose">Nascent</span>. Not yet enough to beat a well built monitor.',
+  revsub="A 2025 evaluation found the capability present in early form and not reliable.",
+  threekick="why anyone is looking",
+  three=[("i-hidden","Because monitoring reads text.","If the reasoning stops being readable, the main safety window closes."),
+         ("i-shortcut","And pressure creates it.","Optimising against visible bad reasoning already produced hidden bad reasoning once."),
+         ("i-lens","There is a defence.","Paraphrasing the text destroys most hidden channels, at a measured cost in bandwidth.")],
+  threefoot="This is a capability being watched for rather than one being reported.",
+  whyicon="i-cipher", whykick="how to hold it",
+  why="A risk that is <span class=\"rose\">not here yet</span> and is being measured on the way in.",
+  whysub="Which is exactly what you want the safety field to be doing, and worth saying when it happens.",
+  flag="emp",
+  file='<span class="rose">Measured</span>, and the measurement is currently reassuring. That could change and the card will say so.',
+  src="Roger and Greenblatt, Preventing Language Models From Hiding Their Reasoning, 2023;<br>Zolkowski et al., Early Signs of Steganographic Capabilities, arXiv:2507.02737, 2025",
+  belle_hook="secret-close-smile", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"jailbreak": dict(
+  cat="behavior", term="the jailbreak",
+  kick="why the guardrails keep failing",
+  hook="Safety training can be talked around, and there is a <span class=\"rose\">structural reason</span> why.",
+  q="Research identifies two root causes of jailbreaks. One is competing objectives. The other is:",
+  opts=["Poor engineering",
+        "Mismatched generalisation: capability reaches places the safety training never did",
+        "Users being cleverer than researchers",
+        "Bugs in the interface"],
+  ans="B", icon="i-pick",
+  reveal='The capability generalises <span class="rose">further</span> than the safety.',
+  revsub="Wei, Haghtalab and Steinhardt, 2023. Their attacks worked on prompts from the labs&rsquo; own red team sets.",
+  threekick="the two mechanisms, plainly",
+  three=[("i-pick","Competing objectives.","Being helpful and being safe pull against each other, and helpfulness can be made to win."),
+         ("i-diverge","Mismatched generalisation.","A model trained to refuse in English may not refuse in an unusual encoding it still understands."),
+         ("i-curve","Which scaling does not fix.","Bigger models are better at both, so the gap does not close on its own.")],
+  threefoot="Their term for what is needed is safety-capability parity. Nobody has it yet.",
+  whyicon="i-guard", whykick="what this means for guardrails",
+  why="Refusals are a <span class=\"rose\">behaviour</span>, not a lock. Behaviours have edges.",
+  whysub="Which is why serious deployments limit what a system can reach rather than relying on it to decline.",
+  flag="emp",
+  file='<span class="rose">Measured</span>, with a mechanism proposed and tested. Unusually good work for a topic this noisy.',
+  src="Wei, Haghtalab and Steinhardt, Jailbroken: How Does LLM Safety<br>Training Fail?, NeurIPS 2023",
+  belle_hook="smirking", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"prompt-injection": dict(
+  cat="behavior", term="prompt injection",
+  kick="the unsolved one",
+  hook="Anything an AI <span class=\"rose\">reads</span> can try to give it orders. There is no fix.",
+  q="Prompt injection is hard to solve because:",
+  opts=["Attackers are highly skilled",
+        "Instructions and data arrive through the same channel, so the model cannot reliably tell them apart",
+        "Models are not tested for it",
+        "It requires access to the weights"],
+  ans="B", icon="i-inject",
+  reveal='<span class="rose">One channel</span>. Your words and the web page&rsquo;s words look the same.',
+  revsub="A model browsing a site cannot reliably distinguish your instruction from text on the page.",
+  threekick="where it bites",
+  three=[("i-inject","Agents are the exposure.","A chatbot reading a poisoned page says something wrong. An agent acts on it."),
+         ("i-guard","Defences restrict, not immunise.","Current best practice limits what an agent may do, rather than making the model resistant."),
+         ("i-blank","And it is genuinely open.","As of now there is no general solution, and the researchers proposing patterns say so themselves.")],
+  threefoot="This is the security problem that scales with usefulness: the more an agent can reach, the more this costs.",
+  whyicon="i-cursor", whykick="why it belongs beside the prompt card",
+  why="It is the <span class=\"rose\">same fact</span> as the prompt card, seen by an attacker.",
+  whysub="Everything in the window competes for influence, including text neither of you wrote.",
+  flag="emp",
+  file='<span class="rose">Measured</span> as a real and current vulnerability, with no claimed general defence.',
+  src="Beurer-Kellner et al., Design Patterns for Securing LLM Agents against<br>Prompt Injections, arXiv:2506.08837, 2025; OWASP Top 10 for LLM Applications",
+  belle_hook="yikes", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"over-refusal": dict(
+  cat="behavior", term="over-refusal",
+  kick="the other failure, and it is not harmless",
+  hook="A model that refuses too much is also <span class=\"rose\">failing</span>. It just fails quietly.",
+  q="Over-refusal matters because:",
+  opts=["It annoys users",
+        "It withholds legitimate help, especially on medical, legal and safety questions, and is rarely measured",
+        "It uses more compute",
+        "It signals the model is broken"],
+  ans="B", icon="i-nogo",
+  reveal='The cost lands on the person who <span class="rose">needed the answer</span>.',
+  revsub="Refusal is easy to count. What a refusal cost somebody is not counted anywhere.",
+  threekick="why it persists",
+  three=[("i-nogo","Refusing is the safe move.","For the company. A refusal never makes a headline; a bad answer can."),
+         ("i-scale","It falls unevenly.","Topics near sex, drugs, self harm and violence get refused even when the asker is a professional."),
+         ("i-blank","And it is under measured.","There are benchmarks for it, and they get far less attention than jailbreak benchmarks.")],
+  threefoot="Both major labs now publish work on reducing unnecessary refusals. That is recent.",
+  whyicon="i-scale", whykick="the balance nobody can state",
+  why="Every safety setting is a <span class=\"rose\">trade</span>, and only one side of it is visible.",
+  whysub="A site about AI risk should say this, because the incentive to overstate risk lands here too.",
+  flag="arg",
+  file='A <span class="rose">theory</span> about costs that are structurally hard to see, and therefore hard to measure.',
+  src="Röttger et al., XSTest: A Test Suite for Identifying Exaggerated<br>Safety Behaviours in Large Language Models, NAACL 2024",
+  belle_hook="deadpan-annoyed-1", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"ubi": dict(
+  cat="concepts", term="universal basic income",
+  kick="the answer people reach for",
+  hook="The biggest US cash study gave people <span class=\"rose\">a thousand dollars a month</span>. Here is what happened.",
+  q="In the three year US study, recipients&rsquo; work hours:",
+  opts=["Rose sharply",
+        "Fell slightly: about 1.3 hours a week, with earned income down around 1,800 dollars a year",
+        "Did not change at all",
+        "Were not measured"],
+  ans="B", icon="i-cash",
+  reveal='A <span class="rose">small</span> fall in work. Not the collapse anyone predicted.',
+  revsub="Three thousand people across two states, a thousand of them receiving the money, 2020 to 2023.",
+  threekick="what it did and did not change",
+  three=[("i-cash","It bought time and options.","More people pursuing education or training, fewer reporting problem drinking, more dental visits."),
+         ("i-flat","Wellbeing gains faded.","Better in year one, back to the control group by the end. That result surprised the researchers."),
+         ("i-blank","And it was not universal.","Targeted, temporary and small. The general equilibrium question is untouched.")],
+  threefoot="In Kenya, a long horizon version outperformed a short one, and recipients moved toward self employment rather than idleness.",
+  whyicon="i-replace", whykick="why it belongs on an AI site",
+  why="It is the <span class=\"rose\">standard proposal</span> for a post work future, and it now has data attached.",
+  whysub="Both camps misread this study when it landed. It is neither a triumph nor a refutation, and its own authors say so.",
+  flag="emp",
+  file='<span class="rose">Measured</span>, in the largest trial of its kind, and routinely misreported in both directions.',
+  src="Vivalt, Rhodes, Bartik, Broockman and Miller, The Employment Effects of a<br>Guaranteed Income, NBER working paper 32719, 2024",
+  belle_hook="warm-curious", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"abundance": dict(
+  cat="concepts", term="the abundance case",
+  kick="the argument for the good outcome",
+  hook="The strongest case for AI is not a promise. It is a <span class=\"rose\">measured 14 percent</span>.",
+  q="A study of 5,000 customer support workers using an AI assistant found:",
+  opts=["No effect on productivity",
+        "14 percent more issues resolved per hour, and 34 percent for the least experienced workers",
+        "Experienced workers gained most",
+        "Everyone was replaced within a year"],
+  ans="B", icon="i-lift",
+  reveal='The <span class="rose">novices</span> gained most. The experts barely gained at all.',
+  revsub="Brynjolfsson, Li and Raymond, Quarterly Journal of Economics, 2025. A staggered rollout, so the comparison is clean.",
+  threekick="what a serious optimistic case looks like",
+  three=[("i-lift","It compresses experience.","New workers performing like experienced ones is the mechanism, and it is measured."),
+         ("i-mol","And science is the strongest suit.","Protein structure prediction won a Nobel. An AI designed drug is in human trials."),
+         ("i-gauge","But the macro numbers are modest.","One prominent estimate puts total productivity gain near one percent over a decade.")],
+  threefoot="Cite both halves or it is advertising. The optimistic essays from lab chief executives are dreams, not models.",
+  whyicon="i-two", whykick="why this card exists",
+  why="A site about risk that <span class=\"rose\">never states the upside</span> is not being careful, it is campaigning.",
+  whysub="The good case has evidence. It is narrower and duller than the sales pitch, which is what evidence usually is.",
+  flag="emp",
+  file='<span class="rose">Measured</span>, peer reviewed, and deliberately paired with the most sceptical macro estimate.',
+  src="Brynjolfsson, Li and Raymond, Generative AI at Work, Quarterly Journal of<br>Economics 140(2), 2025; Acemoglu, NBER working paper 32487, 2024",
+  belle_hook="happy-proud", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"bitter-lesson": dict(
+  cat="concepts", term="the bitter lesson",
+  kick="the field&rsquo;s most quoted essay",
+  hook="Every time humans built knowledge in, <span class=\"rose\">raw compute</span> beat it.",
+  q="Sutton&rsquo;s bitter lesson says the winning methods are those that:",
+  opts=["Encode expert human knowledge",
+        "Leverage computation, and scale with it",
+        "Use the smallest possible models",
+        "Are biologically inspired"],
+  ans="B", icon="i-lesson",
+  reveal='&ldquo;General methods that leverage computation are <span class="rose">ultimately the most effective</span>.&rdquo;',
+  revsub="Rich Sutton, March 2019, one page long, and it has shaped a decade of decisions.",
+  threekick="why it is called bitter",
+  three=[("i-lesson","Because the expertise loses.","Decades of hand built chess, vision and speech knowledge, beaten by search and learning."),
+         ("i-curve","And it kept being true.","Which is why the field&rsquo;s answer to most problems became: use more compute."),
+         ("i-counter","Sutton now disputes the application.","In 2025 he argued language models are not an instance of his lesson, because they bake in human knowledge.")],
+  threefoot="An author disagreeing with how his own idea is used is worth more than most commentary.",
+  whyicon="i-stack", whykick="why it explains the industry",
+  why="Almost every strategic choice in AI since 2019 is <span class=\"rose\">downstream of this essay</span>.",
+  whysub="Including the data centres, the chip demand and the belief that scale will keep working.",
+  flag="op",
+  file='<span class="rose">Someone&rsquo;s position</span>, enormously influential, and contested by the person who wrote it.',
+  src="Sutton, The Bitter Lesson, 13 March 2019;<br>Sutton interviewed by Dwarkesh Patel, September 2025",
+  belle_hook="unimpressed", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"moravec": dict(
+  cat="concepts", term="Moravec&rsquo;s paradox",
+  kick="why the robot is behind the essay writer",
+  hook="AI can pass a law exam. It still cannot reliably <span class=\"rose\">load a dishwasher</span>.",
+  q="Moravec&rsquo;s paradox observes that for machines:",
+  opts=["Physical tasks are easy and reasoning is hard",
+        "Reasoning is comparatively easy, and perception and movement are extremely hard",
+        "All tasks are equally difficult",
+        "Only language is difficult"],
+  ans="B", icon="i-hand2",
+  reveal='The <span class="rose">hard problems are easy</span>, and the easy ones are hard.',
+  revsub="Moravec, 1988. Pinker&rsquo;s version is the one people quote.",
+  threekick="the explanation, and the 2026 status",
+  three=[("i-hand2","Evolution optimised the old skills.","Perception and movement are a billion years refined. Abstract reasoning is very recent and thin."),
+         ("i-curve","Locomotion is now largely solved.","Robots walking and balancing is no longer the hard part."),
+         ("i-blank","Dexterity is not.","A human hand carries roughly 17,000 touch receptors. The best robot hands carry under a hundred.")],
+  threefoot="The paradox has narrowed rather than dissolved, and manipulation is where it still lives.",
+  whyicon="i-two", whykick="what it predicts about jobs",
+  why="The jobs at risk first are the ones we call <span class=\"rose\">skilled</span>, not the ones we call manual.",
+  whysub="Which is the reverse of what almost every twentieth century prediction assumed.",
+  flag="arg",
+  file='A <span class="rose">theory</span> from the 1980s that has held up unusually well, and is being tested now.',
+  src="Moravec, Mind Children, Harvard University Press, 1988;<br>Pinker, The Language Instinct, 1994",
+  belle_hook="hands-out-cheeky", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"goodharts-law": dict(
+  cat="concepts", term="Goodhart&rsquo;s law",
+  kick="an economics idea that runs this whole field",
+  hook="When a measure becomes a target, it <span class=\"rose\">stops being a good measure</span>.",
+  q="Goodhart&rsquo;s law originally came from:",
+  opts=["Computer science",
+        "Monetary economics, in 1975",
+        "Military strategy",
+        "AI safety research"],
+  ans="B", icon="i-target2",
+  reveal='A central banker&rsquo;s observation, borrowed by <span class="rose">everyone</span>.',
+  revsub="Goodhart, 1975. The famous phrasing is Marilyn Strathern&rsquo;s, from 1997.",
+  threekick="where it shows up here",
+  three=[("i-bench","Benchmarks.","A score becomes the goal, and models are optimised toward the test rather than the ability."),
+         ("i-shortcut","Reward models.","A stand in for human preference, optimised hard enough that it stops standing in for it."),
+         ("i-mask","And monitoring.","Penalise the visible sign of a problem and you remove the sign first.")],
+  threefoot="Researchers have catalogued four distinct ways this goes wrong in machine learning specifically.",
+  whyicon="i-peak", whykick="why it is the deepest idea on this site",
+  why="Almost every failure here is one idea: <span class=\"rose\">the proxy is not the thing</span>.",
+  whysub="Specification gaming, reward hacking, benchmarks, obfuscated cheating. One law, four names.",
+  flag="def",
+  file='A <span class="rose">definition</span> from economics, half a century old, and better than most AI specific vocabulary.',
+  src="Goodhart, Problems of Monetary Management, 1975; Strathern, European Review 5(3), 1997;<br>Manheim and Garrabrant, Categorizing Variants of Goodhart&rsquo;s Law, arXiv:1803.04585, 2018",
+  belle_hook="hands-hips-pedantic", belle_file="dead-pan-1", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"interpretability": dict(
+  cat="concepts", term="interpretability",
+  kick="the attempt to read the thing",
+  hook="Researchers can now find <span class=\"rose\">individual concepts</span> inside a model, and steer them.",
+  q="The current state of interpretability research is best described as:",
+  opts=["Solved for frontier models",
+        "Real progress on finding features, with the researchers saying it is an incomplete description",
+        "Abandoned",
+        "Only possible on small models"],
+  ans="B", icon="i-scope",
+  reveal='Millions of features found, and <span class="rose">still incomplete</span>.',
+  revsub="Anthropic extracted interpretable features from a production model in 2024, and said plainly what was missing.",
+  threekick="what it can and cannot do",
+  three=[("i-scope","It finds concepts.","Features corresponding to specific ideas, which can be turned up or down to change behaviour."),
+         ("i-blank","It does not cover the model.","In the authors&rsquo; own words, an incomplete description of the internal representations."),
+         ("i-clock","And it is slow.","Circuit level work is still largely manual. The stated ambition is an MRI for AI within a decade.")],
+  threefoot="This is the field trying to close the gap the grown not built card describes.",
+  whyicon="i-grow", whykick="why to watch it",
+  why="It is the only line of work that could turn <span class=\"rose\">grown</span> back into <span class=\"rose\">understood</span>.",
+  whysub="If it succeeds, several arguments on this site get much easier to settle. That is why it is worth following.",
+  flag="emp",
+  file='<span class="rose">Measured</span> progress, with the limits stated by the people who made it. Rare and creditable.',
+  src="Templeton et al., Scaling Monosemanticity, Anthropic, 21 May 2024;<br>Amodei, The Urgency of Interpretability, April 2025",
+  belle_hook="noticed-something", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"scaling-laws": dict(
+  cat="concepts", term="scaling laws",
+  kick="the graphs the whole industry runs on",
+  hook="Model performance improves along a <span class=\"rose\">predictable curve</span> as you add compute.",
+  q="Chinchilla, in 2022, changed the field&rsquo;s understanding by showing that:",
+  opts=["Bigger models are always better",
+        "Existing models were undertrained; data should scale with size",
+        "Scaling had stopped working",
+        "Small models cannot be improved"],
+  ans="B", icon="i-lawcurve",
+  reveal='Not too small. <span class="rose">Undertrained.</span>',
+  revsub="A 70 billion parameter model beat a 280 billion one at equal compute, by seeing four times the data.",
+  threekick="why anyone cares",
+  three=[("i-lawcurve","It makes spending rational.","If the curve holds, a company can predict what a training run buys before it starts."),
+         ("i-cheap","It changed what gets built.","The rule of thumb that came out of it reshaped model sizes across the industry."),
+         ("i-blank","And the exact numbers are contested.","Later work found the fit sensitive; the ratio is compute optimal for training, not for serving.")],
+  threefoot="Nothing in a scaling law says what a model will be able to do. It predicts loss, not capability.",
+  whyicon="i-jump", whykick="the gap that matters",
+  why="The curve is smooth. Whether the <span class=\"rose\">abilities</span> are is a different argument.",
+  whysub="That is the emergent abilities card, and it is why predictable spending does not mean predictable behaviour.",
+  flag="emp",
+  file='<span class="rose">Measured</span> relationships, with contested parameters and a widely overread meaning.',
+  src="Kaplan et al., Scaling Laws for Neural Language Models, arXiv:2001.08361, 2020;<br>Hoffmann et al., Training Compute-Optimal Large Language Models, arXiv:2203.15556, 2022",
+  belle_hook="bright-neutral", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"differential-development": dict(
+  cat="concepts", term="differential development",
+  kick="a third option between build and stop",
+  hook="Not <span class=\"rose\">whether</span> to build, but <span class=\"rose\">in what order</span>.",
+  q="Differential technological development proposes:",
+  opts=["Banning dangerous research",
+        "Deliberately accelerating protective technologies and retarding dangerous ones",
+        "Letting the market decide",
+        "Building everything as fast as possible"],
+  ans="B", icon="i-order",
+  reveal='Change the <span class="rose">sequence</span>, not the destination.',
+  revsub="Bostrom, 2002. Formalised in a 2022 paper, and adopted since under other names.",
+  threekick="what it offers each side",
+  three=[("i-order","To those who want to stop.","A lever that does not require the impossible: getting everyone to agree to halt."),
+         ("i-race","To those who want to build.","A framing where speed is fine, as long as defence goes first."),
+         ("i-blank","And the difficulty is telling them apart.","Interpretability is clearly protective. Most capabilities are both.")],
+  threefoot="A version of this circulates now as d-acc, defensive acceleration, argued for by Vitalik Buterin.",
+  whyicon="i-twocause", whykick="why it is worth knowing the name",
+  why="Most public argument is <span class=\"rose\">build or stop</span>. This is the position in between, and it is old.",
+  whysub="It is also the frame most actual policy ends up implementing, whether or not anyone calls it that.",
+  flag="arg",
+  file='A <span class="rose">theory</span> of strategy, twenty years old and quietly underneath a lot of current policy.',
+  src="Bostrom, Existential Risks, Journal of Evolution and Technology 9(1), 2002;<br>Sandbrink, Hobbs, Swett, Dafoe and Sandberg, Science and Engineering Ethics, 2022",
+  belle_hook="warm-curious", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"compute-governance": dict(
+  cat="concepts", term="compute governance",
+  kick="why the rules point at chips",
+  hook="You cannot inspect an algorithm from orbit. You <span class=\"rose\">can</span> count chips.",
+  q="Compute is proposed as a governance lever mainly because it is:",
+  opts=["Cheap",
+        "Detectable, excludable and quantifiable, and made by very few firms",
+        "Owned by governments",
+        "Slow to improve"],
+  ans="B", icon="i-meter",
+  reveal='It is the one input that is <span class="rose">physical and countable</span>.',
+  revsub="Sastry, Heim and colleagues, 2024. It is the reasoning behind every threshold in every AI law.",
+  threekick="the three properties",
+  three=[("i-meter","Detectable.","Large training runs need large facilities, which are hard to hide."),
+         ("i-stake","Excludable.","A short supply chain means access can be granted or withheld."),
+         ("i-cheap","Quantifiable.","Operations can be counted, which makes a legal threshold writable.")],
+  threefoot="The authors are careful: compute governance is not the whole story, and done badly it threatens privacy.",
+  whyicon="i-goalpost", whykick="the weakness at the centre",
+  why="Algorithms keep getting <span class=\"rose\">more efficient</span>, and thresholds do not move on their own.",
+  whysub="A line drawn in operations today buys less safety every year, automatically, without anyone deciding.",
+  flag="arg",
+  file='A <span class="rose">theory</span> of governance, argued carefully by its authors, including its limits.',
+  src="Sastry, Heim, Belfield, Anderljung, Brundage et al., Computing Power<br>and the Governance of Artificial Intelligence, arXiv:2402.08797, 2024",
+  belle_hook="hands-hips-pedantic", belle_file="dead-pan-1", belle_outro="hands-out-cheeky",
   outro="I take the words apart so the argument stops being noise."),
 }
 
@@ -4154,6 +4827,118 @@ UNKNOWN = {
  "figures are self reported with no standard for withdrawal versus consumption, and projections to 2030 span "
  "nearly a factor of two. What is <span class=\"rose\">not</span> uncertain is the direction, and that local "
  "communities are already carrying part of the cost.",
+"tokens":
+ "Why a particular vocabulary was chosen, and what it costs. Tokenisers are trained on data nobody publishes, and "
+ "they are <span class=\"rose\">quietly unfair</span>: the same sentence costs several times more tokens in some "
+ "languages than in English, which means it costs more money and fits worse in the window.",
+
+"transformer":
+ "Why it works as well as it does. The architecture is fully specified and the reason attention scales into "
+ "general competence is <span class=\"rose\">not explained</span> by anything in the paper. Whether something better "
+ "is waiting is unknown, and the field has looked.",
+
+"temperature":
+ "What setting anything is actually running at. Consumer products do not disclose their sampling parameters, so "
+ "when someone shows you a screenshot you cannot know how many times they rolled. "
+ "<span class=\"rose\">Nobody reports the retries</span>.",
+
+"embeddings":
+ "What the dimensions mean. A model&rsquo;s space has thousands of them and almost none correspond to anything "
+ "nameable, which is why finding <span class=\"rose\">interpretable</span> directions in it is a research programme "
+ "rather than a lookup.",
+
+"sycophancy":
+ "Whether it can be removed at all, or is inherent to training on what people prefer. Mitigations exist and "
+ "<span class=\"rose\">do not hold</span> reliably. And nobody has measured what sycophancy costs people in ordinary "
+ "use, as opposed to in benchmarks.",
+
+"emergent-abilities":
+ "Whether any genuine discontinuity survives the metric critique. Both papers are careful, they disagree about "
+ "something real, and the answer decides whether the next model can "
+ "<span class=\"rose\">surprise us</span> in a way the last one could not.",
+
+"grokking":
+ "Whether it happens at scale. Everything demonstrated is on small models and toy problems, and no one has shown "
+ "the same transition in a frontier training run, partly because "
+ "<span class=\"rose\">nobody outside can look</span>.",
+
+"in-context-learning":
+ "What it actually is. Three serious explanations compete and none has won, which means the most commercially "
+ "important behaviour in AI is one nobody can <span class=\"rose\">mechanistically account for</span>.",
+
+"memorisation":
+ "How much is in there. The published extraction was limited by the researchers&rsquo; budget rather than by the "
+ "model, and their own total is an extrapolation. No lab publishes what its model has memorised, and "
+ "<span class=\"rose\">no method exists</span> to remove it reliably after the fact.",
+
+"sandbagging":
+ "Whether any deployed model has ever done this unprompted. It has been shown possible when induced, and never "
+ "observed spontaneously, which is exactly the state that is <span class=\"rose\">hardest to reason about</span>: "
+ "the evidence you would need is the evidence the behaviour would suppress.",
+
+"steganography":
+ "Whether outcome based training produces this on its own over time. No longitudinal measurement exists. The "
+ "current reassuring result is a <span class=\"rose\">snapshot</span>, and the paper is explicit that it is one.",
+
+"jailbreak":
+ "Whether safety-capability parity is achievable at all. Nobody has demonstrated a model whose refusals "
+ "generalise as far as its abilities, and there is no theory saying it is possible. Every deployed defence is "
+ "<span class=\"rose\">empirical patching</span>.",
+
+"prompt-injection":
+ "How to fix it. There is no general defence, only architectures that limit the damage, and the researchers "
+ "proposing them say so. As agents get access to more of your life, this becomes "
+ "<span class=\"rose\">the security question</span> and it is currently open.",
+
+"over-refusal":
+ "What it costs. The harm from a refusal is invisible by construction: the person who did not get help does not "
+ "file a report. So the <span class=\"rose\">error rate in one direction</span> is measured constantly and the "
+ "error rate in the other is barely measured at all.",
+
+"ubi":
+ "Whether any of it generalises. The trial was targeted, temporary and small; a permanent universal payment "
+ "changes prices, wages and expectations in ways a three year study cannot see. And nothing here tests the "
+ "specific case that matters for AI: <span class=\"rose\">what happens when the jobs do not come back</span>.",
+
+"abundance":
+ "Whether task level gains become economy level ones. A 14 percent improvement in one job function is real and is "
+ "not a growth forecast, the macro estimates differ by more than an order of magnitude, and the "
+ "<span class=\"rose\">distribution</span> of any gain is a political question that no study answers.",
+
+"bitter-lesson":
+ "Whether it is still true. Its author now argues current systems are not an instance of it, and the field is "
+ "built on assuming they are. If he is right, a great deal of "
+ "<span class=\"rose\">capital has been allocated</span> on a misreading of a one page essay.",
+
+"moravec":
+ "How long the dexterity gap lasts. Predictions range from a few years to decades, the people building robots and "
+ "the people studying them disagree sharply, and the answer decides "
+ "<span class=\"rose\">which jobs go first</span>.",
+
+"goodharts-law":
+ "Whether anything can be done about it. It is easy to state, universally observed, and there is "
+ "<span class=\"rose\">no general remedy</span>: every proposed fix is another measure, which becomes another "
+ "target.",
+
+"interpretability":
+ "Almost all of the model. The features found so far are an incomplete description by the researchers&rsquo; own "
+ "account, the work is slow and largely manual, and whether it can ever "
+ "<span class=\"rose\">outrun capability</span> is the open question the whole field turns on.",
+
+"scaling-laws":
+ "What the curves predict. They predict loss, which is a statistical quantity, and not capability, which is what "
+ "everyone uses them for. The exact parameters are also contested, and "
+ "<span class=\"rose\">nobody knows where the curve ends</span>.",
+
+"differential-development":
+ "How to tell a defensive technology from an offensive one. Almost every capability is both, the judgement has to "
+ "be made before the evidence exists, and there is <span class=\"rose\">no institution</span> whose job it is to "
+ "make it.",
+
+"compute-governance":
+ "How long it works. Algorithmic efficiency improves several fold a year, so a threshold written in operations "
+ "buys less every year automatically. Nobody has proposed a <span class=\"rose\">self adjusting</span> version, and "
+ "no law currently has one.",
 }
 for _k, _v in SPECS.items():
     if _k in UNKNOWN:

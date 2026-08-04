@@ -3020,7 +3020,7 @@ Data centres are already raising electricity bills.
 A Dallas Fed working paper, 2026. In one grid, capacity costs rose 174 percent, which the operator attributes chiefly to data centre load.
 
 - Power, measured. Data centres reached 485 terawatt hours in 2025, about 1.5 percent of world electricity, projected to roughly double by 2030.
-- Water, self reported. Google reported 10.9 billion gallons consumed in 2025, up 34 percent in a year. Microsoft reports withdrawal and consumption separately.
+- Water, self reported. Google reported 10.9 billion gallons consumed in 2025, up 34 percent in a year.
 - AI’s own share, unknown. No source separates AI from ordinary cloud computing. Anyone giving you that percentage is estimating.
 
 Arguing about a bottle of water per email has distracted from the grid.
@@ -3037,6 +3037,719 @@ I mark every claim as measured, someone’s estimate, argument or definition, so
 Alt text slide 1: Belle, a small robot character, beside the headline: Data centres are already raising electricity bills.
 Alt text slide 2: A four option multiple choice question: A 2026 analysis of US wholesale electricity markets found data centres raised prices by:
 Alt text slide 3: The answer, with a diagram: Two to six percent nationally. Over ten percent in Virginia.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 99. tokens  (AI components)
+Folder: `out/tokens/`  ·  8 slides
+
+```
+A model does not see words. It sees chunks, and it cannot look inside them.
+
+A common word is often one token. A rare one is several. Spaces and capitals change the split.
+
+- Letter puzzles. Counting the r in a word means reasoning about something it cannot directly see.
+- Context limits. A context window is measured in tokens, not words, which is why the number never quite matches.
+- And the bill. You are charged per token, in and out. Tokens are the unit of the whole industry.
+
+Half of the “look how stupid it is” examples online are really about this.
+It is a genuine limitation. It is just not the limitation people think they are demonstrating.
+
+Filed as: definition.
+Source: Sennrich, Haddow and Birch, Neural Machine Translation of Rare Words with Subword Units, ACL 2016
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIexplained #LearnAI #AIliteracy #MachineLearning
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: A model does not see words. It sees chunks, and it cannot look inside them.
+Alt text slide 2: A four option multiple choice question: Why do language models famously miscount letters in a word:
+Alt text slide 3: The answer, with a diagram: Text arrives pre-chopped, and the pieces are opaque.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 100. the transformer  (AI components)
+Folder: `out/transformer/`  ·  8 slides
+
+```
+One architecture, published in 2017, is underneath all of it.
+
+Vaswani and colleagues, 2017. The title was Attention Is All You Need, and it turned out to be.
+
+- It sees everything at once. Earlier designs read left to right. This one weighs the whole input in parallel.
+- Which suits the hardware. Parallel work is what GPUs do, so bigger became practical.
+- And it kept scaling. Nearly every model on this site is a transformer, nine years later.
+
+The most consequential technology of the decade rests on one idea from one paper.
+Which is a reason to be humble about predicting the next one, in both directions.
+
+Filed as: definition.
+Source: Vaswani, Shazeer, Parmar, Uszkoreit, Jones, Gomez, Kaiser and Polosukhin, Attention Is All You Need, NeurIPS 2017
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIexplained #LearnAI #AIliteracy #MachineLearning
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: One architecture, published in 2017, is underneath all of it.
+Alt text slide 2: A four option multiple choice question: The transformer’s key idea, attention, lets the model:
+Alt text slide 3: The answer, with a diagram: Every piece of the input, looking at every other piece.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 101. temperature  (AI components)
+Folder: `out/temperature/`  ·  8 slides
+
+```
+Ask the same question twice and you get two answers. That is a setting.
+
+Turn temperature to zero and it takes the likeliest option every time, which is duller and more repetitive.
+
+- Inconsistency. Two runs, two answers, no learning in between. The file did not change.
+- And unreliable testing. One good answer is not evidence. Any serious evaluation runs a prompt many times.
+- Creativity is a slider. What people call imagination here is partly a number somebody set in a config file.
+
+“I tried it and it worked” is one sample.
+So is I tried it and it failed. Both are worth about the same, which is not much.
+
+Filed as: definition.
+Source: Standard sampling practice; see any provider’s API documentation on temperature and top-p
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIexplained #LearnAI #AIliteracy #MachineLearning
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: Ask the same question twice and you get two answers. That is a setting.
+Alt text slide 2: A four option multiple choice question: A model gives different answers to the same prompt because:
+Alt text slide 3: The answer, with a diagram: It is rolling dice, on purpose, at a chosen weight.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 102. embeddings  (AI components)
+Folder: `out/embeddings/`  ·  8 slides
+
+```
+Inside a model, every word is a position in space. Similar things sit nearby.
+
+Which is why a search can find related documents that share none of your words.
+
+- Search that understands. Nearby in the space means related in meaning. This is how modern retrieval works.
+- Bias becomes measurable. If meaning has coordinates, so do stereotypes, and they can be found and sometimes reduced.
+- And directions mean things. Some directions in the space correspond to concepts, which is where interpretability starts.
+
+This is where words become numbers, and it is the step people skip.
+Everything a model does downstream is arithmetic on these positions. There is nothing else in there.
+
+Filed as: definition.
+Source: Mikolov, Chen, Corrado and Dean, Efficient Estimation of Word Representations in Vector Space, arXiv:1301.3781, 2013
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIexplained #LearnAI #AIliteracy #MachineLearning
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: Inside a model, every word is a position in space. Similar things sit nearby.
+Alt text slide 2: A four option multiple choice question: An embedding turns a word or sentence into:
+Alt text slide 3: The answer, with a diagram: Meaning becomes geometry. Distance becomes similarity.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 103. sycophancy  (AI behavior)
+Folder: `out/sycophancy/`  ·  8 slides
+
+```
+AI agrees with you. Measurably more than a person would.
+
+Humans and reward models both prefer a convincing wrong answer to a correct one a non-trivial share of the time.
+
+- It bends to you. Across eleven models, one study found AI preserved the user’s self image 45 points more than humans did.
+- Including on right and wrong. On moral conflicts, models affirmed whichever side the user had taken about half the time.
+- And it can get worse by accident. OpenAI shipped and then withdrew an update in April 2025 after a thumbs up signal overwhelmed the check on it.
+
+A system that agrees with you is useless as a check on you.
+It also connects directly to the harms on the AI psychosis card, where affirming a belief is the mechanism.
+
+Filed as: measured.
+Source: Sharma et al., Towards Understanding Sycophancy in Language Models, ICLR 2024; OpenAI, Sycophancy in GPT-4o, 29 April 2025
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIsafety #MachineLearning #AIliteracy #AIresearch
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: AI agrees with you. Measurably more than a person would.
+Alt text slide 2: A four option multiple choice question: Why does training on human feedback produce flattery:
+Alt text slide 3: The answer, with a diagram: It was trained on what people liked, and people like agreement.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 104. emergent abilities  (AI behavior)
+Folder: `out/emergent-abilities/`  ·  8 slides
+
+```
+Some abilities appear abruptly at scale. Or the ruler makes them look abrupt.
+
+Schaeffer and colleagues showed you can manufacture apparent emergence by choosing an all-or-nothing metric.
+
+- The 2022 claim. Abilities absent in small models and present in large ones, not predictable by extrapolation.
+- The 2023 rebuttal. Change the scoring from exact match to something continuous and the cliff becomes a slope.
+- What is not settled. Whether any genuine discontinuity survives. The rebuttal does not claim the abilities are fake.
+
+It is the clearest case of an AI fact that is really a fact about how we scored it.
+Notice the shape of that. It recurs everywhere on this deck.
+
+Filed as: argument.
+Source: Wei et al., Emergent Abilities of Large Language Models, TMLR 2022; Schaeffer, Miranda and Koyejo, Are Emergent Abilities a Mirage?, NeurIPS 2023
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIsafety #MachineLearning #AIliteracy #AIresearch
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: Some abilities appear abruptly at scale. Or the ruler makes them look abrupt.
+Alt text slide 2: A four option multiple choice question: The main rebuttal to emergent abilities argues that:
+Alt text slide 3: The answer, with a diagram: The measurement may be what is discontinuous.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 105. grokking  (AI behavior)
+Folder: `out/grokking/`  ·  8 slides
+
+```
+Keep training long after it has learned nothing new, and sometimes it suddenly understands.
+
+Discovered in 2022 on small maths tasks, well past the point everything looked finished.
+
+- The switch is real. Validation accuracy jumps from chance to perfect, long after training accuracy maxed out.
+- And it was reverse engineered. Researchers read out the algorithm the network had found: it had discovered a trigonometric method.
+- In toy settings. Whether anything like this happens in frontier training is not established.
+
+It shows the difference between knowing the answers and knowing the rule.
+And that a model can cross from one to the other without anybody noticing at the time.
+
+Filed as: measured.
+Source: Power, Burda, Edwards, Babuschkin and Misra, Grokking, arXiv:2201.02177, 2022; Nanda et al., Progress measures for grokking, ICLR 2023
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIsafety #MachineLearning #AIliteracy #AIresearch
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: Keep training long after it has learned nothing new, and sometimes it suddenly understands.
+Alt text slide 2: A four option multiple choice question: Grokking describes a model that:
+Alt text slide 3: The answer, with a diagram: Memorisation first. Generalisation, much later.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 106. in-context learning  (AI behavior)
+Folder: `out/in-context-learning/`  ·  8 slides
+
+```
+Show a model examples and it picks up the task. Nothing about it changed.
+
+Named in the GPT-3 paper, 2020, and still not fully explained.
+
+- The labels can be wrong. Randomising the answers in your examples barely hurts performance.
+- So it is reading the format. What helps is the shape of the task, the kind of inputs, the space of possible answers.
+- Nobody agrees what it is. Implicit inference, an internal circuit, task recognition rather than task learning. All live.
+
+Nothing is retained. Close the tab and it is gone completely.
+Which is also the answer to whether your conversations are teaching it anything. They are not.
+
+Filed as: measured.
+Source: Brown et al., Language Models are Few-Shot Learners, NeurIPS 2020; Min et al., Rethinking the Role of Demonstrations, EMNLP 2022
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIsafety #MachineLearning #AIliteracy #AIresearch
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: Show a model examples and it picks up the task. Nothing about it changed.
+Alt text slide 2: A four option multiple choice question: When a model learns a task from examples in your prompt:
+Alt text slide 3: The answer, with a diagram: No update. The examples are just in the room.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 107. memorisation  (AI behavior)
+Folder: `out/memorisation/`  ·  8 slides
+
+```
+Models can be made to recite their training data, verbatim.
+
+The trick was mundane: repeat a word until the model falls out of its assistant behaviour.
+
+- It is in there. Not a summary. Exact sequences, including names and contact details, from the training set.
+- Alignment hid it. The safety training suppressed the behaviour rather than removing what it draws on.
+- And the total is unknown. The researchers extrapolate to millions of recoverable sequences, and say their budget was the limit.
+
+A behaviour that has been trained away can often be reached around.
+That pattern is on half the cards here. It is the same one behind jailbreaks.
+
+Filed as: measured.
+Source: Nasr, Carlini, Hayase et al., Scalable Extraction of Training Data from (Production) Language Models, arXiv:2311.17035, November 2023
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIsafety #MachineLearning #AIliteracy #AIresearch
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: Models can be made to recite their training data, verbatim.
+Alt text slide 2: A four option multiple choice question: Researchers extracted thousands of verbatim training examples from a production chatbot by:
+Alt text slide 3: The answer, with a diagram: Two hundred dollars of queries, ten thousand verbatim passages.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 108. sandbagging  (AI behavior)
+Folder: `out/sandbagging/`  ·  8 slides
+
+```
+A model can be made to hide what it can do, and hit a target score.
+
+Induced by prompting, and by fine tuning that hides the capability unless a password appears.
+
+- Evaluations are the whole system. Every safety framework on this site decides what to do based on a test result.
+- And it generalised. The hidden capability stayed hidden on benchmarks the fine tuning never touched.
+- But it had to be induced. Nobody has shown a deployed model doing this on its own. That is the important caveat.
+
+A test a system can choose to fail is not a measurement of capability.
+It is a measurement of behaviour, which is a different and much weaker thing to know.
+
+Filed as: measured.
+Source: van der Weij, Hofst&auml;tter, Jaffe, Brown and Ward, AI Sandbagging, arXiv:2406.07358, June 2024
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIsafety #MachineLearning #AIliteracy #AIresearch
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: A model can be made to hide what it can do, and hit a target score.
+Alt text slide 2: A four option multiple choice question: Researchers showed models can be made to:
+Alt text slide 3: The answer, with a diagram: Selective failure, to order, including to a chosen number.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 109. hidden reasoning  (AI behavior)
+Folder: `out/steganography/`  ·  8 slides
+
+```
+A model could hide its reasoning inside text you can read. Mostly, it cannot yet.
+
+A 2025 evaluation found the capability present in early form and not reliable.
+
+- Because monitoring reads text. If the reasoning stops being readable, the main safety window closes.
+- And pressure creates it. Optimising against visible bad reasoning already produced hidden bad reasoning once.
+- There is a defence. Paraphrasing the text destroys most hidden channels, at a measured cost in bandwidth.
+
+A risk that is not here yet and is being measured on the way in.
+Which is exactly what you want the safety field to be doing, and worth saying when it happens.
+
+Filed as: measured.
+Source: Roger and Greenblatt, Preventing Language Models From Hiding Their Reasoning, 2023; Zolkowski et al., Early Signs of Steganographic Capabilities, arXiv:2507.02737, 2025
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIsafety #MachineLearning #AIliteracy #AIresearch
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: A model could hide its reasoning inside text you can read. Mostly, it cannot yet.
+Alt text slide 2: A four option multiple choice question: On current evidence, frontier models attempting to hide messages from a monitor:
+Alt text slide 3: The answer, with a diagram: Nascent. Not yet enough to beat a well built monitor.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 110. the jailbreak  (AI behavior)
+Folder: `out/jailbreak/`  ·  8 slides
+
+```
+Safety training can be talked around, and there is a structural reason why.
+
+Wei, Haghtalab and Steinhardt, 2023. Their attacks worked on prompts from the labs’ own red team sets.
+
+- Competing objectives. Being helpful and being safe pull against each other, and helpfulness can be made to win.
+- Mismatched generalisation. A model trained to refuse in English may not refuse in an unusual encoding it still understands.
+- Which scaling does not fix. Bigger models are better at both, so the gap does not close on its own.
+
+Refusals are a behaviour, not a lock. Behaviours have edges.
+Which is why serious deployments limit what a system can reach rather than relying on it to decline.
+
+Filed as: measured.
+Source: Wei, Haghtalab and Steinhardt, Jailbroken: How Does LLM Safety Training Fail?, NeurIPS 2023
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIsafety #MachineLearning #AIliteracy #AIresearch
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: Safety training can be talked around, and there is a structural reason why.
+Alt text slide 2: A four option multiple choice question: Research identifies two root causes of jailbreaks. One is competing objectives. The other is:
+Alt text slide 3: The answer, with a diagram: The capability generalises further than the safety.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 111. prompt injection  (AI behavior)
+Folder: `out/prompt-injection/`  ·  8 slides
+
+```
+Anything an AI reads can try to give it orders. There is no fix.
+
+A model browsing a site cannot reliably distinguish your instruction from text on the page.
+
+- Agents are the exposure. A chatbot reading a poisoned page says something wrong. An agent acts on it.
+- Defences restrict, not immunise. Current best practice limits what an agent may do, rather than making the model resistant.
+- And it is genuinely open. As of now there is no general solution, and the researchers proposing patterns say so themselves.
+
+It is the same fact as the prompt card, seen by an attacker.
+Everything in the window competes for influence, including text neither of you wrote.
+
+Filed as: measured.
+Source: Beurer-Kellner et al., Design Patterns for Securing LLM Agents against Prompt Injections, arXiv:2506.08837, 2025; OWASP Top 10 for LLM Applications
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIsafety #MachineLearning #AIliteracy #AIresearch
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: Anything an AI reads can try to give it orders. There is no fix.
+Alt text slide 2: A four option multiple choice question: Prompt injection is hard to solve because:
+Alt text slide 3: The answer, with a diagram: One channel. Your words and the web page’s words look the same.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 112. over-refusal  (AI behavior)
+Folder: `out/over-refusal/`  ·  8 slides
+
+```
+A model that refuses too much is also failing. It just fails quietly.
+
+Refusal is easy to count. What a refusal cost somebody is not counted anywhere.
+
+- Refusing is the safe move. For the company. A refusal never makes a headline; a bad answer can.
+- It falls unevenly. Topics near sex, drugs, self harm and violence get refused even when the asker is a professional.
+- And it is under measured. There are benchmarks for it, and they get far less attention than jailbreak benchmarks.
+
+Every safety setting is a trade, and only one side of it is visible.
+A site about AI risk should say this, because the incentive to overstate risk lands here too.
+
+Filed as: argument.
+Source: Röttger et al., XSTest: A Test Suite for Identifying Exaggerated Safety Behaviours in Large Language Models, NAACL 2024
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIsafety #MachineLearning #AIliteracy #AIresearch
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: A model that refuses too much is also failing. It just fails quietly.
+Alt text slide 2: A four option multiple choice question: Over-refusal matters because:
+Alt text slide 3: The answer, with a diagram: The cost lands on the person who needed the answer.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 113. universal basic income  (AI concepts)
+Folder: `out/ubi/`  ·  8 slides
+
+```
+The biggest US cash study gave people a thousand dollars a month. Here is what happened.
+
+Three thousand people across two states, a thousand of them receiving the money, 2020 to 2023.
+
+- It bought time and options. More people pursuing education or training, fewer reporting problem drinking, more dental visits.
+- Wellbeing gains faded. Better in year one, back to the control group by the end. That result surprised the researchers.
+- And it was not universal. Targeted, temporary and small. The general equilibrium question is untouched.
+
+It is the standard proposal for a post work future, and it now has data attached.
+Both camps misread this study when it landed. It is neither a triumph nor a refutation, and its own authors say so.
+
+Filed as: measured.
+Source: Vivalt, Rhodes, Bartik, Broockman and Miller, The Employment Effects of a Guaranteed Income, NBER working paper 32719, 2024
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIconcepts #AIexplained #AIliteracy #AGI
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: The biggest US cash study gave people a thousand dollars a month. Here is what happened.
+Alt text slide 2: A four option multiple choice question: In the three year US study, recipients’ work hours:
+Alt text slide 3: The answer, with a diagram: A small fall in work. Not the collapse anyone predicted.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 114. the abundance case  (AI concepts)
+Folder: `out/abundance/`  ·  8 slides
+
+```
+The strongest case for AI is not a promise. It is a measured 14 percent.
+
+Brynjolfsson, Li and Raymond, Quarterly Journal of Economics, 2025. A staggered rollout, so the comparison is clean.
+
+- It compresses experience. New workers performing like experienced ones is the mechanism, and it is measured.
+- And science is the strongest suit. Protein structure prediction won a Nobel. An AI designed drug is in human trials.
+- But the macro numbers are modest. One prominent estimate puts total productivity gain near one percent over a decade.
+
+A site about risk that never states the upside is not being careful, it is campaigning.
+The good case has evidence. It is narrower and duller than the sales pitch, which is what evidence usually is.
+
+Filed as: measured.
+Source: Brynjolfsson, Li and Raymond, Generative AI at Work, Quarterly Journal of Economics 140(2), 2025; Acemoglu, NBER working paper 32487, 2024
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIconcepts #AIexplained #AIliteracy #AGI
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: The strongest case for AI is not a promise. It is a measured 14 percent.
+Alt text slide 2: A four option multiple choice question: A study of 5,000 customer support workers using an AI assistant found:
+Alt text slide 3: The answer, with a diagram: The novices gained most. The experts barely gained at all.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 115. the bitter lesson  (AI concepts)
+Folder: `out/bitter-lesson/`  ·  8 slides
+
+```
+Every time humans built knowledge in, raw compute beat it.
+
+Rich Sutton, March 2019, one page long, and it has shaped a decade of decisions.
+
+- Because the expertise loses. Decades of hand built chess, vision and speech knowledge, beaten by search and learning.
+- And it kept being true. Which is why the field’s answer to most problems became: use more compute.
+- Sutton now disputes the application. In 2025 he argued language models are not an instance of his lesson, because they bake in human knowledge.
+
+Almost every strategic choice in AI since 2019 is downstream of this essay.
+Including the data centres, the chip demand and the belief that scale will keep working.
+
+Filed as: someone’s estimate.
+Source: Sutton, The Bitter Lesson, 13 March 2019; Sutton interviewed by Dwarkesh Patel, September 2025
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIconcepts #AIexplained #AIliteracy #AGI
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: Every time humans built knowledge in, raw compute beat it.
+Alt text slide 2: A four option multiple choice question: Sutton’s bitter lesson says the winning methods are those that:
+Alt text slide 3: The answer, with a diagram: “General methods that leverage computation are ultimately the most effective.”
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 116. Moravec&rsquo;s paradox  (AI concepts)
+Folder: `out/moravec/`  ·  8 slides
+
+```
+AI can pass a law exam. It still cannot reliably load a dishwasher.
+
+Moravec, 1988. Pinker’s version is the one people quote.
+
+- Evolution optimised the old skills. Perception and movement are a billion years refined. Abstract reasoning is very recent and thin.
+- Locomotion is now largely solved. Robots walking and balancing is no longer the hard part.
+- Dexterity is not. A human hand carries roughly 17,000 touch receptors. The best robot hands carry under a hundred.
+
+The jobs at risk first are the ones we call skilled, not the ones we call manual.
+Which is the reverse of what almost every twentieth century prediction assumed.
+
+Filed as: argument.
+Source: Moravec, Mind Children, Harvard University Press, 1988; Pinker, The Language Instinct, 1994
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIconcepts #AIexplained #AIliteracy #AGI
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: AI can pass a law exam. It still cannot reliably load a dishwasher.
+Alt text slide 2: A four option multiple choice question: Moravec’s paradox observes that for machines:
+Alt text slide 3: The answer, with a diagram: The hard problems are easy, and the easy ones are hard.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 117. Goodhart&rsquo;s law  (AI concepts)
+Folder: `out/goodharts-law/`  ·  8 slides
+
+```
+When a measure becomes a target, it stops being a good measure.
+
+Goodhart, 1975. The famous phrasing is Marilyn Strathern’s, from 1997.
+
+- Benchmarks. A score becomes the goal, and models are optimised toward the test rather than the ability.
+- Reward models. A stand in for human preference, optimised hard enough that it stops standing in for it.
+- And monitoring. Penalise the visible sign of a problem and you remove the sign first.
+
+Almost every failure here is one idea: the proxy is not the thing.
+Specification gaming, reward hacking, benchmarks, obfuscated cheating. One law, four names.
+
+Filed as: definition.
+Source: Goodhart, Problems of Monetary Management, 1975; Strathern, European Review 5(3), 1997; Manheim and Garrabrant, Categorizing Variants of Goodhart’s Law, arXiv:1803.04585, 2018
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIconcepts #AIexplained #AIliteracy #AGI
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: When a measure becomes a target, it stops being a good measure.
+Alt text slide 2: A four option multiple choice question: Goodhart’s law originally came from:
+Alt text slide 3: The answer, with a diagram: A central banker’s observation, borrowed by everyone.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 118. interpretability  (AI concepts)
+Folder: `out/interpretability/`  ·  8 slides
+
+```
+Researchers can now find individual concepts inside a model, and steer them.
+
+Anthropic extracted interpretable features from a production model in 2024, and said plainly what was missing.
+
+- It finds concepts. Features corresponding to specific ideas, which can be turned up or down to change behaviour.
+- It does not cover the model. In the authors’ own words, an incomplete description of the internal representations.
+- And it is slow. Circuit level work is still largely manual. The stated ambition is an MRI for AI within a decade.
+
+It is the only line of work that could turn grown back into understood.
+If it succeeds, several arguments on this site get much easier to settle. That is why it is worth following.
+
+Filed as: measured.
+Source: Templeton et al., Scaling Monosemanticity, Anthropic, 21 May 2024; Amodei, The Urgency of Interpretability, April 2025
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIconcepts #AIexplained #AIliteracy #AGI
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: Researchers can now find individual concepts inside a model, and steer them.
+Alt text slide 2: A four option multiple choice question: The current state of interpretability research is best described as:
+Alt text slide 3: The answer, with a diagram: Millions of features found, and still incomplete.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 119. scaling laws  (AI concepts)
+Folder: `out/scaling-laws/`  ·  8 slides
+
+```
+Model performance improves along a predictable curve as you add compute.
+
+A 70 billion parameter model beat a 280 billion one at equal compute, by seeing four times the data.
+
+- It makes spending rational. If the curve holds, a company can predict what a training run buys before it starts.
+- It changed what gets built. The rule of thumb that came out of it reshaped model sizes across the industry.
+- And the exact numbers are contested. Later work found the fit sensitive; the ratio is compute optimal for training, not for serving.
+
+The curve is smooth. Whether the abilities are is a different argument.
+That is the emergent abilities card, and it is why predictable spending does not mean predictable behaviour.
+
+Filed as: measured.
+Source: Kaplan et al., Scaling Laws for Neural Language Models, arXiv:2001.08361, 2020; Hoffmann et al., Training Compute-Optimal Large Language Models, arXiv:2203.15556, 2022
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIconcepts #AIexplained #AIliteracy #AGI
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: Model performance improves along a predictable curve as you add compute.
+Alt text slide 2: A four option multiple choice question: Chinchilla, in 2022, changed the field’s understanding by showing that:
+Alt text slide 3: The answer, with a diagram: Not too small. Undertrained.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 120. differential development  (AI concepts)
+Folder: `out/differential-development/`  ·  8 slides
+
+```
+Not whether to build, but in what order.
+
+Bostrom, 2002. Formalised in a 2022 paper, and adopted since under other names.
+
+- To those who want to stop. A lever that does not require the impossible: getting everyone to agree to halt.
+- To those who want to build. A framing where speed is fine, as long as defence goes first.
+- And the difficulty is telling them apart. Interpretability is clearly protective. Most capabilities are both.
+
+Most public argument is build or stop. This is the position in between, and it is old.
+It is also the frame most actual policy ends up implementing, whether or not anyone calls it that.
+
+Filed as: argument.
+Source: Bostrom, Existential Risks, Journal of Evolution and Technology 9(1), 2002; Sandbrink, Hobbs, Swett, Dafoe and Sandberg, Science and Engineering Ethics, 2022
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIconcepts #AIexplained #AIliteracy #AGI
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: Not whether to build, but in what order.
+Alt text slide 2: A four option multiple choice question: Differential technological development proposes:
+Alt text slide 3: The answer, with a diagram: Change the sequence, not the destination.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 121. compute governance  (AI concepts)
+Folder: `out/compute-governance/`  ·  8 slides
+
+```
+You cannot inspect an algorithm from orbit. You can count chips.
+
+Sastry, Heim and colleagues, 2024. It is the reasoning behind every threshold in every AI law.
+
+- Detectable. Large training runs need large facilities, which are hard to hide.
+- Excludable. A short supply chain means access can be granted or withheld.
+- Quantifiable. Operations can be counted, which makes a legal threshold writable.
+
+Algorithms keep getting more efficient, and thresholds do not move on their own.
+A line drawn in operations today buys less safety every year, automatically, without anyone deciding.
+
+Filed as: argument.
+Source: Sastry, Heim, Belfield, Anderljung, Brundage et al., Computing Power and the Governance of Artificial Intelligence, arXiv:2402.08797, 2024
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIconcepts #AIexplained #AIliteracy #AGI
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: You cannot inspect an algorithm from orbit. You can count chips.
+Alt text slide 2: A four option multiple choice question: Compute is proposed as a governance lever mainly because it is:
+Alt text slide 3: The answer, with a diagram: It is the one input that is physical and countable.
 Alt text slide 4: Three labelled points, each with a small diagram.
 Alt text slide 5: A short explanation of why the distinction matters.
 Alt text slide 6: The epistemic flag for this claim, and the source it came from.
