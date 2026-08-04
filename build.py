@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 """Generates the riskmap site. Shared chrome in one place so every page matches."""
-import os, io
+import os, io, json
 
 OUT = os.path.dirname(os.path.abspath(__file__))
 RISK = os.path.join(OUT, "risk")
 
 NAV = [("index.html","the map"),("pipeline.html","how it is made"),
-       ("taxonomy.html","the two axes"),("pdoom.html","the number"),
+       ("taxonomy.html","where the worry comes in"),
        ("words.html","the words")]
 
 def head(title, desc, current, base="../", nav=NAV):
@@ -72,6 +72,20 @@ def belle(l1, l2, l3):
 BELLE = belle("define risk", "which kind", "do you mean")
 BELLE_HOME = belle("what the bot", "i take hard things", "apart and draw them")
 
+# ---------------------------------------------------------------- Belle photo slots
+# Drop the expression PNGs into assets/belle/ using the slugs below and re-run.
+# Any slot whose file is missing renders as a labelled placeholder instead.
+def bslot(slug, alt, caption="", base="../", cls="bfig"):
+    path = os.path.join(OUT, "assets", "belle", slug + ".webp")
+    cap = f'<figcaption>{caption}</figcaption>' if caption else ''
+    if os.path.exists(path):
+        inner = f'<img src="{base}assets/belle/{slug}.webp" alt="{alt}" loading="lazy">'
+    else:
+        inner = (f'<div class="bph"><span class="s">belle</span>'
+                 f'<span class="n">{slug}</span>'
+                 f'<span class="s">drop {slug}.webp into assets/belle/</span></div>')
+    return f'<figure class="{cls}">{inner}{cap}</figure>'
+
 def page(name, title, desc, body):
     """A page inside /risk/."""
     html = head(title, desc, name) + body + foot()
@@ -116,7 +130,7 @@ index_body = f"""
 <span class="tag mint"><span class="dot">&#9679;</span> work in progress</span>
 </div>
 </div>
-<div class="stage">{BELLE}<div class="ph">hero illustration placeholder &middot; replace with your Belle render</div></div>
+<div class="stage">{bslot("innocent-curious","Belle looking curious")}</div>
 </div>
 </div>
 
@@ -134,18 +148,13 @@ index_body = f"""
 <span class="foot">walkthrough &middot; 5 steps</span></a>
 
 <a class="card" href="taxonomy.html">
-<h3>The two axes</h3>
-<p>How bad, and how it happens, are separate questions. Almost every confused argument is two people each holding one axis. This one is a grid you can click through.</p>
-<span class="foot">interactive grid</span></a>
-
-<a class="card" href="pdoom.html">
-<h3>The number, and why it is a weak instrument</h3>
-<p>Two people can both say ten percent and mean incompatible things. Build the sentence yourself and watch the number change meaning.</p>
-<span class="foot">interactive &middot; definition builder</span></a>
+<h3>Where the worry comes in</h3>
+<p>How bad, and how it happens, are separate questions, and almost every confused argument is two people each holding one axis. Includes the number people quote at you, and why two of them can say ten percent and mean incompatible things.</p>
+<span class="foot">interactive grid &middot; definition builder</span></a>
 
 <a class="card" href="words.html">
 <h3>The words</h3>
-<p>Fourteen terms the argument cannot proceed without, defined plainly. Test yourself first if you like.</p>
+<p>Thirty five terms the argument cannot proceed without, defined plainly, including the speculative ones people state as fact. Test yourself first if you like.</p>
 <span class="foot">quiz &middot; glossary</span></a>
 </div>
 
@@ -286,6 +295,8 @@ pipeline_body = f"""
 <p>Two more corrections worth carrying: real pipelines <strong>loop</strong> rather than run once, and the published figures people quote for model size and training compute are almost always taken from open weight models or regulatory thresholds, not from the closed systems being discussed.</p>
 </div>
 
+{bslot("noticed-something","Belle noticing something", "Stage five is the one that is different.")}
+
 <h2>Sources</h2>
 <p>Everything above was checked against these during the research pass. Where a claim is contested, the sources that disagree are both listed.</p>
 {srcs([
@@ -303,7 +314,6 @@ pipeline_body = f"""
 ])}
 
 {xlinks([("taxonomy.html","next","How bad, and how it happens, are separate questions"),
-         ("pdoom.html","related","Why a single probability hides the argument"),
          ("words.html","reference","The vocabulary, defined plainly")])}
 </div>
 """
@@ -415,41 +425,16 @@ taxonomy_body = f"""
 <p>What is new here is only the pairing of these two particular taxonomies, the twelve cells, and the wording inside them. It is a recombination of existing work, and the MIT AI Risk Repository, which catalogues over 1,700 risks drawn from 65 identified frameworks, is a good reminder that no taxonomy in this area is canonical, including this one.</p>
 </div>
 
-<h2>Sources</h2>
-{srcs([
-("https://global-catastrophic-risks.com/docs/Chap01.pdf","Bostrom and Cirkovic, Global Catastrophic Risks, introduction, OUP 2008","Origin of the global catastrophic risk definition and of the scope against intensity grid this page borrows its form from."),
-("https://existential-risk.com/concept","Bostrom, Existential Risk Prevention as Global Priority, Global Policy 4(1), 2013","The canonical definition, plus the four class typology: extinction, permanent stagnation, flawed realisation, subsequent ruination."),
-("https://www.lawfaremedia.org/article/thinking-about-risks-ai-accidents-misuse-and-structure","Zwetsloot and Dafoe, Thinking About Risks From AI: Accidents, Misuse and Structure, Lawfare, 11 February 2019","Origin of the structural risk category. Their point: technology can cause harm even when no single actor misuses it and it behaves as intended."),
-("https://internationalaisafetyreport.org/publication/international-ai-safety-report-2026","International AI Safety Report 2026, chaired by Yoshua Bengio","The most authoritative institutional source used here, backed by more than thirty governments. Source of the three way causal taxonomy and of the statement that the evidence base is uneven."),
-("https://airisk.mit.edu/","MIT AI Risk Repository (Slattery, Saeri, Noetel, Graham, Thompson et al.)","A living database of over 1,700 risks, drawn from 65 identified classifications and frameworks. Figures change as it is updated; checked August 2026. Evidence that no single taxonomy is canonical."),
-("https://arxiv.org/abs/2306.12001","Hendrycks, Mazeika and Woodside, An Overview of Catastrophic AI Risks, 2023","A four category academic alternative: malicious use, AI race, organisational risks, rogue AIs."),
-("https://theprecipice.com/faq","Ord, The Precipice, 2020","The 1 in 6 figure, the distinction between existential risk and existential catastrophe, and Ord's own caveats about his numbers."),
-("https://www.globalprioritiesinstitute.org/wp-content/uploads/Concepts-of-existential-catastrophe-Hilary-Greaves.pdf","Greaves, Concepts of Existential Catastrophe, Global Priorities Institute working paper 8-2023","Philosophical critique of every current definition, including the ones this page uses. A working paper, so not itself peer reviewed."),
-("https://deepmind.google/discover/blog/specification-gaming-the-flip-side-of-ai-ingenuity/","Krakovna et al., Specification gaming: the flip side of AI ingenuity, DeepMind 2020","Definition plus the canonical documented examples."),
-("https://arxiv.org/abs/2210.01790","Shah et al., Goal Misgeneralization, 2022","The distinction from specification gaming, stated by the authors rather than inferred."),
-("https://arxiv.org/abs/2501.16946","Kulveit, Douglas, Ammann, Turan, Krueger and Duvenaud, Gradual Disempowerment, 2025","The clearest statement of the systemic route to an existential outcome with no single misaligned system. A preprint, not a peer reviewed journal article."),
-("https://arxiv.org/abs/2206.13353","Carlsmith, Is Power-Seeking AI an Existential Risk?, 2022","A six premise decomposition with a probability attached to each premise, which is the opposite of a single headline number."),
-("https://longtermrisk.org/reducing-risks-of-astronomical-suffering-a-neglected-priority/","Althaus and Gloor, Reducing Risks of Astronomical Suffering, CLR 2016","The originating definition of s-risk, including the authors' own description of it as speculative."),
-("https://arxiv.org/abs/2501.04064","Swoboda, Uuk, Lauwaert, Rebera, Oimann, Chomanski and Prunkl, Examining popular arguments against AI existential risk, 2025","Even handed reconstruction of the arguments against, used here so the sceptical side is quoted rather than characterised."),
-("https://www.scientificamerican.com/article/we-need-to-focus-on-ais-real-harms-not-imaginary-existential-risks/","Bender and Hanna, AI Causes Real Harm. Let's Focus on That, Scientific American 2023","The distraction argument, in its authors' own words."),
-("https://www.pnas.org/doi/10.1073/pnas.2419055122","Existential risk narratives about AI do not distract from its immediate harms, PNAS 2025","A preregistered experiment, and the only direct empirical test of the crowding out claim. Limited to individual attitudes."),
-])}
 
-{xlinks([("pdoom.html","next","Why one number cannot hold all of this"),
-         ("pipeline.html","back","How the systems being argued about are built"),
-         ("words.html","reference","Every term here, defined plainly")])}
-</div>
-"""
-
-# ================================================================= P(DOOM)
-pdoom_body = f"""
-<div class="wrap hero narrow">
-<span class="kicker">walkthrough &middot; 03</span>
-<h1>Two people say ten percent and mean incompatible things</h1>
-<p class="lede">"p(doom)" is informal shorthand for the probability of a catastrophic outcome from AI. It has no agreed definition, no resolution date, and no way for anyone to be calibrated on it. That does not make it meaningless. It does make it a weak instrument.</p>
+<div class="bsay">
+{bslot("unimpressed","Belle looking unimpressed")}
+<div><span class="h">before you quote it</span>
+<p>Someone is going to tell you the probability. Ask them what outcome they mean, by when, and whether they are counting the chance it never happens. Most of the time the number falls apart in your hands.</p></div>
 </div>
 
-<div class="wrap">
+<h2>The number you will see quoted</h2>
+<p>Sooner or later someone tells you the probability. It has a nickname, p(doom), no agreed definition, no resolution date, and no way for anyone to be calibrated on it. That does not make it meaningless. It does make it a weak instrument, and it is worth seeing why by building one yourself.</p>
+
 
 <div class="builder" data-builder>
 <p class="meta" style="margin-bottom:22px">Build the sentence. Same number, three choices, and the meaning changes completely.</p>
@@ -505,8 +490,24 @@ pdoom_body = f"""
 </div>
 
 <h2>Sources</h2>
-<p>Named estimates are linked to the place the person actually said it, not to coverage of it. Where someone declined to give a number, that is sourced too.</p>
 {srcs([
+("https://global-catastrophic-risks.com/docs/Chap01.pdf","Bostrom and Cirkovic, Global Catastrophic Risks, introduction, OUP 2008","Origin of the global catastrophic risk definition and of the scope against intensity grid this page borrows its form from."),
+("https://existential-risk.com/concept","Bostrom, Existential Risk Prevention as Global Priority, Global Policy 4(1), 2013","The canonical definition, plus the four class typology: extinction, permanent stagnation, flawed realisation, subsequent ruination."),
+("https://www.lawfaremedia.org/article/thinking-about-risks-ai-accidents-misuse-and-structure","Zwetsloot and Dafoe, Thinking About Risks From AI: Accidents, Misuse and Structure, Lawfare, 11 February 2019","Origin of the structural risk category. Their point: technology can cause harm even when no single actor misuses it and it behaves as intended."),
+("https://internationalaisafetyreport.org/publication/international-ai-safety-report-2026","International AI Safety Report 2026, chaired by Yoshua Bengio","The most authoritative institutional source used here, backed by more than thirty governments. Source of the three way causal taxonomy and of the statement that the evidence base is uneven."),
+("https://airisk.mit.edu/","MIT AI Risk Repository (Slattery, Saeri, Noetel, Graham, Thompson et al.)","A living database of over 1,700 risks, drawn from 65 identified classifications and frameworks. Figures change as it is updated; checked August 2026. Evidence that no single taxonomy is canonical."),
+("https://arxiv.org/abs/2306.12001","Hendrycks, Mazeika and Woodside, An Overview of Catastrophic AI Risks, 2023","A four category academic alternative: malicious use, AI race, organisational risks, rogue AIs."),
+("https://theprecipice.com/faq","Ord, The Precipice, 2020","The 1 in 6 figure, the distinction between existential risk and existential catastrophe, and Ord's own caveats about his numbers."),
+("https://www.globalprioritiesinstitute.org/wp-content/uploads/Concepts-of-existential-catastrophe-Hilary-Greaves.pdf","Greaves, Concepts of Existential Catastrophe, Global Priorities Institute working paper 8-2023","Philosophical critique of every current definition, including the ones this page uses. A working paper, so not itself peer reviewed."),
+("https://deepmind.google/discover/blog/specification-gaming-the-flip-side-of-ai-ingenuity/","Krakovna et al., Specification gaming: the flip side of AI ingenuity, DeepMind 2020","Definition plus the canonical documented examples."),
+("https://arxiv.org/abs/2210.01790","Shah et al., Goal Misgeneralization, 2022","The distinction from specification gaming, stated by the authors rather than inferred."),
+("https://arxiv.org/abs/2501.16946","Kulveit, Douglas, Ammann, Turan, Krueger and Duvenaud, Gradual Disempowerment, 2025","The clearest statement of the systemic route to an existential outcome with no single misaligned system. A preprint, not a peer reviewed journal article."),
+("https://arxiv.org/abs/2206.13353","Carlsmith, Is Power-Seeking AI an Existential Risk?, 2022","A six premise decomposition with a probability attached to each premise, which is the opposite of a single headline number."),
+("https://longtermrisk.org/reducing-risks-of-astronomical-suffering-a-neglected-priority/","Althaus and Gloor, Reducing Risks of Astronomical Suffering, CLR 2016","The originating definition of s-risk, including the authors' own description of it as speculative."),
+("https://arxiv.org/abs/2501.04064","Swoboda, Uuk, Lauwaert, Rebera, Oimann, Chomanski and Prunkl, Examining popular arguments against AI existential risk, 2025","Even handed reconstruction of the arguments against, used here so the sceptical side is quoted rather than characterised."),
+("https://www.scientificamerican.com/article/we-need-to-focus-on-ais-real-harms-not-imaginary-existential-risks/","Bender and Hanna, AI Causes Real Harm. Let's Focus on That, Scientific American 2023","The distraction argument, in its authors' own words."),
+("https://www.pnas.org/doi/10.1073/pnas.2419055122","Existential risk narratives about AI do not distract from its immediate harms, PNAS 2025","A preregistered experiment, and the only direct empirical test of the crowding out claim. Limited to individual attitudes."),
+
 ("https://www.lesswrong.com/posts/xWMqsvHapP3nwdSW8/my-views-on-doom","Christiano, My views on doom, 2023","The clearest worked example of one person giving several different numbers for several precisely defined outcomes, with his own half a significant figure caveat."),
 ("https://www.lesswrong.com/posts/omDu7vNy3YyKXsvCd/taboo-p-doom","Taboo P(doom), LessWrong 2023","An early argument for taking the term apart rather than quoting it, and the ancestor of the axes this page's builder is made from."),
 ("https://www.lesswrong.com/posts/4mBaixwf4k8jk7fG4/yudkowsky-on-don-t-use-p-doom","Yudkowsky on Don't use p(doom)","The high estimate camp rejecting the metric itself, which is worth knowing before treating the number as a scoreboard."),
@@ -525,9 +526,8 @@ pdoom_body = f"""
 ("https://internationalaisafetyreport.org/publication/international-ai-safety-report-2026","International AI Safety Report 2026","Withholds a number rather than adjudicating between the published estimates, which is itself a position worth noting."),
 ])}
 
-{xlinks([("taxonomy.html","back","What the number is trying to compress"),
-         ("words.html","next","The vocabulary, defined plainly"),
-         ("pipeline.html","related","How the systems in question are built")])}
+{xlinks([("pipeline.html","back","How the systems being argued about are built"),
+         ("words.html","reference","Every term here, defined plainly")])}
 </div>
 """
 
@@ -557,6 +557,24 @@ QUIZ = [
  ("Goal misgeneralisation means the system:",
   ["Forgot its goal","Learned a goal that worked in training and generalises wrongly elsewhere","Has too many goals","Was given no goal"],
   1,"Distinct from specification gaming: here the training objective was fine, and what was learned transfers badly."),
+ ('"Recursive self improvement" is:',
+  ["A measured property of current models","A hypothesis about a compounding loop that has not been demonstrated","A training technique used by every lab","A type of chip"],
+  1,"It is an argument, and a disputed one. No such loop has been shown. Treating it as an observed fact is one of the most common errors in coverage."),
+ ("A model's context window is:",
+  ["Its long term memory of you","How much text it can hold in front of it at once","The hours the service is available","The size of its training data"],
+  1,"It is not memory. Between conversations it retains nothing about you unless the product around it deliberately stores something."),
+ ('"Open weights" means:',
+  ["The full training data and code are public","The trained weights can be downloaded and run by anyone","The company is publicly traded","The model has no safeguards"],
+  1,"Weights published, training data and code usually not. It is not the same as open source, and a release cannot be undone."),
+ ('"AGI" has:',
+  ["One precise agreed technical definition","No agreed definition, with labs using incompatible ones","A definition set by international treaty","The same meaning as the singularity"],
+  1,"Two people using the word are frequently not talking about the same milestone. Ask which definition before arguing about the date."),
+ ('"Fast takeoff" refers to:',
+  ["How quickly a model answers you","A claimed jump to far beyond human level over days to months","The speed of a data centre build","How fast a company grows"],
+  1,"It is a position in an argument about a future process, not a measurement. Its rival, slow takeoff, says the same transition takes years and is visible while it happens."),
+ ('When someone says an AI is "intelligent," they usually mean:',
+  ["It is conscious","It scores well on a set of tests","It has general knowledge of the world","It can feel emotions"],
+  1,"Almost every public claim about machine intelligence is a claim about benchmark performance. That is measurable and narrow. The word carries a great deal more than the evidence does."),
 ]
 
 import json as _json
@@ -579,6 +597,27 @@ GLOSS = [
  ("goal misgeneralisation","Behaviour learned in training that transfers wrongly to a new setting."),
  ("existential risk","The permanent destruction of humanity's long term potential. Broader than extinction."),
  ("s-risk","Suffering risk. A small and speculative research area about outcomes involving very large scale suffering."),
+ ("parameters","The count of those weights. More is not automatically better: the Chinchilla result showed many large models were undertrained rather than too small."),
+ ("compute","Processing work, measured in floating point operations. It is the unit the law now uses: Europe presumes systemic risk above 10^25, California defines a frontier model above 10^26."),
+ ("scaling laws","Measured relationships between compute, data, model size and error. Empirical regularities observed so far, not laws of nature, and they say nothing about which abilities appear when."),
+ ("inference","Running a trained model to get an answer, as opposed to training it. A different cost, paid every single time you use it."),
+ ("context window","How much text the model can hold in front of it at once. Not memory. Outside that window, and between conversations, it retains nothing about you unless a product deliberately stores it."),
+ ("hallucination","Confidently stated output that is not true. The word is contested for implying perception; some researchers prefer confabulation, and others argue it hides the fact that the system has no notion of truth to begin with."),
+ ("chain of thought","Intermediate text a model produces before its answer. It usually helps accuracy. It is not a transcript of the actual computation, and treating it as one is a common error."),
+ ("agent","A model given tools and a loop, so it can take actions rather than only produce text. The safety questions change once a system can act."),
+ ("open weights","The trained weights are published, so anyone can download and run them. Not the same as open source, since the training data and code usually stay private. Once released they cannot be recalled, and refusal behaviour can be cheaply removed."),
+ ("distillation","Training a smaller model on a larger one's outputs, to get much of the behaviour at a fraction of the cost."),
+ ("jailbreak","A prompt that gets past a model's safeguards. The UK AI Security Institute has reported finding universal jailbreaks for every system it has tested."),
+ ("prompt injection","Instructions hidden inside content a model reads, such as a web page or a document, which it may then follow. The core unsolved security problem for agents."),
+ ("intelligence","The word doing the most unexamined work in this whole subject. There is no agreed definition, for machines or for people: Legg and Hutter collected around seventy competing ones in 2007 and the field has not converged since. In practice, when someone says a model is intelligent, they almost always mean it scores well on tests, which is a much narrower claim and a measurable one. Watch for the slide from the second meaning to the first."),
+ ("benchmark","A fixed set of tasks used to compare models. Useful, and load bearing for almost every claim about intelligence, but scores drift upward for reasons other than capability: test questions leak into training data, and models increasingly behave differently when they detect they are being evaluated."),
+ ("AGI","Artificial general intelligence. There is no agreed definition. Labs use incompatible ones, some economic, some capability based, some about autonomy, so two people using the word are often not discussing the same milestone."),
+ ("recursive self improvement","The hypothesis that a system good enough at AI research improves itself, and each improved version is better at improving, compounding. It is an argument, not an observation: no such loop has been demonstrated, and it is disputed in the peer reviewed literature."),
+ ("enslaved god","One of the twelve possible futures Max Tegmark sets out in Life 3.0: a superintelligent system is successfully contained by people and put to work producing enormous wealth and technology, for good or ill depending entirely on who holds the leash. It is worth knowing because it names the uncomfortable thing at the end of the alignment project. If you fully succeed at building something far more capable than us and keeping it under control, and if that thing turns out to have any moral status at all, you have not obviously arrived somewhere good. Whether such a system could have moral status is genuinely open, and a serious academic literature now treats the question as worth asking rather than absurd."),
+ ("the singularity","A hypothesised point past which change becomes too fast or too alien to forecast. Popularised long before current systems, used loosely today, and not interchangeable with recursive self improvement even though the two are often merged."),
+ ("fast takeoff","The position that once systems can meaningfully improve themselves, the jump from roughly human level to far beyond it takes days to months, leaving no time to react or course correct. This is the scenario most often depicted in coverage. It is a claim about a future process, not a measurement, and its plausibility rests on how strongly self improvement compounds, which nobody has observed."),
+ ("slow takeoff","The competing position that the same transition takes years and is visible while it happens, arriving through many incremental deployments rather than one leap, so there is time to notice and respond. Confusingly, slow does not mean gentle: some slow takeoff scenarios still end badly, just legibly."),
+ ("takeoff speed","The umbrella term for that disagreement. Both positions are arguments held by serious people, and neither is a measured quantity. Which one someone assumes usually explains most of the rest of their view."),
 ]
 glosshtml = "".join(
   f'<div class="src-item"><div class="t"><strong>{t}</strong> &nbsp; {d}</div></div>' for t,d in GLOSS)
@@ -587,7 +626,7 @@ words_body = f"""
 <div class="wrap hero narrow">
 <span class="kicker">reference &middot; 04</span>
 <h1>The words</h1>
-<p class="lede">Fourteen terms the argument cannot proceed without. Test yourself first if you like, then keep the glossary open while you read the other pieces.</p>
+<p class="lede">Thirty five terms the argument cannot proceed without. Some describe how these systems actually work. Others are hypotheses that get stated as fact, and those are marked. Test yourself first if you like, then keep the glossary open while you read the other pieces.</p>
 </div>
 
 <div class="wrap">
@@ -607,12 +646,21 @@ words_body = f"""
 {glosshtml}
 </div>
 
+<div class="bsay">
+{bslot("sly-one","Belle looking sly")}
+<div><span class="h">no peeking</span>
+<p>Eight questions. The explanation comes after each answer, so a wrong guess still teaches you the term.</p></div>
+</div>
+
 <h2>Where these definitions come from</h2>
 <p>Each term is defined the way its originating source defines it, not the way it is commonly used.</p>
 {srcs([
 ("https://existential-risk.com/concept","Bostrom, Existential Risk Prevention as Global Priority, 2013","existential risk. The definition is broader than extinction, and this is where that breadth is set out."),
 ("https://deepmind.google/discover/blog/specification-gaming-the-flip-side-of-ai-ingenuity/","Krakovna et al., Specification gaming, DeepMind 2020","specification gaming, with the compiled list of documented real examples."),
 ("https://arxiv.org/abs/2210.01790","Shah et al., Goal Misgeneralization, 2022","goal misgeneralisation, and the authors' own statement of how it differs from specification gaming."),
+("https://arxiv.org/abs/0706.3639","Legg and Hutter, A Collection of Definitions of Intelligence, 2007","intelligence. A survey compiling roughly seventy competing informal definitions, and the clearest evidence that the field has never agreed on one."),
+("https://futureoflife.org/ai/ai-aftermath-scenarios/","Tegmark, Life 3.0 AI aftermath scenarios, via the Future of Life Institute","enslaved god. One of twelve scenarios, described as a superintelligent AI confined by humans and used to produce technology and wealth, for good or bad depending on the controllers."),
+("https://arxiv.org/abs/2411.00986","Long, Sebo, Butlin, Birch, Chalmers et al., Taking AI Welfare Seriously, 2024","The academically credentialled treatment of whether these systems could have moral status, with an unusually clear statement of what is not being claimed."),
 ("https://arxiv.org/abs/2203.02155","Ouyang et al., InstructGPT, 2022","base model, fine-tuning, and RLHF, in the paper that established the pipeline."),
 ("https://arxiv.org/abs/2212.08073","Bai et al., Constitutional AI, Anthropic 2022","Constitutional AI, and the precise boundary between it and RLHF."),
 ("https://www.lawfaremedia.org/article/thinking-about-risks-ai-accidents-misuse-and-structure","Zwetsloot and Dafoe, Accidents, Misuse and Structure, Lawfare 2019","structural risk, as originally proposed."),
@@ -623,13 +671,163 @@ words_body = f"""
 
 {xlinks([("pipeline.html","start here","How a language model gets made"),
          ("taxonomy.html","then","How bad, and how it happens"),
-         ("pdoom.html","then","The number, and its limits")])}
+         ("taxonomy.html","then","Where the worry comes in")])}
 </div>
 <script>{qjs}</script>
 """
 
+# ================================================================= FRONTIER
+ROOTNAV = [("index.html","home"),("frontier.html","who controls it"),("risk/index.html","the risk map")]
+
+STACK = [
+ ("Companies selling you something with AI in it","thousands","100%",
+  "Almost every company you deal with now ships an AI feature. Your bank, your email, your phone. Practically none of them made the model underneath it. They are renting.",
+  "measured","flag emp",""),
+ ("Organisations that have trained a frontier scale model","12","46%",
+  "As of June 2025, Epoch AI counted just over thirty models trained above ten to the twenty five floating point operations, from twelve developers worldwide. That threshold is the same one written into European law. The count has grown since, but not by much.",
+  "measured","flag emp","Epoch AI, June 2025"),
+ ("Companies that own most of the world's AI computing power","5","26%",
+  "Amazon, Google, Meta, Microsoft and Oracle together hold about 71 percent of global AI compute, up from 63 percent two years earlier. The famous labs mostly rent from them or are funded by them. Google alone holds roughly a quarter of world capacity.",
+  "measured","flag emp","Epoch AI, Q4 2025 data"),
+ ("Companies whose chips do most of the work","1","15%",
+  "More than sixty percent of the world's AI compute runs on Nvidia. In the quarter ending April 2026 it sold 75.2 billion dollars of data centre hardware, up 92 percent in a year.",
+  "measured","flag emp","Nvidia results, May 2026"),
+ ("Factories that can actually manufacture those chips","~1","9%",
+  "Nvidia does not make anything. Its own annual report says it uses outside foundries, chiefly TSMC. In mid 2026, 77 percent of TSMC's wafer revenue came from its most advanced nodes. There is no second supplier at that level.",
+  "measured","flag emp","Nvidia 10-K and TSMC Q2 2026"),
+ ("Companies that make the machine that makes the chips","1","4%",
+  "ASML, in the Netherlands, is the only manufacturer on earth of the extreme ultraviolet lithography machines required for leading edge chips. One company. One country. Each machine weighs about 180 tonnes and is roughly the size of a school bus.",
+  "measured","flag emp","ASML, June 2026"),
+]
+
+stack_rows = "".join(
+  f'<button class="strow" type="button"><div class="bar" style="width:{w}"></div>'
+  f'<div class="lab"><span class="t">{t}</span><span class="c">{c}</span></div></button>'
+  for t,c,w,_b,_f,_fc,_s in STACK)
+
+stack_js = json.dumps([{"t":t,"b":b,"f":f,"fc":fc,"s":s} for t,c,w,b,f,fc,s in STACK])
+
+frontier_body = f"""
+<div class="wrap hero">
+<div class="herogrid">
+<div>
+<span class="kicker">walkthrough &middot; who controls it</span>
+<h1>Almost nobody on earth can build one of these.</h1>
+<p class="lede">You use these tools every day. The number of organisations that can actually make one is small enough to list, and it gets smaller the further down you look. Here is the whole stack, counted, with sources.</p>
+<div class="tags">
+<span class="tag rose">all checkable fact</span>
+<span class="tag">figures date stamped</span>
+</div>
+</div>
+<div class="stage">{bslot("hands-hips-pedantic","Belle standing with hands on hips, about to explain something precisely", "", base="")}<div class="ph">hero illustration slot</div></div>
+</div>
+</div>
+
+<div class="wrap">
+<div class="note">
+<span class="h">the idea to hold on to</span>
+<p>Every layer below depends on the one under it, and every layer is narrower. People argue about which company they trust. The more useful question is how few there are to choose between.</p>
+</div>
+
+<h2>The stack, counted</h2>
+<p>Click any row. The bar is roughly to scale.</p>
+<div class="stack" data-stack>
+{stack_rows}
+<div class="stout"></div>
+</div>
+
+<h2>Who actually builds them</h2>
+<p>A frontier lab trains its own models at or near the top of the compute distribution. A company that ships an AI product buys somebody else's. The distinction is now written into law: Europe presumes systemic risk above ten to the twenty five operations of training compute, and California defines a frontier model above ten to the twenty six.</p>
+
+<div class="metrics">
+<div class="metric"><span class="n">2</span><span class="l">countries with frontier labs, plus France</span></div>
+<div class="metric"><span class="n">27%</span><span class="l">Microsoft's stake in OpenAI, disclosed</span></div>
+<div class="metric"><span class="n">not said</span><span class="l">Amazon's and Google's stakes in Anthropic</span></div>
+</div>
+
+<p>The American labs are OpenAI, Anthropic, Google DeepMind, SpaceXAI (which absorbed xAI in February 2026), Meta and Microsoft AI. The Chinese labs are DeepSeek, Alibaba, Moonshot, Z.ai, ByteDance, Tencent and Baidu. Mistral in France is the only European organisation training at this scale. That is the list.</p>
+<p>Ownership is worth knowing because it is not what the branding suggests. Microsoft holds about 27 percent of OpenAI on an as converted basis, valued around 135 billion dollars. Amazon and Google have each committed tens of billions to Anthropic, and <strong>neither has ever disclosed what percentage it owns</strong>. Both Anthropic and OpenAI filed confidential draft stock offering documents in June 2026, which means no public financials exist yet.</p>
+
+<div class="bsay">
+{bslot("annoyed-skeptical","Belle looking sceptical, arms folded", base="")}
+<div><span class="h">worth sitting with</span>
+<p>Two of the largest companies on earth have put tens of billions of dollars into a single AI lab, and neither will say what share of it they own. That is not a scandal. It is just the level of visibility the public currently has.</p></div>
+</div>
+
+<h2>What one of these costs</h2>
+<p>Training compute for the largest models has grown about five times a year since 2020. Cost has grown about three and a half times a year. Epoch AI's estimate for a single recent training run, xAI's Grok 4, is roughly 490 million dollars and 310 gigawatt hours of electricity, with significant uncertainty attached.</p>
+<p>The figure people quote in the other direction, DeepSeek's 5.6 million dollars, is real but describes only the final training run. It excludes the failed experiments, the research staff and the cluster itself. Quoting it as the cost of building DeepSeek is like quoting the petrol as the cost of the car.</p>
+
+<div class="well">
+<h2 style="margin-top:0">The number that puts it in scale</h2>
+<p>Alphabet, Amazon, Meta and Microsoft are together guiding to somewhere around <strong>600 to 685 billion dollars of capital spending in 2026 alone</strong>. Epoch estimates that across the big five, capital spending overtakes operating cash flow around the third quarter of 2026, meaning the buildout stops paying for itself out of profits and starts requiring debt.</p>
+<p>Sixty one percent of all venture capital raised anywhere in the world in 2025 went to AI companies: 258.7 billion dollars out of 427.1 billion. In 2022 the figure was thirty percent.</p>
+</div>
+
+<h2>Where the bill actually lands</h2>
+<p>This is the part that reaches people who have never opened a chatbot. The world's AI data centres drew about 30 gigawatts at the end of 2025, comparable to the peak power draw of New York State. American data centres used 192 terawatt hours in 2024, about 4.7 percent of national electricity.</p>
+<p>The clearest measured consequence so far is in the PJM grid, which serves about 65 million people across thirteen states and Washington DC. Its 2028 capacity auction cleared at the price cap for the third year running, cost 16.4 billion dollars, and still came up 6,831 megawatts short of its own reliability requirement. PJM's independent market monitor attributes 29.4 billion dollars of the 63.6 billion in capacity charges across the last four auctions to data centres.</p>
+
+<div class="metrics">
+<div class="metric"><span class="n">46%</span><span class="l">of recent PJM capacity cost, data centre attributed</span></div>
+<div class="metric"><span class="n">6 of 7</span><span class="l">announced Stargate sites producing nothing</span></div>
+<div class="metric"><span class="n">30 GW</span><span class="l">global AI data centre draw, end of 2025</span></div>
+</div>
+<p class="meta">The Stargate figure is worth holding next to the announcements. As of April 2026, satellite and permit analysis found one site with 1.2 gigawatts announced and 0.3 operational. The other six: zero.</p>
+
+<h2>Who can actually make them stop</h2>
+<p>Almost nobody, and more than you would guess from the headlines.</p>
+<p><strong>The European Commission</strong> gained enforcement powers over general purpose AI model providers on 2 August 2026, two days before this page was written. It can demand documentation, demand access to a model to evaluate it, order mitigation, and in serious cases order withdrawal from the European market, with fines up to three percent of worldwide turnover or fifteen million euros, whichever is higher. This is the only such power anywhere in the world.</p>
+<p><strong>California</strong> can compel a large frontier developer to publish a safety framework and to report critical safety incidents within fifteen days, or twenty four hours where there is imminent risk of death. Penalties up to one million dollars per violation.</p>
+<p><strong>Everyone else publishes guidance.</strong> The American CAISI and the UK AI Security Institute both work through voluntary agreements. The UK institute has priority access to top models because the labs grant it, not because anyone requires it.</p>
+
+<div class="bsay">
+{bslot("deadpan-annoyed-1","Belle looking flatly unimpressed", "", base="")}
+<div><span class="h">the honest summary</span>
+<p>As of today, no authority anywhere can stop a frontier training run before it happens, require permission to start one, or compel anyone to hand over a model's weights. Everything else is paperwork after the fact.</p></div>
+</div>
+
+<h2>The mismatch</h2>
+<p>One independent estimate puts the number of people working full time on AI safety worldwide at about <strong>1,100</strong>, roughly 600 technical and 500 not, across 115 organisations. The author says it undercounts work happening inside the labs. In the same year, four companies are spending on the order of 600 billion dollars building the systems.</p>
+{bslot("worry-about-future","Belle looking worried about the future", "One of these numbers is people. The other is dollars.", base="")}
+<p class="meta">That ratio is not an argument by itself. Plenty of important fields are small. It is offered as a fact about proportion, and what you make of it is yours.</p>
+
+<h2>Sources</h2>
+<p>Everything above is dated. The fast moving items are flagged in the notes so you can tell what will be stale first.</p>
+{srcs([
+("https://epoch.ai/data-insights/models-over-1e25-flop","Epoch AI, Models trained above 10^25 FLOP","The count of twelve developers, as of June 2025. Estimated, and the oldest figure on this page."),
+("https://epoch.ai/data-insights/hyperscalers-control-most-compute","Epoch AI, Hyperscalers control most compute","Five companies at 71 percent of world AI compute, Q4 2025 data, measured in H100 equivalents. Estimated."),
+("https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm","Nvidia annual report, fiscal year ended 25 January 2026","Nvidia's own statement that it uses outside foundries including TSMC and Samsung, and TSMC's CoWoS packaging. The company with most of the world's AI compute owns no factories."),
+("https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-first-quarter-fiscal-2027","Nvidia Q1 FY2027 results, 20 May 2026","75.2 billion dollars of data centre revenue in one quarter, up 92 percent. Disclosed. Superseded at the next results date."),
+("https://pr.tsmc.com/english/news/3326","TSMC second quarter 2026 results, 16 July 2026","77 percent of wafer revenue from 7nm and below. Disclosed."),
+("https://www.asml.com/en/news/press-releases/2026/q2-2026-financial-results","ASML second quarter 2026 results, 15 July 2026","The company financials. ASML's position as sole maker of EUV lithography is structural rather than a figure that moves."),
+("https://www.dutchnews.nl/2026/06/asml-denies-us-accusation-an-advanced-machine-reached-china/","ASML statement on EUV shipments, 19 June 2026","The company's own words on never having shipped an EUV machine or specially designed EUV component to China, and the physical scale of the machines."),
+("https://epoch.ai/data-insights/grok-4-training-resources","Epoch AI, Grok 4 training resources, 12 September 2025","246 million H100 hours, 310 gigawatt hours, roughly 490 million dollars median estimate. Epoch flags significant uncertainty."),
+("https://epoch.ai/trends","Epoch AI Trends dashboard","Compute growing about five times a year, cost about three and a half times a year. Carries its own last updated stamp, currently February 2026."),
+("https://epoch.ai/data-insights/hyperscaler-capex-vs-cash-flow","Epoch AI, Hyperscaler capex versus cash flow, 16 June 2026","The projection that capital spending overtakes operating cash flow around Q3 2026. Estimated."),
+("https://www.oecd.org/en/about/news/announcements/2026/02/ai-firms-capture-61-percent-of-global-venture-capital-in-2025.html","OECD, AI firms capture 61 percent of global venture capital, February 2026","258.7 billion dollars of a 427.1 billion global total, against thirty percent in 2022."),
+("https://epoch.ai/data-insights/ai-datacenter-power","Epoch AI, AI data centre power, 16 January 2026","About 30 gigawatts at the end of 2025, against New York State's roughly 31 gigawatt peak. Rated capacity, not metered consumption, so treat as an upper bound."),
+("https://www.pjm.com/-/media/DotCom/about-pjm/newsroom/2026-releases/20260714-pjm-capacity-auction-procures-138318-mw-of-generation-resources.pdf","PJM 2028/2029 capacity auction results, 14 July 2026","Cleared at the price cap for a third year, 16.4 billion dollars, 6,831 megawatts short of the reliability requirement, with PJM naming data centre load growth."),
+("https://www.utilitydive.com/news/pjm-data-centers-capacity-auction-imm-bowring/825626/","Monitoring Analytics via Utility Dive, July 2026","PJM's independent market monitor attributing 29.4 billion of 63.6 billion in capacity charges across four auctions to data centres."),
+("https://epoch.ai/publications/openai-stargate-where-the-us-sites-stand","Epoch AI, Where the Stargate sites stand, 17 April 2026","Satellite and permit analysis. One site partly operational, six at zero."),
+("https://artificialintelligenceact.eu/enforcement-of-chapter-v-under-the-eu-ai-act/","EU AI Act, enforcement of Chapter V","Commission enforcement powers over general purpose AI providers commencing 2 August 2026, and the three percent of worldwide turnover ceiling."),
+("https://artificialintelligenceact.eu/article/51/","EU AI Act Article 51","The ten to the twenty five FLOP presumption of systemic risk."),
+("https://www.whitecase.com/insight-alert/california-enacts-landmark-ai-transparency-law-transparency-frontier-artificial","California SB 53, Transparency in Frontier Artificial Intelligence Act","In force 1 January 2026. The ten to the twenty six threshold, the fifteen day and twenty four hour incident reporting duties, and the one million dollar per violation penalty."),
+("https://www.nist.gov/caisi","NIST Center for AI Standards and Innovation","Works through voluntary agreements with developers. No enforcement authority."),
+("https://www.aisi.gov.uk/","UK AI Security Institute","Technical evaluation body with model access granted voluntarily by developers. No statutory power."),
+("https://blogs.microsoft.com/blog/2025/10/28/the-next-chapter-of-the-microsoft-openai-partnership/","Microsoft on the OpenAI partnership, 28 October 2025","The disclosed 27 percent as converted stake, valued around 135 billion dollars."),
+("https://www.anthropic.com/news/anthropic-amazon-compute","Anthropic and Amazon compute announcement, 20 April 2026","The additional investment and the up to 5 gigawatts of capacity. Note that no percentage stake is stated here or anywhere else."),
+("https://forum.effectivealtruism.org/posts/7YDyziQxkWxbGmF3u/ai-safety-field-growth-analysis-2025","AI safety field growth analysis, 2025","The roughly 1,100 full time figure across 115 organisations. An independent estimate whose author states it undercounts safety work inside frontier labs and universities."),
+])}
+
+{xlinks([("risk/pipeline.html","next","How one of these is actually made"),
+         ("risk/index.html","then","What people mean when they argue about the risk"),
+         ("risk/words.html","reference","The vocabulary, defined plainly")])}
+</div>
+<script>window.STACK={stack_js};</script>
+"""
+
 # ================================================================= ROOT / HOME
-ROOTNAV = [("index.html","home"),("risk/index.html","the ai risk map")]
 
 home_body = f"""
 <div class="wrap hero">
@@ -644,7 +842,7 @@ home_body = f"""
 <span class="tag mint"><span class="dot">&#9679;</span> more coming</span>
 </div>
 </div>
-<div class="stage">{BELLE_HOME}<div class="ph">hero illustration placeholder &middot; replace with your Belle render</div></div>
+<div class="stage">{bslot("hands-out-cheeky","Belle with her hands out, mid explanation", base="")}</div>
 </div>
 </div>
 
@@ -652,6 +850,12 @@ home_body = f"""
 <div class="note">
 <span class="h">who is doing this</span>
 <p>I am Elizabeth Beier, a designer who learned to build. I make things with these systems every day, and when a subject is too tangled to hold in my head I do the same thing I have always done with a hard brief: take it apart, draw it, and check my work against the sources. These are those, in public.</p>
+</div>
+
+<div class="bsay">
+{bslot("warm-neutral","Belle, warm and neutral", base="")}
+<div><span class="h">a note on the drawings</span>
+<p>Belle turns up throughout these pages. She is here to mark tone, not to soften the material: when something is uncomfortable she looks uncomfortable, and when a claim is thin she looks unconvinced.</p></div>
 </div>
 
 <h2>The explainers</h2>
@@ -662,7 +866,6 @@ home_body = f"""
 
 {xlinks([("risk/pipeline.html","jump in","How a language model gets made"),
          ("risk/taxonomy.html","jump in","The two axes"),
-         ("risk/pdoom.html","jump in","The number and its limits"),
          ("risk/words.html","jump in","The words, with a quiz")], "two")}
 
 <h2>How these are made</h2>
@@ -684,10 +887,11 @@ home_body = f"""
 
 rootpage("index.html","Home","Interactive plain language walkthroughs of subjects that are hard to see clearly, by Elizabeth Beier.", home_body, ROOTNAV,
          "plain language walkthroughs of things that are hard to see clearly")
+rootpage("frontier.html","Who controls the frontier","How few organisations can actually build a frontier AI model, counted, with sources.", frontier_body, ROOTNAV,
+         "who can actually build one of these, counted")
 
 page("index.html","The map","A plain language map of what people mean when they talk about AI risk.", index_body)
 page("pipeline.html","How a language model gets made","Five stages from raw text to a deployed assistant, and where the safety work attaches.", pipeline_body)
 page("taxonomy.html","The two axes","Severity and cause are separate questions. An interactive grid of AI risk categories.", taxonomy_body)
-page("pdoom.html","The number","Why two people can say ten percent and mean incompatible things.", pdoom_body)
 page("words.html","The words","A quiz and glossary for the vocabulary of AI risk.", words_body)
 print("done")

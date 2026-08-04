@@ -208,3 +208,33 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--s3);flex-wrap:
   *{animation:none!important;transition:none!important}
   html{scroll-behavior:auto}
 }
+
+/* ---------- belle expression slots ---------- */
+.bfig{margin:0}
+.bfig img{width:100%;height:auto;display:block}
+.bph{aspect-ratio:3/4;border:1px dashed var(--line);border-radius:var(--rc);background:var(--panel);
+     display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:var(--s3);text-align:center}
+.bph .s{font-family:var(--mono);font-size:.66rem;color:var(--faint);line-height:1.4}
+.bph .n{font-family:var(--mono);font-size:.78rem;color:var(--rose)}
+.bfig figcaption{font-family:var(--mono);font-size:.72rem;color:var(--faint);margin-top:var(--s1);line-height:1.5}
+.bsay{display:grid;grid-template-columns:150px 1fr;gap:var(--s3);align-items:center;
+      background:var(--panel);border:1px solid var(--line);border-radius:var(--rc);padding:var(--s3);margin-top:var(--s4)}
+.bsay .bfig img,.bsay .bph{max-width:150px}
+.bsay p{margin:0;color:var(--meta);font-size:.95rem}
+.bsay .h{font-family:var(--mono);font-size:.72rem;color:var(--rose);display:block;margin-bottom:6px}
+@media(max-width:640px){.bsay{grid-template-columns:1fr}.bsay .bfig{max-width:130px}}
+
+/* ---------- narrowing stack ---------- */
+.stack{background:var(--panel);border:1px solid var(--line);border-radius:var(--rc);padding:var(--s4);margin-top:var(--s4)}
+.strow{display:block;width:100%;text-align:left;border:1px solid var(--line);background:var(--screen);
+       border-radius:var(--r);padding:var(--s3);margin-bottom:var(--s2);cursor:pointer;transition:border-color .15s}
+.strow:hover{border-color:var(--rose)}
+.strow.on{border-color:var(--rose);background:var(--ground)}
+.strow .bar{height:10px;border-radius:5px;background:var(--rose);opacity:.55;margin-bottom:10px}
+.strow.on .bar{opacity:1}
+.strow .lab{display:flex;justify-content:space-between;gap:var(--s2);align-items:baseline}
+.strow .t{color:var(--text);font-size:.95rem}
+.strow .c{font-family:var(--mono);font-size:1.05rem;color:var(--rose);white-space:nowrap}
+.stout{border:1px solid var(--line);border-radius:var(--r);background:var(--ground);padding:var(--s3);margin-top:var(--s3);min-height:96px}
+.stout h4{margin:0 0 6px;color:var(--text);font-weight:500}
+.stout p{margin:0 0 8px;color:var(--meta);font-size:.93rem}

@@ -141,3 +141,24 @@
     draw();
   }
 })();
+
+/* ---------- 5. Narrowing stack ---------- */
+(function () {
+  'use strict';
+  var stack = document.querySelector('[data-stack]');
+  if (!stack || !window.STACK) return;
+  var out = stack.querySelector('.stout');
+  var rows = stack.querySelectorAll('.strow');
+  function show(i) {
+    var d = window.STACK[i];
+    Array.prototype.forEach.call(rows, function (r, n) { r.classList.toggle('on', n === i); });
+    out.innerHTML = '<h4>' + d.t + '</h4><p>' + d.b + '</p>' +
+      '<span class="flag ' + d.fc + '">' + d.f + '</span>' +
+      (d.s ? ' <span class="src meta">' + d.s + '</span>' : '');
+    out.setAttribute('aria-live', 'polite');
+  }
+  Array.prototype.forEach.call(rows, function (r, i) {
+    r.addEventListener('click', function () { show(i); });
+  });
+  show(0);
+})();
