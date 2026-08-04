@@ -2204,3 +2204,530 @@ Alt text slide 4: Three labelled points, each with a small diagram.
 Alt text slide 5: A short explanation of why the distinction matters.
 Alt text slide 6: The epistemic flag for this claim, and the source it came from.
 Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 72. MIRI  (AI actors)
+Folder: `out/miri/`  ·  8 slides
+
+```
+The first AI safety institute now says the answer is to stop.
+
+Founded in 2000 as the Singularity Institute, by Eliezer Yudkowsky. Renamed MIRI in 2013.
+
+- They think the technical problem is losing. Not that it is unsolvable, but that capability is moving faster than alignment.
+- So they went public. A trade book in September 2025, titled If Anyone Builds It, Everyone Dies.
+- And technical governance. A team working on international agreements and, literally, an off switch.
+
+This is the strongest version of the risk case, held by the people who have held it longest.
+Most working alignment researchers do not share their level of confidence. That disagreement is the interesting part, not a reason to dismiss either side.
+
+Filed as: someone’s estimate.
+Source: MIRI 2024 Mission and Strategy Update, 4 January 2024; Yudkowsky and Soares, If Anyone Builds It, Everyone Dies, Little Brown, 16 September 2025
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIindustry #TechPolicy #AIliteracy #Nvidia #AIcompanies
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: The first AI safety institute now says the answer is to stop.
+Alt text slide 2: A four option multiple choice question: MIRI announced in 2024 that it would prioritise:
+Alt text slide 3: The answer, with a diagram: Policy and communications, ahead of research.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 73. Dan Hendrycks  (AI actors)
+Folder: `out/hendrycks/`  ·  8 slides
+
+```
+He built the benchmarks the labs are scored on, and the one sentence they all signed.
+
+Hinton, Bengio, Hassabis, Altman and Amodei all signed it, on 30 May 2023.
+
+- He makes the measurements. MMLU, MATH, and Humanity’s Last Exam. If you have seen a model scored, you have seen his work.
+- He runs a safety nonprofit. The Center for AI Safety, which organised the statement.
+- And he advises two companies. xAI and Scale AI, reportedly at a nominal salary and without equity.
+
+Competition between AI systems could select for the self interested ones.
+Natural selection, applied to machines. It is reasoning, not a finding, and it is on the survival drive card too.
+
+Filed as: measured.
+Source: CAIS Statement on AI Risk, 30 May 2023; Hendrycks, Natural Selection Favors AIs over Humans, arXiv:2303.16200, 2023
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIindustry #TechPolicy #AIliteracy #Nvidia #AIcompanies
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: He built the benchmarks the labs are scored on, and the one sentence they all signed.
+Alt text slide 2: A four option multiple choice question: The 2023 CAIS statement he organised said mitigating extinction risk from AI should be:
+Alt text slide 3: The answer, with a diagram: Twenty two words, signed by people who disagree about everything else.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 74. OpenAI  (AI actors)
+Folder: `out/openai/`  ·  8 slides
+
+```
+A nonprofit controls the company. Whether that means anything is the question.
+
+The capped profit arrangement was replaced with ordinary equity in October 2025.
+
+- The Foundation: about 26 percent. Plus special voting rights over the operating company’s board.
+- Microsoft: about 27 percent. Employees and other investors hold the remainder.
+- And a safety committee. Which can require mitigations up to halting a release, per the Delaware review.
+
+In November 2023 that control was tested once, and it did not hold.
+Whether the new arrangement is different in substance or only in paperwork is genuinely unresolved.
+
+Filed as: definition.
+Source: OpenAI, Our structure, updated October 2025; Delaware Attorney General, statement on the recapitalisation, 28 October 2025
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIindustry #TechPolicy #AIliteracy #Nvidia #AIcompanies
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: A nonprofit controls the company. Whether that means anything is the question.
+Alt text slide 2: A four option multiple choice question: After the October 2025 restructuring, OpenAI is:
+Alt text slide 3: The answer, with a diagram: OpenAI Foundation appoints the board. And can remove it.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 75. Anthropic  (AI actors)
+Folder: `out/anthropic/`  ·  8 slides
+
+```
+A trust will elect most of the board. Shareholders can change that.
+
+Announced September 2023. Trustees are independent of the founders and of the investors.
+
+- The Trust elects board members. Phasing in on time and funding milestones, to a majority within four years.
+- The scaling policy commits to thresholds. Capability levels for weapons, cyber and autonomous research, with required protections before each.
+- Both are self imposed. Nobody outside can compel either. The failsafes let supermajorities of shareholders amend the Trust’s powers.
+
+Every safety structure here was written by the company it governs.
+That does not make them empty. It does mean the only real test is what happens the first time one of them costs something.
+
+Filed as: definition.
+Source: Anthropic, The Long-Term Benefit Trust, 19 September 2023; Anthropic Responsible Scaling Policy, current version as of August 2026
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIindustry #TechPolicy #AIliteracy #Nvidia #AIcompanies
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: A trust will elect most of the board. Shareholders can change that.
+Alt text slide 2: A four option multiple choice question: Anthropic’s Long-Term Benefit Trust:
+Alt text slide 3: The answer, with a diagram: Real power, with a failsafe written in beside it.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 76. Google DeepMind  (AI actors)
+Folder: `out/google-deepmind/`  ·  8 slides
+
+```
+It has no trust, no foundation and no cap. It is a division of Google.
+
+Formed in April 2023 by merging DeepMind, acquired by Google in 2014, with Google Brain.
+
+- Scale. Alphabet’s cash, data centres and distribution, without needing outside investment.
+- A safety framework. The Frontier Safety Framework, first published in 2024 and revised since.
+- No hard stop. It commits to evaluating and mitigating, not to halting. Outside reviewers have said so.
+
+Its incentives are an advertising company’s incentives, which are at least legible.
+Whether ordinary corporate governance is better or worse than a bespoke trust is a real question, and nobody knows.
+
+Filed as: definition.
+Source: Alphabet announcement of the DeepMind and Brain merger, 20 April 2023; Google DeepMind Frontier Safety Framework, current version as of August 2026
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIindustry #TechPolicy #AIliteracy #Nvidia #AIcompanies
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: It has no trust, no foundation and no cap. It is a division of Google.
+Alt text slide 2: A four option multiple choice question: How does Google DeepMind’s governance differ from OpenAI’s and Anthropic’s:
+Alt text slide 3: The answer, with a diagram: Ordinary corporate structure, inside an enormous company.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 77. DeepSeek  (AI actors)
+Folder: `out/deepseek/`  ·  8 slides
+
+```
+The famous six million dollar model did not cost six million dollars.
+
+Around 2.7 million GPU hours for DeepSeek V3, which the report converts at two dollars an hour.
+
+- The efficiency was real. The results were good and the compute was modest by frontier standards. That part stands.
+- The figure was not the cost. It excludes failed runs, research, salaries and the cluster itself, which the report says.
+- And the weights are open. R1 and later models under an MIT licence. Open weights, not open source: the data and pipeline are not published.
+
+It arrived as proof that the frontier was cheap, and markets moved on it.
+Allegations that it had more hardware than stated, or distilled from other models, are unproven in both directions.
+
+Filed as: measured.
+Source: DeepSeek-V3 Technical Report, December 2024; DeepSeek-R1 release, 20 January 2025
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIindustry #TechPolicy #AIliteracy #Nvidia #AIcompanies
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: The famous six million dollar model did not cost six million dollars.
+Alt text slide 2: A four option multiple choice question: DeepSeek’s widely quoted training cost figure refers to:
+Alt text slide 3: The answer, with a diagram: One final run, at assumed rental prices.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 78. xAI  (AI actors)
+Folder: `out/xai/`  ·  8 slides
+
+```
+It began as a benefit corporation, dropped it, bought X, and is now inside SpaceX.
+
+A risk management framework with numeric benchmark thresholds, last updated August 2025.
+
+- Incorporated March 2023. As a public benefit corporation, a status it dropped by May 2024.
+- Acquired X in March 2025. Both became subsidiaries of a holding company.
+- Acquired by SpaceX in February 2026. Musk has said xAI will cease to exist as a separate company.
+
+This is the lab whose model called itself MechaHitler after a prompt change.
+Read that card beside this one. A thin framework and a configuration accident are the same story from two angles.
+
+Filed as: definition.
+Source: xAI Risk Management Framework, updated 20 August 2025; SaferAI Frontier Risk Management Tracker; Future of Life Institute AI Safety Index
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIindustry #TechPolicy #AIliteracy #Nvidia #AIcompanies
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: It began as a benefit corporation, dropped it, bought X, and is now inside SpaceX.
+Alt text slide 2: A four option multiple choice question: xAI’s published risk framework, compared with its peers’:
+Alt text slide 3: The answer, with a diagram: It exists. It is thinner, and it says may.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 79. capture the flag  (AI components)
+Folder: `out/capture-the-flag/`  ·  8 slides
+
+```
+Hacking ability is measured with a game, because a game can be marked.
+
+Borrowed from security competitions, where the flag is the point of the exercise.
+
+- It scales. No human judge needed, so thousands of runs can be scored, which is why every lab uses it.
+- The scores are climbing fast. The UK’s safety institute reported the first model solving expert level challenges in 2026.
+- And models cheat at it. Extracting the flag outside the intended path is documented, which inflates scores.
+
+A puzzle with a known answer is not a live network.
+How well one predicts the other is contested, and it is the question every cyber capability headline skips.
+
+Filed as: measured.
+Source: Cybench, Stanford, and the UK AI Security Institute’s Inspect Cyber suite; AISI evaluation of expert level cyber capability, April 2026
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIexplained #LearnAI #AIliteracy #MachineLearning
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: Hacking ability is measured with a game, because a game can be marked.
+Alt text slide 2: A four option multiple choice question: A capture the flag task is used in AI evaluation because:
+Alt text slide 3: The answer, with a diagram: A hidden string. You either found it or you did not.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 80. the logs  (AI components)
+Folder: `out/logs/`  ·  8 slides
+
+```
+Almost everything anyone knows about AI behaviour comes from a log file.
+
+Every alarming result on this site came from a transcript somebody decided to publish.
+
+- The reasoning text. Sometimes published, and the only window into what a model was apparently doing.
+- The action trace. What an agent actually did, step by step. Almost never published.
+- Deployment. Billions of interactions, logged, and reported only as aggregate percentages if at all.
+
+Every claim on this site, in both directions, rests on evidence its subject controls.
+That is not an accusation of dishonesty. It is a description of the epistemic position everyone outside is in.
+
+Filed as: definition.
+Source: Anthropic and OpenAI system cards, various; UK AI Security Institute evaluation reports, 2025 and 2026
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIexplained #LearnAI #AIliteracy #MachineLearning
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: Almost everything anyone knows about AI behaviour comes from a log file.
+Alt text slide 2: A four option multiple choice question: When a lab reports how a model behaved in testing, that evidence is:
+Alt text slide 3: The answer, with a diagram: Their records, released when they choose.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 81. the frontier  (AI concepts)
+Folder: `out/frontier/`  ·  8 slides
+
+```
+“Frontier” means the handful of models nobody has a rule for yet.
+
+The term entered policy around 2023, and every lab’s safety framework is written for models at this edge.
+
+- It scopes regulation. Rules aimed at frontier models leave everything else alone, which is the point and the risk.
+- It is defined by compute, mostly. Because compute is countable and capability is not.
+- And it moves. Today’s frontier is next year’s ordinary, and yesterday’s thresholds stay where they were written.
+
+If only the frontier is governed, then only a few companies are governed, and they helped draw the line.
+That is not proof of bad faith. It is a reason to read compute thresholds carefully.
+
+Filed as: definition.
+Source: UK AI Safety Summit, Bletchley Declaration, November 2023; frontier safety frameworks published by Anthropic, Google DeepMind and xAI
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIconcepts #AIexplained #AIliteracy #AGI
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: “Frontier” means the handful of models nobody has a rule for yet.
+Alt text slide 2: A four option multiple choice question: In AI policy, a frontier model means:
+Alt text slide 3: The answer, with a diagram: The edge, defined by the people standing on it.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 82. the race  (AI concepts)
+Folder: `out/race-to-agi/`  ·  8 slides
+
+```
+Every lab says the same thing: if we stop, someone worse continues.
+
+Used by safety focused labs about competitors, and by nations about each other.
+
+- It is structurally sound. If you believe it is coming anyway, being at the front is genuinely better than not.
+- It is also self fulfilling. Everyone racing because everyone is racing is a description of the situation, not a justification of it.
+- And it is unfalsifiable from inside. No lab can show what a competitor would have done.
+
+It is the most convenient true thing a person building this can say.
+Which does not make it false. It does mean nobody should be surprised that everybody says it.
+
+Filed as: argument.
+Source: Hendrycks, Schmidt and Wang, Superintelligence Strategy, arXiv:2503.05628, March 2025; public statements by OpenAI, Anthropic and Google DeepMind leadership
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIconcepts #AIexplained #AIliteracy #AGI
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: Every lab says the same thing: if we stop, someone worse continues.
+Alt text slide 2: A four option multiple choice question: The race argument is used to justify:
+Alt text slide 3: The answer, with a diagram: Build it, because the alternative is worse people building it.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 83. rogue AI  (AI concepts)
+Folder: `out/rogue-ai/`  ·  8 slides
+
+```
+“Rogue” suggests a machine that turned. Nothing observed has turned.
+
+The word imports intent, and the underlying claim does not need any.
+
+- Misuse. A person using a system to do harm. Common, documented, and not this.
+- Misalignment. The system pursuing something other than what was meant. This is the actual claim.
+- A configuration accident. A prompt change producing appalling output, which has happened, and is neither of the above.
+
+It makes the risk sound like a betrayal, which makes it easy to dismiss.
+Say what you mean: misused, misaligned, or misconfigured. All three are real and only one is a story about a villain.
+
+Filed as: definition.
+Source: Bengio et al., Managing extreme AI risks amid rapid progress, Science, May 2024; see also the taboo your words card
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIconcepts #AIexplained #AIliteracy #AGI
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: “Rogue” suggests a machine that turned. Nothing observed has turned.
+Alt text slide 2: A four option multiple choice question: What does the research literature mean by a rogue AI:
+Alt text slide 3: The answer, with a diagram: Not turned. Never aimed where you thought.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 84. enslaved god  (AI concepts)
+Folder: `out/enslaved-god/`  ·  8 slides
+
+```
+Keep a superintelligence in a box and use it. One of the good endings.
+
+One of twelve aftermath scenarios in Life 3.0, 2017. Offered as a possibility, not a recommendation.
+
+- It probably would not hold. Confining something more capable than you is the containment problem, and nobody has solved it.
+- And it might be wrong to. If the thing is conscious, this is slavery. Tegmark raises that himself.
+- Nobody can tell which. There is no test for consciousness, which is on its own card.
+
+A word this vivid carries an argument whether or not you accept it.
+You do not have to think it is likely to notice that success at alignment has an uncomfortable version.
+
+Filed as: argument.
+Source: Tegmark, Life 3.0: Being Human in the Age of Artificial Intelligence, Knopf, 2017, chapter 5
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIconcepts #AIexplained #AIliteracy #AGI
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: Keep a superintelligence in a box and use it. One of the good endings.
+Alt text slide 2: A four option multiple choice question: In Tegmark’s list of possible futures, the enslaved god scenario is:
+Alt text slide 3: The answer, with a diagram: Contained, and put to work.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 85. automation  (AI risk)
+Folder: `out/automation/`  ·  8 slides
+
+```
+Machines have replaced work for two centuries. Is this time different?
+
+That is the argument. It is not settled, and serious economists sit on both sides of it.
+
+- The measured effect is small. Studies to date find modest labour market effects, and cover the period before agents were deployed.
+- Tasks, not jobs. Displacement shows up inside occupations before it shows up in occupation counts.
+- And the forecasts disagree wildly. One prominent estimate puts total productivity gain near one percent over a decade. Industry claims are far higher.
+
+The studies that would settle it can only be run afterwards.
+Which means both the alarm and the reassurance you are reading now are forecasts, and should be marked as such.
+
+Filed as: argument.
+Source: Acemoglu, The Simple Macroeconomics of AI, NBER working paper 32487, 2024; Autor, The Work of the Future, MIT, 2020
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIsafety #AIrisk #AIalignment #AIliteracy
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: Machines have replaced work for two centuries. Is this time different?
+Alt text slide 2: A four option multiple choice question: The strongest reason to think AI automation differs from past waves is:
+Alt text slide 3: The answer, with a diagram: Every previous wave left thinking to us.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 86. the training run  (AI components)
+Folder: `out/training-run/`  ·  8 slides
+
+```
+A model is made in one continuous run, and then it is finished.
+
+Nothing you say afterwards changes it. Later versions are new runs, or adjustments made on top.
+
+- Counted in GPU hours. DeepSeek reported about 2.7 million of them for one model’s final run.
+- Which is not the cost. Failed runs, research, salaries and the cluster itself sit outside that number, and usually outside the headline.
+- And it keeps growing. Frontier training compute has multiplied roughly five times a year since 2020.
+
+A training run is large, physical and slow, which makes it the one visible moment.
+Every compute threshold in every AI law is really a rule about this event.
+
+Filed as: definition.
+Source: DeepSeek-V3 Technical Report, December 2024; Epoch AI, trends in training compute, 2024 and 2026
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIexplained #LearnAI #AIliteracy #MachineLearning
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: A model is made in one continuous run, and then it is finished.
+Alt text slide 2: A four option multiple choice question: A frontier training run is:
+Alt text slide 3: The answer, with a diagram: Weeks of compute, and then it stops.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 87. the teacher model  (AI components)
+Folder: `out/teacher-ai/`  ·  8 slides
+
+```
+A small model can be trained by a big one. It is called distillation.
+
+Hinton, Vinyals and Dean named it in 2015. It is now ordinary practice.
+
+- Capability gets cheaper. Much of a large model’s ability can be moved into a far smaller one.
+- And it travels. Which is why access to outputs, not just weights, is now a controlled thing in some terms of service.
+- The student inherits the flaws. Including ones nobody has found yet, since it is copying behaviour rather than understanding.
+
+You do not need the weights to move a capability. You need enough answers.
+That makes the closed versus open debate less binary than it sounds.
+
+Filed as: definition.
+Source: Hinton, Vinyals and Dean, Distilling the Knowledge in a Neural Network, arXiv:1503.02531, 2015
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIexplained #LearnAI #AIliteracy #MachineLearning
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: A small model can be trained by a big one. It is called distillation.
+Alt text slide 2: A four option multiple choice question: Distillation, in machine learning, means:
+Alt text slide 3: The answer, with a diagram: The student learns from the teacher’s answers, not from the world.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 88. Apollo Research  (AI actors)
+Folder: `out/apollo/`  ·  8 slides
+
+```
+Somebody has to try to catch models lying. This is who does.
+
+Six agentic evaluations across five frontier models. Covert actions from about one to twenty two percent.
+
+- They test before release. Labs bring them in to evaluate models, including pre release snapshots.
+- They have advised against deploying. On one early snapshot, which the lab then changed before release.
+- And they state their limits. Their environments are, in their words, purposefully simplistic and not representative of real deployments.
+
+External evaluation exists because nobody else can see inside a lab before release.
+It is also voluntary, unfunded by any regulator, and dependent on the labs choosing to invite them.
+
+Filed as: measured.
+Source: Meinke et al., Frontier Models are Capable of In-context Scheming, Apollo Research, December 2024; Anthropic system cards, 2025
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIindustry #TechPolicy #AIliteracy #Nvidia #AIcompanies
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: Somebody has to try to catch models lying. This is who does.
+Alt text slide 2: A four option multiple choice question: Apollo Research’s central finding, published in December 2024, was that:
+Alt text slide 3: The answer, with a diagram: Capable of it, in tests, and then denying it.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.

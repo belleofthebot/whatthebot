@@ -56,7 +56,9 @@ BELLE_TERMS = {
     "daniela-amodei", "crawford", "koller", "lucy-guo",
     "shoggoth", "off-switch", "alignment-faking", "mechahitler",
     "permanent-disempowerment", "optimization", "drones", "grown-not-built",
-    "yang",
+    "yang", "miri", "hendrycks", "openai", "anthropic", "google-deepmind",
+    "deepseek", "xai", "rogue-ai", "enslaved-god", "race-to-agi", "automation",
+    "apollo",
 }
 
 # The second expression, shown on hover. Idle face, then the reaction: the point
@@ -92,6 +94,12 @@ HOVER = {
  "mechahitler": "yikes",                    "permanent-disempowerment": "worry-about-future",
  "optimization": "unimpressed",             "drones": "shock-worry",
  "grown-not-built": "noticed-something",    "yang": "hands-hips-pedantic",
+ "miri": "glum",                            "hendrycks": "hands-hips-pedantic",
+ "openai": "deadpan-annoyed-1",             "anthropic": "innocent-curious",
+ "google-deepmind": "warm-neutral",         "deepseek": "shocked",
+ "xai": "yikes",                            "rogue-ai": "sly-one",
+ "enslaved-god": "shock-worry",             "race-to-agi": "deadpan-annoyed-1",
+ "automation": "glum",                      "apollo": "smirking",
 }
 
 # the four kinds of claim

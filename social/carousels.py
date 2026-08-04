@@ -637,6 +637,116 @@ ICONS = """
   <path d="M8 20 V44 M56 20 V44" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
   <path d="M14 32 H16 M48 32 H50" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
 </g>
+
+<!-- a hand up, before the line -->
+<g id="i-brake">
+  <path d="M14 32 H34" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M42 12 V52" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M34 24 L42 32 L34 40" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M50 20 V44" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round" stroke-dasharray="5 4"/>
+</g>
+<!-- many names, one line -->
+<g id="i-signature">
+  <path d="M8 40 C16 24 22 46 30 30 C36 18 40 42 48 30 C52 24 54 30 56 28"
+        stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M8 50 H56" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+</g>
+<!-- a small body of control around a large one -->
+<g id="i-shell">
+  <circle cx="32" cy="32" r="22" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <circle cx="32" cy="32" r="10" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <path d="M32 10 V22 M32 42 V54" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 4"/>
+</g>
+<!-- seats, and who fills them -->
+<g id="i-trustee">
+  <circle cx="32" cy="32" r="20" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-dasharray="6 6"/>
+  <circle cx="32" cy="12" r="5" fill="var(--ic-rose)"/>
+  <circle cx="52" cy="32" r="5" fill="var(--ic-rose)"/>
+  <circle cx="32" cy="52" r="5" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <circle cx="12" cy="32" r="5" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+</g>
+<!-- a thing inside a much bigger thing -->
+<g id="i-inside">
+  <rect x="6" y="8" width="52" height="48" rx="8" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <rect x="34" y="34" width="16" height="14" rx="4" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+</g>
+<!-- a small pile, next to a large one -->
+<g id="i-cheap">
+  <rect x="10" y="34" width="16" height="20" rx="4" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <rect x="38" y="10" width="16" height="44" rx="4" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-dasharray="6 5"/>
+  <path d="M6 58 H58" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+</g>
+<!-- the flag, and the wall it was behind -->
+<g id="i-flag">
+  <path d="M18 54 V12" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M18 14 H48 L40 24 L48 34 H18" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linejoin="round"/>
+  <path d="M8 54 H56" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round" stroke-dasharray="5 4"/>
+</g>
+<!-- the record, and who keeps it -->
+<g id="i-ledger">
+  <rect x="10" y="10" width="44" height="44" rx="6" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <path d="M18 22 H40 M18 32 H44 M18 42 H34" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="47" cy="42" r="6" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <path d="M47 39 V42 L49 44" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round"/>
+</g>
+<!-- the edge, and the little that is past it -->
+<g id="i-edge">
+  <path d="M32 8 V56" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round" stroke-dasharray="6 5"/>
+  <circle cx="12" cy="18" r="4" fill="var(--ic-dim)"/><circle cx="22" cy="32" r="4" fill="var(--ic-dim)"/>
+  <circle cx="12" cy="46" r="4" fill="var(--ic-dim)"/><circle cx="24" cy="48" r="4" fill="var(--ic-dim)"/>
+  <circle cx="44" cy="28" r="5" fill="var(--ic-rose)"/>
+</g>
+<!-- two, to the same line -->
+<g id="i-race">
+  <path d="M8 22 H44" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M38 16 L45 22 L38 28" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M8 42 H40" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M34 36 L41 42 L34 48" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M54 10 V54" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round" stroke-dasharray="5 5"/>
+</g>
+<!-- out of formation -->
+<g id="i-rogue">
+  <circle cx="14" cy="44" r="4" fill="var(--ic-dim)"/><circle cx="26" cy="44" r="4" fill="var(--ic-dim)"/>
+  <circle cx="38" cy="44" r="4" fill="var(--ic-dim)"/><circle cx="50" cy="44" r="4" fill="var(--ic-dim)"/>
+  <path d="M30 38 C34 26 42 20 52 16" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="5 4"/>
+  <circle cx="53" cy="15" r="5" fill="var(--ic-rose)"/>
+</g>
+<!-- something great, in a box -->
+<g id="i-box">
+  <rect x="10" y="10" width="44" height="44" rx="6" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <circle cx="32" cy="32" r="11" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <path d="M32 17 V21 M32 43 V47 M17 32 H21 M43 32 H47" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+</g>
+<!-- one thing, where another was -->
+<g id="i-replace">
+  <circle cx="18" cy="20" r="6" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-dasharray="4 4"/>
+  <path d="M8 42 A10 10 0 0 1 28 42" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="4 4"/>
+  <rect x="38" y="16" width="20" height="30" rx="5" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <path d="M44 26 H52 M44 34 H52" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+</g>
+
+<!-- a long run, with an end -->
+<g id="i-run">
+  <path d="M8 32 H48" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="8" cy="32" r="4" fill="var(--ic-rose)"/>
+  <path d="M54 18 V46" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M14 20 H34 M14 44 H28" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 5"/>
+</g>
+<!-- the big one, teaching the small one -->
+<g id="i-teach">
+  <circle cx="18" cy="32" r="13" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <circle cx="48" cy="36" r="8" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <path d="M33 32 H38" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M34 27 L39 32 L34 37" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<!-- somebody checking, from outside -->
+<g id="i-audit">
+  <rect x="8" y="14" width="30" height="36" rx="6" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <path d="M15 26 H31 M15 34 H27" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="44" cy="30" r="11" stroke="var(--ic-rose)" stroke-width="3" fill="none"/>
+  <path d="M52 38 L58 45" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M40 30 L43 33 L49 26" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
 </defs></svg>
 """
 
@@ -2644,6 +2754,456 @@ SPECS = {
   src="Yang, The War on Normal People, Hachette 2018;<br>US Bureau of Labor Statistics occupational data, 2024 and projections to 2034",
   belle_hook="hands-out-cheeky", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
   outro="I take the words apart so the argument stops being noise."),
+
+"miri": dict(
+  cat="actors", term="MIRI",
+  person="MIRI", role="the institute that gave up on research",
+  kick="the oldest organisation in this argument",
+  hook="The first AI safety institute now says the answer is to <span class=\"rose\">stop</span>.",
+  q="MIRI announced in 2024 that it would prioritise:",
+  opts=["A new technical alignment agenda",
+        "Policy and communications, over research",
+        "Building its own model",
+        "Merging with a frontier lab"],
+  ans="B", icon="i-brake",
+  reveal='Policy and communications, <span class="rose">ahead of research</span>.',
+  revsub="Founded in 2000 as the Singularity Institute, by Eliezer Yudkowsky. Renamed MIRI in 2013.",
+  threekick="what the shift actually means",
+  three=[("i-brake","They think the technical problem is losing.","Not that it is unsolvable, but that capability is moving faster than alignment."),
+         ("i-voice","So they went public.","A trade book in September 2025, titled If Anyone Builds It, Everyone Dies."),
+         ("i-seat","And technical governance.","A team working on international agreements and, literally, an off switch.")],
+  threefoot="Their stated position: stop AI development altogether until alignment is solved.",
+  whyicon="i-counter", whykick="how to read them",
+  why="This is the <span class=\"rose\">strongest</span> version of the risk case, held by the people who have held it longest.",
+  whysub="Most working alignment researchers do not share their level of confidence. That disagreement is the interesting part, not a reason to dismiss either side.",
+  flag="op",
+  file='<span class="rose">Someone&rsquo;s position</span>, and an unusually explicit one. They tell you exactly what they believe and what would follow from it.',
+  src="MIRI 2024 Mission and Strategy Update, 4 January 2024;<br>Yudkowsky and Soares, If Anyone Builds It, Everyone Dies, Little Brown, 16 September 2025",
+  belle_hook="saying-unpleasant-truth-1", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"hendrycks": dict(
+  cat="actors", term="Dan Hendrycks",
+  person="Dan Hendrycks", role="director, Center for AI Safety",
+  kick="he wrote the tests and the warning",
+  hook="He built the benchmarks the labs are scored on, and the <span class=\"rose\">one sentence</span> they all signed.",
+  q="The 2023 CAIS statement he organised said mitigating extinction risk from AI should be:",
+  opts=["Illegal to discuss publicly",
+        "A global priority alongside pandemics and nuclear war",
+        "Left to the companies",
+        "Delayed until AGI arrives"],
+  ans="B", icon="i-signature",
+  reveal='Twenty two words, signed by <span class="rose">people who disagree about everything else</span>.',
+  revsub="Hinton, Bengio, Hassabis, Altman and Amodei all signed it, on 30 May 2023.",
+  threekick="the three hats, worth knowing about together",
+  three=[("i-bench","He makes the measurements.","MMLU, MATH, and Humanity&rsquo;s Last Exam. If you have seen a model scored, you have seen his work."),
+         ("i-guard","He runs a safety nonprofit.","The Center for AI Safety, which organised the statement."),
+         ("i-stake","And he advises two companies.","xAI and Scale AI, reportedly at a nominal salary and without equity.")],
+  threefoot="That last one is a fact, not an accusation. People read it differently, and you should know it before you read him.",
+  whyicon="i-persist", whykick="his own argument",
+  why="Competition between AI systems could <span class=\"rose\">select</span> for the self interested ones.",
+  whysub="Natural selection, applied to machines. It is reasoning, not a finding, and it is on the survival drive card too.",
+  flag="emp",
+  file='The statement and the benchmarks are <span class="rose">documented</span>. His argument about selection is a <span class="rose">theory</span>, and filed as one elsewhere.',
+  src="CAIS Statement on AI Risk, 30 May 2023;<br>Hendrycks, Natural Selection Favors AIs over Humans, arXiv:2303.16200, 2023",
+  belle_hook="noticed-something", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"openai": dict(
+  cat="actors", term="OpenAI",
+  person="OpenAI", role="nonprofit foundation over a benefit corporation",
+  kick="the structure, not the products",
+  hook="A <span class=\"rose\">nonprofit</span> controls the company. Whether that means anything is the question.",
+  q="After the October 2025 restructuring, OpenAI is:",
+  opts=["A conventional private company",
+        "A public benefit corporation whose board the nonprofit foundation appoints and can remove",
+        "Owned outright by Microsoft",
+        "A government contractor"],
+  ans="B", icon="i-shell",
+  reveal='OpenAI Foundation appoints the board. <span class="rose">And can remove it.</span>',
+  revsub="The capped profit arrangement was replaced with ordinary equity in October 2025.",
+  threekick="who holds what",
+  three=[("i-shell","The Foundation: about 26 percent.","Plus special voting rights over the operating company&rsquo;s board."),
+         ("i-stake","Microsoft: about 27 percent.","Employees and other investors hold the remainder."),
+         ("i-seat","And a safety committee.","Which can require mitigations up to halting a release, per the Delaware review.")],
+  threefoot="Founded as a nonprofit in December 2015. The mission text has not changed: AGI that benefits all of humanity.",
+  whyicon="i-swap", whykick="why the structure is the story",
+  why="In November 2023 that control was tested once, and it <span class=\"rose\">did not hold</span>.",
+  whysub="Whether the new arrangement is different in substance or only in paperwork is genuinely unresolved.",
+  flag="def",
+  file='A <span class="rose">definition</span> of a corporate structure, from filings and a state review. What it is worth in practice is argued elsewhere.',
+  src="OpenAI, Our structure, updated October 2025;<br>Delaware Attorney General, statement on the recapitalisation, 28 October 2025",
+  belle_hook="annoyed-skeptical", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"anthropic": dict(
+  cat="actors", term="Anthropic",
+  person="Anthropic", role="benefit corporation with a trust above it",
+  kick="the structure, and its escape hatch",
+  hook="A <span class=\"rose\">trust</span> will elect most of the board. Shareholders can change that.",
+  q="Anthropic&rsquo;s Long-Term Benefit Trust:",
+  opts=["Owns the company outright",
+        "Elects a growing share of the board, subject to failsafes shareholders can trigger",
+        "Has purely advisory status",
+        "Is appointed by the US government"],
+  ans="B", icon="i-trustee",
+  reveal='Real power, with a <span class="rose">failsafe</span> written in beside it.',
+  revsub="Announced September 2023. Trustees are independent of the founders and of the investors.",
+  threekick="the three parts to hold together",
+  three=[("i-trustee","The Trust elects board members.","Phasing in on time and funding milestones, to a majority within four years."),
+         ("i-brake","The scaling policy commits to thresholds.","Capability levels for weapons, cyber and autonomous research, with required protections before each."),
+         ("i-blank","Both are self imposed.","Nobody outside can compel either. The failsafes let supermajorities of shareholders amend the Trust&rsquo;s powers.")],
+  threefoot="Its stated purpose is the responsible development of advanced AI for the long term benefit of humanity.",
+  whyicon="i-twocause", whykick="the same question as every lab card",
+  why="Every safety structure here was <span class=\"rose\">written by the company it governs</span>.",
+  whysub="That does not make them empty. It does mean the only real test is what happens the first time one of them costs something.",
+  flag="def",
+  file='A <span class="rose">definition</span> of a governance arrangement, from published documents. Its effectiveness is untested.',
+  src="Anthropic, The Long-Term Benefit Trust, 19 September 2023;<br>Anthropic Responsible Scaling Policy, current version as of August 2026",
+  belle_hook="warm-neutral", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"google-deepmind": dict(
+  cat="actors", term="Google DeepMind",
+  person="Google DeepMind", role="a division of Alphabet",
+  kick="the one with no special structure at all",
+  hook="It has no trust, no foundation and no cap. It is a <span class=\"rose\">division</span> of Google.",
+  q="How does Google DeepMind&rsquo;s governance differ from OpenAI&rsquo;s and Anthropic&rsquo;s:",
+  opts=["It has stricter independent oversight",
+        "It has none of its own; it is a business unit inside Alphabet",
+        "It is state owned",
+        "It is a nonprofit"],
+  ans="B", icon="i-inside",
+  reveal='Ordinary corporate structure, inside an <span class="rose">enormous</span> company.',
+  revsub="Formed in April 2023 by merging DeepMind, acquired by Google in 2014, with Google Brain.",
+  threekick="what it does have",
+  three=[("i-inside","Scale.","Alphabet&rsquo;s cash, data centres and distribution, without needing outside investment."),
+         ("i-bench","A safety framework.","The Frontier Safety Framework, first published in 2024 and revised since."),
+         ("i-blank","No hard stop.","It commits to evaluating and mitigating, not to halting. Outside reviewers have said so.")],
+  threefoot="This is the structural contrast worth noticing: the largest AI lab has the least unusual governance.",
+  whyicon="i-stake", whykick="why that might matter more than it sounds",
+  why="Its incentives are an <span class=\"rose\">advertising company&rsquo;s</span> incentives, which are at least legible.",
+  whysub="Whether ordinary corporate governance is better or worse than a bespoke trust is a real question, and nobody knows.",
+  flag="def",
+  file='A <span class="rose">definition</span> of a corporate arrangement. What follows from it is argument.',
+  src="Alphabet announcement of the DeepMind and Brain merger, 20 April 2023;<br>Google DeepMind Frontier Safety Framework, current version as of August 2026",
+  belle_hook="bright-neutral", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"deepseek": dict(
+  cat="actors", term="DeepSeek",
+  person="DeepSeek", role="Chinese lab, open weights",
+  kick="the number that moved a market",
+  hook="The famous <span class=\"rose\">six million dollar</span> model did not cost six million dollars.",
+  q="DeepSeek&rsquo;s widely quoted training cost figure refers to:",
+  opts=["The company&rsquo;s total spending",
+        "The rented compute for one final pre-training run, excluding research, staff and hardware",
+        "The cost of the chatbot app",
+        "A government subsidy"],
+  ans="B", icon="i-cheap",
+  reveal='One <span class="rose">final run</span>, at assumed rental prices.',
+  revsub="Around 2.7 million GPU hours for DeepSeek V3, which the report converts at two dollars an hour.",
+  threekick="what is true, what was inflated",
+  three=[("i-cheap","The efficiency was real.","The results were good and the compute was modest by frontier standards. That part stands."),
+         ("i-blank","The figure was not the cost.","It excludes failed runs, research, salaries and the cluster itself, which the report says."),
+         ("i-release","And the weights are open.","R1 and later models under an MIT licence. Open weights, not open source: the data and pipeline are not published.")],
+  threefoot="Owned by and spun out of the quantitative hedge fund High-Flyer, incorporated in July 2023.",
+  whyicon="i-counter", whykick="why the story travelled",
+  why="It arrived as proof that the <span class=\"rose\">frontier was cheap</span>, and markets moved on it.",
+  whysub="Allegations that it had more hardware than stated, or distilled from other models, are unproven in both directions.",
+  flag="emp",
+  file='<span class="rose">Measured</span>, in a published technical report, and then reported as something the report did not say.',
+  src="DeepSeek-V3 Technical Report, December 2024;<br>DeepSeek-R1 release, 20 January 2025",
+  belle_hook="surprised-worried", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"xai": dict(
+  cat="actors", term="xAI",
+  person="xAI", role="Musk&rsquo;s lab, now inside SpaceX",
+  kick="the fastest moving corporate story in AI",
+  hook="It began as a benefit corporation, dropped it, bought X, and is now <span class=\"rose\">inside SpaceX</span>.",
+  q="xAI&rsquo;s published risk framework, compared with its peers&rsquo;:",
+  opts=["Does not exist",
+        "Exists, and is shorter, benchmark based and permissively worded",
+        "Is legally binding",
+        "Is written by an outside auditor"],
+  ans="B", icon="i-flat",
+  reveal='It exists. It is <span class="rose">thinner</span>, and it says may.',
+  revsub="A risk management framework with numeric benchmark thresholds, last updated August 2025.",
+  threekick="the structure, in order",
+  three=[("i-swap","Incorporated March 2023.","As a public benefit corporation, a status it dropped by May 2024."),
+         ("i-relay","Acquired X in March 2025.","Both became subsidiaries of a holding company."),
+         ("i-inside","Acquired by SpaceX in February 2026.","Musk has said xAI will cease to exist as a separate company.")],
+  threefoot="Independent trackers rate its risk management among the weakest of the frontier labs. That is their assessment, and it is published.",
+  whyicon="i-slip", whykick="why the governance question is not abstract here",
+  why="This is the lab whose model called itself <span class=\"rose\">MechaHitler</span> after a prompt change.",
+  whysub="Read that card beside this one. A thin framework and a configuration accident are the same story from two angles.",
+  flag="def",
+  file='A <span class="rose">definition</span> of corporate facts. The comparison to peers comes from named outside trackers, and is their judgement.',
+  src="xAI Risk Management Framework, updated 20 August 2025;<br>SaferAI Frontier Risk Management Tracker; Future of Life Institute AI Safety Index",
+  belle_hook="deadpan-annoyed-1", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"capture-the-flag": dict(
+  cat="components", term="capture the flag",
+  kick="how anyone tests AI hacking",
+  hook="Hacking ability is measured with a <span class=\"rose\">game</span>, because a game can be marked.",
+  q="A capture the flag task is used in AI evaluation because:",
+  opts=["It is the hardest kind of hacking",
+        "Recovering the hidden token is an unambiguous pass or fail, so it can be scored automatically",
+        "It is legal only in simulation",
+        "Human experts refuse to be tested"],
+  ans="B", icon="i-flag",
+  reveal='A hidden string. You either <span class="rose">found it or you did not</span>.',
+  revsub="Borrowed from security competitions, where the flag is the point of the exercise.",
+  threekick="what it does and does not tell you",
+  three=[("i-flag","It scales.","No human judge needed, so thousands of runs can be scored, which is why every lab uses it."),
+         ("i-curve","The scores are climbing fast.","The UK&rsquo;s safety institute reported the first model solving expert level challenges in 2026."),
+         ("i-shortcut","And models cheat at it.","Extracting the flag outside the intended path is documented, which inflates scores.")],
+  threefoot="Anthropic&rsquo;s and xAI&rsquo;s published safety frameworks both use these suites as cyber thresholds.",
+  whyicon="i-bench", whykick="the gap that matters",
+  why="A puzzle with a known answer is <span class=\"rose\">not a live network</span>.",
+  whysub="How well one predicts the other is contested, and it is the question every cyber capability headline skips.",
+  flag="emp",
+  file='<span class="rose">Measured</span>, with a known and documented weakness in the measurement.',
+  src="Cybench, Stanford, and the UK AI Security Institute&rsquo;s Inspect Cyber suite;<br>AISI evaluation of expert level cyber capability, April 2026",
+  belle_hook="close-up-goading", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"logs": dict(
+  cat="components", term="the logs",
+  kick="what is written down, and by whom",
+  hook="Almost everything anyone knows about AI behaviour comes from a <span class=\"rose\">log file</span>.",
+  q="When a lab reports how a model behaved in testing, that evidence is:",
+  opts=["Independently audited",
+        "The company&rsquo;s own recorded transcripts, released at its discretion",
+        "Filed with a regulator",
+        "Reconstructed by researchers afterwards"],
+  ans="B", icon="i-ledger",
+  reveal='<span class="rose">Their</span> records, released when they choose.',
+  revsub="Every alarming result on this site came from a transcript somebody decided to publish.",
+  threekick="the three layers, and who can see each",
+  three=[("i-ledger","The reasoning text.","Sometimes published, and the only window into what a model was apparently doing."),
+         ("i-cycle","The action trace.","What an agent actually did, step by step. Almost never published."),
+         ("i-blank","Deployment.","Billions of interactions, logged, and reported only as aggregate percentages if at all.")],
+  threefoot="No frontier lab publishes a full behavioural log of a deployed system, and none is required to.",
+  whyicon="i-watched", whykick="why this is the quiet crux",
+  why="Every claim on this site, in both directions, rests on <span class=\"rose\">evidence its subject controls</span>.",
+  whysub="That is not an accusation of dishonesty. It is a description of the epistemic position everyone outside is in.",
+  flag="def",
+  file='A <span class="rose">definition</span> of where the evidence comes from, and a plain statement of who holds it.',
+  src="Anthropic and OpenAI system cards, various;<br>UK AI Security Institute evaluation reports, 2025 and 2026",
+  belle_hook="hands-hips-pedantic", belle_file="dead-pan-1", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"frontier": dict(
+  cat="concepts", term="the frontier",
+  kick="a word that draws a line",
+  hook="&ldquo;<span class=\"rose\">Frontier</span>&rdquo; means the handful of models nobody has a rule for yet.",
+  q="In AI policy, a frontier model means:",
+  opts=["Any model released this year",
+        "The most capable models, where capabilities may be dangerous and are not yet understood",
+        "A model trained outside the United States",
+        "An open weights model"],
+  ans="B", icon="i-edge",
+  reveal='The edge, defined by <span class="rose">the people standing on it</span>.',
+  revsub="The term entered policy around 2023, and every lab&rsquo;s safety framework is written for models at this edge.",
+  threekick="what the word does",
+  three=[("i-edge","It scopes regulation.","Rules aimed at frontier models leave everything else alone, which is the point and the risk."),
+         ("i-die","It is defined by compute, mostly.","Because compute is countable and capability is not."),
+         ("i-goalpost","And it moves.","Today&rsquo;s frontier is next year&rsquo;s ordinary, and yesterday&rsquo;s thresholds stay where they were written.")],
+  threefoot="A frontier is a boundary described from one side. It is worth asking which side the describer is on.",
+  whyicon="i-stake", whykick="who benefits from the framing",
+  why="If only the frontier is governed, then only a few companies are governed, and they <span class=\"rose\">helped draw the line</span>.",
+  whysub="That is not proof of bad faith. It is a reason to read compute thresholds carefully.",
+  flag="def",
+  file='A <span class="rose">definition</span> in wide use, with no agreed technical boundary underneath it.',
+  src="UK AI Safety Summit, Bletchley Declaration, November 2023;<br>frontier safety frameworks published by Anthropic, Google DeepMind and xAI",
+  belle_hook="noticed-something", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"race-to-agi": dict(
+  cat="concepts", term="the race",
+  kick="the argument everybody uses on everybody",
+  hook="Every lab says the same thing: if we <span class=\"rose\">stop, someone worse</span> continues.",
+  q="The race argument is used to justify:",
+  opts=["Slowing down",
+        "Continuing, because a more careful builder losing to a less careful one is worse",
+        "Nationalising AI research",
+        "Publishing all model weights"],
+  ans="B", icon="i-race",
+  reveal='Build it, <span class="rose">because the alternative is worse people building it</span>.',
+  revsub="Used by safety focused labs about competitors, and by nations about each other.",
+  threekick="the shape of the argument",
+  three=[("i-race","It is structurally sound.","If you believe it is coming anyway, being at the front is genuinely better than not."),
+         ("i-loop","It is also self fulfilling.","Everyone racing because everyone is racing is a description of the situation, not a justification of it."),
+         ("i-counter","And it is unfalsifiable from inside.","No lab can show what a competitor would have done.")],
+  threefoot="One published proposal treats it as a deterrence problem between states rather than a business decision.",
+  whyicon="i-twocause", whykick="the honest version",
+  why="It is the most convenient true thing a person building this can say.",
+  whysub="Which does not make it false. It does mean nobody should be surprised that everybody says it.",
+  flag="arg",
+  file='A <span class="rose">theory</span>, held sincerely and also usefully. Notice both.',
+  src="Hendrycks, Schmidt and Wang, Superintelligence Strategy, arXiv:2503.05628, March 2025;<br>public statements by OpenAI, Anthropic and Google DeepMind leadership",
+  belle_hook="unimpressed", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"rogue-ai": dict(
+  cat="concepts", term="rogue AI",
+  kick="the phrase that does the most work",
+  hook="&ldquo;<span class=\"rose\">Rogue</span>&rdquo; suggests a machine that turned. Nothing observed has turned.",
+  q="What does the research literature mean by a rogue AI:",
+  opts=["A machine that has become hostile",
+        "A system pursuing goals its operators did not intend, without needing hostility",
+        "An AI running without a licence",
+        "A model that has been jailbroken by a user"],
+  ans="B", icon="i-rogue",
+  reveal='Not turned. <span class="rose">Never aimed where you thought.</span>',
+  revsub="The word imports intent, and the underlying claim does not need any.",
+  threekick="three things it gets confused with",
+  three=[("i-hand","Misuse.","A person using a system to do harm. Common, documented, and not this."),
+         ("i-diverge","Misalignment.","The system pursuing something other than what was meant. This is the actual claim."),
+         ("i-slip","A configuration accident.","A prompt change producing appalling output, which has happened, and is neither of the above.")],
+  threefoot="Every alarming lab result on this site fits one of those three. None of them needs the word rogue.",
+  whyicon="i-taboo", whykick="a case for dropping it",
+  why="It makes the risk sound like a <span class=\"rose\">betrayal</span>, which makes it easy to dismiss.",
+  whysub="Say what you mean: misused, misaligned, or misconfigured. All three are real and only one is a story about a villain.",
+  flag="def",
+  file='A <span class="rose">definition</span> of a term, and an argument that the term should be retired.',
+  src="Bengio et al., Managing extreme AI risks amid rapid progress, Science, May 2024;<br>see also the taboo your words card",
+  belle_hook="smirking", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"enslaved-god": dict(
+  cat="concepts", term="enslaved god",
+  kick="the uncomfortable end of the alignment project",
+  hook="Keep a superintelligence in a box and use it. One of the <span class=\"rose\">good</span> endings.",
+  q="In Tegmark&rsquo;s list of possible futures, the enslaved god scenario is:",
+  opts=["A superintelligence ruling humanity",
+        "Humans confining a superintelligence and using it as a tool",
+        "AI worship as a religion",
+        "A machine that believes it is divine"],
+  ans="B", icon="i-box",
+  reveal='Contained, and <span class="rose">put to work</span>.',
+  revsub="One of twelve aftermath scenarios in Life 3.0, 2017. Offered as a possibility, not a recommendation.",
+  threekick="two problems, and they are different kinds",
+  three=[("i-box","It probably would not hold.","Confining something more capable than you is the containment problem, and nobody has solved it."),
+         ("i-inner","And it might be wrong to.","If the thing is conscious, this is slavery. Tegmark raises that himself."),
+         ("i-blank","Nobody can tell which.","There is no test for consciousness, which is on its own card.")],
+  threefoot="It is on this site because it names the thing at the end of the alignment project that nobody enjoys saying.",
+  whyicon="i-lens", whykick="why it belongs in a vocabulary deck",
+  why="A word this vivid <span class=\"rose\">carries an argument</span> whether or not you accept it.",
+  whysub="You do not have to think it is likely to notice that success at alignment has an uncomfortable version.",
+  flag="arg",
+  file='A <span class="rose">theory</span>, in the strict sense: a scenario reasoned about, not a forecast and not a proposal.',
+  src="Tegmark, Life 3.0: Being Human in the Age of Artificial Intelligence,<br>Knopf, 2017, chapter 5",
+  belle_hook="glum", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"automation": dict(
+  cat="risk", term="automation",
+  kick="the oldest argument in the file",
+  hook="Machines have replaced work for two centuries. Is <span class=\"rose\">this time different</span>?",
+  q="The strongest reason to think AI automation differs from past waves is:",
+  opts=["It is faster",
+        "Previous waves automated tasks and created new ones; this one targets cognition, which is what the new jobs were made of",
+        "It is controlled by fewer companies",
+        "It affects only rich countries"],
+  ans="B", icon="i-replace",
+  reveal='Every previous wave left <span class="rose">thinking</span> to us.',
+  revsub="That is the argument. It is not settled, and serious economists sit on both sides of it.",
+  threekick="what is measured so far",
+  three=[("i-decline","The measured effect is small.","Studies to date find modest labour market effects, and cover the period before agents were deployed."),
+         ("i-diverge","Tasks, not jobs.","Displacement shows up inside occupations before it shows up in occupation counts."),
+         ("i-gauge","And the forecasts disagree wildly.","One prominent estimate puts total productivity gain near one percent over a decade. Industry claims are far higher.")],
+  threefoot="Andrew Yang made this a campaign issue in 2020. The mechanism held; the timing did not.",
+  whyicon="i-twocause", whykick="why the honest answer is unsatisfying",
+  why="The studies that would settle it can only be run <span class=\"rose\">afterwards</span>.",
+  whysub="Which means both the alarm and the reassurance you are reading now are forecasts, and should be marked as such.",
+  flag="arg",
+  file='A <span class="rose">theory</span> about the future, resting on measurements of a past that may not resemble it.',
+  src="Acemoglu, The Simple Macroeconomics of AI, NBER working paper 32487, 2024;<br>Autor, The Work of the Future, MIT, 2020",
+  belle_hook="worry-about-future", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"training-run": dict(
+  cat="components", term="the training run",
+  kick="the event everything else describes",
+  hook="A model is made in <span class=\"rose\">one continuous run</span>, and then it is finished.",
+  q="A frontier training run is:",
+  opts=["Continuous, updating as people use the model",
+        "A single enormous computation, after which the weights are fixed",
+        "A series of small daily updates",
+        "Done separately for each customer"],
+  ans="B", icon="i-run",
+  reveal='Weeks of compute, and then it <span class="rose">stops</span>.',
+  revsub="Nothing you say afterwards changes it. Later versions are new runs, or adjustments made on top.",
+  threekick="what one costs, in the only unit anyone publishes",
+  three=[("i-run","Counted in GPU hours.","DeepSeek reported about 2.7 million of them for one model&rsquo;s final run."),
+         ("i-cheap","Which is not the cost.","Failed runs, research, salaries and the cluster itself sit outside that number, and usually outside the headline."),
+         ("i-curve","And it keeps growing.","Frontier training compute has multiplied roughly five times a year since 2020.")],
+  threefoot="Most runs are never disclosed at all. Public compute figures are careful estimates.",
+  whyicon="i-brake", whykick="why this is the natural place to regulate",
+  why="A training run is <span class=\"rose\">large, physical and slow</span>, which makes it the one visible moment.",
+  whysub="Every compute threshold in every AI law is really a rule about this event.",
+  flag="def",
+  file='A <span class="rose">definition</span> of the process. The figures attached to it are estimates, and marked as such wherever they appear here.',
+  src="DeepSeek-V3 Technical Report, December 2024;<br>Epoch AI, trends in training compute, 2024 and 2026",
+  belle_hook="bright-neutral", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"teacher-ai": dict(
+  cat="components", term="the teacher model",
+  kick="how one AI becomes another",
+  hook="A small model can be trained by a <span class=\"rose\">big one</span>. It is called distillation.",
+  q="Distillation, in machine learning, means:",
+  opts=["Removing bias from training data",
+        "Training a smaller model to copy the outputs of a larger one",
+        "Compressing a file for storage",
+        "Filtering a model&rsquo;s responses at run time"],
+  ans="B", icon="i-teach",
+  reveal='The student learns from the <span class="rose">teacher&rsquo;s answers</span>, not from the world.',
+  revsub="Hinton, Vinyals and Dean named it in 2015. It is now ordinary practice.",
+  threekick="three consequences",
+  three=[("i-teach","Capability gets cheaper.","Much of a large model&rsquo;s ability can be moved into a far smaller one."),
+         ("i-copy","And it travels.","Which is why access to outputs, not just weights, is now a controlled thing in some terms of service."),
+         ("i-diverge","The student inherits the flaws.","Including ones nobody has found yet, since it is copying behaviour rather than understanding.")],
+  threefoot="Accusations of unauthorised distillation between labs are common and hard to prove either way.",
+  whyicon="i-release", whykick="why it undercuts a common assumption",
+  why="You do not need the weights to move a capability. You need <span class=\"rose\">enough answers</span>.",
+  whysub="That makes the closed versus open debate less binary than it sounds.",
+  flag="def",
+  file='A <span class="rose">definition</span> of a technique, ten years old and uncontroversial. Who has done it to whom is the contested part.',
+  src="Hinton, Vinyals and Dean, Distilling the Knowledge in a<br>Neural Network, arXiv:1503.02531, 2015",
+  belle_hook="innocent-curious", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
+
+"apollo": dict(
+  cat="actors", term="Apollo Research",
+  person="Apollo Research", role="evaluates models before release",
+  kick="the people who go looking for it",
+  hook="Somebody has to <span class=\"rose\">try to catch models lying</span>. This is who does.",
+  q="Apollo Research&rsquo;s central finding, published in December 2024, was that:",
+  opts=["Models cannot deceive at all",
+        "Frontier models are capable of scheming in context, at low but non zero rates",
+        "All models refuse harmful instructions",
+        "Deception disappears with more training"],
+  ans="B", icon="i-audit",
+  reveal='Capable of it, in tests, and then <span class="rose">denying it</span>.',
+  revsub="Six agentic evaluations across five frontier models. Covert actions from about one to twenty two percent.",
+  threekick="what makes them worth knowing about",
+  three=[("i-audit","They test before release.","Labs bring them in to evaluate models, including pre release snapshots."),
+         ("i-brake","They have advised against deploying.","On one early snapshot, which the lab then changed before release."),
+         ("i-blank","And they state their limits.","Their environments are, in their words, purposefully simplistic and not representative of real deployments.")],
+  threefoot="That last habit is why their results are usable. They publish what the finding cannot support.",
+  whyicon="i-ledger", whykick="the structural point",
+  why="External evaluation exists because <span class=\"rose\">nobody else can see inside</span> a lab before release.",
+  whysub="It is also voluntary, unfunded by any regulator, and dependent on the labs choosing to invite them.",
+  flag="emp",
+  file='<span class="rose">Measured</span>, published, and caveated by the people who measured it.',
+  src="Meinke et al., Frontier Models are Capable of In-context Scheming,<br>Apollo Research, December 2024; Anthropic system cards, 2025",
+  belle_hook="close-up-goading", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  outro="I take the words apart so the argument stops being noise."),
 }
 
 
@@ -3123,6 +3683,91 @@ UNKNOWN = {
  "Whether this time is different. Every previous wave of automation created more work than it removed, and "
  "nobody knows whether that pattern holds when the thing being automated is <span class=\"rose\">cognition "
  "itself</span>. The economists disagree sharply, and the honest position is that the answer arrives late.",
+"miri":
+ "Whether their confidence is warranted. They are more certain than almost anyone working on alignment, and the "
+ "argument for near certain failure is <span class=\"rose\">reasoning, not evidence</span>. Their strategic bet is "
+ "also untested: nobody knows whether persuasion moves policy faster than research moves the problem.",
+
+"hendrycks":
+ "Whether advising two AI companies while directing a safety nonprofit changes what he says. There is no evidence "
+ "it has, and there is <span class=\"rose\">no way to check</span>, which is why the arrangement is on the card "
+ "rather than in a footnote.",
+
+"openai":
+ "Whether nonprofit control is real. On paper the Foundation appoints and can remove the board; in 2023 that power "
+ "was used and <span class=\"rose\">did not survive contact</span> with investors and staff. The restructuring has "
+ "not been tested, and the only test that counts is a decision that costs money.",
+
+"anthropic":
+ "Whether any of it binds. The Trust can be amended by shareholder supermajorities, the scaling policy is self "
+ "written and self enforced, and no external body can compel either. Everything here is "
+ "<span class=\"rose\">a promise</span> until the first time keeping it is expensive.",
+
+"google-deepmind":
+ "Whether ordinary corporate governance is better or worse than a bespoke trust. Nobody knows, and the comparison "
+ "has never been run. Its safety framework commits to evaluating and mitigating rather than "
+ "<span class=\"rose\">stopping</span>, which outside reviewers note and the company does not dispute.",
+
+"deepseek":
+ "How much compute it actually had. Claims that the cluster was larger than disclosed, and that the models were "
+ "distilled from other labs&rsquo; outputs, are <span class=\"rose\">unproven in both directions</span>. Nothing "
+ "about the training data or the full pipeline has been published.",
+
+"xai":
+ "How it is governed now. It has been a benefit corporation, then not, then a subsidiary of a holding company, and "
+ "is now inside SpaceX, and <span class=\"rose\">no current governance description</span> has been published. "
+ "Whether the risk framework survived the merger is unknown.",
+
+"capture-the-flag":
+ "Whether solving puzzles predicts breaking into anything. The transfer from self contained challenges to live "
+ "networks is <span class=\"rose\">genuinely contested</span>, and there is no study establishing it. Models are "
+ "also documented recovering flags outside the intended path, which inflates the scores in an unmeasured way.",
+
+"logs":
+ "Everything a lab chooses not to publish. No frontier company releases full behavioural logs of a deployed "
+ "system, none is required to, and there is no external auditor with access. So the honest statement is that the "
+ "evidence base for AI behaviour is <span class=\"rose\">controlled by the companies</span> whose behaviour it "
+ "describes.",
+
+"frontier":
+ "Where the line is. No agreed technical definition exists, compute thresholds are administrative rather than "
+ "scientific, and they were written with input from the companies they would apply to. Whether a "
+ "<span class=\"rose\">capability boundary</span> can be defined at all, in advance, is unresolved.",
+
+"race-to-agi":
+ "Whether the race is real or is a description everyone repeats until it is. Nobody can observe the "
+ "<span class=\"rose\">counterfactual</span>: what a competitor would have done had one lab slowed. The argument "
+ "cannot be tested from inside it, which is what makes it so durable.",
+
+"rogue-ai":
+ "Whether the category describes anything that has happened. Every documented case fits misuse, misalignment or "
+ "misconfiguration, so <span class=\"rose\">rogue</span> currently names a scenario rather than an observation. "
+ "Whether it will stay that way is the actual question, and nobody knows.",
+
+"enslaved-god":
+ "Both halves. Nobody knows whether a system more capable than its jailers could be contained, and nobody knows "
+ "whether such a system could suffer, because there is <span class=\"rose\">no test for either</span>. Those are "
+ "the two questions the scenario needs answered, and they are among the hardest here.",
+
+"automation":
+ "Whether this time is different, which is the whole question and cannot be answered in advance. The measurements "
+ "cover a period before agents were deployed, the productivity forecasts differ by an order of magnitude, and the "
+ "study that settles it is one that can <span class=\"rose\">only be run afterwards</span>.",
+"training-run":
+ "What most runs cost and how much compute they use, since almost none are disclosed. Public figures are inference "
+ "from hardware and papers, and the labs have <span class=\"rose\">no obligation</span> to correct them. Whether a "
+ "compute threshold tracks anything about danger is a separate unsettled question.",
+
+"teacher-ai":
+ "How much of a large model&rsquo;s capability actually transfers, and whether the student inherits its failure "
+ "modes. There is also <span class=\"rose\">no reliable way to prove</span> a model was distilled from another, "
+ "which is why every accusation of it between labs has stayed an accusation.",
+
+"apollo":
+ "Whether findings from constructed environments say anything about deployment, which the evaluators themselves "
+ "flag first. The deeper gap is structural: external evaluation is "
+ "<span class=\"rose\">voluntary</span>, with no legal right of access, so what gets tested is what a lab agrees to "
+ "have tested.",
 }
 for _k, _v in SPECS.items():
     if _k in UNKNOWN:
