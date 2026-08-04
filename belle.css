@@ -186,6 +186,7 @@ a.card:hover{border-color:var(--rose)}
 
 /* ---------- crosslinks ---------- */
 .xlinks{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--s3);margin-top:var(--s5)}
+.xlinks.two{grid-template-columns:repeat(auto-fit,minmax(min(400px,100%),1fr))}
 .xl{background:var(--panel);border:1px solid var(--line);border-radius:var(--rc);padding:var(--s3);display:block}
 .xl:hover{border-color:var(--rose)}
 .xl .k{font-family:var(--mono);font-size:.72rem;color:var(--faint);display:block;margin-bottom:4px}

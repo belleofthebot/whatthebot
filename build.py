@@ -3,15 +3,16 @@
 import os, io
 
 OUT = os.path.dirname(os.path.abspath(__file__))
+RISK = os.path.join(OUT, "risk")
 
 NAV = [("index.html","the map"),("pipeline.html","how it is made"),
        ("taxonomy.html","the two axes"),("pdoom.html","the number"),
        ("words.html","the words")]
 
-def head(title, desc, current):
+def head(title, desc, current, base="../", nav=NAV):
     links = "".join(
         '<a class="link" href="%s"%s>%s</a>' % (h, ' aria-current="page"' if h==current else '', t)
-        for h,t in NAV)
+        for h,t in nav)
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,33 +24,35 @@ def head(title, desc, current):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=Space+Grotesk:wght@400;500&display=swap">
-<link rel="stylesheet" href="belle.css">
+<link rel="stylesheet" href="{base}belle.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="nav"><div class="nav-in">
-<a class="mark" href="index.html">belleof<span class="sg">thebot</span><span class="cur">_</span></a>
+<a class="mark" href="{base}index.html">belleof<span class="sg">thebot</span><span class="cur">_</span></a>
 <span class="nav-sp"></span>
 {links}
 </div></header>
 <main id="main">
 """
 
-FOOT = """</main>
+def foot(base="../", blurb="a plain language map of what people mean when they talk about AI risk"):
+    return f"""</main>
 <footer><div class="wrap">
-<span>a plain language map of what people mean when they talk about AI risk</span>
+<span>{blurb}</span>
 <span>built by elizabeth beier &middot; sources on every claim</span>
 </div></footer>
-<script src="belle.js"></script>
+<script src="{base}belle.js"></script>
 </body></html>
 """
 
 # ---------------------------------------------------------------- Belle stand-in
-BELLE = """<svg viewBox="0 0 320 300" role="img" aria-label="Placeholder illustration of Belle, a robot character, standing beside a terminal screen">
+def belle(l1, l2, l3):
+    return """<svg viewBox="0 0 320 300" role="img" aria-label="Placeholder illustration of Belle, a robot character, standing beside a terminal screen">
 <rect x="150" y="70" width="160" height="150" rx="8" fill="#141019" stroke="#423748"/>
-<text x="164" y="100" font-family="IBM Plex Mono,monospace" font-size="11" fill="#DFA192">&gt; define risk</text>
-<text x="164" y="122" font-family="IBM Plex Mono,monospace" font-size="11" fill="#B3A6BC">which kind</text>
-<text x="164" y="140" font-family="IBM Plex Mono,monospace" font-size="11" fill="#B3A6BC">do you mean</text>
+<text x="164" y="100" font-family="IBM Plex Mono,monospace" font-size="11" fill="#DFA192">&gt; """ + l1 + """</text>
+<text x="164" y="122" font-family="IBM Plex Mono,monospace" font-size="11" fill="#B3A6BC">""" + l2 + """</text>
+<text x="164" y="140" font-family="IBM Plex Mono,monospace" font-size="11" fill="#B3A6BC">""" + l3 + """</text>
 <rect x="164" y="152" width="7" height="13" fill="#9FE0CE"/>
 <rect x="52" y="150" width="74" height="98" rx="14" fill="#241D28" stroke="#423748"/>
 <rect x="34" y="182" width="22" height="34" rx="9" fill="#9FE0CE"/>
@@ -66,14 +69,27 @@ BELLE = """<svg viewBox="0 0 320 300" role="img" aria-label="Placeholder illustr
 <path d="M80 118q9 7 18 0" fill="none" stroke="#3A343E" stroke-width="3" stroke-linecap="round"/>
 </svg>"""
 
+BELLE = belle("define risk", "which kind", "do you mean")
+BELLE_HOME = belle("what the bot", "i take hard things", "apart and draw them")
+
 def page(name, title, desc, body):
-    html = head(title, desc, name) + body + FOOT
+    """A page inside /risk/."""
+    html = head(title, desc, name) + body + foot()
+    if not os.path.isdir(RISK):
+        os.makedirs(RISK)
+    with io.open(os.path.join(RISK, name), "w", encoding="utf-8") as f:
+        f.write(html)
+    print("risk/" + name, len(html))
+
+def rootpage(name, title, desc, body, nav, blurb):
+    """A page at the site root."""
+    html = head(title, desc, name, base="", nav=nav) + body + foot(base="", blurb=blurb)
     with io.open(os.path.join(OUT, name), "w", encoding="utf-8") as f:
         f.write(html)
     print(name, len(html))
 
-def xlinks(items):
-    out = ['<div class="xlinks">']
+def xlinks(items, cls=""):
+    out = ['<div class="xlinks%s">' % ((" " + cls) if cls else "")]
     for href, k, t in items:
         out.append(f'<a class="xl" href="{href}"><span class="k">{k}</span><span class="t">{t} &rarr;</span></a>')
     out.append('</div>')
@@ -527,6 +543,63 @@ words_body = f"""
 </div>
 <script>{qjs}</script>
 """
+
+# ================================================================= ROOT / HOME
+ROOTNAV = [("index.html","home"),("risk/index.html","the ai risk map")]
+
+home_body = f"""
+<div class="wrap hero">
+<div class="herogrid">
+<div>
+<span class="kicker">belleofthebot &middot; explainers</span>
+<h1>I take complicated things apart and draw them.</h1>
+<p class="lede">Interactive walkthroughs of subjects that are hard to see clearly, in plain language, with the uncertainty left visible instead of smoothed out. Built by hand, sourced throughout, and free to read.</p>
+<div class="tags">
+<span class="tag rose">no predictions</span>
+<span class="tag">sources on every claim</span>
+<span class="tag mint"><span class="dot">&#9679;</span> more coming</span>
+</div>
+</div>
+<div class="stage">{BELLE_HOME}<div class="ph">hero illustration placeholder &middot; replace with your Belle render</div></div>
+</div>
+</div>
+
+<div class="wrap">
+<div class="note">
+<span class="h">who is doing this</span>
+<p>I am Elizabeth Beier, a designer who learned to build. I make things with these systems every day, and when a subject is too tangled to hold in my head I do the same thing I have always done with a hard brief: take it apart, draw it, and check my work against the sources. These are those, in public.</p>
+</div>
+
+<h2>The explainers</h2>
+<a class="card" href="risk/index.html">
+<h3>What people mean when they argue about AI risk</h3>
+<p>Four connected walkthroughs. How a language model actually gets made, why severity and cause are separate questions, why two people can both say ten percent and mean incompatible things, and the fourteen words the argument cannot proceed without. Every claim is marked as measured, estimated or argued, so you can tell which is which.</p>
+<span class="foot">4 walkthroughs &middot; interactive &middot; sourced</span></a>
+
+{xlinks([("risk/pipeline.html","jump in","How a language model gets made"),
+         ("risk/taxonomy.html","jump in","The two axes"),
+         ("risk/pdoom.html","jump in","The number and its limits"),
+         ("risk/words.html","jump in","The words, with a quiz")], "two")}
+
+<h2>How these are made</h2>
+<p>Research first, from primary sources, with a written list of things not to draw as settled fact. Then the structure, which is usually where the real work is: a grid rather than a ladder if two things are independent, a builder rather than a paragraph if the point is that a term is slippery. Then the drawing.</p>
+<p>Every substantive claim carries one of three marks, and keeping them apart is the whole discipline of the thing.</p>
+<div class="tags">
+<span class="flag emp">measured</span>
+<span class="flag op">someone's estimate</span>
+<span class="flag phil">argument</span>
+</div>
+<p class="meta">Measured means a study, survey or evaluation actually counted something. An estimate means a named person said it, which makes the saying a fact and the belief still a belief. An argument is philosophical and cannot be settled by data.</p>
+
+<div class="note" style="margin-top:var(--s5)">
+<span class="h">elsewhere</span>
+<p>My design and development portfolio, with case studies of the systems behind this one, is at <a href="https://elizabethbportfolio.com">elizabethbportfolio.com</a>. The code for everything here is at <a href="https://github.com/belleofthebot">github.com/belleofthebot</a>.</p>
+</div>
+</div>
+"""
+
+rootpage("index.html","Home","Interactive plain language walkthroughs of subjects that are hard to see clearly, by Elizabeth Beier.", home_body, ROOTNAV,
+         "plain language walkthroughs of things that are hard to see clearly")
 
 page("index.html","The map","A plain language map of what people mean when they talk about AI risk.", index_body)
 page("pipeline.html","How a language model gets made","Five stages from raw text to a deployed assistant, and where the safety work attaches.", pipeline_body)
