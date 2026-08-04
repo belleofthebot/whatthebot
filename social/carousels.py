@@ -32,79 +32,88 @@ HEAD = """<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap">
 <style>
 :root{
-  --ground:#17121C; --panel:#241D28; --rose:#DFA192; --mint:#9FE0CE; --well:#F5F1EC;
-  --well-rose:#AE5A47; --well-mint:#2E9B7F; --text:#F4F2EE; --line:#423748;
-  --meta:#B3A6BC; --faint:#8A7F93; --ink:#3A343E;
+  --plum:#17121C; --rose:#DFA192; --mint:#9FE0CE; --ivory:#F5F1EC; --grey:#D5CFC9;
   --sans:'Space Grotesk',sans-serif; --mono:'IBM Plex Mono',monospace;
-  --ic-rose:#DFA192; --ic-mint:#9FE0CE; --ic-dim:#8A7F93;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:#0d0a10;font-family:var(--sans);display:flex;flex-wrap:wrap;gap:26px;padding:26px}
-.s{width:1080px;height:1350px;background:var(--ground);color:var(--text);position:relative;
-   padding:144px 92px 148px;display:flex;flex-direction:column;overflow:hidden}
-/* instagram overlays the top and bottom of a 4:5 post. keep everything inside. */
-.safe{position:absolute;left:0;right:0;pointer-events:none;border-top:0}
-.hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px}
-.ftr{margin-top:30px}
-.s.ivory{background:var(--well);color:var(--ink);--ic-rose:#AE5A47;--ic-mint:#2E9B7F;--ic-dim:#8B8090}
+
+/* one ground per category. --acc is whatever reads as the accent on that ground. */
+.s{width:1080px;height:1350px;position:relative;padding:144px 92px 148px;
+   display:flex;flex-direction:column;overflow:hidden;background:var(--bg);color:var(--fg)}
+.g-risk{--bg:#17121C;--fg:#F4F2EE;--acc:#DFA192;--soft:#B3A6BC;--faint:#8A7F93;
+        --edge:#423748;--ic-rose:#DFA192;--ic-mint:#9FE0CE;--ic-dim:#8A7F93}
+.g-behavior{--bg:#DFA192;--fg:#2A1F26;--acc:#5E2F26;--soft:#5E4A4E;--faint:#8A6257;
+        --edge:#C4826F;--ic-rose:#5E2F26;--ic-mint:#1F6B57;--ic-dim:#8A6257}
+.g-components{--bg:#F5F1EC;--fg:#3A343E;--acc:#AE5A47;--soft:#6E6474;--faint:#8B8090;
+        --edge:#DCD2C6;--ic-rose:#AE5A47;--ic-mint:#2E9B7F;--ic-dim:#8B8090}
+.g-actors{--bg:#D5CFC9;--fg:#332F2E;--acc:#8E4B3C;--soft:#615C59;--faint:#7B7570;
+        --edge:#BCB5AE;--ic-rose:#8E4B3C;--ic-mint:#2E7F6A;--ic-dim:#7C7883}
+/* slide four flips to break the rhythm */
+.flip.g-risk{--bg:#F5F1EC;--fg:#3A343E;--acc:#AE5A47;--soft:#6E6474;--faint:#8B8090;
+        --edge:#DCD2C6;--ic-rose:#AE5A47;--ic-mint:#2E9B7F;--ic-dim:#8B8090}
+.flip.g-behavior,.flip.g-components,.flip.g-actors{--bg:#17121C;--fg:#F4F2EE;--acc:#DFA192;
+        --soft:#B3A6BC;--faint:#8A7F93;--edge:#423748;--ic-rose:#DFA192;--ic-mint:#9FE0CE;--ic-dim:#8A7F93}
+
+.hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px;position:relative;z-index:2}
+.ftr{margin-top:30px;position:relative;z-index:2}
 .num{font-family:var(--mono);font-size:26px;color:var(--faint)}
-.ivory .num{color:#8B8090}
-.mark{font-family:var(--mono);font-size:28px;color:var(--rose)}
-.mark .sg{font-family:var(--sans);font-weight:500;color:var(--text)}
-.ivory .mark{color:var(--well-rose)} .ivory .mark .sg{color:var(--ink)}
-.chip{font-family:var(--mono);font-size:24px;color:var(--rose);
-      border:2px solid var(--well-rose);border-radius:999px;padding:7px 20px}
-/* slide one wears the category loudly, so it reads at grid thumbnail size */
+.mark{font-family:var(--mono);font-size:28px;color:var(--acc)}
+.mark .sg{font-family:var(--sans);font-weight:500;color:var(--fg)}
+.chip{font-family:var(--mono);font-size:24px;color:var(--acc);
+      border:2px solid var(--edge);border-radius:999px;padding:7px 20px}
 .cat{display:flex;align-items:center;gap:22px;margin-bottom:36px}
-.cat .lbl{font-family:var(--mono);font-size:40px;letter-spacing:.06em;color:var(--rose);
+.cat .lbl{font-family:var(--mono);font-size:40px;letter-spacing:.06em;color:var(--acc);
           text-transform:uppercase;white-space:nowrap}
-.cat .rule{height:4px;background:var(--rose);border-radius:2px;flex:1;opacity:.55}
-.ivory .cat .lbl{color:var(--well-rose)} .ivory .cat .rule{background:var(--well-rose)}
-.ivory .chip{color:var(--well-rose);border-color:#D8B3A8}
-.kick{font-family:var(--mono);font-size:28px;color:var(--meta);margin-bottom:24px;display:block}
-.ivory .kick{color:#6E6474}
+.cat .rule{height:4px;background:var(--acc);border-radius:2px;flex:1;opacity:.5}
+.kick{font-family:var(--mono);font-size:28px;color:var(--soft);margin-bottom:24px;display:block}
 h1{font-size:90px;line-height:1.03;font-weight:500;letter-spacing:-.022em;max-width:660px}
 h1.sm{font-size:70px}
-h2{font-size:54px;line-height:1.1;font-weight:500;letter-spacing:-.015em}
+h2{font-size:54px;line-height:1.12;font-weight:500;letter-spacing:-.015em}
 h2.sm{font-size:48px}
-p{font-size:36px;line-height:1.38;color:var(--meta);max-width:24ch}
-.ivory p{color:var(--ink)}
-.rose{color:var(--rose)} .ivory .rose{color:var(--well-rose)}
-.mid{flex:1;display:flex;flex-direction:column;justify-content:center}
-.belle{position:absolute;bottom:120px;right:0;height:600px}
-.belle.sm{height:430px}
+p{font-size:36px;line-height:1.38;color:var(--soft);max-width:24ch}
+.rose{color:var(--acc)}
+.mid{flex:1;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2}
+.belle{position:absolute;bottom:0;right:0;height:760px;z-index:1}
+.belle.sm{height:560px}
+/* where she stands. text moves out of her way. */
+.p-left .belle{right:auto;left:0}
+.p-left .mid{margin-left:40%}
+.p-left h1{max-width:560px}
+.p-left .ftr{text-align:right}
+.p-centre .ftr{text-align:left}
+.p-centre .belle{right:auto;left:50%;transform:translateX(-50%);height:600px;opacity:.95}
+.p-centre .mid{justify-content:flex-start}
+.p-centre h1,.p-centre h2{max-width:800px}
+.p-far .belle{height:880px;right:0}
+.p-far .mid{max-width:58%}
 .ico{display:inline-flex;align-items:center;gap:20px}
 .ico .tick{width:22px;height:3px;background:var(--ic-rose);border-radius:2px;flex:none}
-.ico .box{width:104px;height:104px;border:2px solid var(--line);border-radius:22px;flex:none;
+.ico .box{width:104px;height:104px;border:2px solid var(--edge);border-radius:22px;flex:none;
           display:flex;align-items:center;justify-content:center}
-.ivory .ico .box{border-color:#DCD2C6}
 .ico.hot .box{border-color:var(--ic-rose)}
 .ico svg{width:76px;height:76px}
 .ico.big .box{width:176px;height:176px;border-radius:30px}
 .ico.big svg{width:128px;height:128px}
 .opts{display:flex;flex-direction:column;gap:18px;margin-top:22px}
-.opt{border:2px solid var(--line);border-radius:18px;padding:20px 28px;font-size:32px;color:var(--text);
+.opt{border:2px solid var(--edge);border-radius:18px;padding:20px 28px;font-size:32px;color:var(--fg);
      display:flex;gap:20px;align-items:center;line-height:1.24}
 .opt .k{font-family:var(--mono);font-size:30px;color:var(--faint);flex:none}
 .flag{display:inline-block;font-family:var(--mono);font-size:25px;padding:9px 20px;border-radius:999px;
-      border:2px solid var(--line);color:var(--faint)}
-.flag.on.emp{color:var(--mint);border-color:var(--mint)}
-.flag.on.op{color:var(--rose);border-color:var(--rose)}
-.flag.on.arg{color:#F4F2EE;border-color:#F4F2EE}
-.flag.on.def{color:#F4F2EE;border-color:#DFA192}
+      border:2px solid var(--edge);color:var(--faint)}
+.flag.on{color:var(--fg);border-color:var(--acc)}
 .three{display:flex;flex-direction:column;gap:28px;margin-top:12px}
 .three .row{display:flex;gap:32px;align-items:center}
 .three .t{font-size:34px;line-height:1.28}
 .three .t b{font-weight:700;display:block;font-size:38px;margin-bottom:4px}
 .src{font-family:var(--mono);font-size:24px;color:var(--faint);line-height:1.6}
-.ivory .src{color:#8B8090}
-.strike{text-decoration:line-through;text-decoration-thickness:7px;text-decoration-color:var(--rose);opacity:.5}
-.handle{font-family:var(--mono);font-size:52px;color:var(--rose);letter-spacing:-.02em}
-.follow{border:2px solid var(--rose);border-radius:22px;padding:32px 40px;display:inline-flex;
+.strike{text-decoration:line-through;text-decoration-thickness:7px;text-decoration-color:var(--acc);opacity:.5}
+.handle{font-family:var(--mono);font-size:52px;color:var(--acc);letter-spacing:-.02em}
+.follow{border:2px solid var(--acc);border-radius:22px;padding:32px 40px;display:inline-flex;
         flex-direction:column;gap:10px;align-self:flex-start}
-.follow .l{font-family:var(--mono);font-size:28px;color:var(--meta)}
+.follow .l{font-family:var(--mono);font-size:28px;color:var(--soft)}
 .who{font-size:66px;line-height:1.05;font-weight:500;letter-spacing:-.02em}
-.role{font-family:var(--mono);font-size:26px;color:var(--rose);margin-top:14px;line-height:1.5;max-width:34ch}
+.role{font-family:var(--mono);font-size:26px;color:var(--acc);margin-top:14px;line-height:1.5;max-width:34ch}
 </style></head><body>
 """
 
@@ -249,10 +258,11 @@ def _ico(name, big=False, hot=False):
 def _belle(slug, small=True):
     return f'<img class="belle{" sm" if small else ""}" src="../../assets/belle/{slug}.webp" alt="">'
 
-def _slide(n, total, body, cat=None, ivory=False, belle=None, sid=""):
-    chip = f'<span class="chip">{CATS[cat]}</span>' if cat else "<span></span>"
-    return (f'<div class="s{" ivory" if ivory else ""}" id="{sid}">'
-            f'<div class="hdr">{chip}<span class="num">{n} / {total}</span></div>'
+def _slide(n, total, body, cat, flip=False, belle=None, sid="", chip=True, pos=""):
+    c = f'<span class="chip">{CATS[cat]}</span>' if chip else "<span></span>"
+    pcls = (" " + pos) if (pos and belle) else ""
+    return (f'<div class="s g-{cat}{" flip" if flip else ""}{pcls}" id="{sid}">'
+            f'<div class="hdr">{c}<span class="num">{n} / {total}</span></div>'
             f'<div class="mid">{body}</div>'
             f'{_belle(belle) if belle else ""}'
             f'<div class="ftr">{MARK}</div></div>\n')
@@ -264,8 +274,8 @@ def build(key, spec):
     s = []
     # 1 hook
     cat = spec["cat"]
-    pale = cat in ("actors", "risk")
-    lead_belle = cat in ("actors", "behavior")
+    pos = spec.get("pos", "")
+    lead_belle = bool(spec.get("belle_hook")) and spec.get("lead") != "icon"
     band = (f'<div class="cat"><span class="lbl">{CATS[cat]}</span>'
             f'<span class="rule"></span></div>')
     if spec.get("person"):
@@ -278,35 +288,35 @@ def build(key, spec):
     if not lead_belle:
         head += ('<div style="margin-top:52px">'
                  + _ico(spec["icon"], big=True, hot=True) + '</div>')
-    s.append(_slide(1, t, head, ivory=pale,
-                    belle=spec["belle_hook"] if lead_belle else None, sid="s1"))
+    s.append(_slide(1, t, head, cat, pos=pos,
+                    belle=spec["belle_hook"] if lead_belle else None, sid="s1", chip=False))
     # 2 quiz
     opts = "".join(f'<div class="opt"><span class="k">{k}</span>{o}</div>'
                    for k, o in zip("ABCD", spec["opts"]))
     s.append(_slide(2, t,
         f'<span class="kick">before you swipe, pick one</span>'
-        f'<h2 style="margin-bottom:38px">{spec["q"]}</h2><div class="opts">{opts}</div>', cat=spec["cat"], sid="s2"))
+        f'<h2 style="margin-bottom:38px">{spec["q"]}</h2><div class="opts">{opts}</div>', cat, sid="s2"))
     # 3 reveal
     s.append(_slide(3, t,
         f'<span class="kick">it is {spec["ans"]}</span>'
         f'<h2 class="{spec.get("revcls","")}" style="max-width:15ch;margin-bottom:52px">{spec["reveal"]}</h2>'
         f'{_ico(spec["icon"], big=True, hot=True)}'
-        f'<p style="margin-top:38px">{spec["revsub"]}</p>', cat=spec["cat"], sid="s3"))
+        f'<p style="margin-top:38px">{spec["revsub"]}</p>', cat, sid="s3"))
     # 4 unpack, ivory
     rows = "".join(f'<div class="row">{_ico(i)}<span class="t"><b>{ti}</b>{bo}</span></div>'
                    for i, ti, bo in spec["three"])
     s.append(_slide(4, t,
         f'<span class="kick">{spec["threekick"]}</span><div class="three">{rows}</div>'
         f'<p style="margin-top:52px;font-size:36px">{spec["threefoot"]}</p>',
-        cat=spec["cat"], ivory=True, sid="s4"))
+        cat, flip=True, sid="s4"))
     # 5 why
     s.append(_slide(5, t,
         f'{_ico(spec["whyicon"])}<div style="height:44px"></div>'
         f'<span class="kick">{spec["whykick"]}</span>'
         f'<h2 class="sm" style="max-width:19ch">{spec["why"]}</h2>'
-        f'<p style="margin-top:38px">{spec["whysub"]}</p>', cat=spec["cat"], sid="s5"))
+        f'<p style="margin-top:38px">{spec["whysub"]}</p>', cat, sid="s5"))
     # 6 file it
-    chips = "".join(f'<span class="flag{" on "+c if c==spec["flag"] else ""} {c}">{lbl}</span> '
+    chips = "".join(f'<span class="flag{" on" if c==spec["flag"] else ""}">{lbl}</span> '
                     for c, lbl in FLAGS)
     s.append(_slide(6, t,
         f'<span class="kick">how to file this one</span>'
@@ -314,7 +324,7 @@ def build(key, spec):
         f'{_ico("i-doc")}<div style="height:40px"></div>'
         f'<p style="max-width:17ch">{spec["file"]}</p>'
         f'<p class="src" style="margin-top:40px">{spec["src"]}</p>',
-        cat=spec["cat"], belle=spec["belle_file"], sid="s6"))
+        cat, belle=spec["belle_file"], sid="s6", pos=spec.get("pos6","")))
     # 7 follow
     s.append(_slide(7, t,
         f'<span class="kick">one word at a time</span>'
@@ -323,9 +333,9 @@ def build(key, spec):
         f'<span class="handle">@belleofthebot</span></div>'
         f'<p style="margin-top:44px;font-size:34px;max-width:20ch">Every claim marked measured, '
         f'estimated or argued. Every source named.</p>',
-        cat=spec["cat"], belle=spec["belle_outro"], sid="s7"))
+        cat, belle=spec["belle_outro"], sid="s7", pos=spec.get("pos7","")))
 
-    html = (HEAD % {"term": spec["term"]}) + ICONS + "".join(s) + "</body></html>"
+    html = HEAD.replace("%(term)s", spec["term"]) + ICONS + "".join(s) + "</body></html>"
     if not os.path.isdir(PAGES): os.makedirs(PAGES)
     p = os.path.join(PAGES, key + ".html")
     io.open(p, "w", encoding="utf-8").write(html)
@@ -490,7 +500,7 @@ SPECS = {
 # ============================================================ AI BEHAVIOR + COMPONENTS
 "hallucination": dict(
   cat="behavior", term="hallucination",
-  kick="the word that lets it off the hook",
+  kick="a word worth being precise about",
   hook='It is not <span class="strike">seeing things</span>. It has nothing to see.',
   q="A hallucination is:",
   opts=["A glitch or a bug in the code",
@@ -672,8 +682,8 @@ SPECS = {
 # ============================================================ AI RISK
 "recursive-self-improvement": dict(
   cat="risk", term="recursive self improvement",
-  kick="stated as fact roughly daily",
-  hook="Nobody has <span class=\"strike\">seen this happen</span>.",
+  kick="the argument at the centre of the worry",
+  hook="It has not happened. That is not the same as <span class=\"rose\">it cannot</span>.",
   q="&ldquo;Recursive self improvement&rdquo; is:",
   opts=["A measured property of current models",
         "A hypothesis about a compounding loop, not yet demonstrated",
@@ -681,19 +691,19 @@ SPECS = {
         "A type of chip"],
   ans="B", icon="i-compound",
   reveal='A <span class="rose">hypothesis</span>. A system good at AI research improves itself, and each version is better at improving.',
-  revsub="It may turn out to be right. It has not been observed.",
+  revsub="Serious researchers hold it seriously. It is still a chain of reasoning, and worth understanding as one.",
   threekick="what would have to be true",
   three=[("i-compound","The loop must close.","The system has to actually improve its own successor."),
          ("i-branch","Gains must compound.","Each round has to yield more than the last, not less."),
          ("i-flat","Nothing must bottleneck.","Not compute, not data, not physics, not money.")],
-  threefoot="Each of those is disputed in the peer reviewed literature.",
-  whyicon="i-doc", whykick="why the flag matters here",
-  why="This is repeated in headlines as though it were a <span class=\"rose\">finding</span>. It is a chain of arguments.",
-  whysub="You can take it seriously and still insist it be labelled correctly. Most of the field does both.",
+  threefoot="Each step is argued in the literature, in both directions, by people who have thought hard about it.",
+  whyicon="i-doc", whykick="why the label is not a dismissal",
+  why="Calling it an argument is not calling it <span class=\"rose\">wrong</span>. It is saying what kind of thing it is.",
+  whysub="Reasoning carefully about what has not happened yet is how anything gets prevented. It just has to be labelled honestly.",
   flag="arg",
-  file='An <span class="rose">argument</span>. Not measured, not a forecast with a track record. Reasoned.',
-  src="Thorstad, Against the singularity hypothesis,<br>Philosophical Studies, 2024, for the case against",
-  belle_hook="deadpan-annoyed-1", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
+  file='An <span class="rose">argument</span>. The right tool for something that has not happened yet.',
+  src="Carlsmith, Is Power-Seeking AI an Existential Risk?, 2022;<br>Thorstad, Against the singularity hypothesis, 2024",
+  belle_hook="warm-curious", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
   outro="I take the words apart so the argument stops being noise."),
 
 "intelligence": dict(
@@ -723,7 +733,14 @@ SPECS = {
   outro="I take the words apart so the argument stops being noise."),
 }
 
+
+POS = {'who-makes-the-chips': ('p-left', '', 'p-left'), 'who-owns-it': ('', 'p-left', ''), 'who-gives-a-number': ('p-far', '', 'p-centre'), 'bengio': ('', 'p-left', 'p-far'), 'lecun': ('p-left', '', ''), 'bender-hanna': ('p-far', 'p-left', 'p-centre'), 'hallucination': ('', 'p-far', ''), 'specification-gaming': ('p-left', '', 'p-left'), 'context-window': ('p-centre', 'p-left', ''), 'rlhf': ('', '', 'p-far'), 'open-weights': ('p-far', 'p-left', 'p-centre'), 'compute': ('p-left', '', ''), 'intelligence': ('', 'p-left', 'p-far'), 'misuse-misalignment': ('p-centre', '', 'p-left'), 'recursive-self-improvement': ('p-left', 'p-far', '')}
+ICON_LEAD = {'rlhf', 'open-weights', 'compute'}
+
 if __name__ == "__main__":
     for k, v in SPECS.items():
-        print(build(k, v))
+        p1, p6, p7 = POS.get(k, ("", "", ""))
+        v.setdefault("pos", p1); v.setdefault("pos6", p6); v.setdefault("pos7", p7)
+        if k in ICON_LEAD: v["lead"] = "icon"
+        build(k, v)
     print(f"{len(SPECS)} carousels, {len(SPECS)*7} slides")

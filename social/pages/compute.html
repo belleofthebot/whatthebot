@@ -3,79 +3,88 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap">
 <style>
 :root{
-  --ground:#17121C; --panel:#241D28; --rose:#DFA192; --mint:#9FE0CE; --well:#F5F1EC;
-  --well-rose:#AE5A47; --well-mint:#2E9B7F; --text:#F4F2EE; --line:#423748;
-  --meta:#B3A6BC; --faint:#8A7F93; --ink:#3A343E;
+  --plum:#17121C; --rose:#DFA192; --mint:#9FE0CE; --ivory:#F5F1EC; --grey:#D5CFC9;
   --sans:'Space Grotesk',sans-serif; --mono:'IBM Plex Mono',monospace;
-  --ic-rose:#DFA192; --ic-mint:#9FE0CE; --ic-dim:#8A7F93;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:#0d0a10;font-family:var(--sans);display:flex;flex-wrap:wrap;gap:26px;padding:26px}
-.s{width:1080px;height:1350px;background:var(--ground);color:var(--text);position:relative;
-   padding:144px 92px 148px;display:flex;flex-direction:column;overflow:hidden}
-/* instagram overlays the top and bottom of a 4:5 post. keep everything inside. */
-.safe{position:absolute;left:0;right:0;pointer-events:none;border-top:0}
-.hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px}
-.ftr{margin-top:30px}
-.s.ivory{background:var(--well);color:var(--ink);--ic-rose:#AE5A47;--ic-mint:#2E9B7F;--ic-dim:#8B8090}
+
+/* one ground per category. --acc is whatever reads as the accent on that ground. */
+.s{width:1080px;height:1350px;position:relative;padding:144px 92px 148px;
+   display:flex;flex-direction:column;overflow:hidden;background:var(--bg);color:var(--fg)}
+.g-risk{--bg:#17121C;--fg:#F4F2EE;--acc:#DFA192;--soft:#B3A6BC;--faint:#8A7F93;
+        --edge:#423748;--ic-rose:#DFA192;--ic-mint:#9FE0CE;--ic-dim:#8A7F93}
+.g-behavior{--bg:#DFA192;--fg:#2A1F26;--acc:#5E2F26;--soft:#5E4A4E;--faint:#8A6257;
+        --edge:#C4826F;--ic-rose:#5E2F26;--ic-mint:#1F6B57;--ic-dim:#8A6257}
+.g-components{--bg:#F5F1EC;--fg:#3A343E;--acc:#AE5A47;--soft:#6E6474;--faint:#8B8090;
+        --edge:#DCD2C6;--ic-rose:#AE5A47;--ic-mint:#2E9B7F;--ic-dim:#8B8090}
+.g-actors{--bg:#D5CFC9;--fg:#332F2E;--acc:#8E4B3C;--soft:#615C59;--faint:#7B7570;
+        --edge:#BCB5AE;--ic-rose:#8E4B3C;--ic-mint:#2E7F6A;--ic-dim:#7C7883}
+/* slide four flips to break the rhythm */
+.flip.g-risk{--bg:#F5F1EC;--fg:#3A343E;--acc:#AE5A47;--soft:#6E6474;--faint:#8B8090;
+        --edge:#DCD2C6;--ic-rose:#AE5A47;--ic-mint:#2E9B7F;--ic-dim:#8B8090}
+.flip.g-behavior,.flip.g-components,.flip.g-actors{--bg:#17121C;--fg:#F4F2EE;--acc:#DFA192;
+        --soft:#B3A6BC;--faint:#8A7F93;--edge:#423748;--ic-rose:#DFA192;--ic-mint:#9FE0CE;--ic-dim:#8A7F93}
+
+.hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px;position:relative;z-index:2}
+.ftr{margin-top:30px;position:relative;z-index:2}
 .num{font-family:var(--mono);font-size:26px;color:var(--faint)}
-.ivory .num{color:#8B8090}
-.mark{font-family:var(--mono);font-size:28px;color:var(--rose)}
-.mark .sg{font-family:var(--sans);font-weight:500;color:var(--text)}
-.ivory .mark{color:var(--well-rose)} .ivory .mark .sg{color:var(--ink)}
-.chip{font-family:var(--mono);font-size:24px;color:var(--rose);
-      border:2px solid var(--well-rose);border-radius:999px;padding:7px 20px}
-/* slide one wears the category loudly, so it reads at grid thumbnail size */
+.mark{font-family:var(--mono);font-size:28px;color:var(--acc)}
+.mark .sg{font-family:var(--sans);font-weight:500;color:var(--fg)}
+.chip{font-family:var(--mono);font-size:24px;color:var(--acc);
+      border:2px solid var(--edge);border-radius:999px;padding:7px 20px}
 .cat{display:flex;align-items:center;gap:22px;margin-bottom:36px}
-.cat .lbl{font-family:var(--mono);font-size:40px;letter-spacing:.06em;color:var(--rose);
+.cat .lbl{font-family:var(--mono);font-size:40px;letter-spacing:.06em;color:var(--acc);
           text-transform:uppercase;white-space:nowrap}
-.cat .rule{height:4px;background:var(--rose);border-radius:2px;flex:1;opacity:.55}
-.ivory .cat .lbl{color:var(--well-rose)} .ivory .cat .rule{background:var(--well-rose)}
-.ivory .chip{color:var(--well-rose);border-color:#D8B3A8}
-.kick{font-family:var(--mono);font-size:28px;color:var(--meta);margin-bottom:24px;display:block}
-.ivory .kick{color:#6E6474}
+.cat .rule{height:4px;background:var(--acc);border-radius:2px;flex:1;opacity:.5}
+.kick{font-family:var(--mono);font-size:28px;color:var(--soft);margin-bottom:24px;display:block}
 h1{font-size:90px;line-height:1.03;font-weight:500;letter-spacing:-.022em;max-width:660px}
 h1.sm{font-size:70px}
-h2{font-size:54px;line-height:1.1;font-weight:500;letter-spacing:-.015em}
+h2{font-size:54px;line-height:1.12;font-weight:500;letter-spacing:-.015em}
 h2.sm{font-size:48px}
-p{font-size:36px;line-height:1.38;color:var(--meta);max-width:24ch}
-.ivory p{color:var(--ink)}
-.rose{color:var(--rose)} .ivory .rose{color:var(--well-rose)}
-.mid{flex:1;display:flex;flex-direction:column;justify-content:center}
-.belle{position:absolute;bottom:120px;right:0;height:600px}
-.belle.sm{height:430px}
+p{font-size:36px;line-height:1.38;color:var(--soft);max-width:24ch}
+.rose{color:var(--acc)}
+.mid{flex:1;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2}
+.belle{position:absolute;bottom:0;right:0;height:760px;z-index:1}
+.belle.sm{height:560px}
+/* where she stands. text moves out of her way. */
+.p-left .belle{right:auto;left:0}
+.p-left .mid{margin-left:40%}
+.p-left h1{max-width:560px}
+.p-left .ftr{text-align:right}
+.p-centre .ftr{text-align:left}
+.p-centre .belle{right:auto;left:50%;transform:translateX(-50%);height:600px;opacity:.95}
+.p-centre .mid{justify-content:flex-start}
+.p-centre h1,.p-centre h2{max-width:800px}
+.p-far .belle{height:880px;right:0}
+.p-far .mid{max-width:58%}
 .ico{display:inline-flex;align-items:center;gap:20px}
 .ico .tick{width:22px;height:3px;background:var(--ic-rose);border-radius:2px;flex:none}
-.ico .box{width:104px;height:104px;border:2px solid var(--line);border-radius:22px;flex:none;
+.ico .box{width:104px;height:104px;border:2px solid var(--edge);border-radius:22px;flex:none;
           display:flex;align-items:center;justify-content:center}
-.ivory .ico .box{border-color:#DCD2C6}
 .ico.hot .box{border-color:var(--ic-rose)}
 .ico svg{width:76px;height:76px}
 .ico.big .box{width:176px;height:176px;border-radius:30px}
 .ico.big svg{width:128px;height:128px}
 .opts{display:flex;flex-direction:column;gap:18px;margin-top:22px}
-.opt{border:2px solid var(--line);border-radius:18px;padding:20px 28px;font-size:32px;color:var(--text);
+.opt{border:2px solid var(--edge);border-radius:18px;padding:20px 28px;font-size:32px;color:var(--fg);
      display:flex;gap:20px;align-items:center;line-height:1.24}
 .opt .k{font-family:var(--mono);font-size:30px;color:var(--faint);flex:none}
 .flag{display:inline-block;font-family:var(--mono);font-size:25px;padding:9px 20px;border-radius:999px;
-      border:2px solid var(--line);color:var(--faint)}
-.flag.on.emp{color:var(--mint);border-color:var(--mint)}
-.flag.on.op{color:var(--rose);border-color:var(--rose)}
-.flag.on.arg{color:#F4F2EE;border-color:#F4F2EE}
-.flag.on.def{color:#F4F2EE;border-color:#DFA192}
+      border:2px solid var(--edge);color:var(--faint)}
+.flag.on{color:var(--fg);border-color:var(--acc)}
 .three{display:flex;flex-direction:column;gap:28px;margin-top:12px}
 .three .row{display:flex;gap:32px;align-items:center}
 .three .t{font-size:34px;line-height:1.28}
 .three .t b{font-weight:700;display:block;font-size:38px;margin-bottom:4px}
 .src{font-family:var(--mono);font-size:24px;color:var(--faint);line-height:1.6}
-.ivory .src{color:#8B8090}
-.strike{text-decoration:line-through;text-decoration-thickness:7px;text-decoration-color:var(--rose);opacity:.5}
-.handle{font-family:var(--mono);font-size:52px;color:var(--rose);letter-spacing:-.02em}
-.follow{border:2px solid var(--rose);border-radius:22px;padding:32px 40px;display:inline-flex;
+.strike{text-decoration:line-through;text-decoration-thickness:7px;text-decoration-color:var(--acc);opacity:.5}
+.handle{font-family:var(--mono);font-size:52px;color:var(--acc);letter-spacing:-.02em}
+.follow{border:2px solid var(--acc);border-radius:22px;padding:32px 40px;display:inline-flex;
         flex-direction:column;gap:10px;align-self:flex-start}
-.follow .l{font-family:var(--mono);font-size:28px;color:var(--meta)}
+.follow .l{font-family:var(--mono);font-size:28px;color:var(--soft)}
 .who{font-size:66px;line-height:1.05;font-weight:500;letter-spacing:-.02em}
-.role{font-family:var(--mono);font-size:26px;color:var(--rose);margin-top:14px;line-height:1.5;max-width:34ch}
+.role{font-family:var(--mono);font-size:26px;color:var(--acc);margin-top:14px;line-height:1.5;max-width:34ch}
 </style></head><body>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
@@ -206,11 +215,11 @@ p{font-size:36px;line-height:1.38;color:var(--meta);max-width:24ch}
   <path d="M26 32 H38" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
 </g>
 </defs></svg>
-<div class="s" id="s1"><div class="hdr"><span></span><span class="num">1 / 7</span></div><div class="mid"><div class="cat"><span class="lbl">AI components</span><span class="rule"></span></div><span class="kick">the unit that decides who is allowed</span><h1 class="">The law now counts in <span class="rose">arithmetic</span>.</h1><div style="margin-top:52px"><span class="ico big hot"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-weights"/></svg></span></span></div></div><div class="ftr"><span class="mark">belleof<span class="sg">thebot</span>_</span></div></div>
-<div class="s" id="s2"><div class="hdr"><span class="chip">AI components</span><span class="num">2 / 7</span></div><div class="mid"><span class="kick">before you swipe, pick one</span><h2 style="margin-bottom:38px">&ldquo;Compute&rdquo; in AI regulation is measured in:</h2><div class="opts"><div class="opt"><span class="k">A</span>Dollars spent</div><div class="opt"><span class="k">B</span>Floating point operations</div><div class="opt"><span class="k">C</span>Number of employees</div><div class="opt"><span class="k">D</span>Gigabytes of training data</div></div></div><div class="ftr"><span class="mark">belleof<span class="sg">thebot</span>_</span></div></div>
-<div class="s" id="s3"><div class="hdr"><span class="chip">AI components</span><span class="num">3 / 7</span></div><div class="mid"><span class="kick">it is B</span><h2 class="" style="max-width:15ch;margin-bottom:52px"><span class="rose">Floating point operations.</span> How much arithmetic the training run did.</h2><span class="ico big hot"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-weights"/></svg></span></span><p style="margin-top:38px">An odd thing to write into law, and currently the best proxy anyone has.</p></div><div class="ftr"><span class="mark">belleof<span class="sg">thebot</span>_</span></div></div>
-<div class="s ivory" id="s4"><div class="hdr"><span class="chip">AI components</span><span class="num">4 / 7</span></div><div class="mid"><span class="kick">the numbers that matter</span><div class="three"><div class="row"><span class="ico"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-doc"/></svg></span></span><span class="t"><b>Ten to the 25.</b>Above this, Europe presumes a model carries systemic risk.</span></div><div class="row"><span class="ico"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-doc"/></svg></span></span><span class="t"><b>Ten to the 26.</b>Above this, California calls it a frontier model.</span></div><div class="row"><span class="ico"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-weights"/></svg></span></span><span class="t"><b>Twelve developers.</b>Had trained above the European line, as of June 2025.</span></div></div><p style="margin-top:52px;font-size:36px">A whole regulatory regime hanging off one arithmetic count.</p></div><div class="ftr"><span class="mark">belleof<span class="sg">thebot</span>_</span></div></div>
-<div class="s" id="s5"><div class="hdr"><span class="chip">AI components</span><span class="num">5 / 7</span></div><div class="mid"><span class="ico"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-bench"/></svg></span></span><div style="height:44px"></div><span class="kick">why it is a strange choice</span><h2 class="sm" style="max-width:19ch">Compute is easy to count and only loosely related to whether a model is actually <span class="rose">dangerous</span>.</h2><p style="margin-top:38px">It was chosen because it is measurable and hard to hide, not because it is the right thing to measure.</p></div><div class="ftr"><span class="mark">belleof<span class="sg">thebot</span>_</span></div></div>
-<div class="s" id="s6"><div class="hdr"><span class="chip">AI components</span><span class="num">6 / 7</span></div><div class="mid"><span class="kick">how to file this one</span><div style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:48px"><span class="flag on emp emp">measured</span> <span class="flag op">someone&rsquo;s estimate</span> <span class="flag arg">argument</span> <span class="flag def">definition</span> </div><span class="ico"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-doc"/></svg></span></span><div style="height:40px"></div><p style="max-width:17ch"><span class="rose">Measured</span>, and written into statute. The thresholds are quotable exactly.</p><p class="src" style="margin-top:40px">EU AI Act Article 51; California SB 53;<br>Epoch AI, models above 10^25 FLOP, June 2025</p></div><img class="belle sm" src="../../assets/belle/warm-neutral.webp" alt=""><div class="ftr"><span class="mark">belleof<span class="sg">thebot</span>_</span></div></div>
-<div class="s" id="s7"><div class="hdr"><span class="chip">AI components</span><span class="num">7 / 7</span></div><div class="mid"><span class="kick">one word at a time</span><h2 style="max-width:14ch;margin-bottom:44px">I take the words apart so the argument stops being noise.</h2><div class="follow"><span class="l">follow for the rest</span><span class="handle">@belleofthebot</span></div><p style="margin-top:44px;font-size:34px;max-width:20ch">Every claim marked measured, estimated or argued. Every source named.</p></div><img class="belle sm" src="../../assets/belle/hands-out-cheeky.webp" alt=""><div class="ftr"><span class="mark">belleof<span class="sg">thebot</span>_</span></div></div>
+<div class="s g-components" id="s1"><div class="hdr"><span></span><span class="num">1 / 7</span></div><div class="mid"><div class="cat"><span class="lbl">AI components</span><span class="rule"></span></div><span class="kick">the unit that decides who is allowed</span><h1 class="">The law now counts in <span class="rose">arithmetic</span>.</h1><div style="margin-top:52px"><span class="ico big hot"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-weights"/></svg></span></span></div></div><div class="ftr"><span class="mark">belleof<span class="sg">thebot</span>_</span></div></div>
+<div class="s g-components" id="s2"><div class="hdr"><span class="chip">AI components</span><span class="num">2 / 7</span></div><div class="mid"><span class="kick">before you swipe, pick one</span><h2 style="margin-bottom:38px">&ldquo;Compute&rdquo; in AI regulation is measured in:</h2><div class="opts"><div class="opt"><span class="k">A</span>Dollars spent</div><div class="opt"><span class="k">B</span>Floating point operations</div><div class="opt"><span class="k">C</span>Number of employees</div><div class="opt"><span class="k">D</span>Gigabytes of training data</div></div></div><div class="ftr"><span class="mark">belleof<span class="sg">thebot</span>_</span></div></div>
+<div class="s g-components" id="s3"><div class="hdr"><span class="chip">AI components</span><span class="num">3 / 7</span></div><div class="mid"><span class="kick">it is B</span><h2 class="" style="max-width:15ch;margin-bottom:52px"><span class="rose">Floating point operations.</span> How much arithmetic the training run did.</h2><span class="ico big hot"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-weights"/></svg></span></span><p style="margin-top:38px">An odd thing to write into law, and currently the best proxy anyone has.</p></div><div class="ftr"><span class="mark">belleof<span class="sg">thebot</span>_</span></div></div>
+<div class="s g-components flip" id="s4"><div class="hdr"><span class="chip">AI components</span><span class="num">4 / 7</span></div><div class="mid"><span class="kick">the numbers that matter</span><div class="three"><div class="row"><span class="ico"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-doc"/></svg></span></span><span class="t"><b>Ten to the 25.</b>Above this, Europe presumes a model carries systemic risk.</span></div><div class="row"><span class="ico"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-doc"/></svg></span></span><span class="t"><b>Ten to the 26.</b>Above this, California calls it a frontier model.</span></div><div class="row"><span class="ico"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-weights"/></svg></span></span><span class="t"><b>Twelve developers.</b>Had trained above the European line, as of June 2025.</span></div></div><p style="margin-top:52px;font-size:36px">A whole regulatory regime hanging off one arithmetic count.</p></div><div class="ftr"><span class="mark">belleof<span class="sg">thebot</span>_</span></div></div>
+<div class="s g-components" id="s5"><div class="hdr"><span class="chip">AI components</span><span class="num">5 / 7</span></div><div class="mid"><span class="ico"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-bench"/></svg></span></span><div style="height:44px"></div><span class="kick">why it is a strange choice</span><h2 class="sm" style="max-width:19ch">Compute is easy to count and only loosely related to whether a model is actually <span class="rose">dangerous</span>.</h2><p style="margin-top:38px">It was chosen because it is measurable and hard to hide, not because it is the right thing to measure.</p></div><div class="ftr"><span class="mark">belleof<span class="sg">thebot</span>_</span></div></div>
+<div class="s g-components" id="s6"><div class="hdr"><span class="chip">AI components</span><span class="num">6 / 7</span></div><div class="mid"><span class="kick">how to file this one</span><div style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:48px"><span class="flag on">measured</span> <span class="flag">someone&rsquo;s estimate</span> <span class="flag">argument</span> <span class="flag">definition</span> </div><span class="ico"><span class="tick"></span><span class="box"><svg viewBox="0 0 64 64"><use href="#i-doc"/></svg></span></span><div style="height:40px"></div><p style="max-width:17ch"><span class="rose">Measured</span>, and written into statute. The thresholds are quotable exactly.</p><p class="src" style="margin-top:40px">EU AI Act Article 51; California SB 53;<br>Epoch AI, models above 10^25 FLOP, June 2025</p></div><img class="belle sm" src="../../assets/belle/warm-neutral.webp" alt=""><div class="ftr"><span class="mark">belleof<span class="sg">thebot</span>_</span></div></div>
+<div class="s g-components" id="s7"><div class="hdr"><span class="chip">AI components</span><span class="num">7 / 7</span></div><div class="mid"><span class="kick">one word at a time</span><h2 style="max-width:14ch;margin-bottom:44px">I take the words apart so the argument stops being noise.</h2><div class="follow"><span class="l">follow for the rest</span><span class="handle">@belleofthebot</span></div><p style="margin-top:44px;font-size:34px;max-width:20ch">Every claim marked measured, estimated or argued. Every source named.</p></div><img class="belle sm" src="../../assets/belle/hands-out-cheeky.webp" alt=""><div class="ftr"><span class="mark">belleof<span class="sg">thebot</span>_</span></div></div>
 </body></html>
