@@ -98,6 +98,8 @@ p{font-size:36px;line-height:1.38;color:var(--soft);max-width:24ch}
 .cover .swipe{display:flex;align-items:center;gap:14px;margin-top:40px;
   font-family:var(--mono);font-size:27px;color:var(--faint)}
 .cover .swipe .ar{width:44px;height:2px;background:var(--acc);position:relative;opacity:.8}
+.outro .belle{right:0;left:auto;transform:none;height:600px}
+.outro .mid{max-width:56%}
 .cover .swipe .ar::after{content:"";position:absolute;right:0;top:-4px;width:10px;height:10px;
   border-top:2px solid var(--acc);border-right:2px solid var(--acc);transform:rotate(45deg)}
 .ico{display:inline-flex;align-items:center;gap:20px}
@@ -280,6 +282,20 @@ def _slide(n, total, body, cat, flip=False, belle=None, sid="", chip=True, pos="
             f'<div class="mid">{body}</div>'
             f'{_belle(belle) if belle else ""}</div>\n')
 
+OUTROKICK = {
+ "components": "one word at a time",
+ "actors":     "who is actually building this",
+ "behavior":   "what these systems actually do",
+ "risk":       "taken seriously, with sources",
+}
+
+OUTRO = {
+ "components": "I take AI language apart so the words stop being noise.",
+ "actors":     "I follow who actually runs this, and what they actually said.",
+ "behavior":   "I look at what these systems really do, and what the evidence shows.",
+ "risk":       "I take AI risk seriously, and I show my sources either way.",
+}
+
 FLAGS = [("emp","measured"),("op","someone&rsquo;s estimate"),("arg","argument"),("def","definition")]
 
 def build(key, spec):
@@ -298,15 +314,22 @@ def build(key, spec):
         head = f'<h1>{spec["hook"]}</h1>' + swipe
     s.append(_slide(1, t, head, cat, belle=spec["belle_hook"],
                     sid="s1", chip=False, cover=True))
-    # 2 quiz
+    # 2 quiz. the right answer is written second in every spec; rotate it to a
+    # position derived from the key, so the reader cannot learn a pattern.
+    raw = list(spec["opts"])
+    correct = raw[1]
+    target = sum(ord(c) for c in key) % 4
+    rest = [o for i, o in enumerate(raw) if i != 1]
+    shown = rest[:target] + [correct] + rest[target:]
+    ansletter = "ABCD"[target]
     opts = "".join(f'<div class="opt"><span class="k">{k}</span>{o}</div>'
-                   for k, o in zip("ABCD", spec["opts"]))
+                   for k, o in zip("ABCD", shown))
     s.append(_slide(2, t,
         f'<span class="kick">before you swipe, pick one</span>'
         f'<h2 style="margin-bottom:38px">{spec["q"]}</h2><div class="opts">{opts}</div>', cat, sid="s2"))
     # 3 reveal
     s.append(_slide(3, t,
-        f'<span class="kick">it is {spec["ans"]}</span>'
+        f'<span class="kick">it is {ansletter}</span>'
         f'<h2 class="{spec.get("revcls","")}" style="max-width:15ch;margin-bottom:52px">{spec["reveal"]}</h2>'
         f'{_ico(spec["icon"], big=True, hot=True)}'
         f'<p style="margin-top:38px">{spec["revsub"]}</p>', cat, sid="s3"))
@@ -335,13 +358,13 @@ def build(key, spec):
         cat, belle=spec["belle_file"], sid="s6", pos=spec.get("pos6","")))
     # 7 follow
     s.append(_slide(7, t,
-        f'<span class="kick">one word at a time</span>'
-        f'<h2 style="max-width:14ch;margin-bottom:44px">{spec["outro"]}</h2>'
+        f'<span class="kick">{OUTROKICK[cat]}</span>'
+        f'<h2 style="max-width:15ch;margin-bottom:44px">{OUTRO[cat]}</h2>'
         f'<div class="follow"><span class="l">follow for the rest</span>'
         f'<span class="handle">@belleofthebot</span></div>'
         f'<p style="margin-top:44px;font-size:34px;max-width:20ch">Every claim marked measured, '
         f'estimated or argued. Every source named.</p>',
-        cat, belle=spec["belle_outro"], sid="s7", pos=spec.get("pos7","")))
+        cat, belle=spec["belle_outro"], sid="s7", pos="outro"))
 
     html = HEAD.replace("%(term)s", spec["term"]) + ICONS + "".join(s) + "</body></html>"
     if not os.path.isdir(PAGES): os.makedirs(PAGES)
