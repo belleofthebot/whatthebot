@@ -7,15 +7,11 @@ RISK = os.path.join(OUT, "risk")
 
 # The long pages sit under "more" in the site nav, so they carry the site nav
 # rather than one of their own. base is prefixed at render time.
-NAV = [("index.html","explore"),("quizzes.html","quizzes"),
-       ("more.html","more"),("about.html","about")]
+from navmenu import NAV, navlinks
 NAVCUR = "more.html"
 
 def head(title, desc, current, base="../", nav=NAV):
-    links = "".join(
-        '<a class="link" href="%s%s"%s>%s</a>'
-        % (base, h, ' aria-current="page"' if h == NAVCUR else '', t)
-        for h,t in nav)
+    links = navlinks(NAVCUR, base)
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>

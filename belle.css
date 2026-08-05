@@ -57,6 +57,39 @@ a:hover{border-bottom-color:var(--rose)}
 .nav a.link{font-family:var(--mono);font-size:.8rem;color:var(--meta);border:0}
 .nav a.link:hover,.nav a.link[aria-current=page]{color:var(--rose)}
 .nav-sp{flex:1}
+/* the "more" hover menu. Opens on hover for a pointer and on focus-within for a
+   keyboard. "more" itself stays a real link, so a touch device that never fires
+   hover still lands on the page that lists the same things. */
+.navsub{position:relative;display:inline-block}
+.submenu{position:absolute;right:-.6rem;top:100%;min-width:15rem;padding:.4rem 0;
+  background:var(--ground);border:1px solid var(--line);border-radius:10px;
+  box-shadow:0 14px 34px rgba(0,0,0,.45);opacity:0;visibility:hidden;
+  transform:translateY(-4px);transition:opacity .13s ease,transform .13s ease;z-index:60}
+.navsub:hover .submenu,.navsub:focus-within .submenu{opacity:1;visibility:visible;transform:none}
+.submenu a{display:block;padding:.42rem .9rem;font-family:var(--mono);font-size:.78rem;
+  color:var(--meta);border:0;white-space:nowrap;text-decoration:none}
+.submenu a:hover,.submenu a:focus-visible{color:var(--rose);background:rgba(255,255,255,.05)}
+@media(hover:none){.submenu{display:none}}
+@media(max-width:640px){.submenu{display:none}}
+@media(prefers-reduced-motion:reduce){.submenu{transition:none}}
+
+/* the suggestion form. One box, because three prompts get three answers and
+   nothing else, and an empty box gets the thing the person came to say. */
+.sform{display:block;margin:var(--s4) 0;max-width:620px}
+.sform label{display:block;font-family:var(--mono);font-size:.8rem;color:var(--meta);
+  margin:var(--s3) 0 var(--s1)}
+.sform textarea,.sform input[type=email]{width:100%;font:inherit;font-size:1rem;color:var(--text);
+  background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:var(--r);
+  padding:var(--s2) var(--s3);resize:vertical}
+.sform textarea::placeholder,.sform input::placeholder{color:var(--faint)}
+.sform textarea:focus,.sform input:focus{outline:2px solid var(--rose);outline-offset:1px;
+  border-color:var(--rose)}
+.sform button{margin-top:var(--s3);font-family:var(--mono);font-size:.85rem;color:var(--ground);
+  background:var(--rose);border:0;border-radius:999px;padding:.6rem 1.6rem;cursor:pointer}
+.sform button:hover{filter:brightness(1.08)}
+.sform button:focus-visible{outline:2px solid var(--text);outline-offset:2px}
+.sform input[name=_gotcha]{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.sform .meta{margin-top:var(--s3)}
 
 /* ---------- hero ---------- */
 .hero{padding:var(--s6) 0 var(--s5)}

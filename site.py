@@ -144,13 +144,15 @@ def strip(t):
         .replace("&rsquo;", "’").replace("&ldquo;", "“").replace("&rdquo;", "”") \
         .replace("&middot;", "·").replace("&amp;", "&").strip()
 
-NAV = [("index.html", "explore"), ("quizzes.html", "quizzes"),
-       ("more.html", "more"), ("about.html", "about")]
+from navmenu import NAV, SUBNAV, navlinks
+
+# Where the suggestion form posts. Sign in at formspree.io, make a form, paste
+# its id here (the part after /f/) and rebuild. Until then the page shows the
+# email fallback instead of a broken form, so it is never live and dead.
+FORMSPREE = ""
 
 def head(title, desc, current):
-    links = "".join(
-        '<a class="link" href="%s"%s>%s</a>' % (h, ' aria-current="page"' if h == current else '', t)
-        for h, t in NAV)
+    links = navlinks(current)
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -176,7 +178,7 @@ def head(title, desc, current):
 
 FOOT = """</main>
 <footer><div class="wrap">
-<span>every claim marked &middot; every source named</span>
+<span>every claim marked &middot; every source named &middot; <a href="suggest.html">tell me what I got wrong</a></span>
 <span>built by elizabeth beier &middot; <a href="https://instagram.com/belleofthebot">@belleofthebot</a></span>
 </div></footer>
 """
@@ -701,6 +703,57 @@ def about():
 """
     page("about.html", "About", "About Belle, about Elizabeth Beier, and how the marks work.", body)
 
+# ---------------------------------------------------------------- suggest
+def suggest():
+    """One box, no prompts.
+
+    Elizabeth's call, and the right one: a form that asks three specific
+    questions gets three specific answers and nothing else. An empty box gets
+    the thing the person actually came to say.
+    """
+    if FORMSPREE:
+        form = f'''
+<form class="sform" action="https://formspree.io/f/{FORMSPREE}" method="POST">
+<label for="msg">your message</label>
+<textarea id="msg" name="message" rows="8" required
+  placeholder="whatever you came here to say"></textarea>
+<label for="em">your email, if you would like a reply</label>
+<input id="em" type="email" name="email" autocomplete="email" placeholder="optional">
+<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+<button type="submit">send</button>
+<p class="meta">Goes straight to my inbox. Nothing is published without asking you first.</p>
+</form>'''
+    else:
+        form = '''
+<div class="well">
+<p style="margin-top:0">The form is not connected yet. In the meantime, the
+Instagram account is the fastest way to reach me:
+<a href="https://instagram.com/belleofthebot">@belleofthebot</a>.</p>
+</div>'''
+
+    body = f"""
+<div class="wrap hero">
+<div class="herogrid">
+<div>
+<span class="kicker">suggest</span>
+<h1>Tell me what I got wrong.</h1>
+<p class="lede">Or what is missing, or what did not make sense. This site claims to handle
+evidence carefully, and the only way that claim stays true is if people check it.</p>
+</div>
+<div class="stage">{belle_img("innocent-curious", "bfig plain")}</div>
+</div>
+</div>
+
+<div class="wrap">
+{form}
+<p class="meta">Corrections are the useful ones. Several numbers here were changed before
+publication because a source did not say what everyone repeats it says, and I would
+much rather be corrected than be quoted confidently and wrongly.</p>
+</div>
+"""
+    page("suggest.html", "Suggest", "Suggest a card, send a correction, or tell me what did not make sense.", body)
+
+
 if __name__ == "__main__":
-    index(); quizzes(); more(); sources(); about()
+    index(); quizzes(); more(); sources(); about(); suggest()
     print(f"{len(C.SPECS)} cards across {len(SUBJECTS)} subjects")
