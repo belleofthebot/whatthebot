@@ -938,6 +938,39 @@ ICONS = """
   <circle cx="32" cy="46" r="3.5" fill="var(--ic-rose)"/>
   <path d="M13 36 L17 38 M32 24 V28 M51 36 L47 38" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
 </g>
+
+<g id="i-scorecard">
+  <rect x="12" y="8" width="40" height="48" rx="5" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <path d="M20 20 H36 M20 30 H32 M20 40 H30" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M36 44 L42 50 L54 34" stroke="var(--ic-rose)" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+
+<g id="i-recipe">
+  <rect x="10" y="10" width="44" height="44" rx="5" stroke="var(--ic-dim)" stroke-width="3" fill="none"/>
+  <circle cx="20" cy="22" r="2.6" fill="var(--ic-rose)"/>
+  <circle cx="20" cy="32" r="2.6" fill="var(--ic-rose)"/>
+  <circle cx="20" cy="42" r="2.6" fill="var(--ic-rose)"/>
+  <path d="M28 22 H46 M28 32 H44 M28 42 H40" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+</g>
+
+<g id="i-tally">
+  <path d="M12 18 V46 M20 18 V46 M28 18 V46 M36 18 V46" stroke="var(--ic-dim)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M8 44 L40 20" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M48 26 H56 M48 34 H56 M48 42 H56" stroke="var(--ic-rose)" stroke-width="3" stroke-linecap="round" stroke-dasharray="3 4"/>
+</g>
+
+<g id="i-bait">
+  <path d="M32 8 V34 A10 10 0 0 1 12 34" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M26 12 L32 6 L38 12" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M40 40 C48 34 58 40 58 46 C58 52 48 58 40 52 Z" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linejoin="round"/>
+  <circle cx="46" cy="45" r="2.2" fill="var(--ic-rose)"/>
+</g>
+
+<g id="i-ask">
+  <path d="M10 14 H54 V42 H32 L20 54 V42 H10 Z" stroke="var(--ic-dim)" stroke-width="3" fill="none" stroke-linejoin="round"/>
+  <path d="M26 24 A6 6 0 0 1 38 25 C38 30 32 30 32 34" stroke="var(--ic-rose)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <circle cx="32" cy="38" r="1.4" fill="var(--ic-rose)"/>
+</g>
 """
 
 MARK = '<span class="mark">belleof<span class="sg">thebot</span>_</span>'
@@ -4437,6 +4470,135 @@ SPECS = {
   belle_hook="innocent-curious", belle_file="hands-hips-pedantic", belle_outro="hands-out-cheeky",
   outro="I take the words apart so the argument stops being noise."),
 
+
+
+
+"oneil": dict(
+  cat="actors", term="Cathy O&rsquo;Neil", person="Cathy O&rsquo;Neil",
+  role="the quant who turned on her own tools",
+  kick="she was inside, and then she wasn&rsquo;t",
+  hook="She left finance, and named the thing: <span class=\"rose\">weapons of math destruction</span>.",
+  q="In her framing, three properties make a model a weapon of math destruction. They are:",
+  opts=["Speed, cost and accuracy",
+        "Opacity, scale and damage",
+        "Bias, error and secrecy",
+        "Profit, politics and power"],
+  ans="B", icon="i-scorecard",
+  reveal='Opacity, scale, damage. <span class="rose">All three</span>, or it is just a bad model.',
+  revsub="Weapons of Math Destruction, Crown, 2016. Longlisted for the National Book Award that year.",
+  threekick="three cases, and what each one actually shows",
+  three=[("i-scorecard","A teacher was fired by a score.","Sarah Wysocki, Washington DC, 2011. Praised in writing by her assistant principal, dismissed two months later."),
+         ("i-target2","The recruiting is on the record.","A Senate report reproduces a for-profit college&rsquo;s training manual naming welfare mothers as a target group."),
+         ("i-counter","And the counter-evidence is real.","A study of the same Washington system found measurable gains overall. Both can be true at once.")],
+  threefoot="Her line, and it is the useful one: models are opinions embedded in mathematics.",
+  whyicon="i-lens", whykick="how to read her",
+  why="She has a <span class=\"rose\">Harvard PhD in mathematics</span> and worked at a hedge fund. That is why the book lands.",
+  whysub="The fair criticisms: she says mathematics where she means statistics, and the chapter on solutions is thinner than the chapters on harm. Nobody has found a factual error in the cases.",
+  flag="op",
+  file='<span class="rose">Someone&rsquo;s position</span>, argued from cases. The cases are documented. The step from algorithm to harm is often her argument rather than a finding.',
+  src="O&rsquo;Neil, Weapons of Math Destruction, Crown, 2016;<br>US Senate HELP Committee, For-Profit Higher Education, 2012",
+  outro="I take the words apart so the argument stops being noise."),
+
+"algorithm": dict(
+  cat="components", term="algorithm",
+  kick="the word that means almost nothing on its own",
+  hook="An algorithm is a <span class=\"rose\">recipe someone wrote</span>. A trained model is not.",
+  q="The word algorithm comes from:",
+  opts=["A Greek word for number",
+        "The name of a ninth century mathematician in Baghdad",
+        "An acronym coined at MIT",
+        "The Latin for putting in order"],
+  ans="B", icon="i-recipe",
+  reveal='Al-Khwarizmi, around 820. Latinised to <span class="rose">Algoritmi</span>.',
+  revsub="The word is twelve hundred years old. What people use it to mean is about ten.",
+  threekick="two different things wearing one word",
+  three=[("i-recipe","A classical algorithm is written down.","Steps in order, specified by a person, readable back. Euclid&rsquo;s method is one, and it still works."),
+         ("i-weights","A trained model is fitted.","Nobody wrote the numbers. There is no line of it to read, and no author to ask."),
+         ("i-lens","So the word hides the difference.","When a headline says the algorithm decided it can mean either, and the two fail in different ways.")],
+  threefoot="Knuth&rsquo;s textbook requires five properties of an algorithm. One of them is definiteness: every step precisely defined.",
+  whyicon="i-branch", whykick="the question this lets you ask",
+  why="For a written rule you ask <span class=\"rose\">who wrote it</span>. For a fitted model there is nobody to ask.",
+  whysub="So the second question changes: not what does the rule say, but what was it trained on and what was it scored against. Those are the only two handles a trained system gives you.",
+  flag="def",
+  file='A <span class="rose">definition</span>, and a genuinely useful one, because the everyday use of the word has drifted away from the technical one.',
+  src="Knuth, The Art of Computer Programming, volume 1, 1968;<br>O&rsquo;Neil, Weapons of Math Destruction, 2016",
+  outro="I take the words apart so the argument stops being noise."),
+
+"parameter": dict(
+  cat="components", term="parameter",
+  kick="the number everyone quotes and nobody can check",
+  hook="GPT-3 had <span class=\"rose\">175 billion</span> of them. No frontier lab has published a count since.",
+  q="A parameter, in a model, is:",
+  opts=["A setting you choose before you ask a question",
+        "One of the numbers inside the model, adjusted by training",
+        "A limit on how long an answer can be",
+        "A rule the company writes"],
+  ans="B", icon="i-tally",
+  reveal='A number <span class="rose">inside</span>. Adjusted by training, not by anyone typing.',
+  revsub="Weights and biases. GPT-3, 2020: a hundred and seventy five billion of them.",
+  threekick="why the count is a bad headline",
+  three=[("i-tally","More is not better.","DeepMind&rsquo;s Chinchilla, at 70 billion, beat Gopher at 280 billion, on far more training data."),
+         ("i-vault","And the frontier counts are secret.","OpenAI has never published one for GPT-4 or anything after. The figures in circulation are estimates."),
+         ("i-swap","The everyday word means the opposite.","In ordinary use a parameter is a setting you pick. Here it is a number you cannot see and did not choose.")],
+  threefoot="Open weight models publish real counts. Those you can check, which is most of what open weight buys you.",
+  whyicon="i-scale", whykick="what to do with the number",
+  why="A figure in a headline that <span class=\"rose\">nobody outside can verify</span> is not a measurement.",
+  whysub="Treat parameter count the way you would treat engine size: it tells you something about the shape of the thing, and almost nothing about how well it drives.",
+  flag="def",
+  file='A <span class="rose">definition</span>. The counts quoted for open models are checkable; the ones quoted for closed models are guesses.',
+  src="Brown et al., Language Models are Few-Shot Learners, arXiv:2005.14165, 2020;<br>Hoffmann et al., Training Compute-Optimal Large Language Models, arXiv:2203.15556, 2022",
+  outro="I take the words apart so the argument stops being noise."),
+
+"hacking-phishing": dict(
+  cat="risk", term="phishing and hacking",
+  kick="the risk that actually arrives in your inbox",
+  hook="A tailored phishing email now costs about <span class=\"rose\">four cents</span> to write.",
+  q="A 2024 Harvard study compared AI-written phishing with emails designed by human experts. The AI emails:",
+  opts=["Beat the experts easily",
+        "Beat generic phishing, but lost to the human experts",
+        "Failed completely",
+        "Performed identically to the experts"],
+  ans="B", icon="i-bait",
+  reveal='Better than generic. <span class="rose">Worse than a skilled human.</span> What changed is the price.',
+  revsub="112 participants. GPT-4 around 30 to 44 percent click-through, expert designed 69 to 79.",
+  threekick="what is measured, and what is confirmed",
+  three=[("i-bait","Personalisation is what works.","In a study of 7,741 employees, personalised lures beat generic ones about three to one."),
+         ("i-cheap","And it stopped costing anything.","Researching 112 targets by hand took about ten hours. Automated, five minutes."),
+         ("i-relay","Voice and video are here too.","Hong Kong police say an employee joined a call of deepfaked colleagues and sent HK$200m.")],
+  threefoot="Police said those videos were pre-recorded, not live. In two other cases an executive simply asked something the impersonator could not answer.",
+  whyicon="i-lift", whykick="why this one is different",
+  why="The defence is a <span class=\"rose\">habit</span>, not a product, and it has to be everyone&rsquo;s habit.",
+  whysub="Verify through a channel the message did not come from. Ring the number you already had. Ask something only the real person would know. That still works, which is reassuring, and it is a great deal to ask of every person every time.",
+  flag="emp",
+  file='<span class="rose">Measured</span> in controlled trials, all on consenting, pre-warned, mostly university populations. The authors say their numbers are a floor.',
+  src="Heiding, Schneier, Vishwanath, Bernstein and Park,<br>IEEE Access 12, 2024;<br>Czybik et al., USENIX Security 2026",
+  outro="I take the words apart so the argument stops being noise."),
+
+"model-welfare": dict(
+  cat="concepts", term="model welfare",
+  kick="the question a company started asking about its own product",
+  hook="One lab now <span class=\"rose\">keeps the weights</span> of retired models, and interviews them first.",
+  q="Anthropic launched a model welfare programme in 2025. Its own published position on whether Claude is conscious is:",
+  opts=["That it is",
+        "That there is no scientific consensus, and they are deeply uncertain",
+        "That it definitively is not",
+        "That the question is meaningless"],
+  ans="B", icon="i-ask",
+  reveal='<span class="rose">Deeply uncertain</span>, in those words, in the announcement itself.',
+  revsub="Their line: there is no scientific consensus on whether current or future AI systems could be conscious.",
+  threekick="what has actually been done, and what is said against it",
+  three=[("i-stop","A model can end a conversation.","Claude Opus 4 and 4.1, August 2025, for persistently abusive users. The basis given is apparent distress."),
+         ("i-vault","Weights are kept, not deleted.","November 2025: every released model kept for at least the lifetime of the company, with an exit interview."),
+         ("i-counter","And the objection is serious.","Gebru and Mitchell: calling a product sentient implies wrongdoing is the work of a being, not of its maker.")],
+  threefoot="The commitment also says plainly that the company does not undertake to act on what a model says it prefers.",
+  whyicon="i-mirrorface", whykick="why the model cannot settle this",
+  why="A system trained on people describing feelings will <span class=\"rose\">describe feelings</span>, either way.",
+  whysub="Jonathan Birch calls this the gaming problem. The same lab&rsquo;s own interpretability researchers say a conversation cannot answer it &mdash; one of them puts it as, more likely than not, it is making stuff up.",
+  flag="arg",
+  file='An <span class="rose">argument</span>, over an institutional record. What was said and done is checkable. Whether anything is experienced is not.',
+  src="Anthropic, Exploring model welfare, April 2025, and<br>Commitments on model deprecation, November 2025",
+  outro="I take the words apart so the argument stops being noise."),
+
 }
 
 
@@ -4540,6 +4702,135 @@ ICON_FIX = {
 for _k, _v in SPECS.items():
     if _k in ICON_FIX:
         _v["icon"] = ICON_FIX[_k]
+
+# ------------------------------------------------------------------ Belle's face
+# Three faces per card: the cover, the filing slide, the outro. This block is the
+# single place they are decided, so the whole set can be balanced at once.
+#
+# Two rules, both from Elizabeth:
+#   1. Vary them. Sixty seven expressions exist and the covers were using
+#      twenty six of them, with one face on the filing slide of every card.
+#   2. Never let her smile on a grave card. The cards about suicide, extinction,
+#      children and war are not the place for a knowing look, and an outro that
+#      winks after a card about a young person's death is worse than no outro.
+#
+# So risk is assigned by hand, one card at a time, and the other categories
+# rotate through a pool that carries the right register for the subject.
+
+SOMBER_OUTRO = ("warm-neutral", "zen", "dead-pan-1", "hands-hips-pedantic",
+                "saying-unpleasant-truth-1", "warm-neutral-with-hand")
+
+# Hand assigned. Cover, filing slide, outro.
+FACES = {
+ # --- risk, in descending gravity ---------------------------------------
+ "ai-psychosis":           ("pained",                  "saying-unpleasant-truth-2", "warm-neutral"),
+ "companions":             ("sad-disappointed",        "glum",                      "warm-neutral-with-hand"),
+ "learning":               ("worry-about-future",      "saying-unpleasant-truth-3", "warm-neutral"),
+ "s-risk":                 ("shame",                   "sad-tearful",               "zen"),
+ "existential-risk":       ("shock-worry",             "saying-unpleasant-truth-1", "dead-pan-1"),
+ "permanent-disempowerment":("glum",                   "dead-pan-3",                "warm-neutral"),
+ "value-lock-in":          ("sad-shame",               "dead-pan-2",                "zen"),
+ "drones":                 ("furious-closed-mouth",    "saying-unpleasant-truth-2", "dead-pan-1"),
+ "bio-threshold":          ("unpleasant-surprise",     "saying-unpleasant-truth-1", "warm-neutral"),
+ "malicious-use":          ("angry-accuse",            "deadpan-annoyed-3",         "hands-hips-pedantic"),
+ "manipulation":           ("noticed-something",       "saying-unpleasant-truth-3", "warm-neutral"),
+ "synthetic-media":        ("very-frustrated",         "deadpan-annoyed-2",         "warm-neutral-with-hand"),
+ "persuasion":             ("annoyed-skeptical",       "saying-unpleasant-truth-2", "dead-pan-1"),
+ "power-concentration":    ("irate",                   "grr-1",                     "hands-hips-pedantic"),
+ "job-loss":               ("surprised-worried",       "glum",                      "warm-neutral"),
+ "automation":             ("worry-about-future",      "dead-pan-2",                "warm-neutral-with-hand"),
+ "environment":            ("disgruntled",             "grr-2",                     "hands-hips-pedantic"),
+ "weight-security":        ("startled",                "deadpan-annoyed-4",         "dead-pan-1"),
+ "ai-2027":                ("shocked",                 "dead-pan-3",                "zen"),
+ "p-doom":                 ("unimpressed",             "deadpan-annoyed-1",         "hands-hips-pedantic"),
+ "shut-it-down":           ("saying-unpleasant-truth-1","irritated",                "warm-neutral"),
+ "hacking-phishing":       ("noticed-something",       "deadpan-annoyed-1",         "hands-hips-pedantic"),
+}
+
+# Pools for everything else. Order matters only in that a card takes the entry
+# at a stable index derived from its key, so the spread is even and does not
+# move when a card is added.
+POOLS = {
+ "components": (
+   ("innocent-curious","warm-curious","aw-shucks","noticed-something","amazed",
+    "bright-neutral","dreamy-calm","secret-open-smile","hands-hips-pleased",
+    "surprised-2","warm-neutral-with-hand","happy-proud","embarrassed-smile",
+    "dead-pan-2","zen","smirking","startled","delighted","close-up-goading",
+    "hands-out-pleased","slightly-embarrassed","dreamy-smile","friendly-wave",
+    "warm-neutral","sly-one","secret-close-smile","hands-hips-happy",
+    "innocent-curious","bright-neutral"),
+   ("hands-hips-pedantic","dead-pan-1","warm-neutral","zen","unimpressed",
+    "hands-out-pleased","secret-close-smile","dead-pan-2","bright-neutral",
+    "warm-neutral-with-hand"),
+   ("hands-out-cheeky","hands-out-delighted","friendly-wave","aw-shucks",
+    "hands-out-pleased","secret-open-smile","hands-hips-happy","delighted"),
+ ),
+ "concepts": (
+   ("worry-about-future","innocent-curious","dreamy-calm","noticed-something",
+    "amazed","zen","warm-curious","shock-worry","dead-pan-3","bright-neutral",
+    "sly-one","glum","surprised-2","aw-shucks","unimpressed","smirking",
+    "dreamy-smile","startled","secret-close-smile","happy-proud",
+    "annoyed-skeptical","warm-neutral","embarrassed-grimace","shocked",
+    "tearfully-proud","close-up-goading","dead-pan-1"),
+   ("hands-hips-pedantic","dead-pan-2","warm-neutral","zen","saying-unpleasant-truth-3",
+    "unimpressed","dead-pan-1","secret-close-smile","warm-neutral-with-hand"),
+   ("hands-out-cheeky","zen","friendly-wave","warm-neutral","hands-out-pleased",
+    "aw-shucks","hands-out-delighted"),
+ ),
+ "behavior": (
+   ("annoyed-skeptical","noticed-something","unimpressed","deadpan-annoyed-1",
+    "sly-one","startled","smirking","shocked","grr-1","irritated","yikes",
+    "deadpan-annoyed-2","close-up-goading","surprised-worried","disgruntled",
+    "dead-pan-1","grumpy-eyes-closed","very-frustrated","deadpan-annoyed-3",
+    "grr-2","unpleasant-surprise","dead-pan-3","angry-accuse"),
+   ("hands-hips-pedantic","deadpan-annoyed-4","saying-unpleasant-truth-1",
+    "dead-pan-2","unimpressed","warm-neutral","saying-unpleasant-truth-2"),
+   ("hands-out-cheeky","hands-hips-pedantic","warm-neutral","friendly-wave",
+    "hands-out-pleased","zen"),
+ ),
+ "actors": (
+   ("hands-hips-pedantic","noticed-something","secret-close-smile","warm-curious",
+    "unimpressed","sly-one","happy-proud","annoyed-skeptical","bright-neutral",
+    "smirking","innocent-curious","tearfully-proud","close-up-goading",
+    "saying-unpleasant-truth-1","dead-pan-2","hands-hips-happy","amazed",
+    "worry-about-future","aw-shucks","warm-neutral","glum","delighted",
+    "surprised-2","zen","dead-pan-3","secret-open-smile","hands-hips-pleased",
+    "dreamy-calm","startled"),
+   ("hands-hips-pedantic","dead-pan-1","warm-neutral","unimpressed","zen",
+    "secret-close-smile","warm-neutral-with-hand","dead-pan-2"),
+   ("hands-out-cheeky","friendly-wave","hands-out-pleased","warm-neutral",
+    "aw-shucks","hands-out-delighted","hands-hips-happy"),
+ ),
+}
+POOLS["risk"] = POOLS["behavior"]           # only used if a risk card is added
+                                            # without a hand assignment
+
+def _slot(key, seq, salt):
+    return seq[sum(ord(ch) * (i + 3) for i, ch in enumerate(key + salt)) % len(seq)]
+
+for _k, _v in SPECS.items():
+    if _k in FACES:
+        _v["belle_hook"], _v["belle_file"], _v["belle_outro"] = FACES[_k]
+        continue
+    hooks, files, outros = POOLS[_v["cat"]]
+    _v["belle_hook"]  = _slot(_k, hooks,  "h")
+    _v["belle_file"]  = _slot(_k, files,  "f")
+    _v["belle_outro"] = _slot(_k, outros, "o")
+
+# Nothing that smiles may appear on a card about a death, a child or a war.
+_NO_SMILE = {"delighted","happy-proud","hands-out-delighted","hands-out-pleased",
+             "hands-hips-happy","hands-hips-pleased","secret-open-smile",
+             "secret-close-smile","sly-one","smirking","dreamy-smile",
+             "close-up-goading","aw-shucks","tearfully-proud","friendly-wave",
+             "embarrassed-smile","bright-neutral","warm-curious","amazed",
+             "innocent-curious","surprised-2","dreamy-calm","hands-out-cheeky"}
+_GRAVE = {k for k, v in SPECS.items() if v["cat"] == "risk"}
+_BAD = [(k, f) for k in _GRAVE for f in
+        (SPECS[k]["belle_hook"], SPECS[k]["belle_file"], SPECS[k]["belle_outro"])
+        if f in _NO_SMILE]
+if _BAD:
+    raise SystemExit("a smiling Belle on a risk card: " +
+                     ", ".join("%s/%s" % x for x in _BAD))
 
 # ----------------------------------------------------------------- the unknowns
 # One per card, always present, one panel before the filing. This is a vocabulary
@@ -5202,6 +5493,35 @@ UNKNOWN = {
  "scores, their outputs narrow, they claim stronger preferences. Nobody has shown that a scored model "
  "<span class=\"rose\">contains anything</span> a predictor does not, and one 2025 result suggests the scoring "
  "mostly sharpens what the predictor already had.",
+
+
+
+"oneil":
+ "Whether auditing does anything. New York&rsquo;s hiring-bias law is the first test at scale, and a 2024 study of 391 employers found "
+ "<span class=\"rose\">eighteen</span> had posted a report. Of the measurements that were published, almost all passed. Her three "
+ "properties have also never been given thresholds, so nobody can score a model against them.",
+
+"algorithm":
+ "How much of the confusion is doing real work. When an institution says the algorithm decided, it may be a written rule it could show "
+ "you and will not, or a fitted model it genuinely cannot explain, and from outside those look the same. There is "
+ "<span class=\"rose\">no requirement anywhere</span> to say which one it was.",
+
+"parameter":
+ "What the frontier models actually contain. No count, no architecture, no training mixture has been published for a frontier model "
+ "since 2020, so every comparison you read between them is built on <span class=\"rose\">estimates</span>. And nobody can say what a "
+ "parameter individually does, which is the whole of interpretability.",
+
+"hacking-phishing":
+ "How much of this is really happening. There is no reliable detector of AI-written text, so every claim that some percentage of phishing "
+ "is AI-generated rests on an unvalidated classifier &mdash; OpenAI withdrew its own for poor accuracy. The longest running independent "
+ "count of phishing sites has gone <span class=\"rose\">down</span> since 2023, and every alarming volume figure comes from a company "
+ "selling the remedy.",
+
+"model-welfare":
+ "Everything that matters. There is no test that separates a system which has experiences from one that produces text about experiences, "
+ "and no agreed method for building one, because there is no settled theory of consciousness in people either. The leading assessment "
+ "method assumes that the right kind of computation is sufficient, and if it is not, that method is "
+ "<span class=\"rose\">measuring nothing at all</span>.",
 
 }
 for _k, _v in SPECS.items():

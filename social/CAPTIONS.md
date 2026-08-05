@@ -3971,3 +3971,158 @@ Alt text slide 4: Three labelled points, each with a small diagram.
 Alt text slide 5: A short explanation of why the distinction matters.
 Alt text slide 6: The epistemic flag for this claim, and the source it came from.
 Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 129. Cathy O&rsquo;Neil  (AI actors)
+Folder: `out/oneil/`  ·  8 slides
+
+```
+She left finance, and named the thing: weapons of math destruction.
+
+Weapons of Math Destruction, Crown, 2016. Longlisted for the National Book Award that year.
+
+- A teacher was fired by a score. Sarah Wysocki, Washington DC, 2011. Praised in writing by her assistant principal, dismissed two months later.
+- The recruiting is on the record. A Senate report reproduces a for-profit college’s training manual naming welfare mothers as a target group.
+- And the counter-evidence is real. A study of the same Washington system found measurable gains overall. Both can be true at once.
+
+She has a Harvard PhD in mathematics and worked at a hedge fund. That is why the book lands.
+The fair criticisms: she says mathematics where she means statistics, and the chapter on solutions is thinner than the chapters on harm. Nobody has found a factual error in the cases.
+
+Filed as: someone’s estimate.
+Source: O’Neil, Weapons of Math Destruction, Crown, 2016; US Senate HELP Committee, For-Profit Higher Education, 2012
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIindustry #TechPolicy #AIliteracy #Nvidia #AIcompanies
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: She left finance, and named the thing: weapons of math destruction.
+Alt text slide 2: A four option multiple choice question: In her framing, three properties make a model a weapon of math destruction. They are:
+Alt text slide 3: The answer, with a diagram: Opacity, scale, damage. All three, or it is just a bad model.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 130. algorithm  (AI components)
+Folder: `out/algorithm/`  ·  8 slides
+
+```
+An algorithm is a recipe someone wrote. A trained model is not.
+
+The word is twelve hundred years old. What people use it to mean is about ten.
+
+- A classical algorithm is written down. Steps in order, specified by a person, readable back. Euclid’s method is one, and it still works.
+- A trained model is fitted. Nobody wrote the numbers. There is no line of it to read, and no author to ask.
+- So the word hides the difference. When a headline says the algorithm decided it can mean either, and the two fail in different ways.
+
+For a written rule you ask who wrote it. For a fitted model there is nobody to ask.
+So the second question changes: not what does the rule say, but what was it trained on and what was it scored against. Those are the only two handles a trained system gives you.
+
+Filed as: definition.
+Source: Knuth, The Art of Computer Programming, volume 1, 1968; O’Neil, Weapons of Math Destruction, 2016
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIexplained #LearnAI #AIliteracy #MachineLearning
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: An algorithm is a recipe someone wrote. A trained model is not.
+Alt text slide 2: A four option multiple choice question: The word algorithm comes from:
+Alt text slide 3: The answer, with a diagram: Al-Khwarizmi, around 820. Latinised to Algoritmi.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 131. parameter  (AI components)
+Folder: `out/parameter/`  ·  8 slides
+
+```
+GPT-3 had 175 billion of them. No frontier lab has published a count since.
+
+Weights and biases. GPT-3, 2020: a hundred and seventy five billion of them.
+
+- More is not better. DeepMind’s Chinchilla, at 70 billion, beat Gopher at 280 billion, on far more training data.
+- And the frontier counts are secret. OpenAI has never published one for GPT-4 or anything after. The figures in circulation are estimates.
+- The everyday word means the opposite. In ordinary use a parameter is a setting you pick. Here it is a number you cannot see and did not choose.
+
+A figure in a headline that nobody outside can verify is not a measurement.
+Treat parameter count the way you would treat engine size: it tells you something about the shape of the thing, and almost nothing about how well it drives.
+
+Filed as: definition.
+Source: Brown et al., Language Models are Few-Shot Learners, arXiv:2005.14165, 2020; Hoffmann et al., Training Compute-Optimal Large Language Models, arXiv:2203.15556, 2022
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIexplained #LearnAI #AIliteracy #MachineLearning
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: GPT-3 had 175 billion of them. No frontier lab has published a count since.
+Alt text slide 2: A four option multiple choice question: A parameter, in a model, is:
+Alt text slide 3: The answer, with a diagram: A number inside. Adjusted by training, not by anyone typing.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 132. phishing and hacking  (AI risk)
+Folder: `out/hacking-phishing/`  ·  8 slides
+
+```
+A tailored phishing email now costs about four cents to write.
+
+112 participants. GPT-4 around 30 to 44 percent click-through, expert designed 69 to 79.
+
+- Personalisation is what works. In a study of 7,741 employees, personalised lures beat generic ones about three to one.
+- And it stopped costing anything. Researching 112 targets by hand took about ten hours. Automated, five minutes.
+- Voice and video are here too. Hong Kong police say an employee joined a call of deepfaked colleagues and sent HK$200m.
+
+The defence is a habit, not a product, and it has to be everyone’s habit.
+Verify through a channel the message did not come from. Ring the number you already had. Ask something only the real person would know. That still works, which is reassuring, and it is a great deal to ask of every person every time.
+
+Filed as: measured.
+Source: Heiding, Schneier, Vishwanath, Bernstein and Park, IEEE Access 12, 2024; Czybik et al., USENIX Security 2026
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIsafety #AIrisk #AIalignment #AIliteracy
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: A tailored phishing email now costs about four cents to write.
+Alt text slide 2: A four option multiple choice question: A 2024 Harvard study compared AI-written phishing with emails designed by human experts. The AI emails:
+Alt text slide 3: The answer, with a diagram: Better than generic. Worse than a skilled human. What changed is the price.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
+
+## 133. model welfare  (AI concepts)
+Folder: `out/model-welfare/`  ·  8 slides
+
+```
+One lab now keeps the weights of retired models, and interviews them first.
+
+Their line: there is no scientific consensus on whether current or future AI systems could be conscious.
+
+- A model can end a conversation. Claude Opus 4 and 4.1, August 2025, for persistently abusive users. The basis given is apparent distress.
+- Weights are kept, not deleted. November 2025: every released model kept for at least the lifetime of the company, with an exit interview.
+- And the objection is serious. Gebru and Mitchell: calling a product sentient implies wrongdoing is the work of a being, not of its maker.
+
+A system trained on people describing feelings will describe feelings, either way.
+Jonathan Birch calls this the gaming problem. The same lab’s own interpretability researchers say a conversation cannot answer it &mdash; one of them puts it as, more likely than not, it is making stuff up.
+
+Filed as: argument.
+Source: Anthropic, Exploring model welfare, April 2025, and Commitments on model deprecation, November 2025
+
+I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
+
+#AI #AIconcepts #AIexplained #AIliteracy #AGI
+```
+
+Alt text slide 1: Belle, a small robot character, beside the headline: One lab now keeps the weights of retired models, and interviews them first.
+Alt text slide 2: A four option multiple choice question: Anthropic launched a model welfare programme in 2025. Its own published position on whether Claude is conscious is:
+Alt text slide 3: The answer, with a diagram: Deeply uncertain, in those words, in the announcement itself.
+Alt text slide 4: Three labelled points, each with a small diagram.
+Alt text slide 5: A short explanation of why the distinction matters.
+Alt text slide 6: The epistemic flag for this claim, and the source it came from.
+Alt text slide 7: A prompt to follow @belleofthebot for more.
