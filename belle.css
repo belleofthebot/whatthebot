@@ -91,6 +91,133 @@ a:hover{border-bottom-color:var(--rose)}
 .sform input[name=_gotcha]{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
 .sform .meta{margin-top:var(--s3)}
 
+/* the one solid call to action on the home page. Mint, filled, and it lights up. */
+.tag.mintpill{background:var(--mint);color:#14301f;border-color:var(--mint);font-weight:500;
+  transition:box-shadow .18s ease,transform .18s ease,filter .18s ease}
+.tag.mintpill:hover,.tag.mintpill:focus-visible{filter:brightness(1.06);transform:translateY(-1px);
+  box-shadow:0 0 0 3px rgba(159,224,206,.22),0 0 22px 2px rgba(159,224,206,.42)}
+@media(prefers-reduced-motion:reduce){.tag.mintpill{transition:none}
+  .tag.mintpill:hover{transform:none}}
+
+/* ============================================================ the quiz deck
+   More game, less list. Portrait cards, an animated icon each, level buttons
+   big enough to want to press, locks that read as locks, and a level that
+   opened while you were away says so when you come back. */
+
+.qhello{display:grid;grid-template-columns:150px 1fr;gap:var(--s4);align-items:center;
+  margin:var(--s4) 0 var(--s5)}
+.qhello .qhb{margin:0}
+.qhello .qhb img{width:100%;height:auto;display:block}
+.qbubble{position:relative;background:var(--well);color:var(--ink);border-radius:var(--rc);
+  padding:var(--s3) var(--s4)}
+.qbubble:before{content:"";position:absolute;left:-9px;top:50%;margin-top:-9px;width:18px;height:18px;
+  background:var(--well);transform:rotate(45deg);border-radius:3px}
+.qbubble p{position:relative;font-size:1.02rem;line-height:1.45}
+.qbubble p+p{margin-top:var(--s2)}
+.qbubble .meta{color:#6C6472;font-size:.86rem}
+@media(max-width:640px){.qhello{grid-template-columns:88px 1fr;gap:var(--s3)}
+  .qbubble:before{display:none}}
+
+.qdeck{display:grid;gap:var(--s3);grid-template-columns:repeat(3,1fr);align-items:stretch}
+@media(max-width:860px){.qdeck{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.qdeck{grid-template-columns:1fr}}
+.qcard{display:flex;flex-direction:column;gap:var(--s2);padding:var(--s3);border-radius:var(--rc);
+  border:1px solid var(--line);background:var(--panel);position:relative;overflow:hidden}
+.qcard:before{content:"";position:absolute;inset:0 auto 0 0;width:4px;background:var(--sub)}
+.qc-top{display:flex;align-items:flex-start;justify-content:space-between;gap:var(--s2)}
+.qc-name{font-family:var(--mono);font-size:1rem;font-weight:500;color:var(--sub);margin:0}
+.qc-meta{font-family:var(--mono);font-size:.74rem;color:var(--faint)}
+.qc-lv{display:flex;flex-direction:column;gap:6px;margin-top:auto;padding-top:var(--s2)}
+
+/* the icons */
+.qi{width:52px;height:52px;fill:none;stroke:var(--sub);stroke-width:3;
+  stroke-linecap:round;stroke-linejoin:round;overflow:visible}
+.qi circle[class]{fill:var(--sub);stroke:none}
+.qi .dash{stroke:var(--sub);opacity:.55}
+.qcard:hover .qi{stroke:var(--rose)}
+.qi .a1,.qi .a2,.qi .a3{animation:travel 3.4s ease-in-out infinite}
+.qi .a2{animation-delay:.35s}.qi .a3{animation-delay:.7s}
+@keyframes travel{0%,100%{transform:translateX(0)}50%{transform:translateX(32px)}}
+.qi .p1,.qi .p2,.qi .p3{animation:beat 2.6s ease-in-out infinite}
+.qi .p2{animation-delay:.5s}.qi .p3{animation-delay:1s}
+@keyframes beat{0%,100%{opacity:.45}50%{opacity:1}}
+.qi .w1{animation:squiggle 3s ease-in-out infinite}
+@keyframes squiggle{0%,100%{transform:translateY(0)}50%{transform:translateY(3px)}}
+.qi .e1,.qi .e2{animation:blink 4.2s steps(1,end) infinite;transform-origin:center}
+@keyframes blink{0%,92%,100%{opacity:1}95%{opacity:0}}
+.qi .hl,.qi .hl2{animation:pick 3.6s ease-in-out infinite}
+@keyframes pick{0%,100%{opacity:.35}45%,55%{opacity:1}}
+.qi .x1{animation:warn 2.2s ease-in-out infinite}
+@keyframes warn{0%,100%{opacity:.3}50%{opacity:1}}
+.qi .q1,.qi .q2{animation:beat 2.4s ease-in-out infinite}
+@media(prefers-reduced-motion:reduce){.qi *{animation:none!important}}
+
+/* progress pips */
+.qc-pips{display:flex;gap:5px;padding-top:4px}
+.qc-pips i{width:9px;height:9px;border-radius:50%;border:1.5px solid var(--line);display:block}
+.qc-pips i.on{background:var(--mint);border-color:var(--mint)}
+
+/* the level buttons */
+.lvb{display:flex;align-items:center;justify-content:space-between;gap:var(--s2);width:100%;
+  font-family:var(--mono);font-size:.84rem;text-align:left;padding:11px 13px;border-radius:var(--r);
+  border:1px solid var(--line);background:rgba(255,255,255,.03);color:var(--meta);cursor:pointer;
+  transition:background .15s ease,border-color .15s ease,color .15s ease,transform .12s ease}
+.lvb .lvs{font-size:.9rem;line-height:1;opacity:.85}
+.lvb.open{border-color:var(--sub);color:var(--sub);background:rgba(255,255,255,.06)}
+.lvb.open:hover{background:var(--sub);color:var(--ground);transform:translateY(-1px)}
+.lvb.won{border-color:var(--mint);color:var(--mint);background:rgba(159,224,206,.08)}
+.lvb.won .lvs:after{content:"\2713"}
+.lvb.open .lvs:after{content:"\25B8"}
+.lvb.shut{opacity:.4;cursor:not-allowed;border-style:dashed}
+.lvb.shut .lvs:after{content:"\1F512";font-size:.8rem}
+.lvb:focus-visible{outline:2px solid var(--rose);outline-offset:2px}
+
+/* a level that opened while you were away */
+.lvb.justopened{animation:unlockpop .9s cubic-bezier(.2,.9,.25,1) 1}
+@keyframes unlockpop{
+  0%{transform:scale(1);box-shadow:0 0 0 0 rgba(159,224,206,0)}
+  18%{transform:scale(1.07) rotate(-1.4deg)}
+  36%{transform:scale(1.02) rotate(1deg);box-shadow:0 0 0 8px rgba(159,224,206,.28)}
+  60%{transform:scale(1.04) rotate(-.5deg)}
+  100%{transform:scale(1);box-shadow:0 0 0 22px rgba(159,224,206,0)}}
+.qcard.justopened{animation:cardglow 1.1s ease-out 1}
+@keyframes cardglow{0%{box-shadow:0 0 0 0 rgba(159,224,206,.5)}100%{box-shadow:0 0 0 26px rgba(159,224,206,0)}}
+@media(prefers-reduced-motion:reduce){.lvb.justopened,.qcard.justopened{animation:none}}
+
+.qc-bonus{border-style:dashed}
+.qc-bonus:before{background:var(--rose)}
+.qc-bonus .qi{stroke:var(--rose)}
+.qc-bonus .qc-name{color:var(--rose)}
+.qc-bonus .lvb.open{border-color:var(--rose);color:var(--rose)}
+.qc-bonus .lvb.open:hover{background:var(--rose);color:var(--ground)}
+.qfoot{margin-top:var(--s4)}
+
+/* ==================================================== the light play screen
+   A round should feel like a different room from the browsing, so it inverts:
+   the terminal in reverse, dark ink on the warm well. */
+.qplay.qlight{background:var(--well);color:var(--ink);border:1px solid var(--well-line);
+  border-radius:var(--rc);padding:var(--s4);margin-top:var(--s4)}
+.qlight .qtopic{color:var(--well-rose)}
+.qlight .qlevel,.qlight .meta{color:#6C6472}
+.qlight .qprog{background:#E3DCD2}
+.qlight .qfill{background:var(--well-rose)}
+.qhead{display:flex;gap:var(--s3);align-items:center;margin-bottom:var(--s3)}
+.qhead .qq{margin:0}
+.qicon{flex:0 0 auto;width:46px;height:46px;fill:none;stroke-width:3;
+  stroke-linecap:round;stroke-linejoin:round;margin-top:2px;
+  --ic-rose:var(--well-rose);--ic-mint:var(--well-mint);--ic-dim:#8C8394}
+.qlight .qq{color:var(--ink)}
+.qlight .qopt{background:#fff;border:1px solid var(--well-line);color:var(--ink)}
+.qlight .qopt:hover:not([disabled]){border-color:var(--well-rose);background:#FFFDFA}
+.qlight .qopt.right{border-color:var(--well-mint);background:#EAF7F2;color:#16332A}
+.qlight .qopt.wrong{border-color:var(--well-rose);background:#FBEDE9;color:#4A2A22}
+.qlight .qfb{background:#fff;border:1px solid var(--well-line);color:#4A4450}
+.qlight .fb-yes{color:var(--well-mint)}
+.qlight .fb-no{color:var(--well-rose)}
+.qlight .btn{background:var(--well-rose);color:var(--well)}
+.qlight .btn[disabled]{opacity:.35}
+@media(max-width:640px){.qhead{gap:var(--s2)}.qicon{width:34px;height:34px}}
+
 /* ---------- hero ---------- */
 .hero{padding:var(--s6) 0 var(--s5)}
 .hero p.lede{font-size:1.1rem;color:var(--meta);max-width:56ch}

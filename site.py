@@ -315,7 +315,8 @@ def defn_questions(cat):
         rest = [o for i, o in enumerate(raw) if i != 1]
         shown = rest[:target] + [correct] + rest[target:]
         out.append({"q": strip(sp["q"]), "a": [strip(o) for o in shown],
-                    "correct": target, "why": strip(sp["revsub"])})
+                    "correct": target, "why": strip(sp["revsub"]),
+                    "icon": sp["icon"], "term": strip(sp["term"])})
     return out
 
 def flag_questions(cat):
@@ -330,7 +331,8 @@ def flag_questions(cat):
         out.append({
             "q": "How is this filed? “" + strip(sp["reveal"]) + "”",
             "a": shown, "correct": target,
-            "why": strip(sp["file"])})
+            "why": strip(sp["file"]),
+            "icon": sp["whyicon"], "term": strip(sp["term"])})
     return out
 
 def who_said_it():
@@ -382,6 +384,15 @@ def who_said_it():
       "require urgent attention.&rdquo;", "Buolamwini and Gebru",
       ["the Federal Trade Commission", "Microsoft Research", "the ACLU"],
       "Gender Shades, 2018. Error rates ran to 34.7 percent for darker skinned women against 0.3 for lighter skinned men."),
+     ("&ldquo;With artificial intelligence we&rsquo;re summoning the demon... he&rsquo;s sure he "
+      "can control the demon? Doesn&rsquo;t work out.&rdquo;", "Elon Musk",
+      ["Eliezer Yudkowsky", "Stuart Russell", "Nick Bostrom"],
+      "MIT AeroAstro Centennial Symposium, 26 October 2014, where he also called AI our biggest existential threat. He founded an AI company nine years later."),
+     ("&ldquo;AI will probably, most likely, sort of lead to the end of the world. But in the "
+      "meantime, there will be great companies created with serious machine learning.&rdquo;",
+      "Sam Altman",
+      ["Marc Andreessen", "Elon Musk", "Peter Thiel"],
+      "In 2015, while he was running Y Combinator. It goes round without its second half, which is the part that makes it strange rather than merely alarming."),
      ("&ldquo;We want to help make AI systems safer from day one.&rdquo;", "Daniela Amodei",
       ["Mira Murati", "Lila Ibrahim", "Helen Toner"],
       "In a Stripe interview, July 2023. She is Anthropic&rsquo;s co-founder and president."),
@@ -390,7 +401,8 @@ def who_said_it():
     for i, (quote, right, wrong, why) in enumerate(Q):
         target = (i * 3 + 1) % 4
         shown = wrong[:target] + [right] + wrong[target:]
-        out.append({"q": "Who said it? " + quote, "a": shown, "correct": target, "why": why})
+        out.append({"q": "Who said it? " + quote, "a": shown, "correct": target, "why": why,
+                    "icon": "i-voice", "term": "who said it"})
     return out
 
 def quiz_data():
@@ -451,13 +463,17 @@ def index():
 {belle_img("friendly-wave" if os.path.exists(os.path.join(OUT,"assets","belle","friendly-wave.webp")) else "warm-neutral", "bfig plain big")}
 <div>
 <span class="kicker">hello, I am Belle</span>
-<h1>Everyone is arguing about AI. Almost nobody agrees what the words mean.</h1>
-<p class="lede">So I took them apart. Every card below is one idea, in plain language, with the source it came from and a mark saying what kind of claim it is. Pick a subject, or pick a kind of claim, and start anywhere.</p>
-<p class="lede">Nothing here predicts the future. It just tells you what is actually known, what is somebody&rsquo;s view, and how to tell the difference.</p>
+<h1>AI is complicated. Let&rsquo;s learn about it together.</h1>
+<p class="lede">There are cards here on how these systems are built, what they do that nobody
+expected, the people arguing about them, the ideas underneath, and the things that could go
+wrong. Every one is one idea, in plain language, with its source and a mark saying what kind
+of claim it is.</p>
+<p class="lede">Open whatever looks interesting. Take a quiz and find out what stuck. There is
+no order to any of it, and nothing to finish &mdash; poke around.</p>
 <div class="tags">
 <span class="tag rose">{len(C.SPECS)} cards</span>
 <span class="tag">every source named</span>
-<a class="tag mint" href="quizzes.html"><span class="dot">&#9679;</span> or take a quiz</a>
+<a class="tag mintpill" href="quizzes.html">or take a quiz</a>
 </div>
 </div>
 </div>
@@ -507,43 +523,107 @@ def index():
          body, ("explore.js",))
 
 # ---------------------------------------------------------------- quizzes
+# A bespoke icon per subject for the quiz deck, inline rather than sprited so the
+# animated parts can actually be reached by CSS. Every one holds still for anyone
+# who has asked for reduced motion.
+SUBICON = {
+ "components":
+  '<svg class="qi" viewBox="0 0 64 64" aria-hidden="true">'
+  '<rect x="10" y="12" width="44" height="12" rx="3"/><rect x="10" y="26" width="44" height="12" rx="3"/>'
+  '<rect x="10" y="40" width="44" height="12" rx="3"/>'
+  '<circle class="a1" cx="16" cy="18" r="3"/><circle class="a2" cx="16" cy="32" r="3"/>'
+  '<circle class="a3" cx="16" cy="46" r="3"/></svg>',
+ "concepts":
+  '<svg class="qi" viewBox="0 0 64 64" aria-hidden="true">'
+  '<path d="M12 32 H26"/><path d="M26 32 C38 32 40 16 52 16"/><path d="M26 32 C38 32 40 48 52 48"/>'
+  '<circle class="p1" cx="26" cy="32" r="4"/><circle class="p2" cx="52" cy="16" r="4"/>'
+  '<circle class="p3" cx="52" cy="48" r="4"/></svg>',
+ "behavior":
+  '<svg class="qi" viewBox="0 0 64 64" aria-hidden="true">'
+  '<circle cx="32" cy="32" r="19"/>'
+  '<path class="w1" d="M22 36 C26 28 30 40 34 32 C37 26 40 34 43 30"/>'
+  '<circle class="e1" cx="25" cy="25" r="2.6"/><circle class="e2" cx="39" cy="25" r="2.6"/></svg>',
+ "actors":
+  '<svg class="qi" viewBox="0 0 64 64" aria-hidden="true">'
+  '<circle cx="17" cy="24" r="6"/><path d="M7 46 A10 10 0 0 1 27 46"/>'
+  '<circle cx="47" cy="24" r="6"/><path d="M37 46 A10 10 0 0 1 57 46"/>'
+  '<circle class="hl" cx="32" cy="30" r="7"/><path class="hl2" d="M20 52 A12 12 0 0 1 44 52"/></svg>',
+ "risk":
+  '<svg class="qi" viewBox="0 0 64 64" aria-hidden="true">'
+  '<path d="M8 42 H24"/><path d="M24 42 C36 42 38 20 54 20"/>'
+  '<path class="dash" d="M24 42 C34 42 38 54 48 54" stroke-dasharray="5 5"/>'
+  '<path class="x1" d="M48 48 L58 58 M58 48 L48 58"/>'
+  '<circle cx="24" cy="42" r="3.6"/></svg>',
+}
+
 def quizzes():
+    """The quiz surface.
+
+    Elizabeth's brief: more game, more dopamine. So the subjects are portrait
+    cards with an animated icon rather than a list of rows, the level buttons
+    are big and show their own state, locked levels look locked instead of
+    merely dim, and a level that opens while you were away announces itself
+    when you come back. The play screen inverts to the light terminal, which
+    makes a round feel like a different room from the browsing."""
     qd = quiz_data()
-    rows = ""
+
+    cards = ""
     for cat in SUBJECTS:
         lv = ""
         for n in (1, 2, 3):
-            cls = "btn sm" if n == 1 else "btn ghost sm"
-            lv += (f'<button class="{cls}" type="button" data-start="{cat}" data-level="{n}">'
-                   f'level {n}<span class="tick" hidden>&#10003;</span></button>')
-        rows += f'''<div class="qrow c-{cat}">
-<div class="qr-name"><span class="qr-sub">AI {SUBNAME[cat]}</span>
-<span class="meta">{len(terms_in(cat))} terms</span></div>
-<div class="qr-lvls">{lv}</div></div>'''
+            lv += (f'<button class="lvb" type="button" data-start="{cat}" data-level="{n}">'
+                   f'<span class="lvn">level {n}</span>'
+                   f'<span class="lvs" aria-hidden="true"></span></button>')
+        cards += f'''<article class="qcard c-{cat}" data-topic="{cat}">
+<div class="qc-top">{SUBICON[cat]}<span class="qc-pips" aria-hidden="true"><i></i><i></i><i></i></span></div>
+<h3 class="qc-name">AI {SUBNAME[cat]}</h3>
+<span class="qc-meta">{len(terms_in(cat))} terms</span>
+<div class="qc-lv">{lv}</div>
+</article>'''
 
-    body = f"""
+    bonus = '''<article class="qcard qc-bonus" data-topic="whosaid">
+<div class="qc-top"><svg class="qi" viewBox="0 0 64 64" aria-hidden="true">
+<path d="M10 14 H54 V40 H32 L20 52 V40 H10 Z"/>
+<path class="q1" d="M25 24 A6 6 0 0 1 38 25 C38 30 32 30 32 33"/>
+<circle class="q2" cx="32" cy="38" r="1.6"/></svg></div>
+<h3 class="qc-name">who said it</h3>
+<span class="qc-meta">bonus &middot; always open</span>
+<div class="qc-lv"><button class="lvb open" type="button" data-bonus>
+<span class="lvn">start</span><span class="lvs" aria-hidden="true"></span></button></div>
+</article>'''
+
+    body = f"""{grounds()}{C.ICONS}
 <div class="wrap hero narrow">
 <span class="kicker">quizzes</span>
-<h1>Find out what you actually know.</h1>
-<p class="lede">Five subjects, three levels each, between eight and twelve questions a round. Level one is a gentle start, level two covers the rest of the subject, and level three asks you to classify the claims yourself, which is the real skill.</p>
-<p class="lede">Score eighty percent and the next level unlocks. Score less and you can go straight round again. Every wrong answer tells you which one was right, and why.</p>
+<h1>Find out what actually stuck.</h1>
 </div>
 
 <div class="wrap" data-quizgame>
-  <div class="qpick">{rows}
-    <div class="qbonus">
-      <div class="qr-name"><span class="qr-sub">who said it</span>
-      <span class="meta">bonus round &middot; always open</span></div>
-      <div class="qr-lvls"><button class="btn sm" type="button" data-bonus>start</button></div>
+  <div class="qpick">
+    <div class="qhello">
+      {belle_img("close-up-goading", "bfig plain qhb")}
+      <div class="qbubble">
+        <p>Go on then. Eighty percent opens the next level, and I will tell you the
+        right answer every time you miss one, which is more than most people do.</p>
+        <p class="meta">Level one is a gentle start. Level two is the rest of the subject.
+        Level three asks you to classify the claim yourself, which is the actual skill.</p>
+      </div>
     </div>
-    <p class="meta" style="margin-top:var(--s4)">Progress is kept in this browser and nowhere else. <button class="linkbtn" type="button" data-reset>clear my progress</button></p>
+
+    <div class="qdeck">{cards}{bonus}</div>
+
+    <p class="meta qfoot">Progress is kept in this browser and nowhere else.
+    <button class="linkbtn" type="button" data-reset>clear my progress</button></p>
     <p class="meta prizehint" data-allnote hidden>Every level is passed. Finish any round to claim what Belle owes you.</p>
   </div>
 
-  <div class="qplay" hidden>
+  <div class="qplay qlight" hidden>
     <div class="qtop"><span class="qtopic"></span><span class="qlevel meta"></span></div>
     <div class="qprog"><span class="qfill"></span></div>
-    <h2 class="qq"></h2>
+    <div class="qhead">
+      <svg class="qicon" viewBox="0 0 64 64" aria-hidden="true"><use href="#i-lens"></use></svg>
+      <h2 class="qq"></h2>
+    </div>
     <div class="qopts"></div>
     <p class="qfb" hidden></p>
     <div class="qbar">

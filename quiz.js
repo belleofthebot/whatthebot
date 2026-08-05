@@ -35,6 +35,11 @@
   }
   var done = load();                       // { "risk:2": true, ... }
 
+  /* What was unlocked the last time this screen was painted. A level that opens
+     while you are away should say so when you come back, rather than just
+     quietly being there. Kept in memory only: it is about this visit. */
+  var seenOpen = null;
+
   function passed(topicKey, level) { return !!done[topicKey + ':' + level]; }
   function unlocked(topicKey, level) {
     return level === 1 || passed(topicKey, level - 1);
@@ -71,18 +76,49 @@
 
   /* ---------- the pick screen ---------- */
   function paintPick() {
+    var nowOpen = {}, fresh = [];
+
     Array.prototype.forEach.call(pick.querySelectorAll('[data-start]'), function (b) {
-      var k = b.dataset.start, lv = +b.dataset.level;
+      var k = b.dataset.start, lv = +b.dataset.level, id = k + ':' + lv;
       var ok = unlocked(k, lv), won = passed(k, lv);
+
       b.disabled = !ok;
-      b.classList.toggle('locked', !ok);
-      b.classList.toggle('won', won);
-      b.title = ok ? '' : 'Pass level ' + (lv - 1) + ' first';
-      var mark = b.querySelector('.tick');
-      if (mark) mark.hidden = !won;
+      b.classList.remove('open', 'won', 'shut', 'justopened');
+      b.classList.add(won ? 'won' : ok ? 'open' : 'shut');
+      b.title = ok ? '' : 'pass level ' + (lv - 1) + ' first';
+      b.setAttribute('aria-disabled', ok ? 'false' : 'true');
+
+      if (ok && !won) nowOpen[id] = true;
+      /* newly openable, and not on the very first paint of the visit */
+      if (ok && !won && seenOpen && !seenOpen[id]) fresh.push(b);
     });
-    var b = pick.querySelector('[data-bonus]');
-    if (b) b.hidden = false;
+
+    /* pips: one filled per level passed */
+    Array.prototype.forEach.call(pick.querySelectorAll('.qcard[data-topic]'), function (card) {
+      var k = card.dataset.topic;
+      Array.prototype.forEach.call(card.querySelectorAll('.qc-pips i'), function (pip, i) {
+        pip.classList.toggle('on', passed(k, i + 1));
+      });
+      card.classList.remove('justopened');
+    });
+
+    fresh.forEach(function (b) {
+      b.classList.add('justopened');
+      var card = b.closest('.qcard');
+      if (card) card.classList.add('justopened');
+      b.addEventListener('animationend', function () {
+        b.classList.remove('justopened');
+        if (card) card.classList.remove('justopened');
+      }, { once: true });
+    });
+    if (fresh.length) {
+      try { fresh[0].closest('.qcard').scrollIntoView({ block: 'center', behavior: 'smooth' }); }
+      catch (e) {}
+    }
+    seenOpen = nowOpen;
+
+    var bb = pick.querySelector('[data-bonus]');
+    if (bb) { bb.hidden = false; bb.classList.add('open'); }
     var note = pick.querySelector('[data-allnote]');
     if (note) note.hidden = !allComplete();
   }
@@ -101,7 +137,7 @@
 
     pick.hidden = true; over.hidden = true; if (prize) prize.hidden = true;
     play.hidden = false;
-    play.className = 'qplay c-' + (bonus ? 'actors' : topic.key);
+    play.className = 'qplay qlight c-' + (bonus ? 'actors' : topic.key);
     play.querySelector('.qtopic').textContent = topic.name;
     play.querySelector('.qlevel').textContent = bonus ? 'bonus round' : 'level ' + level;
     try {
@@ -115,6 +151,8 @@
     locked = false;
     var q = qs[at];
     play.querySelector('.qq').innerHTML = q.q;
+    var ic = play.querySelector('.qicon use');
+    if (ic && q.icon) ic.setAttribute('href', '#' + q.icon);
     var box = play.querySelector('.qopts');
     box.innerHTML = '';
     q.a.forEach(function (txt, n) {

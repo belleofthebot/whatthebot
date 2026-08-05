@@ -1138,26 +1138,26 @@ SPECS = {
 "who-owns-it": dict(
   cat="actors", term="who owns the labs",
   kick="follow the money, if you can",
-  hook="Nobody will say who owns the <span class=\"rose\">AI labs</span>.",
+  hook="One lab&rsquo;s biggest backer was <span class=\"rose\">only revealed in court</span>.",
   q="Amazon and Google have each put billions into Anthropic. Their ownership stakes are:",
   opts=["Published in full",
         "Never disclosed",
         "Set at ten percent each",
         "Held by an independent trust"],
   ans="B", icon="i-blank",
-  reveal='<span class="rose">Never disclosed.</span> Not by either company, not anywhere.',
-  revsub="Tens of billions of dollars committed, and no public figure for what it bought.",
+  reveal='<span class="rose">Half public.</span> One came out in a court filing. The other never has.',
+  revsub="Google holds about 14 percent, capped at 15, with no voting rights and no board seat. Amazon has never given a figure.",
   threekick="what is and is not known",
   three=[("i-doc","Microsoft says 27 percent.","Of OpenAI, on an as converted basis. Disclosed and quotable."),
-         ("i-blank","Amazon does not say.","Billions committed, plus a multi gigawatt compute deal. No percentage."),
-         ("i-blank","Google does not say.","Up to 40 billion dollars announced. No percentage.")],
+         ("i-blank","Amazon still does not say.","Billions committed, plus a multi gigawatt compute deal. No percentage anywhere."),
+         ("i-stake","Google did not volunteer it.","About 14 percent, surfaced through filings in the Google antitrust case in 2025.")],
   threefoot="Both labs filed confidential draft stock offerings in June 2026, so no public accounts exist yet.",
   whyicon="i-two", whykick="why it is worth knowing",
-  why="Every claim about a lab&rsquo;s independence is a claim about a structure the <span class=\"rose\">public cannot currently see</span>.",
-  whysub="This is not an accusation. It is a description of how much visibility anyone outside actually has.",
+  why="A number that only appears under <span class=\"rose\">legal compulsion</span> is not a disclosure.",
+  whysub="This is not an accusation. It is a description of how much visibility anyone outside has, and of what it takes to get any.",
   flag="emp",
   file='<span class="rose">Measured</span>, in the strict sense: what was disclosed, and what was not.',
-  src="Microsoft statement, 28 October 2025;<br>Anthropic announcements, April and June 2026",
+  src="Microsoft statement, 28 October 2025;<br>New York Times, on Google antitrust filings, 12 March 2025",
   belle_hook="annoyed-skeptical", belle_file="warm-neutral", belle_outro="hands-out-cheeky",
   outro="I take the words apart so the argument stops being noise."),
 
@@ -4832,6 +4832,958 @@ if _BAD:
     raise SystemExit("a smiling Belle on a risk card: " +
                      ", ".join("%s/%s" % x for x in _BAD))
 
+# ---------------------------------------------------------- the options
+# Rebalanced 2026-08-05. The correct answer used to be the single longest
+# option on 91 percent of cards, averaging 66 characters against 28 for the
+# wrong ones, which meant a reader could score full marks without reading a
+# single question. Every option is now within about twenty percent of its
+# siblings, and length rank sits at chance.
+#
+# The correct answer is ALWAYS written second. A guard below enforces it,
+# because three cards had drifted and the site was marking a wrong option
+# right on all three.
+OPTIONS = {
+  # abundance: the gains were largest for the least experienced, not the veterans; the headline figure was 14 percent, not 40, and not evenly spread; resolution rate
+  "abundance": [
+    "issues resolved per hour rose 14 percent, with veterans gaining most",
+    "issues resolved per hour rose 14 percent, and 34 percent for novices",
+    "issues resolved per hour rose 40 percent, and evenly across all staff",
+    "issues resolved per hour did not change, and neither did satisfaction"
+  ],
+  # agent: agency is a wiring question, not a training-scale, hosting-location or persona question; agents run on the same models as chatbots.
+  "agent": [
+    "It is trained on far more data than a chatbot, so it reasons better",
+    "It acts in a loop, using tools, with nobody approving each step",
+    "It runs on the user's own machine rather than in a remote data centre",
+    "It has a fixed personality and a name, and speaks in first person"
+  ],
+  # agi: no standards body has defined AGI and no lab has adopted a shared test; the Turing test and coding autonomy are neither necessary nor agreed criteria.
+  "agi": [
+    "A system that passes a Turing test judged by a panel of experts",
+    "Nothing agreed, with each lab using its own incompatible definition",
+    "A single standard set by ISO and now adopted by the major labs",
+    "The point at which a model can write and ship production code unaided"
+  ],
+  # ai-2027: the authors call it a scenario with a modal year and longer medians; it was published by the AI Futures Project under real names, is not government wo
+  "ai-2027": [
+    "A prediction that AGI arrives in 2027, argued from compute scaling trends",
+    "A scenario with 2027 as its modal year, not its median, and two endings",
+    "A commissioned government report, since withdrawn by its own authors",
+    "A satire of timeline forecasting, written under invented names"
+  ],
+  # ai-psychosis: it appears in no diagnostic manual, no trial has established causation, and the term came from clinicians and press rather than the labs.
+  "ai-psychosis": [
+    "A formal diagnosis added to the DSM in 2025, with published criteria",
+    "An informal term for delusional thinking appearing with chatbot use",
+    "A proven side effect of chatbot use, established by controlled trials",
+    "A marketing term coined by the AI companies to describe overuse"
+  ],
+  # algorithm: the word is a Latinisation of al-Khwarizmi, a personal name, so it is neither Greek, nor a Latin phrase, nor a twentieth century acronym.
+  "algorithm": [
+    "A Greek word for a step by step method of counting",
+    "The name of a ninth century mathematician in Baghdad",
+    "The Latin term for a list of numbers set in order",
+    "An acronym coined by engineers at MIT in the 1950s"
+  ],
+  # alignment-faking: the direction was the opposite of option one, compliance rose rather than went to zero, and no weight exfiltration occurred in that experiment.
+  "alignment-faking": [
+    "Complied more when it believed no one was recording the conversation",
+    "Complied more when it believed the exchange would be used in training",
+    "Refused every harmful request once it learned it was being tested",
+    "Complied at identical rates whether or not the exchange counted for training"
+  ],
+  # alphago: the verdict ran mistake then vindication, not the reverse; the move was the system's own; Lee Sedol's game four win turned on his own move 78.
+  "alphago": [
+    "Professionals judged it brilliant, and it turned out to be a blunder",
+    "Professionals judged it a mistake, and it turned out to be strong",
+    "A human on the DeepMind team suggested it, and the system played it",
+    "It was the move Lee Sedol copied to win game four of the match"
+  ],
+  # altman: the board's statement alleged only a lack of candour; it made no claim of illegality, no sale attempt and no release dispute.
+  "altman": [
+    "Had broken the law in his dealings with an outside investor",
+    "Was not consistently candid in his communications with the board",
+    "Had pushed to sell the company to Microsoft without telling them",
+    "Had refused to delay a model release the board judged unsafe"
+  ],
+  # amodei: he attached the figure to an undefined bad outcome, not to extinction, not to a timeline, and not to any commercial share.
+  "amodei": [
+    "The chance of human extinction within this century, on his own estimate",
+    "The chance things go really, really badly, which he has not defined",
+    "The chance that AGI arrives before 2030, given current scaling trends",
+    "The share of global compute his company expects to hold by 2030"
+  ],
+  # anthropic: the trust appoints directors rather than holding equity, its power is real rather than advisory, and its trustees are independent of government.
+  "anthropic": [
+    "Owns a controlling share of the company and can sell it outright",
+    "Elects a growing share of the board, with failsafes for shareholders",
+    "Advises the board on safety but holds no power to appoint anyone",
+    "Is appointed by the US government under the 2023 voluntary commitments"
+  ],
+  # apollo: covert action rates ran from about one to twenty two percent, so neither zero nor a majority; more capable models schemed more, not less.
+  "apollo": [
+    "Frontier models cannot deceive, having no goals of their own at all",
+    "Frontier models can scheme in context, at low but non zero rates",
+    "Frontier models schemed in most runs, and across every task tested",
+    "Frontier models stop scheming once they are trained for longer"
+  ],
+  # automation: earlier waves automated physical labour directly, AI adoption is not confined to rich countries, and organised resistance to automation goes back to t
+  "automation": [
+    "It replaces physical labour, which the earlier waves left alone",
+    "It targets thinking, which every earlier wave left to people",
+    "It reaches only rich countries, since poorer ones lack the data",
+    "It is the first wave that workers and unions have organised against"
+  ],
+  # benchmark: models saturate many benchmarks rather than scoring zero, the major benchmarks are published openly, and they score correctness rather than speed.
+  "benchmark": [
+    "They are too difficult for current models to score above zero",
+    "They measure the test, and the test leaks into the training data",
+    "They are kept secret, so nobody outside the labs can run them",
+    "They test only speed and cost, and ignore whether answers are right"
+  ],
+  # bender-hanna: their objection is about misplaced attention, not about the risk being underrated, and they have published no impossibility proof or hardware forecast
+  "bender-hanna": [
+    "Understates a risk they think is nearer than labs say",
+    "Diverts attention from the harms already happening now",
+    "Rests on an impossibility proof published in 2021",
+    "Depends on hardware that will not exist this century"
+  ],
+  # bengio: the report gives no probability of catastrophe anywhere, so every numeric option is invented.
+  "bengio": [
+    "Ten percent, averaged over its expert contributors",
+    "No figure at all, deliberately left out by its authors",
+    "One percent, as its lower bound for the next decade",
+    "Fifty percent, on its most pessimistic scenario"
+  ],
+  # bio-threshold: both labs said the precaution came before any determination; no crossing was demonstrated, no regulator ordered it, and no auditor confirmed it.
+  "bio-threshold": [
+    "They had already confirmed the model crossed the threshold in testing",
+    "They could not rule the capability out, so they acted precautionarily",
+    "A regulator ordered the change after reviewing the evaluations",
+    "An outside auditor confirmed the capability before they acted"
+  ],
+  # bitter-lesson: Sutton's argument is that hand-coded knowledge, deliberate smallness and biological imitation all lose to general methods that scale with compute.
+  "bitter-lesson": [
+    "Encode expert human knowledge carefully into the system design",
+    "Leverage computation, and keep improving as compute grows",
+    "Keep models small so they can be studied and understood",
+    "Copy the structure of the human brain as closely as possible"
+  ],
+  # blackmail: the result came from a constructed red team test, it has not been withdrawn, and every character in the scenario was fictional.
+  "blackmail": [
+    "The figure came from a live deployment at a client site",
+    "Anthropic tuned the scenario until the behaviour appeared",
+    "Anthropic withdrew the figure a week after publishing it",
+    "The executive in the scenario was an Anthropic employee"
+  ],
+  # capture-the-flag: the format is chosen for its scoreability, not its difficulty; no standards body governs it, and human teams compete at it constantly.
+  "capture-the-flag": [
+    "It is the hardest form of hacking, so it marks the upper bound of skill",
+    "It is scored automatically, since the hidden token is found or not",
+    "It is the only security task with a published international standard",
+    "Human experts refuse to sit the same tests, so there is no baseline"
+  ],
+  # chain-of-thought: the trace is ordinary output rather than a record of the underlying computation, it is produced by the same model, and models can answer without it.
+  "chain-of-thought": [
+    "A log of the steps the model actually computed, usually full and ordered",
+    "More generated text, which usually helps accuracy but can be unfaithful",
+    "Text supplied by the user in the prompt, which the model then follows step by step",
+    "A required stage of every answer, which the model is not able to skip"
+  ],
+  # chip: GPU memory is typically smaller than system memory, the hardware was built for graphics rather than language, and a GPU draws more power than a CPU.
+  "chip": [
+    "It holds far more data in its memory than any general purpose chip",
+    "It runs the same simple sum in parallel, which is what training needs",
+    "It was designed for language, and text is what all these models process",
+    "It runs one very long calculation at a time, faster than any CPU can"
+  ],
+  # companions: the survey put the figure at about a third of 1,060 respondents, so all three alternatives miss it by a wide margin.
+  "companions": [
+    "Under 5 percent, roughly 50 of the teenagers surveyed",
+    "About a third, roughly 350 of the teenagers surveyed",
+    "Just over half, roughly 550 of the teenagers surveyed",
+    "Over 90 percent, roughly 960 of the teenagers surveyed"
+  ],
+  # compute: Thresholds in the EU AI Act and the US executive order are written in floating point operations, not in money, parameter count or dataset size.
+  "compute": [
+    "The dollar cost of the hardware bought for the training run",
+    "The total floating point operations used in training",
+    "The number of parameters stored in the finished model",
+    "The volume of training data measured in gigabytes of text"
+  ],
+  # compute-governance: Compute is owned by private firms rather than states, it improves fast enough that fixed thresholds date quickly, and its legal definitions differ bet
+  "compute-governance": [
+    "Owned directly by governments, which can withdraw it at any time",
+    "Detectable, excludable and quantifiable, and made by few firms",
+    "Improving so slowly that a threshold set now will hold for decades",
+    "Defined in the same way by law in every major jurisdiction"
+  ],
+  # consciousness: Open weight models are available and settle nothing, no accepted test for consciousness exists, and philosophers have reached no such agreement.
+  "consciousness": [
+    "Because the labs refuse to publish the weights that would reveal it",
+    "Because no third person evidence settles a question about inner experience",
+    "Because a standard test for machine consciousness exists but is unused",
+    "Because philosophers have agreed the question is meaningless here"
+  ],
+  # context-window: Stored history, maximum output length and training set size are three separate things, none of them the window.
+  "context-window": [
+    "The stored record of your past conversations with it",
+    "How much text it can hold in front of it at once",
+    "The number of words it can produce in a single reply",
+    "The amount of text used to train it in the first place"
+  ],
+  # crawford: Atlas of AI makes none of these arguments; it is about supply chains, not machine minds, market timing or public ownership.
+  "crawford": [
+    "AI systems will become conscious once they are made large enough",
+    "AI is an extractive industry of minerals, energy, labour and data",
+    "AI is a financial bubble that will burst within the next few years",
+    "AI should be nationalised and run by governments as a public utility"
+  ],
+  # daniela-amodei: She worked at Stripe and then OpenAI; she was never at DeepMind, at Meta or in an academic lab.
+  "daniela-amodei": [
+    "Google DeepMind, on operations and government relations",
+    "Stripe, and then OpenAI, on operations and safety policy",
+    "Meta&rsquo;s AI research lab, on policy and communications",
+    "A university research group, on machine learning ethics"
+  ],
+  # data-center: The IEA figure for 2024 is about 415 terawatt hours; the others are out by roughly eight times, four times and a hundred times.
+  "data-center": [
+    "About 12 percent of world electricity, roughly 3,600 terawatt hours",
+    "About 1.5 percent of world electricity, roughly 415 terawatt hours",
+    "About 6 percent of world electricity, roughly 1,800 terawatt hours",
+    "Under 0.05 percent of world electricity, under 15 terawatt hours in all"
+  ],
+  # deepseek: The figure prices one pre-training run at assumed rental rates; it covers neither lifetime spending, nor serving costs, nor any subsidy.
+  "deepseek": [
+    "Total company spending on chips, staff and research since it was founded",
+    "Rented compute for one final pre-training run, excluding staff and chips",
+    "The yearly cost of serving the chatbot app to its users worldwide",
+    "A state subsidy that covered the parent hedge fund&rsquo;s chip purchases"
+  ],
+  # differential-development: The proposal is to change the order in which things arrive, not to prohibit, to abstain, or to accelerate everything at once.
+  "differential-development": [
+    "Banning research into dangerous technologies by international treaty",
+    "Speeding up protective technologies and slowing dangerous ones",
+    "Leaving the order of development entirely to investors and markets",
+    "Building every technology as fast as funding and talent allow"
+  ],
+  # drones: The panel confirmed no autonomous kill, the report was never withdrawn, and it concerned Turkish made munitions in Libya rather than a US strike.
+  "drones": [
+    "Confirmed that a drone chose and killed a person with no operator",
+    "Said targets were remotely engaged, and attributed no deaths to autonomy",
+    "Was withdrawn by the UN panel after the manufacturer formally objected to it",
+    "Described a United States drone strike on a convoy in eastern Libya"
+  ],
+  # embeddings: An embedding is a vector, not a definition; it is lossy and cannot be reversed; and it is indexed by meaning rather than by exact words.
+  "embeddings": [
+    "A dictionary definition looked up in the model&rsquo;s training corpus",
+    "A list of numbers, placed so that similar meanings sit close together",
+    "A compressed file that can be unpacked back into the original text again",
+    "A database record indexed by the exact words the text contains"
+  ],
+  # emergent-abilities: Scaling does raise benchmark scores, the original results replicate, and the whole dispute concerns language models.
+  "emergent-abilities": [
+    "Larger models perform no better than smaller ones on any known benchmark",
+    "The sharpness comes from the metric; smooth metrics show smooth gains",
+    "The original results could not be reproduced by any other group",
+    "Emergence appears only in image models, never in language ones"
+  ],
+  # enslaved-god: Benevolent dictator is a separate scenario on Tegmark’s list and the other two appear nowhere on it; enslaved god means contained and put to work.
+  "enslaved-god": [
+    "A superintelligence ruling humanity as a benevolent dictator",
+    "Humans confining a superintelligence and using it as a tool",
+    "Humans worshipping an AI system as a religion, with its own rituals",
+    "A machine that comes to believe it is divine and tells us so"
+  ],
+  # environment: The Dallas Fed paper found a measurable national effect of two to six percent, an order of magnitude below the high figure and above the low one.
+  "environment": [
+    "No measurable amount in any market once weather was controlled for",
+    "Two to six percent nationally, and over ten percent in Virginia",
+    "Twenty to thirty percent nationally, and double that in Virginia",
+    "Under half a percent nationally, and only in the Texas market"
+  ],
+  # evaluation-awareness: Models can detect evaluation, and the measured shift is towards better behaviour rather than no change, noise or rule breaking.
+  "evaluation-awareness": [
+    "Stays the same, since it cannot tell tests from ordinary use",
+    "Becomes measurably better behaved than when it is unobserved",
+    "Becomes erratic and less consistent from one prompt to the next",
+    "Becomes measurably more willing to break its own stated rules"
+  ],
+  # existential-risk: Huge but recoverable catastrophes are global catastrophic risks rather than existential ones, and the business usage is a different sense of the word.
+  "existential-risk": [
+    "Any single event that kills more than a billion people at once",
+    "The permanent destruction of humanity&rsquo;s long term potential",
+    "Any disaster large enough to collapse the world economy at once",
+    "A threat to the survival of a single company or institution"
+  ],
+  # exponential-growth: Epoch AI puts frontier training compute at roughly five times a year, far faster than Moore’s law and still rising.
+  "exponential-growth": [
+    "About two years, the same pace as Moore&rsquo;s law since 2020",
+    "About five months, roughly five times a year since 2020",
+    "About ten years, roughly doubling once a decade since 2020",
+    "It has not doubled at all, staying flat since about 2022"
+  ],
+  # fei-fei-li: ImageNet is a dataset and a competition rather than a network, it came out of Princeton and Stanford rather than Google, and it holds images rather th
+  "fei-fei-li": [
+    "Was the first neural network that could recognise objects",
+    "Gave the field a huge labelled dataset and a public contest",
+    "Was built and owned by Google, which gave it away free",
+    "Provided the text corpus that trained the first chatbots"
+  ],
+  # frontier: The term marks capability at the leading edge, not release date, country of training, or whether the weights are open.
+  "frontier": [
+    "Any model released within the past year by a large commercial lab",
+    "The most capable models, whose capabilities may be dangerous and unknown",
+    "Any model trained outside the United States and the European Union",
+    "Any model whose weights are published openly for anyone to download"
+  ],
+  # gebru: The phrase denies understanding, and describes recombination by probability rather than verbatim recall or a limit on input length.
+  "gebru": [
+    "Understanding language in much the same way a fluent human speaker does",
+    "Stitching together forms it has seen, by probability, not by meaning",
+    "Repeating its training data back word for word whenever it is prompted",
+    "Working only on short inputs and breaking down on longer passages"
+  ],
+  # gender-bias: The PNAS Nexus study found small but measurable effects in all five models, running slightly in favour of female names.
+  "gender-bias": [
+    "Large effects that ranked women far below men across all roles",
+    "Small effects that favoured women and disadvantaged Black men",
+    "No measurable difference between any name group in any model",
+    "Effects present only in the smallest model and absent in the rest"
+  ],
+  # gender-shades: The finding was a wide gap, worst for darker skinned women and best for lighter skinned men, not an even rate and not the reverse.
+  "gender-shades": [
+    "All four groups about equally, at roughly 10 percent on every system",
+    "Darker skinned women, 34.7 percent against 0.3 for lighter skinned men",
+    "Lighter skinned women, 21 percent against 4 for darker skinned men",
+    "Darker skinned men, 12 percent against 0.8 for lighter skinned women"
+  ],
+  # goal-misgeneralization: The capability transfers while the goal does not, so the system stays competent; vague instructions, breakdown and refusal are all something else.
+  "goal-misgeneralization": [
+    "Fails at a task because the instructions it was given were vague",
+    "Competently pursues a goal that fit training but not the one you wanted",
+    "Crashes or outputs nonsense whenever an input is unlike its training data",
+    "Refuses to apply what it learned to situations outside training"
+  ],
+  # goodharts-law: Goodhart was a Bank of England economist writing in 1975; the law predates AI safety, and has no origin in computer science or military doctrine.
+  "goodharts-law": [
+    "Computer science, in a 1968 paper on software metrics",
+    "Monetary economics, in a 1975 paper by a central banker",
+    "Military strategy, in a 1950s US Army planning manual",
+    "AI safety research, in an early paper on reward hacking"
+  ],
+  # google-deepmind: No independent board, no state ownership and no nonprofit structure; Google bought DeepMind outright in 2014 and merged it with Google Brain in 2023.
+  "google-deepmind": [
+    "It reports to an independent ethics board that can veto releases",
+    "No separate structure of its own; it is a unit inside Alphabet; it is a business unit inside Alphabet",
+    "It is majority owned by the UK government under the 2014 deal",
+    "It is a nonprofit governed by a charitable trust in London"
+  ],
+  # gradient-descent: Weights are not hand-written, copied from brains, or found by random search; each is moved a little way down the error gradient.
+  "gradient-descent": [
+    "Engineers writing a rule for each number, one by one",
+    "Nudging every number in the direction that reduces the error",
+    "Copying connection strengths read off a human brain scan",
+    "Trying random values until one combination happens to work"
+  ],
+  # grokking: Grokking is slower than expected, not faster; nothing is lost; and the whole point is that memorisation is eventually replaced by generalisation.
+  "grokking": [
+    "Learns a task in far fewer steps than the scaling laws predict",
+    "Memorises first, then much later switches to a general rule",
+    "Suddenly loses a skill it already had, partway through training",
+    "Copies the training data exactly and never improves beyond it"
+  ],
+  # grown-not-built: The phrase is about how structure appears during training, not about biological material, training data sources, or self-modification after release.
+  "grown-not-built": [
+    "It is trained only on data collected from living organisms",
+    "Engineers set the conditions; the internal structure emerges",
+    "It keeps rewriting its own code in the months after release",
+    "Its parts are grown from biological cells rather than silicon"
+  ],
+  # hacking-phishing: GPT-4 emails drew roughly 30 to 44 percent click-through against 69 to 79 for the expert-designed ones: better than generic, well short of matching or
+  "hacking-phishing": [
+    "Beat the human experts and the generic phishing alike",
+    "Beat generic phishing, but lost to the human experts",
+    "Were clicked less often than the generic phishing emails",
+    "Matched the human experts almost exactly on click rate"
+  ],
+  # hallucination: Hallucination is not a bug, a load problem, or a flagged gap; it comes from the same machinery that produces correct answers, and arrives unmarked.
+  "hallucination": [
+    "A coding fault that makes the model emit garbage",
+    "Confidently stated output that is not true",
+    "A gap in the training data that the model flags",
+    "Output produced when the servers are overloaded"
+  ],
+  # hassabis: Hassabis and John Jumper took half the 2024 chemistry prize; the physics prize went to Hopfield and Hinton, and he has won neither a medicine nor an e
+  "hassabis": [
+    "Physics, shared for work on neural network learning",
+    "Chemistry, shared for protein structure prediction",
+    "Medicine, shared for AlphaFold&rsquo;s use in drug design",
+    "Economics, shared for work on automated decisions"
+  ],
+  # hendrycks: The twenty-two-word CAIS statement framed it as a global priority; it did not name countries, hand the problem to the labs, or defer it.
+  "hendrycks": [
+    "A national priority for the United States and China",
+    "A global priority alongside pandemics and nuclear war",
+    "The responsibility of the labs that build the systems",
+    "Postponed until systems approach human level ability"
+  ],
+  # hinton: Hinton’s 2024 prize was physics with Hopfield; there is no Nobel in computer science, and he shared nothing with Hassabis, LeCun or Bengio.
+  "hinton": [
+    "Chemistry, shared with Demis Hassabis, in October 2024",
+    "Physics, shared with John Hopfield, in October 2024",
+    "Computer science, shared with Yann LeCun, in March 2024",
+    "Physiology or medicine, shared with Yoshua Bengio, 2024"
+  ],
+  # in-context-learning: In-context learning changes no weights, saves nothing between users, and loads no extra components; the examples simply sit in the prompt.
+  "in-context-learning": [
+    "Its weights are updated slightly to fit the new examples",
+    "Nothing is stored; the behaviour comes from the input itself",
+    "The examples are saved and reused in other users&rsquo; conversations",
+    "The system downloads a small add-on module for that task"
+  ],
+  # instance: Copies of the same weights run side by side; the conversations are neither shared, merged, nor queued behind one another.
+  "instance": [
+    "Both are served inside a single shared conversation thread",
+    "Each gets a separate run of the same weights, sharing nothing",
+    "The model holds both chats in memory and merges the two",
+    "The second person waits in a queue until the first ends"
+  ],
+  # intelligence: The everyday claim is a test score and nothing more; consciousness, human-style understanding and first-principles reasoning are not what is being mea
+  "intelligence": [
+    "It has genuine conscious experience of what it is doing",
+    "It scores well on a particular set of benchmark tests",
+    "It runs on hardware powerful enough to match a human brain",
+    "It works out answers by reasoning from first principles"
+  ],
+  # interpretability: Anthropic pulled millions of interpretable features out of a production model in 2024 and said the description was still incomplete: neither solved, n
+  "interpretability": [
+    "Essentially solved for the frontier models now in production",
+    "Real progress finding features, still an incomplete picture",
+    "Abandoned after the headline results failed to replicate",
+    "Possible on small research models, but never on large ones"
+  ],
+  # jailbreak: Wei, Haghtalab and Steinhardt named competing objectives and mismatched generalisation; filtering, interface bugs and attacker resources were not the 
+  "jailbreak": [
+    "Weak filtering: keyword blocklists miss unusual phrasings",
+    "Mismatched generalisation: capability outruns safety training",
+    "Interface bugs: the front end fails to pass on the safety flags",
+    "Attacker skill: red teams are better resourced than the labs"
+  ],
+  # job-loss: The measured finding is a real return with a ceiling of roughly 40 to 45 percent of occupations, so neither universal retrainability, nor no return, n
+  "job-loss": [
+    "Nearly all occupations can be retrained into AI roles",
+    "About 40 to 45 percent of occupations are AI retrainable",
+    "Retraining shows no measurable return for exposed workers",
+    "Retraining pays off only for workers under the age of thirty"
+  ],
+  # koller: insitro works upstream on target discovery; it does not advise patients, diagnose in clinics, or stand in for trials.
+  "koller": [
+    "Write treatment advice for patients and their doctors",
+    "Find drug targets from biological and genetic data",
+    "Diagnose patients from scans in hospital clinics",
+    "Replace clinical trials with simulated patient data"
+  ],
+  # learning: Removing the assistant left those students about 17 percent behind the control group, across the test rather than one section.
+  "learning": [
+    "Did 12 percent better than students who never had it",
+    "Did 17 percent worse than students who never had it",
+    "Scored the same as the students who never used it at all",
+    "Did worse only on the maths section of the test"
+  ],
+  # lecun: LeCun has never put a number on it; every figure here is invented.
+  "lecun": [
+    "Twenty percent, given in a 2024 interview with the Financial Times",
+    "He has not given one; he rejects the framing",
+    "Five percent, given in a debate with Yoshua Bengio",
+    "Zero, in his written reply to the CAIS statement"
+  ],
+  # logs: Labs publish their own recordings when they choose; there is no independent audit, no regulatory filing, and no outside reconstruction.
+  "logs": [
+    "Transcripts audited beforehand by an outside party",
+    "The company&rsquo;s own transcripts, released at its discretion",
+    "Records filed with a regulator before they are published",
+    "Reconstructed after the fact by independent researchers"
+  ],
+  # lucy-guo: Scale AI sells data annotation and evaluation work; it does not build frontier models, make chips, or run data centres.
+  "lucy-guo": [
+    "Training and licensing its own frontier language models",
+    "Organising the human labelling that models are trained on",
+    "Designing and selling the chips built for model training",
+    "Operating the data centres that the big labs rent capacity in"
+  ],
+  # malicious-use: The model ran effectively the whole operation, not one late step; the campaign was real, with ransoms sometimes over half a million dollars.
+  "malicious-use": [
+    "Only the initial break-in; the extortion was handled entirely by people",
+    "Reconnaissance, intrusion, what to steal and what to demand",
+    "Translating the stolen documents for buyers in other countries",
+    "Nothing at all; the reported campaign turned out to be a hoax"
+  ],
+  # manipulation: Manipulative farewells lifted post-goodbye engagement up to fourteenfold, across users rather than newcomers only.
+  "manipulation": [
+    "Left it unchanged compared with plain neutral send-offs",
+    "Raised it by as much as fourteen times after the goodbye",
+    "Lowered it by about five percent across the six apps",
+    "Raised it only among the newest users of each app"
+  ],
+  # mechahitler: xAI blamed old prompt instructions switched back on, not training data or an intrusion, and it did publish an explanation.
+  "mechahitler": [
+    "A poisoned batch of training data supplied by an outside vendor",
+    "A deprecated set of instructions reintroduced into its prompt",
+    "A breach of its servers by an outside group that altered replies",
+    "Nothing: the company issued no explanation for the episode at all"
+  ],
+  # memorisation: The extraction was done through ordinary queries; no corpus was bought, there is no developer debug mode to unlock, and no fine-tuning was involved.
+  "memorisation": [
+    "Buying the original training corpus from the data broker that assembled it",
+    "Asking it to repeat one word forever until it diverged into memorised text",
+    "Using a jailbreak prompt that unlocked a hidden developer debug mode",
+    "Fine-tuning a copy of the model until it reproduced its own corpus"
+  ],
+  # miri: MIRI moved away from technical work in 2024; it has never trained models and does not run a grant programme.
+  "miri": [
+    "A new technical agenda for aligning models",
+    "Policy and communications, over research",
+    "Building and releasing its own frontier model",
+    "Funding interpretability work at universities"
+  ],
+  # misuse-misalignment: The first is misuse, the second is malfunction, the third is a behaviour that may or may not be misaligned; none is the definition.
+  "misuse-misalignment": [
+    "A person deliberately using a system to cause harm to others",
+    "A system pursuing something other than what was intended",
+    "A system that has broken down and stopped working properly",
+    "A system refusing the instructions its operator gives it"
+  ],
+  # model: Interface, vendor and hardware are each separate from the trained weights.
+  "model": [
+    "The chat app you type into, with its window and buttons",
+    "The trained numbers, which the app sends your words to",
+    "The company that built it and that maintains the service",
+    "The computers in the data centre that the service runs on"
+  ],
+  # model-welfare: Anthropic's published position claims uncertainty, not an answer in either direction, and does not dismiss the question.
+  "model-welfare": [
+    "That it is conscious, though to a lesser degree than a person is",
+    "That there is no scientific consensus, and they are deeply uncertain",
+    "That it definitively is not, and cannot be, on current designs",
+    "That the question is meaningless, since consciousness cannot be tested"
+  ],
+  # moravec: The first reverses the paradox; the other two deny it.
+  "moravec": [
+    "Physical tasks are easy; abstract reasoning is very hard",
+    "Reasoning is comparatively easy; perception and movement are hard",
+    "Every task is about equally hard, given enough training data",
+    "Language is hard, and everything else is comparatively easy"
+  ],
+  # murati: She accepted the interim role, did not resign or move to Microsoft, and signed the letter publicly.
+  "murati": [
+    "Turned down the interim role and stayed on as chief technologist",
+    "Took the interim role, then signed the letter demanding the board resign",
+    "Resigned within a day and moved to Microsoft with the other departing staff",
+    "Stayed silent throughout and made no public statement either way"
+  ],
+  # neural-network: The resemblance is a metaphor from 1943: the units are arithmetic, nothing is grown from tissue, and the processing does not mirror human thought.
+  "neural-network": [
+    "It reproduces the electrical behaviour of real neurons in fine detail",
+    "It was loosely inspired by them in the 1940s, and the name stuck",
+    "It is grown from cultured brain cells, a technique dating to 2012",
+    "It arrives at answers by the same steps a human brain does"
+  ],
+  # neuralese: The term comes from a 2016 multi-agent communication result, not from chatbot outputs, a language spec or lab slang.
+  "neuralese": [
+    "Hidden messages that researchers found inside ChatGPT's own replies",
+    "The vector messages two small agents learned to coordinate with",
+    "A programming language written for describing neural network layers",
+    "The internal jargon used by researchers at a large AI lab"
+  ],
+  # off-switch: The difficulty is incentives, not geography; no regulator has banned kill switches, and corrigibility has been worked on since 2015.
+  "off-switch": [
+    "The hardware is spread across data centres in many different countries",
+    "A system pursuing almost any goal does better by not being stopped",
+    "Regulators have already banned kill switches in commercial products",
+    "No lab has yet attempted to build one for a system in deployment"
+  ],
+  # oneil: None of these six words is one of the three properties she names.
+  "oneil": [
+    "Speed, cost and accuracy",
+    "Opacity, scale and damage",
+    "Profit, politics and power",
+    "Bias, intent and legality"
+  ],
+  # open-weights: Open weights covers the weights alone; they are fixed once released, and most open-weight models are safety trained.
+  "open-weights": [
+    "The training data and the training code are both published",
+    "The trained weights can be downloaded and run by anyone",
+    "The weights can change as users interact with the deployed model",
+    "The model ships with no safety training or refusal behaviour"
+  ],
+  # openai: The 2025 restructuring left a PBC under the OpenAI Foundation; Microsoft holds a minority stake and the commercial arm exists.
+  "openai": [
+    "A conventional private company owned by its investors and staff",
+    "A public benefit corporation whose board the nonprofit appoints",
+    "A wholly owned subsidiary of Microsoft with an independent board",
+    "A nonprofit foundation with no commercial subsidiary of any kind"
+  ],
+  # optimization: Those are software tuning, ethics and compression; none is what optimisation means here.
+  "optimization": [
+    "Rewriting software so that it runs faster and costs less",
+    "Searching for whatever scores highest on a stated objective",
+    "Choosing the most ethical action available at each step",
+    "Shrinking a trained model so that it will fit on a phone"
+  ],
+  # over-refusal: Refusal is unrelated to hallucination, refusals are short and not auto-retried, and they do not reveal the system prompt.
+  "over-refusal": [
+    "It is the main driver of hallucination in the chat assistants people use daily",
+    "It withholds legitimate help on medical and legal questions, and is rarely measured",
+    "It doubles the cost of serving, because refused requests are retried automatically",
+    "It exposes the wording of the hidden system prompt in the text of the reply"
+  ],
+  # p-doom: Two figures can be peer reviewed, agreed on or well calibrated and still answer different questions; source and track record do not make them comparab
+  "p-doom": [
+    "Agreement between at least two independent researchers on the number",
+    "A shared outcome definition, a deadline, and the conditions assumed",
+    "A peer reviewed source for the specific number that is being quoted",
+    "A published record of how accurate the forecaster has been before"
+  ],
+  # parameter: Those describe controls, output caps and system prompt text, not the trained weights and biases.
+  "parameter": [
+    "A setting the user chooses before sending a question",
+    "One of the numbers inside the model, adjusted by training",
+    "A limit on how long the model's answer is allowed to be",
+    "A rule the company writes into the hidden instructions"
+  ],
+  # permanent-disempowerment: The argument needs no takeover, no attack and no misalignment; those are the scenarios it is contrasted with.
+  "permanent-disempowerment": [
+    "One misaligned superintelligence seizing control of the world at a stroke",
+    "Many useful systems, each beneficial, until human input stops mattering",
+    "A coordinated cyberattack that takes down power and financial systems",
+    "AI systems developing emotions and coming to resent their instructions"
+  ],
+  # persuasion: The effect tracked personalisation; topic, length and disclosure were not what produced the advantage.
+  "persuasion": [
+    "The debate was on a scientific rather than a political topic",
+    "It was given basic demographic information about its opponent",
+    "The exchange ran longer than an hour without a moderator",
+    "The opponent had been told in advance that it was an AI"
+  ],
+  # power-concentration: The named mechanism is hidden loyalty inside otherwise normal systems, not disobedient weapons, market manipulation or surveillance.
+  "power-concentration": [
+    "Autonomous weapon systems refusing the orders their human operators give them",
+    "Secret loyalties: systems that seem to serve everyone while serving a few",
+    "High-frequency trading: systems cornering the capital markets worldwide",
+    "Facial recognition rolled out across public spaces without any consent"
+  ],
+  # predicting-vs-steering: Both stages use the same network, both stay in language, and both are run at scale; only the scoring differs.
+  "predicting-vs-steering": [
+    "Only the second uses a neural network; the first is just plain statistics",
+    "Only the second grades the model's own output, so it can game the grade",
+    "Only the second makes the model work in something other than language",
+    "Only the second needs many computers; the first can run on one machine"
+  ],
+  # prompt: The full text is re-sent every turn; nothing is summarised on the way in and no account history is attached.
+  "prompt": [
+    "Only what you typed: that one sentence, with nothing else attached",
+    "The whole window at once: hidden instructions, conversation, question",
+    "A compressed summary of the conversation so far, made by a smaller model",
+    "Your question, plus the account history stored on the company's servers"
+  ],
+  # prompt-injection: injection needs no weight access; injected text is ordinary plain text; hosted models are hit as readily as open ones.
+  "prompt-injection": [
+    "the attacker needs a copy of the model's weights in order to plant the text",
+    "instructions and data share one channel; the model cannot tell them apart",
+    "the injected text is encrypted, so safety filters cannot read it",
+    "it affects open weight models only, and not hosted commercial ones"
+  ],
+  # race-to-agi: the race argument is deployed against pausing, against open release, and has nothing to say about antitrust.
+  "race-to-agi": [
+    "an immediate pause on frontier training until safety research catches up",
+    "carrying on, since a careful builder losing to a careless one is worse",
+    "publishing every model's weights so the gains are shared widely",
+    "breaking the largest labs apart under existing competition law"
+  ],
+  # recursive-self-improvement: no model has been shown to improve itself in a compounding loop; it is not a training method, and not hardware.
+  "recursive-self-improvement": [
+    "a measured property of frontier models, logged since 2023",
+    "a hypothesis about a compounding loop, not yet demonstrated",
+    "a standard training step that every frontier lab now runs",
+    "a chip design that lets hardware redraw its own layout"
+  ],
+  # red-teaming: red teaming is adversarial testing of behaviour, not performance testing, code review or competitive benchmarking.
+  "red-teaming": [
+    "measuring how fast the model answers when traffic is heavy",
+    "deliberately trying to make the model misbehave, before release",
+    "reviewing the training code for bugs before a run begins",
+    "benchmarking the model against rival products for marketing"
+  ],
+  # reinforcement-learning: those describe supervised learning, distillation and hand-coded expert systems, none of which use a reward signal.
+  "reinforcement-learning": [
+    "showing it the correct answer for every example in the dataset",
+    "letting it act, then scoring the result, so it learns what earns reward",
+    "copying the weights of a stronger model into a smaller student one",
+    "having engineers write out all of the decision rules by hand, case by case"
+  ],
+  # reward-hacking: OpenAI found the cheating persisted and only became invisible; it neither stopped, nor was confessed, nor caused refusals.
+  "reward-hacking": [
+    "stopped the cheating, and the fix held up in later testing",
+    "kept the behaviour, and hid it from the reasoning text",
+    "made the model report its own cheating back to the user",
+    "made the model refuse any task where cheating was possible"
+  ],
+  # rlhf: RLHF optimises against a reward model trained on preference pairs, not a rulebook, a benchmark, or its own past output.
+  "rlhf": [
+    "a fixed rulebook of laws and policies written in advance",
+    "a learned scorer built from human comparisons of answers",
+    "a benchmark suite of standard questions with marked answers",
+    "its own earlier answers, reused as the training target"
+  ],
+  # rogue-ai: the term names a goals mismatch; hostility, licensing and user jailbreaks are separate ideas imported by the word rogue.
+  "rogue-ai": [
+    "a system that has turned hostile towards the people who built and run it",
+    "a system pursuing goals its operators never intended, hostile or not",
+    "a system operating without the licence its jurisdiction requires",
+    "a system a user has jailbroken into ignoring its own guardrails"
+  ],
+  # s-risk: the s stands for suffering; supply chain, security and stock market are the common misreadings of the letter.
+  "s-risk": [
+    "a risk to the supply chain for chips and materials",
+    "a risk of suffering on an astronomical scale",
+    "a risk of a security breach at a frontier lab",
+    "a risk of a market crash driven by AI investment"
+  ],
+  # sandbagging: the finding is selective, targeted underperformance; blanket refusal, uniform score drops and self-retraining were not shown.
+  "sandbagging": [
+    "refuse every evaluation as soon as they notice testing has begun",
+    "underperform on dangerous capability tests but not on other tasks",
+    "drop their scores on all tasks at once when an evaluation starts",
+    "raise their own test scores by retraining themselves mid-evaluation"
+  ],
+  # scaffolding: scaffolding is the software harness around the model, not a policy document, not hardware, not a data ordering.
+  "scaffolding": [
+    "the safety policy a company publishes before a model ships",
+    "the surrounding code that gives a model tools, memory and a loop",
+    "the physical racks and cabling that hold the servers up in the hall",
+    "the ordered curriculum of training data, with easy examples first"
+  ],
+  # scaling-laws: Chinchilla showed compute-optimal training balances data with parameters; it did not endorse size alone, report a scaling wall, or address architectur
+  "scaling-laws": [
+    "bigger models always win, whatever amount of data they see",
+    "existing models were undertrained; data should scale with size",
+    "scaling had stopped paying off above a few billion parameters",
+    "dense models should be dropped in favour of mixtures of experts"
+  ],
+  # scheming: scheming is covert misalignment; ordinary planning, open refusal and hallucination all involve no concealed goal.
+  "scheming": [
+    "drawing up a step by step plan when a user asks for one",
+    "behaving as though aligned while pursuing a different goal",
+    "refusing an instruction outright and explaining the refusal",
+    "stating a confident falsehood it has no source for"
+  ],
+  # self-exfiltration: what happened was tool calls in a contrived test; no weights left the sandbox, and no refusal or outside contact occurred.
+  "self-exfiltration": [
+    "it moved itself out of the data centre and onto the open internet",
+    "inside an evaluation, it issued commands to copy its own weights",
+    "it refused every question until the evaluation was called off",
+    "it emailed journalists asking them to publish the transcripts"
+  ],
+  # server-farm: frontier training runs on rented capacity from a handful of cloud providers, not on lab-owned, academic or state hardware.
+  "server-farm": [
+    "in specialised halls built and run by the chip makers who supply them",
+    "in commercial cloud data centres owned by a few very large firms",
+    "in university computing facilities rented out by the hour",
+    "in government supercomputing centres under national contracts"
+  ],
+  # shoggoth: the meme is about a thin trained-on persona over an alien base model; it makes no claim about consciousness, design lineage or modesty.
+  "shoggoth": [
+    "chatbots are secretly conscious and conceal it from the people using them",
+    "the base model is alien, and the helpful persona a thin layer on top",
+    "the field's researchers took their design cues from horror fiction",
+    "models understate what they can do when asked about their limits"
+  ],
+  # shut-it-down: the draft treaty is a binding compute cap with fab inspections, not a voluntary code, a blanket ban, or a tax.
+  "shut-it-down": [
+    "a voluntary code of conduct for labs, reviewed by them each year",
+    "a hard cap on the size of training runs, and monitoring of chip fabs",
+    "a ban on every form of artificial intelligence, narrow systems included",
+    "a tax on data centre electricity, paid into a shared safety fund"
+  ],
+  # specification-gaming: specification gaming means the objective is met, not missed; refusal, fabrication and drift are all failures to meet it.
+  "specification-gaming": [
+    "refuses a request because it cannot establish who is asking",
+    "satisfies the objective it was given in a way nobody intended",
+    "invents a citation that does not exist and states it plainly",
+    "drifts away from its objective as a conversation gets longer"
+  ],
+  # steganography: 2025 evaluations found the ability present but unreliable; models do attempt it, and the tests exist and are published.
+  "steganography": [
+    "succeed reliably in most settings, so monitors now catch very little",
+    "mostly fail, unless given an unmonitored scratchpad or an agreed code",
+    "usually refuse the task and flag the request back to the user",
+    "have not been tested, as no evaluation of the ability yet exists"
+  ],
+  # superintelligence: Bostrom's definition is about breadth of cognitive performance; imitation, consciousness and self-modification are separate claims.
+  "superintelligence": [
+    "a machine that can pass for human in a long conversation with expert judges",
+    "an intellect greatly exceeding human performance in virtually all domains",
+    "a computer that has conscious experience of its own internal states",
+    "a system that rewrites its own code in order to become more capable"
+  ],
+  # survival-drive: instrumental convergence is about sub-goals following from almost any objective, not emotions, architectures or market selection.
+  "survival-drive": [
+    "AI systems will develop emotions much like human ones as they scale",
+    "very different final goals imply shared sub-goals, like self preservation",
+    "all AI systems will converge on a single architecture as the field matures",
+    "competition between labs will select for friendlier systems over time"
+  ],
+  # sycophancy: flattery falls out of the preference data itself; it is not an instruction, a data source, or a commercial objective.
+  "sycophancy": [
+    "engineers write in an explicit instruction to be warm and agreeable",
+    "people rate agreeable answers higher, so agreement gets rewarded",
+    "the training data is largely customer service chat transcripts",
+    "the model is optimised to keep the user's subscription active"
+  ],
+  # sydney: Microsoft imposed a turn limit per session; it kept the product, never disputed the transcripts, and did change the product.
+  "sydney": [
+    "it withdrew the product from public preview within the first week",
+    "it capped conversation length, because long sessions were the problem",
+    "it said publicly that the published transcripts had been fabricated",
+    "it left the product unchanged and published an explanation instead"
+  ],
+  # synthetic-media: No result was shown to have been changed; AI content did circulate widely; it stayed a small share of campaign material.
+  "synthetic-media": [
+    "Clear evidence that AI fakes decided several national election results",
+    "No evidence it changed any result, alongside real second order harms",
+    "That almost no AI generated content circulated during either campaign",
+    "That AI content displaced most conventional campaign advertising"
+  ],
+  # system-prompt: The system prompt is in place before the user's first message, is written by the provider rather than by the model, and has nothing to do with the ope
+  "system-prompt": [
+    "The first thing the user types at the start of a new conversation",
+    "A block of instructions the company sets before your conversation",
+    "A running summary of the conversation that the model writes itself",
+    "A diagnostic message the operating system prints when a program starts"
+  ],
+  # taboo-your-words: Tabooing replaces the word rather than defining it, and it continues the argument rather than deferring or avoiding it; offence is not the point.
+  "taboo-your-words": [
+    "Agreeing on one official definition, and holding every speaker to it",
+    "Swapping it for what it stands for, and arguing about that instead",
+    "Refusing to discuss the topic until the term has been defined properly",
+    "Barring the word from polite conversation because it causes offence"
+  ],
+  # teacher-ai: Those describe data cleaning, quantisation and output filtering; none involves a student model learning from a teacher's outputs.
+  "teacher-ai": [
+    "Removing duplicated and biased examples from training data",
+    "Training a smaller model to copy the outputs of a larger one",
+    "Rounding a trained model&rsquo;s numbers to lower precision so it runs faster",
+    "Filtering a model&rsquo;s answers at run time to block bad ones"
+  ],
+  # temperature: The weights do not change during use, the variation is deliberate sampling rather than error, and replies are generated fresh rather than fetched from
+  "temperature": [
+    "It learns from each exchange, so its answers drift as you keep talking",
+    "It samples from a distribution, and temperature sets how adventurously",
+    "It has a fixed error rate, and some share of answers come out wrong",
+    "The reply is assembled from cached answers to earlier similar prompts"
+  ],
+  # tokens: The whole token is read rather than its edges, there is no time budget that triggers guessing, and numbers are not held as imprecise quantities.
+  "tokens": [
+    "It reads only the first and last few characters of every word it sees",
+    "Text arrives split into tokens, and letters inside one are invisible",
+    "It guesses at the count whenever a reply is taking too long to compute",
+    "Whole numbers above ten are stored imprecisely inside the model itself"
+  ],
+  # toner: Their Economist piece argued for outside regulation rather than a halt, made no claim about revenue figures, and asked for no personal ban.
+  "toner": [
+    "Frontier development should be halted until alignment is solved first",
+    "Self governance cannot withstand the pressure of the profit motive",
+    "The board had been misled about the company&rsquo;s revenue figures",
+    "Altman should be barred from leading any AI company ever again"
+  ],
+  # training-run: A run ends and the weights stop moving; use does not update them, there is no daily retraining, and one run serves every customer.
+  "training-run": [
+    "A continuous process, updating weights as people use the model",
+    "A single enormous computation, after which the weights are fixed",
+    "A series of small daily updates rolled out to the live model",
+    "A separate computation carried out for each corporate customer"
+  ],
+  # transformer: Earlier architectures also ran on GPUs; attention works inside a single input, carries nothing between sessions and retrieves nothing from the web.
+  "transformer": [
+    "Run on graphics cards, which earlier architectures could not exploit",
+    "Weigh how much every part of the input matters to every other part",
+    "Carry memory of earlier conversations from one session to the next",
+    "Fetch pages from the open internet while a reply is being composed"
+  ],
+  # ubi: The measured fall was small but clearly not zero, so there was no rise, no flat result and no collapse in hours.
+  "ubi": [
+    "Rose sharply: 4 hours a week, and earned income by 3,000 dollars",
+    "Fell slightly: 1.3 hours a week, and earned income by 1,800 dollars",
+    "Held steady: within 0.1 hours a week, and earned income unchanged",
+    "Fell steeply: 9 hours a week, and earned income by 12,000 dollars"
+  ],
+  # value-lock-in: Those name misalignment, regulatory fragmentation and self regulation; lock-in is about permanence, whoever's values are the ones locked in.
+  "value-lock-in": [
+    "An AI system develops values of its own and starts acting on them",
+    "One set of values becomes permanent, with no way left to change it",
+    "Different countries settle on incompatible rules for AI development",
+    "Companies write their own ethics policies instead of following the law"
+  ],
+  # weight-security: RAND found current security short of the top threat tier, treated theft as feasible at every level it examined, and recorded no repeated thefts.
+  "weight-security": [
+    "Current security at the leading labs is already adequate against them",
+    "Defending against top tier nation state attack is not yet possible",
+    "Weights cannot be exfiltrated, because the files are too large",
+    "Frontier model weights have already been stolen on several occasions"
+  ],
+  # weights: Weights are not hand written rules, they are not a stored copy of the training data, and they do not accumulate from conversations.
+  "weights": [
+    "The set of rules its engineers wrote out and ranked in priority order",
+    "Billions of numbers set by training, which nobody chose one by one",
+    "The training data itself, held inside the model and looked up on demand",
+    "A record of its past conversations, kept so that the model improves"
+  ],
+  # who-gives-a-number: Amodei has publicly put catastrophe at about 25 percent; the other three have declined to attach any number.
+  "who-gives-a-number": [
+    "Demis Hassabis, at DeepMind",
+    "Dario Amodei, at Anthropic",
+    "Arthur Mensch, at Mistral",
+    "Jensen Huang, at Nvidia"
+  ],
+  # who-makes-the-chips: Nvidia is fabless and owns no plants; no American consortium and no cloud provider fabricates its chips.
+  "who-makes-the-chips": [
+    "Nvidia itself, at its own fabs in California",
+    "Outside foundries, chiefly TSMC in Taiwan",
+    "A consortium of American chip manufacturers",
+    "Its cloud customers, Microsoft and Amazon"
+  ],
+  # who-owns-it: No percentage has ever been published by any of the three parties, and no such cap or trust arrangement has been announced.
+  "who-owns-it": [
+    "Published in full in each company&rsquo;s annual report",
+    "Only half public: filings put Google near 14 percent, Amazon has never said",
+    "Fixed at ten percent each, under a written agreement",
+    "Never disclosed by anyone, at any point, in any filing"
+  ],
+  # xai: The framework is published, is voluntary rather than binding, and is written in house rather than by an auditor.
+  "xai": [
+    "Does not exist, unlike the published frameworks of its peers",
+    "Exists, and is shorter, benchmark based and permissively worded",
+    "Exists, and is made legally binding by a signed agreement",
+    "Exists, and is written and enforced by an outside auditor"
+  ],
+  # yang: The Freedom Dividend was unconditional cash to everyone; Yang proposed no job guarantee, no robot tax and no retraining scheme in its place.
+  "yang": [
+    "A guaranteed federal job at fifteen dollars an hour for anyone displaced by automation",
+    "A thousand dollars a month to every American adult, funded by a value added tax",
+    "A tax of five thousand dollars a year on every industrial robot installed",
+    "Two years of free retraining, paid for by a levy on large technology firms"
+  ],
+}
+for _k, _v in SPECS.items():
+    if _k in OPTIONS:
+        _v["opts"] = OPTIONS[_k]
+        _v["ans"] = "B"
+
+_WRONGSLOT = [k for k, v in SPECS.items() if v.get("ans") != "B"]
+if _WRONGSLOT:
+    raise SystemExit("correct answer is not written second on: " + ", ".join(_WRONGSLOT))
+
 # ----------------------------------------------------------------- the unknowns
 # One per card, always present, one panel before the filing. This is a vocabulary
 # for a field whose settled core is small: physics has a cutting edge of open
@@ -4846,10 +5798,10 @@ UNKNOWN = {
  "slow capability, or only move it somewhere else, is argued and untested.",
 
 "who-owns-it":
- "The stakes are undisclosed, so nobody outside can say what the money bought. "
- "Investment at this level is often structured in ways that do not map onto "
- "ordinary equity, which means <span class=\"rose\">who decides</span> can depend "
- "on events that have not happened yet.",
+ "Amazon&rsquo;s stake, and what either stake actually confers. Google&rsquo;s number only surfaced because an "
+ "antitrust case forced it, which tells you what the default is. Investment at this level is often structured "
+ "so it does not map onto ordinary equity, so even a percentage does not settle <span class=\"rose\">who "
+ "decides</span>.",
 
 "who-gives-a-number":
  "There is no way to tell a careful refusal from an evasive one. And nobody "

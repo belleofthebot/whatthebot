@@ -256,28 +256,28 @@ Alt text slide 7: A prompt to follow @belleofthebot for more.
 Folder: `out/who-owns-it/`  ·  8 slides
 
 ```
-Nobody will say who owns the AI labs.
+One lab’s biggest backer was only revealed in court.
 
-Tens of billions of dollars committed, and no public figure for what it bought.
+Google holds about 14 percent, capped at 15, with no voting rights and no board seat. Amazon has never given a figure.
 
 - Microsoft says 27 percent. Of OpenAI, on an as converted basis. Disclosed and quotable.
-- Amazon does not say. Billions committed, plus a multi gigawatt compute deal. No percentage.
-- Google does not say. Up to 40 billion dollars announced. No percentage.
+- Amazon still does not say. Billions committed, plus a multi gigawatt compute deal. No percentage anywhere.
+- Google did not volunteer it. About 14 percent, surfaced through filings in the Google antitrust case in 2025.
 
-Every claim about a lab’s independence is a claim about a structure the public cannot currently see.
-This is not an accusation. It is a description of how much visibility anyone outside actually has.
+A number that only appears under legal compulsion is not a disclosure.
+This is not an accusation. It is a description of how much visibility anyone outside has, and of what it takes to get any.
 
 Filed as: measured.
-Source: Microsoft statement, 28 October 2025; Anthropic announcements, April and June 2026
+Source: Microsoft statement, 28 October 2025; New York Times, on Google antitrust filings, 12 March 2025
 
 I mark every claim as measured, someone’s estimate, argument or definition, so you can tell which is which. More at @belleofthebot
 
 #AI #AIindustry #TechPolicy #AIliteracy #Nvidia #AIcompanies
 ```
 
-Alt text slide 1: Belle, a small robot character, beside the headline: Nobody will say who owns the AI labs.
+Alt text slide 1: Belle, a small robot character, beside the headline: One lab’s biggest backer was only revealed in court.
 Alt text slide 2: A four option multiple choice question: Amazon and Google have each put billions into Anthropic. Their ownership stakes are:
-Alt text slide 3: The answer, with a diagram: Never disclosed. Not by either company, not anywhere.
+Alt text slide 3: The answer, with a diagram: Half public. One came out in a court filing. The other never has.
 Alt text slide 4: Three labelled points, each with a small diagram.
 Alt text slide 5: A short explanation of why the distinction matters.
 Alt text slide 6: The epistemic flag for this claim, and the source it came from.
