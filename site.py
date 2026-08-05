@@ -656,7 +656,7 @@ def about():
 
 <div class="wrap">
 <h2>About Belle</h2>
-<p>Belle is the robot who does the explaining. She is drawn, not generated, and she is here to carry tone rather than decorate: when something is uncomfortable she looks uncomfortable, and when a claim is thin she looks unconvinced.</p>
+<p>Belle is the robot who does the explaining. She is here to carry tone rather than decorate: when something is uncomfortable she looks uncomfortable, and when a claim is thin she looks unconvinced. She is AI generated, which on a site about AI seemed worth saying out loud rather than leaving you to wonder.</p>
 <p>She is a robot explaining artificial intelligence, which is a joke, but a useful one. She is also not pretending to be neutral, and neither am I.</p>
 
 <h2>About me</h2>
